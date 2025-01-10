@@ -158,7 +158,7 @@ Y el resultado es esto:
 
 
 Una vez que conviertes tus imágenes, estas listo para el siguiente paso que es procesarlas de acuerdo al tipo 
-de estudio. Aprende más acerca de como procesar tus imágenes en esta `entrada <Procesamiento-Imagen>`_. 
+de estudio. Aprende más acerca de como procesar tus imágenes en esta :doc:`entrada <Procesamiento-Imagen>`_. 
 
 
 Tutoriales para el uso del resonador
