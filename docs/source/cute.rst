@@ -116,15 +116,13 @@ prog_prueba.R
 
 **SolucionXPU_3_salto_chamba.R**
 
-.. source:: R
+.. code:: R
 
    SolucionXPU_3_salto_chamba <- function(del=0, pp=0){
       ss = dim(pp)
       n = ss[1]
       xx = matrix(rep(0,3*n), ncol=3)
-
-
-dwx1 = DWX1 *sqrt(del)*runif(n)
+      dwx1 = DWX1 *sqrt(del)*runif(n)
       dwx2 = DWX2 *sqrt(del)*runif(n)
       dwx3 = DWX3 *sqrt(del)*runif(n)
    
