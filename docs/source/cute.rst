@@ -120,9 +120,7 @@ SolucionXPU_3_salto_chamba.R
 
    SolucionXPU_3_salto_chamba <- function(del=0, pp=0){
       ss = dim(pp)
-
       n = ss[1]
-   
       xx = matrix(rep(0,3*n), ncol=3)
 
 
