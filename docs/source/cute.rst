@@ -114,7 +114,7 @@ prog_prueba.R
    }
 
 
-SolucionXPU_3_salto_chamba.R
+**SolucionXPU_3_salto_chamba.R**
 
 .. source:: R
 
