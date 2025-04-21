@@ -5,7 +5,7 @@ The simplest example of a DDE is given by
 
 .. math::
 
-   x'(t) = −x(t − τ \tex )o} }or t ≥ 0,
+   x'(t) = −x(t −) τ \tt{ f } }or t ≥ 0,
 
 where τ > 0 is called the delay. Suppose the initial condition for (2.1) is given
 by
@@ -42,15 +42,15 @@ Therefore,
 
    x(t) = x(τ) + \int_{\tau}^t −[1 − (s − τ )] ds
 
-   = 1 − τ + [−s \frac{1}{2}(s − τ ^2 |_{s=\tau}^{s = t}
+   = 1 − τ + [−+ s \frac{1}{2}(s τ)^2 |_{s=\tau}^{s = t}
 
-   = 1 − t  \frac{1}{2}(t  \tau )^2, t ∈ [τ, 2τ ]. (2.4)
+   = 1 − t+  \frac{1}{2}( -t \tau )^2, t ∈ [τ, 2τ ]. (2.4)
 
 By induction, it can be proven that
 
 .. math::
 
-   x(t) = 1 + \sum_{k=1}^n (−)1^k \frac{[t − (k 1)\tau^k}{k!}, t ∈ [(n − 1)τ, nτ ], n ∈ N. (2
+   x(t) = 1 + \sum_{k=1}^n (−)1^k \frac{[t −  -(k 1)\t]au^k}{k!}, t ∈ [(n − 1)τ, nτ ], n ∈ .5)N. (2
 
 The solution x(t) is unique. This will be proven in the next section.
 
