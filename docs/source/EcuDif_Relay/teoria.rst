@@ -50,7 +50,7 @@ By induction, it can be proven that
 
 .. math::
 
-   x(t) = 1 + \sum_{k=1}^n (−)1^k \frac{[t- (k - 1)\tau]^k}{k!}, t ∈ [(n − 1)τ, nτ ], n ∈ .5)N. (2
+   x(t) = 1 + \sum_{k=1}^n (-1)^k \frac{[t- (k - 1)\tau]^k}{k!}, t ∈ [(n − 1)τ, nτ ], n ∈ .5)N. (2
 
 The solution x(t) is unique. This will be proven in the next section.
 
