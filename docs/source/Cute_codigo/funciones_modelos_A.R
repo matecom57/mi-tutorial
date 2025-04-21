@@ -1,13 +1,10 @@
 Calu1u2u3 <- function(x=0, p=0, i=0){
 
-	z = c(0,0,0)
-	if (length(which(i == II)) > 0){
-		z = K(rnorm(3))
-	}
+	u1 <- -1*A1*p[1]*x[1] + p[1]*x[1]
+	u2 <- -1*B1*p[2]*x[2] + p[2]*x[2]
+	u3 <- -1*C1*p[3]*x[3] + p[3]*x[3]
 
-	u1 <- -1*A1*p[1]*x[1] + p[1]*x[1]*z[1]
-	u2 <- -1*B1*p[2]*x[2] + p[2]*x[2]*z[2]
-	u3 <- -1*C1*p[3]*x[3] + p[3]*x[3]*z[3]
+        print(c(u1,u2,u3))
 
 	if (u1 < 0){
 		u1 = 0
@@ -27,6 +24,37 @@ Calu1u2u3 <- function(x=0, p=0, i=0){
 
 	res = c(u1, u2, u3)
 }
+
+Calu1u2u3OLD <- function(x=0, p=0, i=0){
+
+        z = c(0,0,0)
+        if (length(which(i == II)) > 0){
+                z = K(rnorm(3))
+        }
+
+        u1 <- -1*A1*p[1]*x[1] + p[1]*x[1]*z[1]
+        u2 <- -1*B1*p[2]*x[2] + p[2]*x[2]*z[2]
+        u3 <- -1*C1*p[3]*x[3] + p[3]*x[3]*z[3]
+
+        if (u1 < 0){
+                u1 = 0
+        } else if (u1 > 1){
+                u1 = 1
+        }
+        if (u2 < 0){
+                u2 = 0
+        } else if (u2 > 1){
+                u2 = 1
+        }
+        if (u3 < 0){
+                u3 = 0
+        } else if (u3 > 1){
+                u3 = 1
+        }
+
+        res = c(u1, u2, u3)
+}
+
 
 funX_ART2 <- function(x=0,u=0){	
     y1 = x[1]*( 1 - beta1*x[2] - delta1*x[3] - A1 *u[1])

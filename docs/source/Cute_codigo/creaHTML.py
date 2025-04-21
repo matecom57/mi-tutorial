@@ -12,7 +12,7 @@ ss2='''
 </html>
 '''
 
-file = 'fac_old'
+file = 'dir'
 
 filin = open(file + '.txt', 'r')
 datos=filin.readlines()
@@ -20,7 +20,7 @@ datos=filin.readlines()
 filon = open(file + '.html', 'w')
 filon.write(ss1)
 
-pati='./fac_old/'
+pati='./fac_TETA0.2_A10.4_B10.42_C10.19_dwx1_0.17_dwx2_0.17_dwp_0.17:b0.2d0.3e0.3/'
 
 i=1
 for s in datos:
