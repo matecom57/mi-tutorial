@@ -17,9 +17,9 @@ SolucionXPU_3_salto_chamba <- function(del=0, pp=0){
 
    for (i in 2:n){
       r = funX_ART2_chamba (x1, u)
-      x21 = x1[1] + (TT[i]-TT[i-1]) * r[1] + w1+ x1[1]*u[1]
-      x22 = x1[2] + (TT[i]-TT[i-1]) * r[2] + w2+ x1[2]*u[2]
-      x23 = x1[3] + (TT[i]-TT[i-1]) * r[3] + w3+ x1[3]*u[3]
+      x21 = x1[1] + (TT[i]-TT[i-1]) * r[1] + w1
+      x22 = x1[2] + (TT[i]-TT[i-1]) * r[2] + w2
+      x23 = x1[3] + (TT[i]-TT[i-1]) * r[3] + w3
       x1 = c(x21, x22, x23)
       xx[i,] = x1
       p1 = pp[i,]

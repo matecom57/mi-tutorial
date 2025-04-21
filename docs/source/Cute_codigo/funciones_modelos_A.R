@@ -1,10 +1,10 @@
 Calu1u2u3 <- function(x=0, p=0, i=0){
 
-	u1 <- -1*A1*p[1]*x[1] + p[1]*x[1]
-	u2 <- -1*B1*p[2]*x[2] + p[2]*x[2]
-	u3 <- -1*C1*p[3]*x[3] + p[3]*x[3]
+	u1 <- -1*A1*p[1]*x[1] 
+	u2 <- -1*B1*p[2]*x[2] 
+	u3 <- -1*C1*p[3]*x[3] 
 
-        print(c(u1,u2,u3))
+#        print(c(u1,u2,u3))
 
 	if (u1 < 0){
 		u1 = 0
@@ -60,7 +60,7 @@ funX_ART2 <- function(x=0,u=0){
     y1 = x[1]*( 1 - beta1*x[2] - delta1*x[3] - A1 *u[1])
     y2 = x[2]*( 1 - beta1*x[1] - epsilon1*x[3] - B1 *u[2])
     y3 = x[3]*(-1 + delta1*x[1] + epsilon1*x[2] - C1*u[3])
-	res = c(y1, y2, y3)
+    res = c(y1, y2, y3)
 }
 
 funX_ART2_chamba <- function(x=0,u=0){	
