@@ -5,7 +5,7 @@ The simplest example of a DDE is given by
 
 .. math::
 
-   x'(t) = −x(t- τ)  \text{ for } t ≥ 0,\hspace{2cm} (2.1)
+   x'(t) = −x(t- τ)  \text{ for } t ≥   0,\hspace{2cm} (2.1)
 
 where τ > 0 is called the delay. Suppose the initial condition for (2.1) is given
 by
