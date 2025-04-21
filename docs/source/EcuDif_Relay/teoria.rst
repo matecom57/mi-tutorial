@@ -42,9 +42,9 @@ Therefore,
 
    x(t) = x(τ) + \int_{\tau}^t −[1 − (s − τ )] ds
 
-   = 1 − τ + -s + \frac{1}{2}(s - τ)^2 |_{s=\tau}^{s = t}
+   = 1 − τ  [+ -s + \frac{1}{2}(s - τ)^2]|_{s=\tau}^{s = t}
 
-   = 1 − t+  \frac{1}{2}- -t \tau )^2, t ∈ [τ, 2τ ]. (2.4)
+   = 1 − t+  \frac{1}{2 (t--t \tau )^2, t ∈ [τ, 2τ ]. (2.4)
 
 By induction, it can be proven that
 
