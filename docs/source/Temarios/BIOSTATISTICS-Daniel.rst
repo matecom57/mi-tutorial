@@ -2,7 +2,7 @@
 BIOSTATISTICS
 =============
 
-1 INTRODUCTION TO BIOSTATISTICS
+**1 INTRODUCTION TO BIOSTATISTICS**
 
 1.1 Introduction
 
@@ -22,7 +22,7 @@ Review Questions and Exercises
 
 References
 
-2 DESCRIPTIVE STATISTICS
+**2 DESCRIPTIVE STATISTICS**
 
 2.1 Introduction 20
 
@@ -41,7 +41,7 @@ Review Questions and Exercises
 References
 
 
-3 SOME BASIC PROBABILITY CONCEPTS
+**3 SOME BASIC PROBABILITY CONCEPTS**
 
 3.1 Introduction
 
@@ -59,7 +59,7 @@ Review Questions and Exercises
 
 References
 
-4 PROBABILITY DISTRIBUTIONS
+**4 PROBABILITY DISTRIBUTIONS**
 
 4.1 Introduction
 
@@ -81,7 +81,7 @@ Review Questions and Exercises
 
 References
 
-5 SOME IMPORTANT SAMPLING DISTRIBUTIONS
+**5 SOME IMPORTANT SAMPLING DISTRIBUTIONS**
 
 5.1 Introduction
 
@@ -101,7 +101,7 @@ Review Questions and Exercises
 
 References
 
-6 ESTIMATION
+**6 ESTIMATION**
 
 6.1 Introduction
 
@@ -129,7 +129,7 @@ Review Questions and Exercises
 
 References
 
-7 HYPOTHESIS TESTING
+**7 HYPOTHESIS TESTING**
 
 7.1 Introduction
 
@@ -157,7 +157,7 @@ Review Questions and Exercises
 
 References
 
-8 ANALYSIS OF VARIANCE
+**8 ANALYSIS OF VARIANCE**
 
 8.1 Introduction
 
@@ -175,7 +175,7 @@ Review Questions and Exercises
 
 References
 
-9 SIMPLE LINEAR REGRESSION AND CORRELATION
+**9 SIMPLE LINEAR REGRESSION AND CORRELATION**
 
 9.1 Introduction
 
@@ -199,7 +199,7 @@ Review Questions and Exercises
 
 References
 
-10 MULTIPLE REGRESSION AND CORRELATION
+**10 MULTIPLE REGRESSION AND CORRELATION**
 
 10.1 Introduction
 
@@ -219,7 +219,7 @@ Review Questions and Exercises
 
 References
 
-11 REGRESSION ANALYSIS: SOME ADDITIONAL TECHNIQUES
+**11 REGRESSION ANALYSIS: SOME ADDITIONAL TECHNIQUES**
 
 11.1 Introduction
 
@@ -235,7 +235,7 @@ Review Questions and Exercises
 
 References
 
-12 THE CHI-SQUARE DISTRIBUTION AND THE ANALYSIS OF FREQUENCIES
+**12 THE CHI-SQUARE DISTRIBUTION AND THE ANALYSIS OF FREQUENCIES**
 
 12.1 Introduction
 
@@ -259,7 +259,7 @@ Review Questions and Exercises
 
 References
 
-13 NONPARAMETRIC AND DISTRIBUTION-FREE STATISTICS
+**13 NONPARAMETRIC AND DISTRIBUTION-FREE STATISTICS**
 
 13.1 Introduction
 
@@ -289,7 +289,7 @@ Review Questions and Exercises
 
 References
 
-14 VITAL STATISTICS
+**14 VITAL STATISTICS**
 
 14.1 Introduction
 
