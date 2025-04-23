@@ -1,4 +1,4 @@
-Teoria - 03
+Teoria - 00
 ======
 
 The simplest example of a DDE is given by
@@ -39,12 +39,11 @@ Therefore,
 
 .. math::
 
-
    x(t) = x(τ) + \int_{\tau}^t −[1 − (s − τ )] ds
 
-   = 1 − τ[ [+ -s + \frac{1}{2}(s - τ)^2|_{s=\tau}^{s = t}
+   = 1 − τ[ + [-s + \frac{1}{2}(s - τ)^2]_{s=\tau}^{s = t}
 
-   = 1 − t+  \frac{1}{2 (tt \tau )^2\hspace{5cm}, t ∈ [τ, 2τ  \hspace{2cm} ]. (2.4)
+   = 1 − t+  \frac{1}{2 (t - \tau )^2 \hspace{5cm}, t ∈ [τ, 2τ]  \hspace{2cm}  (2.4)
 
 By induction, it can be proven that
 
