@@ -33,7 +33,7 @@ Similarly, we can show that
 
 .. math::
 
-   x'(t) = −x(t − τ ) = −[1 − (t − τ )], t ∈ [τ, 2τ ].
+   x'(t) = −x(t − τ ) = −[1 − (t −  \hspace{5mm}τ )], t ∈ [τ, 2τ ].
 
 Therefore,
 
@@ -42,9 +42,9 @@ Therefore,
 
    x(t) = x(τ) + \int_{\tau}^t −[1 − (s − τ )] ds
 
-   = 1 − τ  [+ -s + \frac{1}{2}(s - τ)^2]|_{s=\tau}^{s = t}
+   = 1 − τ[ [+ -s + \frac{1}{2}(s - τ)^2|_{s=\tau}^{s = t}
 
-   = 1 − t+  \frac{1}{2 (t--t \tau )^2, t ∈ [τ, 2τ ]. (2.4)
+   = 1 − t+  \frac{1}{2 (tt \tau )^2\hspace{5cm}, t ∈ [τ, 2τ  \hspace{2cm} ]. (2.4)
 
 By induction, it can be proven that
 
