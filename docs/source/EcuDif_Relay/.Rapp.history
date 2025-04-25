@@ -1,0 +1,358 @@
+x>3
+x[x>3]
+x*[x>3]
+x*(x>3)
+# library#
+library(ggplot2)#
+#
+# Keep 30 first rows in the mtcars natively available dataset#
+data=head(mtcars, 30)#
+#
+# 1/ add text with geom_text, use nudge to nudge the text#
+p = ggplot(data, aes(x=wt, y=mpg)) +#
+  geom_point() + # Show dots#
+  geom_text(#
+  label=rownames(data),#
+  nudge_x = 0.25, nudge_y = 0.25,#
+  check_overlap = T#
+)#
+#
+print(p)
+m <- matrix(round(rnorm(12, mean=55, sd=19)), ncol=3)
+m
+v <- c(TRUE, T, FALSE, FALSE, F, T)
+x <- c(4,3,1,5,6)#
+b <- x>3#
+b
+x[b]
+m <- matrix(round(rnorm(12, mean=55, sd=19)), ncol=3)#
+m#
+# cuales son los elementos de la matriz que sean mayores a 55#
+b <- m> 55
+b
+y = m*b#
+y
+x1 <- c(4,3,1,5,6)
+x1 <- c(7,3,7,5,6)
+x1 <- c(4,3,1,5,6)
+x2 <- c(7,3,7,5,6)
+x1
+x2
+x1==x2
+x <- 1:12
+x
+x+round(rnorm(12, sd=2))
+x+round(rnorm(12, sd=2),2)
+x <- c(4,3,1,5,6)#
+b <- x>3
+b
+x[b]
+x1 <- c(4,3,1,5,6)#
+x2 <- c(7,3,7,5,6)#
+b <- x1 == x2#
+b
+x1[b]
+m <- matrix(round(rnorm(12, mean=55, sd=19)), ncol=3)#
+m
+b <- m> 55
+b
+m[b]
+m*b
+x <- c(2,4,3,6,3,4)
+b = x>3
+b*x
+x <- seq(-2,2,.1)
+y <- dchisq(x, df=1)
+plot(x,y,type='l')
+y <- dchisq(x, df=1)
+x <- seq(0,5,.1)
+y <- dchisq(x, df=5)
+plot(x,y,type='l')
+x <- seq(0,10,.1)
+y <- dchisq(x, df=5)
+plot(x,y,type='l')
+x <- seq(0,20,.1)
+y <- dchisq(x, df=5)
+plot(x,y,type='l')
+y <- dchisq(x, df=2)
+plot(x,y,type='l')
+y <- dchisq(x, df=10)
+plot(x,y,type='l')
+y <- dchisq(x, df=5)
+plot(x,y,type='l')
+y <- rchisq(100, df=5)
+plot(y)
+mean(y)
+y <- pchisq(x, df=5)
+plot(x,y,type='l')
+y <- qchisq(seq(0,1,.01), df=5)
+x <- seq(0,1,.01)
+plot(x,y,type='l')
+names(iris)
+Sepal.Length
+attach(iris)
+Sepal.Length
+plot(Sepal.Length,Sepal.Width)
+plot(Sepal.Length,Sepal.Width, pch=16)
+plot(Sepal.Length,Sepal.Width, pch=16, col=Species)
+class(Species)
+attach(mtcars)#
+plot(wt, mpg, main="Milage vs. Car Weight",#
+  xlab="Weight", ylab="Mileage", pch=18, col="blue")#
+text(wt, mpg, row.names(mtcars), cex=0.6, pos=4, col="red")
+# Legend Example#
+attach(mtcars)#
+boxplot(mpg~cyl, main="Milage by Car Weight",#
+  yaxt="n", xlab="Milage", horizontal=TRUE,#
+  col=terrain.colors(3))#
+legend("topright", inset=.05, title="Number of Cylinders",#
+  c("4","6","8"), fill=terrain.colors(3), horiz=TRUE)
+plot(Sepal.Length,Sepal.Width, pch=16, col=Species)
+nam=names(Species)
+na,
+nam
+nam=names(iris)
+Species
+table(Species)
+names(Species)
+nom = c('setosa', 'versicolor' , 'virginica')
+nom
+legend("topright", inset=.05, title="Number of Cylinders",nom, fill=c('black', 'red', 'gree'),horiz=TRUE)
+legend("topright", inset=.05, title="Number of Cylinders",nom, fill=c('black', 'red', 'green'),horiz=TRUE)
+2016-1983
+2015-1984
+2016-1994
+2016-1977
+2013-1977
+2012-1974
+2012-1987
+2011-1977
+2015-1988
+2016-1988
+2016-1987
+2011-1985
+2011-1983
+2011-1964
+2015-1972
+2016-1988
+2016-1983
+2011-2016
+2011-1985
+2012-1981
+2012- 1985
+2012-1985
+2016-1981
+2014 -1986
+2025-1986
+2016-1976
+2016-1992
+2016-1979
+2015-1984
+2016-1985
+2011-1979
+2016-1986
+2013-1991
+2013-1971
+2016-1985
+2014-1983
+2011-1977
+2011-1987
+2016-1978
+2016-1992
+2016-1982
+2016-1987
+2012-1983
+2015-1979
+2011-1988
+2016-1991
+2011-1988
+2013-1989
+2016-1991
+2015-1987
+2011-1981
+2011-1987
+q = 1/2
+i = 0:50
+dd = 1^i
+dd
+dd = q^i
+dd
+sum(dd)
+?shapiro.test
+shapiro.test(runif(100, min = 2, max = 4))
+shapiro.test(runif(100, min = 50, max = 60))
+shapiro.test(runif(100, min = 48, max = 62))
+?t.test
+?wilcoxon
+??wilcoxon
+aov
+?aov
+x = c(55, 60, 67, 40, 66, 56, 45, 55, 64, 40)
+shapiro.test(x)
+t.test(x, mu=55)
+s <- round(runif(12, min=50, max=60))
+shapiro.test(s)
+t.test(s, mu=55)
+wilcox.test(s, mu=55)
+x = round(rnorm(12, mean=55, sd=5))
+y = round(rnorm(12, mean=62, sd=7))
+library(ggplot2)
+datos <- data.frame(x,y)
+cl = c(rep(1,12), rep(2,12))
+xy = c(x,y)
+datos <- data.frame(cl, xy)
+datos
+p <- ggplot(datos, aes(as.factor(cl), xy)) + geom_boxplot()
+print(p)
+t.test(x,y, alternative="greater")
+y = round(rnorm(12, mean=58, sd=7))
+xy = c(x,y)
+datos <- data.frame(cl, xy)
+p <- ggplot(datos, aes(as.factor(cl), xy)) + geom_boxplot()
+print(p)
+y = round(rnorm(12, mean=56, sd=4))
+xy = c(x,y)
+datos <- data.frame(cl, xy)
+ggplot(datos, aes(as.factor(cl), xy)) + geom_boxplot()
+y = round(rnorm(12, mean=58, sd=4))
+xy = c(x,y)
+datos <- data.frame(cl, xy)
+ggplot(datos, aes(as.factor(cl), xy)) + geom_boxplot()
+t.test(x,y)
+t.test(y ~ x)
+xy
+cl
+t.test(xy ~ as.factor(cl))
+z = round(rnorm(12, mean=54, sd=4))
+cl = c(rep(1,12), rep(2,12), rep(3,12))
+xyz = c(x,y,z)
+ggplot(datos, aes(as.factor(cl), xyz)) + geom_boxplot()
+datos <- data.frame(cl, xyz)
+datos
+ggplot(datos, aes(as.factor(cl), xyz)) + geom_boxplot()
+aov(xyz ~ as.factor(cl))
+res <- aov(xyz ~ as.factor(cl))
+summary(res)
+x
+y
+z
+TukeyHSD(res)
+?folate
+??folate
+library(ISwR)
+install.packages('ISwR')
+library(ISwR)
+folate
+install.packages('scatterplot3d')
+p <- round(runif(100, min=50, max=60 ))
+shapiro.test(p)
+m <- sample(p, 12, replace=F)
+mean(m)
+mean(p)
+shapiro.test(m)
+m <- sample(p, 12, replace=F)
+mean(m)
+1-pnorm(1.1)
+x = c(.360, 1.189, .614, .788, .273, 2.464, .571,1.827, .537, .374, .449, .262, .448, .971,.372, .898, .411, .348, 1.925, .550, .622,.610, .319, .406, .413, .767, .385, .674,.521, .603, .533, .662, 1.177, .307, 1.499)
+t.test(x)
+?t.test
+?z.test
+mean(x) + qnorm(1-.05/2)*.101
+mean(x) - qnorm(1-.05/2)*.101
+GenSolTeorica <- function(tao=0, niter=1){#
+  print('GenSolTeorica')#
+  np = 100#
+  t = seq(-1*tao, 0, length.out = np)#
+  print(t)#
+#
+  x = rep(1,np)#
+  xx = x#
+  tt = t#
+#
+  for (n in 1:niter){#
+    res = 1#
+    t = t + tao#
+    for (k in 1:n){#
+    res = res + (-1)^k *(t - (k-1)*tao)^k / factorial(k)#
+  }#
+  xx = c(xx, res)#
+  tt = c(tt,t)#
+  print(tt)#
+  res = list(xx, tt)#
+}
+r <- GenSolTeorica(1.5, 14)
+r
+q
+q
+q
+2+1
+GenSolTeorica <- function(tao=0, niter=1){#
+  print('GenSolTeorica')#
+  np = 100#
+  t = seq(-1*tao, 0, length.out = np)#
+  print(t)#
+#
+  x = rep(1,np)#
+  xx = x#
+  tt = t#
+#
+  for (n in 1:niter){#
+    res = 1#
+    t = t + tao#
+    for (k in 1:n){#
+    res = res + (-1)^k *(t - (k-1)*tao)^k / factorial(k)#
+  }#
+  xx = c(xx, res)#
+  tt = c(tt,t)#
+  print(tt)#
+  res = list(xx, tt)#
+}
+q
+suma <- function(x=1, y=2){#
+	res=x + y#
+}
+suma()
+w=suma()
+w
+w=suma(4,5)
+w
+print('GenSolTeorica')#
+  np = 100#
+  t = seq(-1*tao, 0, length.out = np)#
+  print(t)#
+#
+  x = rep(1,np)#
+  xx = x#
+  tt = t
+tao=1.5
+print('GenSolTeorica')#
+  np = 100#
+  t = seq(-1*tao, 0, length.out = np)#
+  print(t)#
+#
+  x = rep(1,np)#
+  xx = x#
+  tt = t
+tt
+for (n in 1:niter){#
+    res = 1#
+    t = t + tao#
+    for (k in 1:n){#
+    res = res + (-1)^k *(t - (k-1)*tao)^k / factorial(k)#
+  }
+res
+print('GenSolTeorica')#
+  np = 100#
+  t = seq(-1*tao, 0, length.out = np)#
+  print(t)#
+#
+  x = rep(1,np)#
+  xx = x#
+  tt = t
+tt
+for (n in 1:niter){#
+    res = 1#
+    t = t + tao#
+    for (k in 1:n){#
+    res = res + (-1)^k *(t - (k-1)*tao)^k / factorial(k)#
+  }
