@@ -12,7 +12,11 @@ by
 
 .. math::
 
+<<<<<<< HEAD
    x(t) = 1 \hspace{5mm}  \text{ for } \hspace{5mm} t ∈ [−τ,] 0 \hsca{ec2}m]. (2.2)
+=======
+   x(t) = 1 \hspace{5mm}  \text{ for } \hspace{5mm} t ∈ [−τ,0] \hspace{2cm} (2.2)
+>>>>>>> 198dac79c231589132293eccd286b6f8ce2fe2f6
 
 Following the procedure called the method of steps described in [5, p.13-14], the
 solution x(t) for t ∈ [(n−1)τ, nτ ], n ∈ N, can be determined in the following way.
@@ -39,18 +43,17 @@ Therefore,
 
 .. math::
 
-
    x(t) = x(τ) + \int_{\tau}^t −[1 − (s − τ )] ds
 
-   = 1 − τ[ [+ -s + \frac{1}{2}(s - τ)^2|_{s=\tau}^{s = t}
+   = 1 − τ + [-s + \frac{1}{2}(s - τ)^2]_{s=\tau}^{s = t}
 
-   = 1 − t+  \frac{1}{2 (tt \tau )^2\hspace{5cm}, t ∈ [τ, 2τ  \hspace{2cm} ]. (2.4)
+   = 1 − t + \frac{1}{2} (t - \tau )^2 \hspace{5mm}, t ∈ [τ, 2τ]  \hspace{2cm}  (2.4)
 
 By induction, it can be proven that
 
 .. math::
 
-   x(t) = 1 + \sum_{k=1}^n (-1)^k \frac{[t- (k - 1)\tau]^k}{k!}, t ∈ [(n − 1)τ, nτ ], n ∈ .5)N. (2
+   x(t) = 1 + \sum_{k=1}^n (-1)^k \frac{[t- (k - 1)\tau]^k}{k!},\hspace{5mm} t ∈ [(n − 1)τ, nτ ], n ∈ N. (2.5)
 
 The solution x(t) is unique. This will be proven in the next section.
 
