@@ -25,3 +25,5 @@ Contents
    EcuDif_Relay/EcuDif_Relay
    EcuDif_Relay/teoria
    Temarios/BIOSTATISTICS-Daniel
+   Temarios/An_Introduction_to_Generalized_Linear_Models_4E_Annette
+
