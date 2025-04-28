@@ -16,12 +16,6 @@ BIOSTATISTICS_Daniel
    c09
    c10
 
-
-
-
-
-
-
 **CHAPTER 1. INTRODUCTION TO BIOSTATISTICS**
 
 

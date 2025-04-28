@@ -39,3 +39,10 @@ Contents
     Temarios/BIOSTATISTICS-Daniel
     Temarios/An_Introduction_to_Generalized_Linear_Models_4E_Annette
     Andy/c01
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Introducción a la Estadística con R
+
+    BIOSTATISTICS_Daniel/libro
+
