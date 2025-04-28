@@ -3,12 +3,49 @@ C04. Distribuciones de Probabilidad
 
 Las distribuciones de probabilidad
 
+**Algunos Ejemplos**
+
+La función de Densidad Normal, con media (:mat:`\mean=0`) y desvicación estandar (:math:`\sigma=1`)
+
 .. code:: R
 
    t <- seq(-3,3,.1)
    d <- dnorm(t)
 
-   plot(t, d)
+   plot(t, d, type='l')
+
+
+La función de Densidad Acumulda de la Normal, con media (:mat:`\mean=0`) y desvicación estandar 
+(:math:`\sigma=1`)
+
+.. code:: R
+
+   t <- seq(-3,3,.1)
+   p <- pnorm(t)
+
+   plot(t, p, type='l')
+
+La función Inversa de Densidad Acumulda de la Normal, con media (:mat:`\mean=0`) y desvicación estandar
+(:math:`\sigma=1`)
+
+.. code:: R
+
+   p <- seq(-1,1,.01)
+   q <- qnorm(t)
+
+   plot(p, q, type='l')
+
+La función de numéros aleatorios de la Normal, con media (:mat:`\mean=0`) y 
+desvicación estandar (:math:`\sigma=1`)
+   
+.. code:: R
+
+   r <- rnorm(100)  
+
+   plot(r)
+
+
+
 
 
 
