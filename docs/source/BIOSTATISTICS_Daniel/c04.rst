@@ -59,6 +59,17 @@ La función de Densidad con 10 grados de libertad, con media (:math:`\mu=0`) y d
    plot(t, d, type='l')
 
 
+Distribución :math:`\chi^2` 
+--------------------------
+
+La funcion de Densidad con 10 grados de libertad.
+
+.. code:: R
+   
+   t <- seq(0,5,.1)
+   d <- dchisq(t, 10)
+
+   plot(t, d, type='l') 
 
 
 
