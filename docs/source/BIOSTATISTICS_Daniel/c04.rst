@@ -5,7 +5,7 @@ Las distribuciones de probabilidad
 
 **Algunos Ejemplos**
 
-La función de Densidad Normal, con media (:mat:`\mean=0`) y desvicación estandar (:math:`\sigma=1`)
+La función de Densidad Normal, con media (:math:`\mean=0`) y desvicación estandar (:math:`\sigma=1`)
 
 .. code:: R
 
@@ -15,7 +15,7 @@ La función de Densidad Normal, con media (:mat:`\mean=0`) y desvicación estand
    plot(t, d, type='l')
 
 
-La función de Densidad Acumulda de la Normal, con media (:mat:`\mean=0`) y desvicación estandar 
+La función de Densidad Acumulda de la Normal, con media (:math:`\mean=0`) y desvicación estandar 
 (:math:`\sigma=1`)
 
 .. code:: R
@@ -25,7 +25,7 @@ La función de Densidad Acumulda de la Normal, con media (:mat:`\mean=0`) y desv
 
    plot(t, p, type='l')
 
-La función Inversa de Densidad Acumulda de la Normal, con media (:mat:`\mean=0`) y desvicación estandar
+La función Inversa de Densidad Acumulda de la Normal, con media (:math:`\mean=0`) y desvicación estandar
 (:math:`\sigma=1`)
 
 .. code:: R
@@ -35,7 +35,7 @@ La función Inversa de Densidad Acumulda de la Normal, con media (:mat:`\mean=0`
 
    plot(p, q, type='l')
 
-La función de numéros aleatorios de la Normal, con media (:mat:`\mean=0`) y 
+La función de numéros aleatorios de la Normal, con media (:math:`\mean=0`) y 
 desvicación estandar (:math:`\sigma=1`)
    
 .. code:: R
