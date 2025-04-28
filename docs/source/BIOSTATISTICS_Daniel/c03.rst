@@ -1,6 +1,13 @@
 C03. Conceptos Básicos de Probabilidad
+======================================
 
+3.1 Introducción
 
-La probabilidad
+3.2 Dos vistas de probabilidad: Objetiva y Subjetiva
 
+3.3 Propiedades elementales de Probabilidad
+
+3.4 Calculando la Probabilidad de un  Evento
+
+3.5 Teorema de Bayes
 
