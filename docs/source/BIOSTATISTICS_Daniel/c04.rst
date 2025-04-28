@@ -31,7 +31,7 @@ La función Inversa de Densidad Acumulda de la Normal, con media (:math:`\mean=0
 .. code:: R
 
    p <- seq(-1,1,.01)
-   q <- qnorm(t)
+   q <- qnorm(p)
 
    plot(p, q, type='l')
 
