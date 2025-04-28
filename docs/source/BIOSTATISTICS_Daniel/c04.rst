@@ -6,7 +6,7 @@ Las distribuciones de probabilidad
 Distribución Normal
 -------------------
 
-La función de Densidad Normal, con media (:math:`\mean=0`) y desvicación estandar (:math:`\sigma=1`)
+La función de Densidad Normal, con media (:math:`\mu=0`) y desvicación estandar (:math:`\sigma=1`)
 
 .. code:: R
 
@@ -16,7 +16,7 @@ La función de Densidad Normal, con media (:math:`\mean=0`) y desvicación estan
    plot(t, d, type='l')
 
 
-La función de Densidad Acumulda de la Normal, con media (:math:`\mean=0`) y desvicación estandar 
+La función de Densidad Acumulda de la Normal, con media (:math:`\mu=0`) y desvicación estandar 
 (:math:`\sigma=1`)
 
 .. code:: R
@@ -26,7 +26,7 @@ La función de Densidad Acumulda de la Normal, con media (:math:`\mean=0`) y des
 
    plot(t, p, type='l')
 
-La función Inversa de Densidad Acumulda de la Normal, con media (:math:`\mean=0`) y desvicación estandar
+La función Inversa de Densidad Acumulda de la Normal, con media (:math:`\mu=0`) y desvicación estandar
 (:math:`\sigma=1`)
 
 .. code:: R
@@ -36,7 +36,7 @@ La función Inversa de Densidad Acumulda de la Normal, con media (:math:`\mean=0
 
    plot(p, q, type='l')
 
-La función de numéros aleatorios de la Normal, con media (:math:`\mean=0`) y 
+La función de numéros aleatorios de la Normal, con media (:math:`\mu=0`) y 
 desvicación estandar (:math:`\sigma=1`)
    
 .. code:: R
@@ -48,7 +48,7 @@ desvicación estandar (:math:`\sigma=1`)
 Distribución t de Student
 --------------------------
 
-La función de Densidad con 10 grados de libertad, con media (:math:`\mean=0`) y desvicación estandar 
+La función de Densidad con 10 grados de libertad, con media (:math:`\mu=0`) y desvicación estandar 
 (:math:`\sigma=1`)
 
 .. code:: R
