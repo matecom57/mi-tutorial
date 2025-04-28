@@ -15,6 +15,7 @@ Introducción a la Estadísticao
    c08
    c09
    c10
+   regresion_lineal
 
 **CHAPTER 1. INTRODUCTION TO BIOSTATISTICS**
 
