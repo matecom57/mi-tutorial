@@ -29,7 +29,7 @@ Contents
     :maxdepth: 1
     :caption: Ecuaciones diferenciales con Retardo
 
-    EcuDif_Relay/teoria
+    EcuDif_Relay/Introduccion_EcuDif_Relay
 
 
 .. toctree::
