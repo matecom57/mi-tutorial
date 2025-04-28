@@ -3,5 +3,13 @@ C04. Distribuciones de Probabilidad
 
 Las distribuciones de probabilidad
 
+.. code:: R
+
+   t <- seq(-3,3,.1)
+   d <- dnorm(t)
+
+   plot(t, d)
+
+
 
 
