@@ -17,13 +17,25 @@ Contents
 --------
 
 .. toctree::
+    :maxdepth: 1
+    :caption: FreeSurfer
 
-   usage
-   Resonadores_Bruker
-   api
-   cute
-   EcuDif_Relay/EcuDif_Relay
-   EcuDif_Relay/teoria
-   Temarios/BIOSTATISTICS-Daniel
-   Temarios/An_Introduction_to_Generalized_Linear_Models_4E_Annette
-   Andy/c01
+    usage
+    Resonadores_Bruker
+    api
+    cute
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Ecuaciones diferenciales con Retardo
+
+    EcuDif_Relay/teoria
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: FreeSurfer
+
+    Temarios/BIOSTATISTICS-Daniel
+    Temarios/An_Introduction_to_Generalized_Linear_Models_4E_Annette
+    Andy/c01
