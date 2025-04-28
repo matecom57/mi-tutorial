@@ -1,4 +1,4 @@
-BIOSTATISTICS_Daniel
+Introducción a la Estadísticao
 ====================
 
 .. toctree::
