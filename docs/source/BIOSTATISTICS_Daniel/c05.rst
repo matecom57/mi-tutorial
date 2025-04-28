@@ -3,4 +3,9 @@ C05. Alguna Distribuciones de Muestreo
 
 Las distribuciones de mues
 
+.. code:: R
+
+   Poblacion <- round(rnorm(100, mean=55, sd=5)
+
+   shapiro.test(Poblacion)
 
