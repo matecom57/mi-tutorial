@@ -27,7 +27,7 @@ Las distribuciones de mues
 
 .. code:: R
      
-   Poblacion <- round(runif(1000, min=45, max=65)
+   Poblacion <- round(runif(1000, min=45, max=65))
     
    shapiro.test(Poblacion)
    
