@@ -72,4 +72,14 @@ La funcion de Densidad con 10 grados de libertad.
    plot(t, d, type='l') 
 
 
+Distribución F 
+--------------
 
+La funcion de Densidad con 5 y 10 grados de libertad respectivamente.
+
+.. code:: R
+
+   t <- seq(0,5,.1)
+   d <- df(t, 5, 10)
+
+   plot(t, d, type='l')
