@@ -5,7 +5,19 @@ Las distribuciones de mues
 
 .. code:: R
 
-   Poblacion <- round(rnorm(100, mean=55, sd=5))
+   Poblacion <- round(rnorm(1000, mean=55, sd=5))
 
    shapiro.test(Poblacion)
 
+   hist(Poblacion)
+
+   muestras=()
+
+   for (i in 1:20){
+     ss <- sample(Poblacion, 12, replace=F)
+     muestras <- c(muestras, mean(ss))
+   }
+
+   shapiro.test(Poblacion)
+
+   hist(muestras) 
