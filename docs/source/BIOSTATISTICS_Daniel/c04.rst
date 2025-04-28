@@ -3,7 +3,8 @@ C04. Distribuciones de Probabilidad
 
 Las distribuciones de probabilidad
 
-**Algunos Ejemplos**
+Distribución Normal
+-------------------
 
 La función de Densidad Normal, con media (:math:`\mean=0`) y desvicación estandar (:math:`\sigma=1`)
 
@@ -44,7 +45,18 @@ desvicación estandar (:math:`\sigma=1`)
 
    plot(r)
 
+Distribución t de Student
+--------------------------
 
+La función de Densidad con 10 grados de libertad, con media (:math:`\mean=0`) y desvicación estandar 
+(:math:`\sigma=1`)
+
+.. code:: R
+
+   t <- seq(-5,5,.1)
+   d <- dt(t, 10)
+
+   plot(t, d, type='l')
 
 
 
