@@ -18,6 +18,6 @@ Las distribuciones de mues
      muestras <- c(muestras, mean(ss))
    }
 
-   shapiro.test(Poblacion)
+   shapiro.test(muestras)
 
    hist(muestras) 
