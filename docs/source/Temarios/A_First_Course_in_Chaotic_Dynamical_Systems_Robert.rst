@@ -1,3 +1,6 @@
+A_First_Course_in_Chaotic_Dynamical_Systems_Robert
+==================================================
+
 * 1 A Visual and Historical Tour
 * 1.1 Images from Dynamical Systems        
 * 1.2 A Brief History of Dynamics         1
