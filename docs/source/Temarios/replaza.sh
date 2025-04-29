@@ -4,7 +4,7 @@ file=$1
 
 echo ${file}
 
-#sed -i 's/\.\.//g' ${file}
+sed -i 's/\.\.//g' ${file}
 
 sed -i 's/\. \.//g' ${file}
 
