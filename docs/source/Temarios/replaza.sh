@@ -6,6 +6,7 @@ echo ${file}
 
 #sed -i 's/\.\.//g' ${file}
 
-sed -i 's/Sysadmit/SYSADMIT/g' "${file}"
+sed -i 's/\. \.//g' ${file}
+
 
 
