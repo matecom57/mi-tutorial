@@ -1,10 +1,10 @@
-* CHAOS_An_Introduction_to_Dynamical_Systems_kathleen
-* ===================================================
-* 
+CHAOS_An_Introduction_to_Dynamical_Systems_kathleen
+===================================================
+ 
 * INTRODUCTIONv
-* 
+ 
 * 1. ONE-DIMENSIONAL MAPS1
-* 
+ 
 * 1.1 One-Dimensional Maps
 * 1.2 Cobweb Plot: Graphical Representation of an Orbit
 * 1.3 Stability of Fixed Points
@@ -16,7 +16,7 @@
 * CHALLENGE 1: PERIOD THREE IMPLIES CHAOS
 * EXERCISES
 * LAB VISIT 1: BOOM, BUST, AND CHAOS IN THE BEETLE CENSUS
-* 
+ 
 * 2. TWO-DIMENSIONAL MAPS
 * 2.1 Mathematical Models
 * 2.2 Sinks, Sources, and Saddles
