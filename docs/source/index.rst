@@ -34,11 +34,9 @@ Contents
 
 .. toctree::
     :maxdepth: 1
-    :caption: FreeSurfer
+    :caption: Temarios
 
-    Temarios/BIOSTATISTICS-Daniel
-    Temarios/An_Introduction_to_Generalized_Linear_Models_4E_Annette
-    Andy/c01
+    Temarios/temarios
 
 .. toctree::
     :maxdepth: 1
