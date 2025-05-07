@@ -49,4 +49,5 @@ Contents
     :caption: IN
 
     IN/Intro_Python
+    IN/Intro_R
 
