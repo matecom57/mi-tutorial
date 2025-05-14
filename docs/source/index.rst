@@ -57,3 +57,8 @@ Contents
 
     Andy/mrtrix/mrtrix01.rst
 
+. toctree::
+    :maxdepth: 1
+    :caption: electronic_principles_james
+    
+    electronic_principles_james/electronic_principles_james
