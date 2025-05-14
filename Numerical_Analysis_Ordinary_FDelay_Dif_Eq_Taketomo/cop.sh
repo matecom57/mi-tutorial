@@ -2,6 +2,6 @@
 
 rm Rplots.pdf
 
-Rscript fig_1_6.R
+Rscript $1.R
 
 open Rplots.pdf 
