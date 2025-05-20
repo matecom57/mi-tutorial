@@ -14,4 +14,4 @@ Contenido
     chisq_test
     cor_test
     cor.rst
-
+    stats_R/stats_r.rst
