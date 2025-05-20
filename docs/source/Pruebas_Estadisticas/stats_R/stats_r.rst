@@ -10,6 +10,8 @@ Contenido
 
     oneway_test
     t_test
+    shapiro_test
+
 
 Box.test                Box-Pierce and Ljung-Box Tests
 
