@@ -8,6 +8,7 @@ Contenido
     :maxdepth: 1
     :caption: Algunas Pruebas Estadísticas
 
+    oneway_test
     t_test
 
 Box.test                Box-Pierce and Ljung-Box Tests
