@@ -52,11 +52,11 @@ Se utiliza para comparar más de dos muestras relacionadas cuando los datos no s
 
 **Ventajas de las pruebas no paramétricas:**
 
-- Mayor flexibilidad: Pueden utilizarse en una amplia variedad de situaciones y tipos de datos. 
+- **Mayor flexibilidad:** Pueden utilizarse en una amplia variedad de situaciones y tipos de datos. 
 
-- Robustas: Son menos sensibles a la violación de los supuestos que las pruebas paramétricas. 
+- **Robustas:** Son menos sensibles a la violación de los supuestos que las pruebas paramétricas. 
 
-- Análisis de datos no numéricos: Permiten analizar datos cualitativos, que son comunes en investigación social y en otras áreas. 
+- **Análisis de datos no numéricos:** Permiten analizar datos cualitativos, que son comunes en investigación social y en otras áreas. 
 
 **Desventajas de las pruebas no paramétricas:**
 
