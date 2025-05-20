@@ -57,14 +57,14 @@ Contents
 
     Andy/mrtrix/mrtrix01.rst
 
-. toctree::
+.. toctree::
     :maxdepth: 1
     :caption: electronic_principles_james
     
     electronic_principles_james/electronic_principles_james
 
 
-. toctree::
+.. toctree::
     :maxdepth: 1
     :caption: Estadistica
 
