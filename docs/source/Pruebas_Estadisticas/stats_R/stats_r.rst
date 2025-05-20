@@ -12,6 +12,8 @@ Contenido
     binom_test
     chisq_test
     cor_test
+    fisher_test
+    fligner_test
 
     oneway_test
     t_test
