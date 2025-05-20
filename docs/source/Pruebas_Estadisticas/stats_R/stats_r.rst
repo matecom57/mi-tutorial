@@ -9,6 +9,10 @@ Contenido
     :caption: Algunas Pruebas Estadísticas
 
     bartlett_test
+    binom_test
+    chisq_test
+    cor_test
+
     oneway_test
     t_test
     shapiro_test
