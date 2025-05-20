@@ -20,8 +20,7 @@ Contenido
     pairwise_prop_test
     pairwise_t_test
     pairwise_wilcox_test
-
-
+    poisson_test
     t_test
     shapiro_test
     wilcox_test
