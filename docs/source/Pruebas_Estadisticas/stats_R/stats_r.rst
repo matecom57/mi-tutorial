@@ -8,9 +8,12 @@ Contenido
     :maxdepth: 1
     :caption: Algunas Pruebas Estadísticas
 
+    bartlett_test
     oneway_test
     t_test
     shapiro_test
+    wilcox_test
+    multiple_testing_corrections
 
 
 Box.test                Box-Pierce and Ljung-Box Tests
