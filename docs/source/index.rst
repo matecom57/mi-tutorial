@@ -62,3 +62,11 @@ Contents
     :caption: electronic_principles_james
     
     electronic_principles_james/electronic_principles_james
+
+
+. toctree::
+    :maxdepth: 1
+    :caption: Estadistica
+
+    Pruebas_Estadisticas/pruebas_estadisticas
+
