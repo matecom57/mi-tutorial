@@ -2,11 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def Crea_vector_frecuencias(DD=''):
-  '''
-  crea una grafica de barras a partir de un string, cada barra es la longitud 
-  de cada palabra del string
-  '''
-
   datos = DD.split(' ')
   datos = set(datos)
   datos = list(datos)
@@ -25,10 +20,6 @@ def Crea_vector_frecuencias(DD=''):
 
 
 def DespliegaMayores(DD='', num=0):
-  '''
-  saca todas las palabras unicas de un string cuya longitud es mayor que num
-  '''
-
   datos = DD.split(' ')
   datos = set(datos)
   datos = list(datos)
@@ -43,12 +34,8 @@ def DespliegaMayores(DD='', num=0):
       res.append(ss)
   return res
 
-def Buscar(DD=''):
-  '''
-  buscar patron recursivamente en un string
-  '''
+def Buscar(DD='', patron=''):
   global Resto
-  patron = '](./'
   i = DD.find(patron)
   if i > 0:
     i2 = DD.find(')',i)
@@ -62,12 +49,9 @@ def Buscar(DD=''):
     print(DD[i1:i2+1])
     Resto = Resto + DD[:i1]
     filg.write(DD[i1:i2+1]+'\n')
-    Buscar(DD[i2+2:])
+    Buscar(DD[i2+2:],'](./')
 
 def BuscarHTTP(DD=''):
-  '''
-  buscar http
-  '''
   global Resto
   i = DD.find('](http')
   if i > 0:
@@ -86,16 +70,19 @@ def BuscarHTTP(DD=''):
 
 
 file = 'sal.txt'
+
 fil = open(file, 'r')
+
 datos = fil.read()
+
 datos = datos.replace('\n', ' ')
+
 Ndatos = len(datos)
 
 filg = open('corchetes_paren.txt', 'w')
 Resto = ''
-Buscar(datos)
+Buscar(datos, '](./')
 filg.close()
-#-------------------------------------------------
 
 datos = Resto
 filh = open('html.txt', 'w')
@@ -103,13 +90,10 @@ Resto = ''
 BuscarHTTP(datos)
 filh.close()
 
-#--------------------------------------------------
-
 #print(Resto)
 
 #Crea_vector_frecuencias(Resto)
-'''
+
 res = DespliegaMayores(Resto, 22)
 
 print(res)
-'''
