@@ -1,0 +1,62 @@
+https://test.org.stsewd.dev/es/readthedocs-docs-build-commands/_sources/tutorial/index.rst.txt
+
+>> Read the Docs tutorial
+
+:doc:`official Sphinx tutorial <sphinx:tutorial/index>`
+
+`register for a free account <https://github.com/signup>`_ 
+
+>> Getting started
+---------------
+
+>> Preparing your project on GitHub
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`sign in to GitHub <https://github.com/login>`_
+
+:guilabel:`Use this template`
+
+``README.rst``
+
+>> Sign up for Read the Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: /_static/images/tutorial/github-authorization.png
+   :width: 60%
+   :align: center
+   :alt: GitHub authorization page
+
+
+.. note::
+
+   Read the Docs needs elevated permissions to perform certain operations
+   that ensure that the workflow is as smooth as possible,
+   like installing webhooks.
+   If you want to learn more,
+   check out :ref:`connected-accounts:permissions for connected accounts`.
+
+First steps
+-----------
+
+Importing the project to Read the Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Checking the first build
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+:term:`project home`
+
+Basic configuration changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:term:`project page`
+
+:guilabel:`⚙ Admin`
+
+Trigger a build from a pull request
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:doc:`trigger builds from GitHub pull requests </pull-requests>`
+
+
+
