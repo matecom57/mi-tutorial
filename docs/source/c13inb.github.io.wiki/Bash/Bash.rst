@@ -1,3 +1,6 @@
+Bash
+====
+
 Bash es un intérprete de comandos que viene por defecto en los sistemas **Linux y Mac**.  Este programa interpreta órdenes que el sistema operativo llevará a cabo. Permite un control de las tareas comunes del sistema y es de gran utilidad para la automatización de tareas.  Sin embargo, dado que el **shell bash** requiere el manejo fluido comandos, la curva de aprendizaje suele ser lenta.
 
 
@@ -12,9 +15,11 @@ El 95% de todos los comandos, trucos y piruetas que **se recomienda que todo int
 
 
 ## bash - Avanzado ##
+
 Una vez aprendidos los comandos básicos puede consultar la sección de bash [avanzado :doc:`Bash-Avanzado` , la cual contiene comandos que te  permitirán realizar muchas más acciones en la terminal.
  `The Unix Workbench <https://seankross.com/the-unix-workbench/command-line-basics.html>`_  `aqui <https://open.win.ox.ac.uk/pages/fslcourse/lectures/scripting/all.htm>`_  `aqui <https://superuser.com/questions/125728/what-is-the-difference-between-bash-and-sh.>`_ . Y por acá hay otro excelente tutorial: https://command-line-tutorial.readthedocs.io/
 
 
 ## bash - Avanzado ##
+
 Una vez aprendidos los comandos básicos puede consultar la sección de bash [avanzado :doc:`Bash-Avanzado` , la cual contiene comandos que te  permitirán realizar muchas más acciones en la terminal.
