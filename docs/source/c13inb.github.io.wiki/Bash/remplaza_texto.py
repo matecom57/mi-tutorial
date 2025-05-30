@@ -40,7 +40,7 @@ def busa_remplaza_diagonal(ss=''):
     texto2 = ReplazoVocales(texto2)
     return ss[:i1] + ':doc:' + '`' + texto2 + '`' + busa_remplaza_diagonal(ss[i2+1:])
   else:   
-    return ss
+    return ss + '\n'
 
   
 
@@ -74,7 +74,7 @@ def busa_remplaza_http(ss=''):
     texto2 = ReplazoVocales(texto2)
     return  ss[:i1] + ' `' + texto1 + ' <' + texto2 + '>`_ ' + busa_remplaza_http(ss[i2+1:])
   else:
-    return ss
+    return ss + '\n'
 
 def busa_remplaza_http_Todas(ss=''):
   global SS
@@ -120,7 +120,10 @@ SS = ''
 
 busa_remplaza_diagonal_Todas(datos)
 
+#print(SS)
+
 datos = SS
+
 
 SS= ''
 
