@@ -1,0 +1,903 @@
+## Operaciones ariméticas con variables de coma flotante ##
+
+awk "BEGIN {print $ul_mean+(2*$ul_st); exit}"
+
+uthr=$(awk "BEGIN {print $ul_mean+(2*$ul_st); exit}")
+
+
+awk '{ $1 = $2 + $3 / $4; print }' inventory-shipped
+
+The arithmetic operators in awk are:
+
+x + y
+    Addition. 
+
+x - y
+    Subtraction. 
+
+- x
+    Negation. 
+
++ x
+    Unary plus. No real effect on the expression. 
+
+x * y
+    Multiplication. 
+
+x / y
+    Division. Since all numbers in awk are double-precision floating point, the result is not rounded to an integer: 3 / 4 has the value 0.75. 
+
+x % y
+    Remainder. The quotient is rounded toward zero to an integer, multiplied by y and this result is subtracted from x. This operation is sometimes known as "trunc-mod." The following relation always holds:
+
+    b * int(a / b) + (a % b) == a
+
+    One possibly undesirable effect of this definition of remainder is that x % y is negative if x is negative. Thus,
+
+    -17 % 8 = -1
+
+    In other awk implementations, the signedness of the remainder may be machine dependent. 
+
+x ^ y
+
+x ** y
+    
+Exponentiation: x raised to the y power. 2 ^ 3 has the value 8. The character sequence `**' is equivalent to `^'. (The POSIX standard only specifies the use of `^' for exponentiation.) ## Selección de elementos, filas y columnas ##
+Supongamos que hay un archivo con la siguiente información dentro de un archivo de valores separados por comas llamado **datos.csv**. 
+
+Al utilizar el valor **$0** se imprimen todos los valores contenidos en el archivo.
+
+``` bash
+ $ awk -F "\"*,\"*" '{print $0}' datos.csv
+
+type,ID,WM.cm3,WM.%,GM.cm3,GM.%
+no_incl,job932,381.3076,34.6114,537.8429,48.8202
+no_incl,job933,599.6653,35.8897,798.9063,47.8141
+no_incl,job945,523.3554,42.194,610.4963,49.2194
+no_incl,job957,483.2968,35.1759,646.6898,47.0682
+```
+Si quisieras imprimir la 3ra columna completa se escribe de la siguiente manera, donde el $3 equivale a la tercera columna, $2 a la segunda, $1 a la primera, etc.:
+
+```bash 
+$ awk -F "\"*,\"*" '{print $3}' datos.csv
+
+WM.cm3
+381.3076
+599.6653
+523.3554
+483.2968
+```
+
+Con NR==# se puede escoger una fila en particular, en este caso escogemos la 3er fila:
+
+``` bash
+$ awk -F "\"*,\"*" 'NR==3' datos.csv
+
+no_incl,job933,599.6653,35.8897,798.9063,47.8141
+```
+
+Y utilizando una combinación de ambos se puede seleccionar un elemento en particular, aquí escogimos el elemento de  la 4a fila y 6a columna:
+``` bash
+$ awk 'NR==4 {print $6}' tmp.csv
+
+49.2194
+```
+
+Finalmente se pueden seleccionar multiples elementos de una fila o columnas. A continuación escogimos en el primer ejemplo la fila 3, columnas 2, 3 y 4.
+Y en el segundo ejemplo se escogieron de la fila 2 a la 4, columnas 2, 3 y 4.
+
+Ejemplo 1
+
+```bash
+$ awk -F "\"*,\"*" 'NR==3 {print $2,$3,$4}' datos.csv
+
+job933 599.6653 35.8897
+```
+Ejemplo 2
+``` bash
+$ awk -F "\"*,\"*" 'NR==2,NR==4 {print $2,$3,$4}' datos.csv
+
+job932 381.3076 34.6114
+job933 599.6653 35.8897
+job945 523.3554 42.194
+```
+### Nota ###
+Si tu archivo no es .csv y es .txt o es una variable dentro de un scrip no es necesario incluir la opción **-F "\"*,\"*"**, que solo se utiliza para indicar que los valores estan separados por comas. Entonces se escribiría:
+
+```bash
+awk 'NR==3 {print $2,$3,$4}' datos.txt
+```
+ o
+
+```bash
+awk 'NR==3 {print $2,$3,$4}' $datos
+```
+## AWK ##
+AWK es un lenguaje de programación diseñado para procesar datos basados en texto, ya sean ficheros o flujos de datos.
+
+## Estructura de awk ##
+**awk** bla bla bla bla bla pendiente
+
+blablablabla blablablabla
+
+
+``` bash
+ awk bla bla bla BEGIN END print
+```
+## Declarar variables de BASH dentro de awk ##
+awk -v d=INICIO '{print d " " $0}'
+
+## Redireccionar valores generados por awk ##
+Declarar las variables de BASH A awk
+
+
+**awk** bla bla bla bla bla pendiente
+
+``` bash
+Td=`fslstats_rois $t2m $labels $Tal_DER "-M -S -P 50 -m -s -V"`
+  Tdmean=$(awk '{print $1}' <<< "$Td")
+```
+## Agregar variables al PRINCIPIO o al FINALde una fila ##
+Al **final**
+``` bash
+awk -v d=$dir '{print d " " $0}' tmp_struct0.txt > tmp.txt 
+```
+Al **principio**
+```
+bash awk -v d=$dir '{print d $0 " "}' tmp_struct0.txt > tmp.txt
+```
+## Selección de elementos, filas y columnas ##
+[awk select](./Bash:-AWK-Selec) permite seleccionar elemento de un archivo con varias columnas y filas (.csv .txt etc) **awk** . Y puede ser una fila, una columna o varias, o un solo elemento.
+
+## Operaciones ariméticas con variables de coma flotante  ##
+Bash no puede realizar operaciones aritméticas con números con decimales, sin embargo, awk, si logra multiplicar, dividir, sumar y restar estos valores. Para esto revisar la entrada [awk arimet](./Bash:-AWK-Arimet).
+## [Permisos](./Bash:-Permisos) ##
+Los permisos de archivos determinan los usuarios que pueden interactuar con éstos. Quién puede modificar, borrar o mover los mismos.
+
+## [Comprimir](./Bash:-Comprimir) ##
+Este comando te sirve para disminuir el tamaño de los archivos que se manejan en el clúster se puede utilizar el formato __TAR__ comprimido por __gzip__.
+
+## [Variables](./Bash:-Variables) ##
+El manejo de variables es fundamental para la programación y bash scripting no es la excepción. Aquí te explico más.
+
+## [Bucles/Loops](./Bash:-Loops) ##
+Los comandos `for`, `while` y otros te permiten repetir una misma tarea tantas veces lo requieras y son altamente efectivas para automatizar procesos. En esta entrada hay ejemplos.
+
+## [Funciones](./Bash:-Funciones) ##
+
+## [Comando `sed`](./Bash:-sed) ##
+
+## [Comando `grep`](./Bash:-grep) ##
+El comando `grep` es una herramienta muy poderosas para búsqueda y otros procesos en linux.
+
+## [AWK Programming Language](./Bash:-AWK) ##  
+El lenguaje `awk` permite procesar datos de texto y numeros con decimales (de punto flotante). Aquí encontraras ejemplos prácticos para el procesamiento de imágenes con bash.
+
+## [Gestión de procesos](./Bash:-Gestión-de-procesos) ##
+Conocer los comandos de gestión de procesos y del sistema es importante para el buen uso del cluster.
+
+## [ssh - Security Shell](./SSh) ##
+El protocolo **ssh** permite realizar acceso remoto con una interacción a nivel de consola o mediante interfaces gráficas. 
+# Lista de comandos:
+
+## man = manual
+La gran mayoria de los comandos vienen con un manual de uso, para acceder a estos hay que utilizar `man` y despues escribir el nombre del comando que quieres aprender a usar:
+
+```
+man echo
+
+NAME
+       echo - display a line of text
+
+SYNOPSIS
+       echo [SHORT-OPTION]... [STRING]...
+       echo LONG-OPTION
+
+DESCRIPTION
+       Echo the STRING(s) to standard output.
+
+       -n     do not output the trailing newline
+
+       -e     enable interpretation of backslash escapes
+
+       -E     disable interpretation of backslash escapes (default)
+
+       --help display this help and exit
+
+       --version
+              output version information and exit     
+.
+.
+.
+.
+```
+
+## echo
+Imprime una frase o lo que sea que se escriba en la terminal:
+
+```
+echo Hello world!
+
+## Hello world!
+```
+
+## pwd = print working directory
+Si necesitas saber en que directorio estas tranajando, este comando lo que hace es que imprime tu actual directorio 
+```
+pwd
+
+## /home/inb/paulinav
+```
+
+## cd = change directory
+Este comando funciona para cambiar directorio. Cuando inicias sesión en tu computadora, lo más probable es que tu directorio sea el home y muy probable es que tengas que cambiar al directorio donde se encuentran tus datos. 
+
+Mi directorio actual es:
+```
+pwd
+## /home/inb/paulinav
+```
+Cambio de directorio a donde esten mis datos:
+```
+cd /misc/nyquist/paulinav/datos
+
+pwd
+
+## /misc/nyquist/paulinav/datos
+```
+
+Para regresar directorios:
+```
+cd ..
+
+## /misc/nyquist/paulinav
+
+cd ../..
+
+## /misc/nyquist
+
+cd ../../../
+
+## /misc
+```
+
+## ls = list
+Este comando va a enlistar los archivos que existen en tu actual directiorio. Supongamos que estamos en el home:
+
+```
+ls
+
+## Desktop
+## Documents
+## Downloads
+## Music
+## Videos
+```
+Pero tambien puedes utilizar `ls` para enlistar los archivos que existen en una ruta específica
+
+```
+ls /misc/nyquist/paulinav/miniconda
+
+## bin
+## compiler_compat
+## condabin
+## envs
+....ect
+```
+
+## mkdir = make directory
+Ahora podemos crear uno o multiples nuevos directorios/carpetas con este comando:
+
+```
+mkdir Mi_carpeta
+```
+o multiples:
+```
+mkdir carpeta1 carpeta2 carpeta3
+```
+
+## cp = copy
+Con este comando podemos hacer una copia de los archivos que queramos de un directorio a otro, por ejemplo:
+```
+cp /misc/nyquist/paulinav/archivo.txt /misc/rhesus/paulinav/datos
+```
+
+## mv = move
+este comando tiene dos funciones: mover el archivo de un lugar a otro o/y renombrar dicho archivo.
+Para mover mi archivo de un directorio a otro:
+```
+mv archivo.txt ~/Documentos
+```
+Para cambiarle el nombre:
+```
+mv archivo.txt nuevo_archivo.txt
+``` 
+## rm = remove
+Poderoso y peligroso. El comando `rm` es para eliminar archivos de forma **definitiva** ya que NO hay vuelta atrás una vez que lo ejecutas, así que aguas! Para usarlo solo necesitas darle el path del archivo:
+```
+rm archivo.txt
+```
+o 
+```
+rm /misc/nyquist/paulinav/archivo.txt
+```
+
+## cat = concatenate 
+Este comando es muy útil y tiene varias funciones, entre las más relevantes es leer/imprimir, crear y unir archivos .txt, .sh y más. 
+
+Para leer el contenido de un archivo .txt:
+```
+cat archivo.txt
+```
+Para concatenar dos archivos:
+```
+cat archivo1.txt archivo2.txt > nuevo_archivo.txt
+```
+Para crear un nuevo archivo:
+```
+cat > archivo.txt
+```
+
+## head
+Este comando imprime/lee las primeras líneas de un archivo y es muy util cuando estas explorando el contenido de ciertos archivos sin tener que ver todo el contenido usando `cat`.
+```
+head abecedario.txt
+
+## A
+## B
+## C
+## D
+
+```
+## tail
+Mientras que `tail` lee las últimas lineas de un archivo:
+```
+tail abecedario.txt
+
+## W
+## X
+## Y
+## Z
+```
+
+## tree
+este comando despliega a los directorios con su estructura e información. Da una representación visual de las carpetas y sus archivos de manera muy eficaz. Ya que por ejemplo, `ls` si bien es efectivo, solo enlista los archivos de un solo path, mientras que `tree` despliega todos los directorios y sub directorios dentro del path.
+```
+tree /home/paulinav
+
+# /home/paulinav
+# ├── Documents
+# │   ├── file1.txt
+# │   └── file2.txt
+# ├── Downloads
+# │   └── program1
+# └── Pictures
+#     └── image1.jpg
+```
+
+## * = wildcard
+Uno de mis favoritos es el super asterisco `*`, que es una manera altamente efectiva de filtrar, buscar y seleccionar archivos en un directorio. Aquí vamos a poner unos ejemplos.
+Suponiendo que tenemos una serie de archivos en nuestro directorio:
+```
+ls
+
+## img.png
+## img_hm.png
+## img_rat.png
+## img_b.png
+## script_rat.sh
+## script_hm.sh
+## script_img.sh
+## list_px.txt
+## list_task.txt
+## list_class.txt
+```
+Puedo seleccionar solamente todos aquellos con terminación `.sh`:
+```
+ls *.sh
+
+## script_rat.sh
+## script_hm.sh
+## script_img.sh
+```
+O filtrar aquellos archivos que son relacionados a roedores:
+```
+ls *rat*
+
+## img_rat.png
+## script_rat.sh
+```
+O seleccionar todos los archivos que empiecen con list:
+```
+ls list*
+
+## list_px.txt
+## list_task.txt
+## list_class.txt
+```
+
+## & = ampersand
+Este es un indicativo al final de un comando que permite que se ejecute en el background mientras te permite seguir trabajando o escribiendo en la terminal. Un ejemplo donde es increiblemente útil es al abrir imágenes, por ejemplo:
+```
+display imagen.png &
+```
+
+
+
+
+
+
+
+
+
+
+
+
+*[DICOM]: Digital Imaging and Communication in Medicine
+## Comprimir
+
+Comprimir los archivos [__DICOM__](http://es.wikipedia.org/wiki/DICOM), reduce dramaticamente el uso de espacio de disco, por lo que es una practica recomendable. Además depende de una instrucción sencilla.  
+
+Para comprimir un directorio se usa:
+
+    tar cvzf archivo.tar.gz /archivo/*
+
+Para extraer el contenido se utiliza:
+
+    tar xvzf archivo.tar.gz
+
+Para listar el contenido sin extraer:
+
+    tar tvzf archivo.tar.gz
+
+f
+: indica el nombre del archivo
+
+z
+: indica que va comprimir con gzip el archivo
+
+j
+: cuando se usa, indica el uzo de bzip que tiene una tasa mayor de compresión pero tarda mas y consume mas recursos
+
+v
+: permite ver los avisos del proceso 
+
+c
+: indica que se creara una archivo comprimido
+
+x
+: indica que se descomprime el archivo 
+
+t
+: genera un listado de los archivos que lo forman
+## top
+Muestra los procesos que se están ejecutando y permite matarlos.
+
+## htop
+
+**htop** es una versión más avanzada de **top**, la cual permite observar los procesos activos.
+
+El comando `htop` inicia esta interfaz en la cual nos desplazamos con las flechas arriba y abajo. El comando tiene más opciones de control. Sin embargo nos pueden interesar dos: F6 permite seleccionar el orden en el que se presentan los procesos, y F9 terminar los procesos.
+
+Son de especial interes el arreglo por __USER__, __CPU%__ y __MEM%__.
+
+## Matar procesos ##
+
+Bash tiene diversas formas para terminar comandos y procesos en ejecución, revise la entrada para [terminar un proceso](./Bash:-kill).
+
+##ps
+
+Muestra la lista de procesos del usuario.
+
+Este comando es útil en varias cuestiones, por ejemplo, nos puede mostrar los procesos en nuestro sistema, el estado del mismo, los datos sobre el tamaño de algún proceso, los usuarios a los que pertenecen algunos procesos, el tiempo del CPU, el tiempo del reloj y muchos más.
+
+Parámetros:
+
+     -a Muestra todos los procesos con un control, este comando no sólo muestra datos del usario actual.
+     -r Muestra sólo los procesos que están en ejecución
+     -x Muestra procesos, de los cuáles la terminal no tiene control.
+     -u Muestra los procesos del propio usuario (owner process)
+     -l Muestra los datos en formato de una lista larga
+     -w Muestra procesos de la línea de comandos.
+
+##free -h
+
+Muestra el estado de la memoria del CPU actual.
+
+## df
+
+Muestra el espacio libre de los discos/dispositivos. Legible a humanos (-h)
+
+      df -h
+
+## ping
+
+Indica si hay respuesta por parte del servidor
+
+      ping mansfield
+## ¿Cómo matar un proceso?
+
+En ocasiones ocurre que por alguna razón, los procesos en los que trabajamos,
+necesitan ser terminados:
+
+- Porque ocupan muchos recursos,
+- Porque se quedaron trabados,
+- Porque sus procesos _"padre"_ murieron pero ellos no
+- O porque no permiten la ejecución de otros programas.
+
+En cualquiera de los casos es importante saber cómo matar los procesos.
+
+### ps y kill
+
+La opción clásica para matar un proceso es usando dos comandos en la terminal.
+
+    ps -a
+
+Permite ver una lista de los procesos en ejecución que nos pertenecen.
+
+    ps -A
+
+Nos muestra una lista completa de todos los procesos activos.  En ambos casos
+se puede usar grep para buscar en la lista un programa en particular.
+
+    ps -A | grep programa
+
+Cuando lo utilizamos, nos muestra una salida como esta:
+
+    PID TTY          TIME CMD
+    1841 pts/9    00:00:00 dbus-launch
+    3622 tty2     00:00:00 bash
+    5411 pts/7    00:00:00 ps
+
+Dónde lo importante es el número __PID__, pues este número es el que
+utilizaremos en el comando _kill_.
+
+    kill 5411
+
+Si se necesita que el proceso acabe inmediatamente, se puede usar una
+prioridad __9__ que lo vuelve obligatorio.
+
+    kill -9 5411
+
+
+### htop
+
+Htop es una manera muy cómoda para terminar un proceso. Basta seleccionar el proceso y presionar __F9__, esta acción 
+contiene varias opciones, sin embargo, es suficiente con la opción por default. Al presionar enter el proceso termina.
+
+En cuaquier caso para salir de una selección se presiona __ESC__. Y para salir del programa se usa la tecla __q__.
+
+[[images/htop.gif]]
+
+### Interfaz gráfica
+
+Si se quiere hacer gráficamente, se abre la aplicación __system monitor__ o
+desde la consola `gnome-system-monitor` ahí en la pestaña de procesos se ubica
+el programa y al presionar el segundo botón sobre el proceso aparece la opción
+__kill process__. Un ejemplo:  
+
+[[images/killgrafico.gif]]  
+
+## Matar todo lo que puede morir (de tu sesión)
+
+En un caso extremo dónde se haya trabado todo y no veas nada incluída la interfaz gráfica, primero se debe de ingresar al **TTY** (terminales físicas sin entorno gráfico) por medio de las teclas **Crtl+Alt+F1-F6**, son seis las que se pueden seleccionar, de F1 a F6.
+
+Una vez ahí se debe dar login con tu **usuario** y **contraseña**.
+
+Entonces se escribe:
+
+    kill -9 -1
+
+Parecerá que se reinicia la sesión gráfica y tendrás que entrar de nuevo. Asegúrate de entrar nuevanebte al TTY y cerrar la sesión.
+## Iteración de comandos con `for` ##
+
+**for** es un comando poderoso que permite repetir un comando en varios archivos. La traducción de for sería:
+
+**Definiendo** <mi_variable> **como** <mis_archivos>; **se debe de** <usar_comando> <mi_variable>; terminado
+
+**for** var **in** *.*; **do** <comando> $var; done
+
+<mi_variable> puede ser cualquier letra que se quiera asignar
+
+
+En el siguiente ejemplo se imprimira en la pantalla todos los archivos dentro de una carpeta escribiendo antes la palabra "hola"
+``` bash
+for i in $( ls ); do echo hola: $i; done
+```
+  *  **i**: es mi variable que defino y comprende a todos los archivos que se mencionan en `$(ls )`    
+  * **echo hola:** es el comando que quiero repetir.
+
+
+``` bash
+hola archivo1.txt
+hola archivo1.txt
+hola archivo2.txt
+hola archivo3.txt
+hola archivo4.txt
+```
+
+Otro ejemplo de un uso de **for** es el siguiente para subir al cluster la  realización de una mascara binaria con *bet*  en todos los archivos **nii.gz** que comienzan con **t1_** y tienen 4 caracteres más.
+
+``` bash
+for x in $(ls t1_????.nii.gz); do fsl_sub -N $x bet $x $x -m -n -B -f 0.35; done
+```
+## Leer lineas de un archivo de texto con `while read` ##
+Si tengo un archivo de texto (txt) y quiero realizar una acción con cada linea puedo usar:
+``` bash
+while read linea; do
+echo $linea; 
+done < miTexto.txt
+```
+lo anterior imprimira el contenido de cada linea: 
+
+```bash
+3 GCC Genu of corpus callosum
+4 BCC Body of corpus callosum
+5 SCC Splenium of corpus callosum
+```
+## Crear condicionales con `break` y `continue` ##
+Si bien el `for` nos hace la vida más fácil al ejecutar una gran cantidad de tareas, puede tambien quedarse atorado en un loop "infinito", es asi que `break` resulta bastante útil. Aquí es una sintaxis de vainilla:
+
+```bash
+nombres=("Maria" "Luisa" "Carla" "Mariana" "Flor")
+
+for n in "${nombres[@]}"; do
+   echo "Nombre: $n"
+
+  if [ "$n" == "Mariana" ]; then
+      echo "Encontré a Mariana. Para aquí"
+      break
+
+  fi
+
+done
+
+## output
+Nombre: Maria
+Nombre: Luisa
+Nombre: Carla
+Nombre: Mariana
+Encontré a Mariana. Para aquí
+```
+Donde el script hará la iteraciones necesarias hasta llegar al nombre de Mariana (en este caso) y ahí es donde terminará el loop. 
+
+
+Ahora, si cambiamos el `break` por el `continue`, hará que las iteraciones sigan corriendo aunque haya encontrado la variable:
+```bash
+nombres=("Maria" "Luisa" "Carla" "Mariana" "Flor")
+
+for n in "${nombres[@]}"; do
+    echo "Nombre: $n"
+
+    if [ "$n" == "Mariana" ]; then
+        echo "Ignora que encontramos a Mariana"
+        continue
+    fi
+done
+
+## output
+Nombre: Maria
+Nombre: Luisa
+Nombre: Carla
+Nombre: Mariana
+Ignora que encontramos a Mariana
+Nombre: Flor
+```
+Vuelve a hacer la iteración, pero aun que haya encontrado a "Mariana", va a continuar el loop hasta que acabe todas las iteraciones. 
+
+
+
+
+
+
+## Ajuste de permisos para trabajos en el clúster
+
+Es muy importante entender el tema de los permisos ya que al estar trabajando en el clúster, si no tienes los permisos necesarios, esto puede limitar mucho tu trabajo. 
+
+### ¿Como saber que permisos tengo? 
+
+Al utilizar `ls -l` nosotros podemos ver los detalles de cada directorio y archivo, incluyendo los permisos:
+
+![image](https://github.com/c13inb/c13inb.github.io/assets/129544525/fdc38680-2baf-4acb-adcd-35ddafe2f937)
+
+En el recuadro rojo vemos los permisos donde:
+
+`a`: archive, osea que es un archivo nada más.
+
+`d`: directory, es un directorio.
+ 
+`r`: read permissions, quiere decir que tienes tu como usuario permisos de lectura en el archivo/directorio.
+
+`w`: write permissions, esto significa que como usuario puedes escribir, modificar o incluso elimiar el archivo/directorio.
+
+`x`: execute permissions, esto aplica para poder ejecutar scripts principalmente (más abajo explico como).
+
+
+Pero vemos que hay una separación con  `-` entre permisos, esto se refiere quien y quienes son los que tienen permisos aquí, es decir: 
+
+![image](https://github.com/c13inb/c13inb.github.io/assets/129544525/0375fb49-773c-4e68-8044-dbdbdd7a102e)
+
+* Rectangulo amarillo son tus permisos como usuario (paulinav) 
+* Rectangulo azul son los permisos del grupo (fmriuser)
+* Rojo son los permisos a "otros", osea todos aquellos que no sean tu como usuario o los que pertenecen al grupo fmriuser. 
+
+Entonces, en otras palabras: si tu como usuario tienes `rwx` quiere decir que tienes todos los permisos en dichos archivos/directorio.
+
+Ahora, en la siguiente imágen, el rectangulo amarillo te dice el nombre del usuario (paulinav) y el grupo al que perteneces (fmriuser)
+
+![image](https://github.com/c13inb/c13inb.github.io/assets/129544525/66fc01c1-6cfe-42c1-b77a-c2852a361918)
+
+## Modificar permisos con `chmod`
+Ahora que ya sabemos como leer los permisos, podemos utilizar el comando `chmod` que es el que nos ayudara a modificar/específicar los permisos a quienes nosotros queramos. 
+
+La sintaxis de `chmod` se basa en el "quién", "qué" y "cúal" dar los permisos:
+
+* Quién
+
+`u`: osea el dueño del archivo
+
+`g`: permisos a todos los miembros del grupo
+
+`o`: permisos al resto (otros)
+
+`a`: permisos a todos los de arriba
+
+* Qué
+
+`-`: remueve los permisos
+
+`+`: concede el permiso
+
+* Cúal
+
+`r`; permiso de lectura
+
+`w`: permiso de escritura
+
+`x`: permiso de ejecución
+
+Por ejemplo, si yo creo un nuevo script, no lo voy a poder ejecturar inmediatamente, necesitaré cambiar los permisos de tal manera que pueda ser ejecutado:
+```
+chmod a+x mi_script.sh
+```
+Donde estoy especificando que `mi_script.sh` pueda ser ejecutado (`x`) por cualquiera (`a`)
+
+---
+
+También puedes asignar el grupo ya sea fmriuser o bioinfo a una carpeta, subcarpetas y los archivos que contenga, se puede usar el comando:
+``` 
+chown -R usuario:grupo carpeta/
+```
+Y para permitir escritura y lectura al grupo usas:
+```
+chmod -R g+rwx carpeta/
+```
+Sin embargo, puede ocurrir que no se pueda cambiar el grupo si no somos los dueños de la carpeta en cuestión. Si es necesario ajustar el grupo y por alguna razón no funciona el comando, el administrador del equipo en cuestión puede realizar el cambio.
+
+
+
+   
+
+
+En el contexto de la programación, una variable funciona como un "contenedor" que almacena un valor que puede ir cambiando a lo largo del tiempo durante la ejecución de un programa. Cuando se declara una variable, este se reserva en un espacio en la memoria donde almacena su valor, normalmente tu como usuario decides que nombre le das a tu variable, el cual tiene que ser un nombre unico de preferencia, para que puedas hacer referencia a ella en el código. 
+Las variables tienen la ventaja de que pueden contener cualquier tipo de informacion, ya sea numérica, texto, directorios, etc.
+
+### Asignación de variables 
+
+En este primer ejemplo la variable contiene la frase Hola mundo, la cual puedes imprimirla en la terminal usando `echo`. Donde el signo `=` lo utilizo para **asignar** mi variable y el signo de `$` para mandarlo a llamar. 
+
+```bash
+> mi_variable = "Hola mundo"
+
+> echo $mi_variable 
+
+> Hola mundo
+```
+
+Hagamos otros ejemplos:
+
+```bash
+> export PATH=/misc/nyquist/paulinav
+
+> echo $PATH
+
+> /misc/nyquist/paulinav
+```
+
+```bash
+> edad = 30
+
+if [ $edad -ge 18 ]
+ then
+    categoria="Adulto"
+else
+    categoria="Menor"
+fi
+
+> categoria=Adulto
+```
+
+```bash
+> input=/misc/nyquist/usuario/mis_imagenes
+> output=/misc/carr2/usuario/analisis
+
+for f in ${input}
+   do
+      cp -r $f ${output}
+
+done
+
+```
+
+Existen mil maneras mas de utilizar las variables. Al final del día, las variables te facilitaran muchisimo el manejo de la terminal, y tambien brindarán estabilidad en tus scripts. 
+
+
+
+El comando `sed` (**s**tream **ed**itor) es una herramienta muy poderosa y elegante para la manipulación de texto. El comando te permite realizar operaciones de búsqueda, sustitución y manipulación de texto ya sea en archivos o basicamente de cualquier argumento de salida de otros comandos. Veamos un poco más.
+
+### Sintaxis basica
+
+```bash
+sed [OPCIONES] [SCRIPT] [ARCHIVO]
+```
+Hagamos un ejemplo:
+
+```bash
+> echo 
+"Pepe Pecas pica papas con un pico, 
+con un pico pica papas Pepe Pecas. 
+Si Pepe Pecas pica papas con un pico, 
+¿donde esta el pico con que Pepe Pecas pica papas?" 
+>> Pepe_Pecas.txt
+```
+De este texto voy a reemplazar todas las palabras "papas" por "manzana":
+
+```bash
+sed 's/papas/manzana/g' Pepe_Pecas.txt
+```
+```bash
+> cat Pepe_Pecas.txt
+
+"Pepe Pecas pica manzana con un pico, 
+con un pico pica manzana Pepe Pecas. 
+Si Pepe Pecas pica manzana con un pico, 
+¿donde esta el pico con que Pepe Pecas pica manzana?"
+```
+Tambien podemos contar cuantas veces se menciona a Pepe en el texto:
+```bash
+> sed 's/Pepe/Pepe\n/g' Pepe_Pecas.txt | grep -c "Pepe"
+> 4
+```
+
+O porque no agregar una linea al final del texto:
+```bash
+> sed '$a\Definitivamente Pepe perdio el Pico' Pepe_Pecas.txt
+
+> cat Pepe_Pecas.txt
+
+"Pepe Pecas pica papas con un pico, 
+con un pico pica papas Pepe Pecas. 
+Si Pepe Pecas pica papas con un pico, 
+¿donde esta el pico con que Pepe Pecas pica papas?
+Definitivamente Pepe perdio el Pico"
+```
+
+
+
+[Aquí](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux) te dejo un manual para más trucos con `sed`
+
+Bash es un intérprete de comandos que viene por defecto en los sistemas **Linux y Mac**.  Este programa interpreta órdenes que el sistema operativo llevará a cabo. Permite un control de las tareas comunes del sistema y es de gran utilidad para la automatización de tareas.  Sin embargo, dado que el **shell bash** requiere el manejo fluido comandos, la curva de aprendizaje suele ser lenta.
+
+
+Con la intención de facilitar su uso, aquí encontrarás una lista de comandos más comunes que te ayudarán con tu trabajo diario con bash. Si quieres aprender más, te recomiendo el capítulo [The Unix Workbench](https://seankross.com/the-unix-workbench/command-line-basics.html) donde viene a gran detalle e incluye ejercicios de práctica. 
+
+
+## bash - Comandos Básicos ##
+
+En la sección [Comandos Básicos](./Bash:-Comandos-Básicos) se encuntran una serie de comandos frequentemente utilizados en bash que permiten la interacción con el sistema.
+
+El 95% de todos los comandos, trucos y piruetas que **se recomienda que todo integrante del laboratorio sepa** están agradablemente compilados en un TUTORIAL de la gente que hace el fsl, el cual puede consultarse [aquí](https://open.win.ox.ac.uk/pages/fslcourse/lectures/scripting/all.htm). **NOTA**: En ese tutorial utilizan el lenguaje de shell llamado ''sh'', que está localizado en ''/bin/sh'', mientras que en el laboratorio habitualmente utilizamos ''bash'', que está en ''/bin/bash''. Los dos lenguajes hacen prácticamente lo mismo y tienen una sintaxis casi idéntica, con ligeras diferencias que pueden consultarse [aquí](https://superuser.com/questions/125728/what-is-the-difference-between-bash-and-sh.). Y por acá hay otro excelente tutorial: https://command-line-tutorial.readthedocs.io/
+
+
+## bash - Avanzado ##
+Una vez aprendidos los comandos básicos puede consultar la sección de bash [avanzado](./Bash:-Avanzado), la cual contiene comandos que te  permitirán realizar muchas más acciones en la terminal.
