@@ -42,21 +42,24 @@ x1 = c(2,0)
 f = x1[1] * rep(1,np)
 
 r = Resuelve(x1)
-rt = Resuelve_tao(x1,tao,f, del)
 
 print(names(r))
 
 plot(r$t, r$x[1,], type='l')
-points(t, rt$x[1,], type='l', col='red', lwd=3)
+
+tt = []
+xx = []
 
 for (i in 1:40){
+  rt = Resuelve_tao(x1,tao,f, del)
   xi = rt$x[,np]
   f = rt$x[1,]
-  rt = Resuelve_tao(xi,tao, f, del)
-  tt = i*tao + t
-  points(tt, rt$x[1,], type='l', col='red', lwd=3)
-
+  tt = c(tt, i*tao+t[2:np])
+  xx = c(xx, rt[1,])
 }
+
+points(tt, xx, type='l', col='red', lwd=3)
+
 
 
 
