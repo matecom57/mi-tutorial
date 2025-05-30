@@ -1,35 +1,63 @@
-Integral <- function(ff=0, tao=0){
-  del = .001
-  t = seq(0,tao, del)
-  np = length(t)
-  ss = dim(ff)
-  print(ss)
-  x1 = ff[,ss[2]]
+Resuelve_tao <- function(vali=c(0,0), tao=0, f=0, del){
+   x1 = vali
+   np = length(f)
+   epsi=1
+   xc = f
+   x = matrix(rep(0, 2*np), nrow=2)
 
-  x = matrix(rep(0, 2*np), nrow=2)
-
-  x[,1] = x1
-  e=1
-
-  for (i in 2:np){
-    f = ff[,i-1]
-    x2 = x1 + del * c(e*f[1]*(1-f[1]*f[1]/3)-x1[2], x1[1])
-    x[,i] = x2
-    x1 = x2
-  }
-  res = x
+   x[,1] = x1
+   for (i in 2:np){
+      x2 = x1 + del* c(epsi*xc[i-1] * (1 - xc[i-1]^2/3) - x1[2], x1[1])
+      x[,i] = x2
+      x1 = x2
+   }
+   res = list(t=t, x=x)
 }
 
-tao = .2
+Resuelve <- function(vali=c(0,0)){
+   x1 = vali
+   del = .001
+   epsi=1
+
+   t = seq(0,40,del)
+   np = length(t)
+   x = matrix(rep(0, 2*np), nrow=2)
+
+   x[,1] = x1
+   for (i in 2:np){
+      x2 = x1 + del* c(epsi*x1[1] * (1 - x1[1]^2/3) - x1[2], x1[1])
+      x[,i] = x2
+      x1 = x2
+   }
+   res = list(t=t, x=x)
+}
+
+tao = .6
 del = .001
-tt = seq(0,tao,del)
-np = length(t)
-ff = matrix(rep(c(2,0),np), nrow=2)
+np = round(tao/del)+1
+t = seq(0,tao, length.out=np)
+del = t[2] - t[1]
 
-for (i in 1:1000){
-  ff = Integral(ff, tao) 
+x1 = c(2,0)
+f = x1[1] * rep(1,np)
+
+r = Resuelve(x1)
+rt = Resuelve_tao(x1,tao,f, del)
+
+print(names(r))
+
+plot(r$t, r$x[1,], type='l')
+points(t, rt$x[1,], type='l', col='red', lwd=3)
+
+for (i in 1:40){
+  xi = rt$x[,np]
+  f = rt$x[1,]
+  rt = Resuelve_tao(xi,tao, f, del)
+  tt = i*tao + t
+  points(tt, rt$x[1,], type='l', col='red', lwd=3)
+
 }
 
-plot(ff[1,], type='l')
+
 
 
