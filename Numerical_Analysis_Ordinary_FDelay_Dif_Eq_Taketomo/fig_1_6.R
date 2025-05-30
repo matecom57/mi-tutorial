@@ -47,15 +47,15 @@ print(names(r))
 
 plot(r$t, r$x[1,], type='l')
 
-tt = []
-xx = []
+tt = c()
+xx = c()
 
 for (i in 1:40){
   rt = Resuelve_tao(x1,tao,f, del)
   xi = rt$x[,np]
   f = rt$x[1,]
-  tt = c(tt, i*tao+t[2:np])
-  xx = c(xx, rt[1,])
+  tt = c(tt, i*tao+t)
+  xx = c(xx, rt$x[1,])
 }
 
 points(tt, xx, type='l', col='red', lwd=3)
