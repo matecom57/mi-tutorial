@@ -17,4 +17,5 @@ utilizan el lenguaje de shell llamado ''sh'', que está localizado en ''/bin/sh'
 
 
 ## bash - Avanzado ##
+
 Una vez aprendidos los comandos básicos puede consultar la sección de bash [avanzado](./Bash:-Avanzado), la cual contiene comandos que te  permitirán realizar muchas más acciones en la terminal.

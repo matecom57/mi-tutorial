@@ -2,26 +2,17 @@ import sys
 import re
 
 def busca_gato(ss=''):
-  global SS
-  
-  ss = ss.split('\n')
   nl = len(ss)
 
-  for i in range(nl):
-    s1 = ss[i]
-    if len(s1) > 0:
-      if s1[0] == '#':
-        ls1 = len(s1)
-        j = 1
-        while j < ls1:
-          if s1[j] == '#':
-            j = j+1
-          else:
-            j1 = j+1
-            j = ls1+1
-            s1 = '\n\n' + s1[j1:] + '\n----------------------------------------\n\n'
-    SS = SS + s1  
-
+  i = 1
+  while i < nl:
+    if ss[i] == '#':
+      i = i+1
+    else:
+      i1 = i+1
+      i = nl
+  ss = ss[i1:] + '----------------------------------------\n'
+  return ss
 
 def busa_remplaza_diagonal(ss=''):
   i = ss.find('](./')
@@ -34,29 +25,16 @@ def busa_remplaza_diagonal(ss=''):
         ii = -1
       else:
         ii = ii-1  
+    print((i1,i2))
     texto1 = ss[i1+1:i]
     texto1 = ReplazoVocales(texto1)
     texto2 = ss[i+4:i2]
     texto2 = ReplazoVocales(texto2)
     return ss[:i1] + ':doc:' + '`' + texto2 + '`' + busa_remplaza_diagonal(ss[i2+1:])
   else:   
-    return ss + '\n'
+    return ss 
 
   
-
-def busa_remplaza_diagonal_Todas(ss=''):
-  global SS
-
-  ss = ss.split('\n')
-  nl = len(ss)   
-      
-  for i in range(nl):
-    s1 = ss[i]   
-    if len(s1) > 0:
-      SS = SS + busa_remplaza_diagonal(s1)
-    else:
-      SS = SS + '\n' + '\n'
-
 def busa_remplaza_http(ss=''):
   i = ss.find('](http')
   if i > 1:
@@ -76,19 +54,6 @@ def busa_remplaza_http(ss=''):
   else:
     return ss + '\n'
 
-def busa_remplaza_http_Todas(ss=''):
-  global SS
-          
-  ss = ss.split('\n')
-  nl = len(ss) 
-            
-  for i in range(nl):
-    s1 = ss[i]
-    if len(s1) > 0:
-      SS = SS + busa_remplaza_http(s1)
-    else:
-      SS = SS + '\n' + '\n'
-
 
 def ReplazoVocales(ss=''):
   ss = ss.replace('á', 'a')
@@ -102,40 +67,23 @@ def ReplazoVocales(ss=''):
 file = sys.argv[1]
 
 filin = open(file+'.md', 'r')
-datos = filin.read()
+datos = filin.readlines()
 filin.close()
-
 
 filon = open(file+'.rst', 'w')
 
-SS=''
+nl = len(datos)
 
-busca_gato(datos)
+for i in range(nl):
+   ss = datos[i]
+   if ss[0] == '#':
+      ss =busca_gato(ss)
+   elif '](./' in ss:
+      ss = busa_remplaza_diagonal(ss)
+   elif '](http' in ss:
+      ss = busa_remplaza_http(ss)
+   filon.write(ss)
 
-#print(SS)
-
-datos = SS
-
-SS = ''
-
-busa_remplaza_diagonal_Todas(datos)
-
-#print(SS)
-
-datos = SS
-
-
-SS= ''
-
-busa_remplaza_http_Todas(datos)
-
-
-print(SS)
-
-
-filon.write(SS)
 filon.close()
-
-
 
 
