@@ -1,6 +1,20 @@
 import sys
 import re
 
+def procesa_texto(ss=''):
+  ssn = ''
+
+  while len(ss) > 0:
+    if '](./' in ss:
+      dd = busa_remplaza_diagonal(ss)
+    elif '](http' in ss:
+      dd = busa_remplaza_http(ss)
+    else:
+      dd = [ss,'']
+    ssn = ssn + dd[0]
+    ss = dd[1]
+  return ssn
+
 def busca_gato(ss=''):
   nl = len(ss)
 
@@ -16,43 +30,36 @@ def busca_gato(ss=''):
 
 def busa_remplaza_diagonal(ss=''):
   i = ss.find('](./')
-  if i > 1:   
-    i2 = ss.find(')', i)
-    ii = i-1  
-    while ii > 0:  
-      if ss[ii] == '[':
-        i1 = ii
-        ii = -1
-      else:
-        ii = ii-1  
-    print((i1,i2))
-    texto1 = ss[i1+1:i]
-    texto1 = ReplazoVocales(texto1)
-    texto2 = ss[i+4:i2]
-    texto2 = ReplazoVocales(texto2)
-    return ss[:i1] + ':doc:' + '`' + texto2 + '`' + busa_remplaza_diagonal(ss[i2+1:])
-  else:   
-    return ss 
+  i2 = ss.find(')', i)
+  ii = i-1  
+  while ii >= 0:  
+    if ss[ii] == '[':
+      i1 = ii
+      ii = -1
+    else:
+      ii = ii-1  
+  texto1 = ss[i1+1:i]
+  texto1 = ReplazoVocales(texto1)
+  texto2 = ss[i+4:i2]
+  texto2 = ReplazoVocales(texto2)
+  return [ss[:i1] + ':doc:' + '`' + texto2 + '`', ss[i2+1:]]
 
   
 def busa_remplaza_http(ss=''):
   i = ss.find('](http')
-  if i > 1:
-    i2 = ss.find(')', i)
-    ii = i-1
-    while ii > 0:
-      if ss[ii] == '[':
-        i1 = ii
-        ii = -1
-      else:
-        ii = ii-1
-    texto1 = ss[i1+1:i]
-    texto1 = ReplazoVocales(texto1)
-    texto2 = ss[i+2:i2]
-    texto2 = ReplazoVocales(texto2)
-    return  ss[:i1] + ' `' + texto1 + ' <' + texto2 + '>`_ ' + busa_remplaza_http(ss[i2+1:])
-  else:
-    return ss + '\n'
+  i2 = ss.find(')', i)
+  ii = i-1
+  while ii >= 0:
+    if ss[ii] == '[':
+      i1 = ii
+      ii = -1
+    else:
+      ii = ii-1
+  texto1 = ss[i1+1:i]
+  texto1 = ReplazoVocales(texto1)
+  texto2 = ss[i+2:i2]
+  texto2 = ReplazoVocales(texto2)
+  return  [ss[:i1] + ' `' + texto1 + ' <' + texto2 + '>`_ ',  ss[i2+1:]]
 
 
 def ReplazoVocales(ss=''):
@@ -74,16 +81,18 @@ filon = open(file+'.rst', 'w')
 
 nl = len(datos)
 
+
 for i in range(nl):
    ss = datos[i]
    if ss[0] == '#':
       ss =busca_gato(ss)
    elif '](./' in ss:
-      ss = busa_remplaza_diagonal(ss)
+      ss = procesa_texto(ss)
    elif '](http' in ss:
-      ss = busa_remplaza_http(ss)
+      ss = procesa_texto(ss)
    filon.write(ss)
 
 filon.close()
+
 
 
