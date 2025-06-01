@@ -1,6 +1,3 @@
-Bash-Variables
-==============
-
 En el contexto de la programación, una variable funciona como un "contenedor" que almacena un valor que puede ir cambiando a lo largo del tiempo durante la ejecución de un programa. Cuando se declara una variable, este se reserva en un espacio en la memoria donde almacena su valor, normalmente tu como usuario decides que nombre le das a tu variable, el cual tiene que ser un nombre unico de preferencia, para que puedas hacer referencia a ella en el código. 
 Las variables tienen la ventaja de que pueden contener cualquier tipo de informacion, ya sea numérica, texto, directorios, etc.
 
@@ -9,7 +6,7 @@ Asignación de variables
 
 En este primer ejemplo la variable contiene la frase Hola mundo, la cual puedes imprimirla en la terminal usando `echo`. Donde el signo `=` lo utilizo para **asignar** mi variable y el signo de `$` para mandarlo a llamar. 
 
-.. code: Bash
+.. code:Bash
 
    > mi_variable = "Hola mundo"
    
@@ -19,7 +16,7 @@ En este primer ejemplo la variable contiene la frase Hola mundo, la cual puedes 
 
 Hagamos otros ejemplos:
 
-.. code: Bash
+.. code:Bash
 
    > export PATH=/misc/nyquist/paulinav
    
@@ -27,7 +24,7 @@ Hagamos otros ejemplos:
    
    > /misc/nyquist/paulinav
 
-.. code: Bash
+.. code:Bash
 
    > edad = 30
    
@@ -40,7 +37,7 @@ Hagamos otros ejemplos:
    
    > categoria=Adulto
 
-.. code: Bash
+.. code:Bash
 
    > input=/misc/nyquist/usuario/mis_imagenes
    > output=/misc/carr2/usuario/analisis

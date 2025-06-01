@@ -3,7 +3,7 @@ import re
 
 def procesa_comillas(i=0):
   j = i+1
-  dd = '.. code: Bash\n\n'
+  dd = '.. code:Bash\n\n'
   ss = datos[j]
   while ss[:3] != '```':
     dd = dd + '   ' + ss
