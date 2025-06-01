@@ -104,6 +104,7 @@ while i < nl:
       mm = procesa_comillas(i)
       i = mm[0]-1
       ss = mm[1]
+   ss = ss.replace('`','``')
    filon.write(ss)
    i = i+1
 filon.close()
