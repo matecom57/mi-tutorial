@@ -31,7 +31,7 @@ html_static_path = ['_static']
 # -- Options for HTML output
 
 html_css_files = [
-    'css/css-style.css',
+    './css/css-style.css',
 ]
 
 html_theme = 'sphinx_rtd_theme'
