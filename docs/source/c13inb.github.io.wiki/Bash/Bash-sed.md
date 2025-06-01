@@ -15,6 +15,7 @@ Si Pepe Pecas pica papas con un pico,
 ¿donde esta el pico con que Pepe Pecas pica papas?" 
 >> Pepe_Pecas.txt
 ```
+
 De este texto voy a reemplazar todas las palabras "papas" por "manzana":
 
 ```bash
@@ -28,13 +29,16 @@ con un pico pica manzana Pepe Pecas.
 Si Pepe Pecas pica manzana con un pico, 
 ¿donde esta el pico con que Pepe Pecas pica manzana?"
 ```
+
 Tambien podemos contar cuantas veces se menciona a Pepe en el texto:
+
 ```bash
 > sed 's/Pepe/Pepe\n/g' Pepe_Pecas.txt | grep -c "Pepe"
 > 4
 ```
 
 O porque no agregar una linea al final del texto:
+
 ```bash
 > sed '$a\Definitivamente Pepe perdio el Pico' Pepe_Pecas.txt
 
