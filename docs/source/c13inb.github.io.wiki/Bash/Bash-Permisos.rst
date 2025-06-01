@@ -1,6 +1,3 @@
-Bash-Permisos
-=============
-
 Ajuste de permisos para trabajos en el clúster
 ----------------------------------------
 
@@ -42,6 +39,7 @@ Ahora, en la siguiente imágen, el rectangulo amarillo te dice el nombre del usu
 
 Modificar permisos con ``chmod``
 ----------------------------------------
+
 Ahora que ya sabemos como leer los permisos, podemos utilizar el comando ``chmod`` que es el que nos ayudara a modificar/específicar los permisos a quienes nosotros queramos. 
 
 La sintaxis de ``chmod`` se basa en el "quién", "qué" y "cúal" dar los permisos:
@@ -71,21 +69,27 @@ La sintaxis de ``chmod`` se basa en el "quién", "qué" y "cúal" dar los permis
 ``x``: permiso de ejecución
 
 Por ejemplo, si yo creo un nuevo script, no lo voy a poder ejecturar inmediatamente, necesitaré cambiar los permisos de tal manera que pueda ser ejecutado:
+
 .. code:: Bash
 
    chmod a+x mi_script.sh
+
 Donde estoy especificando que ``mi_script.sh`` pueda ser ejecutado (``x``) por cualquiera (``a``)
 
 ---
 
 También puedes asignar el grupo ya sea fmriuser o bioinfo a una carpeta, subcarpetas y los archivos que contenga, se puede usar el comando:
+
 .. code:: Bash
 
    chown -R usuario:grupo carpeta/
+
 Y para permitir escritura y lectura al grupo usas:
+
 .. code:: Bash
 
    chmod -R g+rwx carpeta/
+
 Sin embargo, puede ocurrir que no se pueda cambiar el grupo si no somos los dueños de la carpeta en cuestión. Si es necesario ajustar el grupo y por alguna razón no funciona el comando, el administrador del equipo en cuestión puede realizar el cambio.
 
 
