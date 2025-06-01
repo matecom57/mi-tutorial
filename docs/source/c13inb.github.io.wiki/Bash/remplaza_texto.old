@@ -94,7 +94,6 @@ nl = len(datos)
 i = 0
 while i < nl:
    ss = datos[i]
-   ss = ss.replace('`','``')
    if ss[0] == '#':
       ss =busca_gato(ss)
    elif '](./' in ss:
@@ -105,6 +104,7 @@ while i < nl:
       mm = procesa_comillas(i)
       i = mm[0]-1
       ss = mm[1]
+   ss = ss.replace('`','``')
    filon.write(ss)
    i = i+1
 filon.close()
