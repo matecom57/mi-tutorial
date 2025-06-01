@@ -1,6 +1,16 @@
 import sys
 import re
 
+def procesa_comillas(i=0):
+  j = i+1
+  dd = '.. code: Bash\n\n'
+  ss = datos[j]
+  while ss[:3] != '```':
+    dd = dd + '   ' + ss
+    j = j+1
+    ss = datos[j]
+  return [j+1, dd]
+
 def procesa_texto(ss=''):
   ssn = ''
 
@@ -81,8 +91,8 @@ filon = open(file+'.rst', 'w')
 
 nl = len(datos)
 
-
-for i in range(nl):
+i = 0
+while i < nl:
    ss = datos[i]
    if ss[0] == '#':
       ss =busca_gato(ss)
@@ -90,8 +100,12 @@ for i in range(nl):
       ss = procesa_texto(ss)
    elif '](http' in ss:
       ss = procesa_texto(ss)
+   elif ss[:3] == '```':
+      mm = procesa_comillas(i)
+      i = mm[0]-1
+      ss = mm[1]
    filon.write(ss)
-
+   i = i+1
 filon.close()
 
 
