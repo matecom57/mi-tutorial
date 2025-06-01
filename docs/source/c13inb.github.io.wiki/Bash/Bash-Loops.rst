@@ -11,14 +11,14 @@ Iteración de comandos con `for` ##
 
 
 En el siguiente ejemplo se imprimira en la pantalla todos los archivos dentro de una carpeta escribiendo antes la palabra "hola"
-.. code: Bash
+.. code:: Bash
 
    for i in $( ls ); do echo hola: $i; done
   *  **i**: es mi variable que defino y comprende a todos los archivos que se mencionan en `$(ls )`    
   * **echo hola:** es el comando que quiero repetir.
 
 
-.. code: Bash
+.. code:: Bash
 
    hola archivo1.txt
    hola archivo1.txt
@@ -28,20 +28,20 @@ En el siguiente ejemplo se imprimira en la pantalla todos los archivos dentro de
 
 Otro ejemplo de un uso de **for** es el siguiente para subir al cluster la  realización de una mascara binaria con *bet*  en todos los archivos **nii.gz** que comienzan con **t1_** y tienen 4 caracteres más.
 
-.. code: Bash
+.. code:: Bash
 
    for x in $(ls t1_????.nii.gz); do fsl_sub -N $x bet $x $x -m -n -B -f 0.35; done
 Leer lineas de un archivo de texto con `while read` ##
 ----------------------------------------
 Si tengo un archivo de texto (txt) y quiero realizar una acción con cada linea puedo usar:
-.. code: Bash
+.. code:: Bash
 
    while read linea; do
    echo $linea; 
    done < miTexto.txt
 lo anterior imprimira el contenido de cada linea: 
 
-.. code: Bash
+.. code:: Bash
 
    3 GCC Genu of corpus callosum
    4 BCC Body of corpus callosum
@@ -50,7 +50,7 @@ Crear condicionales con `break` y `continue` ##
 ----------------------------------------
 Si bien el `for` nos hace la vida más fácil al ejecutar una gran cantidad de tareas, puede tambien quedarse atorado en un loop "infinito", es asi que `break` resulta bastante útil. Aquí es una sintaxis de vainilla:
 
-.. code: Bash
+.. code:: Bash
 
    nombres=("Maria" "Luisa" "Carla" "Mariana" "Flor")
    
@@ -75,7 +75,7 @@ Donde el script hará la iteraciones necesarias hasta llegar al nombre de Marian
 
 
 Ahora, si cambiamos el `break` por el `continue`, hará que las iteraciones sigan corriendo aunque haya encontrado la variable:
-.. code: Bash
+.. code:: Bash
 
    nombres=("Maria" "Luisa" "Carla" "Mariana" "Flor")
    
