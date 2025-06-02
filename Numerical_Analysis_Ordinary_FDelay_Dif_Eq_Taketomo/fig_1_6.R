@@ -1,17 +1,20 @@
-Resuelve_tao <- function(vali=c(0,0), tao=0, f=0, del){
-   x1 = vali
-   np = length(f)
+Resuelve_tao <- function(f=0, del){
+   ss = dim(f)
+   np = ss[2]
+   x1 = f[,np]
    epsi=1
-   xc = f
+  
    x = matrix(rep(0, 2*np), nrow=2)
 
    x[,1] = x1
+
    for (i in 2:np){
-      x2 = x1 + del* c(epsi*xc[i-1] * (1 - xc[i-1]^2/3) - x1[2], x1[1])
+      ff = f[,i-1]
+      x2 = x1 + del* c(epsi*ff[1] * (1 - ff[1]^2/3) - x1[2], x1[1])
       x[,i] = x2
       x1 = x2
    }
-   res = list(t=t, x=x)
+   res = x
 }
 
 Resuelve <- function(vali=c(0,0)){
@@ -32,35 +35,32 @@ Resuelve <- function(vali=c(0,0)){
    res = list(t=t, x=x)
 }
 
-tao = .6
+tao = .2
 del = .001
-np = round(tao/del)+1
-t = seq(0,tao, length.out=np)
-del = t[2] - t[1]
-
 x1 = c(2,0)
-f = x1[1] * rep(1,np)
 
 r = Resuelve(x1)
+plot(r$t, r$x[1,], type='l', ylim=c(-2.5, 2.5))
 
-print(names(r))
+ban = 0
 
-plot(r$t, r$x[1,], type='l')
+if (ban == 0){
+   print('=================== entro ===================')
+   np = round(tao/del)+1
+   t = seq(0,tao, length.out=np)
+   del = t[2] - t[1]
 
-tt = c()
-xx = c()
+   x1 = c(2,0)
+   f = matrix(rep(x1,np), nrow=2)
 
-for (i in 1:40){
-  rt = Resuelve_tao(x1,tao,f, del)
-  xi = rt$x[,np]
-  f = rt$x[1,]
-  tt = c(tt, i*tao+t)
-  xx = c(xx, rt$x[1,])
+nrep1 = 70
+nrep2 = 200
+   for (i in 1:nrep2){
+      f = Resuelve_tao(f, del)
+      t = t+tao
+      points(t, f[1,], type='l', col='red', lwd=3)
+   }
 }
-
-points(tt, xx, type='l', col='red', lwd=3)
-
-
 
 
 
