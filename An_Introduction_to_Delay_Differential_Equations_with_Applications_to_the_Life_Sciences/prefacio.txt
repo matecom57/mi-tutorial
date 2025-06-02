@@ -1,0 +1,90 @@
+This book is intended to be an introduction to delay differential equations for upper-level undergraduates or beginning graduate mathematics students who have a reasonable background in ordinary differential equations and who would like to get to
+the applications quickly. I used a preliminary version of this manuscript in teaching
+such a course at Arizona State University over the past two years. Existing texts on
+the subject by Diekmann et al. [26] and by Hale and Lunel [41], while excellent on
+the theory, are heavy on functional analytic background and light on applications.
+In my experience, most graduate students do not have the requisite background to
+read such texts profitably. A more applications oriented text by Kuang [48] is, unfortunately, out of print.
+
+Both theory and applications of delay differential equations require a bit more
+mathematical maturity than its ordinary differential equations counterparts. Primarily, this is because the theory of complex variables plays such a large role in analyzing the characteristic equations that arise on linearizing around equilibria. Ideal
+prerequisites for this book include a second course in ordinary differential equations
+such as in the text [78, 10], some familiarity with complex variables, and some ele-
+mentary analysis. Results from the calculus of several variables are routinely used,
+especially, the implicit function theorem.
+
+This book focuses on the key tools necessary to understand the applications liter-
+ature involving delay equations and to construct and analyze mathematical models
+involving delay differential equations. It begins with a survey of mathematical mod-
+els involving delay equations. These are primarily from the biological literature, in
+keeping with my own prejudices, and due to the relative frequency of delay models
+in that literature relative to others. This is followed by a “warm-up” chapter on the
+simplest possible delay equation u0(t) = −αu(t −r). This simple example illustrates
+many of the complexities that arise with delays and has the advantage that results
+may be easily and explicitly worked out. Its main message is that delays naturally
+induce oscillations. Standard existence and uniqueness results are taken up in Chapter 3. The method of steps is introduced and exploited for discrete delay equations.
+
+For the reader interested mainly in applications, this may suffice. A more general
+approach follows but no fixed point theorems are used: the method of successive
+approximations works fine. A key notation is introduced here, one that takes a bit of
+getting used to, namely the state variable xt which appears throughout the remain-
+der of the book. In addition to continuous dependence of solutions on initial data,
+continuation of solutions, positivity, and comparison of solutions are also discussed
+because many applications come from biology where positivity restrictions are in-
+herent to the models. Linear equations are taken up next with the primary aim being
+stability. In applications, linear delay equations arise through linearization of a non-
+linear equation about an equilibria so the focus is on linear stability analysis and the
+characteristic equation the roots for which determine stability. Proof of the validity
+of linearized stability would require too much additional mathematics and therefore
+it is not given.
+
+The following chapter is an introduction to abstract dynamical systems theory,
+using ordinary differential equations, discrete-time difference equations, and now
+delay differential equations as examples. It is shown that a delay differential equa-
+tion induces a semidynamical system on the space of continuous functions on the
+delay interval. The focus then turns to omega limit sets, the usual results familiar
+from ODEs continue to hold but with some nuances due to the infinite-dimensional
+state space. Applications to the delayed logistic equation and the delayed chemostat
+model are treated. The LaSalle invariance principle is established and an applica-
+tion is given. Next, the Hopf bifurcation theorem, critical for applications, is treated.
+
+A simple canonical example is considered where the bifurcation can be explicitly
+computed. Following this, the Hopf bifurcation theorem is stated without proof. It
+is applied to the standard delayed negative feedback system x0(t) = −f(x(t − 1))
+where x f(x) > 0. In this case, a formal expansion for the periodic solution in terms
+of a small parameter (this is fully justified in an appendix) is given. Applications
+to various second-order delay equations are then considered, one of which is stabi-
+lizing the up position of a damped pendulum with delayed feedback; another is a
+model of a gene regulatory network. Finally, the beautiful Poincare–Bendixson the-  ́
+ory for monotone cyclic feedback systems, obtained recently by Mallet-Paret and
+Sell, is stated.
+
+The following brief chapter is an introduction to equations with infinite delay and
+to the linear chain trick by which certain special kinds of infinite delays can lead to
+ordinary differential equations. These arise often in the modeling literature so an
+example is discussed in some detail. The final chapter focuses on a model of virus
+predation on a bacterial host in the setting of a chemostat where the bacteria subsist
+on a supplied nutrient. The delay corresponds to the latent period following virus
+infection during which new virus particles are manufactured within the cell. Most
+of the theoretical results of previous chapters are used in the analysis of this system
+of delay equations.
+
+Two brief appendices should help those readers needing additional background
+on complex variables and analytic functions including the very useful Rouche’s theorem, and implicit function theorems. The Ascoli–Arzela theorem is stated and dis-
+cussed and the useful fluctuation method is described. A second appendix is devoted
+to a rigorous proof of Hopf bifurcation for the delayed negative feedback systems.
+
+The impatient reader could skim the applications in Chapter 1, jump over Chapter
+2, and start with Chapter 3. A note on notation: we use R for the set of real numbers,
+C for the set of complex numbers, and f 0 denotes the derivative of a function f .
+I would like to acknowledge the influence of Yang Kuang, a collaborator on much
+of the author’s own work in delay differential equations, on this work and to thank
+him for providing several figures used in the book. Several students, colleagues,
+and anonymous reviewers read portions of the manuscript and provided valuable
+feedback. Among these, the author would like to thank Patrick de Leenheer, Thanate
+Dhirasakdanon, Zhun Han, and Harlan Stech. Most of what I know about delay
+differential equations, I learned from Jack Hale, a giant in the field.
+Finally, I have been supported by the NSF during the time this book took shape,
+recently by award DMS 0918440.
+
+

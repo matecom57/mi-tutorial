@@ -1,0 +1,61 @@
+1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+
+1.1 Mathematical Modelling by Differential Equations . . . . . . . . . . . . . . 1
+
+1.2 Analytical Versus Numerical Solutions . . . . . . . . . . . . . . . . . . . . . . . . 3
+
+2 Initial-Value Problems of Differential Equations: Theory . . . . . . . . . . 13
+
+2.1 Existence and Uniqueness of Solution . . . . . . . . . . . . . . . . . . . . . . . . . 13
+
+2.2 Dependence on the Initial Value . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+
+2.3 Stability of Solution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+
+3 Runge–Kutta Methods for ODEs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+
+3.1 Runge–Kutta Methods for ODEs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+
+3.2 Embedded Pair of Runge–Kutta Schemes . . . . . . . . . . . . . . . . . . . . . . 35
+
+3.3 Linear Stability of Runge–Kutta Methods for ODEs . . . . . . . . . . . . . 37
+
+3.4 Implicit Runge–Kutta Methods . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41
+
+4 Polynomial Interpolation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+
+4.1 Polynomial Interpolation and Its Algorithms . . . . . . . . . . . . . . . . . . . 47
+
+4.2 Error in Polynomial Interpolation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 54
+
+5 Linear Multistep Methods for ODEs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+
+5.1 Linear Multistep Methods for ODEs . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+
+5.2 Implementation Issues of Linear Multistep Methods . . . . . . . . . . . . . 66
+
+5.3 Linear Stability of Linear Multistep Methods for ODEs . . . . . . . . . . 69
+
+6 Analytical Theory of Delay Differential Equations . . . . . . . . . . . . . . . . . 77
+
+6.1 Differential Equation with Delay . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 77
+
+6.2 Analytical Solution of DDEs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 81
+
+6.3 Linear Stability of DDEs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 84
+
+7 Numerical Solution of DDEs and Its Stability Analysis . . . . . . . . . . . . . 91
+
+7.1 Numerical Solution of DDEs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 91
+
+7.2 Continuous Extension of Runge–Kutta Methods for DDEs . . . . . . . 94
+
+7.3 Linear Stability of Runge–Kutta Methods for DDEs . . . . . . . . . . . . . 97
+
+Correction to: Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . C1
+
+Bibliography . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 109
+
+Index . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 111
+
+
