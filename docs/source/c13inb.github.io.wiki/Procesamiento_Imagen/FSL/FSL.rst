@@ -23,7 +23,7 @@ Imágenes estructurales
 Imágenes funcionales
 ----------------------------------------
 
-+ :doc:`FEAT` : herramienta bastante extensa y robusta para procesar y analizar datos funcionales. 
++ :doc:`FEAT/FEAT` : herramienta bastante extensa y robusta para procesar y analizar datos funcionales. 
 + :doc:`FSL-Melodic` : sirve para realizar un análisis de componentes independientes. 
 
 Imágenes difusión
