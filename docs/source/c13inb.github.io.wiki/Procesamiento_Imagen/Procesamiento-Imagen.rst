@@ -26,7 +26,7 @@ Uno de los favoritos es MRtrix3 que cuenta con una larga colección de herramien
 
 Un clásico!, FreeSurfer es de los softwares más utilizados para analizar imágenes de humanos. Dentro de su libreria hay montones de funciones para procesar imágenes estructurales, funcionales y de difusión. Puedes realizar desde registros, hasta  tractografía y mapeo funcional. Aquí te dejo su  `wiki <https://surfer.nmr.mgh.harvard.edu/fswiki>`_  para que lo cheques. 
 
-+ :doc:`BIDS`
++ :doc:`BIDS/BIDS`
 
 El Brain Imaging Data Structure es una manera estandarizada de organizar y esrtucturar tus datos de neuroimagen. Es altamente recomendable esta practica, sobre todo ya que facilita el compartir los datos o incluso el análisis. En esta entrada viene información de como utilizar los contenedores en el cluster.   
 
