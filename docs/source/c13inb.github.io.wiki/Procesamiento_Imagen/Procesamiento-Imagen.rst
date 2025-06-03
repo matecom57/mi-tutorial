@@ -17,7 +17,7 @@ Aquí abajo encontraras unos de los software más utilizados en la comunidad cie
 
 FMRIB Software Library es una colección de herramientas muy popular para el procesamiento de imágenes estructurales, funcionales y de difusión. Tmabién cuenta con funciones que incluyen el análisis estadístico de dichas imágenes. FSL es completamente open source y esta bastante bien documentado, en su  `wiki <https://fsl.fmrib.ox.ac.uk/fsl/fslwiki>`_  puedes encontrar toda la información necesaria para empezar a procesar tus imágenes. 
 
-+ :doc:`MRtrix3`
++ :doc:`MRtrix/MRtrix3`
 
 Uno de los favoritos es MRtrix3 que cuenta con una larga colección de herramientas para procesar, visualizar y analizar imágenes sensibles a difusión 
 (DWI). Si bien esta muuuy enfocado a las DWI, muchas herramientas son útiles para manejar imagenes en general. Mrtrix esta tambíen super bien documentado, aquí puedes checar su  `wiki <https://mrtrix.readthedocs.io/en/latest/>`_ .
