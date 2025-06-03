@@ -1,9 +1,11 @@
 Transformar una máscara
 =======================
 
-## Transformar una máscara (espacio estándar-atlas) al espacio del sujeto (fMRI)  
+Transformar una máscara (espacio estándar-atlas) al espacio del sujeto (fMRI)  
+----------------------------------------
 
-### 1. LLevar la máscara a un espacio nuevo
+1. LLevar la máscara a un espacio nuevo
+----------------------------------------
 
 
 ''arafat@tanner:~/Desktop/$ flirt -in  mascara.nii -ref funcional_sujeto.nii -applyxfm -init standard2example_func.mat -out Mascara_highres.nii''
@@ -18,7 +20,8 @@ Transformar una máscara
 
 **-out**       el nombre de la máscara resultante
 
-### 2. Cambiar el umbral de la nueva máscara y binarizarla  
+2. Cambiar el umbral de la nueva máscara y binarizarla  
+----------------------------------------
 
 
 

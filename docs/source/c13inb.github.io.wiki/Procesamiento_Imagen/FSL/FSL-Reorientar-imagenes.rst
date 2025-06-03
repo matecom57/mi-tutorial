@@ -1,7 +1,8 @@
 Reorientar imágenes
 ===================
 
-## Para visualizar de manera "normal" las imágenes (tanto funcionales como estructurales) 
+Para visualizar de manera "normal" las imágenes (tanto funcionales como estructurales) 
+----------------------------------------
 
 Hay veces en las que al abrir una imagene en FslView se observa con una orientación diferente a la que estamos acostumbrados. En la mayoría de los casos sólo es la visualización la que no está bien, lo cual no interfiere con los análisis que se realicen con las imágenes. 
 
