@@ -1,3 +1,6 @@
+Respaldo de datos
+=================
+
 Las carpetas HOME de todos los usuarios se respaldan automáticamente todas las noches. Estos respaldos **no incluyen carpetas ocultas** (e.j. `.cache`).
 
 LOS RESPALDOS DE DATOS SON RESPONSABILIDAD DE LOS USUARIOS, NO DE DON CLUSTERIO.
