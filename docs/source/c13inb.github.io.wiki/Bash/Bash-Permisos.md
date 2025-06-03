@@ -1,3 +1,6 @@
+Permisos
+========
+
 ## Ajuste de permisos para trabajos en el clúster
 
 Es muy importante entender el tema de los permisos ya que al estar trabajando en el clúster, si no tienes los permisos necesarios, esto puede limitar mucho tu trabajo. 

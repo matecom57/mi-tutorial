@@ -1,5 +1,5 @@
-Bash-Permisos
-=============
+Permisos
+========
 
 Ajuste de permisos para trabajos en el clúster
 ----------------------------------------

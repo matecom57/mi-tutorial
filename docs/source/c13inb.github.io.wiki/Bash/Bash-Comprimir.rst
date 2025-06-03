@@ -1,41 +1,43 @@
-Bash-Comprimir
-==============
+Comprimir
+=========
 
 *[DICOM]: Digital Imaging and Communication in Medicine
+
 Comprimir
 ----------------------------------------
 
-Comprimir los archivos  ``__DICOM__ <http://es.wikipedia.org/wiki/DICOM>``_ , reduce dramaticamente el uso de espacio de disco, por lo que es una practica recomendable. Además depende de una instrucción sencilla.  
+Comprimir los archivos  `DICOM <http://es.wikipedia.org/wiki/DICOM>`_ , reduce dramaticamente el uso de 
+espacio de disco, por lo que es una practica recomendable. Además depende de una instrucción sencilla.  
 
 Para comprimir un directorio se usa:
 
-    tar cvzf archivo.tar.gz /archivo/*
+.. code:: Bash
+
+       tar cvzf archivo.tar.gz /archivo/*
 
 Para extraer el contenido se utiliza:
 
-    tar xvzf archivo.tar.gz
+.. code:: Bash
+
+       tar xvzf archivo.tar.gz
 
 Para listar el contenido sin extraer:
 
-    tar tvzf archivo.tar.gz
+.. code:: Bash
 
-f
-: indica el nombre del archivo
+       tar tvzf archivo.tar.gz
 
-z
-: indica que va comprimir con gzip el archivo
+``f`` : indica el nombre del archivo
 
-j
-: cuando se usa, indica el uzo de bzip que tiene una tasa mayor de compresión pero tarda mas y consume mas recursos
+``z`` : indica que va comprimir con gzip el archivo
 
-v
-: permite ver los avisos del proceso 
+``j`` : cuando se usa, indica el uzo de bzip que tiene una tasa mayor de compresión pero tarda mas y consume 
+mas recursos
 
-c
-: indica que se creara una archivo comprimido
+``v`` : permite ver los avisos del proceso 
 
-x
-: indica que se descomprime el archivo 
+``c`` : indica que se creara una archivo comprimido
 
-t
-: genera un listado de los archivos que lo forman
+``x`` : indica que se descomprime el archivo 
+
+``t`` : genera un listado de los archivos que lo forman
