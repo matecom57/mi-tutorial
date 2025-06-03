@@ -1,3 +1,6 @@
+sed
+===
+
 El comando `sed` (**s**tream **ed**itor) es una herramienta muy poderosa y elegante para la manipulación de texto. El comando te permite realizar operaciones de búsqueda, sustitución y manipulación de texto ya sea en archivos o basicamente de cualquier argumento de salida de otros comandos. Veamos un poco más.
 
 ### Sintaxis basica
@@ -50,8 +53,6 @@ Si Pepe Pecas pica papas con un pico,
 ¿donde esta el pico con que Pepe Pecas pica papas?
 Definitivamente Pepe perdio el Pico"
 ```
-
-
 
 [Aquí](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux) te dejo un manual para más trucos con `sed`
 
