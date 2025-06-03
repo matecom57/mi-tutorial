@@ -1,3 +1,6 @@
+Preprocesamiento en roedores
+============================
+
 Analizar datos de difusión puede ser bastante sencillo, pero para lograrlo se requiere que los datos estén en buenas condiciones. Estos pasos buscan corregir algunos artefactos de adquisición y limpiar los datos lo más posible, de manera que la estimación de parámetros de difusión sea adecuada. El preprocesamiento es habitualmente más tardado y latoso que el procesamiento mismo, y cada paso es toda un tópico en constante investigación y desarrollo. Aquí se describen los pasos que seguimos habitualmente (2024). El ejercicio está orientado a datos de roedor adquiridos con nuestro Bruker de 7 T, pero los conceptos son los mismos para datos de humanos. Estos pasos pueden usarse en su mayoría sin modificaciones con adquisiciones EPI3D.
 
 En esta entrada vamos a repasar paso por paso como se realiza el preprocesamiento para fines didácticos. Al final podrás encontrar como utilizar el script `inb_dwi_bruker_preproc.sh` (disponible el 24 de agosto de 2021 en Don Clusterio) que encapsula todos estos pasos. Recuerda que tambíen puedes invocar el comando sin argumentos para aprender su uso. El script tiene la ventaja que además de hacer todo ésto, utiliza `eddy_quad` para hacer un reporte de control de calidad. Como bonus, se generan imágenes `png` para una rápida visualización de mapas RGB antes y después de pre-procesar los datos. **Ojo, que aunque existe el script, se recomienda leer esta entrada para que sepas qué hace esa caja negra.** El script está pensado en datos EPI-2D de rata, pero es probable que funcione en ratón, y con datos 3D-EPI. 
@@ -5,18 +8,23 @@ En esta entrada vamos a repasar paso por paso como se realiza el preprocesamient
 ***
 
 ## Convertir del bruker a formato nifti.
+
 El primer paso es convertir/exportar tus imágenes del bruker a un formato nifti. Aquí voy a utilizar de ejemplo unos datos que adquirí durante la maestría y que pertenecen al laboratorio C13. Visita esta [entrada]() donde se explica a más detalle paso por paso el como exportar tus imágenes.
 
 Primero localizo el archivo de mis adquisiciones en el directorio del bruker y para facilitar la explicación las conviertiré en una variable:
+
 ```
 BRUKERFOLDER=/misc/bruker7/data02/user/conchalab/20220104_085643_INB_C13_hluna_irm150d_rata64A_INB_C13_hluna_1_1
 SCANNUMBER=6
+
 ```
 Ojo, aquí **yo sé a priori** cual es mi imágen pesada a difusión, en este caso es la imágen número 6. Recuerda que en esta [entrada]() se explica este proceso.
 
 Segundo paso, cargo el módulo de `brkraw`:
+
 ```
 module load brkraw/0.3.11
+
 ```
 Y ahora puedes ejecutar la conversion de la siguiente manera:
 
@@ -27,11 +35,11 @@ En otras palabras:
 
 `tonii` es el comando que convierte de Bruker a Nifti.
 
-```-o``` es el output de como quieres que se llame tu imagen y en donde quieres guardarla, en este caso 64A_dwi es el nombre que yo le doy y `./` hago referencia de que se guarde en el directorio actual.
+`-o` es el output de como quieres que se llame tu imagen y en donde quieres guardarla, en este caso 64A_dwi es el nombre que yo le doy y `./` hago referencia de que se guarde en el directorio actual.
 
-```-r``` es la reconstruccion que queremos, en este caso es la primera y por eso ponemos 1
+`-r` es la reconstruccion que queremos, en este caso es la primera y por eso ponemos 1
 
-```-s``` es la imagen que queremos convertir, en este caso es la numero 6 porque es la DWI
+`-s` es la imagen que queremos convertir, en este caso es la numero 6 porque es la DWI
 
 
 Vamos a ver que despues de la conversion tendremos **tres** outputs:
@@ -51,6 +59,7 @@ Los archivos `.bvec` contiene información acerca de los autovectores, mientras 
 # Preprocesamiento
 
 ## 1.- Denoising
+
 Este paso es fundamental y normalmente el primer paso antes de cualquier otro. Consiste en remover el ruido proveniente de la señal. Aquí puedes utilizar el comando `dwidenoise`:
 
 `dwidenoise 64A_dwi.nii.gz 64A_dwi_denoised.nii.gz -noise 64A_dwi_noise.nii.gz`
@@ -72,6 +81,7 @@ mrdegibbs 64A_dwi_denoised.nii.gz 64A_dwi_denoised_gibbs.nii.gz
 ```
 
 ## 4.- Eddy
+
 Este paso corrige inhomogeneidades geométricas inducidas por los gradientes de difusión. Además elimina rebanadas con adquisiciones comprometidas (outlilers), en las que la señal es demasiado baja en comparación a lo esperado. Esto último es común en adquisiciones 2D-EPI, y se debe a que los gradientes de plano no aguantaron el ritmo solicitado para llenar el espacio k tan rápido. Es de esperar un 10% de rebanadas outliers en toda la adquisición (algo común es una o dos rebanadas outliers por cada volumen, y la posición espacial de las rebanadas outliers deben ser aleatorias entre volúmenes).
 > ⚠️ Asegurate de que la computadora que estes utilizando tenga CUDA. Para instalarlo en tu laptop entra [acá](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html). Si estas trabajando en el Don Clústerio y no sabes si tu compu tiene CUDA, checa [aquí](https://github.com/c13inb/c13inb.github.io/wiki/CUDA).
 Para correr Eddy, los desarrolladores de FSL crearon una herramienta llamada `eddy_cuda10.2` (actualizado 2024) que ejecuta esta corrección y mucho más. Sin embargo, antes de correr eddy, necesitamos hacer una serie de  primeros pasos para preparar los datos de acuerdo a como lo pide el software. En su [pagina web](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide/) tienen toda la información detallada de como hacerlo. Aquí lo resumiré con el ejemplo de la rata 64A.
@@ -83,17 +93,21 @@ dwi2mask -fslgrad 64A_dwi.bvec 64A_dwi.bval 64A_dwi.nii.gz mascara_64A_dwi.nii.g
 ```
 
 2) Ahora necesitamos un archivo que describa los parametros de la adquisición de cada imágen.
+
 ```
 topup= 0.04
 echo "0 -1 0" $topup > acqp_64A_dwi.txt
 ```
+
 ```
 cat acqp_64A_dwi.txt
 0 -1 0 0.05
 ```
+
 Vemos que en el output tenemos `0 -1 0` que no es nada mas que la codificación en fase y `0.05` es la multiplicación entre el factor EPI y los ms de espacio entre ecos. Toda esta información al final son los parámetros de adquisición. Más información [aquí](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/Faq#How_do_I_know_what_to_put_into_my_--acqp_file)
 
 3) Hay que crear un archivo índice que ayude a indicar que volúmenes (aquí 285) de DWI fueron tomadas con ciertos parametros de acuerdo al archivo acqp_64A_dwi.txt. En este caso, todos los volúemenes fueron adquiridos de igual manera.
+
 ```
 indx=""
 
@@ -101,16 +115,20 @@ for ((i=1; i<=285; i+=1)); do indx="$indx 1"; done
 
 echo $indx > indice_64A_dwi.txt
 ```
+
 ```
 echo $indx
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 ```
+
 ⚠️ IMPORTANTE, estos archivos son particularmente importantes cuando uno tiene adquisiciones con inversión de la polaridad del gradiente de fase, pero en nuestro caso no hay tal cosa, así que los podemos generar fácilmente con estos comandos que siguen. Para adquisiciones con inversión de polaridad de fase, consulta la documentación en la página de [topup](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup/TopupUsersGuide), donde se describe cómo generar un B0map a partir de pares de adquisiciones con fases invertidas, que después se alimentan a `eddy`. Yo (lconcha, abril-julio 2021) hice varias pruebas con adquisiciones 2DEPI en el Bruker y no encontré mucha ventaja a usar adquisiciones con pares de dirección de fase y el uso de `topup`, por lo que en este ejercicio no se utiliza.
 
 Cargamos el módulo:
+
 ```
 module load fsl/6.0.7.4
 ```
+
 Y corremos Eddy:
 
 ```
@@ -169,6 +187,7 @@ Solo debemos saber qué valor tenemos que cambiar, y suele ser el shell más baj
 mrinfo -fslgrad 64A_dwi.bvec 64A_dwi.bval 64A_dwi.nii.gz -shell_bvalues
 
 ## 21.010828
+
 ```
 Y ahora podemos hacer el cambio a 0. Escribimos un nuevo archivo `bval_zeros`. Esto también lo podemos hacer en la terminal con `sed`: 
 ```
@@ -206,14 +225,17 @@ dwibiascorrect ants \
 Para terminar, veamos la diferencia entre un ajuste del modelo del tensor a los datos originales, y a los datos preprocesados. Usaremos mrtrix para hacer esta estimación, y truquitos para hacer todo en un jalón. Aprende a usar los pipes de mrtrix por [acá](https://mrtrix.readthedocs.io/en/latest/getting_started/command_line.html#unix-pipelines). Haremos mapas RGB del vector principal de difusión, a los que llamaremos `*_v1.nii.gz`.
 
 Primero, a partir de los datos originales:
+
 ```
 dwi2tensor -fslgrad 64A_dwi.bvec 64A_dwi.bval 64A_dwi.nii.gz - | tensor2metric -vector original_v1.nii.gz -
 ```
 
 Ahora, a partir de los datos con denoise y eddy (no requerimos corrección de intensidad para el modelo del tensor, y no podemos hacer unring porque los datos tienen partial fourier):
+
 ```
 dwi2tensor -fslgrad 64A_dwi_eddy_rotated_bvecs 64A_dwi.bval 64A_dwi_denoised_eddy.nii.gz - | tensor2metric -vector preproc_v1.nii.gz -
 ```
+
 Y los vemos con `mrview`:
 
 <img src="https://github.com/c13inb/c13inb.github.io/assets/129544525/6b5687ec-6477-405c-87d7-36fe41e73320" width="900" height="380">
@@ -241,6 +263,7 @@ Take one or more 2D-EPI DWI acquisitions and preprocess them according to:
 1. dwidenoise (mrtrix, Exp2 estimator - Cordero-Grande 2019).
 2. eddy (fsl), including eddy_quad for quality check
 3. bias-field correction (N4BiasFieldCorrection). Parameters set for rat imaging.
+
 ```
 
 Vemos que primero pide un `-i` input (imágen DWI cruda) y despues un `-o` output (tu nueva imágen)

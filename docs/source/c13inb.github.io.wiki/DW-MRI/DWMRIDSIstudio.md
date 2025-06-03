@@ -1,3 +1,6 @@
+DSIstudio
+=========
+
 ###### tags: `Tutorial`
 # Tutorial DWI 2022
 
@@ -7,6 +10,7 @@
 
 
 ## Archivos:
+
 1. `dwis.nii.gz` : Imágenes de difusión
 1. `dwis.bvec`   : Vectores del gradiente de difusión
 1. `dwis.bval`   : b-valores
@@ -22,6 +26,7 @@ Las imágenes `dwis.nii.gz` tienen los ojos alargados, porque fueron adquiridas 
 
 
 # Pre-procesamiento
+
 No entraremos en detalles de preprocesamiento en este tutorial. Se recomienda leer [la documentación de eddy en el sitio de fsl](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup/TopupUsersGuide). Se sugiere usar una máquina con CUDA y fsl versión 6.0.2 o superior. No correrlo con CUDA implica varias horas de preprocesamiento.
 
 Al terminar veremos que las imágenes están mucho menos distorsionadas:
@@ -32,6 +37,7 @@ Al terminar veremos que las imágenes están mucho menos distorsionadas:
 **Las imágenes preprocesadas de este tutorial, pre-cocinadas para fines prácticos, se llaman `dwi_preproc_corrected.{bvec,bval,nii}`.**
 
 # Tensor de difusión
+
 Revisamos que todo esté en orden. Usaré mrtrix3 para generar el tensor de difusión. Me gusta el formato `.mif`, pero bien podría escribir `.nii.gz` si me diera la gana.
 
 Primero genero una máscara:
