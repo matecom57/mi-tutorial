@@ -1,4 +1,4 @@
- /misc
+/misc
 ======
 
 En principio en la carpeta __/misc__ , que se encuentra en la raíz de todos los equipos, se encuentran carpetas con los nombres de los equipos y por lo tanto con acceso a cada uno de ellos.
