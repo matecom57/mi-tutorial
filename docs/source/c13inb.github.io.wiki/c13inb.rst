@@ -1,4 +1,4 @@
-c13inb
+c13inb - 02
 ======
 
 Referencia: `AQUÍ <https://github.com/c13inb/c13inb.github.io/wiki>`_
@@ -10,6 +10,6 @@ Contents
     :maxdepth: 1
     :caption: Bash
 
-    Procesamiento-Imagen/Procesamiento-Imagen
+    Procesamiento_Imagen/Procesamiento-Imagen
     Bash/Bash
 
