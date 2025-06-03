@@ -22,7 +22,7 @@ FMRIB Software Library es una colección de herramientas muy popular para el pro
 Uno de los favoritos es MRtrix3 que cuenta con una larga colección de herramientas para procesar, visualizar y analizar imágenes sensibles a difusión 
 (DWI). Si bien esta muuuy enfocado a las DWI, muchas herramientas son útiles para manejar imagenes en general. Mrtrix esta tambíen super bien documentado, aquí puedes checar su  `wiki <https://mrtrix.readthedocs.io/en/latest/>`_ .
 
-+ :doc:`Grosor-cortical`
++ :doc:`FreeSurfer/Grosor-cortical`
 
 Un clásico!, FreeSurfer es de los softwares más utilizados para analizar imágenes de humanos. Dentro de su libreria hay montones de funciones para procesar imágenes estructurales, funcionales y de difusión. Puedes realizar desde registros, hasta  tractografía y mapeo funcional. Aquí te dejo su  `wiki <https://surfer.nmr.mgh.harvard.edu/fswiki>`_  para que lo cheques. 
 
