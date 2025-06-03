@@ -1,5 +1,4 @@
 #!/bin/bash
 
-../../../../../sube_git.sh 
-
+../../../../../../sube_git.sh
 
