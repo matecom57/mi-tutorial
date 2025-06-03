@@ -75,6 +75,7 @@ Mi directorio actual es:
    ## /home/inb/paulinav
 
 Cambio de directorio a donde esten mis datos:
+
 .. code:: Bash
 
    cd /misc/nyquist/paulinav/datos
@@ -84,6 +85,7 @@ Cambio de directorio a donde esten mis datos:
    ## /misc/nyquist/paulinav/datos
 
 Para regresar directorios:
+
 .. code:: Bash
 
    cd ..
@@ -137,6 +139,7 @@ Ahora podemos crear uno o multiples nuevos directorios/carpetas con este comando
    mkdir Mi_carpeta
 
 o multiples:
+
 .. code:: Bash
 
    mkdir carpeta1 carpeta2 carpeta3
@@ -145,6 +148,7 @@ cp = copy
 ----------------------------------------
 
 Con este comando podemos hacer una copia de los archivos que queramos de un directorio a otro, por ejemplo:
+
 .. code:: Bash
 
    cp /misc/nyquist/paulinav/archivo.txt /misc/rhesus/paulinav/datos
@@ -159,6 +163,7 @@ Para mover mi archivo de un directorio a otro:
 
    mv archivo.txt ~/Documentos
 Para cambiarle el nombre:
+
 .. code:: Bash
 
    mv archivo.txt nuevo_archivo.txt
@@ -171,7 +176,9 @@ Poderoso y peligroso. El comando ``rm`` es para eliminar archivos de forma **def
 .. code:: Bash
 
    rm archivo.txt
+
 o 
+
 
 .. code:: Bash
 
@@ -189,10 +196,13 @@ Para leer el contenido de un archivo .txt:
    cat archivo.txt
 
 Para concatenar dos archivos:
+
 .. code:: Bash
 
    cat archivo1.txt archivo2.txt > nuevo_archivo.txt
+
 Para crear un nuevo archivo:
+
 .. code:: Bash
 
    cat > archivo.txt
@@ -216,6 +226,7 @@ tail
 ----------------------------------------
 
 Mientras que ``tail`` lee las últimas lineas de un archivo:
+
 .. code:: Bash
 
    tail abecedario.txt
@@ -246,7 +257,7 @@ este comando despliega a los directorios con su estructura e información. Da un
    #     └── image1.jpg
    
 
-* = wildcard
+"*" = wildcard
 ----------------------------------------
 
 Uno de mis favoritos es el super asterisco ``*``, que es una manera altamente efectiva de filtrar, buscar y seleccionar archivos en un directorio. Aquí vamos a poner unos ejemplos.
@@ -267,7 +278,9 @@ Suponiendo que tenemos una serie de archivos en nuestro directorio:
    ## list_px.txt
    ## list_task.txt
    ## list_class.txt
+
 Puedo seleccionar solamente todos aquellos con terminación ``.sh``:
+
 .. code:: Bash
 
    ls *.sh
@@ -275,14 +288,19 @@ Puedo seleccionar solamente todos aquellos con terminación ``.sh``:
    ## script_rat.sh
    ## script_hm.sh
    ## script_img.sh
+
 O filtrar aquellos archivos que son relacionados a roedores:
+
 .. code:: Bash
 
    ls *rat*
    
    ## img_rat.png
    ## script_rat.sh
+   
+
 O seleccionar todos los archivos que empiecen con list:
+
 .. code:: Bash
 
    ls list*
@@ -295,6 +313,7 @@ O seleccionar todos los archivos que empiecen con list:
 ----------------------------------------
 
 Este es un indicativo al final de un comando que permite que se ejecute en el background mientras te permite seguir trabajando o escribiendo en la terminal. Un ejemplo donde es increiblemente útil es al abrir imágenes, por ejemplo:
+
 .. code:: Bash
 
    display imagen.png &

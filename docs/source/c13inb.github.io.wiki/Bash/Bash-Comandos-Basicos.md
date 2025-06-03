@@ -70,6 +70,7 @@ pwd
 ```
 
 Cambio de directorio a donde esten mis datos:
+
 ```
 cd /misc/nyquist/paulinav/datos
 
@@ -79,6 +80,7 @@ pwd
 ```
 
 Para regresar directorios:
+
 ```
 cd ..
 
@@ -130,6 +132,7 @@ mkdir Mi_carpeta
 ```
 
 o multiples:
+
 ```
 mkdir carpeta1 carpeta2 carpeta3
 ```
@@ -137,6 +140,7 @@ mkdir carpeta1 carpeta2 carpeta3
 ## cp = copy
 
 Con este comando podemos hacer una copia de los archivos que queramos de un directorio a otro, por ejemplo:
+
 ```
 cp /misc/nyquist/paulinav/archivo.txt /misc/rhesus/paulinav/datos
 ```
@@ -150,6 +154,7 @@ Para mover mi archivo de un directorio a otro:
 mv archivo.txt ~/Documentos
 ```
 Para cambiarle el nombre:
+
 ```
 mv archivo.txt nuevo_archivo.txt
 ``` 
@@ -161,7 +166,9 @@ Poderoso y peligroso. El comando `rm` es para eliminar archivos de forma **defin
 ```
 rm archivo.txt
 ```
+
 o 
+
 
 ```
 rm /misc/nyquist/paulinav/archivo.txt
@@ -178,10 +185,13 @@ cat archivo.txt
 ```
 
 Para concatenar dos archivos:
+
 ```
 cat archivo1.txt archivo2.txt > nuevo_archivo.txt
 ```
+
 Para crear un nuevo archivo:
+
 ```
 cat > archivo.txt
 ```
@@ -203,6 +213,7 @@ head abecedario.txt
 ## tail
 
 Mientras que `tail` lee las últimas lineas de un archivo:
+
 ```
 tail abecedario.txt
 
@@ -232,7 +243,7 @@ tree /home/paulinav
 
 ```
 
-## * = wildcard
+## "*" = wildcard
 
 Uno de mis favoritos es el super asterisco `*`, que es una manera altamente efectiva de filtrar, buscar y seleccionar archivos en un directorio. Aquí vamos a poner unos ejemplos.
 Suponiendo que tenemos una serie de archivos en nuestro directorio:
@@ -252,7 +263,9 @@ ls
 ## list_task.txt
 ## list_class.txt
 ```
+
 Puedo seleccionar solamente todos aquellos con terminación `.sh`:
+
 ```
 ls *.sh
 
@@ -260,14 +273,19 @@ ls *.sh
 ## script_hm.sh
 ## script_img.sh
 ```
+
 O filtrar aquellos archivos que son relacionados a roedores:
+
 ```
 ls *rat*
 
 ## img_rat.png
 ## script_rat.sh
+
 ```
+
 O seleccionar todos los archivos que empiecen con list:
+
 ```
 ls list*
 
@@ -279,6 +297,7 @@ ls list*
 ## & = ampersand
 
 Este es un indicativo al final de un comando que permite que se ejecute en el background mientras te permite seguir trabajando o escribiendo en la terminal. Un ejemplo donde es increiblemente útil es al abrir imágenes, por ejemplo:
+
 ```
 display imagen.png &
 ```
