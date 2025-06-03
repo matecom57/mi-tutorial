@@ -1,6 +1,5 @@
-Bash-Loops
-==========
-
+Loops
+=====
 
 Iteración de comandos con ``for`` ##
 ----------------------------------------
