@@ -7,5 +7,7 @@ Herramientas de Software
    :caption: Herramientas de Software
 
    rclone
-
-
+   X2Go
+   SSh
+   git
+   Anaconda

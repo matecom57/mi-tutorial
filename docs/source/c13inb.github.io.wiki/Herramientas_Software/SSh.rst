@@ -9,8 +9,8 @@ puede incluso redirigir las X (interfaz gráfica) y tráfico de red. Es un
 protocolo relativamente seguro ya que el tráfico de datos viaja de manera
 encriptada entre los equipos.
 
-En linux y mac ssh está instalado y listo para usarse. En windows puedes usar [mobaxterm](https://mobaxterm.mobatek.net/)
-o [putty](https://www.putty.org/).
+En linux y mac ssh está instalado y listo para usarse. En windows puedes usar  `mobaxterm <https://mobaxterm.mobatek.net/>`_ 
+o  `putty <https://www.putty.org/>`_ .
 
 En particular el uso de este protocolo  permite acceder a los diferentes
 equipos en el clúster.  Esto es recomendable, por ejemplo, para organizar datos
@@ -42,55 +42,65 @@ e interactuar con el clúster.
 
 Por ultimo, como ya se ha mencionado la conexión puede hacerse de manera externa al instituto. El usuario y contraseña son los que se usan en sesiones normales. Para conectarse de manera externa al instituto se requiere la dirección para realizar la conexión.
 
-# Transferir archivos
+Transferir archivos
+----------------------------------------
 
 Es posible transferir archivos de manera sencilla entre los equipos, tan solo poniendo el contenido en la carpeta de datos que nos corresponde.
 
 Sin embargo es puede transferir archivos entre computadoras usando como base el protocolo ssh.
 
-El comando básico de transferencia es `scp`, este comando transfiere datos de manera segura a cualquier zona del equipo objetivo donde tengamos permisos de escritura. Permite enviar algún archivo o directorio , así como descargar un archivo o directorio.
+El comando básico de transferencia es ``scp``, este comando transfiere datos de manera segura a cualquier zona del equipo objetivo donde tengamos permisos de escritura. Permite enviar algún archivo o directorio , así como descargar un archivo o directorio.
 
-## Envio de archivo
+Envio de archivo
+----------------------------------------
 
     scp archivo usuario@equipo:/carpetadestino/
 
-## Descarga de archivo
+Descarga de archivo
+----------------------------------------
 
     scp usuario@equipo:/carpetaorigen/ /carpetadestino/archivo
 
-Sin embargo este comando no permite resumir una descarga interrumpida y es básicamente una copia segura. En caso de querer resumir una descarga o poder hacer un copia que seleccione los archivos nuevos, es mejor el uso del comando `rsync`. Rsync permite la copia de un archivo a traves de conexiones seguras, así como de conexiones sin encriptación.
+Sin embargo este comando no permite resumir una descarga interrumpida y es básicamente una copia segura. En caso de querer resumir una descarga o poder hacer un copia que seleccione los archivos nuevos, es mejor el uso del comando ``rsync``. Rsync permite la copia de un archivo a traves de conexiones seguras, así como de conexiones sin encriptación.
 
 En el caso de una conexión sin encriptación solo se usa el comando que no declara el protocolo.
 
-## Para copiar un archivo a la carpeta destino
+Para copiar un archivo a la carpeta destino
+----------------------------------------
 
     rsync -auvzh /carpetaorigen/archivo /carpetadestino/
 
-## Si se quiere copiar todo el directorio
+Si se quiere copiar todo el directorio
+----------------------------------------
 
     rsync -auvzh /carpetaorigen /carpetadestino/
 
-Esto copiaría la `carpetaorigen` completa en la carpeta destino.
+Esto copiaría la ``carpetaorigen`` completa en la carpeta destino.
 Para hacer las transferencias a traves de ssh:
 
-## Para copiar un archivo a la maquina remota
+Para copiar un archivo a la maquina remota
+----------------------------------------
 
     rsync -e 'ssh' /carpetaorigen/archivo usuario@equipo:/carpetadestino/
 
-## Para copiar la carpeta completa a la maquina remota
+Para copiar la carpeta completa a la maquina remota
+----------------------------------------
 
     rsync -e 'ssh' /carpetaorigen usuario@equipo:/carpetadestino/
 
-## Para copiar un archivo del equipo remoto a la carpeta local
+Para copiar un archivo del equipo remoto a la carpeta local
+----------------------------------------
 
     rsync -e 'ssh' usuario@equipo:/carpetaorigen/archivo /carpetadestino/
 
-## Para copiar la carpeta completa del equipo remoto a la carpeta local
+Para copiar la carpeta completa del equipo remoto a la carpeta local
+----------------------------------------
 
     rsync -e 'ssh' usuario@equipo:/carpetaorigen /carpetadestino/
 
 
 
-# ssh-keygen
+ssh-keygen
+----------------------------------------
 Es un utilidad que permite generar, administrar y convertir llaveros de autentificación para el protocolo ssh.
 [Revisa este link ](ssh-keygen)
