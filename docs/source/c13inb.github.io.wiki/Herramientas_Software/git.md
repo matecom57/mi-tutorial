@@ -1,7 +1,7 @@
 Git
 ===
 
-[[images/git.png]]
+.. image:: git.png
  
 Es un sistema de control de revisiones distribuido que tiene enfásis en velocidad e integridad de datos, así como la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente. Se ha convertido en el sistema de control de versiones más utilizado en el desarrollo de software.
 
