@@ -1,3 +1,8 @@
+\documentclass[12pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\begin{document}
+
 Introduction
 
 B ACKGROUND
@@ -276,7 +281,7 @@ So one great improvement of the logistic model g(x) is that populations can have
 is a second improvement contained in g(x). If we use starting populations other than x  0.01, the same 
 limiting population x  0.50 will be achieved.
 
-➮COMPUTER EXPERIMENT 1.1
+COMPUTER EXPERIMENT 1.1
 
 Conﬁrm the fact that populations evolving under the rule g(x)  2x(1  x) prefer to reach the population 
 0.5. Use a calculator or computer program, and try starting populations x 0 between 0.0 and 1.0. Calculate 
@@ -295,7 +300,7 @@ map. Let x be a point and let f be a map. The orbit of x under f is the set of p
 point of the map f if f(p)  p.
 
 For example, the function g(x)  2x(1  x) from the real line to itself is a map. The orbit of x  0.01 under 
-g is 0.01, 0.0198, 0.0388, . . .  , and the ﬁxed points of g are x  0 and x  1 ̸ 2.
+g is 0.01, 0.0198, 0.0388, . . .  , and the ﬁxed points of g are x  0 and x  1  2.
 
 1.2 COBWEB PLOT : GRAPHICAL REPRESENTATION OF AN ORBIT
 
@@ -334,21 +339,21 @@ line to (x 1 , x 2 ) and with a horizontal dotted line to (x 2 , x 2 ). An entir
 this way.
 
 In this case it is clear from the geometry that the orbit we are following will converge to the 
-intersection of the curve and the diagonal, x  1 ̸ 2. What happens if instead we start with x 0  0.8? These 
+intersection of the curve and the diagonal, x  1  2. What happens if instead we start with x 0  0.8? These 
 are examples of simple cobweb plots. They can be much more complicated, as we shall see later.
 
-and x  1 ̸ 2, which are the two ﬁxed points of g. Contrast this with a linear map which, except for the 
+and x  1  2, which are the two ﬁxed points of g. Contrast this with a linear map which, except for the 
 case of the identity f(x)  x, has only one ﬁxed point x  0. What is the behavior of orbits of g? The 
 graphical representation of the orbit with initial value x  0.1 is drawn in Figure 1.2. It is clear from 
 the ﬁgure that the orbit, instead of diverging to inﬁnity as in Figure 1.1, is converging to the ﬁxed 
-point x  1 ̸ 2. Thus the orbit with initial condition x  0.1 gets stuck, and cannot move beyond the ﬁxed 
+point x  1  2. Thus the orbit with initial condition x  0.1 gets stuck, and cannot move beyond the ﬁxed 
 point x  0.5. A simple rule of thumb for following the graphical representation of an orbit: If the graph 
 is above the diagonal line y  x, the orbit will move to the right; if the graph is below the line, the 
 orbit moves to the left.
 
 EXAMPLE 1.3
 
-Let f be the map of given by f(x)  (3x  x 3 ) ̸ 2. Figure 1.3 shows a graphical representations of two 
+Let f be the map of given by f(x)  (3x  x 3 )  2. Figure 1.3 shows a graphical representations of two 
 orbits, with initial values x  1.6 and 1.8, respectively. The former orbit appears to converge to the ﬁxed 
 point x  1 as the map is iterated; the latter converges to the ﬁxed point x  1.
 
@@ -359,7 +364,7 @@ near 1 upon iteration by the map, and that initial values near 1 stay near 1. On
 values near 0 depart from the area near 0. For example, to four signiﬁcant digits, f(.1)  0.1495, f 2 (.1)  
 0.2226, f 5 (.1)  0.6587, and so on. The problem with points near 0 is that f magniﬁes them by a factor 
 larger than one. For example, the point x  .1 is moved by f to approximately .1495, a magniﬁcation factor 
-of 1.495. This magniﬁcation factor turns out to be approximately the derivative f′ (0)  1.5.
+of 1.495. This magniﬁcation factor turns out to be approximately the derivative f' (0)  1.5.
 
 1.3 S TABILITY OF F IXED P OINTS
 
@@ -378,7 +383,7 @@ move away from the ﬁxed point, which would then not be observed.
 Example 1.3 gave some insight into the question of stability. The derivative of the map at a ﬁxed point p 
 is a measure of how the distance between p and a nearby point is magniﬁed or shrunk by f. That is, the 
 points 0 and .1 begin exactly .1 units apart. After applying the rule f to both points, the distance 
-separating the points is changed by a factor of approximately f′ (0). We want to call the ﬁxed point 0 
+separating the points is changed by a factor of approximately f' (0). We want to call the ﬁxed point 0 
 “unstable” when points very near 0 tend to move away from 0.
 
 The concept of “near” is made precise by referring to all real numbers within a distance  of p as the 
@@ -400,15 +405,15 @@ Theorem 1.5 point of f.
 
 Let f be a (smooth) map on, and assume that p is a ﬁxed
 
-1. If |f′ (p)|   1, then p is a sink.
+1. If |f' (p)|   1, then p is a sink.
 
-2. If |f′ (p)| 
+2. If |f' (p)| 
  1, then p is a source.
 
-Proof: PART 1. Let a be any number between |f′ (p)| and 1; for example, a could be chosen to be (1 |f′ 
-(p)|) ̸ 2. Since
+Proof: PART 1. Let a be any number between |f' (p)| and 1; for example, a could be chosen to be (1 |f' 
+(p)|)  2. Since
 
-|f(x)  f(p)| lim  |f′ (p)|, x→p |x  p|
+|f(x)  f(p)| lim  |f' (p)|, x→p |x  p|
 
 there is a neighborhood N  (p) for some  
  0 so that
@@ -457,30 +462,30 @@ initial conditions. We will refer to the set of initial conditions whose orbits 
 basin of the sink.
 
 With Theorem 1.5 and our new terminology, we can return to Example 1.2, an example of a logistic model. 
-Setting x  g(x)  2x(1  x) shows that the ﬁxed points are 0 and 1 ̸ 2. Taking derivatives, we get g′ (0)  2 
-and g′ (1 ̸ 2)  0. Theorem 1.5 shows that x  1 ̸ 2 is a sink, which conﬁrms our suspicions from Table 1.1. 
+Setting x  g(x)  2x(1  x) shows that the ﬁxed points are 0 and 1  2. Taking derivatives, we get g′ (0)  2 
+and g′ (1  2)  0. Theorem 1.5 shows that x  1  2 is a sink, which conﬁrms our suspicions from Table 1.1. 
 On the other hand, x  0 is a source. Points near 0 are repelled from 0 upon application of g. In fact, 
 points near 0 are repelled at an exponential magniﬁcation factor of approximately 2 (check this number 
-with a calculator). These points are attracted to the sink x  1 ̸ 2.
+with a calculator). These points are attracted to the sink x  1  2.
 
-What is the basin of the sink x  1 ̸ 2 in Example 1.2? The point 0 does not belong, since it is a ﬁxed 
+What is the basin of the sink x  1  2 in Example 1.2? The point 0 does not belong, since it is a ﬁxed 
 point. Also, 1 does not belong, since g(1)  0 and further iterations cannot budge it. However, all initial 
 conditions from the interval (0, 1) will produce orbits that converge to the sink. You should sketch a 
 graph of g(x) as in Figure 1.1 and use the idea of the cobweb plot to convince yourself of this fact.
 
-There is a second way to show that the basin of x  1 ̸ 2 is (0, 1), which is quicker and trickier but far 
-less general. That is to use algebra (not geometry) to compare |g(x)  1 ̸ 2| to |x  1 ̸ 2|. If the former is 
-smaller than the latter, it means the orbit is getting closer to 1 ̸ 2. The algebra says:
+There is a second way to show that the basin of x  1  2 is (0, 1), which is quicker and trickier but far 
+less general. That is to use algebra (not geometry) to compare |g(x)  1  2| to |x  1  2|. If the former is 
+smaller than the latter, it means the orbit is getting closer to 1  2. The algebra says:
 
-|g(x)  1 ̸ 2|  |2x(1  x)  1 ̸ 2|
+|g(x)  1  2|  |2x(1  x)  1  2|
 
 (1.2)
 
- 2|x  1 ̸ 2||x  1 ̸ 2|
+ 2|x  1  2||x  1  2|
 
-Now we can see that if x  (0, 1), the multiplier 2|x  1 ̸ 2| is smaller than one. Any point x in (0, 1) will 
-have its distance from x  1 ̸ 2 decreased on each iteration by g. Notice that the algebra also tells us what 
-happens for initial conditions outside of (0, 1): they will never converge to the sink x  1 ̸ 2. Therefore 
+Now we can see that if x  (0, 1), the multiplier 2|x  1  2| is smaller than one. Any point x in (0, 1) will 
+have its distance from x  1  2 decreased on each iteration by g. Notice that the algebra also tells us what 
+happens for initial conditions outside of (0, 1): they will never converge to the sink x  1  2. Therefore 
 the
 
 
@@ -488,8 +493,8 @@ basin of the sink is exactly the open interval (0, 1). Informally, we could also
 inﬁnity is (
 
 
-Theorem 1.5 also clariﬁes Example 1.3, which is the map f(x)  (3x  x 3 ) ̸ 2. The ﬁxed points are 1, 0, 
-and 1, and the derivatives are f′ (1)  f′ (1)  0, and f′ (0)  1.5. By the theorem, the ﬁxed points 1 and 1 
+Theorem 1.5 also clariﬁes Example 1.3, which is the map f(x)  (3x  x 3 )  2. The ﬁxed points are 1, 0, 
+and 1, and the derivatives are f' (1)  f' (1)  0, and f' (0)  1.5. By the theorem, the ﬁxed points 1 and 1 
 are attracting ﬁxed points, and 0 is a repelling ﬁxed point.
 
 Let’s try to determine the basins of the two sinks. Example 1.3 is already signiﬁcantly more complicated 
@@ -514,11 +519,11 @@ neither of these numbers is in the basin of either sink.
 E XERCISE T1.3
 
 Solve the inequality |f (x)  0| 
- |x  0|, where f (x)  (3x  x 3 ) ̸ 2. This identiﬁes points whose distance from 0 increases on each 
+ |x  0|, where f (x)  (3x  x 3 )  2. This identiﬁes points whose distance from 0 increases on each 
 iteration. Use the result to ﬁnd a large set of initial conditions that do not converge to any sink of f .
 
 There is one case that is not covered by Theorem 1.5. The stability of a ﬁxed point p cannot be determined 
-solely by the derivative when |f′ (p)|  1 (see Exercise 1.2).
+solely by the derivative when |f' (p)|  1 (see Exercise 1.2).
 
 
 So far we have seen the important role of ﬁxed points in determining the behavior of orbits of maps. If 
@@ -590,11 +595,11 @@ sink if p is a sink for the map f k . The orbit of p is a periodic source if p i
 It is helpful to review the chain rule of calculus, which shows how to expand the derivative of a 
 composition of functions:
 
-(f ◦ g)′ (x)  f′ (g(x))g ′ (x)
+(f ◦ g)′ (x)  f' (g(x))g ′ (x)
 
 (1.3)
 
-Our current interest in the chain rule is for f  g, in which case we have (f 2 )′ (x)  f′ (f(x))f′ (x). If 
+Our current interest in the chain rule is for f  g, in which case we have (f 2 )′ (x)  f' (f(x))f' (x). If 
 x happens to be a period-two point for f, the chain rule is saying something quite simple: the derivative 
 of f 2 at a point of a period-two orbit is simply the product of the derivatives of f at the two points in 
 the orbit. In particular, the derivative of f 2 is the same, when evaluated at either point of the orbit. 
@@ -610,7 +615,7 @@ changed. The ﬁxed points are x  0 and x  5 ̸ 7. Checking derivatives, g′ (0
 they are sources. The orbit 3 ̸ 7, 6 ̸ 7  is a period-two orbit for g. Check that (g 2 ) ′ at each of the 
 orbit points is 5 ̸ 4, so that this period-two orbit repels nearby points. Now where do points end up?
 
-➮
+
 
 COMPUTER
 
@@ -628,23 +633,23 @@ for higher periods. Let p 1 , . . . , p k  denote a period-k orbit of f. The cha
 
 (f k )′ (p 1 )  (f(f k1 ))′ (p 1 )
 
- f′ (f k1 (p 1 ))(f k1 )′ (p 1 )
+ f' (f k1 (p 1 ))(f k1 )′ (p 1 )
 
- f′ (p 1 )
+ f' (p 1 )
 
 (1.4)
 
- f′ (p 1 ).
+ f' (p 1 ).
 
 S TABILITY T EST FOR P ERIODIC O RBITS
 
 The periodic orbit p 1 , . . . , p k  is a sink if
 
- f′ (p 1 )|  1
+ f' (p 1 )|  1
 
 and a source if
 
- f′ (p 1 )| 
+ f' (p 1 )| 
  1.
 
 
@@ -659,9 +664,9 @@ When 0 a  1, the map has a sink at x  0, and we will see later that every initia
 is attracted to this sink. (In other words, with small reproduction rates, small populations tend to die 
 out.) The graph of the map is shown in Figure 1.5(a).
 
-If 1  a  3, the map, shown in Figure 1.5(b), has a sink at x  (a  1) ̸ a, since the magnitude of the 
-derivative is less than 1. (Small populations grow to a steady state of x  (a  1) ̸ a.) For a greater than 
-3, as in Figure 1.5(c), the ﬁxed point x  (a  1) ̸ a is unstable since |g a ′ (x)| 
+If 1  a  3, the map, shown in Figure 1.5(b), has a sink at x  (a  1)  a, since the magnitude of the 
+derivative is less than 1. (Small populations grow to a steady state of x  (a  1)  a.) For a greater than 
+3, as in Figure 1.5(c), the ﬁxed point x  (a  1)  a is unstable since |g a ′ (x)| 
  1, and a period-two sink takes its place, which we saw in Table 1.2 for a  3.3. When a grows above 1 √ 6  
 3.45, the period-two sink also becomes unstable.
 
@@ -771,8 +776,8 @@ example, will be a ﬁxed point of G 2 (x). Therefore we can ﬁnd periodic poin
 
 The graph of y  G 2 (x) is shown in Figure 1.10(b). It is not hard to verify by hand the general shape of 
 the graph. First, note that the image of [0,1] under G is [0,1], so the graph stays entirely within the 
-unit square. Second, note that G(1 ̸ 2)  1 and G(1)  0 implies that G 2 (1 ̸ 2)  0. Further, since G(a 1 )  1 
-̸ 2 for some a 1 between 0 and 1 ̸ 2, it follows that G 2 (a 1 )  1. Similarly, there is another number a 2 
+unit square. Second, note that G(1  2)  1 and G(1)  0 implies that G 2 (1  2)  0. Further, since G(a 1 )  1 
+̸ 2 for some a 1 between 0 and 1  2, it follows that G 2 (a 1 )  1. Similarly, there is another number a 2 
 such that G 2 (a 2 )  1.
 
 It is clear from Figure 1.10(b) that G 2 has four ﬁxed points, and therefore G has four points that have 
@@ -789,7 +794,7 @@ Find the period-two orbit of G(x)  4x(1  x).
 
 Does G have any period-three points? There is a point b 1 between 0 and a1  for which G(b 1 )  a 1 . This 
 implies that G 3 (b 1 )  1. The same holds for three other points in [0,1], so y  G 3 (x) has four relative 
-maxima of height 1 in [0,1]. Since G(1)  0, G 3 has roots at x  0, a 1 , 1 ̸ 2, a 2 , and 1, which separate 
+maxima of height 1 in [0,1]. Since G(1)  0, G 3 has roots at x  0, a 1 , 1  2, a 2 , and 1, which separate 
 the maxima. The graph of G 3 is shown in Figure 1.10(c).
 
 The map G 3 has eight ﬁxed points, two of which were known to be the ﬁxed points 0 and 3 ̸ 4 of G. The 
@@ -840,13 +845,13 @@ E XAM PLE 1.9
 Consider the map f(x)  3x (mod 1) on the unit interval. The notation y (mod 1) stands for the number y n, 
 where n is the unique integer that makes 0 y n    1. For example, 14.92 (mod 1)  .92 and 14.92 (mod 1)  
 .08. For a positive number y, this is the fractional part of y. See Figure 1.11(a) for a graph of the map. 
-Because of the breaks at x  1 ̸ 3, 2 ̸ 3, this function is not continuous.
+Because of the breaks at x  1  3, 2 ̸ 3, this function is not continuous.
 
 This map is not continuous, however the important property that we are interested in is not caused by the 
 discontinuity . It may be more natural to view f as a map on the circle of circumference one. Glue together 
 the ends of the unit interval to form a circle, as in Figure 1.11(b). If we consider f(x) as a map from 
 this circle to itself, it is a continuous map. In Figure 1.11(b), we show the image of the subinterval [0, 
-1 ̸ 2] on the circle. Whether we think of f as a discontinuous map on the unit interval or as a continuous 
+1  2] on the circle. Whether we think of f as a discontinuous map on the unit interval or as a continuous 
 map on the circle makes no difference for the questions we will try to answer below.
 
 We call a point x eventually periodic with period p for the map f if for some positive integer N, f p (x)  
@@ -854,7 +859,7 @@ f n (x) for all n
  N, and if p is the smallest
 
 such positive integer. This says exactly that the orbit of x eventually maps directly onto a periodic 
-orbit. For example, x  1 ̸ 3 is an eventually periodic point, since it maps under f to the period one orbit 
+orbit. For example, x  1  3 is an eventually periodic point, since it maps under f to the period one orbit 
 0.
 
 ✎
@@ -894,12 +899,12 @@ Consider the 3x mod 1 map of the unit interval [0, 1]. Deﬁne the distance betw
 be either |x  y| or 1  |x  y|, whichever is smaller. (We are measuring with the “circle metric”, in the 
 sense of Figure 1.11, corresponding to the distance between two points on the circle.)
 
-(a) Show that the distance between any pair of points that lie within 1 ̸ 6 of one another is tripled by the 
+(a) Show that the distance between any pair of points that lie within 1  6 of one another is tripled by the 
 map. (b) Find a pair of points whose distance is not tripled by the map. (c) Show that to prove sensitive 
-dependence for any point, d can be taken to be any positive number less than 1 ̸ 2 in Deﬁnition 1.10, and 
+dependence for any point, d can be taken to be any positive number less than 1  2 in Deﬁnition 1.10, and 
 that k can be chosen to be the smallest integer
 
-greater than ln(d ̸ |x  x 0 |) ̸ ln 3.
+greater than ln(d ̸ |x  x 0 |)  ln 3.
 
 ✎
 
@@ -916,7 +921,7 @@ initial conditions, which is the hallmark of chaos.
 In this section we will show for the logistic map G  g 4 that for any initial point in the unit interval 
 and any preset distance  
  0, no matter how small, there is a second point within  units of the ﬁrst so that their two orbits will 
-map at least d  1 ̸ 4 units apart after a sufﬁcient number of iterations. Since 1 ̸ 4
+map at least d  1  4 units apart after a sufﬁcient number of iterations. Since 1  4
 
 unit is 25% of the length of the unit interval, it is fair to say that the two initial conditions which 
 began very close to one another are eventually moved by the map so they are no longer close, by any 
@@ -926,9 +931,9 @@ In order to investigate sensitive dependence, we introduce the concept of the it
 is a bookkeeping device that allows much of the information of an orbit to be coded in terms of discrete 
 symbols.
 
-For the logistic map, assign the symbol L to the left subinterval [0, 1 ̸ 2], and R to the right subinterval 
-[1 ̸ 2, 1]. Given an initial value x 0 , we construct its itinerary by listing the subintervals, L or R, 
-that contain x 0 and all future iterates. For example, the initial condition x 0  1 ̸ 3 begets the orbit 3 1 
+For the logistic map, assign the symbol L to the left subinterval [0, 1  2], and R to the right subinterval 
+[1  2, 1]. Given an initial value x 0 , we construct its itinerary by listing the subintervals, L or R, 
+that contain x 0 and all future iterates. For example, the initial condition x 0  1  3 begets the orbit 3 1 
 , 9 8 , 81 32 , . . .  , whose itinerary begins LRL . . . . For the initial condition x 0  4 1 , the orbit 
 is 4 1 , 4 3 , 4 3 , . . .  ,
 
@@ -936,10 +941,10 @@ which terminates in the ﬁxed point x  4 3 . The itinerary for this orbit is LR
 by LR; the overbar indicates that the R repeats indeﬁnitely.
 
 Notice that there is a special orbit, or group of orbits, for which the itinerary is not uniquely deﬁned. 
-That is because the intervals L and R overlap at x  1 ̸ 2. In particular, consider the initial condition x 0  
-1 ̸ 2. The corresponding orbit is 1 ̸ 2, 1, 0, 0, . . .  , which can be assigned itinerary RRL or LRL. This 
+That is because the intervals L and R overlap at x  1  2. In particular, consider the initial condition x 0  
+1  2. The corresponding orbit is 1  2, 1, 0, 0, . . .  , which can be assigned itinerary RRL or LRL. This 
 particular orbit (and some others like it) are assigned two different names under this naming system. 
-Except for the case of orbits which land precisely on x  1 ̸ 2 at some point of the orbit (and therefore end 
+Except for the case of orbits which land precisely on x  1  2 at some point of the orbit (and therefore end 
 up mapping onto the ﬁxed point 0), the itinerary is uniquely deﬁned.
 
 Once we are given this way of assigning an itinerary to each orbit, we can map out, on the unit interval, 
@@ -953,8 +958,8 @@ We would like to identify the sets of all initial points whose itineraries begin
 of symbols. For example, the set of initial conditions whose itinerary begins with LR forms a subinterval 
 of the unit interval. The subintervals in Figure 1.12 give information about the future behavior of the 
 initial conditions lying in them. Another example is the subinterval marked LRL, which consists of orbits 
-that start out in the interval L  [0, 1 ̸ 2], whose ﬁrst iterate lands in R  [1 ̸ 2, 1], and whose second 
-iterate lands in [0, 1 ̸ 2]. For example, x  1 ̸ 3 lies in LRL. Likewise, x  1 ̸ 4 lies in LRR because its 
+that start out in the interval L  [0, 1  2], whose ﬁrst iterate lands in R  [1  2, 1], and whose second 
+iterate lands in [0, 1  2]. For example, x  1  3 lies in LRL. Likewise, x  1  4 lies in LRR because its 
 ﬁrst and second iterate are in R.
 
 ✎
@@ -978,7 +983,7 @@ Continue the schematic diagram in Figure 1.12 to subintervals corresponding to l
 
 E XERCISE T1.16
 
-Let x 0 be a point in the subinterval RLLRRRLRLR. (a) Is x 0 less than, equal to, or greater than 1 ̸ 2? (b) 
+Let x 0 be a point in the subinterval RLLRRRLRLR. (a) Is x 0 less than, equal to, or greater than 1  2? (b) 
 Same question for f 6 (x 0 ).
 
 A graphical way of specifying the possible itineraries for the logistic map is shown in Figure 1.13. We 
@@ -1001,7 +1006,7 @@ Consider any one of these small subintervals for a large value of k, correspondi
 
  S k ), but which map k iterates later to subintervals LL, LR, RR, and RL, respectively. (If this step 
 isn’t clear, it may help to recall Exercise T1.16.) In Figure 1.12, the width of the LR and RR subintervals 
-are greater than 1 ̸ 4, so that the LR and RL subintervals, for example, lie over 1 ̸ 4 unit apart.
+are greater than 1  4, so that the LR and RL subintervals, for example, lie over 1  4 unit apart.
 
 It is now possible to see why every point in [0, 1] has sensitive dependence on initial conditions under 
 the logistic map G. To ﬁnd a neighbor close to x 0 that eventually separates by a distance of at least d  
@@ -1009,7 +1014,7 @@ the logistic map G. To ﬁnd a neighbor close to x 0 that eventually separates b
  S k RL. Therefore every point exhibits sensitive dependence with neighbors that are arbitrarily close.
 
 We illustrate for k  1000: There is a pair of initial conditions within 2 1001  10 300 that eventually are 
-mapped at least 1 ̸ 4 unit apart. This is an expansion of 1000 factors of 2 in 1000 iterates, for an average 
+mapped at least 1  4 unit apart. This is an expansion of 1000 factors of 2 in 1000 iterates, for an average 
 multiplicative expansion rate of approximately 2. In Chapter 3 we will introduce the term “Lyapunov 
 number”, which will quantify the average multiplicative separation rate of a map, which is in this case 2 
 1000 ̸ 1000  2 per iterate. The fact that this number is greater than 1 will mean that repeated expansion is 
@@ -1019,7 +1024,7 @@ The impact of sensitive dependence is that changes in initial measurements or er
 the orbit can result in quite different outcomes. The consequences of this behavior were not fully 
 appreciated until the advent of computers and the computer simulation of dynamical models.
 
-➮
+
 
 COMPUTER
 
@@ -1030,7 +1035,7 @@ EXPERIMENT
 Use a computer program to illustrate sensitive dependence for the logistic map G(x)  4x(1  x). Start with 
 two different initial conditions that are very close together, and iterate G on each. The two orbits should 
 stay near one another for a while, and then separate for good. By collecting statistics on your 
-experiments, try to quantify how many iterations are required for the points to move apart, say 1 ̸ 2 unit, 
+experiments, try to quantify how many iterations are required for the points to move apart, say 1  2 unit, 
 when the initial separation is .01, .001, etc. Does the location of the initial pair matter?
 
 Period Three Implies Chaos
@@ -1055,7 +1060,7 @@ We show a particular map f in Figure 1.14 that has a period-three orbit, denoted
 B, f(B)  C, and f(C)  A. We will discover that there are inﬁnitely many points between A and C that 
 exhibit sensitive dependence on initial conditions. To simplify the argument, we will use an assumption 
 that is explicitly drawn into Figure 1.14: the map f(x) is unimodal, which means that it has only one 
-critical point. (A critical point for a function f(x) is a point for which f′ (x)  0 or where the 
+critical point. (A critical point for a function f(x) is a point for which f' (x)  0 or where the 
 derivative does not exist.) This assumption, that f(x) has a single maximum, is not necessary to prove 
 sensitive dependence—in fact sensitive dependence holds for any continuous map with a period-three orbit. 
 The ﬁnal step of Challenge 1 asks you to extend the reasoning to this general case.
@@ -1089,7 +1094,7 @@ The proof that period three implies chaos is given below in outline form. In eac
 
  S k RS2  S 3 R. Explain why at least 2 of them must have length that is less than half the length of J.
 
- S k RS 2 S 3 RLR with the following property. Each point x of J 1 has a neighbor y within length(J) ̸ 2 
+ S k RS 2 S 3 RLR with the following property. Each point x of J 1 has a neighbor y within length(J)  2 
 whose pairwise distance upon further iteration eventually exceeds d.
 
 Step 4 Let h  C  A be the length of the original interval. Show that for each positive integer k there are 
@@ -1154,19 +1159,19 @@ in 1.10(c). Clearly, x 1  0.
 
 See Exercise T1.5.
 
-1.6. Deﬁne the map f(x)  2x (mod 1) on the unit interval [0, 1]. Let L denote the subinterval [0, 1 ̸ 2] 
-and R the subinterval [1 ̸ 2, 1].
+1.6. Deﬁne the map f(x)  2x (mod 1) on the unit interval [0, 1]. Let L denote the subinterval [0, 1  2] 
+and R the subinterval [1  2, 1].
 
 (a) Draw a chart of the itineraries of f as in Figure 1.12.
 
 (b) Draw the transition graph for f.
 
 (c) Establish sensitive dependence for orbits under this map. Show that each point has neighbors 
-arbitrarily near that eventually map at least 1 ̸ 2 unit apart.
+arbitrarily near that eventually map at least 1  2 unit apart.
 
 1.7. Deﬁne the tent map on the unit inverval [0, 1] by
 
-2x if 0 x 1 ̸ 2 T(x)  . { 2(1  x) if 1 ̸ 2 x 1
+2x if 0 x 1  2 T(x)  . { 2(1  x) if 1  2 x 1
 
 (a) Divide the unit interval into two appropriate subintervals and repeat parts
 
@@ -1178,7 +1183,7 @@ In what ways, if any, does it differ from the periodic table for the logistic ma
 1.8. Let f(x)  4x(1  x). Prove that there are points in I  [0, 1] that are not ﬁxed points, periodic 
 points, or eventually periodic points of f.
 
-1.9. Deﬁne x 1  (x n 2) ̸ (x n 1).
+1.9. Deﬁne x 1  (x n 2)  (x n 1).
 
 (a) Find L  lim n →   
 
@@ -1232,7 +1237,7 @@ Find a condition that guarantees that every initial point x in the
 interval (p  , p   ) satisﬁes f n (x) → p as n → .
 
 1.17. Let f(x)  4x(1  x). Prove that LLL . . . L, the interval of initial values x in [0, 1] such that 0  f 
-i (x)  1 ̸ 2 for 0 i  k, has length [1  cos(  ̸ 2 k )] ̸ 2.
+i (x)  1  2 for 0 i  k, has length [1  cos(  ̸ 2 k )] ̸ 2.
 
 LAB VISIT 1
 
@@ -1326,4 +1331,6 @@ The population counts from the experiment agree remarkably well with the compute
 1.18. The period-two sink predicted also can be seen in the populations for  a  0.27 and 0.50. For  a  
 0.96, the populations seem to be governed by aperiodic oscillations.
 
+
+\end{document}
 
