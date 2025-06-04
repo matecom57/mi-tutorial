@@ -20,18 +20,25 @@ el ancho de banda queda libre de estos procedimientos.
 
 El comando a ejecutar tiene un arreglo básico:
 
-     ssh usuario@equipo
+```
+ssh usuario@equipo
+```
 
 Este comando se puede modificar en el caso de que se quiera usar la interfaz gráfica a travez de la red. Una vez realizada la conexión es necesario usar [comandos de bash](?id=basicos) para interactuar con el equipo.
 
-    ssh -X usuario@equipo
+```
+ssh -X usuario@equipo
+```
 
 >  __Nota:__   
  Este comando permite el uso de programas en modo gráfico. Sin embargo la velocidad de conexión entre los equipos debe ser rapida. De lo contrario la interfaz es muy lenta. Incluso puede ejecutarse fuera de la red interna pero nuevamente sera muy lenta la interacción si la conexión es de baja velocidad.
 
 Si se desea crear un tunnel se usa el comando
 
-    ssh -D ##### usuario@equipo
+
+```
+ssh -D ##### usuario@equipo
+```
 
 Donde se sustituye el ##### por el número de puerto a usar.
 
@@ -52,11 +59,15 @@ El comando básico de transferencia es `scp`, este comando transfiere datos de m
 
 ## Envio de archivo
 
-    scp archivo usuario@equipo:/carpetadestino/
+```
+scp archivo usuario@equipo:/carpetadestino/
+```
 
 ## Descarga de archivo
 
-    scp usuario@equipo:/carpetaorigen/ /carpetadestino/archivo
+```
+scp usuario@equipo:/carpetaorigen/ /carpetadestino/archivo
+```
 
 Sin embargo este comando no permite resumir una descarga interrumpida y es básicamente una copia segura. En caso de querer resumir una descarga o poder hacer un copia que seleccione los archivos nuevos, es mejor el uso del comando `rsync`. Rsync permite la copia de un archivo a traves de conexiones seguras, así como de conexiones sin encriptación.
 
@@ -64,33 +75,45 @@ En el caso de una conexión sin encriptación solo se usa el comando que no decl
 
 ## Para copiar un archivo a la carpeta destino
 
-    rsync -auvzh /carpetaorigen/archivo /carpetadestino/
+```
+rsync -auvzh /carpetaorigen/archivo /carpetadestino/
+```
 
 ## Si se quiere copiar todo el directorio
 
-    rsync -auvzh /carpetaorigen /carpetadestino/
+```
+rsync -auvzh /carpetaorigen /carpetadestino/
+```
 
 Esto copiaría la `carpetaorigen` completa en la carpeta destino.
 Para hacer las transferencias a traves de ssh:
 
 ## Para copiar un archivo a la maquina remota
 
-    rsync -e 'ssh' /carpetaorigen/archivo usuario@equipo:/carpetadestino/
+```
+rsync -e 'ssh' /carpetaorigen/archivo usuario@equipo:/carpetadestino/
+```
 
 ## Para copiar la carpeta completa a la maquina remota
 
-    rsync -e 'ssh' /carpetaorigen usuario@equipo:/carpetadestino/
+```
+rsync -e 'ssh' /carpetaorigen usuario@equipo:/carpetadestino/
+```
 
 ## Para copiar un archivo del equipo remoto a la carpeta local
 
-    rsync -e 'ssh' usuario@equipo:/carpetaorigen/archivo /carpetadestino/
+```
+rsync -e 'ssh' usuario@equipo:/carpetaorigen/archivo /carpetadestino/
+```
 
 ## Para copiar la carpeta completa del equipo remoto a la carpeta local
 
-    rsync -e 'ssh' usuario@equipo:/carpetaorigen /carpetadestino/
-
-
+```
+rsync -e 'ssh' usuario@equipo:/carpetaorigen /carpetadestino/
+```
 
 # ssh-keygen
+
 Es un utilidad que permite generar, administrar y convertir llaveros de autentificación para el protocolo ssh.
 [Revisa este link ](ssh-keygen)
+
