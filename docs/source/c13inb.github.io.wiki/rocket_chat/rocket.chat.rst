@@ -12,7 +12,7 @@ Crear nueva cuenta
 ----------------------------------------
 
 Si es la primera vez que nos visitas, crea una nueva cuenta (*Register a new account*):
-! ` <https://i.imgur.com/uZSTKML.png>`_ 
+.. image:: im01.png
 
 
 Lo más recomendable es instalar las aplicaciones oficiales de rocket.chat, disponibles para Windows, Mac, y Linux, así como para teléfonos iOS y Android, disponibles en el siguiente link:
