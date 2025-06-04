@@ -61,7 +61,7 @@ Crear nueva sesión
 Para el acceso externo es importante recordar la configuración de redes de la figura anterior. Ya que la puerta de acceso al cluster es **PENFIELD** que tiene la IP ``132.248.142.55``. Podemos escribir simplemente ``penfield.inb.unam.mx``
 Con esto en mente, presionamos el botón con una estrella amarilla como se muestra en la figura:
 
-[[images/x2go_crearconexion.png]]
+.. image:: X2Go_Imagenes/x2go_crearconexion.png
 
 Al hacer click se abre la ventana con las opciones de conexión. En ella se configuran tres parámetros:
 
@@ -71,7 +71,7 @@ Al hacer click se abre la ventana con las opciones de conexión. En ella se conf
 
 Es importante que el **nombre de la sesión sea descriptivo** y haga referencia al servidor y a la conexión que se realiza.
 
-[[images/x2go_configuracionPenfield1.png]]
+.. image:: X2Go_Imagenes/x2go_configuracionPenfield1.png
 
 Una opción recomendable es el uso de claves ``RSA/DSA``, esto brinda mayor seguridad al acceder al clúster y con esto ya no es necesario introducir el password. De lo contrario cada vez que hagamos *login* nos pedirá el password de nuestra cuenta, de la misma forma que cuando se inicia sesión en los equipos del clúster.
 
@@ -80,14 +80,14 @@ Conexión
 
 La pestaña conexión permite cambiar la compresión de las imagenes que se envían del servidor al cliente. Si nuestra conexión es lenta podemos mover el nivel a la opción de **MODEM**, sin embargo esto va en detrimento de la calidad de la imagen.
 
-[[images/x2go_configuracionPenfield2.png]]
+.. image:: X2Go_Imagenes/x2go_configuracionPenfield2.png
 
 Propiedades
 ----------------------------------------
 
 En esta ventana se puede modificar la resolución de inicio, tanto el ancho y el alto de la ventana dónde interactuaremos con el servidor, hasta los DPI de la misma. Sin embargo si se abre la ventana como en el ejemplo ``800x600`` al maximizar la ventana se adapta a la resolución de la pantalla.
 
-![[images/x2go_configuracionPenfield3.png]]
+.. image:: X2Go_Imagenes/x2go_configuracionPenfield3.png
 
 Carpetas compartidas
 ----------------------------------------
@@ -96,15 +96,15 @@ Una opción muy interesante en **X2Go** es la posibilidad de compartir una carpe
 
 Primero seleccionamos la ruta del directorio **LOCAL** y presionamos **Añadir**.
 
-![[images/x2go_configuracionPenfield4.png]]
+.. image:: X2Go_Imagenes/x2go_configuracionPenfield4.png
 
 Esto agrega la ruta en el panel mayor donde tenemos la opción de **Automontar** la cual podemos seleccionar para que el directorio se monte inmediatamente despues de que accedemos al equipo.
 
-![[images/x2go_configuracionPenfield5.png]]
+.. image:: X2Go_Imagenes/x2go_configuracionPenfield5.png
 
 Una vez configurada la sesión damos **OK** y se guardará. Para abrir la misma sólo será necesario dar click sobre alguna de ellas.
 
-![[images/x2go_variasconexiones.png]]
+.. image:: X2Go_Imagenes/x2go_variasconexiones.png
 
 Acceso Interno (IP: 172.24.80.X)
 ----------------------------------------
@@ -131,18 +131,18 @@ Cambios:
 
 Podemos usar una clave **RSA/DSA**, aunque si no se usa de cualquier forma al acceder se nos pedira el password relacionado con el usuario.
 
-![[images/x2go_config_01.png]]
+.. image:: X2Go_Imagenes/x2go_config_01.png
 
 Cerrar sesión
 ----------------------------------------
 
 Al terminar de utilizar el equipo se puede salir de dos formas. Cerrando la sesión en el equipo remoto. Primero usamos el botón para cerrar sesión.
 
-![[images/x2go_cerrarsesion2.png]]
+.. image:: X2Go_Imagenes/x2go_cerrarsesion2.png
 
 Esto desplegará la ventana de sesión y ahí seleccionaremos el botón **Logout** para cerrar la sesión.
 
-![[images/x2go_cerrarsesion3.png]]
+.. image:: X2Go_Imagenes/x2go_cerrarsesion3.png
 
 > **CUIDADO:** No debemos apagar, reiniciar, Hibernar o Suspender el equipo. Podría causar un problema al funcionamiento del clúster.
  
@@ -163,8 +163,8 @@ El screensaver está activado por defecto en la PC a la que nos estamos conectan
 
 Primero buscamos la aplicación del screensaver:
 
-! ` <https://github.com/c13inb/c13inb.github.io/blob/master/images/screensaver_paso1.png>`_ 
+.. image:: X2Go_Imagenes/screensaver_paso1.png
 
 Y lo desabilitamos: 
 
-! ` <https://github.com/c13inb/c13inb.github.io/blob/master/images/screensaver_paso2.png>`_ 
+.. image:: X2Go_Imagenes/screensaver_paso2.png
