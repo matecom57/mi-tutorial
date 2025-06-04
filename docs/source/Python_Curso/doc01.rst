@@ -4,44 +4,25 @@ Python
 https://es.wikipedia.org/wiki/Python
 
 Este artículo trata sobre el lenguaje de programación. Para el grupo de humoristas, véase Monty Python.
+
 Para el revólver, véase Colt Python.
+
 Para la serpiente, véase Pythonidae.
+
 Para otros usos de este término, véase Pitón.
-Python
-Desarrollador(es)
-Python Software Foundation
-Sitio web oficial
-Información general
-Extensiones comunes	.py, .pyc, .pyd, .pyo, .pyw, .pyz, .pyi
-Paradigma	Multiparadigma: orientado a objetos, imperativo, funcional, reflexivo
-Apareció en	20 de febrero de 1991
-Diseñado por	Guido van Rossum
-Última versión estable	3.13.3[1]​ (8 de abril de 2025 (1 mes y 22 días))
-Última versión en pruebas	3.14.0a7[2]​ (8 de abril de 2025 (1 mes y 22 días))
-Sistema de tipos	duck, dinámico, fuerte;
-Implementaciones	CPython, IronPython, Jython, Python for S60, PyPy, ActivePython, Unladen Swallow
-Dialectos	Stackless Python, RPython
-Influido por	ABC, ALGOL 68, C, Haskell, Icon, Lisp, Modula-3, Perl, Smalltalk, Java
-Ha influido a	Boo, Cobra, D, Falcon, Genie, Groovy, Ruby, JavaScript, Cython, Go Latino
-Sistema operativo	Multiplataforma
-Licencia	Python Software Foundation License
-[editar datos en Wikidata]
 
 Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, dinámico y multiplataforma.
 
 Administrado por Python Software Foundation, posee una licencia de código abierto, denominada Python Software Foundation License.[3]​ Python se clasifica constantemente como uno de los lenguajes de programación más populares, siendo ya en 2025 el más popular y además con una amplia diferencia récord histórico de más de 15 puntos porcentuales sobre el siguiente.[4]​
+
 Historia
-Artículo principal: Historia de Python
-Guido van Rossum, creador de Python, en la convención OSCON 2006
+--------
 
 Python fue creado a finales de los años ochenta por Guido van Rossum en Stichting Mathematisch Centrum (CWI),[5]​ en Países Bajos, como un sucesor del lenguaje de programación ABC, capaz de manejar excepciones e interactuar con el sistema operativo Amoeba.[6]​
 
 El nombre del lenguaje proviene de la afición de su creador por los humoristas británicos Monty Python.[7]​
 
 Guido van Rossum es el principal autor de Python, y su continuo rol central en decidir la dirección de Python es reconocido, refiriéndose a él como Benevolente Dictador Vitalicio (en inglés: Benevolent Dictator for Life, BDFL); sin embargo el 12 de julio de 2018 declinó de dicha situación de honor sin dejar un sucesor o sucesora y con una declaración altisonante:[8]​
-
-    Entonces, ¿qué van a hacer todos ustedes? ¿Crear una democracia? ¿Anarquía? ¿Una dictadura? ¿Una federación?
-    Guido van Rossum[9]​
 
 El 20 de febrero de 1991, van Rossum publicó el código por primera vez en alt.sources, con el número de versión 0.9.0.[10]​ En esta etapa del desarrollo ya estaban presentes clases con herencia, manejo de excepciones, funciones y los tipos modulares, como: str, list, dict, entre otros. Además en este lanzamiento inicial aparecía un sistema de módulos adoptado de Modula-3; van Rossum describe el módulo como «una de las mayores unidades de programación de Python».[5]​ El modelo de excepciones en Python es parecido al de Modula-3, con la adición de una cláusula else.[6]​ En el año 1994 se formó comp.lang.python, el foro de discusión principal de Python, marcando un hito en el crecimiento del grupo de usuarios de este lenguaje.
 
