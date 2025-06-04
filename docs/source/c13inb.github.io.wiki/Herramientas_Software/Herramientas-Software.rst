@@ -6,5 +6,6 @@ Herramientas de Software
    :hidden:
    :caption: Herramientas de Software
 
+   rclone
 
 
