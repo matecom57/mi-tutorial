@@ -76,3 +76,10 @@ Contents
     :caption: c13inb
 
     c13inb.github.io.wiki/c13inb.rst
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Curso de Python
+
+    Python_Curso/curso-Python
+
