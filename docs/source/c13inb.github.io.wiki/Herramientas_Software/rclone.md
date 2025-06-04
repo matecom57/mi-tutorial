@@ -33,6 +33,7 @@ En la [página de rclone](https://rclone.org/overview/) encontrarás instruccion
 # Montar Dropbox mediante rclone
 
 1. Designamos un lugar dónde montarlo y creamos el directorio, en caso necesario. En mi caso, montaré en `/misc/mansfield/lconcha/nobackup/mnt_dropbox`. Para facilitarme la vida, corro estos comandos:
+
 ```
 dropbox_mount=/misc/mansfield/lconcha/nobackup/mnt_dropbox
 mkdir $dropbox_mount

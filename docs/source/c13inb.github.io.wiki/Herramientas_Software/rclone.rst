@@ -23,8 +23,8 @@ Configuración de rclone
 5. Cuando pregunta si queremos ``auto config`` le decimos que ``y``. 
 
 6. Se abrirá nuestro navegador de internet de manera mágica, con una pantalla como:
-! `snapshot <https://github.com/c13inb/c13inb.github.io/blob/master/images/rclone_dropbox_config.png>`_ 
 
+.. image::  rclone_dropbox_config.png
 
 7. Finalmente le decimos que ``y`` a cuando nos pregunte si todo está bien.
 
@@ -35,6 +35,7 @@ Montar Dropbox mediante rclone
 ----------------------------------------
 
 1. Designamos un lugar dónde montarlo y creamos el directorio, en caso necesario. En mi caso, montaré en ``/misc/mansfield/lconcha/nobackup/mnt_dropbox``. Para facilitarme la vida, corro estos comandos:
+
 .. code:: Bash
 
    dropbox_mount=/misc/mansfield/lconcha/nobackup/mnt_dropbox
