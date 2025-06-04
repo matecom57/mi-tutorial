@@ -13,15 +13,21 @@ Configuración de rclone
 
 1. Configuramos rclone
 ``rclone config``
+
 2. Seleccionamos ``New remote``. Lo bautizaremos como ``dropbox`` (ojo, sensible a mayúsculas/minúsculas, yo decidí en minúsculas).
+
 3. Aparecerá la lista de servicios que rclone conoce. Selecciono el número que corresponde a dropbox.
+
 4. Nos pregunta por ``client_id``, y lo dejamos en blanco (presionamos Enter), y lo mismo para ``client_secret``. Cuando nos pregunte si queremos entrar a advanced config le decimos que ``n`` (o sea _nel_, en español). 
+
 5. Cuando pregunta si queremos ``auto config`` le decimos que ``y``. 
 
 6. Se abrirá nuestro navegador de internet de manera mágica, con una pantalla como:
 ! `snapshot <https://github.com/c13inb/c13inb.github.io/blob/master/images/rclone_dropbox_config.png>`_ 
 
+
 7. Finalmente le decimos que ``y`` a cuando nos pregunte si todo está bien.
+
 8. Salimos de la configuración con ``q``.
 
 
