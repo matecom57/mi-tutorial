@@ -32,9 +32,11 @@ Para otros equipos necesitas descargar **X2GoClient** para tu sistema operativo:
 
 En el caso de **Ubuntu** la instalación requiere:
 
+```
     sudo add-apt-repository ppa:x2go/stable
     sudo apt-get update
     sudo apt-get install x2goclient
+```
 
 ## Configuración
 

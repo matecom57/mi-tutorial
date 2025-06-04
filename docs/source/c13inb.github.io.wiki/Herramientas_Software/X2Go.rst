@@ -48,7 +48,7 @@ IP de acceso al cluster
 
 El acceso a los equipos del cluster depende de la red en la que nos encontramos trabajando. 
 
-[[images/x2go_cluster.png]]
+.. image:: X2Go_Imagenes/x2go_cluster.png
 
 Como se muestra en la figura, dependiendo de la conexión será la IP que usaremo. Si nos encontramos en ethernet o mediante la red **RII** la conexión a la máquina se hace mediante una IP del tipo ``172.24.80.70`` *( Ejemplo: Jasper)*. Mientras que de la **RIU** o de **Internet** la conexión se hace a través ``132.248.142.55`` *PENFIELD exterior*. Afortunadamente, ya está homologado el nombre de penfield en cualquiera de las dos redes, así que lo recomendable es usar el nombre completo: **``penfield.inb.unam.mx``**.
 
