@@ -10,6 +10,7 @@ Contents
     :maxdepth: 1
     :caption: Bash
 
+    rocket_chat/rocket.chat
     Resonadores/Resonadores
     Cluster/Cluster
     Procesamiento_Imagen/Procesamiento-Imagen
