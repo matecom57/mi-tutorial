@@ -12,6 +12,7 @@ Crear nueva cuenta
 ----------------------------------------
 
 Si es la primera vez que nos visitas, crea una nueva cuenta (*Register a new account*):
+
 .. image:: im01.png
 
 
