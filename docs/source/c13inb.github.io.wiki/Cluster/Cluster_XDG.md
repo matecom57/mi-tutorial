@@ -38,13 +38,14 @@ Entonces, el usuario `nickcave` hace una carpeta llamada `/misc/larmor/nickcave/
 
 Usa el script `inb_config_XDG.sh`. Se le debe dar un argumento, que es la carpeta donde vamos a copiar nuestro cache/config. Para hacer la vida fácil, **nombra la carpeta como `XDG`**. En nuestro ejemplo:
 
-![image](https://github.com/user-attachments/assets/b229f53e-97eb-46c9-b1ff-4b89bac27ca6)
+.. image:: XDG011.png
 
-:eye: Fíjate cómo el usuario `nickcave` está trabajando en `larmor`, misma máquina donde está el disco `/misc/larmor`. No andes haciendo ésto desde otra máquina o se va a tardar mucho porque estarás enviando todo a través de la red innecesariamente.
+.. important:: Fíjate cómo el usuario `nickcave` está trabajando en `larmor`, misma máquina donde está el disco `/misc/larmor`. No 
+andes haciendo ésto desde otra máquina o se va a tardar mucho porque estarás enviando todo a través de la red innecesariamente.
 
 El script `inb_config_XDG.sh` copiará tus archivos y preparará dos archivos nuevos: `~/.profile` y `~/.pam_environment`. Cuánto se tarde en copiar dependerá de cuánto tienes en tu cache de firefox y google-chrome, por lo que se recomienda borrar tu caché previo a este paso (revisa cómo hacerlo en [chrome](https://support.google.com/accounts/answer/32050?hl=es-419&co=GENIE.Platform%3DDesktop) y [firefox](https://support.mozilla.org/es/kb/limpia-la-cache-y-elimina-los-archivos-temporales-)). Verás muchos archivos siendo copiados pasar por la terminal, pero al final verás:
 
-![image](https://github.com/user-attachments/assets/6deb8a49-9aad-4be0-b7a6-759fcb996d90)
+.. image:: XDG02.png
 
 Y como siempre obedecemos las instrucciones, cerramos la sesión completamente (logout). Al volver a entrar (suponiendo que estás en la máquina que estamos agilizando), toooodo será mucho más rápido. **Disfruta tu nueva experiencia de usuario**.
 
@@ -55,7 +56,8 @@ Para que el archivo `~/.profile` corra, **no deben existir `~/.bash_login` ni `~
 ## Y qué onda con la terminal.
 
 Nada, no pasa nada. Todo sigue como si no hubiéramos cambiado la configuración. Pero en `~/.profile` se quedaron unas líneas que revisan que todo esté bien, que serán útiles en caso de algún desperfecto. El aviso será como este:
-![image](https://github.com/user-attachments/assets/8aad24a2-062c-494d-9773-50862aea4411)
+
+.. image:: XDG03.png
 
 Como puedes ver, con todo y aviso de errores, la terminal se puede usar. Es solo el login gráfico el que se verá afectado (ver Troubleshooting).
 
