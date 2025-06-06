@@ -5,8 +5,7 @@ Cluster_XDG
 
 Si siempre usas la misma PC para trabajar gráficamente en Don Clusterio, este tutorial es para tí. Prepárate para acelerar todo tu entorno gráfico, y notarás que tu sesión en google-chrome o firefox vuelan, y que navegas más rápido las carpetas en el navegador de archivos. Es en serio, la experiencia es noche y día.
 
-.. important:: Este tutorial no afecta ni beneficia las sesiones remotas, y solamente agiliza tu experiencia en la computadora donde 
-siempre te sientas. Si eres nómada en el laboratorio, entonces deja ésto pasar.
+.. important:: Este tutorial no afecta ni beneficia las sesiones remotas, y solamente agiliza tu experiencia en la computadora donde siempre te sientas. Si eres nómada en el laboratorio, entonces deja ésto pasar.
 
 ## Descripción del problema
 
