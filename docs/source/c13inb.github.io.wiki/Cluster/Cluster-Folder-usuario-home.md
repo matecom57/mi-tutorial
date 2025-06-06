@@ -48,7 +48,7 @@ En el caso de los equipos que forma parte del clúster, el directorio home se en
 
 ## Y ¿qué debo escribir?
 
-Es importate señalar, que debido a la configuración de [respaldo](./Cluster:-Respaldo-de-datos) y [almacenamiento](./Cluster:-Folder-almacenamiento-(misc)) del clúster, es recomendable que en la carpeta home no se coloquen archivos de gran tamaño, dando preferencía a archivos como scripts, archivos de configuración, documentos. En el caso de requrir guardar archivos que se consideren grandes y que no se deseen respaldar se puede recurrir al uso de la carpeta [temporal](./Cluster:-Folder-temporal-(tmp)) o una carpeta con el título nobackup (revisar [almacenamiento](./Cluster:-Folder-almacenamiento-(misc))).
+Es importate señalar, que debido a la configuración de [respaldo](./Cluster:-Respaldo-de-datos) y [almacenamiento](./Cluster:-Folder-almacenamiento-(misc)) del clúster, es recomendable que en la carpeta home no se coloquen archivos de gran tamaño, dando preferencía a archivos como scripts, archivos de configuración, documentos. En el caso de requrir guardar archivos que se consideren grandes y que no se deseen respaldar se puede recurrir al uso de la carpeta [temporal](./Cluster:-Folder-temporal-(tmp)) o una carpeta con el título nobackup (revisar [almacenamiento](./Cluster-Folder-almacenamiento-misc)).
 
 ## Qué otras cosas hay en `$HOME`?
 
@@ -62,16 +62,15 @@ En distribuciones modernas de linux (como ubuntu), la carpeta de configuración 
 
 Usa el script `inb_config_XDG.sh` para mover tus carpetas de configuración a un disco duro local. 
 
-:information_source: [CHECA AQUÍ UN TUTORIAL](./Cluster:XDG) :smile: 
+.. important:: [CHECA AQUÍ UN TUTORIAL](./Cluster-XDG)  
 
 
 ```
 Uso: inb_config_XDG.sh </misc/DISCO/USUARIO/newXDG>
+```
 
 Donde newXDG representa una carpeta en un lugar de /misc donde tienes permisos de escritura.
 Se recomienda que la carpeta se llame XDG, por ejemplo /misc/mansfield/lconcha/XDG
-
-```
 
 .. important:: El inconveniente de mover tus configuraciones y cache, es que si no está disponible la PC donde está el disco duro 
 que contiene 
