@@ -77,12 +77,14 @@ Usa el script ``inb_config_XDG.sh`` para mover tus carpetas de configuración a 
 
    Uso: inb_config_XDG.sh </misc/DISCO/USUARIO/newXDG>
 
-Donde newXDG representa una carpeta en un lugar de /misc donde tienes permisos de escritura.
-Se recomienda que la carpeta se llame XDG, por ejemplo /misc/mansfield/lconcha/XDG
+Donde ``newXDG`` representa una carpeta en un lugar de ``/misc`` donde tienes permisos de escritura.
+Se recomienda que la carpeta se llame XDG, por ejemplo ``/misc/mansfield/lconcha/XDG``
 
 .. important:: El inconveniente de mover tus configuraciones y cache, es que si no está disponible la PC donde está el disco duro 
 que contiene 
-tus carpetas XDG, tus sesiones remotas tendrán problemas. Claro, esto también sucede si tu XDG está en el servidor, pero si el servidor se cae, estamos frente a un problema mayor que afecta a todos los usuarios, no solo a tí, y muy seguramente será atendido a la brevedad. Por lo tanto, valora conveniencia/velocidad/robustez antes de correr el script mencionado arriba. Buena suerte!
+tus carpetas XDG, tus sesiones remotas tendrán problemas. Claro, esto también sucede si tu XDG está en el servidor, pero si el servidor se 
+cae, estamos frente a un problema mayor que afecta a todos los usuarios, no solo a tí, y muy seguramente será atendido a la brevedad. Por 
+lo tanto, valora **conveniencia/velocidad/robustez** antes de correr el script mencionado arriba. Buena suerte!
 
 
 
