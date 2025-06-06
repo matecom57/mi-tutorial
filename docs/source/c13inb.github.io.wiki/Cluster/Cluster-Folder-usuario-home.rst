@@ -70,7 +70,7 @@ En distribuciones modernas de linux (como ubuntu), la carpeta de configuración 
 
 Usa el script ``inb_config_XDG.sh`` para mover tus carpetas de configuración a un disco duro local. 
 
-.. important:: :doc:`Cluster-XDG`  
+.. important:: :doc:`Cluster_XDG`  
 
 
 .. code:: Bash
