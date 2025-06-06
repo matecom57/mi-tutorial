@@ -3,36 +3,46 @@
 
 ## ¿Qué es el Home?
 
-El home es un espacio que pertenece a cada usuario, es el lugar dónde nos encontramos al iniciar sesión. Suele tener permisos de __escritura/lectura__ exclusivos para el usuario al que pertenece. También aquí suelen residir los archivos de configuración exclusivos para el usuario.
+El home es un espacio que pertenece a cada usuario, es el lugar dónde nos encontramos al iniciar sesión. Suele tener permisos de 
+**escritura/lectura** exclusivos para el usuario al que pertenece. También aquí suelen residir los archivos de configuración exclusivos 
+para el usuario.
 
 ## ¿Dónde está?
 
 En la estructura de los sistemas **Unix** suelen encontrarse en la dirección
 
-     /home/usuario
-
+```     
+/home/usuario
+```
 Pero en el clúster del laboratorio, la ruta correcta es:
 
-    /home/inb/usuario
+```
+/home/inb/usuario
+```
 
 Donde usuario es sustituido por el usuario en curso. Se puede acceder mediante:
 
 #### Ruta absoluta
 
-     cd /home/inb/usuario
+```
+cd /home/inb/usuario
+```
 
 #### Ruta con "wildcard" (comodín)
 
-    cd ~/
+```
+cd ~/
+```
 
 #### También nos podemos trasladar usando el comando cd sin argumentos
 
-    cd
+```
+cd
+```
 
 O sea, los tres formatos del comando **cd** tienen la misma función.
 
 En el caso de los equipos que forma parte del clúster, el directorio home se encuentra físicamente en el servidor central.
-
 
 
 
@@ -63,7 +73,9 @@ Se recomienda que la carpeta se llame XDG, por ejemplo /misc/mansfield/lconcha/X
 
 ```
 
-:warning: El inconveniente de mover tus configuraciones y cache, es que si no está disponible la PC donde está el disco duro que contiene tus carpetas XDG, tus sesiones remotas tendrán problemas. Claro, esto también sucede si tu XDG está en el servidor, pero si el servidor se cae, estamos frente a un problema mayor que afecta a todos los usuarios, no solo a tí, y muy seguramente será atendido a la brevedad. Por lo tanto, valora conveniencia/velocidad/robustez antes de correr el script mencionado arriba. Buena suerte!
+.. important:: El inconveniente de mover tus configuraciones y cache, es que si no está disponible la PC donde está el disco duro 
+que contiene 
+tus carpetas XDG, tus sesiones remotas tendrán problemas. Claro, esto también sucede si tu XDG está en el servidor, pero si el servidor se cae, estamos frente a un problema mayor que afecta a todos los usuarios, no solo a tí, y muy seguramente será atendido a la brevedad. Por lo tanto, valora conveniencia/velocidad/robustez antes de correr el script mencionado arriba. Buena suerte!
 
 
 

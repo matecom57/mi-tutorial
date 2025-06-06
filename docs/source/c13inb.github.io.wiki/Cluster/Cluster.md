@@ -1,7 +1,8 @@
 Cluster
 =======
 
-El término clúster (del inglés cluster, "grupo" o "racimo") se aplica a los conjuntos o conglomerados de computadoras construidos mediante la utilización de hardwares comunes y que se comportan como si fuesen una única computadora.
+El término clúster (del inglés cluster, **grupo** o **racimo**) se aplica a los conjuntos o conglomerados de computadoras construidos 
+mediante la utilización de hardwares comunes y que se comportan como si fuesen una única computadora.
 
 **El clúster de cómputo del INB se llama `Don Clusterio`.**
 
@@ -12,7 +13,8 @@ Cada usuario puede cambiar su contraseña, y es recomendable hacerlo con cierta 
 
 Para cambiar tu contraseña, usa el comando `yppasswd`.
 
-:information_source: Hay un periodo de aproximadamente 5 min para que tu nueva contraseña se propague a todas las computadoras del cluster.
+.. information:: Hay un periodo de aproximadamente 5 min para que tu nueva contraseña se propague a todas las computadoras del 
+cluster.
 
 ## Organización de datos en el clúster
 
