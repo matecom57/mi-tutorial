@@ -20,13 +20,16 @@ Afortunadamente, es posible mover tus carpetas de cache a un disco local y así 
 
 Antes de empezar, tenemos que asegurarnos que tenemos un disco duro local hacia dónde copiar nuestros archivos de cache y configuración. Casi todas las PCs de Don Clusterio tienen un disco montado en `/misc/NOMBRE_DE_LA_PC`. Si no lo tiene, este tutorial no te servirá, y pídele a la persona responsable de tu laboratorio que te compre un disco duro. 
 
-:eye:  Como ejemplo, vamos a usar el usuario `nickcave`, que quiere cambiar su cache/config a la computadora `larmor`.
+.. important:: Como ejemplo, vamos a usar el usuario `nickcave`, que quiere cambiar su cache/config a la computadora `larmor`.
 
 Revisamos si hay disco duro usando `df -hl` y vemos qué hay montado en `/misc`. En este ejemplo, vemos que sí existe `/misc/larmor`.
 
 ![image](https://github.com/user-attachments/assets/6317523a-9ad2-41fa-8543-f018657a553d)
 
-Entonces, creamos un fólder en ese disco. Recuerda que si escribes en algún lugar en `/misc`, debes hacerlo dentro de una carpeta con tu nombre de usuario. [Checa acá si ya se te olvidó](https://github.com/c13inb/c13inb.github.io/wiki/Cl%C3%BAster:-Folder-almacenamiento-(misc)). **Asegúrate que existan al menos 20 GB libres en ese disco.**
+Entonces, creamos un fólder en ese disco. Recuerda que si escribes en algún lugar en `/misc`, debes hacerlo dentro de una carpeta con tu 
+nombre de usuario. [Checa acá si ya se te olvidó](./Cluster-Folder-almacenamiento-misc). **Asegúrate que existan al menos 20 GB libres en 
+ese 
+disco.**
 
 Entonces, el usuario `nickcave` hace una carpeta llamada `/misc/larmor/nickcave/` (si ya existe, pues no la crea).
 
