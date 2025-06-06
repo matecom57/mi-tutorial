@@ -40,7 +40,7 @@ cd ~/
 cd
 ```
 
-O sea, los tres formatos del comando **cd** tienen la misma función.
+O sea, los tres formatos del comando `cd` tienen la misma función.
 
 En el caso de los equipos que forma parte del clúster, el directorio home se encuentra físicamente en el servidor central.
 
