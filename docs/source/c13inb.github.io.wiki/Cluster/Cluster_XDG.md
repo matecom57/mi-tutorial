@@ -24,7 +24,8 @@ Antes de empezar, tenemos que asegurarnos que tenemos un disco duro local hacia 
 
 Revisamos si hay disco duro usando `df -hl` y vemos qué hay montado en `/misc`. En este ejemplo, vemos que sí existe `/misc/larmor`.
 
-![image](https://github.com/user-attachments/assets/6317523a-9ad2-41fa-8543-f018657a553d)
+.. image:: XDG01.png
+
 
 Entonces, creamos un fólder en ese disco. Recuerda que si escribes en algún lugar en `/misc`, debes hacerlo dentro de una carpeta con tu 
 nombre de usuario. [Checa acá si ya se te olvidó](./Cluster-Folder-almacenamiento-misc). **Asegúrate que existan al menos 20 GB libres en 
