@@ -19,6 +19,8 @@ centramos en la contrastación de hipótesis de medias. Específicamente, analiz
 diferencias entre medias cuando se analizan más de dos poblaciones o dos o más variables. Las técnicas que se 
 describen en este capítulo se utilizan ampliamente en las ciencias de la salud.
 
+.. image:: anova1.png
+
  **TOPICS**
 
 8.1 INTRODUCTION
@@ -218,8 +220,11 @@ algunos conceptos nuevos necesarios para su adaptación al análisis de varianza
 1. Description of data. In addition to describing the data in the usual way, we display the sample data in 
 tabular form.
 
-2. Assumptions. Along with the assumptions underlying the analysis, we present the model for each design we 
-discuss. The model consists of a symbolic representation of a typical value from the data being analyzed.
+**2. Assumptions.** Along with the assumptions underlying the analysis, we present the model for each design 
+we discuss. The model consists of a symbolic representation of a typical value from the data being analyzed.
+
+Junto con los supuestos subyacentes al análisis, presentamos el modelo para cada diseño que analizamos. El 
+modelo consiste en una representación simbólica de un valor típico de los datos analizados.
 
 3. Hypotheses.
 
@@ -237,7 +242,7 @@ the analysis.
 llamada análisis de varianza (ANOVA). Las entradas de la tabla facilitan la evaluación de los resultados del 
 análisis.
 
- 8. Statistical decision.
+8. Statistical decision.
 
 9. Conclusion.
 
