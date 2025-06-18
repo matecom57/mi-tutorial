@@ -1,14 +1,19 @@
 SIMPLE LINEAR REGRESSION AND CORRELATION
 ========================================
 
-CHAPTER OVERVIEW
+**CHAPTER OVERVIEW**
 
 This chapter provides an introduction and overview of two common techniques for exploring the strength of the 
 relationship between two variables. The ﬁrst technique, linear regression, will help us ﬁnd an objective way 
 to predict or estimate the value of one variable given a value of another variable. The second technique, 
 correlation, will help us ﬁnd an objective measure of the strength of the relationship between two variables.
 
-TOPICS
+Este capítulo ofrece una introducción y una visión general de dos técnicas comunes para explorar la solidez de 
+la relación entre dos variables. La primera, la regresión lineal, nos ayudará a encontrar una forma objetiva de 
+predecir o estimar el valor de una variable dado el valor de otra. La segunda, la correlación, nos ayudará a 
+encontrar una medida objetiva de la solidez de la relación entre dos variables.
+
+**TOPICS**
 
 9.1 INTRODUCTION
 
@@ -28,7 +33,7 @@ TOPICS
 
 9.9 SUMMARY
 
-LEARNING OUTCOMES
+**LEARNING OUTCOMES**
 
 After studying this chapter, the student will
 
@@ -50,7 +55,15 @@ time, or total family income and medical care expenditures. The nature and stren
 between variables such as these may be examined by regression and correlation analysis, two statistical 
 techniques that, although related, serve different purposes.
 
-Regression
+Al analizar datos para las disciplinas de las ciencias de la salud, con frecuencia resulta deseable comprender 
+la relación entre dos variables numéricas. Por ejemplo, podríamos estar interesados ​​en estudiar la relación 
+entre la presión arterial y la edad, la altura y el peso, la concentración de una droga inyectable y la 
+frecuencia cardíaca, el nivel de consumo de algún nutriente y el aumento de peso, la intensidad de un estímulo 
+y el tiempo de reacción, o el ingreso familiar total y los gastos de atención médica. La naturaleza y la 
+solidez de las relaciones entre variables como estas pueden examinarse mediante análisis de regresión y 
+correlación, dos técnicas estadísticas que, aunque relacionadas, tienen propósitos diferentes.
+
+**Regression**
 
 Regression analysis is helpful in assessing speciﬁc forms of the relationship between variables, and the 
 ultimate objective when this method of analysis is employed usually is to predict or estimate the value of one 
@@ -60,32 +73,55 @@ and later in human stature. He described a tendency of adult offspring, having e
 revert back toward the average height of the general population. He ﬁrst used the word reversion, and later 
 regression, to refer to this phenomenon.
 
-Correlation
+El análisis de regresión es útil para evaluar formas específicas de la relación entre variables, y el objetivo 
+final cuando se emplea este método de análisis suele ser predecir o estimar el valor de una variable 
+correspondiente a un valor dado de otra variable. Las ideas de regresión fueron dilucidadas por primera vez por 
+el científico inglés Sir Francis Galton (1822-1911) en informes de su investigación sobre la herencia, primero 
+en guisantes de olor y luego en la estatura humana. Describió una tendencia de la descendencia adulta, ya sea 
+de padres bajos o altos, a volver a la estatura promedio de la población general. Utilizó primero el término 
+"reversión", y posteriormente "regresión", para referirse a este fenómeno.
+
+**Correlation**
 
 Correlation analysis, on the other hand, is concerned with measuring the strength of the relationship between 
 variables. When we compute measures of correlation from a set of data, we are interested in the degree of the 
 correlation between variables. Again, the concepts and terminology of correlation analysis originated with 
 Galton, who ﬁrst used the word correlation in 1888.
 
+El análisis de correlación, por otro lado, se centra en medir la solidez de la relación entre variables. Al 
+calcular medidas de correlación a partir de un conjunto de datos, nos interesa el grado de correlación entre 
+las variables. Los conceptos y la terminología del análisis de correlación se originaron con Galton, quien 
+utilizó por primera vez el término «correlación» en 1888.
+
 In this chapter our discussion is limited to the exploration of the linear relationship between two variables. 
 The concepts and methods of regression are covered ﬁrst, beginning in the next section. In Section 9.6 the 
 ideas and techniques of correlation are introduced. In the next chapter we consider the case where there is an 
 interest in the relationships among three or more variables.
 
-Regression and correlation analysis are areas in which the speed and accuracy of a computer are most 
+En este capítulo, nuestra discusión se limita a la exploración de la relación lineal entre dos variables. Los 
+conceptos y métodos de regresión se abordan primero, comenzando en la siguiente sección. En la Sección 9.6 se 
+introducen las ideas y técnicas de correlación. En el siguiente capítulo, consideramos el caso donde existe 
+interés en las relaciones entre tres o más variables.
+
+Regression and correlation analysis are areas in which 
+the speed and accuracy of a computer are most 
 appreciated. The data for the exercises of this chapter, therefore, are presented in a way that makes them 
 suitable for computer processing. As is always the case, the input requirements and output features of the 
 particular programs and software packages to be used should be studied carefully.
 
-9.2 THE REGRESSION MODEL
+El análisis de regresión y correlación es un área en la que la velocidad y la precisión de una computadora son 
+muy valoradas. Por lo tanto, los datos de los ejercicios de este capítulo se presentan de forma que sean 
+adecuados para su procesamiento informático. Como siempre, se deben estudiar cuidadosamente los requisitos de 
+entrada y las características de salida de los programas y paquetes de software que se utilizarán.
+
+**9.2 THE REGRESSION MODEL**
 
 In the typical regression problem, as in most problems in applied statistics, researchers have available for 
 analysis a sample of observations from some real or hypothetical population. Based on the results of their 
 analysis of the sample data, they are interested in reaching decisions about the population from which the 
 sample is presumed to have been drawn. It is important, therefore, that the researchers understand the nature 
-of the population in which they are interested. They should know enough about the population
-
-to be able either to construct a mathematical model for its representation or to determine if it reasonably 
+of the population in which they are interested. They should know enough about the population to be able either 
+to construct a mathematical model for its representation or to determine if it reasonably 
 ﬁts some established model. A researcher about to analyze a set of data by the methods of simple linear 
 regression, for example, should be secure in the knowledge that the simple linear regression model is, at 
 least, an approximate representation of the population. It is unlikely that the model will be a perfect 
