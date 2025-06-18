@@ -1,7 +1,7 @@
 ANÁLISIS DE VARIANZA
 ====================
 
-CHAPTER OVERVIEW
+**CHAPTER OVERVIEW**
 
 The topic of this chapter, analysis of variance, provides a methodology for partitioning the total variance 
 computed from a data set into components, each of which represents the amount of the total variance that can be 
@@ -11,7 +11,15 @@ testing of means. Speciﬁcally, we discuss the testing of differences among mea
 more than two populations or two or more variables. The techniques discussed in this chapter are widely used in 
 the health sciences.
 
-TOPICS
+El tema de este capítulo, el análisis de varianza, proporciona una metodología para dividir la varianza total 
+calculada a partir de un conjunto de datos en componentes, cada uno de los cuales representa la cantidad de 
+varianza total atribuible a una fuente específica de variación. Los resultados de esta división pueden 
+utilizarse para estimar y contrastar hipótesis sobre varianzas y medias poblacionales. En este capítulo, nos 
+centramos en la contrastación de hipótesis de medias. Específicamente, analizamos la contrastación de 
+diferencias entre medias cuando se analizan más de dos poblaciones o dos o más variables. Las técnicas que se 
+describen en este capítulo se utilizan ampliamente en las ciencias de la salud.
+
+ **TOPICS**
 
 8.1 INTRODUCTION
 
@@ -25,7 +33,7 @@ TOPICS
 
 8.6 SUMMARY
 
-LEARNING OUTCOMES
+**LEARNING OUTCOMES**
 
 After studying this chapter, the student will
 
@@ -37,21 +45,35 @@ After studying this chapter, the student will
 
 4. understand commonly used experimental designs.
 
-8.1 INTRODUCTION
+**8.1 INTRODUCTION**
 
 In the preceding chapters the basic concepts of statistics have been examined, and they provide a foundation 
 for the present and succeeding chapters.
+
+En los capítulos anteriores se han examinado los conceptos básicos de la estadística, que proporcionan una base 
+para el presente capítulo y los siguientes.
 
 This chapter is concerned with analysis of variance, which may be deﬁned as a technique whereby the total 
 variation present in a set of data is partitioned into two or more components. Associated with each of these 
 components is a speciﬁc source of variation, so that in the analysis it is possible to ascertain the magnitude 
 of the contributions of each of these sources to the total variation.
 
-The development of analysis of variance (ANOVA) is due mainly to the work of R. A. Fisher (1), whose 
-contributions to statistics, spanning the years 1912 to 1962, have had a tremendous inﬂuence on modern 
+This chapter is concerned with analysis of variance, which may be deﬁned as a technique whereby the total 
+variation present in a set of data is partitioned into two or more components. Associated with each of these 
+components is a speciﬁc source of variation, so that in the analysis it is possible to ascertain the magnitude 
+of the contributions of each of these sources to the total variation.
+
+
+The development of analysis of variance 
+(ANOVA) is due mainly to the work of R. A. Fisher (1), 
+whose contributions to statistics, spanning the years 1912 to 1962, have had a tremendous inﬂuence on modern 
 statistical thought (2, 3).
 
-Applications
+El desarrollo del análisis de varianza (ANOVA) se debe principalmente al trabajo de R. A. Fisher (1), cuyas 
+contribuciones a la estadística, que abarcan los años 1912 a 1962, han tenido una enorme influencia en el 
+pensamiento estadístico moderno (2, 3).
+
+**Applications**
 
 Analysis of variance ﬁnds its widest application in the analysis of data derived from experiments. The 
 principles of the design of experiments are well covered in many books, including those by Hinkelmann and 
@@ -59,10 +81,21 @@ Kempthorne (4), Montgomery (5), and Myers and Well (6). We do not study this top
 justice would require a minimum of an additional chapter. Some of the important concepts in experimental 
 design, however, will become apparent as we discuss analysis of variance.
 
+El análisis de varianza encuentra su aplicación más amplia en el análisis de datos derivados de experimentos. 
+Los principios del diseño de experimentos se abordan en profundidad en numerosos libros, incluyendo los de 
+Hinkelmann y Kempthorne (4), Montgomery (5) y Myers y Well (6). No profundizaremos en este tema, ya que para 
+abordarlo adecuadamente se requeriría al menos un capítulo adicional. Sin embargo, algunos conceptos 
+importantes del diseño experimental se harán evidentes al abordar el análisis de varianza.
+
 Analysis of variance is used for two different purposes: (1) to estimate and test hypotheses about population 
 variances, and (2) to estimate and test hypotheses about population means. We are concerned here with the 
 latter use. However, as we will see, our conclusions regarding the means will depend on the magnitudes of the 
 observed variances.
+
+El análisis de varianza se utiliza con dos propósitos diferentes: (1) estimar y contrastar hipótesis sobre las 
+varianzas poblacionales, y (2) estimar y contrastar hipótesis sobre las medias poblacionales. Nos centraremos 
+aquí en este último uso. Sin embargo, como veremos, nuestras conclusiones sobre las medias dependerán de la 
+magnitud de las varianzas observadas.
 
 As we shall see, the concepts and techniques that we cover under the heading of analysis of variance are 
 extensions of the concepts and techniques covered in Chapter 7. In Chapter 7 we learned to test the null 
@@ -73,7 +106,19 @@ conclude that three or more treatments differ in effectiveness. The following ex
 ideas involved in the application of analysis of variance. These will be extended and elaborated on later in 
 this chapter.
 
-EXAMPLE 8.1.1 Suppose we wish to know if three drugs differ in their effectiveness in lowering serum 
+Como veremos, los conceptos y técnicas que abordamos bajo el título de análisis de varianza son extensiones de 
+los conceptos y técnicas abordados en el Capítulo 7. En el Capítulo 7, aprendimos a contrastar la hipótesis 
+nula de que dos medias son iguales. En este capítulo, aprendemos a contrastar la hipótesis nula de que tres o 
+más medias son iguales. Mientras que, por ejemplo, lo aprendido en el Capítulo 7 nos permite determinar si 
+podemos concluir que dos tratamientos difieren en efectividad, lo aprendido en este capítulo nos permite 
+determinar si podemos concluir que tres o más tratamientos difieren en efectividad. El siguiente ejemplo 
+ilustra algunas ideas básicas relacionadas con la aplicación del análisis de varianza. Estas se ampliarán y 
+desarrollarán más adelante en este capítulo.
+
+EXAMPLE 8.1.1 
+
+Suppose we wish to know if three drugs differ in 
+their effectiveness in lowering serum 
 cholesterol in human subjects. Some subjects receive drug A, some drug B, and some drug C. After a speciﬁed 
 period of time measurements are taken to determine the extent to which serum cholesterol was reduced in each 
 subject. We ﬁnd that the amount by which serum cholesterol was lowered is not the same in all subjects. In 
@@ -82,7 +127,6 @@ the same? Presumably, one reason they are not the same is that the subjects rece
 look at the measurements of those subjects who received drug A. We ﬁnd that the amount by which serum 
 cholesterol was lowered is not the same among these subjects. We ﬁnd this to be the case when we look at the 
 measurements for subjects who received drug B and those subjects who received drug C. We see that there
-
 is variability among the measurements within the treatment groups. Why, we ask ourselves again, are these 
 measurements not the same? Among the reasons that come to mind are differences in the genetic makeup of the 
 subjects and differences in their diets. Through an analysis of the variability that we have observed, we will 
