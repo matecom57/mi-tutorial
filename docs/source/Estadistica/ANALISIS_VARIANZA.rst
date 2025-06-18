@@ -177,7 +177,7 @@ atención en el experimento. La variable de tratamiento es la variable de princi
 a responder es: ¿Los diferentes "valores" de la variable de tratamiento resultan en diferencias, en promedio, 
 en la variable de respuesta?
 
-** Assumptions**
+**Assumptions**
 
 
 Underlying the valid use of analysis of variance as a tool of statistical inference are a set of fundamental 
@@ -233,7 +233,11 @@ discuss. The model consists of a symbolic representation of a typical value from
 called the analysis of variance (ANOVA) table. The entries in the table make it easy to evaluate the results of 
 the analysis.
 
-8. Statistical decision.
+7. Cálculo del estadístico de prueba. Los resultados de los cálculos aritméticos se resumirán en una tabla 
+llamada análisis de varianza (ANOVA). Las entradas de la tabla facilitan la evaluación de los resultados del 
+análisis.
+
+ 8. Statistical decision.
 
 9. Conclusion.
 
@@ -371,31 +375,26 @@ hypothesis testing steps. We discuss these in detail ﬁrst, and follow with an 
 design, along with the means and totals that can be computed from them, may be displayed for convenience as in 
 Table 8.2.1. The symbols used in Table 8.2.1 are deﬁned as follows:
 
-1. Descripción de los datos. Las mediciones (u observaciones) resultantes de un diseño experimental 
+1. **Descripción de los datos.** Las mediciones (u observaciones) resultantes de un diseño experimental 
 completamente aleatorizado, junto con las medias y los totales que se pueden calcular a partir de ellas, pueden 
 mostrarse para mayor comodidad como en la Tabla 8.2.1. Los símbolos utilizados en la Tabla 8.2.1 se definen de 
 la siguiente manera:
 
- x ij = the ith observation resulting from the j th treatment (there are a total of k 
+:math:`x_{ij}` = the ith observation resulting from the j th treatment (there are a total of k 
 treatments)
 
-i = 1, 2, Á , n j ,
+i = 1, 2,... , :math:`n_j` ,
 
-j = 1, 2, Á , k
+j = 1, 2, ... , k
 
-nj  T . j = a x ij = total of the j th treatment i=1
+:math:`T_{i=1}^{n_j} x_{ij}` = total of the j th treatment
 
-T . j
+:math:`\bar{x}_{.j} = \frac{T_{.j}}{n_j}` = mean of the j th treatment
 
-x . j =
+:math:`T_{..} = \sum_{j=1}^k T_{.j} = \sum_{k=1}^k \sum_{i=1}^{n_j} x_{ij}` = total of all observations
 
-= mean of the j th treatment
+:math:`bar{x}_{..} = \frac{T_{..}}{N},  N = \sum_{j=1}^k n_j
 
-nj 
-
-k k nj  T .. = a T . j = a a x ij = total of all observations j=1 j=1 i=1
-
-k T .. x .. = N = a nj  , N j=1
 
 2. Assumptions. Before stating the assumptions, let us specify the model for the experiment described here.
 
@@ -411,26 +410,23 @@ datos. Para definir el modelo del diseño experimental completamente aleatorizad
 valor típico del conjunto de datos representado por la muestra que se muestra en la Tabla 8.2.1. Usamos el 
 símbolo x ij para representar este valor típico.
 
- The one-way analysis of variance model may be written as 
-follows:
+The one-way analysis of variance model may be written as  follows:
 
-x ij = m + t j + Pij ;
+.. math::
 
-(8.2.1)
+   x_{ij} = \mu + tau_j + \varepsilon_{ij} ; i=1,2,..., n_j; j=1,2..., k
 
-i = 1, 2, Á , n j ,
 
-j = 1, 2, Á , k
 
 The terms in this model are deﬁned as follows:
 
-1. m represents the mean of all the k population means and is called the grand mean.
+1. :math:`\mu` represents the mean of all the k population means and is called the grand mean.
 
-2. t j represents the difference between the mean of the jth population and the grand mean and is called the 
-treatment effect.
+2. :math:`tau_j` represents the difference between the mean of the jth population and the grand mean and is 
+called the **treatment effect**.
 
-3. P ij represents the amount by which an individual measurement differs from the mean of the population to 
-which it belongs and is called the error term.
+3. :math:`\varepsilon_{ij}` represents the amount by which an individual measurement differs from the mean of 
+the population to which it belongs and is called the error term.
 
 **Components of the Model**
 
@@ -474,24 +470,26 @@ the common variance.
 (f) The P ij have a variance equal to the variance of the x ij , since the P ij and x ij differ only by a 
 constant; that is, the error variance is equal to s2 , the common variance speciﬁed in assumption c.
 
-(g) The P ij are normally (and independently) distributed.
+(g) The :math:`\varepsilon_{ij}` are normally (and independently) distributed.
 
-3. Hypotheses. We test the null hypothesis that all population or treatment means are equal against the 
+3. **Hypotheses.** We test the null hypothesis that all population or treatment means are equal against the 
 alternative that the members of at least one pair are not equal. We may state the hypotheses formally as 
 follows:
 
-H 0 :m 1 = m 2 = . . . = mk 
+.. math::
 
-H A :not all m j are equal
+   H_0 : \mu_1 = \mu_2 = ...  = \mu_k 
+
+   H_A : not all \mu_j are equal
 
 If the population means are equal, each treatment effect is equal to zero, so that, alternatively, the 
 hypotheses may be stated as
 
-H 0 :t j = 0,
+.. math::
 
-j = 1, 2, Á , k
+   H_0 : \tau_j = 0, j = 1, 2, ... , k
 
-H A :not all t j = 0
+   H_A :not all \tau_j = 0
 
 If H0 is true and the assumptions of equal variances and normally distributed populations are met, a picture 
 of the populations will look like Figure 8.2.2. When H0 is true the population means are all equal, and the 
@@ -519,9 +517,8 @@ muestra una imagen de las poblaciones cuando se cumplen los supuestos, pero H₂
 medias poblacionales iguales.
 
 4. Test statistic. The test statistic for one-way analysis of variance is a computed variance ratio, which we 
-designate by V.R. as we did in Chapter 7. The two variances
-
-from which V.R. is calculated are themselves computed from the sample data. The methods by which they are 
+designate by V.R. as we did in Chapter 7. The two variances from which V.R. is calculated are themselves 
+computed from the sample data. The methods by which they are 
 calculated will be given in the discussion that follows.
 
 5. Distribution of test statistic. As discussed in Section 7.8, V.R. is distributed as the F distribution when 
@@ -551,9 +548,10 @@ Antes de realizar cualquier partición, debemos obtener la suma total de cuadrad
 es la suma de los cuadrados de las desviaciones de las observaciones individuales con respecto a la media de 
 todas las observaciones tomadas en conjunto. Esta suma total de cuadrados se define como
 
-k nj  SST = a a j=1 i=1
+.. math::
 
-1x ij - x .. 2 2
+   SST = \sum_{j=1}^k \sum_{i=1}^{n_j} (x_{ij} - \bar{x}_{..})^2
+
 
 (8.2.2)
 
@@ -579,8 +577,11 @@ resultados individuales del grupo. Este componente de variación se denomina sum
 puede designarse como SSW. Esta cantidad a veces se denomina suma de cuadrados residual o del error. La 
 expresión para estos cálculos se escribe de la siguiente manera:
 
+.. math::
 
- k nj  SSW = a a 1x ij - x . j 2
+   SSW = \sum_{j=1}^k \sum_{i=1}^{n_j} (x_{ij} - \bar{x}_{.j})^2
+
+
 
 **The Among Groups Sum of Squares**
 
@@ -595,12 +596,16 @@ grupo. Finalmente, sumamos estos resultados para todos los grupos. Esta cantidad
 entre grupos y se denomina suma de cuadrados entre grupos o SSA. La fórmula para calcular esta cantidad es la 
 siguiente:
 
-k SSA = a n j 1x . j - x .. 2 2 j=1
+.. math::
+
+   SSA = \sum_{j=1}^k n_j (\bar{x}_{.j} - \bar{x}_{..})^2
+
 
 (8.2.4)
 
 In summary, then, we have found that the total sum of squares is equal to the sum of the among and the within 
 sum of squares. We express this relationship as follows:
+
 
 SST = SSA + SSW
 
@@ -614,16 +619,21 @@ varianza poblacional común, s². Se puede demostrar que, cuando se cumplen los 
 poblacionales son todas iguales, tanto la suma de cuadrados inter como la suma de cuadrados intra, al dividirse 
 entre sus respectivos grados de libertad, producen estimaciones independientes e insesgadas de s².
 
-The First Estimate of S2 
+**The First Estimate of** :math:`\sigma^2` 
 
 Within any sample,
 
-nj  1x - x . j 2 2 a i=1 nj ij - 1
+.. math::
+
+   \frac{\sum_{i=1}^{n_j} (x_{ij}- \bar{x}_{.j})^2}{n_j-1}
 
 provides an unbiased estimate of the true variance of the population from which the sample came. Under the 
 assumption that the population variances are all equal, we may pool the k estimates to obtain
 
-k nj  1x j ij - x . j 2 2 aa j=1 i=1 MSW = k a 1n - 12 j=1
+.. math::
+
+   MSW = \frac{\sum_{j=1}^k \sum_{i=1}^{n_j} (x_{ij}-\bar{x}_{.j})^2}{\sum_{j=1}^k (n_j -1)}
+
 
 (8.2.5)
 
