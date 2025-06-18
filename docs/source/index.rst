@@ -90,6 +90,7 @@ Contents
     :caption: EStadistica
 
     Estadistica/ejercicios01
+    Estadistica/ANALISIS_VARIANZA
 
 .. toctree::
     :maxdepth: 1
