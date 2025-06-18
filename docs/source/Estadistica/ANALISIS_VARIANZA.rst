@@ -123,7 +123,9 @@ cholesterol in human subjects. Some subjects receive drug A, some drug B, and so
 period of time measurements are taken to determine the extent to which serum cholesterol was reduced in each 
 subject. We ﬁnd that the amount by which serum cholesterol was lowered is not the same in all subjects. In 
 other words, there is variability among the measurements. Why, we ask ourselves, are the measurements not all 
-the same? Presumably, one reason they are not the same is that the subjects received different drugs. We now 
+the same? Presumably, one reason they are not the same is that the subjects received different drugs. 
+
+We now 
 look at the measurements of those subjects who received drug A. We ﬁnd that the amount by which serum 
 cholesterol was lowered is not the same among these subjects. We ﬁnd this to be the case when we look at the 
 measurements for subjects who received drug B and those subjects who received drug C. We see that there
@@ -131,9 +133,9 @@ is variability among the measurements within the treatment groups. Why, we ask o
 measurements not the same? Among the reasons that come to mind are differences in the genetic makeup of the 
 subjects and differences in their diets. Through an analysis of the variability that we have observed, we will 
 be able to reach a conclusion regarding the equality of the effectiveness of the three drugs. To do this we 
-employ the techniques and concepts of analysis of variance. !
+employ the techniques and concepts of analysis of variance. 
 
-Variables
+**Variables**
 
 In our example we allude to three kinds of variables. We ﬁnd these variables to be present in all situations 
 in which the use of analysis of variance is appropriate. First we have the treatment variable, which in our 
