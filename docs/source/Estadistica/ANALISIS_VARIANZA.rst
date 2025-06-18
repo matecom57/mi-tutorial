@@ -115,7 +115,7 @@ determinar si podemos concluir que tres o más tratamientos difieren en efectivi
 ilustra algunas ideas básicas relacionadas con la aplicación del análisis de varianza. Estas se ampliarán y 
 desarrollarán más adelante en este capítulo.
 
-EXAMPLE 8.1.1 
+**EXAMPLE 8.1.1**
 
 Suppose we wish to know if three drugs differ in 
 their effectiveness in lowering serum 
@@ -548,6 +548,10 @@ Before we can do any partitioning, we must ﬁrst obtain the total sum of square
 the sum of the squares of the deviations of individual observations from the mean of all the observations taken 
 together. This total sum of squares is deﬁned as
 
+Antes de realizar cualquier partición, debemos obtener la suma total de cuadrados. La suma total de cuadrados 
+es la suma de los cuadrados de las desviaciones de las observaciones individuales con respecto a la media de 
+todas las observaciones tomadas en conjunto. Esta suma total de cuadrados se define como
+
 k nj  SST = a a j=1 i=1
 
 1x ij - x .. 2 2
@@ -558,7 +562,7 @@ where g n i=1 j tells us to sum the squared deviations for each treatment group,
 add the k group totals obtained by applying g i=1 . The reader will recognize Equation 8.2.2 as the numerator 
 of the variance that may be computed from the complete set of observations taken together.
 
-The Within Groups Sum of Squares
+**The Within Groups Sum of Squares**
 
 Now let us show how to compute the ﬁrst of the two components of the total sum of squares.
 
@@ -569,14 +573,28 @@ of the individual group results. This component of variation is called the withi
 be designated SSW. This quantity is sometimes referred to as the residual or error sum of squares. The 
 expression for these calculations is written as follows:
 
-k nj  SSW = a a 1x ij - x . j 2
+El primer paso del cálculo requiere realizar ciertos cálculos dentro de cada grupo. Estos cálculos implican 
+calcular, dentro de cada grupo, la suma de las desviaciones al cuadrado de las observaciones individuales con 
+respecto a su media. Una vez realizados estos cálculos dentro de cada grupo, se obtiene la suma de los 
+resultados individuales del grupo. Este componente de variación se denomina suma de cuadrados intragrupos y 
+puede designarse como SSW. Esta cantidad a veces se denomina suma de cuadrados residual o del error. La 
+expresión para estos cálculos se escribe de la siguiente manera:
 
-The Among Groups Sum of Squares
+
+ k nj  SSW = a a 1x ij - x . j 2
+
+**The Among Groups Sum of Squares**
 
 To obtain the second component of the total sum of squares, we compute for each group the squared deviation of 
 the group mean from the grand mean and multiply the result by the size of the group. Finally, we add these 
 results over all groups. This quantity is a measure of the variation among groups and is referred to as the sum 
 of squares among groups or SSA. The formula for calculating this quantity is as follows:
+
+Para obtener el segundo componente de la suma total de cuadrados, calculamos para cada grupo la desviación al 
+cuadrado de la media del grupo con respecto a la media general y multiplicamos el resultado por el tamaño del 
+grupo. Finalmente, sumamos estos resultados para todos los grupos. Esta cantidad es una medida de la variación 
+entre grupos y se denomina suma de cuadrados entre grupos o SSA. La fórmula para calcular esta cantidad es la 
+siguiente:
 
 k SSA = a n j 1x . j - x .. 2 2 j=1
 
@@ -591,6 +609,11 @@ From the sums of squares that we have now learned to compute, it is possible to 
 common population variance, s2 . It can be shown that when the assumptions are met and the population means are 
 all equal, both the among sum of squares and the within sum of squares, when divided by their respective 
 degrees of freedom, yield independent and unbiased estimates of s2 .
+
+A partir de las sumas de cuadrados que hemos aprendido a calcular, es posible obtener dos estimaciones de la 
+varianza poblacional común, s². Se puede demostrar que, cuando se cumplen los supuestos y las medias 
+poblacionales son todas iguales, tanto la suma de cuadrados inter como la suma de cuadrados intra, al dividirse 
+entre sus respectivos grados de libertad, producen estimaciones independientes e insesgadas de s².
 
 The First Estimate of S2 
 
@@ -611,10 +634,23 @@ as an extension to k samples of the pooling of variances procedure encountered i
 variances from two samples were pooled in order to use the t distribution. The quantity in Equation 8.2.5 is 
 customarily referred to as the within groups mean square rather than the within groups variance.
 
+Esta es nuestra primera estimación de s² y puede denominarse varianza intragrupos, ya que es la suma de 
+cuadrados intragrupos de la ecuación 8.2.3 dividida entre los grados de libertad correspondientes. El 
+estudiante reconocerá esto como una extensión a k muestras del procedimiento de agrupación de varianzas, 
+utilizado en los capítulos 6 y 7, cuando se agruparon las varianzas de dos muestras para utilizar la 
+distribución t. La cantidad en la ecuación 8.2.5 se denomina habitualmente cuadrático medio intragrupos, en 
+lugar de varianza intragrupos.
+
+
 The within groups mean square is a valid estimate of s 2 only if the population variances are equal. It is not 
 necessary, however, for H 0 to be true in order for the within groups mean square to be a valid estimate of s2 
 ; that is, the within groups mean square estimates s 2 regardless of whether H 0 is true or false, as long as 
 the population variances are equal.
+
+El cuadrado medio intragrupos es una estimación válida de s₂ solo si las varianzas poblacionales son iguales. 
+Sin embargo, no es necesario que H₂ sea verdadera para que el cuadrado medio intragrupos sea una estimación 
+válida de s₂; es decir, el cuadrado medio intragrupos estima s₂ independientemente de si H₂ es verdadera o 
+falsa, siempre que las varianzas poblacionales sean iguales.
 
 The second estimate of s 2 2 may be obtained from the familiar formula for the variance of sample means, s x 2 
 = s >n. If we solve this equation for s2 , the variance of the population from which the samples were drawn, we 
@@ -658,7 +694,7 @@ estimate of s 2 when the assumption of equal population
 variances is met and when H 0 is true. Both conditions, a true null hypothesis and equal population variances, 
 must be met in order for the among groups mean square to be a valid estimate of s2 .
 
-The Variance Ratio
+**The Variance Ratio**
 
 What we need to do now is to compare these two estimates of s2 , and we do this by computing the following 
 variance ratio, which is the desired test statistic:
@@ -676,7 +712,7 @@ has to be before we can conclude that the difference is due to something other t
 other words, how large a value of V.R. is required for us to be willing to conclude that the observed 
 difference between our two estimates of s 2 is not the result of chance alone?
 
-The F Test
+**The F Test**
 
 To answer the question just posed, we must consider the sampling distribution of the ratio of two sample 
 variances. In Chapter 6 we learned that the quantity 1s 1 2 >s 1 2 2>1s 2 2 >s 2 2 2 follows a distribution 
