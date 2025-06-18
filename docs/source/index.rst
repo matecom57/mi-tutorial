@@ -88,3 +88,8 @@ Contents
 
     Python_Curso/Contenido
 
+.. toctree::
+    :maxdepth: 1
+    :caption: EStadistica
+
+    Estadistica/ejercicios01
