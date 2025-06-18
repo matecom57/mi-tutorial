@@ -124,6 +124,13 @@ of the population in which they are interested. They should know enough about th
 to construct a mathematical model for its representation or to determine if it reasonably 
 ﬁts some established model.
 
+En el problema típico de regresión, como en la mayoría de los problemas de estadística aplicada, los 
+investigadores disponen de una muestra de observaciones de una población real o hipotética para su análisis. 
+Con base en los resultados de su análisis de los datos muestrales, les interesa tomar decisiones sobre la 
+población de la que se presume que se extrajo la muestra. Por lo tanto, es importante que los investigadores 
+comprendan la naturaleza de la población que les interesa. Deben conocerla lo suficiente como para construir un 
+modelo matemático que la represente o determinar si se ajusta razonablemente a un modelo establecido.
+
 
 A researcher about to analyze a set of data by the methods of simple linear 
 regression, for example, should be secure in the knowledge that the simple linear regression model is, at 
@@ -136,7 +143,18 @@ is not a requirement for obtaining useful results. Researchers, then, should be 
 occasion when their chosen models and the data are sufﬁciently compatible for them to proceed and the case 
 where their chosen model must be abandoned.
 
-Assumptions Underlying Simple Linear Regression
+Un investigador que se dispone a analizar un conjunto de datos mediante métodos de regresión lineal simple, por 
+ejemplo, debería tener la certeza de que el modelo de regresión lineal simple es, al menos, una representación 
+aproximada de la población. Es improbable que el modelo sea un retrato perfecto de la situación real, ya que 
+esta característica rara vez se encuentra en modelos de valor práctico. Un modelo construido de forma que se 
+corresponda con precisión con los detalles de la situación suele ser demasiado complejo para proporcionar 
+información valiosa. Por otro lado, los resultados obtenidos del análisis de datos que se han forzado en un 
+modelo que no se ajusta también son inútiles. Afortunadamente, sin embargo, un modelo que se ajuste 
+perfectamente no es un requisito para obtener resultados útiles. Los investigadores, por lo tanto, deberían 
+poder distinguir entre la ocasión en que sus modelos elegidos y los datos son suficientemente compatibles para 
+que puedan continuar y el caso en que su modelo elegido debe abandonarse.
+
+**Assumptions Underlying Simple Linear Regression**
 
 In the simple linear regression model two variables, usually labeled X and Y, are of interest. The letter X is 
 usually used to designate a variable referred to as the independent variable, since frequently it is controlled 
@@ -145,6 +163,13 @@ preselected value of X, one or more values of another variable, labeled Y, are o
 accordingly, is called the dependent variable, and we speak of the regression of Y on X. The following are the 
 assumptions underlying the simple linear regression model.
 
+En el modelo de regresión lineal simple, dos variables, generalmente denominadas X e Y, son de interés. La 
+letra X se utiliza generalmente para designar una variable denominada variable independiente, ya que 
+frecuentemente es controlada por el investigador; es decir, el investigador puede seleccionar valores de X y, 
+correspondientes a cada valor preseleccionado de X, se obtienen uno o más valores de otra variable, denominada 
+Y. Por consiguiente, la variable Y se denomina variable dependiente, y hablamos de la regresión de Y sobre X. A 
+continuación, se presentan los supuestos subyacentes al modelo de regresión lineal simple.
+
 1. Values of the independent variable X are said to be “ﬁxed.” This means that the values of X are preselected 
 by the investigator so that in the collection of the data they are not allowed to vary from these preselected 
 values. In this model, X is referred to by some writers as a nonrandom variable and by others as a mathematical 
@@ -152,8 +177,15 @@ variable. It should be pointed out at this time that the statement of this assum
 the classical regression model. Regression analysis also can be carried out on data in which X is a random 
 variable.
 
-2. The variable X is measured without error. Since no measuring procedure is perfect, this means that the 
-magnitude of the measurement error in X is negligible.
+1. Se dice que los valores de la variable independiente X son fijos. Esto significa que el investigador 
+preselecciona los valores de X para que, al recopilar los datos, no puedan variar con respecto a estos valores. 
+En este modelo, algunos autores se refieren a X como una variable no aleatoria y otros como una variable 
+matemática. Cabe señalar que este supuesto clasifica nuestro modelo como un modelo de regresión clásico. El 
+análisis de regresión también puede realizarse con datos donde X es una variable aleatoria.
+
+ 2. The variable X 
+is measured without error. Since 
+no measuring procedure is perfect, this means that the magnitude of the measurement error in X is negligible.
 
 3. For each value of X there is a subpopulation of Y values. For the usual inferential procedures of estimation 
 and hypothesis testing to be valid, these subpopulations must be normally distributed. In order that these 
@@ -165,7 +197,9 @@ exercises that follow.
 5. The means of the subpopulations of Y all lie on the same straight line. This is known as the assumption of 
 linearity. This assumption may be expressed symbolically as
 
-m y|x = b 0 + b1 x
+.. math::
+
+   \mu_{y|x} = \beta_0 + \beta_1 x
 
 (9.2.1)
 
@@ -178,14 +212,21 @@ values of Y chosen at one value of X in no way depend on the values of Y chosen 
 
 These assumptions may be summarized by means of the following equation, which is called the regression model:
 
-y = b 0 + b1 x + P
+.. math::
+
+   y = \beta_0 + \beta_1 x + \varepsilon
 
 (9.2.2)
 
 where y is a typical value from one of the subpopulations of Y, b 0 and b 1 are as deﬁned for Equation 9.2.1, 
 and P is called the error term. If we solve 9.2.2 for P, we have
 
-P = y - 1b 0 + b1 x2 = y - m yƒx
+.. math::
+
+   \varepsilon = y - (\beta_0 + \beta_1 x
+   
+   = y - \mu_{y|x}
+
 
 (9.2.3)
 
@@ -201,18 +242,28 @@ LINE [Linear (assumption 5), Independent (assumption 6), Normal (assumption 3), 
 
 A graphical representation of the regression model is given in Figure 9.2.1.
 
-9.3 THE SAMPLE REGRESSION EQUATION
+**9.3 THE SAMPLE REGRESSION EQUATION**
 
 In simple linear regression the object of the researcher’s interest is the population regression equation—the 
 equation that describes the true relationship between the dependent variable Y and the independent variable X. 
 The variable designated by Y is sometimes called the response variable and X is sometimes called the predictor 
 variable.
 
+En la regresión lineal simple, el objeto de interés del investigador es la ecuación de regresión poblacional, 
+la ecuación que describe la verdadera relación entre la variable dependiente Y y la variable independiente X. 
+La variable designada por Y a veces se denomina variable de respuesta y X a veces se denomina variable 
+predictora.
+
 In an effort to reach a decision regarding the likely form of this relationship, the researcher draws a sample 
 from the population of interest and using the resulting data, computes a sample regression equation that forms 
 the basis for reaching conclusions regarding the unknown population regression equation.
 
-Steps in Regression Analysis
+En un esfuerzo por llegar a una decisión sobre la forma probable de esta relación, el investigador extrae una 
+muestra de la población de interés y, utilizando los datos resultantes, calcula una ecuación de regresión de 
+muestra que forma la base para llegar a conclusiones con respecto a la ecuación de regresión de población 
+desconocida.
+
+ **Steps in Regression Analysis**
 
 In the absence of extensive information regarding the nature of the variables of interest, a frequently 
 employed strategy is to assume initially that they are linearly related. Subsequent analysis, then, involves 
@@ -236,7 +287,14 @@ consist of known values of both X and Y. When the equation is used to predict an
 corresponding values of X will be known. We illustrate the steps involved in simpler linear regression analysis 
 by means of the following example.
 
-EXAMPLE 9.3.1
+Al usar la ecuación de regresión para predecir, se predice el valor probable de Y cuando X tiene un valor dado. 
+Al usar la ecuación para estimar, se estima la media de la subpoblación de valores de Y que se supone que 
+existen para un valor dado de X. Cabe destacar que los datos muestrales utilizados para obtener la ecuación de 
+regresión consisten en valores conocidos tanto de X como de Y. Al usar la ecuación para predecir y estimar Y, 
+solo se conocen los valores correspondientes de X. El siguiente ejemplo ilustra los pasos de un análisis de 
+regresión lineal más simple.
+
+ **EXAMPLE 9.3.1**
 
 Després et al. (A-1) point out that the topography of adipose tissue (AT) is associated with metabolic 
 complications considered as risk factors for cardiovascular disease. It is important, they state, to measure 
@@ -246,6 +304,8 @@ abdominal AT, however, is costly and requires irradiation of the subject. In add
 available to many physicians. Després and his colleagues conducted a study to develop equations to predict the 
 amount of deep abdominal AT from simple anthropometric measurements. Their subjects were men between the ages 
 of 18 and 42 years who were free from metabolic disease that would require treatment.
+
+
 
 Among the measurements taken on each subject were deep abdominal AT obtained by CT and waist circumference as 
 shown in Table 9.3.1. A question of interest is how well one can predict and estimate deep abdominal AT from 
