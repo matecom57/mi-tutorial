@@ -58,11 +58,10 @@ variation present in a set of data is partitioned into two or more components. A
 components is a speciﬁc source of variation, so that in the analysis it is possible to ascertain the magnitude 
 of the contributions of each of these sources to the total variation.
 
-This chapter is concerned with analysis of variance, which may be deﬁned as a technique whereby the total 
-variation present in a set of data is partitioned into two or more components. Associated with each of these 
-components is a speciﬁc source of variation, so that in the analysis it is possible to ascertain the magnitude 
-of the contributions of each of these sources to the total variation.
-
+Este capítulo se centra en el análisis de varianza, que puede definirse como una técnica mediante la cual la 
+variación total presente en un conjunto de datos se divide en dos o más componentes. Cada componente tiene una 
+fuente específica de variación asociada, de modo que en el análisis es posible determinar la magnitud de la 
+contribución de cada una de estas fuentes a la variación total.
 
 The development of analysis of variance 
 (ANOVA) is due mainly to the work of R. A. Fisher (1), 
