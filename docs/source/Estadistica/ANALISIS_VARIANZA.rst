@@ -665,7 +665,7 @@ The second estimate of s 2 2 may be obtained from the familiar formula for the v
 = s >n. If we solve this equation for s2 , the variance of the population from which the samples were drawn, we 
 have
 
-The Second Estimate of S2 
+**The Second Estimate of S2**
 
 s 2 = nsx 2 
 
@@ -763,7 +763,7 @@ degrees of freedom.
 If the computed V.R. is equal to or greater than the critical value of F, we reject the null hypothesis. If the 
 computed value of V.R. is smaller than the critical value of F, we do not reject the null hypothesis.
 
-Explaining a Rejected Null Hypothesis
+**Explaining a Rejected Null Hypothesis**
 
 There are two possible explanations for a rejected null hypothesis. If the null hypothesis is true, that is, if 
 the two sample variances are estimates of a common variance, we know that the probability of getting a value of 
@@ -793,7 +793,7 @@ H0 , we conclude that the population means may all be equal.
 
 10. Determination of p value.
 
-EXAMPLE 8.2.1
+**EXAMPLE 8.2.1**
 
 Game meats, including those from white-tailed deer and eastern gray squirrels, are used as food by families, 
 hunters, and other individuals for health, cultural, or personal reasons. A study by David Holben (A-1) 
@@ -801,6 +801,25 @@ assessed the selenium content of meat from free-roaming white-tailed deer (venis
 (squirrel) obtained from a low selenium region of the United States. These selenium content values were also 
 compared to those of beef produced within and outside the same region. We want to know if the selenium levels 
 are different in the four meat groups.
+
+Las carnes de caza, incluyendo las de venado de cola blanca y ardilla gris oriental, son utilizadas como 
+alimento por familias, cazadores y otras personas por razones de salud, culturales o personales. Un estudio 
+realizado por David Holben (A-1) evaluó el contenido de selenio en carne de venado de cola blanca y ardilla 
+gris en libertad, obtenida de una región de Estados Unidos con bajo contenido de selenio. Estos valores de 
+contenido de selenio también se compararon con los de la carne de res producida dentro y fuera de la misma 
+región. Queremos saber si los niveles de selenio son diferentes en los cuatro grupos de carne.
+
+**Solution:**
+
+1. Description of data. Selenium content of raw venison (VEN), squirrel meat (SQU), region-raised beef (RRB), 
+and nonregion-raised beef (NRB), in mg>100 g of dry weight, are shown in Table 8.2.3. A graph of the data in 
+the form of a dotplot is shown in Figure 8.2.4. Such a graph highlights the main features of the data and 
+brings into clear focus differences in selenium levels among the different 
+meats.
+
+2. Assumptions. We assume that the four sets of data constitute independent simple random samples from the four 
+indicated populations. We assume that the four populations of measurements are normally distributed with equal 
+variances.
 
 3. Hypotheses.
 
@@ -836,9 +855,8 @@ that the four meat types do not all have the same average selenium content.
 
 10. p value. Since 27.00 7 3.95, p 6 .01 for this test.
 
-!
 
-A Word of Caution
+**A Word of Caution**
 
 The completely randomized design is simple and, therefore, widely used. It should be used, however, only when 
 the units receiving the treatments are homogeneous. If the experimental units are not homogeneous, the 
@@ -846,25 +864,23 @@ researcher should consider an alternative design such as one of those to be disc
 
 In our illustrative example the treatments are treatments in the usual sense of the word. This is not always 
 the case, however, as the term “treatment” as used in experimental design is quite general. We might, for 
-example, wish to study the response to the
-
-same treatment (in the usual sense of the word) of several breeds of animals. We would, however, refer to the 
+example, wish to study the response to the same treatment (in the usual sense of the word) of several breeds of 
+animals. We would, however, refer to the 
 breed of animal as the “treatment.”
 
 We must also point out that, although the techniques of analysis of variance are more often applied to data 
 resulting from controlled experiments, the techniques also may be used to analyze data collected by a survey, 
 provided that the underlying assumptions are reasonably well met.
 
-Computer Analysis
+**Computer Analysis**
 
 Figure 8.2.5 shows the computer procedure and output for Example 8.2.1 provided by a one-way analysis of 
 variance program found in the MINITAB package. The data were entered into Columns 1 through 4. When you compare 
 the ANOVA table on this printout with the one given in Table 8.2.4, you see that the printout uses the label 
 “factor” instead of “among samples.” The different treatments are referred to on the printout as levels. Thus 
 level 1 = treatment 1, level 2 = treatment 2, and so on. The printout gives the four sample means and standard 
-deviations as well as
-
-the pooled standard deviation. This last quantity is equal to the square root of the error mean square shown in 
+deviations as well as the pooled standard deviation. This last quantity is equal to the square root of the 
+error mean square shown in 
 the ANOVA table. Finally, the computer output gives graphic representations of the 95 percent conﬁdence 
 intervals for the mean of each of the four populations represented by the sample data.
 
@@ -882,15 +898,19 @@ variance is a graph consisting of side-by-side boxplots. For each sample a boxpl
 method described in Chapter 2. Figure 8.2.7 shows the side-by-side boxplots for Example 8.2.1. Note that in 
 Figure 8.2.7 the variable of interest is represented by the vertical axis rather than the horizontal axis.
 
-Alternatives If the data available for analysis do not meet the assumptions for one-way analysis of variance as 
+**Alternatives**
+
+If the data available for analysis do not meet the assumptions for one-way analysis of variance as 
 discussed here, one may wish to consider the use of the Kruskal-Wallis procedure, a nonparametric technique 
 discussed in Chapter 13.
 
-Testing for Signiﬁcant Differences Between Individual Pairs of Means When the analysis of variance leads to a 
-rejection of the null hypothesis of no difference among population means, the question naturally arises 
-regarding just which pairs of means are different. In fact, the desire, more often than not, is to carry
+**Testing for Signiﬁcant Differences Between Individual Pairs of Mean**
 
-out a signiﬁcance test on each and every pair of treatment means. For instance, in Example 8.2.1, where there 
+ When the analysis of variance leads to 
+a 
+rejection of the null hypothesis of no difference among population means, the question naturally arises 
+regarding just which pairs of means are different. In fact, the desire, more often than not, is to carry out a 
+signiﬁcance test on each and every pair of treatment means. For instance, in Example 8.2.1, where there 
 are four treatments, we may wish to know, after rejecting H 0 : m 1 = m 2 = m 3 = m4 , which of the six 
 possible individual hypotheses should be rejected. The experimenter, however, must exercise caution in testing 
 for signiﬁcant differences between individual means and must always make certain that the procedure is valid. 
@@ -901,7 +921,7 @@ multiple comparison procedures commonly used in practice. Below we illustrate tw
 Tukey’s HSD test and Bonferroni’s method. The interested student is referred to the books by Hsu (7) and 
 Westfall et al. (8) for additional techniques.
 
-Tukey’s HSD Test
+**Tukey’s HSD Test**
 
 Over the years several procedures for making multiple comparisons have been suggested. A multiple comparison 
 procedure developed by Tukey (9) is frequently used for testing the null hypothesis that all possible pairs of 
@@ -911,15 +931,12 @@ overall signiﬁcance level of a. The probability is a, then, that one or more o
 Tukey’s test, which is usually referred to as the HSD (honestly signiﬁcant difference) test, makes use of a 
 single value against which all differences are compared. This value, called the HSD, is given by
 
-HSD = qa,k,N-k 
+.. math::
 
-A
-
-MSE
+   HSD = q_{\alpha,k,N-k \sqrt{\frac{MSE}{n}}
 
 (8.2.9)
 
-n
 
 where a is the chosen level of signiﬁcance, k is the number of means in the experiment, N is the total number 
 of observations in the experiment, n is the number of observations in a treatment, MSE is the error or within 
@@ -933,7 +950,7 @@ studentized range is discussed in detail by Winer (10).
 All possible differences between pairs of means are computed, and any difference that yields an absolute value 
 that exceeds HSD is declared significant.
 
-Tukey’s Test for Unequal Sample Sizes
+**Tukey’s Test for Unequal Sample Sizes**
 
 When the samples are not all the same size, as is the case in Example 8.2.1, Tukey’s HSD test given by Equation 
 8.2.9 is not applicable. Tukey himself (9) and Kramer (11), however, have extended the Tukey procedure to the 
@@ -942,21 +959,16 @@ consists of replacing MSE/n in Equation 8.2.9 with 1MSE>2211>n + 1>n j 2, where 
 sizes of the two groups to be compared. If i we designate the new quantity by HSD*, we have as the new test 
 criterion
 
-HSD* = q a,k,N-k
+.. math::
 
-A
+   HSD^{*} = q_{\alpha,k,N-k \sqrt{\frac{MSE}{2}(\frac{1}{n_i} + \frac{1}{n_j})}
 
-MSE
-
-2
-
-1 1 a + b n i n j
 
 (8.2.10)
 
 Any absolute value of the difference between two sample means that exceeds HSD* is declared signiﬁcant.
 
-Bonferroni’s Method
+**Bonferroni’s Method**
 
 Another very commonly used multiple comparison test is based on a method developed by C. E. Bonferroni. As with 
 Tukey’s method, we desire to maintain an overall significance level of a for the total of all pair-wise tests. 
@@ -976,7 +988,7 @@ sides of the equation by k to obtain a = pk. In other words, the total a is simp
 values, and the actual corrected p value is simply the calculated p value multiplied by the number of tests 
 that were performed.
 
-EXAMPLE 8.2.2
+**EXAMPLE 8.2.2**
 
 Let us illustrate the use of the HSD test with the data from Example 8.2.1.
 
