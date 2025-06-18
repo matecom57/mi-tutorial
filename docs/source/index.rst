@@ -90,3 +90,12 @@ Contents
     :caption: EStadistica
 
     Estadistica/ejercicios01
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Delay_Dif_Equ_and_App_to_Biology_Fathalla
+
+    Delay_Dif_Equ_and_App_to_Biology_Fathalla/prefacio
+    Delay_Dif_Equ_and_App_to_Biology_Fathalla/c01
+
+
