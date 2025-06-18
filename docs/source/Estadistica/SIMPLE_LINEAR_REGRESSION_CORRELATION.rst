@@ -122,7 +122,10 @@ analysis of the sample data, they are interested in reaching decisions about the
 sample is presumed to have been drawn. It is important, therefore, that the researchers understand the nature 
 of the population in which they are interested. They should know enough about the population to be able either 
 to construct a mathematical model for its representation or to determine if it reasonably 
-ﬁts some established model. A researcher about to analyze a set of data by the methods of simple linear 
+ﬁts some established model.
+
+
+A researcher about to analyze a set of data by the methods of simple linear 
 regression, for example, should be secure in the knowledge that the simple linear regression model is, at 
 least, an approximate representation of the population. It is unlikely that the model will be a perfect 
 portrait of the real situation, since this characteristic is seldom found in models of practical value. A model 
