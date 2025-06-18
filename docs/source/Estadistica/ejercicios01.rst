@@ -26,9 +26,9 @@ Los circulos tienen radio aleatorio entre 1 a 20 unidades.
 
 7. Consideremos las siguientes dos muestras :math:`x_1` y :math:`x_2`, Verificar si :math:`\mu_1 = \mu_2`.
 
-:math:`x_1`= 62.16, 57.29, 60.80, 66.75, 66.58, 52.71, 68.68, 56.11, 61.78, 68.88`
+:math:`x_1` = 62.16, 57.29, 60.80, 66.75, 66.58, 52.71, 68.68, 56.11, 61.78, 68.88
 
-:math:`x_2`= 65.31, 63.37, 62.52, 71.00, 69.76, 67.34, 66.76, 59.55, 66.39, 67.07, 68.45, 63.57`
+:math:`x_2` = 65.31, 63.37, 62.52, 71.00, 69.76, 67.34, 66.76, 59.55, 66.39, 67.07, 68.45, 63.57
 
 8. Consideremos las siguientes dos muestras :math:`x_1` y :math:`x_2`, Verificar si :math:`\mu_1 < \mu_2`.
 
