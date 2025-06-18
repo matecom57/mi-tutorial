@@ -42,7 +42,7 @@ Contents
 
 .. toctree::
     :maxdepth: 1
-    :caption: Introducción a la Estadística con R
+    :caption: BIOSTATISTICS-DANIEL
 
     BIOSTATISTICS_Daniel/libro
     BIOSTATISTICS_Daniel/ANALISIS_VARIANZA
