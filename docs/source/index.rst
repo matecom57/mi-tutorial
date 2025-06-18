@@ -18,12 +18,9 @@ Contents
 
 .. toctree::
     :maxdepth: 1
-    :caption: FreeSurfer
+    :caption: Andy-FreeSurfer
 
-    usage
-    Resonadores_Bruker
-    api
-    cute
+    Andy/FreeSurfer/freesurfer
 
 .. toctree::
     :maxdepth: 1
