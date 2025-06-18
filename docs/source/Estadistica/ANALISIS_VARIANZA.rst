@@ -125,6 +125,14 @@ subject. We ﬁnd that the amount by which serum cholesterol was lowered is not 
 other words, there is variability among the measurements. Why, we ask ourselves, are the measurements not all 
 the same? Presumably, one reason they are not the same is that the subjects received different drugs. 
 
+Supongamos que deseamos saber si tres fármacos difieren en su eficacia para reducir el colesterol sérico en 
+sujetos humanos. Algunos sujetos reciben el fármaco A, otros el fármaco B y otros el fármaco C. Tras un período 
+específico, se toman mediciones para determinar el grado de reducción del colesterol sérico en cada sujeto. 
+Descubrimos que la reducción del colesterol sérico no es la misma en todos los sujetos. En otras palabras, 
+existe variabilidad entre las mediciones. ¿Por qué, nos preguntamos, no son todas iguales? Presumiblemente, una 
+razón es que los sujetos recibieron fármacos diferentes.
+
+
 We now 
 look at the measurements of those subjects who received drug A. We ﬁnd that the amount by which serum 
 cholesterol was lowered is not the same among these subjects. We ﬁnd this to be the case when we look at the 
@@ -134,6 +142,16 @@ measurements not the same? Among the reasons that come to mind are differences i
 subjects and differences in their diets. Through an analysis of the variability that we have observed, we will 
 be able to reach a conclusion regarding the equality of the effectiveness of the three drugs. To do this we 
 employ the techniques and concepts of analysis of variance. 
+
+Ahora observamos las mediciones de aquellos sujetos que recibieron el fármaco A. Encontramos que la cantidad en 
+que se redujo el colesterol sérico no es la misma entre estos sujetos. Encontramos que este es el caso cuando 
+observamos las mediciones de los sujetos que recibieron el fármaco B y los sujetos que recibieron el fármaco C. 
+Vemos que hay variabilidad entre las mediciones dentro de los grupos de tratamiento. ¿Por qué, nos preguntamos 
+de nuevo, estas mediciones no son las mismas? Entre las razones que vienen a la mente están las diferencias en 
+la composición genética de los sujetos y las diferencias en sus dietas. A través de un análisis de la 
+variabilidad que hemos observado, podremos llegar a una conclusión con respecto a la igualdad de la efectividad 
+de los tres fármacos. Para ello empleamos las técnicas y conceptos de análisis de varianza.
+
 
 **Variables**
 
@@ -148,7 +166,20 @@ the focus of our attention in the experiment. The treatment variable is the vari
 the question to be answered is: Do the different “values” of the treatment variable result in differences, on 
 the average, in the response variable?
 
-Assumptions
+En nuestro ejemplo, hacemos alusión a tres tipos de variables. Encontramos que estas variables están presentes 
+en todas las situaciones en las que es apropiado el uso del análisis de varianza. Primero, tenemos la variable 
+de tratamiento, que en nuestro ejemplo era "fármaco". Teníamos tres "valores" de esta variable: fármaco A, 
+fármaco B y fármaco C. El segundo tipo de variable al que nos referimos es la variable de respuesta. En el 
+ejemplo, es el cambio en el colesterol sérico. La variable de respuesta es la variable que esperamos que 
+muestre valores diferentes cuando se emplean diferentes "valores" de la variable de tratamiento. Finalmente, 
+tenemos las otras variables que mencionamos, la composición genética y la dieta. Estas se llaman variables 
+extrañas. Estas variables pueden tener un efecto en la variable de respuesta, pero no son el foco de nuestra 
+atención en el experimento. La variable de tratamiento es la variable de principal preocupación, y la pregunta 
+a responder es: ¿Los diferentes "valores" de la variable de tratamiento resultan en diferencias, en promedio, 
+en la variable de respuesta?
+
+** Assumptions**
+
 
 Underlying the valid use of analysis of variance as a tool of statistical inference are a set of fundamental 
 assumptions. Although an experimenter must not expect to ﬁnd all the assumptions met to perfection, it is 
@@ -157,16 +188,33 @@ to recognize when they are substantially unsatisfied. Because experiments in whi
 perfectly met are rare, analysis of variance results should be considered as approximate rather than exact. 
 These assumptions are pointed out at appropriate points in the following sections.
 
+El uso válido del análisis de varianza como herramienta de inferencia estadística se sustenta en un conjunto de 
+supuestos fundamentales. Si bien un experimentador no debe esperar que todos los supuestos se cumplan a la 
+perfección, es importante que quien utilice técnicas de análisis de varianza conozca los supuestos subyacentes 
+y sea capaz de reconocer cuándo son sustancialmente insatisfactorios. Dado que los experimentos en los que 
+todos los supuestos se cumplen a la perfección son poco frecuentes, los resultados del análisis de varianza 
+deben considerarse aproximados, no exactos. Estos supuestos se señalan en los puntos pertinentes de las 
+siguientes secciones.
+
 We discuss analysis of variance as it is used to analyze the results of two different experimental designs, the 
 completely randomized and the randomized complete block designs. In addition to these, the concept of a 
 factorial experiment is given through its use in a completely randomized design. These do not exhaust the 
 possibilities. A discussion of additional designs may be found in the references (4–6).
 
-The ANOVA Procedure
+Se analiza el análisis de varianza para analizar los resultados de dos diseños experimentales diferentes: el 
+diseño completamente aleatorizado y el diseño de bloques completos aleatorizados. Además, se presenta el 
+concepto de experimento factorial mediante su uso en un diseño completamente aleatorizado. Estas posibilidades 
+no agotan las existentes. Se puede encontrar una discusión de diseños adicionales en las referencias (4-6).
+
+**The ANOVA Procedure**
 
 In our presentation of the analysis of variance for the different designs, we follow the ten-step procedure 
 presented in Chapter 7. The following is a restatement of the steps of the procedure, including some new 
 concepts necessary for its adaptation to analysis of variance.
+
+En nuestra presentación del análisis de varianza para los diferentes diseños, seguimos el procedimiento de diez 
+pasos presentado en el Capítulo 7. Lo que sigue es una reformulación de los pasos del procedimiento, incluyendo 
+algunos conceptos nuevos necesarios para su adaptación al análisis de varianza.
 
 1. Description of data. In addition to describing the data in the usual way, we display the sample data in 
 tabular form.
@@ -194,7 +242,7 @@ the analysis.
 
 We discuss these steps in greater detail in Section 8.2.
 
-The Use of Computers
+**The Use of Computers**
 
 The calculations required by analysis of variance are lengthier and more complicated than those we have 
 encountered in preceding chapters. For this reason the computer assumes an important role in analysis of 
@@ -205,7 +253,16 @@ the data of the exercises. The basic concepts of analysis of variance that we pr
 necessary background for understanding the description of the programs and their output in any of the 
 statistical packages.
 
-8.2 THE COMPLETELY RANDOMIZED DESIGN
+Los cálculos que requiere el análisis de varianza son más largos y complejos que los que hemos visto en 
+capítulos anteriores. Por ello, la computadora desempeña un papel importante en el análisis de varianza. Todos 
+los ejercicios de este capítulo son adecuados para el análisis informático y pueden utilizarse con los 
+programas estadísticos mencionados en el capítulo 1. El resultado de los programas estadísticos puede variar 
+ligeramente del presentado en este capítulo, pero esto no debería suponer un problema importante para quienes 
+utilizan una computadora para analizar los datos de los ejercicios. Los conceptos básicos del análisis de 
+varianza que presentamos aquí proporcionan la base necesaria para comprender la descripción de los programas y 
+su resultado en cualquiera de los programas estadísticos.
+
+**8.2 THE COMPLETELY RANDOMIZED DESIGN**
 
 We saw in Chapter 7 how it is possible to test the null hypothesis of no difference between two population 
 means. It is not unusual for the investigator to be interested in testing the null hypothesis of no difference 
@@ -216,16 +273,25 @@ involved in carrying out this many t tests is substantial, it would be worthwhil
 alternative for analysis were available. A more important consequence of performing all possible t tests, 
 however, is that it is very likely to lead to a false conclusion.
 
-Suppose we draw ﬁve samples from populations having equal means. As we have seen, there would be 10 tests if 
-we were to do each of the possible tests separately. If we select a signiﬁcance level of a = .05 for each 
+Vimos en el Capítulo 7 cómo es posible probar la hipótesis nula de que no hay diferencia entre dos medias 
+poblacionales. No es inusual que el investigador esté interesado en probar la hipótesis nula de que no hay 
+diferencia entre varias medias poblacionales. El estudiante que se encuentre por primera vez con este problema 
+podría inclinarse a sugerir que todos los pares posibles de medias muestrales se prueben por separado mediante 
+la prueba t de Student. Supongamos que hay cinco poblaciones involucradas. El número de pares posibles de 
+medias muestrales es 5 C 2 = 10. Como la cantidad de trabajo involucrado en la realización de tantas pruebas t 
+es sustancial, valdría la pena si hubiera disponible una alternativa más eficiente para el análisis. Sin 
+embargo, una consecuencia más importante de realizar todas las pruebas t posibles es que es muy probable que 
+conduzca a una conclusión falsa.
+
+Suppose we draw ﬁve samples from populations having equal means. As we have 
+seen, there would be 10 tests 
+if we were to do each of the possible tests separately. If we select a signiﬁcance level of a = .05 for each 
 test, the probability of failing to reject a hypothesis of no difference in each case would be .95. By the 
 multiplication rule of probability, if the tests were independent of one another, the probability of failing to 
 reject a hypothesis of no difference in all 10 cases would be 1.952 10 = .5987. The probability of rejecting at 
 least one hypothesis of no difference, then, would be 1 - .5987 = .4013. Since we know that the null hypothesis 
 is true in every case in this illustrative example, rejecting the null hypothesis constitutes the committing of 
-a type I error. In the long run,
-
-then, in testing all possible pairs of means from ﬁve samples, we would commit a type I error 40 percent of 
+a type I error. In the long run,then, in testing all possible pairs of means from ﬁve samples, we would commit a type I error 40 percent of 
 the time. The problem becomes even more complicated in practice, since three or more t tests based on the same 
 data would not be independent of one another.
 
