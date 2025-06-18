@@ -91,6 +91,7 @@ Contents
 
     Estadistica/ejercicios01
     Estadistica/ANALISIS_VARIANZA
+    Estadistica/SIMPLE_LINEAR_REGRESSION_CORRELATION
 
 .. toctree::
     :maxdepth: 1
