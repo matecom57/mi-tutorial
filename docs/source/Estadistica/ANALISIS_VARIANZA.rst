@@ -295,23 +295,51 @@ a type I error. In the long run,then, in testing all possible pairs of means fro
 the time. The problem becomes even more complicated in practice, since three or more t tests based on the same 
 data would not be independent of one another.
 
+Supongamos que extraemos cinco muestras de poblaciones con medias iguales. Como hemos visto, habría 10 pruebas 
+si realizáramos cada una de las pruebas posibles por separado. Si seleccionamos un nivel de significancia de a 
+= .05 para cada prueba, la probabilidad de no rechazar una hipótesis de no diferencia en cada caso sería .95. 
+Por la regla de multiplicación de la probabilidad, si las pruebas fueran independientes entre sí, la 
+probabilidad de no rechazar una hipótesis de no diferencia en los 10 casos sería 1.952 10 = .5987. La 
+probabilidad de rechazar al menos una hipótesis de no diferencia, entonces, sería 1 - .5987 = .4013. Dado que 
+sabemos que la hipótesis nula es verdadera en todos los casos en este ejemplo ilustrativo, rechazar la 
+hipótesis nula constituye la comisión de un error de tipo I. A largo plazo, al probar todos los pares de medias 
+posibles de cinco muestras, cometeríamos un error de tipo I el 40 % de las veces. El problema se complica aún 
+más en la práctica, ya que tres o más pruebas t basadas en los mismos datos no serían independientes entre sí.
+
+
 It becomes clear, then, that some other method for testing for a signiﬁcant difference among several means is 
 needed. Analysis of variance provides such a method.
 
-One-Way ANOVA
+Queda claro, entonces, que se necesita otro método para comprobar si hay una diferencia significativa entre 
+varias medias. El análisis de varianza proporciona dicho método.
+
+**One-Way ANOVA**
 
 The simplest type of analysis of variance is that known as one-way analysis of variance, in which only one 
 source of variation, or factor, is investigated. It is an extension to three or more samples of the t test 
 procedure (discussed in Chapter 7) for use with two independent samples. Stated another way, we can say that 
 the t test for use with two independent samples is a special case of one-way analysis of variance.
 
+El tipo más simple de análisis de varianza es el conocido como análisis de varianza unidireccional, en el que 
+solo se investiga una fuente de variación, o factor. Es una extensión del procedimiento de la prueba t 
+(discutido en el capítulo 7) para tres o más muestras, que se utiliza con dos muestras independientes. Dicho de 
+otro modo, la prueba t para dos muestras independientes es un caso especial de análisis de varianza 
+unidireccional.
+ 
 In a typical situation we want to use one-way analysis of variance to test the null hypothesis that three or 
 more treatments are equally effective. The necessary experiment is designed in such a way that the treatments 
 of interest are assigned completely at random to the subjects or objects on which the measurements to determine 
 treatment effectiveness are to be made. For this reason the design is called the completely randomized 
 experimental design.
 
-We may randomly allocate subjects to treatments as follows. Suppose we have 16 subjects available to 
+En una situación típica, se utiliza un análisis de varianza unidireccional para comprobar la hipótesis nula de 
+que tres o más tratamientos son igualmente efectivos. El experimento necesario se diseña de tal manera que los 
+tratamientos de interés se asignan completamente al azar a los sujetos u objetos en los que se realizarán las 
+mediciones para determinar la efectividad del tratamiento. Por esta razón, el diseño se denomina diseño 
+experimental completamente aleatorizado.
+
+We may randomly allocate subjects to treatments as follows. Suppose we 
+have 16 subjects available to 
 participate in an experiment in which we wish to compare four drugs. We number the subjects from 01 through 16. 
 We then go to a table of random numbers and select 16 consecutive, unduplicated numbers between 01 and 16. To 
 illustrate, let us use Appendix Table A and a random starting point that, say, is at the intersection of Row 4 
@@ -321,14 +349,36 @@ and 08. We allocate subjects 16, 09, 06, and 15 to drug A; subjects 14, 11, 02, 
 07, 05, and 13 to drug C; and subjects 03, 12, 01, and 08 to drug D. We emphasize that the number of subjects 
 in each treatment group does not have to be the same. Figure 8.2.1 illustrates the scheme of random allocation.
 
-design is the appropriate design, we may proceed with the hypothesis testing steps. We discuss these in detail 
-ﬁrst, and follow with an example.
+Podemos asignar aleatoriamente a los sujetos a los tratamientos de la siguiente manera. Supongamos que tenemos 
+16 sujetos disponibles para participar en un experimento en el que deseamos comparar cuatro fármacos. Numeramos 
+los sujetos del 01 al 16. Luego vamos a una tabla de números aleatorios y seleccionamos 16 números consecutivos 
+no duplicados entre 01 y 16. Para ilustrar, usemos la Tabla A del Apéndice y un punto de inicio aleatorio que, 
+digamos, está en la intersección de la Fila 4 y las Columnas 11 y 12. El número de dos dígitos en esta 
+intersección es 98. Los 16 números consecutivos de dos dígitos subsiguientes (moviéndose hacia abajo) entre 01 
+y 16 son 16, 09, 06, 15, 14, 11, 02, 04, 10, 07, 05, 13, 03, 12, 01 y 08. Asignamos los sujetos 16, 09, 06 y 15 
+al fármaco A, los sujetos 14, 11, 02 y 04 al fármaco B, los sujetos 10, 07, 05 y 13 al fármaco C; y los sujetos 
+03, 12, 01 y 08 al fármaco D. Cabe destacar que el número de sujetos en cada grupo de tratamiento no tiene por 
+qué ser el mismo. La Figura 8.2.1 ilustra el esquema de asignación aleatoria.
+
+
+**Hypothesis Testing Steps**
+
+Once we decide that the completely randomized design is the appropriate design, we may proceed with the 
+hypothesis testing steps. We discuss these in detail ﬁrst, and follow with an example.
+
+
 
 1. Description of data. The measurements (or observations) resulting from a completely randomized experimental 
 design, along with the means and totals that can be computed from them, may be displayed for convenience as in 
 Table 8.2.1. The symbols used in Table 8.2.1 are deﬁned as follows:
 
-x ij = the ith observation resulting from the j th treatment (there are a total of k treatments)
+1. Descripción de los datos. Las mediciones (u observaciones) resultantes de un diseño experimental 
+completamente aleatorizado, junto con las medias y los totales que se pueden calcular a partir de ellas, pueden 
+mostrarse para mayor comodidad como en la Tabla 8.2.1. Los símbolos utilizados en la Tabla 8.2.1 se definen de 
+la siguiente manera:
+
+ x ij = the ith observation resulting from the j th treatment (there are a total of k 
+treatments)
 
 i = 1, 2, Á , n j ,
 
@@ -350,12 +400,20 @@ k T .. x .. = N = a nj  , N j=1
 
 2. Assumptions. Before stating the assumptions, let us specify the model for the experiment described here.
 
-The Model As already noted, a model is a symbolic representation of a typical value of a data set. To write 
+**The Model**
+
+As already noted, a model is a symbolic representation of a typical value of a data set. To write 
 down the model for the completely randomized experimental design, let us begin by identifying a typical value 
 from the set of data represented by the sample displayed in Table 8.2.1. We use the symbol x ij to represent 
 this typical value.
 
-The one-way analysis of variance model may be written as follows:
+Como ya se mencionó, un modelo es una representación simbólica de un valor típico de un conjunto de 
+datos. Para definir el modelo del diseño experimental completamente aleatorizado, comencemos por identificar un 
+valor típico del conjunto de datos representado por la muestra que se muestra en la Tabla 8.2.1. Usamos el 
+símbolo x ij para representar este valor típico.
+
+ The one-way analysis of variance model may be written as 
+follows:
 
 x ij = m + t j + Pij ;
 
@@ -375,18 +433,28 @@ treatment effect.
 3. P ij represents the amount by which an individual measurement differs from the mean of the population to 
 which it belongs and is called the error term.
 
-Components of the Model
+**Components of the Model**
 
 By looking at our model we can see that a typical observation from the total set of data under study is 
 composed of (1) the grand mean, (2) a treatment effect, and (3) an error term representing the deviation of the 
 observation from its group mean.
+
+Al observar nuestro modelo, podemos ver que una observación típica del conjunto total de datos en estudio se 
+compone de (1) la media general, (2) un efecto del tratamiento y (3) un término de error que representa la 
+desviación de la observación respecto de su media de grupo.
 
 In most situations we are interested only in the k treatments represented in our experiment. Any inferences 
 that we make apply only to these treatments. We do not wish to extend our inference to any larger collection of 
 treatments. When we place such a restriction on our inference goals, we refer to our model as the fixed-effects 
 model, or model 1. The discussion in this book is limited to this model.
 
-Assumptions of the Model follows:
+En la mayoría de las situaciones, solo nos interesan los k tratamientos representados en nuestro experimento. 
+Cualquier inferencia que hagamos se aplica únicamente a estos tratamientos. No deseamos extender nuestra 
+inferencia a un conjunto mayor de tratamientos. Cuando imponemos dicha restricción a nuestros objetivos de 
+inferencia, nos referimos a nuestro modelo como modelo de efectos fijos o modelo 1. La discusión en este libro 
+se limita a este modelo.
+
+**Assumptions of the Model follows:**
 
 The assumptions for the ﬁxed-effects model are as
 
@@ -426,16 +494,30 @@ j = 1, 2, Á , k
 
 H A :not all t j = 0
 
-If H 0 is true and the assumptions of equal variances and normally distributed populations are met, a picture 
-of the populations will look like Figure 8.2.2. When H 0 is true the population means are all equal, and the 
+If H0 is true and the assumptions of equal variances and normally distributed populations are met, a picture 
+of the populations will look like Figure 8.2.2. When H0 is true the population means are all equal, and the 
 populations are centered at the same point (the common mean) on the horizontal axis. If the populations are all 
 normally distributed with equal variances the distributions will be identical, so that in drawing their 
 pictures each is superimposed on each of the others, and a single picture sufﬁciently represents them all.
+
+Si H₂ es verdadera y se cumplen los supuestos de varianzas iguales y poblaciones con distribución normal, la 
+representación de las poblaciones se verá como en la Figura 8.2.2. Cuando H₂ es verdadera, las medias 
+poblacionales son todas iguales y las poblaciones están centradas en el mismo punto (la media común) en el eje 
+horizontal. Si todas las poblaciones se distribuyen normalmente con varianzas iguales, las distribuciones serán 
+idénticas, de modo que al dibujar sus representaciones, cada una se superpone a las demás, y una sola 
+representación las representa a todas suficientemente.
+
 
 When H 0 is false it may be false because one of the population means is different from the others, which are 
 all equal. Or, perhaps, all the population means are different. These are only two of the possibilities when H 
 0 is false. There are many other possible combinations of equal and unequal means. Figure 8.2.3 shows a picture 
 of the populations when the assumptions are met, but H 0 is false because no two population means are equal.
+
+Cuando H₂ es falsa, puede serlo porque una de las medias poblacionales es diferente de las demás, que son todas 
+iguales. O, quizás, todas las medias poblacionales son diferentes. Estas son solo dos de las posibilidades 
+cuando H₂ es falsa. Existen muchas otras combinaciones posibles de medias iguales y desiguales. La Figura 8.2.3 
+muestra una imagen de las poblaciones cuando se cumplen los supuestos, pero H₂ es falsa porque no hay dos 
+medias poblacionales iguales.
 
 4. Test statistic. The test statistic for one-way analysis of variance is a computed variance ratio, which we 
 designate by V.R. as we did in Chapter 7. The two variances
@@ -460,7 +542,7 @@ in the observed data into its basic components, each of which is attributable to
 Those who use a computer for calculations may wish to skip the following discussion of the computations 
 involved in obtaining the test statistic.
 
-The Total Sum of Squares
+**The Total Sum of Squares**
 
 Before we can do any partitioning, we must ﬁrst obtain the total sum of squares. The total sum of squares is 
 the sum of the squares of the deviations of individual observations from the mean of all the observations taken 
