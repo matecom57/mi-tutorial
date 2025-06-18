@@ -45,6 +45,8 @@ Contents
     :caption: Introducción a la Estadística con R
 
     BIOSTATISTICS_Daniel/libro
+    BIOSTATISTICS_Daniel/ANALISIS_VARIANZA
+    BIOSTATISTICS_Daniel/SIMPLE_LINEAR_REGRESSION_CORRELATION
 
 .. toctree::
     :maxdepth: 1
