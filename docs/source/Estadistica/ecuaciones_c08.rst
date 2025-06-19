@@ -99,3 +99,6 @@ from a low selenium region of the United States. These selenium content values w
 also compared to those of beef produced within and outside the same region. We want
 to know if the selenium levels are different in the four meat groups.
 
+Las carnes de caza, incluyendo las de venado de cola blanca y ardilla gris oriental, son utilizadas como alimento por familias, cazadores y otras personas por razones de salud, culturales o personales. Un estudio realizado por David Holben (A-1) evaluó el contenido de selenio en la carne de venado de cola blanca y ardilla gris en libertad, obtenida de una región de Estados Unidos con bajo contenido de selenio. Estos valores de contenido de selenio también se compararon con los de la carne de res producida dentro y fuera de la misma región. Queremos saber si los niveles de selenio son diferentes en los cuatro grupos de carne.
+
+
