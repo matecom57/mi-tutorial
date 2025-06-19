@@ -95,6 +95,7 @@ Contents
     Estadistica/ANALISIS_VARIANZA
     Estadistica/SIMPLE_LINEAR_REGRESSION_CORRELATION
     Estadistica/ecuaciones_c08
+    Estadistica/ANOVA_dos_vias
 
 .. toctree::
     :maxdepth: 1
