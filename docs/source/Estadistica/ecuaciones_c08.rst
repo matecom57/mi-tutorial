@@ -69,3 +69,33 @@ The First Estimate of
 .. math::
 
    \frac{\sum_{j=1}^{n_j} (x_{ij} - \bar{x}_{.j})^2} {n_j - 1}
+
+.. math::
+
+   MSW = \frac{\sum_{j=1}^k \sum_{j=1}^{n_j} (x_{ij} - \bar{x}_{.j})^2} {\sum_{j=1}^kn_j - 1}
+
+
+**The Second Estimate of**
+
+.. math::
+
+   \frac{\sum_{j=1}^k (\bar{x}_{.j} - \bar{x}_{..})^2}{k-1}
+
+.. math::
+
+   MSA = \frac{\sum_{j=1}^k n_j (\bar{x}_{.j} - \bar{x}_{..})^2}{k-1}
+
+**The Variance Ratio**
+
+.. image:: tabla8_2_2.png
+
+**EXAMPLE 8.2.1**
+
+Game meats, including those from white-tailed deer and eastern gray squirrels, are
+used as food by families, hunters, and other individuals for health, cultural, or personal
+reasons. A study by David Holben (A-1) assessed the selenium content of meat
+from free-roaming white-tailed deer (venison) and gray squirrel (squirrel) obtained
+from a low selenium region of the United States. These selenium content values were
+also compared to those of beef produced within and outside the same region. We want
+to know if the selenium levels are different in the four meat groups.
+
