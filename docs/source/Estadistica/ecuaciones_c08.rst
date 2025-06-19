@@ -28,4 +28,44 @@ Ecuaciones-C08
 :math:`\bar{x}_{..} = \frac{T_{..}}{N}, N = \sum_{j=1}^k n_j`
 
  
+**El Modelo**
 
+.. math::
+
+   x_{ij} = \mu + \tau_j + \varepsilon_{ij} ; i = 1, 2, ..., n_j , j = 1, 2, ..., k
+
+**Hipotesis**
+
+.. math::
+
+   H_0: \mu_1 = \mu_2 = ... \mu_k
+
+   H_A : no todas las \mu_j son iguales
+
+**The Total Sum of Squares**
+
+.. math::
+
+   SST = \sum_{j=1}^k \sum_{i=1}^{n_j} (x_{ij} - \bar{x}_{..})^2
+
+The Within Groups Sum of Squares
+
+.. math::
+
+   SSW = \sum_{j=1}^k \sum_{i=1}^{n_j} (x_{ij} - \bar{x}_{.j})^2
+
+The Among Groups Sum of Squares
+
+.. math::
+
+   SSA = \sum_{j=1}^k n_j  (\bar{x}_{.j} - \bar{x}_{..})^2
+
+.. math::
+
+   SST = SSA + SSW
+
+The First Estimate of
+
+.. math::
+
+   \frac{\sum_{j=1}^{n_j} (x_{ij} - \bar{x}_{.j})^2} {n_j - 1}
