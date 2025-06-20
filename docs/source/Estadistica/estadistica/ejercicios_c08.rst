@@ -46,6 +46,7 @@ in time.
 
 Licciardone et al. (A-15) examinaron a sujetos con dolor lumbar crónico inespecífico. En este estudio, 18 de los sujetos completaron una encuesta para evaluar su función física al inicio y al cabo de 1, 3 y 6 meses. La Tabla 8.4.1 muestra los datos de estos sujetos que recibieron un tratamiento simulado que parecía ser una manipulación osteopática genuina. Los valores más altos indican una mejor función física. El objetivo del experimento fue determinar si los sujetos reportarían una mejoría con el tiempo, incluso si el tratamiento recibido proporcionara una mejoría mínima. Deseamos saber si existe una diferencia en los valores promedio de la encuesta entre los cuatro puntos temporales.
 
+
 **8.5 THE FACTORIAL EXPERIMENT**
 
 **EXAMPLE 8.5.1**
@@ -58,6 +59,9 @@ the mean effect on reaction time of subjects in the two age groups. Let us assum
 effect is measured in terms of reduction in reaction time to some stimulus. Suppose these
 means are as shown in Table 8.5.1.
 
+Supongamos, en términos del efecto sobre el tiempo de reacción, que se conoce la verdadera relación entre tres dosis de un fármaco y la edad de los sujetos que lo toman. Supongamos, además, que la edad se presenta en dos niveles: «joven» (menor de 65 años) y «mayor» (65 años o más). Si se conoce la verdadera relación entre ambos factores, sabremos, para las tres dosis, el efecto medio sobre el tiempo de reacción de los sujetos de ambos grupos de edad. Supongamos que el efecto se mide en términos de reducción del tiempo de reacción a un estímulo. Supongamos que estas medias son las que se muestran en la Tabla 8.5.1.
+
+
 The following important features of the data in Table 8.5.1 should be noted.
 1. For both levels of factor A the difference between the means for any two levels of
 factor B is the same. That is, for both levels of factor A, the difference between means
@@ -68,6 +72,10 @@ is the same. In the present case the difference is 5 at all three levels of fact
 3. A third characteristic is revealed when the data are plotted as in Figure 8.5.1. We note
 that the curves corresponding to the different levels of a factor are all parallel.
 
+The following important features of the data in Table 8.5.1 should be noted. 1. For both levels of factor A the difference between the means for any two levels of factor B is the same. That is, for both levels of factor A, the difference between means for levels 1 and 2 is 5, for levels 2 and 3 the difference is 10, and for levels 1 and 3 the difference is 15. 2. For all levels of factor B the difference between means for the two levels of factor A is the same. In the present case the difference is 5 at all three levels of factor B. 3. A third characteristic is revealed when the data are plotted as in Figure 8.5.1. We note that the curves corresponding to the different levels of a factor are all parallel.
+
+
+
 **EXAMPLE 8.5.2**
 
 In a study of length of time spent on individual home visits by public health nurses,
@@ -76,13 +84,22 @@ record was made also of each nurse’s age and the type of illness of each patie
 The researchers wished to obtain from their investigation answers to the following
 questions:
 
+En un estudio sobre la duración de las visitas domiciliarias individuales realizadas por enfermeras de salud pública, se registraron datos sobre la duración de las visitas, en minutos, de una muestra de 80 enfermeras. También se registró la edad de cada enfermera y el tipo de enfermedad de cada paciente visitado. Los investigadores buscaban obtener de su investigación respuestas a las siguientes preguntas:
+
+
 1. Does the mean length of home visit differ among different age groups of nurses?
+
+¿La duración media de las visitas domiciliarias varía entre los distintos grupos de edad de enfermeras?
 
 2. Does the type of patient affect the mean length of home visit?
 
+Does the type of patient affect the mean length of home visit?
+
+
+
 3. Is there interaction between nurse’s age and type of patient?
 
-
+¿Existe interacción entre la edad de la enfermera y el tipo de paciente?
 
 
 
