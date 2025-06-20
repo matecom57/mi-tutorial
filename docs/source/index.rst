@@ -95,15 +95,9 @@ Contents
 
 .. toctree::
     :maxdepth: 1
-    :caption: EStadistica
+    :caption: Estadistica
 
-    Estadistica/ejercicios01
-    Estadistica/ANALISIS_VARIANZA
-    Estadistica/SIMPLE_LINEAR_REGRESSION_CORRELATION
-    Estadistica/estadistica/ecuaciones_c08_COMPLETELY_RANDOMIZED_DESIGN
-    Estadistica/ANOVA_dos_vias
-    Estadistica/estadistica/ejercicios_c08
-    Estadistica/estadistica/notas
+    Estadistica/index2
 
 .. toctree::
     :maxdepth: 1
