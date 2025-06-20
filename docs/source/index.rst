@@ -97,7 +97,7 @@ Contents
     Estadistica/estadistica/ecuaciones_c08_COMPLETELY_RANDOMIZED_DESIGN
     Estadistica/ANOVA_dos_vias
     Estadistica/estadistica/ejercicios_c08
-
+    Estadistica/estadistica/notas
 
 .. toctree::
     :maxdepth: 1
