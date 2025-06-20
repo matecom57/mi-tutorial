@@ -13,4 +13,5 @@ Estadistica
     notas
     ecuaciones_c09_simple_regression_correlation
     ejercicios_c09.rst
+    ejercicios_stats_R
 
