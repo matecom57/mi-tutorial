@@ -132,13 +132,25 @@ value for prediction and estimation purposes. Furthermore, even though we assume
 relationship could be described better by some nonlinear model. When this is the case, sample data when fitted to a linear model will tend to yield 
 results compatible with a population slope of zero. 
 
-Thus, following a test in which the null hypothesis that b 1 equals zero is not rejected, we may 
+Si en la población la relación entre X e Y es lineal, la pendiente de la línea que describe esta relación será positiva, negativa o cero. Si es cero, 
+los datos muestrales extraídos de la población producirán, a largo plazo, ecuaciones de regresión con escaso o nulo valor para fines de predicción y 
+estimación. Además, aunque asumimos que la relación entre X e Y es lineal, es posible que algún modelo no lineal la describa mejor. En este caso, los 
+datos muestrales, al ajustarse a un modelo lineal, tenderán a producir resultados compatibles con una pendiente poblacional de cero.
+
+ Thus, following a 
+test in which the null hypothesis that b 1 equals zero is not rejected, we may 
 conclude (assuming that we have not made a type II error by accepting a false null hypothesis) either (1) that although the relationship between X and Y 
 may be linear it is not strong enough for X to be of much value in predicting and estimating Y, or (2) that the relationship between X and Y is not 
 linear; that is, some curvilinear model provides a better fit to the data. Figure 9.4.1 shows the kinds of relationships between X and Y in a population 
 that may prevent rejection of the null hypothesis that :math:`\beta_1 = 0`.
 
-* When :math:`H_0: \beta_1 = 0` Is Rejected
+Por lo tanto, tras una prueba en la que no se rechaza la hipótesis nula de que b 1 es igual a cero, podemos concluir (suponiendo que no hemos cometido 
+un error de tipo II al aceptar una hipótesis nula falsa) (1) que, aunque la relación entre X e Y puede ser lineal, no es lo suficientemente fuerte como 
+para que X sea de gran valor para predecir y estimar Y, o (2) que la relación entre X e Y no es lineal; es decir, algún modelo curvilíneo proporciona un 
+mejor ajuste a los datos. La figura 9.4.1 muestra los tipos de relaciones entre X e Y en una población que pueden evitar el rechazo de la hipótesis nula 
+de que
+
+ * When :math:`H_0: \beta_1 = 0` Is Rejected
 
 Now let us consider the situations in a population that may lead to rejection of the null hypothesis that :math:`\beta_1 = 0`. Assuming that we do not 
 commit a type 
@@ -148,18 +160,30 @@ linear and of sufficient strength to justify the use of sample regression equati
 good fit of the data to a linear model, but some curvilinear model might provide an even better fit. Figure 9.4.2 illustrates the two population 
 conditions that may lead to rejection of :math:`H_0 : \beta_1 = 0`.
 
+Consideremos ahora las situaciones en una población que pueden llevar al rechazo de la hipótesis nula de que
+. Suponiendo que no cometemos un error de tipo I, el rechazo de la hipótesis nula de que
+puede atribuirse a una de las siguientes condiciones en la población: (1) la relación es lineal y con la solidez suficiente para justificar el uso de 
+ecuaciones de regresión muestral para predecir y estimar Y para valores dados de X; y (2) los datos se ajustan bien a un modelo lineal, pero algún 
+modelo curvilíneo podría proporcionar un ajuste aún mejor. La Figura 9.4.2 ilustra las dos condiciones poblacionales que pueden llevar al rechazo de
+
+
 Thus, we see that before using a sample regression equation to predict and estimate, it is desirable to test H 0 : b 1 = 0. We may do this either by 
 using analysis of variance and the F statistic or by using the t statistic. We will illustrate both methods. Before we do this, however, let us see how 
 we may investigate the strength of the relationship between X and Y.
 
+Por lo tanto, antes de usar una ecuación de regresión muestral para predecir y estimar, es conveniente comprobar H₂: b₁ = 0. Podemos hacerlo mediante el 
+análisis de varianza y el estadístico F, o bien mediante el estadístico t. Ilustraremos ambos métodos. Sin embargo, antes de hacerlo, veamos cómo 
+podemos investigar la solidez de la relación entre X e Y.
 
-**The Coefficient of Determination**
+ **The Coefficient of Determination**
 
 The Total Deviation
 
 The Explained Deviation
 
 Unexplained Deviation
+
+Desviación inexplicable.
 
 .. math::
 
@@ -177,11 +201,13 @@ Explained Sum of Squares
 
 Unexplained Sum of Squares
 
+Suma de cuadrados inexplicable
+
 .. math::
 
    SST = SSR * SSE
 
-Calculando :math:`r^2`
+**Calculando :math:`r^2`**
 
 .. math::
 
@@ -190,12 +216,14 @@ Calculando :math:`r^2`
 
 **Estimating the Population Coefficient of Determination**
 
+Estimación del coeficiente de determinación poblacional
+
 .. math::
 
-   \widetilde{r}^2 = 1-  \frac{\sum (\hat{y}_i - \bar{y})^2/(n-2)}{\sum (y_i - \bar{y})^2/(n-1)} = \frac{SSR}{SST}
+   \widetilde{r}^2 = 1-  \frac{\sum (y_i - \hat{y})^2/(n-2)}{\sum (y_i - \bar{y})^2/(n-1)} 
 
 
-Testing :math:`H_0: \beta_1 = 0` with the t Statistic
+**Testing :math:`H_0: \beta_1 = 0` with the t Statistic**
 
 .. math::
 
@@ -214,8 +242,12 @@ y
 
 **The Test Statistic**
 
-For testing hypotheses about the test statistic when
-is known is
+For testing hypotheses about :math:`\beta_1` the test statistic when :math:`\sigma_{y|x}^2` is known is
+
+.. math::
+
+   z = \frac{\hat{\beta}_1 - (\beta_1)_0}{\sigma_{\hat{\beta}_1}}
+
 (9.4.8)
 where is the hypothesized value of . The hypothesized value of does not
 have to be zero, but in practice, more often than not, the null hypothesis of interest is
