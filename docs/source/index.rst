@@ -18,6 +18,12 @@ Contents
 
 .. toctree::
     :maxdepth: 1
+    :caption: Curso_ago2025
+
+    Curso_ago2025/doc01
+
+.. toctree::
+    :maxdepth: 1
     :caption: Andy-FreeSurfer
 
     Andy/FreeSurfer/freesurfer
