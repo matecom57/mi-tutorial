@@ -1,47 +1,23 @@
-c09 - SIMPLE LINEAR REGRESSION AND CORRELATION
+c09 - REGRESIÓN LINEAL SIMPLE Y CORRELACIÓN
 ==============================================
 
-**9.2 THE REGRESSION MODEL**
-
-**Assumptions Underlying Simple Linear Regression**
+**9.2 EL MODELO DE REGRESIÓN**
 
 **Supuestos subyacentes a la regresión lineal simple**
 
-1. Values of the independent variable X are said to be “fixed.” This means that the
-values of X are preselected by the investigator so that in the collection of the data
-they are not allowed to vary from these preselected values. In this model, X is
-referred to by some writers as a nonrandom variable and by others as a mathematical
-variable. It should be pointed out at this time that the statement of this assumption
-classifies our model as the classical regression model. Regression analysis also
-can be carried out on data in which X is a random variable.
-
-1. Se dice que los valores de la variable independiente X son fijos. Esto significa que el investigador preselecciona los valores de X para que, al 
+1. Se dice que los valores de la variable independiente X son **fijos**. Esto significa que el investigador preselecciona los valores de X para que, al 
 recopilar los datos, no puedan variar. En este modelo, algunos autores se refieren a X como una variable no aleatoria y otros como una variable 
 matemática. Cabe señalar que este supuesto clasifica nuestro modelo como un modelo de regresión clásico. El análisis de regresión también puede 
 realizarse con datos donde X es una variable aleatoria.
 
 
-2. The variable X is measured without error. Since no measuring procedure is perfect,
-this means that the magnitude of the measurement error in X is negligible.
-
 2. La variable X se mide sin error. Dado que ningún procedimiento de medición es perfecto, la magnitud del error de medición en X es insignificante.
-
-3. For each value of X there is a subpopulation of Y values. For the usual inferential
-procedures of estimation and hypothesis testing to be valid, these subpopulations
-must be normally distributed. In order that these procedures may be presented it
-will be assumed that the Y values are normally distributed in the examples and
-exercises that follow.
 
 3. Para cada valor de X existe una subpoblación de valores de Y. Para que los procedimientos inferenciales habituales de estimación y prueba de 
 hipótesis sean válidos, estas subpoblaciones deben tener una distribución normal. Para que estos procedimientos puedan presentarse, se asumirá que los 
 valores de Y tienen una distribución normal en los ejemplos y ejercicios siguientes.
 
-4. The variances of the subpopulations of Y are all equal and denoted by :math:`\sigma^2`.
-
-Las varianzas de las subpoblaciones de Y son todas iguales y se denotan por :math:`\sigma^2`.
-
-5. The means of the subpopulations of Y all lie on the same straight line. This is known
-as the assumption of linearity. This assumption may be expressed symbolically as
+4. Las varianzas de las subpoblaciones de Y son todas iguales y se denotan por :math:`\sigma^2`.
 
 5. Las medias de las subpoblaciones de Y se encuentran todas en la misma línea recta. Esto se conoce como el supuesto de linealidad. Este supuesto puede 
 expresarse simbólicamente como
@@ -53,18 +29,10 @@ expresarse simbólicamente como
 
 (9.2.1)
 
-where :math:`\mu_{y|x}` is the mean of the subpopulation of Y values for a particular value of
-X, and :math:`\beta_0` and :math:`\beta_1` are called the population regression coefficients. Geometrically, :math:`\beta_0`
-and :math:`\beta_1` represent the y-intercept and slope, respectively, of the line on which
-all of the means are assumed to lie.
-
-Donde es la media de la subpoblación de valores de Y para un valor particular de X, y y se denominan coeficientes de regresión poblacional. 
-Geométricamente, y representan la intersección con el eje y y la pendiente, respectivamente, de la línea donde se supone que se encuentran todas las 
+donde :math:`\mu_{y|x}` es la media de la subpoblación de valores de Y para un valor particular de X,
+:math:`\beta_0` y :math:`\beta_1` y se denominan coeficientes de regresión poblacional. 
+Geométricamente, :math:`\beta_0`  y :math:`\beta_1`  representan la intersección con el eje y y la pendiente, respectivamente, de la línea donde se supone que se encuentran todas las 
 medias.
-
-
-6. The Y values are statistically independent. In other words, in drawing the sample, it is assumed that the values of Y chosen at one value of X in no 
-way depend on the values of Y chosen at another value of X.
 
 6. Los valores de Y son estadísticamente independientes. En otras palabras, al extraer la muestra, se supone que los valores de Y elegidos en un valor 
 de X no dependen en absoluto de los valores de Y elegidos en otro valor de X.
