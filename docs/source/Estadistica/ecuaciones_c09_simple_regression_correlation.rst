@@ -107,6 +107,8 @@ las subpoblaciones de valores Y se distribuyen normalmente con varianzas iguales
 normalmente con una 
 varianza igual a la varianza común de las subpoblaciones de valores Y.
 
+.. image:: fig_9_2_1.png
+
 
 **9.3 THE SAMPLE REGRESSION EQUATION**
 
