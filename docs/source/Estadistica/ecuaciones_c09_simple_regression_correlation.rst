@@ -132,7 +132,7 @@ realizarse manualmente utilizando las siguientes ecuaciones
 
 EVALUACIÓN DE LA ECUACIÓN DE REGRESIÓN
 
-* When :math:`H_0: \beta_1 = 0` Is Not Rejected
+** When :math:`H_0: \beta_1 = 0` Is Not Rejected**
 
 If in the population the relationship between X and Y is linear, :math:`\beta_1`, the slope of the line that describes this relationship, will be 
 either positive, 
@@ -160,7 +160,7 @@ para que X sea de gran valor para predecir y estimar Y, o (2) que la relación e
 mejor ajuste a los datos. La figura 9.4.1 muestra los tipos de relaciones entre X e Y en una población que pueden evitar el rechazo de la hipótesis nula 
 de que
 
- * When :math:`H_0: \beta_1 = 0` Is Rejected
+**When :math:`H_0: \beta_1 = 0` Is Rejected**
 
 Now let us consider the situations in a population that may lead to rejection of the null hypothesis that :math:`\beta_1 = 0`. Assuming that we do not 
 commit a type 
@@ -217,7 +217,7 @@ Suma de cuadrados inexplicable
 
    SST = SSR * SSE
 
-**Calculando :math:`r^2`**
+**Calculando** :math:`r^2`
 
 .. math::
 
@@ -233,9 +233,10 @@ Estimación del coeficiente de determinación poblacional
    \widetilde{r}^2 = 1-  \frac{\sum (y_i - \hat{y})^2/(n-2)}{\sum (y_i - \bar{y})^2/(n-1)} 
 
 
-**Testing :math:`H_0: \beta_1 = 0` with the t Statistic**
+**Testing** :math:`H_0: \beta_1 = 0` **with the t Statistic**
 
 .. math::
+
 
    \mu_{\hat{\beta}_0} = \beta_0
 
