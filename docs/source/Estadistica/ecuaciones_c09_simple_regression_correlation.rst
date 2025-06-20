@@ -58,6 +58,11 @@ X, and :math:`\beta_0` and :math:`\beta_1` are called the population regression 
 and :math:`\beta_1` represent the y-intercept and slope, respectively, of the line on which
 all of the means are assumed to lie.
 
+Donde es la media de la subpoblación de valores de Y para un valor particular de X, y y se denominan coeficientes de regresión poblacional. 
+Geométricamente, y representan la intersección con el eje y y la pendiente, respectivamente, de la línea donde se supone que se encuentran todas las 
+medias.
+
+
 6. The Y values are statistically independent. In other words, in drawing the sample, it is assumed that the values of Y chosen at one value of X in no 
 way depend on the values of Y chosen at another value of X.
 
@@ -79,6 +84,9 @@ Estos supuestos pueden resumirse mediante la siguiente ecuación, denominada mod
 where y is a typical value from one of the subpopulations of Y, :math:`\beta_0` and :math:`\beta_1` are as defined
 for Equation 9.2.1, and is called the error term. If we solve 9.2.2 for :math:`\varepsilon`, we have
 
+donde y es un valor típico de una de las subpoblaciones de Y, y son como se definen en la ecuación 9.2.1, y se denomina término de error. Si despejamos 
+9.2.2 para , tenemos
+
 .. math::
 
    \varepsilon = y - (\beta_0 + \beta_1 x) 
@@ -93,8 +101,10 @@ subpopulations of Y values are normally distributed with equal variances, the :m
 subpopulation are normally distributed with a variance equal to the common variance of
 the subpopulations of Y values.
 
-Y vemos que muestra la desviación de y respecto a la media de la subpoblación de valores Y de la que se extrajo. Como consecuencia del supuesto de que 
-las subpoblaciones de valores Y se distribuyen normalmente con varianzas iguales, los valores de cada subpoblación se distribuyen normalmente con una 
+y vemos que :math:`\varepsilon` muestra la desviación de y respecto a la media de la subpoblación de valores Y de la que se extrajo. Como consecuencia 
+del supuesto de que 
+las subpoblaciones de valores Y se distribuyen normalmente con varianzas iguales, los :math:`\varepsilon`'s valores de cada subpoblación se distribuyen 
+normalmente con una 
 varianza igual a la varianza común de las subpoblaciones de valores Y.
 
 
@@ -132,13 +142,13 @@ value for prediction and estimation purposes. Furthermore, even though we assume
 relationship could be described better by some nonlinear model. When this is the case, sample data when fitted to a linear model will tend to yield 
 results compatible with a population slope of zero. 
 
-Si en la población la relación entre X e Y es lineal, la pendiente de la línea que describe esta relación será positiva, negativa o cero. Si es cero, 
+Si en la población la relación entre X e Y es lineal, :math:`\beta_1`, la pendiente de la línea que describe esta relación será positiva, negativa o 
+cero. Si :math:`\beta_1` es cero, 
 los datos muestrales extraídos de la población producirán, a largo plazo, ecuaciones de regresión con escaso o nulo valor para fines de predicción y 
 estimación. Además, aunque asumimos que la relación entre X e Y es lineal, es posible que algún modelo no lineal la describa mejor. En este caso, los 
 datos muestrales, al ajustarse a un modelo lineal, tenderán a producir resultados compatibles con una pendiente poblacional de cero.
 
- Thus, following a 
-test in which the null hypothesis that b 1 equals zero is not rejected, we may 
+Thus, following a test in which the null hypothesis that b 1 equals zero is not rejected, we may 
 conclude (assuming that we have not made a type II error by accepting a false null hypothesis) either (1) that although the relationship between X and Y 
 may be linear it is not strong enough for X to be of much value in predicting and estimating Y, or (2) that the relationship between X and Y is not 
 linear; that is, some curvilinear model provides a better fit to the data. Figure 9.4.1 shows the kinds of relationships between X and Y in a population 
