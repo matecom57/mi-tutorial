@@ -5,6 +5,8 @@ c09 - SIMPLE LINEAR REGRESSION AND CORRELATION
 
 **Assumptions Underlying Simple Linear Regression**
 
+**Supuestos subyacentes a la regresión lineal simple**
+
 1. Values of the independent variable X are said to be “fixed.” This means that the
 values of X are preselected by the investigator so that in the collection of the data
 they are not allowed to vary from these preselected values. In this model, X is
@@ -36,9 +38,13 @@ valores de Y tienen una distribución normal en los ejemplos y ejercicios siguie
 
 4. The variances of the subpopulations of Y are all equal and denoted by :math:`\sigma^2`.
 
+Las varianzas de las subpoblaciones de Y son todas iguales y se denotan por :math:`\sigma^2`.
 
 5. The means of the subpopulations of Y all lie on the same straight line. This is known
 as the assumption of linearity. This assumption may be expressed symbolically as
+
+5. Las medias de las subpoblaciones de Y se encuentran todas en la misma línea recta. Esto se conoce como el supuesto de linealidad. Este supuesto puede 
+expresarse simbólicamente como
 
 .. math::
 
@@ -48,15 +54,21 @@ as the assumption of linearity. This assumption may be expressed symbolically as
 (9.2.1)
 
 where :math:`\mu_{y|x}` is the mean of the subpopulation of Y values for a particular value of
-X, and :math:`\beta_0` and :math:`beta_1` are called the population regression coefficients. Geometrically, :math:`\beta_0`
-and :math:`beta_1` represent the y-intercept and slope, respectively, of the line on which
+X, and :math:`\beta_0` and :math:`\beta_1` are called the population regression coefficients. Geometrically, :math:`\beta_0`
+and :math:`\beta_1` represent the y-intercept and slope, respectively, of the line on which
 all of the means are assumed to lie.
 
 6. The Y values are statistically independent. In other words, in drawing the sample, it is assumed that the values of Y chosen at one value of X in no 
 way depend on the values of Y chosen at another value of X.
 
+6. Los valores de Y son estadísticamente independientes. En otras palabras, al extraer la muestra, se supone que los valores de Y elegidos en un valor 
+de X no dependen en absoluto de los valores de Y elegidos en otro valor de X.
+
+
 These assumptions may be summarized by means of the following equation, which
 is called the regression model:
+
+Estos supuestos pueden resumirse mediante la siguiente ecuación, denominada modelo de regresión:
 
 .. math::
 
@@ -64,7 +76,7 @@ is called the regression model:
 
 (9.2.2)
 
-where y is a typical value from one of the subpopulations of Y, :math:`\beta_0` and`:math:`\beta_1` are as defined
+where y is a typical value from one of the subpopulations of Y, :math:`\beta_0` and :math:`\beta_1` are as defined
 for Equation 9.2.1, and is called the error term. If we solve 9.2.2 for :math:`\varepsilon`, we have
 
 .. math::
@@ -81,19 +93,34 @@ subpopulations of Y values are normally distributed with equal variances, the :m
 subpopulation are normally distributed with a variance equal to the common variance of
 the subpopulations of Y values.
 
+Y vemos que muestra la desviación de y respecto a la media de la subpoblación de valores Y de la que se extrajo. Como consecuencia del supuesto de que 
+las subpoblaciones de valores Y se distribuyen normalmente con varianzas iguales, los valores de cada subpoblación se distribuyen normalmente con una 
+varianza igual a la varianza común de las subpoblaciones de valores Y.
+
+
 **9.3 THE SAMPLE REGRESSION EQUATION**
 
+LA ECUACIÓN DE REGRESIÓN MUESTRAL
+
 **Obtaining the Least-Square Line**
+
+Obtención de la recta de mínimos cuadrados
 
 The least-squares regression line equation may be obtained from sample data by simple
 arithmetic calculations that may be carried out by hand using the following equations
 
+La ecuación de la línea de regresión de mínimos cuadrados se puede obtener a partir de datos de muestra mediante cálculos aritméticos simples que pueden 
+realizarse manualmente utilizando las siguientes ecuaciones
+
 .. math::
 
    \hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}
+
    \hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}
 
 **9.4 EVALUATING THE REGRESSION EQUATION**
+
+EVALUACIÓN DE LA ECUACIÓN DE REGRESIÓN
 
 * When :math:`H_0: \beta_1 = 0` Is Not Rejected
 
@@ -103,7 +130,9 @@ negative, or zero. If :math:`\beta_1` is zero, sample data drawn from the popula
 little or no 
 value for prediction and estimation purposes. Furthermore, even though we assume that the relationship between X and Y is linear, it may be that the 
 relationship could be described better by some nonlinear model. When this is the case, sample data when fitted to a linear model will tend to yield 
-results compatible with a population slope of zero. Thus, following a test in which the null hypothesis that b 1 equals zero is not rejected, we may 
+results compatible with a population slope of zero. 
+
+Thus, following a test in which the null hypothesis that b 1 equals zero is not rejected, we may 
 conclude (assuming that we have not made a type II error by accepting a false null hypothesis) either (1) that although the relationship between X and Y 
 may be linear it is not strong enough for X to be of much value in predicting and estimating Y, or (2) that the relationship between X and Y is not 
 linear; that is, some curvilinear model provides a better fit to the data. Figure 9.4.1 shows the kinds of relationships between X and Y in a population 
@@ -111,11 +140,13 @@ that may prevent rejection of the null hypothesis that :math:`\beta_1 = 0`.
 
 * When :math:`H_0: \beta_1 = 0` Is Rejected
 
-Now let us consider the situations in a population that may lead to rejection of the null hypothesis that b 1 = 0. Assuming that we do not commit a type 
-I error, rejection of the null hypothesis that b 1 = 0 may be attributed to one of the following conditions in the population: (1) the relationship is 
+Now let us consider the situations in a population that may lead to rejection of the null hypothesis that :math:`\beta_1 = 0`. Assuming that we do not 
+commit a type 
+I error, rejection of the null hypothesis that :math:`\beta_1 = 0`  may be attributed to one of the following conditions in the population: (1) 
+the relationship is 
 linear and of sufficient strength to justify the use of sample regression equations to predict and estimate Y for given values of X; and (2) there is a 
 good fit of the data to a linear model, but some curvilinear model might provide an even better fit. Figure 9.4.2 illustrates the two population 
-conditions that may lead to rejection of H 0 : b 1 = 0.
+conditions that may lead to rejection of :math:`H_0 : \beta_1 = 0`.
 
 Thus, we see that before using a sample regression equation to predict and estimate, it is desirable to test H 0 : b 1 = 0. We may do this either by 
 using analysis of variance and the F statistic or by using the t statistic. We will illustrate both methods. Before we do this, however, let us see how 
