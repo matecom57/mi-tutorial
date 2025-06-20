@@ -46,12 +46,18 @@ Donde:
 
 1. represents the mean of all the k population means and is called the grand mean.
 
+1. :math:`\mu` representa la media de todas las k medias poblacionales y se denomina ``media general``.
+
 2. represents the difference between the mean of the j th population and the grand
 mean and is called the treatment effect.
+
+2. :math:`tau_j` representa la diferencia entre la media de la j-ésima población y la media general y se denomina ``efecto del tratamiento``.
+
 
 3. represents the amount by which an individual measurement differs from the
 mean of the population to which it belongs and is called the error term.
 
+3. :math:`\varepsilon_{ij}` representa la cantidad en que una medición individual difiere de la media de la población a la que pertenece y se denomina ``término de error``.
 
 **Hipotesis**
 
