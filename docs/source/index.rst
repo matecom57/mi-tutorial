@@ -94,7 +94,7 @@ Contents
     Estadistica/ejercicios01
     Estadistica/ANALISIS_VARIANZA
     Estadistica/SIMPLE_LINEAR_REGRESSION_CORRELATION
-    Estadistica/ecuaciones_c08
+    Estadistica/estadistica/ecuaciones_c08_COMPLETELY_RANDOMIZED_DESIGN
     Estadistica/ANOVA_dos_vias
     Estadistica/estadistica/ejercicios_c08
 

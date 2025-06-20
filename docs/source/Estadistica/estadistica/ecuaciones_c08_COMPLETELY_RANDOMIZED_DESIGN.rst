@@ -1,7 +1,11 @@
 Ecuaciones-C08
 ==============
 
+**One-Way ANOVA**
+
 .. image:: medias.png
+
+Se tienen k tratamientos, y cada j-tratamiento tiene :math:`n_j` medidas:
 
 .. math::
 
@@ -19,6 +23,8 @@ Ecuaciones-C08
    Media & \bar{x}_{.1} &  \bar{x}_{.2} & \bar{x}_{.3} & ... &  \bar{x}_{.k} & \bar{x}_{..} 
    \end{matrix}
 
+Construcción de las ecuaciones para el análisis de Varianza:
+
 :math:`x_{ij}` = la i-ésima observación resultanto del j-ésimo tratamiento (hay un total de k tratamientos)
 
 :math:`T_{.j} = \sum_{i=1}^{n_j} x_{ij}`
@@ -30,11 +36,22 @@ Ecuaciones-C08
 :math:`\bar{x}_{..} = \frac{T_{..}}{N}, N = \sum_{j=1}^k n_j`
 
  
-**El Modelo**
+**Modelo que describe un Análisis Completamente Aleatorio**
 
 .. math::
 
    x_{ij} = \mu + \tau_j + \varepsilon_{ij} ; i = 1, 2, ..., n_j , j = 1, 2, ..., k
+
+Donde:
+
+1. represents the mean of all the k population means and is called the grand mean.
+
+2. represents the difference between the mean of the j th population and the grand
+mean and is called the treatment effect.
+
+3. represents the amount by which an individual measurement differs from the
+mean of the population to which it belongs and is called the error term.
+
 
 **Hipotesis**
 
