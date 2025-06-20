@@ -1,5 +1,5 @@
-Ejercicios
-==========
+Ejercicios C08
+==============
 
 **EXAMPLE 8.2.1**
 
@@ -11,21 +11,29 @@ from a low selenium region of the United States. These selenium content values w
 also compared to those of beef produced within and outside the same region. We want
 to know if the selenium levels are different in the four meat groups.
 
+Las carnes de caza, incluyendo las de venado de cola blanca y ardilla gris oriental, son utilizadas como alimento por familias, cazadores y otras personas por razones de salud, culturales o personales. Un estudio realizado por David Holben (A-1) evaluó el contenido de selenio en carne de venado de cola blanca y ardilla gris en libertad, obtenida de una región de Estados Unidos con bajo contenido de selenio. Estos valores de contenido de selenio también se compararon con los de la carne de res producida dentro y fuera de la misma región. Queremos saber si los niveles de selenio son diferentes en los cuatro grupos de carne.
+
+
 **EXAMPLE 8.2.2**
 
 Let us illustrate the use of the HSD test with the data from Example 8.2.1.
 
-8.3 THE RANDOMIZED COMPLETE BLOCK DESIGN
+**8.3 THE RANDOMIZED COMPLETE BLOCK DESIGN**
 
-EXAMPLE 8.3.1
+**EXAMPLE 8.3.1**
+
 A physical therapist wished to compare three methods for teaching patients to use a certain
 prosthetic device. He felt that the rate of learning would be different for patients of
 different ages and wished to design an experiment in which the influence of age could
 be taken into account.
 
+Un fisioterapeuta quería comparar tres métodos para enseñar a sus pacientes a usar una prótesis. Consideraba que el ritmo de aprendizaje sería diferente para pacientes de distintas edades y quería diseñar un experimento que considerara la influencia de la edad.
+
+
 **8.4 THE REPEATED MEASURES DESIGN**
 
-EXAMPLE 8.4.1
+**EXAMPLE 8.4.1**
+
 Licciardone et al. (A-15) examined subjects with chronic, nonspecific low back pain.
 In this study, 18 of the subjects completed a survey questionnaire assessing physical
 functioning at baseline, and after 1, 3, and 6 months. Table 8.4.1 shows the data
@@ -35,6 +43,8 @@ the experiment was to determine if subjects would report improvement over time
 even though the treatment they received would provide minimal improvement. We
 wish to know if there is a difference in the mean survey values among the four points
 in time.
+
+Licciardone et al. (A-15) examinaron a sujetos con dolor lumbar crónico inespecífico. En este estudio, 18 de los sujetos completaron una encuesta para evaluar su función física al inicio y al cabo de 1, 3 y 6 meses. La Tabla 8.4.1 muestra los datos de estos sujetos que recibieron un tratamiento simulado que parecía ser una manipulación osteopática genuina. Los valores más altos indican una mejor función física. El objetivo del experimento fue determinar si los sujetos reportarían una mejoría con el tiempo, incluso si el tratamiento recibido proporcionara una mejoría mínima. Deseamos saber si existe una diferencia en los valores promedio de la encuesta entre los cuatro puntos temporales.
 
 **8.5 THE FACTORIAL EXPERIMENT**
 
@@ -47,6 +57,7 @@ true relationship between the two factors is known, we will know, for the three 
 the mean effect on reaction time of subjects in the two age groups. Let us assume that
 effect is measured in terms of reduction in reaction time to some stimulus. Suppose these
 means are as shown in Table 8.5.1.
+
 The following important features of the data in Table 8.5.1 should be noted.
 1. For both levels of factor A the difference between the means for any two levels of
 factor B is the same. That is, for both levels of factor A, the difference between means
