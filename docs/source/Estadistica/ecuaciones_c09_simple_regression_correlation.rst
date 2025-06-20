@@ -211,6 +211,8 @@ Total Sum of Squares
 
 Explained Sum of Squares
 
+.. image:: fig_9_4_4.png
+
 Unexplained Sum of Squares
 
 Suma de cuadrados inexplicable
@@ -262,6 +264,7 @@ For testing hypotheses about :math:`\beta_1` the test statistic when :math:`\sig
    z = \frac{\hat{\beta}_1 - (\beta_1)_0}{\sigma_{\hat{\beta}_1}}
 
 (9.4.8)
+
 where is the hypothesized value of . The hypothesized value of does not
 have to be zero, but in practice, more often than not, the null hypothesis of interest is
 that
@@ -272,28 +275,101 @@ freedom.
 If the probability of observing a value as extreme as the value of the test statistic
 computed by Equation 9.4.9 when the null hypothesis is true is less than (since we
 have a two-sided test), the null hypothesis is rejected.
-EXAMPLE 9.4.2
-Refer to Example 9.3.1. We wish to know if we can conclude that the slope of the
-population regression line describing the relationship between X and Y is zero.
-Solution:
-1. Data. See Example 9.3.1.
-2. Assumptions. We presume that the simple linear regression model and
-its underlying assumptions are applicable.
-a>2
-sb n - 2
-N
-1 sb
-N
+
+
+of sample evidence, that b 1 is zero, we may be interested in obtaining an interval estimate of b 1 . The general formula for a conﬁdence interval,
+
+estimator ; 1reliability factor21standard error of the estimate2
+
+N1  may be used. When obtaining a conﬁdence interval for b1 , the estimator is b , the reliability factor is some value of z or t (depending on whether 
+or not s y ƒ x 2 is known), and the standard error of the estimator is
+
+N s b 1 =
+
+C
+
+s 2 ƒx y
+
+g1x i - x2 2
+
+C
+
+When s y 2 ƒ x is unknown, s b is estimated by
+
+N s b 1 =
+
+2 s y ƒx g1x i - x2 2
+
+2 where s y ƒx = MSE In most practical situations our 10011 - a2 percent conﬁdence interval for b is N1  b ; t11-a>22 s b N 1 (9.4.10)
+
+For our illustrative example we construct the following 95 per
+
+
+9.5 USING THE REGRESSION EQUATION
+
+that the assumptions of Section 9.2 are met, and when s y 2 ƒ x is unknown, then the 10011 - a2 percent prediction interval for Y is given by
+
+N y ;t11-a>22 sy ƒ x 
+
+1 + + C n
+
 1
-t =
-N
-b1 - 1b120
-sb1
-N
-s2
-y|x
-b1 = 0.
-1b120 b1 b1
-z =
-N
-b1 - 1b120
+
+1x p - x2 2
+
+g1x i - x2 2
+
+(9.5.1)
+
+where x p is the particular value of x at which we wish to obtain a prediction interval for Y and the degrees of freedom used in selecting t are n - 2.
+
+Estimating the Mean of Y for a Given X
+
+The 10011 - a2 percent conﬁdence interval for m y ƒ x when s y 2 ƒ x is unknown, is given by
+
+,
+
+N y ; t11-a>22 s y ƒ x
+
++ C n
+
+1
+
+1x p - x2 2
+
+g1x i - x2 2
+
+(9.5.2)
+
+**9.6 THE CORRELATION MODEL**
+
+**9.7 THE CORRELATION COEFFICIENT**
+
+A Test for Use When the Hypothesized R Is a Nonzero Value
+
+The use of the t statistic computed in the above test is appropriate only for testing H 0 : r = 0. If it is desired to test H 0 : r = r0 , where r 0 is 
+some value other than zero, we must use another approach. Fisher (5) suggests that r be transformed to z r as follows:
+
+1 1 + r z r = ln 2 1 - r
+
+(9.7.4)
+
+1 s z p = (9.7.5) 1n - 3 To test the null hypothesis that r is equal to some value other than zero, the test statistic is
+
+where ln is a natural logarithm. It can be shown that z r is approximately normally distributed with a mean of z r = 1 2 ln511 + r2>11 - r26 and 
+estimated standard deviation of
+
+z r - zr  Z = 1>1n - 3
+
+(9.7.6)
+
+which follows approximately the standard normal distribution.
+
+To determine z r for an observed r and z r for a hypothesized r, we consult Table I, thereby avoiding the direct use of natural logarithms.
+
+
+
+
+
+
+
