@@ -76,7 +76,7 @@ Contents
 
 .. toctree::
     :maxdepth: 1
-    :caption: Estadistica
+    :caption: Pruebas_Estadisticas
 
     Pruebas_Estadisticas/pruebas_estadisticas
 
