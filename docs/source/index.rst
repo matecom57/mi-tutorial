@@ -38,7 +38,7 @@ Contents
     :maxdepth: 1
     :caption: RR
 
-    RR/rr
+    RR/index_R
 
 .. toctree::
     :maxdepth: 1
