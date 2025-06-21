@@ -97,7 +97,7 @@ Contents
     :maxdepth: 1
     :caption: Estadistica
 
-    Estadistica/index2
+    Estadistica2/index2
 
 .. toctree::
     :maxdepth: 1
