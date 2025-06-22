@@ -4,38 +4,40 @@ Introducción a MRtrix
 https://andysbrainbook-readthedocs-io.translate.goog/en/latest/MRtrix/MRtrix_Introduction.html?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
 
 
-¿Qué es MRtrix?
+**¿Qué es MRtrix?**
 
 MRtrix es un paquete de software para analizar datos de difusión. Una de las ventajas notables de MRtrix sobre las técnicas de ajuste de tensores es su método de deconvolución esférica restringida (CSD); este método deconvoluciona la señal de difusión en cada vóxel en una serie de haces de fibras superpuestos. Esto reduce el problema del cruce de fibras, que puede ser un factor de confusión al ajustar un tensor.
 
 Además de una biblioteca de comandos creada por el equipo de MRtrix, el software también incluye contenedores para los comandos utilizados con FSL: en particular, los comandos topupy eddy. Si aún no lo ha hecho, descargue e instale el paquete de software fMRI FSL .
 
-Nota
+**Nota**
 
 Este curso se basa en los pasos descritos en la documentación de MRtrix , especialmente en los capítulos "Preprocesamiento DWI" y "Deconvolución esférica restringida". Varios de los pasos y explicaciones se derivan del excelente tutorial de BATMAN de Marlene Tahedl , y en muchos lugares utilizo su notación de archivos. También quiero agradecer a John Plass, del laboratorio David Brang de la Universidad de Michigan, por compartir sus scripts conmigo y responder a mis preguntas.
-Objetivos de este curso
+
+**Objetivos de este curso**
 
 Este curso te enseñará los fundamentos de la difusión: cómo se recopila y cómo se analiza. Aprenderás a realizar análisis basados ​​en fixels para cuantificar la densidad de fibras de materia blanca dentro de cada vóxel y a crear tractogramas mediante tractografía probabilística. Finalmente, aprenderás a crear conectomas y a visualizar la cantidad de fibras que conectan distintas regiones cerebrales.
 
-Pasos de preprocesamiento
+**Pasos de preprocesamiento**
 
-    Introducción a MRtrix: descripción general de las imágenes de difusión
-    Tutorial n.° 1 de MRtrix: Descargar e instalar
-    Tutorial n.º 2 de MRtrix: Cómo descargar el conjunto de datos
-    Tutorial n.º 3 de MRtrix: Análisis de los datos
-    Tutorial n.° 4 de MRtrix: Preprocesamiento
-    Tutorial n.º 5 de MRtrix: Deconvolución esférica restringida
-    Tutorial n.° 6 de MRtrix: Creación de los límites del tejido
-    Tutorial n.° 7 de MRtrix: Líneas de corriente
-    Tutorial n.° 8 de MRtrix: Creación y visualización del conectoma
-    Tutorial n.° 9 de MRtrix: Creación de scripts
-    Tutorial n.° 10 de MRtrix: Análisis a nivel de grupo
-    Tutorial n.° 11 de MRtrix: Análisis basado en Fixel
+    * Introducción a MRtrix: descripción general de las imágenes de difusión
+    * Tutorial n.° 1 de MRtrix: Descargar e instalar
+    * Tutorial n.º 2 de MRtrix: Cómo descargar el conjunto de datos
+    * Tutorial n.º 3 de MRtrix: Análisis de los datos
+    * Tutorial n.° 4 de MRtrix: Preprocesamiento
+    * Tutorial n.º 5 de MRtrix: Deconvolución esférica restringida
+    * Tutorial n.° 6 de MRtrix: Creación de los límites del tejido
+    * Tutorial n.° 7 de MRtrix: Líneas de corriente
+    * Tutorial n.° 8 de MRtrix: Creación y visualización del conectoma
+    * Tutorial n.° 9 de MRtrix: Creación de scripts
+    * Tutorial n.° 10 de MRtrix: Análisis a nivel de grupo
+    * Tutorial n.° 11 de MRtrix: Análisis basado en Fixel
 
------------------------------------------------------------------------------------
 
 Introducción a MRtrix: descripción general de las imágenes de difusión
-Descripción general
+-----------------------------------------------------------------------
+
+**Descripción general**
 
 Hasta ahora, este libro ha abordado la técnica de resonancia magnética más popular: la resonancia magnética funcional o fMRI. Estas imágenes funcionales, que miden la señal generada por los cambios en el flujo sanguíneo, suelen ir acompañadas de imágenes estructurales que se adquieren mediante el mismo método básico: los diferentes tipos de tejido cerebral tienen diferentes tasas de relajación T1 y T2 , que se utilizan para crear imágenes con contraste entre los tejidos. En las exploraciones T1 o anatómicas, la sustancia blanca es más clara que la sustancia gris, que a su vez es más clara que el líquido cefalorraquídeo; en las exploraciones T2 o funcionales, las intensidades relativas se invierten.
 ../../_images/00_T1_T2_Intensidades.png
@@ -43,7 +45,8 @@ Hasta ahora, este libro ha abordado la técnica de resonancia magnética más po
 Imágenes típicas ponderadas en T1 (anatómicas) y T2 (funcionales). Observe cómo se invierten las intensidades relativas de los tipos de tejido al pasar de la ponderación en T1 a la ponderación en T2.
 
 Sin embargo, existen otros tipos de imágenes que pueden adquirirse con un escáner de resonancia magnética. En este módulo, nos centraremos en la resonancia magnética ponderada por difusión (RMD), que mide la difusividad relativa en diferentes partes del cerebro, en particular, en los tractos de sustancia blanca.
-La estructura de la sustancia blanca
+
+**La estructura de la sustancia blanca**
 
 ¿Por qué la dMRI se centra en los tractos de sustancia blanca? Imagine desmenuzar un palito de queso y luego desmenuzar el cerebro: al igual que el queso, el cerebro tiene direcciones lacrimales preferidas. Estas direcciones corresponden a los tractos de sustancia blanca subyacentes, que son haces densos de neuronas mielinizadas que conectan partes cercanas y distantes del cerebro. Por ejemplo, el fascículo longitudinal inferior conecta las regiones visual y temporal del cerebro, mientras que el fascículo uncinado conecta las regiones temporal y frontal inferior del cerebro. Estos tractos recorren las tres dimensiones del cerebro y pueden discurrir paralelos o cruzarse.
 ../../_images/00_Tract_Examples.png
@@ -51,10 +54,12 @@ La estructura de la sustancia blanca
 Ilustración de varios tractos principales de sustancia blanca. Figura tomada de Thiebaut et al., 2015.
 
 La sustancia blanca del cerebro recibe su nombre de su color; estas neuronas están altamente mielinizadas, lo que significa que poseen una gruesa capa lipídica que las aísla y facilita la transmisión de impulsos eléctricos, como un cable eléctrico aislado. Las neuronas de la sustancia gris, en cambio, son relativamente amielínicas, lo que permite una mayor densidad neuronal en una zona determinada.
-Historia de la difusión
+
+**Historia de la difusión**
 
 Si bien la composición del tejido cerebral se conoce desde hace tiempo, la obtención de imágenes de la difusión de los tractos de sustancia blanca es una técnica nueva. Para comprender cómo se aprovecharon las propiedades de la sustancia blanca con este fin, revisaremos brevemente la historia de la difusión y cómo los científicos aplicaron este concepto a la obtención de imágenes cerebrales.
-Movimiento browniano
+
+**Movimiento browniano**
 
 La primera descripción formal de la difusión la realizó Robert Brown, botánico escocés, en 1827. Al observar partículas microscópicas a través de un microscopio, observó que estas parecían moverse aleatoriamente, de forma similar a cómo las motas de polvo, al observarlas moverse a través de un haz de luz, parecen moverse siguiendo patrones aleatorios. Browning concluyó que el movimiento se debía a la colisión de partículas más pequeñas con las moléculas más grandes observadas a través del microscopio. Por ejemplo, al verter un tinte en agua, el movimiento aleatorio de las moléculas de agua hace que el tinte se disperse aleatoriamente hasta que el agua del recipiente alcanza un tono uniforme. Un ejemplo más común y cotidiano se puede observar al verter leche en el café: observe cómo la leche se arremolina y se mezcla con su entorno, y tendrá una excelente demostración del movimiento browniano.
 
@@ -62,7 +67,7 @@ Las propiedades del medio determinan la velocidad del movimiento browniano. Por 
 
 Por último, y más relevante para nuestros futuros tutoriales sobre imágenes de difusión, el movimiento browniano de las partículas y las moléculas está determinado por el tamaño y la forma del recipiente. El colorante alimentario vertido en un recipiente esférico con agua se difundirá aleatoriamente en todas direcciones. Por otro lado, el colorante alimentario vertido en un vaso de precipitados cilíndrico se difundirá rápidamente a lo largo del vaso; las partículas pronto chocarán con las paredes del recipiente y se verán obligadas a moverse hacia arriba o hacia abajo. A este tipo de recipiente lo llamamos anisotrópico , lo que significa que las dimensiones del recipiente hacen que las partículas se difundan a lo largo de un eje predominante. (Si tiene experiencia con fMRI, piense en los vóxeles anisotrópicos, que tienen una dimensión más larga que las demás).
 
-Nota
+**Nota**
 
 Para ver un vídeo del movimiento browniano, haga clic aquí .
 
@@ -70,7 +75,8 @@ Albert Einstein combinó todos estos factores (temperatura, tamaño de partícul
 ../../_images/00_Ecuación_de_Stokes_Einstein.png
 
 El coeficiente de difusión, D , aumenta con el aumento de la temperatura ( T ) y disminuye con una mayor viscosidad (simbolizada por eta) y un mayor radio de partícula ( r ). k representa la constante de Boltzmann. Este coeficiente de difusión influirá en la adquisición de imágenes ponderadas por difusión , tema que abordaremos a continuación.
-Difusión y resonancia magnética
+
+**Difusión y resonancia magnética**
 
 A principios de la década de 1990, una nueva técnica de adquisición de imágenes, denominada imágenes ecoplanares (EPI), permitió a los investigadores obtener imágenes funcionales del cerebro con mucha mayor rapidez. Simultáneamente, científicos como Michael Moseley y Steven Warach comenzaron a explorar otras maneras de aprovechar las propiedades de las moléculas de agua para generar diferentes tipos de mapas de contraste. Descubrieron que, así como las propiedades T1 y T2 de los tejidos cerebrales podían utilizarse para crear diferencias de intensidad en las imágenes adquiridas, la difusión del agua también podía generar diferencias en la magnitud de la señal.
 
@@ -82,19 +88,21 @@ En este punto, los espines estarían desfasados ​​entre sí; es decir, prece
 ../../_images/00_Desfase_Refase_Gradientes.png
 
 Figura de Mori, 2007. Los círculos rojo, verde y azul representan átomos de hidrógeno, y las flechas dentro de los círculos representan la dirección de los espines; imagine que todos se mueven en la misma dirección alrededor de la circunferencia del círculo y a la misma velocidad. Un gradiente de desfase (fila central) es ligeramente más débil a la izquierda y ligeramente más fuerte a la derecha; como resultado, al desactivar el gradiente, los átomos giran desfasados ​​entre sí. Un gradiente de refase aplica entonces un gradiente igual y opuesto, y al final los átomos giran en la misma dirección y a la misma velocidad.
-Aparte: Creación del gradiente de difusión y los valores B
+
+**Aparte: Creación del gradiente de difusión y los valores B**
 
 Los gradientes de difusión mencionados anteriormente se generan mediante los siguientes parámetros:
 
-    La magnitud del gradiente de difusión (G);
+    * La magnitud del gradiente de difusión (G);
 
-    El tiempo entre gradientes (𝚫); y
+    * El tiempo entre gradientes (𝚫); y
 
-    T duración del gradiente de difusión (𝜹).
+    * T duración del gradiente de difusión (𝜹).
 
 Estos pueden combinarse en una ecuación para el denominado valor b , que se muestra en la figura siguiente. Tenga en cuenta que el valor b es proporcional a la magnitud del gradiente, su duración y el tiempo entre gradientes; si alguno de estos parámetros aumenta, el valor b también aumenta. Por ahora, tenga presente esta ecuación; la abordaremos más adelante cuando analicemos cómo los valores b afectan el contraste de las imágenes ponderadas por difusión.
 ../../_images/00_BValue.png
-Revisando los gradientes: efectos de la difusión
+
+**Revisando los gradientes: efectos de la difusión**
 
 En el ejemplo anterior, asumimos que un gradiente de refase reorganizaría los átomos de hidrógeno. Esta suposición es cierta, pero solo si los átomos de hidrógeno no se mueven entre la activación y desactivación de los gradientes de desfase y refase. Si, por el contrario, se mueven —es decir, si se difunden, según los principios del movimiento browniano que analizamos anteriormente—, el gradiente de refase no provocará una realineación de los átomos de hidrógeno. Más bien, su desalineación será proporcional a su grado de difusión entre los gradientes.
 ../../_images/00_Gradientes_Difusión.png
@@ -109,10 +117,11 @@ La siguiente figura resume lo que hemos analizado hasta ahora. Una imagen ponder
 
 Los valores b más altos serán más sensibles para detectar la difusión, pero con el riesgo de generar más ruido y mayor susceptibilidad a los artefactos de vibración.
 
-Nota
+**Nota**
 
 Las imágenes de difusión adquiridas con más de un valor b se denominan adquisiciones multicapa . Esto permite distinguir con mayor precisión la orientación de la difusión, ya que la imagen mostrará diferentes niveles de pérdida de señal en cada valor b, dependiendo de la magnitud de la difusión. Retomaremos este concepto en un capítulo posterior.
-Vectores B
+
+**Vectores B**
 
 Hasta ahora, hemos aprendido cómo se aplican los gradientes de difusión y cómo interpretar la señal resultante en la imagen. Para comprender mejor cómo se crean las imágenes de difusión, también necesitamos conocer la dirección de los gradientes aplicados. Estas direcciones se conocen como vectores b , o bvecs . Observará que, una vez descargados los datos de un escaneo ponderado por difusión, tendrá dos archivos de texto: uno suele tener el sufijo .bval , que indica los valores b, y otro con el sufijo .bvec , que representa los vectores b.
 
@@ -121,10 +130,11 @@ Supongamos que recopiló 40 imágenes ponderadas por difusión. Supongamos tambi
 
 Ejemplo de contenido de los archivos .bvals y .bvecs. La estructura del archivo bvecs es más clara si se importa a una hoja de cálculo; el archivo está formateado para agrupar los números en tripletes. Cada triplete de bvecs corresponde a un único bval.
 
-Nota
+**Nota**
 
 Un parámetro que puede controlar es el número de direcciones que desea escanear con los gradientes. Por ejemplo, podría adquirir 64 o 128 imágenes, y cada una de ellas tendrá gradientes de difusión aplicados desde una dirección ligeramente diferente. Un mayor número de direcciones resulta en una mayor resolución angular , lo que permite realizar distinciones espaciales más precisas sobre la dirección de la difusión. La desventaja, como con cualquier método que aumente la resolución, es que un mayor número de escaneos requiere más tiempo.
-Juntándolo todo: modelando el tensor
+
+**Juntándolo todo: modelando el tensor**
 
 Esta combinación de bvals y bvecs nos permite construir un tensor y ajustarlo a cada vóxel de nuestra imagen ponderada por difusión. Para este tutorial, considere un tensor como un modelo de fuerzas que ejercen presión a lo largo de las dimensiones x, y y z. El agua que fluye por una manguera de jardín, por ejemplo, ejerce presión contra los límites del tubo, pero fluye principalmente a lo largo de la manguera. Las direcciones de los vectores propios de energía se denominan , y la magnitud de los valores propios de energía .
 
@@ -138,17 +148,18 @@ Ajustar un tensor en cada vóxel permite generar diferentes tipos de mapas de di
 ../../_images/00_FA_Map.png
 
 Tensores generados por TBSS de FSL. Para obtener una descripción general de cómo analizar un sujeto con este paquete, haga clic aquí .
-Otras medidas de difusión
+
+**Otras medidas de difusión**
 
 Aunque FA es la medida de difusión más popular, hay algunas otras que revisaremos brevemente:
 
-    Difusividad media (MD): el promedio de los valores propios, calculado sumando los valores propios y dividiéndolos por 3. Es útil para identificar patologías cerebrales como edemas.
+    * Difusividad media (MD): el promedio de los valores propios, calculado sumando los valores propios y dividiéndolos por 3. Es útil para identificar patologías cerebrales como edemas.
 
-    Difusividad axial (AD): El valor del valor propio más grande.
+    * Difusividad axial (AD): El valor del valor propio más grande.
 
-    Difusividad Radial (DR): El promedio de los dos valores propios más pequeños. Se utiliza a menudo para analizar haces de fibras grandes orientados en la misma dirección, como el cuerpo calloso.
+    * Difusividad Radial (DR): El promedio de los dos valores propios más pequeños. Se utiliza a menudo para analizar haces de fibras grandes orientados en la misma dirección, como el cuerpo calloso.
 
-Desventajas de las imágenes por tensor de difusión: el problema de las fibras cruzadas
+**Desventajas de las imágenes por tensor de difusión: el problema de las fibras cruzadas**
 
 Aunque la obtención de imágenes con tensor de difusión ha sido uno de los métodos de análisis más populares desde el inicio de la obtención de imágenes ponderadas por difusión, se ha visto obstaculizada por el problema de las fibras cruzadas . El método de ajuste de tensor descrito anteriormente es útil para analizar vóxeles que solo contienen tractos de materia blanca que viajan en una sola dirección. Si, por otro lado, el vóxel contiene fibras que se cruzan entre sí, el método puede conducir a resultados espurios. Para tomar el caso más extremo, imaginemos que hemos adquirido una imagen ponderada por difusión para un solo vóxel, y que este vóxel contiene fibras de materia blanca que se cruzan en ángulos rectos entre sí. Dado que el tensor está restringido a generar una única solución para estimar todos sus vectores y valores propios, no puede estimar la dirección y la magnitud de la difusión para cada haz de fibras por separado. En su lugar, dividirá la diferencia y concluirá que no hay difusión en ninguna dirección; en otras palabras, la difusión de los dos tractos se cancelarán mutuamente.
 ../../_images/00_CrossingFibers.png
@@ -167,23 +178,28 @@ Se muestra una imagen ponderada por difusión con FOD superpuestos. Si ampliamos
 ../../_imagenes/00_ODF_2.png
 
 Otra parte de la sustancia blanca muestra FOD que siguen principalmente una orientación anteroposterior; sin embargo, algunas ODF tienen lóbulos que se extienden tanto en dirección anteroposterior como inferosuperior (la inferosuperior se codifica en azul). De esta manera, los FOD pueden representar la orientación de las fibras en múltiples dimensiones.
-Análisis de difusión con MRtrix
+
+**Análisis de difusión con MRtrix**
 
 Para este tutorial, utilizaremos el paquete de software MRtrix . Este programa utiliza el método de deconvolución esférica descrito anteriormente, además de técnicas avanzadas como la tractografía con restricciones anatómicas. Los resultados de MRtrix también pueden combinarse con las parcelaciones generadas por FreeSurfer para crear un conectoma que representa la conectividad de cada parcelación (también conocida como nodos en este contexto) con todos los demás nodos del cerebro. Todo esto y más se abordará en los siguientes capítulos.
 
---------------------------------------------------------------
 
 Tutorial n.° 1 de MRtrix: Descargar e instalar
+----------------------------------------------
 
 La página de descarga de MRtrix contiene instrucciones de descarga e instalación para usuarios de Windows, Macintosh y Linux. Este proceso solía ser bastante largo, ya que era necesario descargar varias dependencias y bibliotecas. Afortunadamente, los desarrolladores han creado recientemente un comando de una sola línea que lo hará todo automáticamente:
 
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/MRtrix3/macos-installer/master/install)"
+.. code:: Bash
+
+   sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/MRtrix3/macos-installer/master/install)"
 
 Esto descargará e instalará todo el paquete MRtrix3 en su máquina, lo que no llevará más que unos pocos minutos.
 
 Una vez descargado, abra una Terminal y escriba lo siguiente para probar su instalación:
 
-mrview
+.. code:: Bash
+   
+   mrview
 
 Esto abrirá el visor de MRtrix. En la siguiente sección, descargaremos los datos de difusión, que puedes cargar en el visor haciendo clic y seleccionando la imagen de difusión. Debería verse así:File -> Open
 ../../_images/01_SampleImage.png
@@ -192,13 +208,14 @@ Intente también escribir uno de los comandos de la biblioteca, como mrconvert, 
 ../../_images/01_MRconvert.png
 
 Si ambos funcionan sin errores, estará listo para comenzar a descargar datos de difusión, que abordaremos en el próximo capítulo.
-Video
+
+**Video**
 
 Puedes encontrar un vídeo tutorial para la instalación en Macintosh aquí .
 
---------------------------------------------------------------------------
 
 Tutorial n.º 2 de MRtrix: Cómo descargar el conjunto de datos
+-------------------------------------------------------------
 
 En este curso, analizaremos un conjunto de datos de openneuro.org llamado BTC preop . Incluye datos de pacientes con gliomas, pacientes con meningiomas y un grupo de control. Compararemos los grupos entre sí y realizaremos análisis de correlación con las covariables incluidas en el participants.tsvarchivo del conjunto de datos.
 
@@ -207,51 +224,61 @@ Para descargar los datos haga clic en este enlace y luego en el Downloadbotón .
 
 Cuando finalice la descarga, descomprima la carpeta, abra una Terminal y cámbiele el nombre a BTC_preop:
 
-mv ~/Downloads/ds001226-00001 ~/Desktop/BTC_preop
+.. code:: Bash
+
+   mv ~/Downloads/ds001226-00001 ~/Desktop/BTC_preop
 
 Esto supone que el conjunto de datos se guardó en el directorio "Descargas". El comando colocará el directorio renombrado en su escritorio.
 
-Nota
+**Nota**
 
 Si no tiene espacio para todos los datos, puede comenzar con los de un solo sujeto. Haga clic en la sub-CON02carpeta para expandir el contenido y descargue cada archivo por separado. Luego, cree las siguientes subcarpetas en su directorio BTC_preop; para ello, navegue hasta ese directorio y escriba `` . Después, mueva las imágenes que descargue a su directorio correspondiente; es decir, las imágenes anatómicas irán a la carpeta `anat`, las imágenes de difusión a la carpeta `dwi`, y así sucesivamente.mkdir -p sub-CON02/ses-preop/anat sub-CON02/ses-preop/dwi sub-CON02/ses-preop/func
 
 Entonces estará listo para comenzar a mirar los datos en el próximo capítulo.
-Video
+
+**Video**
 
 Haga clic aquí para obtener una guía sobre cómo descargar el conjunto de datos.
 
 
------------------------------------------------------------------
-
 Tutorial n.º 3 de MRtrix: Análisis de los datos
-Descripción general
+-----------------------------------------------
+
+**Descripción general**
 
 MRtrix utiliza su propio formato para almacenar y mostrar datos de imágenes. Si ya ha consultado los tutoriales de los principales paquetes de software de fMRI, como SPM, FSL y AFNI, recordará que todos pueden leer y escribir imágenes en formato NIFTI. (AFNI, por defecto, escribirá los archivos en su propio formato BRIK/HEAD, a menos que especifique que la salida tenga la extensión .nii, pero es la única excepción). MRtrix también puede leer datos sin procesar en formato NIFTI, pero generará sus archivos en formato MRtrix, etiquetados con una .mifextensión.
 
 Para ver cómo funciona, dirígete a la carpeta sub-CON02/ses-preop/dwique contiene tus datos de difusión. Uno de los primeros pasos para preprocesar tus datos es convertirlos a un formato compatible con MRtrix. Usaremos el comando mrconvertpara combinar los datos de difusión sin procesar con sus archivos correspondientes .bval, .bvecde modo que podamos usar el archivo combinado para futuros pasos de preprocesamiento:
 
-mrconvert sub-CON02_ses-preop_acq-AP_dwi.nii.gz sub-02_dwi.mif -fslgrad sub-CON02_ses-preop_acq-AP_dwi.bvec sub-CON02_ses-preop_acq-AP_dwi.bval
+.. code:: Bash
+
+   mrconvert sub-CON02_ses-preop_acq-AP_dwi.nii.gz sub-02_dwi.mif -fslgrad sub-CON02_ses-preop_acq-AP_dwi.bvec sub-CON02_ses-preop_acq-AP_dwi.bval
 
 Este comando requiere tres argumentos: la entrada, que es el archivo DWI sin procesar en el directorio AP; un archivo de salida, que llamaremos sub-02_dwi.mif para hacerlo más compacto y fácil de leer; y -fslgrad, que requiere los archivos .bvec y .bval correspondientes (en ese orden).
 
-Nota
+**Nota**
 
 Para que el resto del tutorial también sea más fácil de leer, use el mvcomando para cambiar el nombre de los archivos .bval y .bvec:
 
-mv sub-CON02_ses-preop_acq-AP_dwi.bvec sub-02_AP.bvec
-mv sub-CON02_ses-preop_acq-AP_dwi.bval sub-02_AP.bval
-mv sub-CON02_ses-preop_acq-PA_dwi.bvec sub-02_PA.bvec
-mv sub-CON02_ses-preop_acq-PA_dwi.bval sub-02_PA.bval
+.. code:: Bash
+
+   mv sub-CON02_ses-preop_acq-AP_dwi.bvec sub-02_AP.bvec
+   mv sub-CON02_ses-preop_acq-AP_dwi.bval sub-02_AP.bval
+   mv sub-CON02_ses-preop_acq-PA_dwi.bvec sub-02_PA.bvec
+   mv sub-CON02_ses-preop_acq-PA_dwi.bval sub-02_PA.bval
 
 La imagen de salida, sub-02_dwi.mif, se puede comprobar con el comando mrinfo:
 
-mrinfo sub-02_dwi.mif
+.. code:: Bash
+
+   mrinfo sub-02_dwi.mif
 
 La salida contiene varios datos, como las dimensiones del conjunto de datos y el tamaño del vóxel, junto con los comandos que se utilizaron para generar el archivo actual:
 ../../_images/03_mrinfo_output.png
 
 Tenga en cuenta que, al tratarse de un conjunto de datos de 4 dimensiones, la última dimensión es el tiempo ; es decir, este archivo contiene 102 volúmenes, cada uno con dimensiones de 96 x 96 x 60 vóxeles. La última dimensión del campo, que en este caso tiene un valor de 8,7, indica el tiempo de adquisición de cada volumen. Este tiempo también se denomina tiempo de repetición o TR.Voxel size
-Bvals y Bvecs
+
+**Bvals y Bvecs**
 
 Los otros archivos que debemos revisar son los archivos bvals y bvecs . (Para una revisión más completa del significado de estos términos, consulte este capítulo ). En resumen, los archivos bvals contienen un único número por volumen que indica la magnitud del gradiente de difusión aplicado a los datos; y el archivo bvecs contiene un triplete de números por volumen que muestra la dirección en la que se aplicaron los gradientes. En general, los volúmenes con valores b mayores serán más sensibles a los cambios de difusión, pero las imágenes también serán más susceptibles al movimiento y a los artefactos fisiológicos, como se muestra en la figura siguiente.
 ../../_images/03_bvals.png
@@ -260,23 +287,30 @@ Tres volúmenes con diferentes valores b. Un valor b de 0 equivale a una explora
 
 La comprobación más importante es asegurar que el número de bvals y bvecs coincida con el número de volúmenes del conjunto de datos. Por ejemplo, podemos encontrar el número de volúmenes del sub-02_dwi.mifconjunto de datos escribiendo:
 
-mrinfo -size sub-02_dwi.mif | awk '{print $4}'
+.. code:: Bash
+
+   mrinfo -size sub-02_dwi.mif | awk '{print $4}'
 
 Esto devuelve un valor de 102, el número en el cuarto campo del encabezado de dimensiones que corresponde al número de puntos de tiempo, o volúmenes, en el conjunto de datos. Luego, comparamos esto con el número de bvals y bvecs usando awk para contar el número de columnas en cada archivo de texto:
 
-awk '{print NF; exit}' sub-02_AP.bvec
-awk '{print NF; exit}' sub-02_AP.bval
+.. code:: Bash
+
+   awk '{print NF; exit}' sub-02_AP.bvec
+   awk '{print NF; exit}' sub-02_AP.bval
 
 Lo cual debería devolver un valor de 102.
 
-Nota
+**Nota**
 
 Si la cantidad de volúmenes en su conjunto de datos y la cantidad de bvals y bvecs no coinciden, debe consultar con su técnico de escaneo acerca de la discrepancia; es posible que los archivos no se hayan cargado correctamente al servidor o tal vez la imagen ponderada por difusión no se adquirió correctamente.
-Mirando los datos con mrview
+
+**Mirando los datos con mrview**
 
 MRtrix, al igual que los demás programas de imágenes que hemos tratado en este libro electrónico, cuenta con su propio visor de imágenes, llamado mrview . Por ejemplo, puede ver la imagen que creamos arriba escribiendo:
 
-mrview sub-02_dwi.mif
+.. code:: Bash
+
+   mrview sub-02_dwi.mif
 
 Esto abre un único panel de visualización de los cortes axiales:
 ../../_images/03_mrview_axial.png
@@ -289,57 +323,72 @@ Al hacer clic y arrastrar la cruceta, se puede examinar el cerebro completo desd
 
 Ahora pase el ratón sobre la ventana de visualización de mrview y pulse la flecha derecha para cargar el siguiente volumen de la serie temporal. Si observa el archivo bval, ¿esperaría que esta imagen se viera similar o diferente a la que acaba de ver? ¿Por qué? Piense en esto al cargar la tercera y la cuarta imagen de la serie temporal, observando las diferencias de intensidad y su correspondencia con sus respectivos valores b. Si la disminución de la intensidad oscurece la imagen, puede aumentar el brillo haciendo clic en y, a continuación, introduciendo un valor máximo inferior en el campo "Escala de intensidad".Tool -> View options
 ../../_images/03_mrview_IntensityScaling.png
-Video
+
+**Video**
 
 Puedes seguir este vídeo para aprender más sobre cómo comprobar los datos.
-Próximos pasos
+
+**Próximos pasos**
 
 Una vez que haya practicado la observación de los datos y haya observado la relación entre los valores b y los volúmenes, intente lo mismo con la imagen ponderada por difusión con codificación de fase en la dirección PA (es decir, sub-CON02_ses-preop_dwi_sub-CON02_ses-preop_acq-PA_dwi.nii.gz). ¿Cuántos volúmenes hay en este conjunto de datos? ¿Cuáles son los valores b? ¿Cómo se compara con lo observado en el conjunto de datos ponderado por difusión AP?
 
 Ahora que ha aprendido algunos de los comandos y conceptos básicos de MRtrix, comenzaremos a preprocesar los datos para ajustar las líneas de corriente . Para comenzar, haga clic en el Nextbotón.
 Monetice su audiencia: financie un proyecto o sitio web de OSS con EthicalAds, una red publicitaria que prioriza la privacidad.
 
-------------------------------------------------------------------------------
 
 Tutorial n.° 4 de MRtrix: Preprocesamiento
-Descripción general
+------------------------------------------
+
+**Descripción general**
 
 Al igual que otros datos de neuroimagen, los datos de difusión deben preprocesarse antes de su análisis. El preprocesamiento elimina las fuentes de ruido de la imagen, como artefactos de movimiento y otras distorsiones. Los datos de difusión, en particular, son susceptibles a artefactos de distorsión debido a la dirección de codificación de fase: en general, la dirección de codificación predominante, como Anterior-Posterior (AP), hará que la parte anterior del cerebro se vea más compacta, como si soplara un fuerte viento en contra desde la dirección anterior. Lo contrario ocurre con la dirección de codificación de fase Posterior-Anterior (PA). A veces, estas distorsiones son muy sutiles, pero otras veces son evidentes.
 ../../_images/04_AP_PA_Comparaciones.png
 
 Los siguientes son pasos comunes de preprocesamiento realizados con MRtrix. Si ha utilizado el paquete de software FSL para analizar datos de difusión, tenga en cuenta que algunos comandos de FSL, como eddy y topup, se utilizan en algunas bibliotecas de MRtrix. Analizaremos esto con más detalle a continuación.
-dwi_denoise
+
+**dwi_denoise**
 
 El primer paso de preprocesamiento que realizaremos es eliminar el ruido de los datos mediante dwidenoiseel comando de MRtrix. Esto requiere un argumento de entrada y uno de salida, y también se puede generar el mapa de ruido con la -noiseopción. Por ejemplo:
 
-dwidenoise sub-02_dwi.mif sub-02_den.mif -noise noise.mif
+.. code::
+
+   dwidenoise sub-02_dwi.mif sub-02_den.mif -noise noise.mif
 
 Este comando debería tardar un par de minutos en ejecutarse.
 
 Una comprobación de calidad consiste en comprobar si los residuos se cargan en alguna parte de la anatomía. De ser así, podría indicar que la región cerebral se ve afectada de forma desproporcionada por algún tipo de artefacto o distorsión. Para calcular este residuo, utilizaremos otro comando de MRtrix llamado mrcalc:
 
-mrcalc sub-02_dwi.mif sub-02_den.mif -subtract residual.mif
+.. code:: Bash
+
+   mrcalc sub-02_dwi.mif sub-02_den.mif -subtract residual.mif
 
 Luego puedes inspeccionar el mapa residual con mrview:
 
-mrview residual.mif
+.. code:: Bash
+
+   mrview residual.mif
 
 ../../_imagenes/04_residuales.png
 
 Es común ver un contorno gris del cerebro, como en la figura anterior. Sin embargo, todo dentro de la materia gris y la materia blanca debería ser relativamente uniforme y borroso; si se observan puntos de referencia anatómicos claros, como circunvoluciones o surcos individuales, esto podría indicar que esas partes del cerebro han sido alteradas por el ruido. En tal caso, se puede aumentar la intensidad del filtro de eliminación de ruido del valor predeterminado de 5 a un número mayor, como 7; por ejemplo,
 
-dwidenoise your_data.mif your_data_denoised_7extent.mif -extent 7 -noise noise.mif
+.. code:: Bash
 
-resonancia magnética_degibbs
+   dwidenoise your_data.mif your_data_denoised_7extent.mif -extent 7 -noise noise.mif
+
+**resonancia magnética_degibbs**
 
 Un paso opcional de preprocesamiento es ejecutar [ ] mri_degibbs, lo cual elimina los artefactos de anillo de Gibbs de los datos. Estos artefactos se asemejan a las ondas en un estanque y son más visibles en las imágenes con un valor b de 0. Analice primero sus datos de difusión con [ mrview] y determine si existen artefactos de Gibbs; si los hay, puede ejecutar [ ] mrdegibbsespecificando un archivo de entrada y uno de salida, por ejemplo:
 
-mrdegibbs sub-02_den.mif sub-02_den_unr.mif
+.. code:: Bash
+
+   mrdegibbs sub-02_den.mif sub-02_den_unr.mif
 
 Como siempre, inspeccione los datos antes y después mrviewpara determinar si el paso de preprocesamiento mejoró o empeoró los datos o no tuvo ningún efecto.
 
 Si no ve ningún artefacto de Gibbs en sus datos, le recomiendo omitir este paso; no lo usaremos durante el resto del tutorial.
-Extracción de imágenes codificadas en fase inversa
+
+**Extracción de imágenes codificadas en fase inversa**
 
 La mayoría de los conjuntos de datos de difusión se componen de dos archivos de imágenes independientes: uno adquirido con codificación de fase primaria y otro con codificación de fase inversa. La codificación de fase primaria se utiliza para adquirir la mayoría de las imágenes de difusión con diferentes valores b. El archivo con codificación de fase inversa, por otro lado, se utiliza para corregir las distorsiones presentes en el archivo con codificación de fase primaria.
 
@@ -349,62 +398,81 @@ De forma similar, utilizamos ambas direcciones de codificación de fase para cre
 
 Nuestro primer paso es convertir el archivo NIFTI con codificación de fase inversa al formato .mif. También añadiremos sus valores b y vectores b en el encabezado:
 
-mrconvert sub-CON02_ses-preop_acq-PA_dwi.nii.gz PA.mif
-mrconvert PA.mif -fslgrad sub-02_PA.bvec sub-02_PA.bval - | mrmath - mean mean_b0_PA.mif -axis 3
+.. code:: Bash
+
+   mrconvert sub-CON02_ses-preop_acq-PA_dwi.nii.gz PA.mif
+   mrconvert PA.mif -fslgrad sub-02_PA.bvec sub-02_PA.bval - | mrmath - mean mean_b0_PA.mif -axis 3
 
 A continuación, extraemos los valores b de la imagen codificada en fase primaria y luego combinamos los dos con mrcat:
 
-dwiextract sub-02_den.mif - -bzero | mrmath - mean mean_b0_AP.mif -axis 3
-mrcat mean_b0_AP.mif mean_b0_PA.mif -axis 3 b0_pair.mif
+.. code:: Bash
+
+   dwiextract sub-02_den.mif - -bzero | mrmath - mean mean_b0_AP.mif -axis 3
+   mrcat mean_b0_AP.mif mean_b0_PA.mif -axis 3 b0_pair.mif
 
 Esto creará una nueva imagen, “b0_pair.mif”, que contiene ambas imágenes b=0 promedio para ambas imágenes codificadas por fase.
-Juntándolo todo: preprocesamiento con dwipreproc
+
+**Juntándolo todo: preprocesamiento con dwipreproc**
 
 Ahora tenemos todo lo necesario para ejecutar el paso principal de preprocesamiento, llamado por dwipreproc. En su mayor parte, este comando es un contenedor que utiliza comandos FSL como topupy eddypara deshacer la distorsión de los datos y eliminar las corrientes de Foucault. Para este tutorial, usaremos la siguiente línea de código:
 
-dwifslpreproc sub-02_den.mif sub-02_den_preproc.mif -nocleanup -pe_dir AP -rpe_pair -se_epi b0_pair.mif -eddy_options " --slm=linear --data_is_shelled"
+.. code:: Bash
+
+   dwifslpreproc sub-02_den.mif sub-02_den_preproc.mif -nocleanup -pe_dir AP -rpe_pair -se_epi b0_pair.mif -eddy_options " --slm=linear --data_is_shelled"
 
 Los primeros argumentos son la entrada y la salida; la segunda opción, -nocleanup, mantendrá la carpeta de procesamiento temporal que contiene algunos archivos que examinaremos más adelante. indica que la dirección de codificación de fase primaria es anteroposterior y, combinada con las opciones, indica que el siguiente archivo de entrada (es decir, “b0_pair.mif”) es un par de imágenes de eco de espín que se adquirieron con direcciones de codificación de fase inversa. Por último, especifica opciones específicas del comando FSL . Puede visitar la guía del usuario de eddy para obtener más opciones y detalles sobre su función. Por ahora, solo usaremos las opciones (que pueden ser útiles para datos adquiridos con menos de 60 direcciones) y (que indica que los datos de difusión se adquirieron con múltiples valores b).-pe_dir AP-rpe_pair-se_epi-eddy_optionseddy--slm=linear--data_is_shelled
 
 Este comando puede tardar varias horas en ejecutarse, dependiendo de la velocidad de su computadora. En una iMac con 8 núcleos de procesamiento, tarda aproximadamente 2 horas. Una vez finalizado, examine la salida para ver cómo la corrección de corrientes parásitas y la corrección de la distorsión han cambiado los datos; idealmente, debería observar una mayor restauración de la señal en regiones como la corteza orbitofrontal, que es particularmente susceptible a la pérdida de señal.
 
-mrview sub-02_den_preproc.mif -overlay.load sub-02_dwi.mif
+.. code:: Bash
+
+   mrview sub-02_den_preproc.mif -overlay.load sub-02_dwi.mif
 
 Este comando mostrará los datos recién preprocesados, con los datos de difusión originales superpuestos y coloreados en rojo. Para ver cómo se corrigieron las corrientes de Foucault, abra la pestaña Superposiciones y haga clic en el cuadro junto a la imagen sub-02_dwi.mif. Debería observar una diferencia notable entre las dos imágenes, especialmente en los lóbulos frontales del cerebro, cerca de los ojos, que son más susceptibles a las corrientes de Foucault.
 ../../_images/04_BeforeAfterEddy.png
-Comprobación de porciones corruptas
+
+**Comprobación de porciones corruptas**
 
 Una de las opciones del dwifslpreproccomando, "-nocleanup", conservó un directorio con la cadena "tmp" en su título. Dentro de esta carpeta hay un archivo llamado dwi_post_eddy.eddy_outlier_map, que contiene cadenas de 0 y 1. Cada 1 representa un segmento atípico, ya sea por exceso de movimiento, corrientes de Foucault u otra causa.
 
 El siguiente código, ejecutado desde el dwidirectorio, navegará a la carpeta “tmp” y calculará el porcentaje de sectores con valores atípicos:
 
-cd dwifslpreproc-tmp-*
-totalSlices=`mrinfo dwi.mif | grep Dimensions | awk '{print $6 * $8}'`
-totalOutliers=`awk '{ for(i=1;i<=NF;i++)sum+=$i } END { print sum }' dwi_post_eddy.eddy_outlier_map`
-echo "If the following number is greater than 10, you may have to discard this subject because of too much motion or corrupted slices"
-echo "scale=5; ($totalOutliers / $totalSlices * 100)/1" | bc | tee percentageOutliers.txt
-cd ..
+.. code:: Bash
+
+   cd dwifslpreproc-tmp-*
+   totalSlices=`mrinfo dwi.mif | grep Dimensions | awk '{print $6 * $8}'`
+   totalOutliers=`awk '{ for(i=1;i<=NF;i++)sum+=$i } END { print sum }' dwi_post_eddy.eddy_outlier_map`
+   echo "If the following number is greater than 10, you may have to discard this subject because of too much motion or corrupted slices"
+   echo "scale=5; ($totalOutliers / $totalSlices * 100)/1" | bc | tee percentageOutliers.txt
+   cd ..
 
 Las dos primeras líneas acceden al directorio "tmp" y calculan el número total de segmentos multiplicando el número de segmentos de un volumen por el número total de volúmenes del conjunto de datos. A continuación, se calcula el número total de unos en el mapa de valores atípicos, y el porcentaje de segmentos con valores atípicos se genera dividiendo el número de segmentos con valores atípicos entre el número total de segmentos. Si este número es mayor que 10 (es decir, si más del 10 % de los segmentos se marcan como atípicos), debería considerar eliminar el sujeto de los análisis posteriores.
-Generando una máscara
+
+**Generando una máscara**
 
 Al igual que con el análisis fMRI, es útil crear una máscara para restringir el análisis solo a los vóxeles del cerebro; esto acelerará el resto de los análisis.
 
 Para ello, puede ser útil ejecutar previamente un comando llamado dwibiascorrect. Esto puede eliminar las inhomogeneidades detectadas en los datos, lo que puede conducir a una mejor estimación de la máscara. Sin embargo, en algunos casos puede resultar en una estimación deficiente; como con todos los pasos de preprocesamiento, conviene comprobarlo antes y después de cada paso:
 
-dwibiascorrect ants sub-02_den_preproc.mif sub-02_den_preproc_unbiased.mif -bias bias.mif
+.. code:: Bash
 
-Nota
+   dwibiascorrect ants sub-02_den_preproc.mif sub-02_den_preproc_unbiased.mif -bias bias.mif
+
+**Nota**
 
 El comando anterior usa la -antsopción , que requiere que ANTs esté instalado en su sistema. Recomiendo este programa, pero si no puede instalarlo, puede reemplazarlo con la -fslopción .
 
 Ahora está listo para crear la máscara con dwi2mask, que restringirá su análisis a los vóxeles que se encuentran dentro del cerebro:
 
-dwi2mask sub-02_den_preproc_unbiased.mif mask.mif
+.. code:: Bash
+
+   dwi2mask sub-02_den_preproc_unbiased.mif mask.mif
 
 Compruebe la salida de este comando escribiendo:
 
-mrview mask.mif
+.. code::
+
+   mrview mask.mif
 
 Deberías ver algo como lo siguiente:
 ../../_images/04_Mask.png
@@ -413,22 +481,28 @@ El comando dwi2mask de MRtrix funciona bien en la mayoría de los casos. Sin emb
 
 Para ello, podría usar un comando como el de FSL bet2. Por ejemplo, podría usar el siguiente código para convertir la imagen ponderada por difusión no sesgada al formato NIFTI, crear una máscara con bet2y luego convertirla al formato .mif:
 
-mrconvert sub-02_den_preproc_unbiased.mif sub-02_unbiased.nii
-bet2 sub-02_unbiased.nii sub-02_masked -m -f 0.7
-mrconvert sub-02_masked_mask.nii.gz mask.mif
+.. code:: Bash
+
+   mrconvert sub-02_den_preproc_unbiased.mif sub-02_unbiased.nii
+   bet2 sub-02_unbiased.nii sub-02_masked -m -f 0.7
+   mrconvert sub-02_masked_mask.nii.gz mask.mif
 
 Quizás tengas que experimentar con el umbral de intensidad fraccional (especificado por -f) para generar una máscara satisfactoria. En mi experiencia, este puede variar entre 0,2 y 0,7 en la mayoría de los cerebros para generar una máscara adecuada.
-Video
+
+**Video**
+
 
 Puede encontrar una descripción general en video del preprocesamiento en MRtrix aquí .
-Próximos pasos
+
+**Próximos pasos**
 
 Ahora que tenemos nuestros datos de difusión preprocesados ​​y una máscara, estamos listos para realizar la deconvolución esférica restringida , que cubriremos en el próximo capítulo.
 
 
-------------------------------------------------------------------------------
 
 Tutorial n.º 5 de MRtrix: Deconvolución esférica restringida
+------------------------------------------------------------
+
 Descripción general
 
 Para determinar la orientación de la difusión dentro de cada vóxel, crearemos una función base a partir de los datos del sujeto. Al extraer la señal de difusión de vóxeles representativos de materia gris, materia blanca y líquido cefalorraquídeo, construiremos un modelo para estimar cómo debería verse la señal en diferentes orientaciones y al aplicar diferentes valores b. El concepto es similar al uso de una función de respuesta hemodinámica (HRF) como función base para datos de fMRI: obtenemos una forma canónica de cómo creemos que debería verse la señal fMRI en respuesta a un solo evento y luego la modulamos para ajustarla a los datos observados.
