@@ -227,16 +227,21 @@ Como pronto descubrirá, FreeSurfer tarda mucho en procesar un sujeto individual
 Una forma de reducir el tiempo que lleva analizar tantos sujetos es ejecutar los análisis en paralelo. Las computadoras modernas suelen tener una unidad central de procesamiento con varios núcleos , que pueden usarse individualmente para diferentes tareas. Para ilustrar qué son los núcleos, imaginemos ocho personas y ocho cocinas, cada una con el tamaño justo para que una persona prepare su comida. En esta analogía, cada núcleo de computadora es una cocina. Ocho personas no caben en una cocina, pero si las demás cocinas se desbloquean y se ponen a disposición, cada persona puede preparar su propia comida en cada habitación.
 
 Supongamos que cada comida tarda una hora en prepararse. En lugar de que cada hombre espere su turno en la misma cocina cada hora, todos preparan sus comidas simultáneamente. Lo que de otro modo tomaría ocho horas (es decir, que todos los hombres prepararan su comida en la misma cocina), ahora toma una hora. Si pudiéramos hacer algo similar con nuestro análisis de datos, podríamos terminar de procesar las imágenes anatómicas en un tiempo más razonable.
-Descarga del comando paralelo
+
+**Descarga del comando paralelo**
 
 Volviendo a FreeSurfer, normalmente solo se usa un núcleo cada vez que se ejecuta recon-all. Con un comando llamado parallel , cada instancia de recon-all se puede asignar a un núcleo diferente. Si usa una computadora Macintosh, puede ver el número de núcleos escribiendo lo siguiente:
 
-sysctl hw.physicalcpu hw.logicalcpu
+.. code:: Bash
+
+   sysctl hw.physicalcpu hw.logicalcpu
 
 Lo cual debería devolver algo como esto:
 
-hw.physicalcpu: 4
-hw.logicalcpu: 8
+.. code:: Bash
+
+   hw.physicalcpu: 4
+   hw.logicalcpu: 8
 
 La primera entrada es el número de núcleos físicos, que es 4; y la segunda entrada es el número de núcleos lógicos, que es 8. Nadie entiende realmente qué significa todo esto, pero todo lo que necesita saber es que el número de núcleos lógicos es el número de trabajos de reconstrucción individuales que puede ejecutar simultáneamente.
 
@@ -245,12 +250,15 @@ El comando paralelo no viene de serie con el sistema operativo Macintosh; deber�
 
 Luego, deberás ir a este sitio web e instalar Homebrew, un gestor de instalación de paquetes. Homebrew te permite instalar paquetes rápidamente mediante la línea de comandos. Por ejemplo, una vez instalado Homebrew, abre una terminal y escribe lo siguiente:
 
-brew install parallel
+.. code:: Bash
+
+   brew install parallel
 
 Esto instalará el comando paralelo. (Verifique si se instaló correctamente escribiendo parallel -help en la línea de comandos y presionando Enter. Debería ver el manual de ayuda impreso en la ventana de su terminal).
-Uso del comando paralelo
 
-Nota
+**Uso del comando paralelo**
+
+**Nota**
 
 Debe usar la shell bash para usar paralelo. Si no está seguro de qué shell está usando, escriba . Si no está en la shell bash, simplemente escriba y presione Enter.echo $0bash
 
@@ -258,44 +266,189 @@ Si desea almacenar los resultados de recon-all en el directorio desde el que eje
 
 Parallel se ejecuta canalizando la salida del lscomando hacia el comando paralelo. Por ejemplo, si tiene seis imágenes anatómicas etiquetadas como sub1.nii, sub2.nii y sub6.nii, puede analizarlas en paralelo escribiendo lo siguiente:
 
-ls *.nii | parallel --jobs 8 recon-all -s {.} -i {} -all -qcache
+.. code:: Bash
+
+   ls *.nii | parallel --jobs 8 recon-all -s {.} -i {} -all -qcache
 
 Analicemos qué hace este comando:
 
-    El lscomando utiliza un comodín para expandir todas las imágenes anatómicas que tienen la .niiextensión.
+1. El lscomando utiliza un comodín para expandir todas las imágenes anatómicas que tienen la .niiextensión.
 
-    La lista se envía al parallelcomando, que utiliza la opción para indicar que se usarán 8 núcleos para analizar los datos. Cada instancia de recon-all se asignará a un núcleo diferente.--jobs 8
+2. La lista se envía al parallelcomando, que utiliza la opción para indicar que se usarán 8 núcleos para analizar los datos. Cada instancia de recon-all se asignará a un núcleo diferente.--jobs 8
 
-    El punto entre llaves para la -sopción significa que .niise debe eliminar la extensión; en otras palabras, la entrada -sserá sub1, sub2 … sub6.
+3. El punto entre llaves para la -sopción significa que .niise debe eliminar la extensión; en otras palabras, la entrada -sserá sub1, sub2 … sub6.
 
-    La -iopción indica utilizar la salida del lscomando como entrada al parallelcomando.
+4. La -iopción indica utilizar la salida del lscomando como entrada al parallelcomando.
 
-    Las opciones -ally -qcachetienen el mismo significado que lo discutido en el tutorial anterior sobre recon-all.
+5. Las opciones -ally -qcachetienen el mismo significado que lo discutido en el tutorial anterior sobre recon-all.
 
 Ahora ejecute el comando y observe qué sucede. Si un trabajo típico de recon-all tarda 15 horas en su computadora, vuelva en 15 horas y vea cuántos sujetos se han procesado. Si tiene ocho núcleos y ocho sujetos, debería finalizar en el mismo tiempo que tarda en procesar un sujeto; y si tiene más de ocho sujetos, se procesará uno nuevo en cuanto se libere uno de los núcleos tras finalizar un sujeto.
-Análisis del conjunto de datos sobre el cannabis
+
+**Análisis del conjunto de datos sobre el cannabis**
 
 Si ha configurado el directorio correctamente, todos los temas deberían estar en una carpeta llamada Cannabis. Cree otro directorio llamado FSy acceda a él. Desde una consola bash (vea la nota anterior), escriba el siguiente código para ejecutar todos estos temas mediante el comando paralelo:
 
-ls .. | grep ^sub- > subjList.txt
+.. code:: Bash
 
-for sub in `cat subjList.txt`; do
-cp ../${sub}/ses-BL/anat/*.gz .
-done
+   ls .. | grep ^sub- > subjList.txt
 
-gunzip *.gz
+   for sub in `cat subjList.txt`; do
+   cp ../${sub}/ses-BL/anat/*.gz .
+   done
 
-SUBJECTS_DIR=`pwd`
+   gunzip *.gz
 
-ls *.nii | parallel --jobs 8 recon-all -s {.} -i {} -all -qcache
+   SUBJECTS_DIR=`pwd`
 
-rm *.nii
+   ls *.nii | parallel --jobs 8 recon-all -s {.} -i {} -all -qcache
 
-for sub in `cat subjList.txt`; do
-mv ${sub}_ses-BL_T1w.nii ${sub}
-done
+   rm *.nii
+
+   for sub in `cat subjList.txt`; do
+   mv ${sub}_ses-BL_T1w.nii ${sub}
+   done
 
 El siguiente tutorial le mostrará otra forma de agrupar todos sus procesos de reconocimiento mediante una supercomputadora: Open Science Grid.
-Video
+
+**Video**
 
 Para ver una descripción general en video del parallelcomando, vea este video .
+
+--------------------------------------------------------------------------------
+
+**Tutorial n.º 5 de FreeSurfer: Cómo usar la cuadrícula de ciencia abierta**
+
+**Restricciones de tiempo con Recon-All**
+
+Incluso si puede ejecutar varios trabajos con el comando paralelo, puede que no sea práctico para conjuntos de datos muy grandes, por ejemplo, un estudio que incluya cientos de sujetos. Además, es posible que no desee tener todos sus núcleos de procesamiento ocupados en la ejecución de recon-all y prefiera tener su computadora libre para otros proyectos.
+
+Una opción es usar una supercomputadora , disponible en la mayoría de las universidades. Si no tiene acceso a una, puede usar una supercomputadora pública alojada en Open Science Grid , que utiliza núcleos de procesamiento en computadoras ubicadas en más de cien sitios: laboratorios, universidades y otras instituciones. Puede enviar un comando recon-all a Open Science Grid, que luego se distribuye a uno de los muchos núcleos disponibles. Para la mayoría de los investigadores en imágenes, prácticamente no hay límite en la cantidad de trabajos que puede enviar; un lote de cien o doscientos trabajos no es muy grande para los estándares de una supercomputadora, y el lote completo generalmente se puede completar en menos de una semana.
+
+**Preparación de sus datos para la Red de Ciencia Abierta**
+
+Antes de poder utilizar cualquiera de los recursos de Open Science Grid, debe crear una cuenta aquí .
+
+También necesitará un comando fsurfpara enviar todos los trabajos de reconstrucción a la supercomputadora Open Science Grid. Para descargar este comando, escriba:
+
+.. code:: Bash
+
+   curl -L -o fsurf 'http://stash.osgconnect.net/+fsurf/fsurf'
+   chmod +x fsurf
+
+Y luego mueva el ejecutable de fsurf a un directorio al que apunte su PATH. Por ejemplo, la mayoría de los sistemas operativos tienen una ruta que, por defecto, apunta al /bindirectorio, el mismo que contiene comandos como ls, cdy pwd. Si mueve fsurfa /bin, podrá ejecutar el comando desde cualquier directorio:
+
+.. code:: Bash
+
+   sudo mv fsurf /bin
+
+**Nota**
+
+En el ejemplo de código anterior, sudose usa para mover fsurf al directorio /bin. Esto se debe a que este directorio se considera confidencial: nadie debe modificarlo a menos que sepa lo que hace. Por lo tanto, sudo le solicitará su contraseña antes de mover el archivo.
+
+A continuación, cree una lista de todos los temas escribiendo el siguiente código:
+
+.. code:: Bash
+
+   ls | grep sub- > subjList.txt
+
+Esto canalizará los resultados del lscomando a un archivo llamado subjList.txt. Usaremos esta lista para crear un bucle for y enviar todos nuestros trabajos de recon-all a la supercomputadora Open Science Grid.
+
+**Envío de trabajos de Recon-All**
+
+Open Science Grid tiene un sistema particular en cuanto al modo en que se envían los trabajos: cada imagen anatómica debe empaquetarse de una manera determinada, tal como se deben empaquetar los artículos cuando se dejan en la oficina de correos.
+
+Primero deberá ejecutar recon-all en sus imágenes anatómicas, omitiendo la -allopción. Esto creará una serie de directorios y luego convertirá la imagen anatómica al formato .mgz y la colocará en el mri/origdirectorio. El siguiente código puede copiarse y pegarse en la terminal o copiarse en un script de shell y ejecutarse con tcsh:
+
+.. code::Bash
+
+   foreach subj (`cat subjList.txt`)
+      cd $subj/ses-BL/anat
+      if (! -d $subj ) then #If the FS directory doesn't exist, then run recon-all
+              recon-all -s $subj -i *.nii.gz -sd .
+              #zip the FreeSurfer directories, so they can be submitted to fsurf
+              zip -r $subj.zip $subj
+              cd ../../..
+      else
+              echo "FreeSurfer folder for $subj already exists; if you want to rerun recon-all for this subject, delete the folder and rerun this script."
+              cd ../../..
+      endif
+   end
+
+Una vez finalizado, puedes enviar los trabajos usando fsurf. En este ejemplo, he incluido fsurfun bucle for:
+
+.. code:: Bash
+
+   foreach subj (`cat subjList.txt`)
+      cd $subj/ses-BL/anat
+      fsurf submit --subject=$subj --input=$subj.zip --defaced --deidentified --version 6.0.0 --freesurfer-options='-all -qcache -3T'
+      cd ../../..
+   end
+
+El estado de los trabajos se puede comprobar escribiendo , lo que mostrará varias columnas en la pantalla. La primera columna es el nombre del sujeto, la segunda es el ID del sujeto asignado por la supercomputadora Open Science Grid y la penúltima columna especifica si el trabajo está en ejecución, se ha completado o ha fallado. Revise periódicamente el estado de estos trabajos para ver cuáles se pueden descargar.fsurf list
+
+**Nota**
+
+Los ejemplos de código anteriores están escritos en [nombre del archivo ] tcshen lugar de [nombre del archivo] bash. Puedes escribirlo en cualquiera de los dos; yo estaba usando [nombre del archivo] tcshen ese momento.
+
+**Descargar o eliminar trabajos**
+
+Una vez finalizado recon-all, puedes descargar la salida escribiendo este código:
+
+.. code:: Bash
+
+   fsurf output --id <subjID>
+
+Donde subjIDse encuentra el código de identificación asignado por la supercomputadora. Es el número en la segunda columna de la salida del comando . Los datos descargados tendrán la extensión .; puede descomprimirlos escribiendo , reemplazando con el nombre del conjunto de datos descargado.fsurf list.bz2tar xvjf <subjName>subjName
+
+Por otro lado, si deseas eliminar un trabajo en cualquier momento y por cualquier motivo, puedes hacerlo escribiendo:
+
+.. code:: Bash
+
+   fsurf remove --id <subjID>
+
+subjIDSe encuentra de la misma manera que arriba.
+
+-------------------------------------------------------------------------------
+
+**Tutorial de FreeSurfer n.º 6: Freeview**
+
+**Visualización de sus datos**
+
+Cada paquete de software de neuroimagen cuenta con un visor de datos , o una aplicación que permite consultar los datos. AFNI, SPM y FSL cuentan con visores de datos que básicamente hacen lo mismo: el usuario carga datos de imágenes, generalmente imágenes anatómicas o funcionales, y puede visualizarlos en tres dimensiones. La mayoría de los visores permiten cargar archivos NIFTI que contienen cualquier tipo de datos de imágenes.
+
+FreeSurfer cuenta con su propio visor, Freeview , que se inicia desde la Terminal escribiendo freeviewy pulsando Intro. Puede cargar imágenes NIFTI al igual que otros paquetes, y además, formatos específicos de FreeSurfer, como datos con extensiones .mgzy .inflated. La imagen se puede visualizar en tres dimensiones en el Panel de Visualización, o se puede cambiar el diseño para que solo se muestre una dimensión.
+../../_images/06_Freeview_Example.png
+
+**El panel de control**
+
+La esquina superior izquierda de Freeview contiene el Panel de Control , que muestra los volúmenes cargados actualmente en la memoria. La casilla de verificación junto a cada imagen se puede marcar o desmarcar para hacerla visible o invisible, respectivamente. Al igual que en los demás visores, la imagen superior es la superposición : cubre todas las demás. Las flechas arriba y abajo permiten colocar una imagen en la parte superior de la pila o bajarla para que deje de ser la superposición. El Opacitycontrol deslizante permite mantener una imagen como superposición, pero cambiar su transparencia para ver la imagen inmediatamente inferior.
+
+La barra de herramientas se encuentra debajo del Panel de control y contiene opciones para cambiar la opacidad, el contraste y el mapa de color de las imágenes. Al cargar una imagen como aseg.mgz, por ejemplo, se usa una paleta de colores en escala de grises por defecto. Sin embargo, un mapa de color más informativo es FreeSurferColorLUT (LUT = Tabla de consulta), que codifica por color cada segmento de la imagen según una tabla predefinida.
+
+Muchas de las imágenes en FreeSurfer están codificadas así. Tomará tiempo determinar cuáles lo están, pero una heurística útil es asumir una tabla de consulta para cualquier imagen segmentada (como aseg.mgz) o parcelada (como uno de los atlas).
+
+**Volúmenes y superficies de carga**
+
+Freeview puede cargar volúmenes y superficies simultáneamente. Para cargar una superficie, haga clic en y seleccione una imagen en el directorio, como . Esto superpondrá una representación 3D de la superficie en el cuadro tridimensional de la ventana Vista y trazará su contorno en los cuadros ortogonales (es decir, las vistas sagital, axial y coronal). El color de la superficie en las vistas ortogonales se puede cambiar seleccionando un nuevo .File -> Load Surfacesurflh.pialEdge color
+../../_images/06_Volúmenes_Superficies_Freeview.png
+
+**Opciones de Freeview desde la línea de comandos**
+
+Freeview ofrece varias opciones de línea de comandos que puede usar para ahorrar tiempo. Por ejemplo, si desea crear el mismo diseño de la figura anterior (es decir, cargar el archivo orig.mgz, el archivo aseg.mgz con la tabla de consulta de colores y el archivo lh.pial con un borde amarillo), puede escribir lo siguiente desde el directorio subject que contiene los directorios mriy surf(por ejemplo, navegar al directorio sub-101_ses_BL_T1w):
+
+.. code:: Bash
+
+   freeview -v mri/orig.mgz mri/aseg.mgz:colormap=LUT -f surf/lh.pial:edgecolor=yellow
+
+La -vopción indica que los siguientes archivos son volúmenes y que -fel siguiente archivo es una superficie. Los dos puntos indican una opción para el archivo al que están adjuntos; por ejemplo, aseg.mgz:colormap=LUTsignifica asignar un mapa de colores de tabla de consulta al archivo aseg.mgz. Asimismo, la edgecolor=yellowopción significa establecer el color del borde del archivo lh.pial en amarillo. Se pueden encontrar otras opciones para Freeview escribiendo desde la línea de comandos; también puede encontrar un buen resumen de otras opciones y atajos de línea de comandos visitando la demo de Freeview de Inés Pereira .freeview -h
+
+**Nota**
+
+Si usa Conda y encuentra un error con la cadena , intente desactivar su entorno Conda actual escribiendo . Esto debería resolver el problema en la mayoría de los casos.Segmentation Faultconda deactivate
+
+**Video**
+
+Para ver una descripción general en video de la estructura de directorio creada por recon-all y cómo usar freeview con la salida, haga clic aquí .
+
+
+
