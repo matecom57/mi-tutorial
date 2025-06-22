@@ -28,7 +28,7 @@ Contents
 
     Andy/FreeSurfer/freesurfer
     Andy/fMRI/tutorial_fmri
-
+    Andy/SPM/SPM
 
 .. toctree::
     :maxdepth: 1
