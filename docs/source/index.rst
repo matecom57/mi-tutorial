@@ -27,6 +27,8 @@ Contents
     :caption: Andy-FreeSurfer
 
     Andy/FreeSurfer/freesurfer
+    Andy/FreeSurfer/tutorial_fmri
+
 
 .. toctree::
     :maxdepth: 1
