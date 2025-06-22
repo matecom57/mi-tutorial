@@ -29,6 +29,7 @@ Contents
     Andy/FreeSurfer/freesurfer
     Andy/fMRI/tutorial_fmri
     Andy/SPM/SPM
+    Andy/mrtrix/MRtrix
 
 .. toctree::
     :maxdepth: 1
@@ -62,12 +63,6 @@ Contents
 
     IN/Intro_Python
     IN/Intro_R
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Andy-mrtrix
-
-    Andy/mrtrix/mrtrix01.rst
 
 .. toctree::
     :maxdepth: 1
