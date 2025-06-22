@@ -27,7 +27,7 @@ Contents
     :caption: Andy-FreeSurfer
 
     Andy/FreeSurfer/freesurfer
-    Andy/FreeSurfer/tutorial_fmri
+    Andy/fMRI/tutorial_fmri
 
 
 .. toctree::
