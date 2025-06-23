@@ -2,6 +2,7 @@ Numerical_Analysis_Ord_Delay_Diff_Equ_c01
 =========================================
 
 Preface
+-------
 
 The aim of the book is to provide a concise textbook for students on an advanced undergraduateor aﬁrst-year 
 graduatecoursefromvarious disciplines, suchas applied 
@@ -10,11 +11,20 @@ differential equations. Their stability analysis is also explained. Experts in a
 engineering ﬁelds can also learn the recent developments in numerical analysis of such differential systems. Major 
 algorithms of numerical solution are clearly described.
 
+El objetivo de este libro es proporcionar un libro de texto conciso para estudiantes de grado avanzado o de primer 
+año de posgrado en diversas disciplinas, como matemáticas aplicadas, control e ingeniería, que deseen aprender un 
+estándar moderno de métodos numéricos para ecuaciones diferenciales ordinarias y de retardo. También se explica su 
+análisis de estabilidad. Los expertos en matemáticas aplicadas, control e ingeniería también pueden aprender los 
+avances recientes en el análisis numérico de dichos sistemas diferenciales. Se describen con claridad los 
+principales algoritmos de solución numérica.
+
+
 Ordinary differential equations (ODEs) have a long history in mathematics and provide a valuable resource for its 
 development. At the same time, they provide a strong mathematical tool to express phenomena of a wide variety in 
 science and engineering. Therefore, graduate students, scientists and engineers are required to have knowledge and 
 experience of ODEs. The idea of mathematical formulation to give a functional relationship of an unknown function 
-and its derivative can be extendedfurthermore.OnepowerfulwaytoextendODEsistotreatequationsoffunctions of several 
+and its derivative can be extended furthermore. One powerful way to extend ODEs is to treat equations of functions 
+of several 
 independent variables, called partial differential equations (PDEs). Another way is to incorporate unknown functions 
 with delayed argument, called delay differential equations (DDEs). Mathematical analysis has developed to elucidate 
 properties of differential equations, e.g. existence of solutions of the equations. Hence, in some cases we can 
