@@ -121,11 +121,19 @@ en el tiempo t (véase la figura 1.1).
 Note that the ﬁrst derivative dθ/dt represents its angular velocity, while the second derivative   θ/d 2 is the 
 angular acceleration. Newton’s law of motion states acceleration of moving body = external force for the body.
 
+Nótese que la primera derivada dθ/dt representa su velocidad angular, mientras que la segunda derivada θ/d² es la 
+aceleración angular. La ley del movimiento de Newton establece que la aceleración de un cuerpo en movimiento es 
+igual a la fuerza externa que actúa sobre él.
+
 Hence, when no friction exists, the law gives
+
+Por lo tanto, cuando no existe fricción, la ley da
 
 d2 θ ma 2 = −mga sin θ, dt2 
 
 where g stands for the gravitational constant. Introduction of ϕ(t) in place of dθ/dt leads to
+
+donde g representa la constante gravitacional. La introducción de ϕ(t) en lugar de dθ/dt conduce a
 
 dϕ g dθ sin θ = 0, ϕ = 0, + dt a dt
 
@@ -136,8 +144,16 @@ view, it is interesting to observe that the equation does not depend on the mass
 the start (t = 0) (θ(0), ϕ(0)) is equal to (θ 0 , 0) and will analyse the pendulum motion after the start when it is 
 put at the angle θ 0 and gently released. This is called the initial-value problem of (1.1).
 
-The second example is the closed LC R circuit in electronics. Suppose that the capacitor with the capacitance C, 
-inductor with the inductance L and resistor with the resistance R are connected in series (see Fig. 1.2).
+que es un sistema bidimensional de ecuaciones diferenciales ordinarias para (θ(t), ϕ(t)). Desde un punto de vista 
+físico, es interesante observar que la ecuación no depende de la masa m. Imponemos la condición de que al inicio (t 
+= 0) (θ(0), ϕ(0)) sea igual a (θ 0 , 0) y analizaremos el movimiento del péndulo después del inicio, cuando se 
+coloca en el ángulo θ 0 y se suelta suavemente. Esto se denomina problema de valor inicial de (1.1).
+ 
+The second example is the closed LC R circuit in electronics. Suppose that the capacitor with the capacitance 
+C, inductor with the inductance L and resistor with the resistance R are connected in series (see Fig. 1.2).
+
+El segundo ejemplo es el circuito LC-R cerrado en electrónica. Supongamos que el condensador con capacidad C, el 
+inductor con inductancia L y el resistor con resistencia R están conectados en serie (véase la figura 1.2).
 
 By the Kirchhoff law the electronic current i in the circuit satisﬁes
 
@@ -169,6 +185,10 @@ Like these, physical laws often have differential equations as their mathematica
 is employed in other disciplines of science and engineering to model phenomena by differential equations. 
 Mathematical problems for differential equation are
 
+Al igual que estas, las leyes físicas a menudo tienen ecuaciones diferenciales como su expresión matemática, y se 
+emplea un enfoque similar en otras disciplinas de la ciencia y la ingeniería para modelar fenómenos mediante 
+ecuaciones diferenciales. Los problemas matemáticos para ecuaciones diferenciales son
+
 • how we can solve it,
 
 • what is the condition which guarantees existence of its solution,
@@ -181,12 +201,21 @@ and so on. Each item requires theoretical analysis, but the present volume will 
 differential equations. Readers interested in mathematical theory together with mathematical modelling by 
 differential equations can consult [?].
 
-1.2 Analytical Versus Numerical Solutions
+Y así sucesivamente. Cada tema requiere un análisis teórico, pero este volumen se centrará en las soluciones 
+numéricas de ecuaciones diferenciales. Los lectores interesados ​​en la teoría matemática y la modelización matemática 
+mediante ecuaciones diferenciales pueden consultar [?].
+
+**1.2 Analytical Versus Numerical Solutions**
 
 Prior to detailed descriptions of numerical solutions, we will present background material about the solution of 
 differential equations.
 
-Elementary Solutions When the angle θ in (1.1) is small in magnitude, we can assume its approximation is given by
+Antes de descripciones detalladas de soluciones numéricas, presentaremos material de fondo sobre la solución de 
+ecuaciones diferenciales.
+
+**Elementary Solutions**
+
+When the angle θ in (1.1) is small in magnitude, we can assume its approximation is given by
 
 dy g dx x = 0, y = 0, + dt a dt
 
@@ -196,8 +225,9 @@ d2 x g x = 0 + dt 2 a
 
 (1.3)
 
-dx with the initial condition x(0) = θ 0 and It is easy to (0) = 0. What is its solution? dt
+dx 
 
+with the initial condition x(0) = θ 0 and It is easy to (0) = 0. What is its solution? It is easy to
 check that sin(ωt) and cos(ωt) satisﬁes (1.3) with ω = √ (g/a). The initial condition restricts, however, the 
 solution to x(t) = θ 0 cos(ωt). How about in the case (1.2) (but we restrict ourselves for ω > α)? Due to the 
 similarity between (1.3) and (1.2), we may be inspired to think of a solution in the form of x(t) = e −αt cos(t) 
@@ -206,8 +236,8 @@ natural question occurs: Are there any other solutions? The following theorem gi
 
 First, we introduce:
 
-Deﬁnition 1.1 Let R d denote the d-dimensional Euclidean space. When we are given the unknown function x : [ t 0 , 
-t F ] ↦ − → R d , the known function f : [ t 0 , t F ] × R d − ↦ → R d and the known constant ξ ∈ R d , and 
+Deﬁnition 1.1 Let R d denote the d-dimensional Euclidean space. When we are given the unknown function      , 
+tF ] ↦ −  Rd , the known function f:[t0 , tF] × R d − ↦ → R d and the known constant ξ ∈ R d , and 
 they satisfy
 
 dx = f (t, x) (t0  < t < t F ), dt
