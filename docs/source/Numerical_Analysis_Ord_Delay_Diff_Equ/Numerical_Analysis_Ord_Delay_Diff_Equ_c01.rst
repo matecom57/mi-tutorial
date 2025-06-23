@@ -90,14 +90,21 @@ will see how an equation is formulated and what its (analytical) solution means.
 solution is explained with examples. The delay differential equation, that is, a differential equation 
 including a delay term with respect to the independent variable, is given through an example, too.
 
+Este capítulo presenta brevemente el concepto de ecuación diferencial ordinaria mediante algunos ejemplos. Verá cómo 
+se formula una ecuación y qué significa su solución (analítica). También se explica con ejemplos la necesidad de una 
+solución numérica. La ecuación diferencial de retardo, es decir, una ecuación diferencial que incluye un término de 
+retardo con respecto a la variable independiente, también se presenta mediante un ejemplo.
+
 1.1 Mathematical Modelling by Differential Equations
 
 When a function x of independent variable t is subject to another functional relation F(t,x,x′) = 0 together 
 with its ﬁrst derivativex', , it is said that we are given the differential equation of x. Of course this is a 
-very broad and loose deﬁnition of a differential equation and later a more strict deﬁnition will be introduced. We 
+very broad and loose deﬁnition of a differential equation and later a more strict deﬁnition will be introduced.  
 emphasize, however, that many phenomena can be modelled by a differential equation and its mathematical treatment is 
 signiﬁcant in real-life applications. Typical origins can be found in physical phenomena. We will explain it 
 brieﬂy.
+
+
 
 The ﬁrst example is classical mechanics, that is, the simple pendulum which consists of a small weight of mass m 
 suspended from a ﬁxed point O by a light (that is, with a negligible mass) rod of length a, and only swings in a 
