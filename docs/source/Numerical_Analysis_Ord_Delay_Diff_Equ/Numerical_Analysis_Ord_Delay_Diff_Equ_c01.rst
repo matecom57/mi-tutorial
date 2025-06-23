@@ -81,9 +81,7 @@ tema interesante y que intenten profundizar en él por sí mismos.
 
 Taketomo Mitsui Guang-Da Hu
 
-Chapter 1
-
-Introduction
+**Chapter 1 Introduction**
 
 This chapter brieﬂy introduces the concept of an ordinary differential equation through a few examples of it. You 
 will see how an equation is formulated and what its (analytical) solution means. Also the necessity of a numerical 
@@ -95,7 +93,7 @@ se formula una ecuación y qué significa su solución (analítica). También se
 solución numérica. La ecuación diferencial de retardo, es decir, una ecuación diferencial que incluye un término de 
 retardo con respecto a la variable independiente, también se presenta mediante un ejemplo.
 
-1.1 Mathematical Modelling by Differential Equations
+**1.1 Mathematical Modelling by Differential Equations**
 
 When a function x of independent variable t is subject to another functional relation F(t,x,x′) = 0 together 
 with its ﬁrst derivativex', , it is said that we are given the differential equation of x. Of course this is a 
@@ -104,13 +102,23 @@ emphasize, however, that many phenomena can be modelled by a differential equati
 signiﬁcant in real-life applications. Typical origins can be found in physical phenomena. We will explain it 
 brieﬂy.
 
-
+Cuando una función x de variable independiente t está sujeta a otra relación funcional F(t,x,x′) = 0 junto con su 
+primera derivada x’, se dice que se nos da la ecuación diferencial de x. Por supuesto, esta es una definición muy 
+amplia y vaga de ecuación diferencial, y más adelante se presentará una definición más estricta. Sin embargo, 
+enfatizamos que muchos fenómenos pueden modelarse mediante una ecuación diferencial y su tratamiento matemático es 
+significativo en aplicaciones prácticas. Los orígenes típicos se pueden encontrar en fenómenos físicos. Lo 
+explicaremos brevemente.
 
 The ﬁrst example is classical mechanics, that is, the simple pendulum which consists of a small weight of mass m 
 suspended from a ﬁxed point O by a light (that is, with a negligible mass) rod of length a, and only swings in a 
 vertical plane. We take θ(t) as the inclination of the rod to the downward vertical with the time t (see Fig. 1.1).
 
-Note that the ﬁrst derivative dθ/dt represents its angular velocity, while the second derivative d 2 θ/dt 2 is the 
+El primer ejemplo es la mecánica clásica, es decir, el péndulo simple, que consiste en un pequeño peso de masa m 
+suspendido de un punto fijo O mediante una varilla ligera (es decir, de masa despreciable) de longitud a, y oscila 
+únicamente en un plano vertical. Tomamos θ(t) como la inclinación de la varilla respecto a la vertical descendente 
+en el tiempo t (véase la figura 1.1).
+
+Note that the ﬁrst derivative dθ/dt represents its angular velocity, while the second derivative   θ/d 2 is the 
 angular acceleration. Newton’s law of motion states acceleration of moving body = external force for the body.
 
 Hence, when no friction exists, the law gives
