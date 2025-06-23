@@ -93,7 +93,7 @@ including a delay term with respect to the independent variable, is given throug
 1.1 Mathematical Modelling by Differential Equations
 
 When a function x of independent variable t is subject to another functional relation F(t,x,x′) = 0 together 
-with its ﬁrst derivative   , it is said that we are given the differential equation of x. Of course this is a 
+with its ﬁrst derivativex', , it is said that we are given the differential equation of x. Of course this is a 
 very broad and loose deﬁnition of a differential equation and later a more strict deﬁnition will be introduced. We 
 emphasize, however, that many phenomena can be modelled by a differential equation and its mathematical treatment is 
 signiﬁcant in real-life applications. Typical origins can be found in physical phenomena. We will explain it 
