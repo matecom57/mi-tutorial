@@ -103,4 +103,8 @@ Contents
     Delay_Dif_Equ_and_App_to_Biology_Fathalla/prefacio
     Delay_Dif_Equ_and_App_to_Biology_Fathalla/c01
 
+.. toctree::
+    :maxdepth: 1
+    :caption: Numerical_Analysis_Ord_Delay_Diff_Equ
 
+    Numerical_Analysis_Ord_Delay_Diff_Equ/Numerical_Analysis_Ord_Delay_Diff_Equ_c01
