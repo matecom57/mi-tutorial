@@ -32,14 +32,28 @@ obtain a solution of a differential equation by algebraic combinations of known 
 practical cases, however, such a solution method is quite difﬁcult and numerical approximations are called for. 
 Modern computers accelerate the situation and, moreover, launch more possibilities of numerical means.
 
+Las ecuaciones diferenciales ordinarias (EDO) tienen una larga historia en matemáticas y constituyen un recurso 
+valioso para su desarrollo. A la vez, proporcionan una herramienta matemática sólida para expresar fenómenos de gran 
+variedad en ciencia e ingeniería. Por lo tanto, se requiere que estudiantes de posgrado, científicos e ingenieros 
+tengan conocimiento y experiencia en EDO. La idea de la formulación matemática para obtener una relación funcional 
+entre una función desconocida y su derivada puede extenderse aún más. Una forma eficaz de extender las EDO es tratar 
+ecuaciones de funciones con varias variables independientes, llamadas ecuaciones diferenciales parciales (EDP). Otra 
+forma es incorporar funciones desconocidas con argumento retardado, llamadas ecuaciones diferenciales retardadas 
+(EDD). El análisis matemático se ha desarrollado para dilucidar las propiedades de las ecuaciones diferenciales, por 
+ejemplo, la existencia de soluciones. Por lo tanto, en algunos casos podemos obtener una solución de una ecuación 
+diferencial mediante combinaciones algebraicas de funciones matemáticas conocidas. Sin embargo, en muchos casos 
+prácticos, este método de solución es bastante difícil y se requieren aproximaciones numéricas. Las computadoras 
+modernas aceleran el proceso y, además, ofrecen más posibilidades de métodos numéricos.
+
+
+
 Henceforth, the knowledge and expertise of numerical solution of differential equations become a requirement in the 
 broad area of science and engineering. One might think that a well-organised software package such as MATLAB can 
 provide the solution. In a sense it is true, but one must be aware that blind employment of a software package does 
 not help the users. An understanding of numerical solution of differential equations is still necessary. The present 
 book is intended to give the principles of numerical solution of ordinary differential equations as well as of delay 
-differential equations. To obtain a broader perspective of numerical analysis in
-
-applied mathematics, a short introduction to polynomial interpolation is also given. In particular, we take note 
+differential equations. To obtain a broader perspective of numerical analysis in applied mathematics, a short 
+introduction to polynomial interpolation is also given. In particular, we take note 
 that there are a few concise textbooks of delay differential equations and have tried to give descriptions that are 
 as transparent as possible.
 
