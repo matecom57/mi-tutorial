@@ -57,11 +57,27 @@ introduction to polynomial interpolation is also given. In particular, we take n
 that there are a few concise textbooks of delay differential equations and have tried to give descriptions that are 
 as transparent as possible.
 
+En adelante, el conocimiento y la experiencia en la solución numérica de ecuaciones diferenciales se han convertido 
+en un requisito en el amplio campo de la ciencia y la ingeniería. Se podría pensar que un paquete de software bien 
+organizado como MATLAB puede proporcionar la solución. En cierto sentido, esto es cierto, pero hay que tener en 
+cuenta que el uso indiscriminado de un paquete de software no beneficia a los usuarios. La comprensión de la 
+solución numérica de ecuaciones diferenciales sigue siendo necesaria. El presente libro pretende presentar los 
+principios de la solución numérica de ecuaciones diferenciales ordinarias, así como de ecuaciones diferenciales de 
+retardo. Para obtener una perspectiva más amplia del análisis numérico en matemáticas aplicadas, también se ofrece 
+una breve introducción a la interpolación polinómica. En particular, tomamos nota de que existen algunos libros de 
+texto concisos sobre ecuaciones diferenciales de retardo y hemos intentado ofrecer descripciones lo más 
+transparentes posible.
+
 The prerequisite of the book is knowledge of calculus and linear algebra at college level. Each chapter is followed 
 by remarks on further development of the chapter topic and exercises. We hope the readers ﬁnd the topic interesting 
 and try to obtain further developments by themselves.
 
-Nagoya, Japan Shanghai, China
+El requisito previo del libro es tener conocimientos de cálculo y álgebra lineal a nivel universitario. Cada 
+capítulo incluye comentarios sobre el desarrollo del tema y ejercicios. Esperamos que los lectores encuentren el 
+tema interesante y que intenten profundizar en él por sí mismos.
+
+
+ Nagoya, Japan Shanghai, China
 
 Taketomo Mitsui Guang-Da Hu
 
@@ -72,14 +88,14 @@ Introduction
 This chapter brieﬂy introduces the concept of an ordinary differential equation through a few examples of it. You 
 will see how an equation is formulated and what its (analytical) solution means. Also the necessity of a numerical 
 solution is explained with examples. The delay differential equation, that is, a differential equation 
-includingadelaytermwithrespect totheindependent variable, is giventhroughanexample, too.
+including a delay term with respect to the independent variable, is given through an example, too.
 
 1.1 Mathematical Modelling by Differential Equations
 
-When a function x of independent variable t is subject to another functional relation F(t, x, x ′ ) = 0 together 
-with its ﬁrst derivative x ′ , it is said that we are given the differential equation of x. Of course this is a 
+When a function x of independent variable t is subject to another functional relation F(t,x,x′) = 0 together 
+with its ﬁrst derivative   , it is said that we are given the differential equation of x. Of course this is a 
 very broad and loose deﬁnition of a differential equation and later a more strict deﬁnition will be introduced. We 
-emphasize,however,thatmanyphenomenacanbemodelledbyadifferentialequation and its mathematical treatment is 
+emphasize, however, that many phenomena can be modelled by a differential equation and its mathematical treatment is 
 signiﬁcant in real-life applications. Typical origins can be found in physical phenomena. We will explain it 
 brieﬂy.
 
@@ -88,9 +104,7 @@ suspended from a ﬁxed point O by a light (that is, with a negligible mass) rod
 vertical plane. We take θ(t) as the inclination of the rod to the downward vertical with the time t (see Fig. 1.1).
 
 Note that the ﬁrst derivative dθ/dt represents its angular velocity, while the second derivative d 2 θ/dt 2 is the 
-angular acceleration. Newton’s law of motion states
-
-acceleration of moving body = external force for the body.
+angular acceleration. Newton’s law of motion states acceleration of moving body = external force for the body.
 
 Hence, when no friction exists, the law gives
 
