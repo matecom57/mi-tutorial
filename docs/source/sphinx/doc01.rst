@@ -98,6 +98,7 @@ This should print out the Sphinx version number.
 Tip
 
 For local development, it is generally recommended to install Sphinx into a non-global environment (using for example venv or conda environments). This will allow for the use of separate sphinx versions and third-party extensions for each sphinx project.
+
 PyPI package
 
 Sphinx packages are published on the Python Package Index (PyPI). The preferred tool for installing packages from PyPI is pip, which is included in all modern versions of Python.
@@ -236,37 +237,70 @@ Getting started
 ----------------------------------------------------------------------------------------
 
 Getting started
+---------------
 
 Sphinx is a documentation generator or a tool that translates a set of plain text source files into various output formats, automatically producing cross-references, indices, etc. That is, if you have a directory containing a bunch of reStructuredText or Markdown documents, Sphinx can generate a series of HTML files, a PDF file (via LaTeX), man pages and much more.
 
+Sphinx es un generador de documentación o una herramienta que traduce un conjunto de archivos fuente de texto simple a varios formatos de salida, produciendo automáticamente referencias cruzadas, índices, etc. Es decir, si tienes un directorio que contiene un montón de documentos reStructuredText o Markdown, Sphinx puede generar una serie de archivos HTML, un archivo PDF (a través de LaTeX), páginas de manual y mucho más.
+
+
 Sphinx focuses on documentation, in particular handwritten documentation, however, Sphinx can also be used to generate blogs, homepages and even books. Much of Sphinx’s power comes from the richness of its default plain-text markup format, reStructuredText, along with its significant extensibility capabilities.
 
+Sphinx se centra en la documentación, en particular la documentación manuscrita. Sin embargo, también puede utilizarse para generar blogs, páginas de inicio e incluso libros. Gran parte de la potencia de Sphinx reside en la riqueza de su formato de marcado de texto plano predeterminado, reStructuredText, junto con sus importantes capacidades de extensibilidad.
+
+
 The goal of this document is to give you a quick taste of what Sphinx is and how you might use it. When you’re done here, you can check out the installation guide followed by the intro to the default markup format used by Sphinx, reStructuredText.
+
+El objetivo de este documento es ofrecerle una idea rápida de qué es Sphinx y cómo usarlo. Al terminar, puede consultar la guía de instalación y la introducción al formato de marcado predeterminado que utiliza Sphinx: reStructuredText.
+
 
 For a great “introduction” to writing docs in general – the whys and hows, see also Write the docs, written by Eric Holscher.
 Setting up the documentation sources
 
+Para una excelente introducción a la escritura de documentos en general (el porqué y el cómo), consulte también "Escribir los documentos", escrito por Eric Holscher. Configuración de las fuentes de documentación.
+
 The root directory of a Sphinx collection of plain-text document sources is called the source directory. This directory also contains the Sphinx configuration file conf.py, where you can configure all aspects of how Sphinx reads your sources and builds your documentation. [1]
+
+El directorio raíz de una colección de fuentes de documentos de texto plano de Sphinx se denomina directorio de origen. Este directorio también contiene el archivo de configuración de Sphinx, conf.py, donde puede configurar todos los aspectos de cómo Sphinx lee sus fuentes y crea su documentación. [1]
 
 Sphinx comes with a script called sphinx-quickstart that sets up a source directory and creates a default conf.py with the most useful configuration values from a few questions it asks you. To use this, run:
 
+Sphinx incluye un script llamado sphinx-quickstart que configura un directorio de origen y crea un archivo conf.py predeterminado con los valores de configuración más útiles a partir de unas cuantas preguntas. Para usarlo, ejecute:
+
+
 sphinx-quickstart
+-----------------
 
 Defining document structure
 
 Let’s assume you’ve run sphinx-quickstart. It created a source directory with conf.py and a root document, index.rst. The main function of the root document is to serve as a welcome page, and to contain the root of the “table of contents tree” (or toctree). This is one of the main things that Sphinx adds to reStructuredText, a way to connect multiple files to a single hierarchy of documents.
 
+Supongamos que ha ejecutado sphinx-quickstart. Este creó un directorio fuente con conf.py y un documento raíz, index.rst. La función principal de este documento es servir como página de bienvenida y contener la raíz del árbol de la tabla de contenidos (o toctree). Esta es una de las principales funciones que Sphinx añade a reStructuredText: una forma de conectar varios archivos a una única jerarquía de documentos.
+
+
 reStructuredText directives
 
 toctree is a reStructuredText directive, a very versatile piece of markup. Directives can have arguments, options and content.
 
+toctree es una directiva de reStructuredText, un elemento de marcado muy versátil. Las directivas pueden tener argumentos, opciones y contenido.
+
+
 Arguments are given directly after the double colon following the directive’s name. Each directive decides whether it can have arguments, and how many.
+
+Los argumentos se dan inmediatamente después de los dos puntos que siguen al nombre de la directiva. Cada directiva decide si puede tener argumentos y cuántos.
+
 
 Options are given after the arguments, in form of a “field list”. The maxdepth is such an option for the toctree directive.
 
+Las opciones se proporcionan después de los argumentos, en forma de lista de campos. La profundidad máxima es una opción de este tipo para la directiva toctree.
+
 Content follows the options or arguments after a blank line. Each directive decides whether to allow content, and what to do with it.
 
+El contenido aparece después de las opciones o argumentos, tras una línea en blanco. Cada directiva decide si se permite el contenido y qué hacer con él.
+
 A common gotcha with directives is that the first line of the content must be indented to the same level as the options are.
+
+Un problema común con las directivas es que la primera línea del contenido debe tener sangría al mismo nivel que las opciones.
 
 The toctree directive initially is empty, and looks like so:
 
@@ -283,6 +317,8 @@ You add documents listing them in the content of the directive:
    ...
 
 This is exactly how the toctree for this documentation looks. The documents to include are given as document names, which in short means that you leave off the file name extension and use forward slashes (/) as directory separators.
+
+Así es exactamente como se ve el árbol de directorios de esta documentación. Los documentos a incluir se indican como nombres de documento, lo que significa que se omite la extensión del nombre de archivo y se usan barras diagonales (/) como separadores de directorio.
 
 See also
 
