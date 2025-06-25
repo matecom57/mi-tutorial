@@ -325,11 +325,20 @@ See also
 Read more about the toctree directive.
 
 You can now create the files you listed in the toctree and add content, and their section titles will be inserted (up to the maxdepth level) at the place where the toctree directive is placed. Also, Sphinx now knows about the order and hierarchy of your documents. (They may contain toctree directives themselves, which means you can create deeply nested hierarchies if necessary.)
+
+Ahora puede crear los archivos que incluyó en el toctree y añadir contenido. Los títulos de sus secciones se insertarán (hasta el nivel de profundidad máxima) donde se encuentra la directiva toctree. Además, Sphinx ahora conoce el orden y la jerarquía de sus documentos. (Estos pueden contener directivas toctree, lo que permite crear jerarquías profundamente anidadas si es necesario).
+
+
 Adding content
 
 In Sphinx source files, you can use most features of standard reStructuredText. There are also several features added by Sphinx. For example, you can add cross-file references in a portable way (which works for all output types) using the ref role.
 
+En los archivos fuente de Sphinx, puede usar la mayoría de las funciones de reStructuredText estándar. Sphinx también ha añadido varias funciones. Por ejemplo, puede agregar referencias entre archivos de forma portátil (funciona con todos los tipos de salida) mediante la función ref.
+
+
 For an example, if you are viewing the HTML version, you can look at the source for this document – use the “Show Source” link in the sidebar.
+
+
 
 See also
 
