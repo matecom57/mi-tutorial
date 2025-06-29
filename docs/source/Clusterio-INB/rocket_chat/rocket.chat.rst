@@ -29,11 +29,13 @@ La comunicación en rocket.chat se da en *canales*. Los canales pueden ser priva
 
 .. image:: im02.png
 
-:information_source: Para ver la lista de canales disponibles para tí, utiliza el ícono del mundo que está hasta arriba.
+.. important::
+
+   Para ver la lista de canales disponibles para tí, utiliza el ícono del mundo que está hasta arriba.
 
 Para escribir, utiliza la caja hasta abajo de la página. En esa página puedes usar texto simple, o utilizar negritas, cursivas, emojis, y hasta código y fórmulas matemáticas. 
 
-.. image:: im03.png
+.. image:: rocket01.png
 
 El botón de micrófono te permite enviar mensajes de voz. El botón ``+`` te permite anexar archivos. Puedes también escribir con  `markdown <https://markdown.es/sintaxis-markdown/>`_ .
 
