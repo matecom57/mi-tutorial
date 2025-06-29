@@ -11,7 +11,7 @@ Es muy importante entender el tema de los permisos ya que al estar trabajando en
 
 Al utilizar ``ls -l`` nosotros podemos ver los detalles de cada directorio y archivo, incluyendo los permisos:
 
-! `image <https://github.com/c13inb/c13inb.github.io/assets/129544525/fdc38680-2baf-4acb-adcd-35ddafe2f937>`_ 
+.. image:: per01.png
 
 En el recuadro rojo vemos los permisos donde:
 
@@ -28,7 +28,7 @@ En el recuadro rojo vemos los permisos donde:
 
 Pero vemos que hay una separación con  ``-`` entre permisos, esto se refiere quien y quienes son los que tienen permisos aquí, es decir: 
 
-! `image <https://github.com/c13inb/c13inb.github.io/assets/129544525/0375fb49-773c-4e68-8044-dbdbdd7a102e>`_ 
+.. image:: per02.png
 
 * Rectangulo amarillo son tus permisos como usuario (paulinav) 
 * Rectangulo azul son los permisos del grupo (fmriuser)
@@ -38,7 +38,7 @@ Entonces, en otras palabras: si tu como usuario tienes ``rwx`` quiere decir que 
 
 Ahora, en la siguiente imágen, el rectangulo amarillo te dice el nombre del usuario (paulinav) y el grupo al que perteneces (fmriuser)
 
-! `image <https://github.com/c13inb/c13inb.github.io/assets/129544525/66fc01c1-6cfe-42c1-b77a-c2852a361918>`_ 
+.. image:: per03.png
 
 Modificar permisos con ``chmod``
 ----------------------------------------
