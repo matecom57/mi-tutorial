@@ -14,16 +14,18 @@ Cada usuario puede cambiar su contraseña, y es recomendable hacerlo con cierta 
 
 Para cambiar tu contraseña, usa el comando ``yppasswd``.
 
-.. information:: Hay un periodo de aproximadamente 5 min para que tu nueva contraseña se propague a todas las computadoras del 
-cluster.
+.. importtant:: 
+
+   Hay un periodo de aproximadamente 5 min para que tu nueva contraseña se propague a todas las computadoras del 
+   cluster.
 
 Organización de datos en el clúster
 ----------------------------------------
 
 La más importante a conocer acerca de como guardar tus datos usando tu usuario en el clúster:
 
-+ Folder del usuario :doc:`Cluster-Folder-usuario-(home`)
-+ Folder de almacenamiento :doc:`Cluster-Folder-almacenamiento-(misc`)
++ Folder del usuario :doc:`Cluster-Folder-usuario-home`
++ Folder de almacenamiento :doc:`Cluster-Folder-almacenamiento-misc`
 + Folder temporal :doc:`Cluster-Folder-temporal-(tmp`)
 
 Respaldo de datos

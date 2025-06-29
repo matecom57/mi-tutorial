@@ -62,4 +62,5 @@ Un ememplo de output:
    tmpfs           2.4G  236K  2.4G   1% /run/user/1000
    /dev/sdd1       917G  777G   95G  90% /media/lconcha/CONCHA_WD
    /dev/sdh1        30G   17G   12G  58% /media/lconcha/myswap
+
 Vemos que en ``/misc/mansfield`` Me quedan 1016G (GB).

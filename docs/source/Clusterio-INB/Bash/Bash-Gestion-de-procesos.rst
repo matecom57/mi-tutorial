@@ -26,12 +26,17 @@ Este comando es útil en varias cuestiones, por ejemplo, nos puede mostrar los p
 
 Parámetros:
 
-     -a Muestra todos los procesos con un control, este comando no sólo muestra datos del usario actual.
-     -r Muestra sólo los procesos que están en ejecución
-     -x Muestra procesos, de los cuáles la terminal no tiene control.
-     -u Muestra los procesos del propio usuario (owner process)
-     -l Muestra los datos en formato de una lista larga
-     -w Muestra procesos de la línea de comandos.
+     ``-a`` Muestra todos los procesos con un control, este comando no sólo muestra datos del usario actual.
+     
+     ``-r`` Muestra sólo los procesos que están en ejecución
+     
+     ``-x`` Muestra procesos, de los cuáles la terminal no tiene control.
+     
+     ``-u`` Muestra los procesos del propio usuario (owner process)
+     
+     ``-l`` Muestra los datos en formato de una lista larga
+     
+     ``-w`` Muestra procesos de la línea de comandos.
 
 ree -h
 ----------------------------------------

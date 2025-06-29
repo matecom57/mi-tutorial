@@ -16,6 +16,7 @@ En la estructura de los sistemas **Unix** suelen encontrarse en la dirección
 .. code:: Bash
 
    /home/usuario
+
 Pero en el clúster del laboratorio, la ruta correcta es:
 
 .. code:: Bash
