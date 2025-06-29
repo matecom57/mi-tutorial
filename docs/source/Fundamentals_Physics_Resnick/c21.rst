@@ -8,44 +8,66 @@ After reading this module, you should be able to ...
 21.01 Distinguish between being electrically neutral, negatively
 charged, and positively charged and identify excess charge.
 
-21.02 Distinguish between conductors, nonconductors (insu-
-lators), semiconductors, and superconductors.
+Distinguir entre ser eléctricamente neutro, tener carga negativa y tener carga positiva e identificar el exceso de carga.
 
-21.03 Describe the electrical properties of the particles in-
-side an atom.
+
+21.02 Distinguish between conductors, nonconductors (insulators), semiconductors, and superconductors.
+
+21.03 Describe the electrical properties of the particles inside an atom.
 
 21.04 Identify conduction electrons and explain their role in
 making a conducting object negatively or positively charged.
 
+Identificar los electrones de conducción y explicar su función para crear un objeto conductor con carga negativa o positiva.
+
 21.05 Identify what is meant by “electrically isolated” and by
 “grounding.”
+
+Identifique lo que se entiende por “aislado eléctricamente” y por “puesta a tierra”.
 
 21.06 Explain how a charged object can set up induced
 charge in a second object.
 
+Explique cómo un objeto cargado puede generar carga inducida en un segundo objeto.
+
 21.07 Identify that charges with the same electrical sign repel
 each other and those with opposite electrical signs attract
 each other.
+
+Identificar que las cargas con el mismo signo eléctrico se repelen entre sí y aquellas con signos eléctricos opuestos se atraen.
+
 
 21.08 For either of the particles in a pair of charged particles,
 draw a free-body diagram, showing the electrostatic force
 (Coulomb force) on it and anchoring the tail of the force
 vector on that particle.
 
+Para cualquiera de las partículas de un par de partículas cargadas, dibuje un diagrama de cuerpo libre, que muestre la fuerza electrostática (fuerza de Coulomb) sobre ella y ancle la cola del vector de fuerza en esa partícula.
+
+
 21.09 For either of the particles in a pair of charged particles,
 apply Coulomb’s law to relate the magnitude of the electrostatic force, the charge magnitudes of the particles, and the
 separation between the particles.
 
+Para cualquiera de las partículas de un par de partículas cargadas, aplique la ley de Coulomb para relacionar la magnitud de la fuerza electrostática, las magnitudes de carga de las partículas y la separación entre las partículas.
+
 21.10 Identify that Coulomb’s law applies only to (point-like)
 particles and objects that can be treated as particles.
 
+Identificar que la ley de Coulomb se aplica únicamente a partículas (puntuales) y objetos que pueden tratarse como partículas.
+
 21.11 If more than one force acts on a particle, find the net
 force by adding all the forces as vectors, not scalars.
+
+Si más de una fuerza actúa sobre una partícula, encuentre la fuerza neta sumando todas las fuerzas como vectores, no escalares.
+
 
 21.12 Identify that a shell of uniform charge attracts or repels
 a charged particle that is outside the shell as if all the
 shell’s charge were concentrated as a particle at the
 shell’s center.
+
+
 
 21.13 Identify that if a charged particle is located inside a shell
 of uniform charge, there is no net electrostatic force on the
