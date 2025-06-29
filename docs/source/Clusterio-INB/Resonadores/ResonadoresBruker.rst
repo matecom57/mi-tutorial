@@ -157,7 +157,7 @@ Las siguientes páginas de la wiki incluyen algunos tutoriales para el uso bási
 * :doc:`ResonadoresBruker-Conexion-Cryo`
 * :doc:`ResonadoresBruker-Paravision-EXvivo`
 * :doc:`ResonadoresBruker-Wobble-Superficie`
-+ :doc:`Bruker-B1Map.md`
+* :doc:`Bruker-B1Map`
 
 Checklists para uso del resonador
 ----------------------------------------

@@ -1,8 +1,5 @@
-Generar mapas de B1
+Generar mapas de B1 en Briker
 ===================
-
-Generar Mapas de B1 en Bruker
-----------------------------------------
 
 
 Paravision 7 incluye una secuencia para generar mapas de B1 basado en el método DREAM  `(Nehrke y Börnet, 2012) <https://onlinelibrary.wiley.com/doi/10.1002/mrm.24158>`_ .
