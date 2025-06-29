@@ -13,7 +13,7 @@ Herramientas para el procesamiento de imágenes.
 
 Aquí abajo encontraras unos de los software más utilizados en la comunidad científica de "resonólogos" con una breve introducción. Dale clic al nombre del software para ver información más detallada jusnto con manuales que han aportado los usuarios de la wiki. 
 
-+ :doc:`FSL/FSL`
++ :doc:`../FSL/FSL`
 
 FMRIB Software Library es una colección de herramientas muy popular para el procesamiento de imágenes estructurales, funcionales y de difusión. Tmabién cuenta con funciones que incluyen el análisis estadístico de dichas imágenes. FSL es completamente open source y esta bastante bien documentado, en su  `wiki <https://fsl.fmrib.ox.ac.uk/fsl/fslwiki>`_  puedes encontrar toda la información necesaria para empezar a procesar tus imágenes. 
 
