@@ -80,9 +80,9 @@ Contents
 
 .. toctree::
     :maxdepth: 1
-    :caption: c13inb
+    :caption: Clusterio-INB
 
-    c13inb.github.io.wiki/c13inb.rst
+    Clusterio-INB/c13inb.rst
 
 .. toctree::
     :maxdepth: 1
