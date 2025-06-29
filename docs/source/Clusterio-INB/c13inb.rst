@@ -10,6 +10,7 @@ Contents
     :maxdepth: 1
     :caption: Bash
 
+    Como_colaborar/Modificar-Wiki
     rocket_chat/rocket.chat
     Resonadores/Resonadores
     Cluster/Cluster
