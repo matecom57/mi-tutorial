@@ -1,5 +1,5 @@
-Preparación antena Cryo
-=======================
+Desconexión de la antena de superficie 2x2 y conexión de la antena cryo.
+==========================================
 
 Desconexión de la antena de superficie 2x2 y conexión de la antena cryo.
 
@@ -19,7 +19,7 @@ Desconexión de la antena de superficie 2x2 y conexión de la antena cryo.
 
 6.- Luego se busca el cable de la antena cryo {ubicado en la parte posterior del resonador, a un costado de la plataforma de conectores del resonador (espacio vacío a la izquierda)}. Este cable tiene un conector con un punto rojo y se conecta en la entrada con cubierta con punto rojo.
 
-[[images/cryo.png]]
+.. image:: cryo.png
 
 7.- Entonces, se quita la cubierta metálica ubicada al centro de la compuerta posterior del resonador y se cierra esta compuerta.
 
