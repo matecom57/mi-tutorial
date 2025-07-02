@@ -10,9 +10,8 @@ Antes de empezar, algunos detalles:
 Conversion de datos 
 ----------------------------------------
 
-+ Convertir de 
-:doc:`../Procesamiento_Imagen/Procesamiento-Imagen-De-DICOM-a-NIFTI`
-+ Convertir de :doc:`Procesamiento-Imagen-De-PARREC-a-NIFTI`
+* Convertir de :doc:`../Procesamiento_Imagen/Procesamiento-Imagen-De-DICOM-a-NIFTI`
+* Convertir de :doc:`../Procesamiento_Imagen/Procesamiento-Imagen-De-PARREC-a-NIFTI`
 
 
 Corrección de inhomogeneidades del campo magnético
