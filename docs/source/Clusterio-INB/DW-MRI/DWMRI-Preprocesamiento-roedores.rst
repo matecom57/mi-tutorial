@@ -72,7 +72,8 @@ Este paso es fundamental y normalmente el primer paso antes de cualquier otro. C
 
 Ten paciencia que el denoising es tardadito... pero una vez completado puedes ver tu nueva imagen:
 
-! `image <https://github.com/c13inb/c13inb.github.io/assets/129544525/b2013c6c-eefa-4647-ab5d-6965b27533df>`_ 
+.. image:: dwi01.png
+
 
 💡 Una bonita alternativa para el denoising es el algoritmo de  `LPCA de Jose Manjon <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0073021>`_ , encapsulado en el script ``inb_dwidenoise_LPCA_manjon.sh``. Suele quitar aún más ruido que ``dwidenoise`` (a veces demasiado, pero pruébalo!).
 
@@ -167,13 +168,15 @@ No olvides checar tus outputs!
    64A_dwi_eddy_outlier_report
    
 Donde entre los outputs más relevantes son:
-+ ``64A_dwi.nii.gz``: Nuestro output principal. Incluye las imágenes ya corregidas, a las que se les minimizaró el movimiento entre volúmenes, así como las inhomogeneidades geométricas inducidas por corrientes eddy. Además, las rebanadas outliers fueron remplazadas por datos factibles dado un modelo simple. Estas son las imágenes que se usarán después para cualquier modelo de DWI.
+
+* ``64A_dwi.nii.gz``: Nuestro output principal. Incluye las imágenes ya corregidas, a las 
+que se les minimizaró el movimiento entre volúmenes, así como las inhomogeneidades geométricas inducidas por corrientes eddy. Además, las rebanadas outliers fueron remplazadas por datos factibles dado un modelo simple. Estas son las imágenes que se usarán después para cualquier modelo de DWI.
+
+.. image:: dwi02.png
 
 
-<img src="https://github.com/c13inb/c13inb.github.io/assets/129544525/91417b1b-17ba-4745-8722-a712108621af" width="450" height="300">
-
-
-+ ``64A_dwi.eddy_rotated_bvecs``. Los vectores de los gradientes de difusión, una vez que fueron corregidos de acuerdo a las transformaciones geométricas que se le hicieron a cada volumen correspondiente. Por ejemplo, si un volumen se rotó 10 grados, el gradiente se rota también. En conjunto con ``64A_dwi.bval`` podremos usar cualquier modelo de difusión. 
+* ``64A_dwi.eddy_rotated_bvecs``. Los vectores de los gradientes de difusión, una vez que 
+fueron corregidos de acuerdo a las transformaciones geométricas que se le hicieron a cada volumen correspondiente. Por ejemplo, si un volumen se rotó 10 grados, el gradiente se rota también. En conjunto con ``64A_dwi.bval`` podremos usar cualquier modelo de difusión. 
 
 👁️  **Aquí hay unas consideraciones bastante importantes respecto a Eddy:**
 ----------------------------------------
@@ -183,7 +186,7 @@ Donde entre los outputs más relevantes son:
 
    sed -i 's/nan/0/g' 64A_dwi_eddy_rotated_bvecs
 
-<img src="https://github.com/c13inb/c13inb.github.io/assets/129544525/52811ba4-9c84-494e-9567-73405a632841" width="700" height="350">
+.. image:: dwi03.png
 
 
 2. De forma similar, el archivo ``.bval`` no tiene entradas con b=0 s/mm². El resonador calcula la contribución de los gradientes de codificación espacial al valor b, y habitualmente resulta en b=15 a 30 s/mm². Cambiar estas entradas a cero hará cambios realmente despreciables en toda estimación de parámetros de difusión, así que lo vamos a hacer ahora. 
@@ -205,7 +208,8 @@ Y ahora podemos hacer el cambio a 0. Escribimos un nuevo archivo ``bval_zeros``.
 
 3. La mera verdad no logra registrar bien los volúmenes con SNR muy bajo, lo que suele suceder con alta resolución y bvalues altos (por ejemplo b=3000 s/mm²). Para el modelo del tensor no son útiles los bvalues altos, por lo que se sugiere no llegar más allá de 1200. Sin embargo, la mayoría de los solvers modernos para ajustar el tensor le dan un peso mayor o menor a cada dato dependiendo de su potencial de ser outlier. Por lo tanto, incluso dejando los volúmenes de bvals altos, los mapas resultantes son harto bonitos.
 
-! ` <https://i.imgur.com/nsElYei.gif>`_ 
+.. image:: dwi04.gif
+
 
 En esta animación se aprecia que la posición espacial no es homogénea entre volúmenes. Los volúmenes con bvalue más alto están mal registrados con respecto a los otros shells.
 

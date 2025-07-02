@@ -34,11 +34,11 @@ Si queremos usar mrtrix debemos cambiar el formato de la tabla de gradientes a c
 
    mrconvert -fslgrad dwi.bvec dwi.bval dwi.nii.gz dwi.mif 
 
-El formato preferido de mrtrix es `````` .mif ``````, pero es perfectamente feliz leyendo  `````` .nii `````` y ``````.nii.gz ``````, así que por comodidad utilizamos estos últimos. Esto quiere decir que no vamos a generar ningún archivo `````` .mif ``````, pero sí nuestra tabla de gradientes. Entonces vamos a engañar un poco al script para que no genere el archivo `````` . mif ``````, utilizando la opción `````` -onlyGrads ``````. Por ejemplo:
+El formato preferido de mrtrix es ``.mif``, pero es perfectamente feliz leyendo  ``.nii`` y ``.nii.gz``, así que por comodidad utilizamos estos últimos. Esto quiere decir que no vamos a generar ningún archivo ``.mif``, pero sí nuestra tabla de gradientes. Entonces vamos a engañar un poco al script para que no genere el archivo ``. mif``, utilizando la opción ``-onlyGrads``. Por ejemplo:
 
 .. code:: Bash
 
    inb_mrtrix_nii2mif.sh dwi_ec.nii.gz dwi_ec.mif dwi.bvec dwi.bval -flip_y -flip_z -onlyGrads 
 
-Esto generará el archivo `````` dwi_ec_encoding.b `````` en el cual el sentido de los componentes  `` y`` y  ``z`` de los gradientes están invertidos. Esto se requiere por el cambio de formato, y es dependiente de cada protocolo de imagen. Para saber qué componentes hay que invertir se hace por ensayo y error.
+Esto generará el archivo ``dwi_ec_encoding.b`` en el cual el sentido de los componentes  ``y`` y  ``z`` de los gradientes están invertidos. Esto se requiere por el cambio de formato, y es dependiente de cada protocolo de imagen. Para saber qué componentes hay que invertir se hace por ensayo y error.
 
