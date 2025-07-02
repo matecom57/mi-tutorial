@@ -95,6 +95,8 @@ En la primer pestaña podemos hacer control de calidad de nuestros datos. Dando 
 
 .. image:: ds09.png
 
+..............................
+
 .. image:: ds10.png
 
 En el siguiente paso generamos una máscara binaria para únicamente procesar donde hay tejido. También seleccionamos el modelo de difusión a ajustar (DTI, GQI, o QSDR). Seleccionaré GQI, y doy clic a **Run Reconstruction**. Como podemos ver, podríamos seleccionar únicamente DTI si nos interesara, pero GQI de todas maneras va a hacer DTI, así que tenemos ambos con mínimo esfuerzo.
