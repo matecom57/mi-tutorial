@@ -14,7 +14,7 @@ Tutoriales de supervivencia
 
 * Videos en su canal de YouTube  `aqui <https://www.youtube.com/@fijichannel>`_  
 * Tutoriales y guias básicas de procesos y análisis  `aqui <https://imagej.net/imaging/index>`_ 
-* Cómo hacer _stitching_ (mosaicos) con :doc:`Fiji:stitching`
+* Cómo hacer _stitching_ (mosaicos) con :doc:`Fiji_stitching`
 
 
 ***
