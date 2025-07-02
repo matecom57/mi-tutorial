@@ -64,7 +64,7 @@ Y para visualizar los tensores sin que me distraigan los tensores gigantes del L
 
 Para finalmente visualizar:
 
-.. image:: ds03.png
+.. image:: ds03.jpg
 
 
 Tractografía
@@ -82,19 +82,20 @@ Al terminar de cargar (unos cuantos segundos), nos mostrará la _B-table_, una t
 .. image:: ds06.png
 
 ...
-! ` <https://i.imgur.com/zgCZJfM.png>`_ 
+
+.. image:: ds07.png
 
 La parte inferior de esta tabla me pregunta dónde guardar el archivo que se generará, y con qué nombre. Este archivo contendrá toda la información de las imágenes y los bvecs y bvals.
 
-! ` <https://i.imgur.com/Wps9vCw.png>`_ 
+.. image:: ds08.png
 
 En la pantalla principal de dsi-studio, ahora vemos el archivo que creamos (terminación ``.src.gz``). Le damos doble clic para comenzar a procesar.
 
 En la primer pestaña podemos hacer control de calidad de nuestros datos. Dando clic en cada columna de la _B-table_ podemos ver la imagen correspondiente, y cambiar rebanadas. Los botones nos permiten identificar rebanadas o volúmenes como datos a ignorar (en caso de que tengan artefactos).
 
-! ` <https://i.imgur.com/ZeBaQg1.png>`_ 
+.. image:: ds09.png
 
-! ` <https://i.imgur.com/NrlnfNQ.png>`_ 
+.. image:: ds10.png
 
 En el siguiente paso generamos una máscara binaria para únicamente procesar donde hay tejido. También seleccionamos el modelo de difusión a ajustar (DTI, GQI, o QSDR). Seleccionaré GQI, y doy clic a **Run Reconstruction**. Como podemos ver, podríamos seleccionar únicamente DTI si nos interesara, pero GQI de todas maneras va a hacer DTI, así que tenemos ambos con mínimo esfuerzo.
 
