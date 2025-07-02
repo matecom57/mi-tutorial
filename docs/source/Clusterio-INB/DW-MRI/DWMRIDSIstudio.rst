@@ -101,12 +101,12 @@ En la primer pestaña podemos hacer control de calidad de nuestros datos. Dando 
 
 En el siguiente paso generamos una máscara binaria para únicamente procesar donde hay tejido. También seleccionamos el modelo de difusión a ajustar (DTI, GQI, o QSDR). Seleccionaré GQI, y doy clic a **Run Reconstruction**. Como podemos ver, podríamos seleccionar únicamente DTI si nos interesara, pero GQI de todas maneras va a hacer DTI, así que tenemos ambos con mínimo esfuerzo.
 
-
-! ` <https://i.imgur.com/Hk6k3Nr.png>`_ 
+.. image:: ds11.png
 
 Esto generará un archivo ``.fib`` en la misma carpeta donde habíamos creado el archivo ``.src.gz``, y podremos encontrarlo en la pantalla principal de dsi-studio. Le damos doble clic.
 
-! ` <https://i.imgur.com/eOIXyTj.png>`_ 
+.. image:: ds12.png
+
 
 Esto abrirá una nueva pantalla para todo lo relacionado a tractografía.
 
@@ -114,28 +114,29 @@ Agreguemos la imagen T1 para que podamos hacer un mejor registro de imágenes ha
 
 Ahora habilitamos _autotrack_.
 
-! ` <https://i.imgur.com/1fDps7f.png>`_ 
+.. image:: ds13.png
 
 Y en **Target** Podemos seleccionar el fascículo que queramos ver, y le damos **Fiber tracking**
 
 
 Por ejemplo, el _Arcuate_Fasciculus_L_ :
-! ` <https://i.imgur.com/vzb46KZ.png>`_ 
+
+.. image:: ds14.png
 
 Esto aún lo podemos editar, usando regiones de interés que dibujamos en el panel inferior izquierdo, donde pueden apreciarse los streamlines que intersectan con el plano de imagen.
 
 Por ejemplo, vemos unos streamlines que se van demasiado inferiores en el lóbulo temporal,  y queremos quitarlos:
 
-! ` <https://i.imgur.com/Ly1F1lF.png>`_ 
+.. image:: ds15.png
 
 Dibujamos una región donde intersectan, y la convertimos en **ROA** (_region of avoidance_).
 
-! ` <https://i.imgur.com/U5JBu0n.png>`_ 
+.. image:: ds16.png
 
 Damos clic derecho a nuestro tracto _Arcuate_Fasciculus_L_ y seleccionamos **Filter Tracks by ROI/ROA/END**.
 
-! ` <https://i.imgur.com/MApBwzB.png>`_ 
+.. image:: ds17.png
 
 Veremos que esos streamlines desaparecen.
 
-! ` <https://i.imgur.com/zbEWM6b.png>`_ 
+.. image:: ds18.png
