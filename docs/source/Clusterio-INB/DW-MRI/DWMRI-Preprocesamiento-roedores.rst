@@ -215,6 +215,7 @@ En esta animación se aprecia que la posición espacial no es homogénea entre v
 
 3.- Corrección de inhomogeneidad de intensidades (biasfield correction)
 ----------------------------------------
+
 Este paso es también innecesario en caso de que se vaya a usar cualquier modelo que involucre dividir las DWI entre las b=0, como el modelo del tensor. De hecho, la enorme mayoría de los modelos hacen tal división en algún momento, pues lo que les interesa es la atenuación de la señal. 
 
 La notable excepción es deconvolución esférica (CSD), que estima la distribución de la probabilidad de orientaciones de fibras directamente de la señal DWI (no de la atenuación), a partir de la deconvolución de una función de respuesta que actúa como un prototipo de cómo se porta la señal DWI en el caso de una sola población de fibras. Como se estima una sola función de respuesta por set de datos, es crucial que la señal DWI tenga intensidades homogéneas en toda la extensión de la sustancia blanca. Esta última suposición se rompe fácilmente, sobre todo si adquirimos nuestras imágenes con una antena de superficie (como la 2x2 o la cryoprobe). 
@@ -230,10 +231,13 @@ Usaremos ``dwibiascorrect`` de mrtrix, que en realidad es una envoltura para ``N
      -ants.b [10,3] \
       64A_dwi.nii.gz \
       64A_dwi_biascorr.nii.gz 
-! ` <https://i.imgur.com/yVnbtRp.png>`_ 
+
+.. image::dwi05.png
+
 
 Checando el resultado del preprocesamiento
 ----------------------------------------
+
 Para terminar, veamos la diferencia entre un ajuste del modelo del tensor a los datos originales, y a los datos preprocesados. Usaremos mrtrix para hacer esta estimación, y truquitos para hacer todo en un jalón. Aprende a usar los pipes de mrtrix por  `aca <https://mrtrix.readthedocs.io/en/latest/getting_started/command_line.html#unix-pipelines>`_ . Haremos mapas RGB del vector principal de difusión, a los que llamaremos ``*_v1.nii.gz``.
 
 Primero, a partir de los datos originales:
@@ -250,7 +254,7 @@ Ahora, a partir de los datos con denoise y eddy (no requerimos corrección de in
 
 Y los vemos con ``mrview``:
 
-<img src="https://github.com/c13inb/c13inb.github.io/assets/129544525/6b5687ec-6477-405c-87d7-36fe41e73320" width="900" height="380">
+.. image:: dwi06.png
 
 Los mapas RGB son notablemente más claros cuando son derivados de imágenes preprocesadas. Hay mucho menos verde, que era causado por el drift de las imágenes a lo largo de la adquisición en dirección dorso-ventral, cosa que fue minimizada con el registro logrado con ``eddy``. Aún quedan detalles, pero ciertamente estas imágenes ya están trabajables, sobre todo en sustancia blanca.
 
@@ -357,7 +361,8 @@ Y nuestra nueva imágen!
 .. code:: Bash
 
    mrview inb_64A_dwi_deb.nii.gz
-! `image <https://github.com/c13inb/c13inb.github.io/assets/129544525/3ae921f0-e405-409d-88e7-e8a7b2422d3b>`_ 
+
+.. image:: dwi08.png
 
 
 Y al final, esta es la imágen que utilizarás para comenzar tus análisis. Mucha suerte! 😃 
