@@ -1,7 +1,7 @@
 rclone
 ======
 
- `rclone <https://rclone.org/>`_  te permite montar tu dropbox, google drive, amazon S3 y servicios similares como una carpeta local en linux!
+`rclone <https://rclone.org/>`_  te permite montar tu dropbox, google drive, amazon S3 y servicios similares como una carpeta local en linux!
 
 Todas las máquinas del cluster ya tienen instalado rclone. Para verificarlo, escribe ``rclone`` en la terminal y debería mostrar las instrucciones y opciones. Si no lo hace, entonces avisa.
 
@@ -24,7 +24,7 @@ Configuración de rclone
 
 6. Se abrirá nuestro navegador de internet de manera mágica, con una pantalla como:
 
-.. image::  rclone_dropbox_config.png
+.. image:: rclon01.png
 
 7. Finalmente le decimos que ``y`` a cuando nos pregunte si todo está bien.
 
