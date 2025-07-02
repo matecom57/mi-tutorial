@@ -8,12 +8,9 @@ Procesar datos de imágenes de difusión es bastante complicado, y hay muchos as
 
 + :doc:`DWMRI-Preprocesamiento-humanos`
 + :doc:`DWMRI-Preprocesamiento-roedores`
-+ :doc:`DWMRI:designer`
-+ :doc:`MRtrix3-Tractografia` con MRtrix3.
-+ :doc:`DWMRI:DSIstudio`
++ :doc:`MRtrix3-Tractografia`
 + :doc:`DWMRI-Multi-tensor`
 + :doc:`DWMRI-Registro`
-+ :doc:`DWI_GE`
-
++ :doc:`DWMRIDSIstudio`
 
 
