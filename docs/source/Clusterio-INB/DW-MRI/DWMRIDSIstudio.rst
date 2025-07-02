@@ -14,16 +14,17 @@ Tutorial DWI 2022
 Archivos:
 ----------------------------------------
 
-1. ``dwis.nii.gz`` : Imágenes de difusión
-1. ``dwis.bvec``   : Vectores del gradiente de difusión
-1. ``dwis.bval``   : b-valores
-1. ``revpe.nii.gz`` : Dos imágenes b=0 con codificación de fase en sentido inverso. Se usará para pre-procesamiento de ``dwis.nii.gz``
-1. ``revpe.bvec`` : vectores de difusión
-1. ``revpe.bval`` : b-valores.
+* 1. ``dwis.nii.gz`` : Imágenes de difusión
+* 2. ``dwis.bvec``   : Vectores del gradiente de difusión
+* 3. ``dwis.bval``   : b-valores
+* 4. ``revpe.nii.gz`` : Dos imágenes b=0 con codificación de fase en sentido inverso. Se usará 
+para pre-procesamiento de ``dwis.nii.gz``
+* 5. ``revpe.bvec`` : vectores de difusión
+* 6. ``revpe.bval`` : b-valores.
 
 Todos estos archivos fueron convertidos usando  ```dcm2niix`` <https://github.com/rordenlab/dcm2niix>`_ .
 
-! ` <https://i.imgur.com/FqToTEV.png>`_ 
+.. image:: ds01.png
 
 Las imágenes ``dwis.nii.gz`` tienen los ojos alargados, porque fueron adquiridas con _EPI positive blips_ (P>>A); son muchos volúmenes (106). En cambio, las imágenes revpe (4.nii.gz) tienen negative blips y son solamente 2 volúmenes (una b=0 y una DWI).
 
@@ -35,7 +36,7 @@ No entraremos en detalles de preprocesamiento en este tutorial. Se recomienda le
 
 Al terminar veremos que las imágenes están mucho menos distorsionadas:
 
-! ` <https://i.imgur.com/qBuEtJY.png>`_ 
+.. image:: ds02.png
 
 
 **Las imágenes preprocesadas de este tutorial, pre-cocinadas para fines prácticos, se llaman ``dwi_preproc_corrected.{bvec,bval,nii}``.**
@@ -63,7 +64,7 @@ Y para visualizar los tensores sin que me distraigan los tensores gigantes del L
 
 Para finalmente visualizar:
 
-! ` <https://i.imgur.com/tAb2zHY.jpg>`_ 
+.. image:: ds03.png
 
 
 Tractografía
@@ -73,12 +74,13 @@ Aunque yo soy muy feliz con  `mrtrix <https://www.mrtrix.org/>`_ , en este docum
 
 Empezamos cargando los datos. Primero que nada, nos aseguramos que tenemos archivos ``.bvec`` y ``.bval`` con el mismo nombre que nuestro archivo ``.nii.gz``. En mi caso tenemos ``dwi_preproc_corrected.nii``, ``dwi_preproc_corrected.bvec``, y ``dwi_preproc_corrected.bval``. 
 
-! ` <https://i.imgur.com/E9FNODn.png>`_ 
-! ` <https://i.imgur.com/7rkB3e0.png>`_ 
+.. image:: ds04.png
+.. image:: ds05.png
 
 Al terminar de cargar (unos cuantos segundos), nos mostrará la _B-table_, una tabla que nos muestra los valores $b$, y la dirección del gradiente de difusión. Podemos notar que comenzamos con imágenes $b=0$ (sin vector asociado), y después muchas imágenes DWI con $b=2500 s/mm^2$,  luego otras $b=0$ y finalmente unas DWIs con $b=800$
 
-! ` <https://i.imgur.com/szy8dSQ.png>`_ 
+.. image:: ds06.png
+
 ...
 ! ` <https://i.imgur.com/zgCZJfM.png>`_ 
 
