@@ -1,5 +1,5 @@
-Preprocesamiento en imágenes de humanos
-=======================================
+Preprocesamiento humanos
+========================
 
 Antes de empezar, algunos detalles:
 

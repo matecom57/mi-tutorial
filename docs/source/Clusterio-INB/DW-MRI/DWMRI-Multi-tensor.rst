@@ -1,5 +1,5 @@
-Multi-resolution discrete-search
-================================
+Multi-resolution
+================
 
 MULTI-RESOLUTION DISCRETE-SEARCH
 ----------------------------------------

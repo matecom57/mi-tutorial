@@ -1,5 +1,5 @@
-Preprocesamiento en roedores
-============================
+Preprocesamiento roedores
+=========================
 
 Analizar datos de difusión puede ser bastante sencillo, pero para lograrlo se requiere que los datos estén en buenas condiciones. Estos pasos buscan corregir algunos artefactos de adquisición y limpiar los datos lo más posible, de manera que la estimación de parámetros de difusión sea adecuada. El preprocesamiento es habitualmente más tardado y latoso que el procesamiento mismo, y cada paso es toda un tópico en constante investigación y desarrollo. Aquí se describen los pasos que seguimos habitualmente (2024). El ejercicio está orientado a datos de roedor adquiridos con nuestro Bruker de 7 T, pero los conceptos son los mismos para datos de humanos. Estos pasos pueden usarse en su mayoría sin modificaciones con adquisiciones EPI3D.
 
