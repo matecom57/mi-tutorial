@@ -1,7 +1,8 @@
-﻿PTER
-9
-SIMPLE LINEAR REGRESSION AND CORRELATION
+﻿SIMPLE LINEAR REGRESSION AND CORRELATION
+========================================
+
 CHAPTER OVERVIEW
+
 This chapter provides an introduction and overview of two common techniques for exploring the strength of the relationship between two variables. The first technique, linear regression, will help us find an objective way to predict or estimate the value of one variable given a value of another variable. The second technique, correlation, will help us find an objective measure of the strength of the relationship between two variables.
 Este capítulo proporciona una introducción y una descripción general de dos técnicas comunes para explorar la fuerza de la relación entre dos variables. La primera técnica, la regresión lineal, nos ayudará a encontrar una forma objetiva de predecir o estimar el valor de una variable dado el valor de otra variable. La segunda técnica, la correlación, nos ayudará a encontrar una medida objetiva de la fuerza de la relación entre dos variables.
 
