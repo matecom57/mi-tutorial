@@ -1,0 +1,2144 @@
+\documentclass[12pt]{article}
+\begin{document}
+
+\textbf{Two-Dimensional Maps }
+
+\hfill
+
+IN CHAPTER 1 we developed the fundamental properties of one-dimensional dynamics. The concepts of periodic orbits, stability, and 
+sensitive dependence of orbits are most easily understood in that context.
+
+In this chapter we will begin the transition from one-dimensional to many dimensional dynamics. The discussion centers around 
+two-dimensional maps, since much of the new phenomena present in higher dimensions appears there in its simplest form. For example, 
+we will expand our classiﬁcation of one-dimensional ﬁxed points as sinks and sources to include saddles, which are contracting in 
+some directions and expanding in others.
+
+
+2.1 M ATHEMATICAL M ODELS
+
+Maps are important because they encode the behavior of deterministic systems. We have discussed population models, which have a 
+single input (the present population) and a single output (next year’s population). The assumption of determinism is that the output 
+can be uniquely determined from the input. Scientists use the term “state” for the information being modeled. The state of the 
+population model is given by a single number—the population—and the state space is one-dimensional. We found in Chapter 1 that even a 
+model where the state runs along a one-dimensional axis, as G(x)  4x(1  x), can have extremely complicated dynamics.
+
+The changes in temperature of a warm object in a cool room can be modeled as a one-dimensional map. If the initial temperature 
+difference between the object and the room is D(0), the temperature difference D(t) after t minutes is
+
+D(t)  D(0)e Kt ,  
+
+(2.1)
+
+where K>0 depends on the speciﬁc heat of the object. We can call the model
+
+f(x)  e K x
+
+(2.2)
+
+the “time-1 map”, because application of this map advances the system one minute. Since e K is a constant, f is a linear 
+one-dimensional map, the easiest type we studied in Chapter 1. It is clear that the ﬁxed point x  0 is a sink because |e K |  1. 
+More generally, we could consider the map that advances the system T time units, the time-T map. For any ﬁxed time T, the time-T map 
+for this example is the linear one-dimensional map f(x)  e KT x, also written as
+
+x ↦ −→ e KT x.
+
+(2.3)
+
+Formula (2.1) is derived from Newton’s law of cooling, which is the differential equation
+
+dD  kD, dt
+
+(2.4)
+
+with initial value D(0). There is a basic assumption that the body is a good conductor so that at any instant, the temperature 
+throughout the body is uniform. Equation (2.3) is an example of the derivation of a map as the time-T map of a differential equation.
+
+In the examples above, the state space is one-dimensional, meaning that the information needed to advance the model in time is a 
+single number. This is in effect the deﬁnition of state in mathematical modeling: the amount of information
+needed to advance the model. Nothing else is relevant for the purposes of the model, so the state is completely sufﬁcient to 
+describe the conditions of the system. In the case of a one-dimensional map or a single differential equation, the state is a single 
+number. In the case of a two-dimensional map or a system of two coupled ordinary differential equations, it is a pair of numbers. The 
+state is essentially the initial information needed for the dynamical system model to operate and respond unambiguously with an 
+orbit. In partial differential equations models, the state space may be inﬁnite-dimensional. In such a case, inﬁnitely many numbers 
+are needed to specify the current state. For a vibrating string, modeled by a partial differential equation called the wave equation, 
+the state is the entire real-valued function describing the shape of the string.
+
+You are already familiar with systems that need more than one number to specify the current condition of the system. For thesystem 
+consisting of a projectile falling under Newton’s laws of motion, the state of the system at a given time can be speciﬁed fully by 
+six numbers. If we know the position  p  (x, y, z) and velocity  v  (v x , v y , v z ) of the projectile at time t  0, then the state 
+at any future time t is uniquely determined as
+
+x(t)  x(0)  v x (0)t
+
+y(t)  y(0)  v y (0)t
+
+z(t)  z(0)  v z (0)t  gt 2 ̸ 2
+
+v x (t)  v x (0)
+
+v y (t)  v y (0)
+
+v z (t)  v z (0)  gt,
+
+(2.5)
+
+where the constant g represents the acceleration toward earth due to gravity. (In meters-kilograms-seconds units, g  9.8 m/sec 2 .) 
+Formula (2.5) is valid as long as the projectile is aloft. The assumptions built into this model are that gravity alone is the only 
+force acting on the projectile, and that the force of gravity is constant. The formula is again derived from a differential equation 
+due to Newton, this time the law of motion
+
+F  ma.
+
+(2.6)
+
+Here the gravitational force is
+
+GMm F , r2 
+
+(2.7)
+
+where M is the mass of the earth, m is the mass of the projectile, G is the gravitational constant, and r is the distance from the 
+center of the earth to the projectile. Since r is constant to good approximation as long as the projectile is near the surface of the 
+earth, g can be calculated 
+as GM ̸ r 2 .
+
+The position of the falling projectile evolves according to a set of six equations (2.5). The identiﬁcation of a projectile’s motion 
+as a system with a six-dimensional state is one of the great achievements of Newtonian physics. However, it is rare to ﬁnd a 
+dynamical system that has an explicit formula like (2.5) that describes the evolution of the state’s future. More often we know a 
+formula that describes the new state in terms of the previous and/or current state.
+
+A map is a formula that describes the new state in terms of the previous state. We studied many such examples in Chapter 1. A 
+differential equation is a formula for the instantaneous rate of change of the current state, in terms of the current state. An 
+example of a differential equation model is the motion of a projectile far from the earth’s surface. For example, a satellite falling 
+to earth must follow the gravitational equation (2.7) but with a nonconstant distance r. That makes the acceleration a function of 
+the position of the satellite, rendering equations (2.5) invalid.
+
+A system consisting of two orbiting masses interacting through gravitational acceleration can be expressed as a differential 
+equation. Using Newton’s law of motion (2.6) and the gravitation formula (2.7), the motions of the two masses can be derived as a 
+function of time as in (2.5). We say that such a system is “analytically solvable”. The resulting formulas show that the masses 
+follow elliptical orbits around the combined center of mass of the two bodies.
+
+On the other hand, a system of three or more masses interacting exclusively through gravitational acceleration is not analytically 
+solvable. The socalled three-body problem, for example, has an 18-dimensional state space. To solve the equations needed to advance 
+the dynamics, one must know the three positions and three velocities of the point masses, a total of six three-dimensional vectors, 
+or 18 numbers. Although there are no exact formulas of type (2.5) in this case, one can use computational methods to approximate the 
+solution of the differential equations resulting from Newton’s laws of motion to get an idea of the complicated behavior that 
+results.
+
+At one time it was not known that there are no such exact formulas. In 1889, to commemorate the 60th birthday of King Oscar II of 
+Sweden and Norway, a contest was held to produce the best research in celestial mechanics pertaining to the stability of the solar 
+system, a particularly relevant n-body problem. The winner was declared to be Henri Poincar´e, a professor at the University of 
+Paris.
+
+Poincar´e submitted an entry full of seminal ideas. In order to make progress on the problem, he made two simplifying assumptions. 
+First, he assumed that there are three bodies all moving in a plane. Second, he assumed that two of
+the bodies were massive and that the third had negligible mass in comparison, so small that it did not affect the motion of the other 
+two. We can imagine two stars and a small asteroid. In general, the two large stars would travel in ellipses, but Poincar´e made 
+another assumption, that the initial conditions were chosen such that the two moved in circles, at constant speed, circling about 
+their combined center of mass.
+
+It is simplest to observe the trajectory of the asteroid in the rotating coordinate system in which the two stars are stationary. 
+Imagine looking down on the plane in which they are moving, rotating yourself with them so that the two appear ﬁxed in position. 
+Figure 2.1 shows a typical path of the asteroid. The horizontal line segment in the center represents the (stationary) distance 
+between the two larger bodies: The large one is at the left end of the segment and the medium one is at the right end. The tiny body 
+moves back and forth between the two larger bodies in a seemingly unpredictable manner for a long time. The asteroid gains speed as 
+it is ejected toward the right with sufﬁcient momentum so
+
+Figure 2.1 A trajectory of a tiny mass in the three-body problem.
+
+Two larger bodies are in circular motion around one another. This view is of a rotating coordinate system in which the two larger 
+bodies lie at the left and right ends of the horizontal line segment. The tiny mass is eventually ejected toward the right. Other 
+trajectories starting close to one of the bodies can be forever trapped.
+
+
+that it never returns. Other pictures, with different initial conditions, could be shown in which the asteroid remains forever close 
+to one of the stars.
+
+This three-body system is called the “planar restricted three-body problem”, but we will refer to it as the three-body problem. 
+Poincar´e’s method of analysis was based on the fact that the motion of the small mass could be studied, in a rather nonobvious 
+manner, by studying the orbit of a plane map (a function from  2 to  2 ). He discovered the crucial ideas of “stable and unstable 
+manifolds”, which are special curves in the plane (see Section 2.6 for deﬁnitions).
+
+On the basis of his entry Poincar´e was declared the winner. However, he did not fully understand the nature of the stable and 
+unstable manifolds at that time. These manifolds can cross each other, in so-called homoclinic points. Poincar´e was confused by 
+these points. Either he thought they didn’t exist or he didn’t understand what happened when they did cross. This error made his 
+general conclusions about the nature of the trajectories totally wrong. His error was detected after he had been declared the winner 
+but before his entry was published. He eventually realized that the existence of homoclinic points implied that there was incredibly 
+complicated motion near those points, behavior we now call “chaotic”.
+
+Poincar´e worked feverishly to revise his winning entry. The article “Sur les ´equations de la dynamique et le probl`eme des trois 
+corps” (on the equations of dynamics and the three-body problem) was published in 1890. In this 270-page work, Poincar´e established 
+convincingly that due to the possibility of homoclinic crossings, no general exact formula exists, beyond Newton’s differential 
+equations arising from (2.6) and (2.7), for making predictions of the positions of the three bodies in the future.
+
+Poincar´e succeeded by introducing qualitative methods into an area of study that had long been dominated by highly reﬁned 
+quantitative methods. The quantitative methods essentially involved developing inﬁnite series expansions for the positions and 
+velocities of the gravitational bodies. These series expansions were known to be problematic for representing near-collisions of the 
+bodies. Poincar´e was able to show through his geometric reasoning that these inﬁnite series expansions could not converge in 
+general.
+
+One of Poincar´e’s most important innovations was a simpliﬁed way to look at complicated continuous trajectories, such as those 
+resulting from differential equations. Instead of studying the entire trajectory, he found that much of the important information was 
+encoded in the points in which the trajectory passed through a two-dimensional plane. The order of these intersection points deﬁnes 
+a plane map. Figure 2.2 shows a schematic view of a trajectory C. The plane S is deﬁned by x 3  constant. Each time the trajectory C 
+pierces S in a downward
+
+Figure 2.2 A Poincar´e map derived from a differential equation.
+
+The map G is deﬁned to encode the downward piercings of the plane S by the solution curve C of the differential equation so that 
+G(A)  B, and so on.
+
+direction, as at points A and B in Figure 2.2, we record the point of piercing on the plane S. We can label these points by the 
+coordinates (x 1 , x 2 ). Let A represent the kth downward piercing of the plane and B the (k  1)th downward piercing. The Poincar´e 
+map is the two-dimensional map G such that G(A)  B. The Poincar´e map is similar in principle to the time-T map we considered above, 
+though different in detail. While the time-T map is stroboscopic (it logs the value of a variable at equal time intervals), the 
+Poincar´e map records plane piercings, which need not be equally spaced in time. Although Figure 2.2 shows a plane, more general 
+surfaces can be used. The plane or surface is called a surface of section.
+
+Given A, the differential equations can be solved with A as an initial value, and the solution followed until the next downward 
+piercing at B. Thus A uniquely determines B. This ensures that the map G is well-deﬁned. This map can be iterated to ﬁnd all 
+subsequent piercings of S. In general, the Poincar´e map technique reduces a k-dimensional, continuous-time dynamical system to a (k  
+1)-dimensional map. Much of the dynamical behavior of the trajectory C is present in the two-dimensional map G. For example, the 
+trajectory C is periodic (forms a closed curve, which repeats the same dynamics forever) if and only if the plane map G has a 
+periodic orbit.
+
+Now we can explain how the differential equations of the three-body problem shown in Figure 2.1 led Poincar´e to a plane map. In our 
+rotating coordinate system (where the two stars are ﬁxed at either end of the line segment) the differential equations involve the 
+position (x, y) and 
+velocity (˙x, y ˙ ) of the asteroid. These four numbers determine the current state of the asteroid.
+
+There is a constant of the motion, called the Hamiltonian. For this problem it is a function in the four variables that is constant 
+with respect to time. It is like total energy of the asteroid, which never changes. The following fact can be shown regarding this 
+Hamiltonian: for y  0 and for any particular x and x ˙ , the Hamiltonian reduces to y ˙ 2  C, where C 
+ 0. Thus when the vertical component of the position of the asteroid satisﬁes y  0, the vertical velocity component of the asteroid 
+is restricted to the two possible values  √ C.
+
+Because of this fact, it makes sense to consider the Poincar´e map, using upward piercings of the surface of section y  0. The 
+variable y is the vertical component of the position, so this corresponds to an upward crossing of the horizontal line segment in 
+Figure 2.1. There are two “branches” of the two-dimensional surface y  0, corresponding to the two possible values of y ˙ mentioned 
+above. (The two dimensions correspond to independent choices of the numbers x and x ˙ .) We choose one branch, say the one that 
+corresponds to the positive value of y ˙ , for our surface of section. What we actually do is follow the solution of the differential 
+equation, computing x, y, x ˙ , y ˙ as we go, and at the instant when y goes from negative to positive, we check the current y ˙ from 
+the differential equation. If y ˙  0, then an upward crossing of the surface has occurred, and x, x ˙ are recorded. This deﬁnes a 
+Poincar´e map.
+
+Starting the system at a particular value of (x, x ˙ ), where y is zero and is moving from negative to positive, signalled by y ˙  0, 
+we get the image F(x, x ˙ ) by recording the new (x, x ˙ ) the next time this occurs. The Poincar´e map F is a two-dimensional map. 
+What Poincar´e realized should now be clear to us. Even this restricted version of the full three-body problem contains much of the 
+complicated behavior possible in two-dimensional maps, including chaotic dynamics caused by homoclinic crossings, shown in Figure 
+2.24. Understanding these complications will lead us to the study of stable and unstable manifolds, in Section 2.6 at ﬁrst, and then 
+in more detail in Chapter 10.
+
+Work in the twentieth century has continued to reﬂect the philosophy that much of the chaotic phenomena present in differential 
+equations can be approached, through reduction by time-T maps and Poincar´e maps, by studying discrete-time dynamics. As you can 
+gather from the three-body example, Poincar´e maps are seldom simple to evaluate, even by computer. The French astronomer M. H´enon 
+showed in 1975 that much of the interesting phenomena present in Poincar´e maps of differential equations can be found as well in a 
+two-dimensional quadratic map, which is much easier to simulate on a computer. The version of H´enon’s map that we will study is
+
+f(x, y)  (a  x 2  by, x).
+
+(2.8)
+
+Note that the map has two inputs, x, y, and two outputs, the new x, y. The new y is just the old x, but the new x is a nonlinear 
+function of the old x and y. The letters a and b represent parameters that are held ﬁxed as the map is iterated.
+
+The nonlinear term x 2 in (2.8) is just about as unobtrusive as could be achieved. H´enon’s remarkable discovery is that this “barely 
+nonlinear” map displays an impressive breadth of complex phenomena. In its way, the H´enon map is to two-dimensional dynamics what 
+the logistic map G(x)  4x(1  x) is to one-dimensional dynamics, and it continues to be a catalyst for deeper understanding of 
+nonlinear systems.
+
+For now, set a  1.28 and b  0.3. (Here we diverge from H´enon, whose most famous example has b  0.3 instead.) If we start with the 
+initial condition (x, y)  (0, 0) and iterate this map, we ﬁnd that the orbit moves toward a periodtwo sink. Figure 2.3(a) shows an 
+analysis of the results of iteration with general initial values. The picture was made by starting with a 700 700 grid of points
+
+Figure 2.3 A square of initial conditions for the H´enon map with b  0.3. Initial values whose trajectories diverge to inﬁnity upon 
+repeated iteration are colored black. The crosses show the location of a period-two sink, which attracts the white initial values. 
+(a) For a  1.28, the boundary of the basin is a smooth curve. (b) For a  1.4, the boundary is “fractal” .
+
+
+in [2.5, 2.5] [2.5, 2.5] as initial values. The map (2.8) was iterated by computer for each initial value until the orbit either 
+converges to the period-two sink, or diverges toward inﬁnity. Points in black represent initial conditions whose orbits diverge to 
+inﬁnity, and points in white represent initial values whose orbits converge to the period-two orbit. The black points are said to 
+belong to the basin of inﬁnity, and the white points to the basin of the period-two sink. The boundary of the basin consists of a 
+smooth curve, which moves in and out of the rectangle of initial values shown here.
+
+EXERCISE T2.1
+
+Check that the period-two orbit of the H´enon map (2.8) with a  1.28 and b  0.3 is approximately  (0.7618, 0.5382), (0.5382, 0.7618)  
+. We will see how to ﬁnd these points in Section 2.5.
+
+COMPUTER EXPERIMENT 2.1
+
+Write a program to iterate the H´enon map (2.8). Set a  1.28 and b  0.3 as in Figure 2.3(a). Using the initial condition (x, y)  (0, 
+0), create the periodtwo orbit, and view it either by printing a list of numbers or by plotting (x, y) points. Change a to 1.2 and 
+repeat. How does the second orbit differ from the ﬁrst? Find as accurately as possible the value of a between 1.2 and 1.28 at which 
+the orbit behavior changes from the ﬁrst type to the second.
+
+If we instead set a  1.4, with b  0.3, and repeat the process, we see quite a different picture. First, the points of the period-two 
+sink have distanced themselves a bit from one another. More interesting is that the boundary of the basin is no longer a smooth 
+curve, but is in a sense inﬁnitely complicated. This is fractal structure, which we shall discuss in detail in Chapter 4.
+
+Next we want to show how a two-dimensional map can be derived from a differential equations model of a pendulum. Figure 2.4 shows a 
+pendulum swinging under the inﬂuence of gravity. We will assume that the pendulum is free to swing through 360 degrees. Denote by 
+the angle of the pendulum with respect to the vertical, so that  0 corresponds to straight down. Therefore and  2  should be 
+considered the same position of the pendulum.
+
+Figure 2.4 The pendulum under gravitational acceleration.
+
+The force of gravity causes the pendulum bob to accelerate in a direction perpendicular to the rod. Here denotes the angle of 
+displacement from the downward position.
+
+We will use Newton’s law of motion F  ma to ﬁnd the pendulum equation. The motion of the pendulum bob is constrained to be along a 
+circle of radius l, where l is the length of the pendulum rod. If is measured in radians, then the component of acceleration tangent 
+to the circle is l ¨ , because the component of position tangent to the circle is l . The component of force along the direction of 
+motion is mg sin . It is a restoring force, meaning that it is directed in the opposite direction from the displacement of the 
+variable . We will denote the ﬁrst and second time derivatives of by ˙ (the angular velocity) and ¨ (the angular acceleration) in 
+what follows. The differential equation governing the frictionless pendulum is therefore
+
+ml ¨  F  mg sin ,
+
+(2.9)
+
+according to Newton’s law of motion.
+
+From this equation we see that the pendulum requires a two-dimensional state space. Since the differential equation is second order, 
+the two initial values (0) and ˙ (0) at time t  0 are needed to specify the solution of the equation after time t  0. It is not 
+enough to specify (0) alone. Knowing (0)  0 means that the pendulum is in the straight down conﬁguration at time t  0, but we can’t 
+predict what will happen next without knowing the angular velocity at that time. For example, if the angle is 0, so that the pendulum 
+is hanging straight down, we need to know whether the angular velocity ˙ is positive or negative to tell whether the bob is moving 
+right or left. The 
+same can be said for knowing the angular velocity alone. Specifying and ˙ together at time t  0 will uniquely specify (t). Thus the 
+state space is two-dimensional, and the state consists of the two numbers ( , ˙ ).
+
+To simplify matters we will use a pendulum of length l  g, and to the resulting equation ¨   sin we add the damping term c ˙ , 
+corresponding to friction at the pivot, and a periodic term 
+ sin t which is an external force constantly providing energy to the pendulum. The resulting equation, which we
+
+Figure 2.5 Basins of three coexisting attracting ﬁxed points.
+
+Parameters for the forced damped pendulum are c  0.2, 
+  1.66. The basins are shown in black, gray, and white. Each initial value ( , ˙ ) is plotted according to the sink to which it is 
+attracted. Since the horizontal axis denotes angle in radians, the right and left edge of the picture could be glued together, 
+creating a cylinder. The rectangle shown is magniﬁed in ﬁgure 2.6.
+
+
+call the forced damped pendulum model, is
+
+
+sin t.
+
+(2.10)
+
+This differential equation includes friction (the friction constant is c) and the force of gravity, which pulls the pendulum bob 
+down, as well as the sinusoidal force 
+ sin t, which accelerates the bob ﬁrst clockwise and then counterclockwise, continuing in a periodic way. This periodic forcing 
+guarantees that the pendulum will keep swinging, provided 
+ is nonzero. The term 
+ sin t has period 2  .
+
+Because of the periodic forcing, if (t) is a solution of (2.10), then so is (t  2  ), and in fact so is (t  2  N) for each integer N. 
+Assume that (t) is a solution of the differential equation (2.10), and deﬁne u(t)  (t  2  ). Why is u(t) also a solution of (2.10)? 
+Note ﬁrst that u ˙ (t)  ˙ (t  2  ) and ¨u(t)  ¨ (t  2  ). Second, since (t) is assumed to be a solution for all t, (2.10) implies
+
+¨ (t  2  )  c ˙ (t  2  )  sin (t  2  )  
+ sin(t  2  ).
+
+(2.11)
+
+Since the nonhomogeneous term of the differential equation is periodic with period 2  , sin t  sin(t  2  ), it follows that
+
+¨u(t)  c˙u(t)  sin u(t)  
+ sin t.
+
+(2.12)
+
+(a)
+
+(b)
+
+Figure 2.6 Detail views of the pendulum basin.
+
+(a) Magniﬁcation of the rectangle shown in Figure 2.5. (b) Magniﬁcation of the rectangle shown in (a).
+
+
+Note that this argument depends on the fact that u(t) is a translation of (t) by exactly a multiple of 2  . The argument fails if we 
+choose, for example, u(t)  (t   ̸ 2) (assuming 
+  0).
+
+
+We conclude from this fact that the time-2  map of the forced damped ˙1  pendulum is well-deﬁned. If ( 1 , ) is the result of 
+starting with initial conditions ˙0  ( 0 , ) at time t  0 and following the differential equation for 2  time units, ˙ 1 ˙0  then ( 1 
+, ) will also be the result of starting with initial conditions ( 0 , ) at time t  2  (or 4  , 6  , . . .) and following the 
+differential equation for 2  time units. This fact allows us to study many of the important features by studying the time-2  map of 
+the pendulum. Because the forcing is periodic with period 2  , the action of the differential equation is the same between 2N  and 
+2(N  1)  for each integer N. Although the state equations for this system are differential equations, we can learn a lot of 
+information about it by viewing snapshots taken each 2  time units.
+
+When the pendulum is started at time t  0, its behavior will be determined by the initial values of and ˙ . The differential equation 
+uniquely determines the values of and ˙ at later times, such as t  2  . If we write ( 0 , ˙ 0 ) for the ˙1  initial values and ( 1 , 
+) as the values at time 2  , we can deﬁne the time-2  map F by
+
+˙ 0 ˙1  F( 0 , )  ( 1 , ).
+
+(2.13)
+
+Just because we give the time-2  map a name does not mean that there is a simple formula for computing it. Analyzing the time-2  map 
+is different from analyzing the H´enon map, in the sense that there is no simple expression for the former map. The differential 
+equation must be solved from time 0 to time 2  in order to iterate the map. For this example, investigation must be carried out 
+largely by computer.
+
+Figure 2.5 shows the basins of three coexisting attractors for the time-2  map of the forced damped pendulum. Here we have set the 
+forcing parameter 
+  1.66 and the damping parameter c  0.2. The picture was made by solving the differential equation for an initial condition 
+representing each pixel, and coloring the pixel white, gray, or black depending on which sink orbit attracts the orbit.
+
+The three attractors are one ﬁxed point and two period-two orbits. There are ﬁve other ﬁxed points that are not attractors. This 
+system displays both great simplicity, in that the stable behaviors (sinks) are periodic orbits of low period, and great complexity, 
+in that the boundaries between the three basins are inﬁnitely-layered, or fractal.
+
+Figure 2.6 shows further detail of the pendulum basins. Part (a) zooms in on the rectangle in Figure 2.5; part (b) is a further 
+magniﬁcation. Note that the level of complication does not decrease upon magniﬁcation. The fractal structure continues on ﬁner and 
+ﬁner scales. Color Plates 3–10 show an alternate setting of parameters for which four basins exist.
+
+For other sets of parameter values, there are apparently no sinks for the forced damped pendulum, ﬁxed or periodic. Figure 2.7 shows 
+a long orbit of the pendulum with parameter settings c  0.05, 
+  2.5. One-half million points are shown. If these points were erased, and the next one-half million points were plotted, the picture 
+would look the same. There are many ﬁxed points and periodic orbits that coexist with this orbit. Some of them are shown in Figure 
+2.23(a).
+
+
+Figure 2.7 A single orbit of the forced damped pendulum with c  0.05,   2.5.
+
+Different initial values yield essentially the same pattern, unless the initial value is an unstable periodic orbit, of which there 
+are several (see Figure 2.23).
+
+
+2.2 SINKS , SOURCES , AND SADDLES
+
+We introduced the term “sink” in our discussion of one-dimensional maps to refer to a ﬁxed point or periodic orbit that attracts an  
+-neighborhood of initial values. A source is a ﬁxed point that repels a neighborhood. These deﬁnitions make sense in 
+higher-dimensional state spaces without alteration. In the plane, for example, the neighborhoods in question are disks (interiors of 
+circles).
+
+Definition 2.1  x m 2 . Let p  (p 1 , p 2 , . . . , p m )   m , and let  be a positive number. The -neighborhood N  (p) is the set  v   
+m : |v  p|    
+, the set of points within Euclidean distance  of p. We sometimes call N  (p) an -disk centered at p.
+
+Deﬁnition 2.2 Let f be a map on  m and let p in  m be a ﬁxed point, that is, f(p)  p. If there is an   0 such that for all v in the  
+-neighborhood N  (p), lim k→ f k (v)  p, then p is a sink or attracting ﬁxed point. If there is an  -neighborhood N  (p) such that 
+each v in N  (p) except for p itself eventually maps outside of N  (p), then p is a source or repeller.
+
+Figure 2.8 shows schematic views of a sink and a source for a two-dimensional map, along with a typical disk neighborhood and its 
+image under the map. Along with the sink and source, a new type of ﬁxed point is shown in Figure 2.8(c), which cannot occur in a 
+one-dimensional state space. This type of ﬁxed point, which we will call a saddle, has at least one attracting direction and at 
+least one repelling direction. A saddle exhibits sensitive dependence on initial conditions, because of the neighboring initial 
+conditions that escape along the repelling direction.
+
+EXAMPLE 2.3
+
+Consider the two-dimensional map
+
+f(x, y)  (x 2  0.4y, x).
+
+(2.14)
+
+This is a version of the H´enon map considered earlier in this chapter, with the parameters set at a  0 and b  0.4.
+
+
+Figure 2.8 Local dynamics near a ﬁxed point.
+
+The origin is (a) a sink, (b) a source, and (c) a saddle. Shown is a disk N and its iterate under the map f.
+
+EXERCISE T2.2
+
+Show that the map in (2.14) has exactly two ﬁxed points, (0, 0) and (0.6, 0.6).
+
+Figure 2.9 shows the two ﬁxed points. Around each is drawn a small disk N of radius 0.3. Also shown are the images f(N) and f 2 (N) 
+of each disk. The ﬁxed point (0, 0) is a sink, and the ﬁxed point (0.6, 0.6) is a saddle. Each time the map is iterated, the disks 
+shrink to 40% of their previous size. Therefore f(N) is 40% the size of N, and f 2 (N) is 16% the size of N. We will explain the 
+origin of these numbers in Remark 2.15.
+
+Although saddles, as well as sources, are unstable ﬁxed points (they are sensitive to initial conditions), they play surprising 
+roles in the dynamics. In Figure 2.10(a), the basin of the sink (0, 0) is shown in white. The entire square is the box [2, 2] [2, 2], 
+and the sink is the cross at the center. Not all of the white basin is shown: it has inﬁnite area. The points in black diverge under 
+iteration by f; they are in the basin of inﬁnity. You may wonder about the ﬁnal disposition of the points along the boundary 
+between the two basins. Do they go in or out? The answer is: neither. In Figure 2.10(b), the set of points that converge to the 
+saddle (0.6, 0.6) is plotted, along with the saddle denoted by the cross. Although not an attractor, the saddle evidently plays a 
+decisive role in determining which points go to which basin.
+
+Figure 2.9 Local dynamics near ﬁxed points of the H´enon map.
+
+The crosses mark two ﬁxed points of the H´enon map f with a  0, b  0.4, in the square [1.5, 0.5] [1.5, 0.5]. Around each ﬁxed point 
+a circle is drawn along with its two forward images under f. On the left is a saddle: the images of the disk are becoming 
+increasingly long and thin. On the right the images are shrinking, signifying a sink.
+
+Attractors, as well as basins, can be more complicated than those shown in Figure 2.10. Consider the H´enon map (2.8) with a  2 and b  
+0.3. In Figure 2.11 the dark area is again the basin of inﬁnity, while the white set is the basin for the two-piece attractor that 
+looks like two hairpin curves.
+
+Our goal in the next few sections is to ﬁnd ways of identifying sinks, sources and saddles from the deﬁning equations of the map. 
+In Chapter 1 we found that the key to deciding the stability of a ﬁxed point is the derivative at the point. Since the derivative 
+determines the tangent line, or best linear approximation near the point, it determines the amount of shrinking/stretching in the 
+vicinity of the point. The same mechanism is operating in higher dimensions. The action of the dynamics in the vicinity of a ﬁxed 
+point is governed by the best linear approximation to the map at the point. This best linear approximation is given by the Jacobian 
+matrix, a matrix of partial derivatives calculated from the map. We will deﬁne the Jacobian matrix in Section 2.5. To ﬁnd out what 
+it can tell us, we need to fully understand linear maps ﬁrst. For linear maps, the Jacobian matrix is equal to the map itself.
+
+Figure 2.10 Basins of attraction for the H´enon map with a  0, b  0.4.
+
+(a) The cross marks the ﬁxed point (0, 0). The basin of the ﬁxed point (0, 0) is shown in white; the points in black diverge to 
+inﬁnity. (b) The initial conditions that are on the boundary between the white and black don’t converge to (0, 0) or inﬁnity; 
+instead they converge to the saddle (0.6, 0.6), marked with a cross. This set of boundary points is the stable manifold of the saddle 
+(to be discussed in Section 2.6).
+
+Figure 2.11 Attractors for the H´enon map with a  2, b  0.3.
+
+Initial values in the white region are attracted to the hairpin attractor inside the white region. On each iteration, the points on 
+one piece of the attractor map to the other piece. Orbits from initial values in the black region diverge to inﬁnity.
+
+
+2.3 LINEAR MAPS
+
+The linear maps on  2 are those of the particularly simple form v A is a 2 2 matrix:
+
+Av, where
+
+x a 11 a 12 x a11 x  a12 y A   . y a 21 a 22 y a21 x  a22 y ( ) ( )( ) ( )
+
+(2.15)
+
+Deﬁnition 2.4 A map A(v) from  m to  m is linear if for each a, b  , and v, w   m , A(av  bw)  aA(v)  bA(w). Equivalently, a linear 
+map A(v) can be represented as multiplication by an m m matrix.
+
+Every linear map has a ﬁxed point at the origin. This is analogous to the one-dimensional linear map f(x)  ax. The stability of the 
+ﬁxed point will be investigated the same way as in Chapter 1. If all of the points in a neighborhood of the ﬁxed point (0, 0) 
+approach the ﬁxed point when iterated by the map, we consider the ﬁxed point to be an attractor.
+
+------------------------------------------------------------------------------------
+
+In some cases the dynamics for a two-dimensional map resemble one-dimensional dynamics. 
+Recall that A is an eigenvalue of the matrix A if there is a nonzero vector v such that
+
+ v.vector v such that
+
+ , we can write down a special trajectory
+
+
+
+
+
+We will begin by looking at three important examples of linear maps on  2 . In fact, the three different types of 2 2 matrices we 
+will encounter will be more than just good examples, they will be all possible examples, up to change of coordinates.
+
+62 2.3 L I N E A R M A P S
+
+E XAM PLE 2.5
+
+[Distinct real eigenvalues.] Let v  (x, y) denote a two-dimensional vector, and let A(v) be the map on  2 deﬁned by
+
+A(x, y)  (ax, by).
+
+Each input is a two-dimensional vector; so is each output. Any linear map can be represented by multiplication by a matrix, and 
+following tradition we use A also to represent the matrix. Thus
+
+A(v)  Av 
+
+a 0 (
+
+0 b
+
+x y )( )
+
+.
+
+(2.16)
+
+The eigenvalues of the matrix A are a and b, with associated eigenvectors (1, 0) and (0, 1), respectively. For the purposes of this 
+example, we will assume that they are not equal, although most of what we say now will not depend on that fact. Part of the 
+importance of this example comes from the fact that a large class of linear maps can be expressed in the form (2.16), if the right 
+coordinate system is used. For example, it is shown in Appendix A that any 2 2 matrix with distinct real eigenvalues takes this form 
+when its eigenvectors are used to form the basis vectors of the coordinate system.
+
+For the map in Example 2.5, the result of iterating the map n times is represented by the matrix
+
+a n 0 An  . 0 bn  ( )
+
+(2.17)
+
+The unit disk is mapped into an ellipse with semi-major axes of length |a| n along the x-axis and |b| n along the y-axis. An epsilon 
+disk N  (0, 0) would become an ellipse with axes of length |a| n and |b| n . For example, suppose that a and b are smaller than 1 in 
+absolute value. Then this ellipse shrinks toward the origin as n → , so (0, 0) is a sink for A. If |a|, |b|  1, then the origin is a 
+source. On the other hand, if |a|  1  |b|, we see dynamical behavior that is not seen in one-dimensional maps. As n is increased, the 
+ellipse grows in the x-direction and shrinks in the y-direction, essentially growing to look like the x-axis as n → . In Figure 
+2.12, we plot the unit disk and its two iterates under A where we set a  2 and b  1 ̸ 2. In this case, the origin is neither a sink 
+nor a source. If the ellipses formed by successive iterates of the map grow without bound along one direction and shrink to zero 
+along another, we will call the origin a saddle.
+
+63 T WO -D I M E N S I O N A L M A P S
+
+y
+
+2
+
+-4
+
+4
+
+x
+
+-2
+
+Figure 2.12 The unit disk and two images of the unit disk under a linear map. The origin is a saddle ﬁxed point.
+
+Points act as if they were moving along the surface of a saddle under the inﬂuence of gravity. A cowboy who spills coffee on his 
+saddle will see it run toward the center along the front-to-back axis of the saddle (the y-axis in Figure 2.13) and run away from the 
+center along the side-to-side axis (the x-axis in Figure 2.13). Presumably, a drop situated at the exact center of the saddle would 
+stay there (our assumption is that the horse is not moving).
+
+We see the same behavior for the iteration of points in Figure 2.14, which illustrates the linear map represented by the matrix
+
+A
+
+2 0 (
+
+0
+
+)
+
+.
+
+(2.18)
+
+0.5
+
+y
+
+x
+
+Figure 2.13 Dynamics near a saddle point.
+
+Points in the vicinity of a saddle ﬁxed point (here the origin in the xy-plane) move as if responding to the inﬂuence of gravity on 
+a saddle.
+
+64 2.3 L I N E A R M A P S
+
+y
+
+x
+
+Figure 2.14 Saddle dynamics.
+
+Successive images of points near a saddle ﬁxed point are shown.
+
+A typical point (x 0 , y 0 ) maps to (2x 0 , 1 2 y 0 ), and then to (4x 0 , 1 4 y 0 , ), and so on. Notice that the product of the x- 
+and y- coordinates is the constant quantity x 0 y 0 , so that orbits shown in Figure 2.14 traverse the hyperbola xy  constant  x 0 y 
+0 . More generally, for a linear map A on  2 , the origin is a saddle if and only if iteration of the unit disk results in ellipses 
+whose two axis lengths converge to zero and inﬁnity, respectively.
+
+A simpliﬁcation can be made when analyzing small neighborhoods under v linear maps. Because linearity implies A(v)  |v|A( |v| ), the 
+image of a vector v can be found by mapping the unit vector in the direction of v, followed by scalar multiplication by the magnitude 
+|v|. The effect of the map on a small disk neighborhood of the origin is just a scaled-down version of the effect on the unit disk N  
+N 1 (0, 0)   v : |v|  1  . As a result we will often restrict our attention to the effect of the matrix on the unit disk. For 
+example, the image of the unit disk centered at the origin under multiplication by any matrix is a ﬁlled ellipse centered at the 
+origin. If the radius of the disk is r instead of 1, the resulting ellipse will also be changed precisely by a factor of r. (The 
+semi-major axes will be changed by a factor of r.)
+
+E XAM PLE 2.6
+
+[Repeated eigenvalue.] For an example where the eigenvalues are not distinct, let
+
+A
+
+a 0 (
+
+1 a
+
+)
+
+.
+
+(2.19)
+
+65 T WO -D I M E N S I O N A L M A P S
+
+The eigenvalues of an upper triangular matrix are its diagonal entries, so the matrix has a repeated eigenvalue of a. Check that
+
+a n An a n1 . 0 a ( )
+
+(2.20)
+
+Therefore the effect of A n on vectors is
+
+x ax  ny A n a n1 . y ay ( ) ( )
+
+(2.21)
+
+✎
+
+E XERCISE T2.3
+
+(a) Verify equation (2.20). (b) Use equation (2.21) to show that the ﬁxed point (0, 0) is a sink if |a|  1 and a source if |a|  1.
+
+E XAM PLE 2.7
+
+[Complex eigenvalues.] Let
+
+A
+
+a b (
+
+b a
+
+)
+
+.
+
+(2.22)
+
+This matrix has no real eigenvalues. The eigenvalues of this matrix are a  bi and a  bi, where i  √ 1. The corresponding 
+eigenvectors are (1, i) and (1, i), respectively. Fortunately, this information can be interpreted in terms of real vectors. A more 
+intuitive way to look at this matrix follows from multiplying and dividing by r  √ a 2  b 2 . Then
+
+a ̸ r b ̸ r cos  sin A  r  √ a 2  b 2 . b r a r sin cos ( ̸ ̸ ) ( )
+
+(2.23)
+
+Here we used the fact that any pair of numbers c, s such that c 2  s 2  1 can be written as c  cos and s  sin for some angle . The 
+angle can be identiﬁed as  arctan(b ̸ a). It is now clear that multiplication by this matrix rotates points about the origin by an 
+angle , and multiplies the distances by √ a 2  b 2 . Therefore it is a combination of a rotation and a dilation.
+
+✎
+
+E XERCISE T2.4
+
+Verify that multiplication by A rotates a vector by arctan(b ̸ a) and stretches
+
+by a factor of √ a 2  b 2 .
+
+66 2.4 C O O R D I N AT E C H A N G E S
+
+In summary, the effect of multiplication by A on the length of a vector is contraction/expansion by a factor of √ a 2  b 2 . It 
+follows that the stability result is the same as in the previous two cases: If the magnitude of the eigenvalues is less than 1, the 
+origin is a sink; if greater than 1, a source.
+
+2.4 C OORDINATE C HANGES
+
+Now that we have some experience with iterating linear maps, we return to the fundamental issue of how a matrix represents a linear 
+map. Changes of coordinates can simplify stability calculations for higher-dimensional maps.
+
+A vector in  m can be represented in many different ways, depending on the coordinate system chosen. Choosing a coordinate system is 
+equivalent to choosing a basis of  m ; the coordinates of a vector are simply the coefﬁcients which express the vector in that 
+basis. Changing the basis of  m requires changing the matrix representing the linear map A(v). In particular, let S be a square 
+matrix whose columns are the new basis vectors. Then the matrix S 1 AS represents the linear map in the new basis. A matrix of form S 
+1 AS, where S is a nonsingular matrix, is similar to A.
+
+Similar matrices have the same set of eigenvalues and the same determinant. The determinant det(A)  a 11 a 22  a 12 a 21 is a measure 
+ c. It stands to reason that area transformation should be independent of the choice of coordinates. See Appendix A for justiﬁcation 
+of these statements and for a thorough discussion of changes of coordinates.
+
+Matrices that are similar have the same dynamical properties when viewed as maps, since they only differ by the coordinate system 
+used to view them. For example, the property that a small neighborhood of the ﬁxed point origin is attracted to the origin is 
+independent of the choice of coordinates. If (0, 0) is a sink under A, it remains so under S 1 AS. This puts us in position to 
+analyze the dynamics of all linear maps on  2 , because of the following fact: All 2 2 matrices are similar to one of Examples 2.5, 
+2.6, 2.7. See Appendix A for a proof of this fact.
+
+Since similar matrices have identical eigenvalues, deciding the stability of the origin for a linear map A(v) is as simple as 
+computing the eigenvalues of a matrix representation A. For example, if the eigenvalues a and b of A are real and distinct, then A is 
+similar to the matrix
+
+a 0 A2  . 0 b ( )
+
+(2.24)
+
+67 T WO -D I M E N S I O N A L M A P S
+
+Therefore the map has this matrix representation in some coordinate system. Referring to Example 2.5, we see that the origin is a 
+sink if |a|, |b|  1 and a source if |a|, |b|  1. The same analysis works for matrices with repeated eigenvalues, or a pair of complex 
+eigenvalues. Summing up, we have proved the m  2 version of the following theorem.
+
+Theorem 2.8 Let A(v) be a linear map on  m , which is represented by the matrix A (in some coordinate system). Then
+
+1. The origin is a sink if all eigenvalues of A are smaller than one in absolute value;
+
+2. The origin is a source if all eigenvalues of A are larger than one in absolute value.
+
+In dimensions two and greater, we must also consider linear maps of mixed stability, i.e., those for which the origin is a saddle.
+
+Deﬁnition 2.9 Let A be a linear map on  m . We say A is hyperbolic if A has no eigenvalues of absolute value one. If a hyperbolic 
+map A has at least one eigenvalue of absolute value greater than one and at least one eigenvalue of absolute value smaller than one, 
+then the origin is called a saddle.
+
+Thus there are three types of hyperbolic maps: ones for which the origin is a sink, ones for which the origin is a source, and ones 
+for which the origin is a saddle. Hyperbolic linear maps are important objects of study because they have well-deﬁned expanding and 
+contracting directions.
+
+2.5 N ONLINEAR M APS AND THE
+
+J ACOBIAN M ATRIX
+
+So far we have discussed linear maps, which always have a ﬁxed point at the origin. We now want to discuss nonlinear maps, and in 
+particular how to determine the stability of ﬁxed points.
+
+Our treatment of stability in Chapter 1 is relevant to this case. Theorem 1.5 showed that whether a ﬁxed point of a one-dimensional 
+nonlinear map is a sink or source depends on its “linearization”, or linear part, near the ﬁxed point. In the one-dimensional case 
+the linearization is given by the derivative at the ﬁxed point. If p is a ﬁxed point and h is a small number, then the change in 
+the
+
+68 2.5 N O N L I N E A R M A P S A N D T H E J AC O B I A N M AT R I X
+
+output of the map at p  h, compared to the output at p, is well approximated by the linear map L(h)  Kh, where K is the constant 
+number f′ (p). In other words,
+
+f(p  h)  f(p)  hf′ (p).
+
+(2.25)
+
+Our proof of Theorem 1.5 was based on the fact that the error in this approximation was of size proportional to h 2 . This can be 
+made as small as desired by restricting attention to sufﬁciently small h. If |f′ (p)|  1, the ﬁxed point p is a sink, and if |f′ 
+(p)|  1, it is a source. The situation is very similar for nonlinear maps in higher dimensions. The place of the derivative in the 
+above discussion is taken by a matrix.
+
+Deﬁnition 2.10 Let f  (f 1 , f 2 , . . . , f m ) be a map on  m , and let p   m . The Jacobian matrix of f at p, denoted Df(p), is 
+the matrix
+
+ (p) ⎝  x 1  x m ⎠
+
+of partial derivatives evaluated at p.
+
+Given a vector p and a small vector h, the increment in f due to h is approximated by the Jacobian matrix times the vector h:
+
+ h, (2.26) where again the error in the approximation is proportional to |h| 2 for small h. If we assume that f(p)  p, then for a 
+ h in output.
+
+As long as this deviation remains small (so that |h| 2 is negligible and our approximation is valid), the action of the map near p is 
+essentially the same as the linear map h ↦ → Ah, where A  Df(p), with ﬁxed point h  0. Small disk neighborhoods centered at h  0 
+(corresponding to disks around p) map to regions approximated by ellipses whose axes are determined by A. In that case, we can appeal 
+to Theorem 2.8 for information about linear stability for higher-dimensional maps in order to understand the nonlinear case.
+
+The following theorem is an extension of Theorems 1.5 and 2.8 to higher dimensional nonlinear maps. It determines the stability of a 
+map at a ﬁxed point based on the Jacobian matrix at that point. The proof is omitted.
+
+69 T WO -D I M E N S I O N A L M A P S
+
+Theorem 2.11 Let f be a map on  m , and assume f(p)  p.
+
+1. If the magnitude of each eigenvalue of Df(p) is less than 1, then p is a sink.
+
+2. If the magnitude of each eigenvalue of Df(p) is greater than 1, then p is a source.
+
+Just as linear maps of  m for m  1 can have some directions in which orbits diverge from 0 and some in which orbits converge to 0, so 
+ﬁxed points of nonlinear maps can attract points in some directions and repel points in others.
+
+Deﬁnition 2.12 Let f be a map on  m , m 
+ 1. Assume that f(p)  p. Then the ﬁxed point p is called hyperbolic if none of the eigenvalues of Df(p) has magnitude 1. If p is 
+hyperbolic and if at least one eigenvalue of Df(p) has magnitude greater than 1 and at least one eigenvalue has magnitude less than 
+1, then p is called a saddle. (For a periodic point of period k, replace f by f k .)
+
+Saddles are unstable. If even one eigenvalue of Df(p) has magnitude greater than 1, then p is unstable in the sense previously 
+described: Almost any perturbation of the orbit away from the ﬁxed point will be magniﬁed under iteration. In a small epsilon 
+neighborhood of p, f behaves very much like a linear map with an eigenvalue that has magnitude greater than 1; that is, the orbits of 
+most points near p diverge from p.
+
+E XAM PLE 2.13
+
+The H´enon map
+
+f a,b (x, y)  (a  x 2  by, x),
+
+(2.27)
+
+where a and b are constants, has at most two ﬁxed points. Setting a  0 and b  0.4, f has the two ﬁxed points (0, 0) and (0.6, 0.6). 
+The Jacobian matrix Df is
+
+( Evaluated at (0, 0), the Jacobian matrix is
+
+Df(x, y) 
+
+2x 1
+
+b 0
+
+)
+
+.
+
+(2.28)
+
+0 0.4 , 1 0 ( ) with eigenvalues  √ 0.4, approximately equal to 0.632 and 0.632. Evaluated at (0.6, 0.6), the Jacobian is
+
+Df(0, 0) 
+
+Df(0.6, 0.6) 
+
+1.2 0.4 1 0 (
+
+)
+
+,
+
+70 2.5 N O N L I N E A R M A P S A N D T H E J AC O B I A N M AT R I X
+
+with eigenvalues approximately equal to 1.472 and 0.272. Thus (0, 0) is a sink and (0.6, 0.6) is a saddle.
+
+For the parameter values a  0.43, b  0.4, there is a period-two orbit for the map. Check that  (0.7, 0.1), (0.1, 0.7)  is such an 
+orbit. In order to check the stability of this orbit, we need to compute the Jacobian matrix of f 2 evaluated at (0.7, 0.1). Because 
+ Df(x). We compute
+
+ Df((0.7, 0.1)) 2(0.1) 0.4 2(0.7) 0.4  1 0 1 0 ( )(
+
+)
+
+
+
+0.12 0.08 1.4 0.4 (
+
+)
+
+.
+
+The eigenvalues of this Jacobian matrix are approximately 0.26  0.30i, which are complex numbers of magnitude  0.4, so the period-two 
+orbit is a sink.
+
+Note that the same eigenvalues are obtained by evaluating
+
+ Df((0.1, 0.7)), which means that stability is a property of the periodic orbit as a whole, not of the individual points of the 
+orbit. This is true because the eigenvalues of a product AB of two matrices are identical to the eigenvalues of BA, as shown in the 
+Appendix A. This result compares with (1.4) of Chapter 1.
+
+Remark 2.14 For a map on  m , there is a more general statement of this fact. Assume there is a periodic orbit  p 1 , . . . , p k  of 
+period k. By Lemma A.2 of Appendix A, the set of eigenvalues of a product of several matrices is unchanged under a cyclic permutation 
+of the order of the product. Using the chain rule,
+
+ Df(p 1 ).
+
+(2.29)
+
+The eigenvalues of the m m Jacobian matrix evaluated at p 1 , Df k (p 1 ), will determine the stability of the period-k orbit. But 
+one should also be able to determine the stability by examining the eigenvalues of Df k (p r ), where p r is one of the other points 
+in the periodic orbit. Applying the chain rule as above, we ﬁnd that
+
+ Df(p r ).
+
+(2.30)
+
+According to Lemma A.2, the eigenvalues of (2.29) and (2.30) are identical. This guarantees that the eigenvalues are shared by the 
+periodic orbit, and can be
+
+71 T WO -D I M E N S I O N A L M A P S
+
+measured by multiplying together the k Jacobian matrices starting at any of the k points.
+
+A more systematic study can be made of the ﬁxed points and period-two points of the H´enon map. Let the parameters a and b be 
+arbitrary. Then all ﬁxed points satisfy
+
+x  a  x 2  by
+
+y  x, which is equivalent to the equation x  a  x2 
+
+(2.31)
+
+ bx, or
+
+x 2  (1  b)x  a  0.
+
+(2.32)
+
+Using the quadratic formula, we see that ﬁxed points exist as long as
+
+4a  (1  b)2 
+
+(2.33)
+
+If (2.33) is satisﬁed, there are exactly two ﬁxed points, whose x-coordinates are found from the quadratic formula and whose 
+y-coordinate is the same as the x-coordinate.
+
+To look for period-two points, set (x, y)  f 2 (x, y):
+
+x  a  (a  x 2  by) 2  bx
+
+y  a  x 2  by.
+
+(2.34)
+
+Solving the second equation for y and substituting into the ﬁrst, we get an equation for the x-coordinate of a period-two point:
+
+0  (x 2  a) 2  (1  b) 3 x  (1  b) 2 a
+
+ (x 2  (1  b)x  a  (1  b) 2 )(x 2  (1  b)x  a).
+
+(2.35)
+
+We recognize the factor on the right from Equation (2.32): Zeros of it correspond to ﬁxed points of f, which are also ﬁxed points 
+of f 2 . In fact, it was the knowledge that (2.32) must be a factor which was the trick that allowed us to write (2.35) in factored 
+form. The period-two orbit is given by the zeros of the left factor, if they exist.
+
+✎
+
+E XERCISE T2.5
+
+Prove that the H´enon map has a period-two orbit if and only if 4a
+
+3(1  b) 2 .
+
+
+
+72 2.5 N O N L I N E A R M A P S A N D T H E J AC O B I A N M AT R I X
+
+y
+
+a=1.6 1
+
+a=.27
+
+-1 a=-.09 a=.27
+
+1
+
+x
+
+-1 a=1.6
+
+Figure 2.15 Fixed points and period-two points for the H´enon map with b ﬁxed at 0.4.
+
+The solid line denotes the trails of the two ﬁxed points as a moves from 0.09, where the two ﬁxed points are created together, to 
+1.6 where they have moved quite far apart. The ﬁxed point that moves diagonally upward is attracting for 0.09  a  0.27; the other is 
+a saddle. The dashed line follows the period-two orbit from its creation when a  0.27, at the site of the (previously) attracting 
+ﬁxed point, to a  1.6.
+
+Figure 2.15 shows the ﬁxed points and period-two points of the H´enon map for b  .4 and for various values of a. We understand why 
+the ﬁxed points lie along the diagonal line y  x, but why do the period-two orbits lie along a line, as shown in Figure 2.15?
+
+✎
+
+E XERCISE T2.6
+
+(a) If (x 1 , y 1 ) and (x 2 , y 2 ) are the two ﬁxed points of the H´enon map (2.27) with some ﬁxed parameters a and b, show that 
+x 1  y 1  x 2  y 2  0
+
+and x 1  x 2  y 1  y 2  b  1.
+
+(b) If  (x 1 , y 1 ), (x 2 , y 2 )  is the period-two orbit, show that x 1  y 1  x 2  y 2  x 1  x 2  y 1  y 2  1  b. In particular 
+the period-two orbit lies along the line x  y  1  b, as seen in Figure 2.15.
+
+Figure 2.16 shows a bifurcation diagram for the H´enon map for the case b  0.4. For each ﬁxed value 0 a 1.25 along the horizontal 
+axis, the xcoordinates of the attracting set are plotted vertically. The information in Figure
+
+73 T WO -D I M E N S I O N A L M A P S
+
+2.5
+
+2.5
+
+0
+
+1.25
+
+Figure 2.16 Bifurcation diagram for the H´enon map, b  0.4.
+
+Each vertical slice shows the projection onto the x-axis of an attractor for the map for a ﬁxed value of the parameter a.
+
+2.15 is recapitulated here. At a  0.27, a period-doubling bifurcation occurs, when the ﬁxed point loses stability and a period-two 
+orbit is born. The periodtwo orbit is a sink until a  0.85, when it too doubles its period. In the next exercise, you will be asked 
+to use the equations we developed here to verify some of these facts.
+
+✎
+
+E XERCISE T2.7
+
+Set b  0.4.
+
+(a) Prove that for 0.09  a  0.27, the H´enon map f has one sink
+
+ﬁxed point and one saddle ﬁxed point.
+
+(b) Find the largest magnitude eigenvalue of the Jacobian matrix at the ﬁrst ﬁxed point when a  0.27. Explain the loss of stability 
+of the sink.
+
+(c) Prove that for 0.27  a  0.85, f has a period-two sink.
+
+(d) Find the largest magnitude eigenvalue of Df 2 , the Jacobian of f2  at the period-two orbit, when a  0.85.
+
+For b  0.4 and a  0.85, the attractors of the H´enon map become more complex. When the period-two orbit becomes unstable, it is 
+immediately replaced with an attracting period-four orbit, then a period-eight orbit, etc. Figure 2.17
+
+74 2.5 N O N L I N E A R M A P S A N D T H E J AC O B I A N M AT R I X
+
+Figure 2.17 Attractors for the H´enon map with b  0.4.
+
+Each panel displays a single attracting orbit for a particular value of the parameter a. (a) a  0.9, period 4 sink. (b) a  0.988, 
+period 16 sink. (c) a  1.0, four-piece attractor. (d) a  1.0293, period-ten sink. (e) a  1.045, two-piece attractor. The points of an 
+orbit alternate between the pieces. (f) a  1.2, two pieces have merged to form one-piece attractor.
+
+75 T WO -D I M E N S I O N A L M A P S
+
+shows a number of these attractors. An example is the “period-ten window” at a  1.0293, barely detectable as a vertical white gap in 
+Figure 2.16.
+
+➮
+
+COMPUTER
+
+EXPERIMENT
+
+2.2
+
+Make a bifurcation diagram like Figure 2.16, but for b  0.3, and for 0 a 2.2. For each a, choose the initial point (0, 0) and 
+calculate its orbit. Plot the x-coordinates of the orbit, starting with iterate 101 (to allow time for the orbit to approximately 
+settle down to the attracting orbit). Questions to answer: Does the resulting bifurcation diagram depend on the choice of initial 
+point? How is the picture different if the y-coordinates are plotted instead?
+
+Periodic points are the key to many of the properties of a map. For example, trajectories often converge to a periodic sink. Periodic 
+saddles and sources, on the other hand, do not attract open neighborhoods of initial values as sinks do, but are important in their 
+own ways, as will be seen in later chapters.
+
+Remark 2.15 The theme of this section has been the use of the Jacobian matrix for determining stability of periodic orbits of 
+nonlinear maps, in the way that the map matrix itself is used for linear maps. There are other important uses for the Jacobian 
+matrix. The magnitude of its determinant measures the transformation of areas for nonlinear maps, at least locally.
+
+For example, consider the H´enon map (2.27). The determinant of the Jacobian matrix (2.28) is ﬁxed at b for all v. For the case a  
+0, b  0.4, the map f transforms area near each point v at the rate |det(Df(v))|  |  b|  0.4. Each plane region is transformed by f 
+into a region that is 40% of its original size. The circle around each ﬁxed point in Figure 2.9, for example, has forward images 
+which are .4  40% and (.4) 2  .16  16%, respectively.
+
+Most of the plane maps we will deal with are invertible, meaning that their inverses exist.
+
+Deﬁnition 2.16
+
+A map f on  m is one-to-one if f(v 1 )  f(v 2 ) implies
+
+v1 v2 .
+
+Recall that functions are well-deﬁned by deﬁnition, i.e. v 1  v 2 implies f(v 1 )  f(v 2 ). Two points do not get mapped together 
+under a one-to-one map. It follows that if f is a one-to-one map, then its inverse map f 1 is a function. The
+
+76 2.5 N O N L I N E A R M A P S A N D T H E J AC O B I A N M AT R I X
+
+I NVERSE M APS
+
+A function is a uniquely-deﬁned assignment of a range point for each domain point. (If the domain and range are the same set, we 
+call the function a map.) Several domain points may map to the same range point. For f 1 (x, y)  (x 2 , y 2 ), the points (2, 2), (2, 
+2), (2, 2) and (2, 2) all map to (4, 4). On the other hand, for f 2 (x, y)  (x 3 , y 3 ), this never happens. A point (a, b) is the 
+image of (a 1 ̸ 3 , b 1 ̸ 3 ) only. Thus f 2 is a one-to-one map, and f 1 is not.
+
+An inverse map f 1 automatically exists for any one-to-one map f. The domain of f 1 is the image of f. For the example f 2 (x, y) 
+
+(x 3 , y 3 ), the inverse is f 2 1 (x, y)  (x 1 ̸ 3 , y 1 ̸ 3 ).
+
+To compute an inverse map, set v 1  f(v) and solve for v in terms of v 1 . We demonstrate using f(x, y)  (x  2y, x 3 ). Set
+
+x 1  x  2y
+
+y1 x3 
+
+and solve for x and y. The result is
+
+xy1 1 ̸ 3 
+
+y  (x 1  y 1 1 ̸ 3 ) ̸ 2,
+
+so that the inverse map is f 1 (x, y)  (y 1 ̸ 3 , (x 1  y 1 1 ̸ 3 ) ̸ 2).
+
+inverse map is characterized by the fact that f(v)  w if and only if v  f 1 (w). Because one-to-one implies the existence of an 
+inverse, a one-to-one map is also called an invertible map.
+
+✎
+
+E XERCISE T2.8
+
+Show that the H´enon map (2.27) with b  0 is invertible by ﬁnding a formula for the inverse. Is the map one-to-one if b  0?
+
+77 T WO -D I M E N S I O N A L M A P S
+
+2.6 S TABLE AND U NSTABLE M ANIFOLDS
+
+A saddle ﬁxed point is unstable, meaning that most initial values near it will move away under iteration of the map. However, unlike 
+the case of a source, not all nearby initial values will move away. The set of initial values that converge to the saddle will be 
+called the stable manifold of the saddle. We start by looking at a simple linear example.
+
+E XAM PLE 2.17
+
+For the linear map f(x, y)  (2x, y ̸ 2), the origin is a saddle ﬁxed point. The dynamics of this map were shown in Figure 2.14. It is 
+clear from that ﬁgure that points along the y-axis converge to the saddle 0; all other points diverge to inﬁnity. Unless the 
+initial value has x-coordinate 0, the x-coordinate will grow (by a factor of 2 per iterate) and get arbitrarily large.
+
+A convenient way to view the direction of the stable manifold in this case is in terms of eigenvectors. The linear map
+
+f(v)  Av 
+
+2 0 (
+
+0 x 0.5 y )(
+
+)
+
+1 0 , corresponding to the (stretching) eigenvalue 2, and , 0 1 ( ) ( ) corresponding to the (shrinking) eigenvalue 1 ̸ 2. The latter 
+direction, the y-axis, is the “incoming” direction, and is the stable manifold of 0. We will call the x-axis the “outgoing” 
+direction, the unstable manifold of 0. Another way to describe the unstable manifold in this example is as the stable manifold under 
+the inverse
+
+has eigenvector
+
+of the map f 1 (x, y)  ((1 ̸ 2)x, 2y).
+
+Deﬁnition 2.18 Let f be a smooth one-to-one map on  2 , and let p be a saddle ﬁxed point or periodic saddle point for f. The stable 
+manifold of p, denoted S (p), is the set of points v such that |f n (v)  f n (p)| → 0 as n → . The unstable manifold of p, denoted 
+U(p), is the set of points v such that
+
+|f n (v)  f n (p)| → 0 as n → .
+
+E XAM PLE 2.19
+
+The linear map f(x, y)  (2x  5 2 y, 5x  11 2 y) has a saddle ﬁxed point at 0 with eigenvalues 0.5 and 3. The corresponding 
+eigenvectors are (1, 1) and
+
+78 2.6 S TA B L E A N D U N S TA B L E M A N I F O L D S
+
+W HAT IS A M ANIFOLD ?
+
+An n-dimensional manifold is a set that locally resembles Euclidean space  n . By “resembles” we could mean a variety of things, and 
+in fact, various deﬁnitions of manifold have been proposed. For our present purposes, we will mean resemblance in a topological 
+sense. A small piece of a manifold should look like a small piece of  n .
+
+A 1-dimensional manifold is locally a curve. Every short piece of a curve can be formed by stretching and bending a piece of a line. 
+The letters D and O are 1-manifolds. The letters A and X are not, since each contains a point for which no small neighborhood looks 
+like a line segment. These bad points occur at the meeting points of separate segments, like the center of the letter X.
+
+Notable 2-manifolds are the surface of oranges and doughnuts. The space-time continuum of the universe is often described as a 
+4manifold, whose curvature due to relativity is an active topic among cosmologists.
+
+In the strict deﬁnition of manifold, each point of a manifold must have a neighborhood around itself that looks like  n . Thus the 
+letters L and U fail to be 1-manifolds because of their endpoints—small neighborhoods of them look like a piece of half-line (say the 
+set of nonnegative real numbers), not a line, since there is nothing on one side. This type of set is called a manifold with 
+boundary, although technically it is not a manifold. A M¨obius band is a 2-manifold with boundary because the edge looks locally like 
+a piece of half-plane, not a plane. Whole oranges and doughnuts are 3-manifolds with boundary.
+
+One of the goals of Chapter 10 is to explain why a stable or unstable manifold is a topological manifold. Stable and unstable 
+manifolds emanate from two opposite sides of a ﬁxed point or periodic orbit. At a saddle point in the plane, they together make an 
+“X” through the ﬁxed point, although individually they are manifolds.
+
+79 T WO -D I M E N S I O N A L M A P S
+
+(1, 2), respectively. [According to Appendix A, there is a linear change of coordinates giving the map h(u 1 , u 2 )  (0.5u 1 , 3u 2 
+).] Points lying on the line y  x undergo the dynamics v → 0.5v on each iteration of the map. This line is the stable manifold of 0 
+for f. Points lying on the line y  2x (the line in the direction of eigenvector (1, 2)) undergo v → 3v under f: this is the unstable 
+manifold. These sets are illustrated in Figure 2.18.
+
+E XAM PLE 2.20
+
+Let f(x, y)  (2x  5y, 0.5y). The eigenvalues of f are 2 and 0.5, with corresponding eigenvectors (1, 0) and (2, 1). Points on the 
+line in the direction of the vector (2, 1) undergo v → 0.5v on each iteration of f. As a result, successive images ﬂip from one 
+side of the origin to the other along the line. This ﬂipping behavior of orbits about the ﬁxed point is shown in Figure 2.19. It is 
+characteristic of all ﬁxed points for which the Jacobian has negative eigenvalues, even when the map is nonlinear. A saddle with at 
+least one negative eigenvalue is sometimes called a ﬂip saddle. Otherwise it is a regular saddle.
+
+E XAM PLE 2.21
+
+The invertible nonlinear map f(x, y)  (x ̸ 2, 2y  7x 2 ) has a ﬁxed point at 0  (0, 0). To analyze the stability of this ﬁxed point 
+we evaluate
+
+y
+
+x
+
+Figure 2.18 Stable and unstable manifolds for regular saddle.
+
+The stable manifold is the solid inward-directed line; the unstable manifold is the solid outward-directed line. Every initial 
+condition leads to an orbit diverging to inﬁnity except for the stable manifold of the origin.
+
+80 2.6 S TA B L E A N D U N S TA B L E M A N I F O L D S
+
+y
+
+x
+
+Figure 2.19 Stable and unstable manifolds for ﬂip saddle.
+
+Flipping occurs along the stable manifold (inward-directed line). The unstable manifold is the x-axis.
+
+Df(0, 0) 
+
+0.5 0 0 2 (
+
+)
+
+.
+
+The origin is a saddle ﬁxed point. The eigenvectors lie on the two coordinate axes. What is the relation of these eigenvector 
+directions to the stable and unstable manifolds?
+
+In the case of linear maps, the stable and unstable manifolds coincide with the eigenvector directions. For a saddle of a general 
+nonlinear map, the stable manifold is tangent to the shrinking eigenvector direction, and the unstable manifold is tangent to the 
+stretching eigenvector direction. Since f(0, y)  (0, 2y), the y-axis can be seen to be part of the unstable manifold. For any point 
+not on the y-axis, the absolute value of the x-coordinate is nonzero and increases under iteration by f 1 ; in particular, it doesn’t 
+converge to the origin. Thus the y-axis is the entire unstable manifold, as shown in Figure 2.20. The stable manifold of 0, however, 
+is described by the parabola y  4x 2 ; i.e., S (0)   (x, 4x 2 ) : x    .
+
+✎
+
+E XERCISE T2.9
+
+Consider the saddle ﬁxed point 0 of the map f(x, y)  (x ̸ 2, 2y  7x 2 ) from Example 2.21.
+
+(a) Find the inverse map f 1 .
+
+(b) Show that the set S   (x, 4x 2 ) : x    is invariant under f, that is, if v is in S, then f(v) and f 1 (v) are in S .
+
+81 T WO -D I M E N S I O N A L M A P S
+
+y
+
+x
+
+Figure 2.20 Stable and unstable manifolds for the nonlinear map of Example 2.21.
+
+The stable manifold is a parabola tangent to the x-axis at 0; the unstable manifold is the y-axis.
+
+(c) Show that each point in S converges to 0 under f.
+
+(d) Show that no points outside of S converge to 0 under f.
+
+When a map is linear, the stable and unstable manifolds of a saddle are always linear subspaces. In the case of linear maps on  2 , 
+for example, they are lines. For nonlinear maps, as we saw in Example 2.21, they can be curves. The nonlinear examples we have looked 
+at so far are not typical; usually, formulas for the stable and unstable manifolds cannot be found directly. Then we must rely on 
+computational techniques to approximate their locations. (We describe one such technique in Chapter 10.) One thing you may have 
+noticed about the stable manifolds in these examples is that they are always one-dimensional: lines or curves. Just as in the linear 
+case, the stable and unstable manifolds of saddles in the plane are always one-dimensional sets. This fact is not immediately 
+obviousit is proved as part of the Stable Manifold Theorem in Chapter 10. We will also see that stable and unstable manifolds of 
+saddles have a tremendous inﬂuence on the underlying dynamics of a system. In particular, their relative positions can determine 
+whether or not chaos occurs.
+
+We will leave the investigation of the mysteries of stable and unstable manifolds to Chapter 10. Here we give a small demonstration 
+of the subtlety and importance of these manifolds. Drawing stable and unstable manifolds of the H´enon map can illuminate Figure 2.3, 
+which showed the basin of the period-two
+
+82 2.6 S TA B L E A N D U N S TA B L E M A N I F O L D S
+
+2.5
+
+2.5 2.5
+
+2.5 2.5
+
+2.5
+
+(a)
+
+(b)
+
+Figure 2.21 Stable and unstable manifolds for a saddle point.
+
+The stable manifolds (mainly vertical) and unstable manifolds (more horizontal) are shown for the saddle ﬁxed point (marked with a 
+cross in the lower left corner) of the H´enon map with b  0.3. Note the similarity of the unstable manifold with earlier ﬁgures 
+showing the H´enon attractor. (a) For a  1.28, the leftward piece of the unstable manifold moves off to inﬁnity, and the rightward 
+piece initially curves toward the sink, but oscillates around it in an erratic way. The rightward piece is contained in the region 
+bounded by the two components of the stable manifold. (b) For a  1.4, the manifolds have crossed one another.
+
+sink under two different parameter settings. In Figure 2.21, portions of the stable and unstable manifolds of a saddle point near (2, 
+2) are drawn. In each case, the upward and downward piece of the stable manifold, which is predominantly vertical, forms the boundary 
+of the basin of the period-two sink. (Compare with Figure 2.3.) For a larger value of the parameter a, as in Figure 2.21(b), the 
+stable and unstable manifolds intersect, and the basin boundary changes from simple to complicated.
+
+E XAM PLE 2.22
+
+Figure 2.22 shows the relation of the stable and unstable manifolds to the basin of the two-piece attractor for the H´enon map with a  
+2, b  0.3. This basin was shown earlier in Figure 2.11. The stable manifold of the saddle ﬁxed point in the lower left corner forms 
+the boundary of the attractor basin; the attractor lies along the unstable manifold of the saddle.
+
+83 T WO -D I M E N S I O N A L M A P S
+
+2.5
+
+2.5 2.5
+
+2.5
+
+Figure 2.22 A two-piece attractor of the H´enon map.
+
+The crosses mark 100 points of a trajectory lying on a two-piece attractor. The basin of attraction of this attractor is white; the 
+shaded points are initial conditions whose orbits diverge to . The saddle ﬁxed point circled at the lower left is closely related to 
+the dynamics of the attractor. The stable manifold of the saddle, shown in black, forms the boundary of the basin of the attractor. 
+The attractor lies along the unstable manifold of the saddle, which is also in black.
+
+E XAM PLE 2.23
+
+Figure 2.23(a) shows 18 ﬁxed points (large crosses) and 38 period-two orbits (small crosses) for the time-2  map of the forced 
+damped pendulum (2.10) with c  0.05, 
+  2.5. The orbits were found by computer approximation methods; there may be more. None of these orbits are sinks; they coexist with 
+a complicated attracting orbit shown in Figure 2.7. Exactly half of the 56 orbits shown are ﬂip
+
+84 2.6 S TA B L E A N D U N S TA B L E M A N I F O L D S
+
+4.5
+
+3.5  
+
+
+
+ 
+
+
+
+(a)
+
+(b)
+
+Figure 2.23 The forced damped pendulum.
+
+(a) Periodic orbits for the time-2  map of the pendulum with parameters c  0.05, 
+  2.5. The large crosses denote 18 ﬁxed points, and the small crosses, 38 period-two orbits. (b) The stable and unstable manifolds 
+of the largest cross in (a). The unstable manifold is drawn in black; compare to Figure 2.7. The stable manifold is drawn in gray 
+dashed curves. The manifolds overlay the periodic orbits from (a)note that without exception these orbits lie close to the unstable 
+manifold.
+
+saddles; the rest are regular saddles. The largest cross in Figure 2.23(a) is singled out, and its stable and unstable manifolds are 
+drawn in Figure 2.23(b).
+
+Exercise 10.6 of Chapter 10 states that a stable manifold cannot cross itself, nor can it cross the stable manifold of another ﬁxed 
+point. However, there is no such restriction for a stable manifold crossing an unstable manifold.
+
+The discovery that stable and unstable manifolds of a ﬁxed point can intersect was made by Poincar´e. He made this observation in 
+the process of ﬁxing his entry to King Oscar’s contest. (In his original entry he made the assumption that they could not cross.) 
+Realizing this possibility was a watershed in the knowledge of dynamical systems, whose implications are still being worked out 
+today.
+
+Poincar´e was surprised to see the extreme complexity that such an intersection causes in the dynamics of the map. If p is a ﬁxed or 
+periodic point, and if h 0  p is a point of intersection of the stable and unstable manifold of p, then h 0 is called a homoclinic 
+point. For starters, an intersection of the stable and unstable manifolds of a single ﬁxed point (called a homoclinic intersection) 
+immediately
+
+85 T WO -D I M E N S I O N A L M A P S
+
+h 1
+
+h 2
+
+h 3
+
+h 0
+
+h -1
+
+p
+
+h -3
+
+h -2
+
+Figure 2.24 A schematic view of a homoclinic point h 0 .
+
+The stable manifold (solid curve) and unstable manifold (dashed curve) of the saddle ﬁxed point p intersect at h 0 , and therefore 
+also at inﬁnitely many other points. This ﬁgure only hints at the complexity. Poincar´e showed that if a circle was drawn around 
+any homoclinic point, there would be inﬁnitely many homoclinic points inside the circle, no matter how small its radius.
+
+forces inﬁnitely many such intersections. Poincar´e drew diagrams similar to Figure 2.24, which displays the inﬁnitely many 
+intersections that logically follow from the intersection h 0 .
+
+To understand the source of this complexity, ﬁrst notice that a stable manifold, by deﬁnition, is an invariant set under the map f. 
+This means that if h0  is a point on the stable manifold of a ﬁxed point p, then so are h 1  f(h 0 ) and h 1  f 1 (h 0 ). This is 
+easy to understand: if the orbit of h 0 eventually converges to p under f, then so must the orbits of h 1 and h 1 , being one step 
+ahead and behind of h 0 , respectively. In fact, if h 0 is a point on a stable manifold of p, then so is the entire (forward and 
+backward) orbit of h 0 . By the same reasoning, the unstable manifold of a ﬁxed point is also invariant.
+
+Once a point like h 0 in Figure 2.24 lies on both the stable and unstable manifolds of a ﬁxed point, then the entire orbit of h 0 
+must lie on both manifolds, because both manifolds are invariant. Remember that the stable manifold is directed toward the ﬁxed 
+point, and the unstable manifold leads away from it. The result is a conﬁguration drawn schematically in Figure 2.24, and generated 
+by a computer for the H´enon map in Figure 2.21(b).
+
+86 2.7 M AT R I X T I M E S C I R C L E E Q UA L S E L L I P S E
+
+The key fact about a homoclinic intersection point is that it essentially spreads the sensitive dependence on initial 
+conditions—ordinarily situated at a single saddle ﬁxed point—throughout a widespread portion of state space. Figures 2.21 and 2.24 
+give some insight into this process. In Chapter 10, we will return to study this mechanism for manufacturing chaos.
+
+2.7 M ATRIX T IMES C IRCLE E QUALS E LLIPSE
+
+Near a ﬁxed point v 0 , we have seen that the dynamics essentially reduce to a single linear map A  Df(v 0 ). If a map is linear 
+then its action on a small disk neighborhood of the origin is just a scaled–down version of the effect on the unit disk. We found 
+that the magnitudes of the eigenvalues of A were decisive for classifying the ﬁxed point. The same is true for a period-k orbit; in 
+that case the appropriate matrix A is a product of k matrices.
+
+In case the orbit is not periodic (which is one of our motivating situations), there is no magic matrix A. The local dynamics in the 
+vicinity of the orbit is ruled, even in its linear approximation, by an inﬁnite product of usually nonrepeating Df(v 0 ). The role 
+of the eigenvalues of A is taken over by Lyapunov numbers, which measure contraction and expansion. When we develop Lyapunov numbers 
+for many-dimensional maps (Chapter 5), it is this inﬁnite product that we will have to measure or approximate in some way.
+
+To visualize what is going on in cases like this, it helps to have a way to calculate the image of a disk from the matrix 
+representing a linear map. For simplicity, we will choose the disk of radius one centered at the origin, and a square matrix. The 
+image will be an ellipse, and matrix algebra explains how to ﬁnd that ellipse.
+
+The technique (again) involves eigenvalues. The image of the unit disk N under the linear map A will be determined by the 
+eigenvectors and eigenvalues of AA T , where A T denotes the transpose matrix of A (formed by exchanging the rows and columns of A). 
+The eigenvalues of AA T are nonnegative for any A. This fact can be found in Appendix A, along with the next theorem, which shows how 
+to ﬁnd the explicit ellipse AN.
+
+Theorem 2.24 Let N be the unit disk in  m , and let A be an m m matrix. Let s 1 2 , . . . , s m 2 and u 1 , . . . , u m be the 
+eigenvalues and unit eigenvectors, respectively, of the m m matrix AA T . Then
+
+1. u 1 , . . . , u m are mutually orthogonal unit vectors; and
+
+2. the axes of the ellipse AN are s i u i for 1 i m.
+
+87 T WO -D I M E N S I O N A L M A P S
+
+Check that in Example 2.5, the map A gives s 1  a, s 2  b, while u 1 and u 2 are the x and y unit vectors, repectively. Therefore a 
+and b are the lengths of the axes of the ellipse AN. For the nth iterate of A, represented by the matrix A n , we ﬁnd ellipse axes 
+of length a n and b n for A n N, the nth image of the unit disk.
+
+In Example 2.5, the axes of the ellipse AN are easy to ﬁnd. Each axis is an eigenvector not only of AA T but also of A, whose length 
+is the corresponding eigenvalue of A. In general (for nonsymmetric matrices), the eigenvectors of A do not give the directions along 
+which the ellipse lies, and it is necessary to use Theorem 2.24. To see how Theorem 2.24 applies in general, we’ll return for a look 
+at our three important examples.
+
+E XAM PLE 2.25
+
+[Distinct real eigenvalues.] Let
+
+A(x)  Ax 
+
+.8 0 (
+
+.5 x 1.3 y )( )
+
+.
+
+(2.36)
+
+The eigenvalues of the matrix A are 0.8 and 1.3, with corresponding eigenvectors 1 1 and , respectively. From this it is clear that 
+the ﬁxed point at the origin 0 1 ( ) ( ) is a saddle—the two eigenvectors give directions along which the ﬁxed point attracts and 
+repels, respectively. The attracting direction is illustrated by
+
+1 1 (0.8)n  A n  (0.8) n  , 0 0 0 ( ) ( ) ( )
+
+(2.37)
+
+and the repelling direction by
+
+1 1 (1.3)n  A n  (1.3) n  . 1 1 (1.3)n  ( ) ( ) ( )
+
+(2.38)
+
+The stable manifold of the origin saddle point is y  0, and the unstable manifold is y  x. Points along the x-axis move directly 
+toward the origin under iteration by A, and points along the line y  x move toward inﬁnity. Since we know the nth iterate of the 
+unit circle is an ellipse with one growing direction and one shrinking direction, we know that in the limit the ellipses become long 
+and thin. The ellipses A n N representing higher iterates of the unit disk gradually line up 1 along the dominant eigenvector of A.
+
+1 ( ) The ﬁrst few images of the unit disk under the map A can be found using Theorem 2.24, and are graphed in Figure 2.25. For an 
+application of Theorem
+
+88 2.7 M AT R I X T I M E S C I R C L E E Q UA L S E L L I P S E
+
+y=x
+
+5
+
+A 6 N
+
+4
+
+3
+
+2
+
+A 4 N
+
+N
+
+-5 -4
+
+-3 -2
+
+2
+
+3
+
+4
+
+5
+
+-2
+
+-3
+
+-4
+
+-5
+
+Figure 2.25 Successive images of the unit circle N for a saddle ﬁxed point. The image of a circle under a linear map is an ellipse. 
+Successive images are therefore also ellipses, which in this example line up along the expanding eigenspace.
+
+2.24, we calculate the ﬁrst iterate of the unit disk under A. Since
+
+.8 .5 .8 0 .89 .65 AA T   , 0 1.3 .5 1.3 .65 1.69 ( )( ) ( )
+
+(2.39)
+
+.873 .488 and , with .488 .873 ( ) ( ) eigenvalues .527 and 2.053, respectively. Taking square roots, we see that the ellipse AN has 
+principal axes of lengths  √ .527  .726 and  √ 2.053  1.433. The ellipse AN, along with A 4 N and A 6 N, is illustrated in Figure 
+2.25.
+
+the unit eigenvectors of AA T are (approximately)
+
+E XAM PLE 2.26
+
+[Repeated eigenvalue.] Even in the sink case, the ellipse A n N can grow a little in some direction before shrinking for large n. 
+Consider the example
+
+2 1 A 3 2 . 0 ( 3 )
+
+(2.40)
+
+✎
+
+E XERCISE T2.10
+
+Use Theorem 2.24 to calculate the axes of the ellipse AN from (2.40). Then verify that the ellipses A n N shrink to the origin as n 
+→ .
+
+89 T WO -D I M E N S I O N A L M A P S
+
+N
+
+AN
+
+A 2 N A 4 N A 6 N
+
+Figure 2.26 Successive images of the unit circle N under a linear map A in the case of repeated eigenvalues.
+
+The nth iterate A n N of the circle lies wholly inside the circle for n 
+ 6. In this case, the origin is a sink.
+
+The ﬁrst few iterates of the unit circle N are graphed in Figure 2.26. The ellipse AN sticks out of the unit disk N. Further 
+iteration by A continues to roll the ellipse to lie parallel to the x-axis and to eventually shrink it to the origin, as the 
+calculation of Exercise T2.10 requires.
+
+E XAM PLE 2.27
+
+[Complex eigenvalues.] Let
+
+A
+
+a b (
+
+b a
+
+)
+
+.
+
+(2.41)
+
+The eigenvalues of this matrix are a  bi. Calculating AA T yields
+
+a 2  b 2 0 AA T  , 0 a 2  b2  ( )
+
+(2.42)
+
+so it follows that the image of the unit disk N by A is again a disk of radius √ a 2  b 2 . The matrix A rotates the disk by arctan 
+b ̸ a and stretches by a factor of √ a 2  b 2 on each iteration. The stability result is the same as in the previous two cases: if 
+the absolute value of the eigenvalues is less than 1, the origin is a sink; if greater than 1, a source.
+
+90 2.7 M AT R I X T I M E S C I R C L E E Q UA L S E L L I P S E
+
+2
+
+-2
+
+2
+
+N
+
+A 3 N
+
+A 2 N
+
+AN
+
+-2
+
+Figure 2.27 Successive images of the unit circle N . The origin is a source with complex eigenvalues.
+
+In Figure 2.27, the ﬁrst few iterates A n N of the unit disk are graphed for a  1.2, b  0.2. Since a 2  b 2  1, the origin is a 
+source. The radii of the images of the disk grow at the rate of √ 1.2 2  .2 2  1.22 per iteration, and the disks turn 
+counterclockwise at the rate of arctan(.2 ̸ 1.2)  9.5 degrees per iteration.
+
+91 T WO -D I M E N S I O N A L M A P S
+
+☞ CHALLENGE 2
+
+Counting the Periodic Orbits of Linear Maps on a Torus
+
+IN CHAPTER 1, we investigated the properties of the linear map f(x)  3x (mod 1). This map is discontinuous on the interval [0, 1], 
+but continuous when viewed as a map on a circle. We found that the map had inﬁnitely many periodic points, and we discussed ways to 
+count these orbits.
+
+We will study a two-dimensional map with some of the same properties in Challenge 2. Consider the map S deﬁned by a 2 2 matrix
+
+A
+
+a c (
+
+b d
+
+)
+
+with integer entries a, b, c, d, where we deﬁne S(v)  Av (mod 1). The domain for the map will be the unit square [0, 1] [0, 1]. Even 
+if Av lies outside the unit square, S(v) lies inside if we count modulo one. In general, S will fail to be continuous, in the same 
+way as the map in Example 1.9 of Chapter 1.
+
+For example, assume
+
+A
+
+2 1 (
+
+1
+
+1
+
+)
+
+.
+
+(2.43)
+
+Consider the image of the point v  (x, 1 ̸ 2) under S. For x slightly less than 1 ̸ 2, the image S(v) lies just below (1 ̸ 2, 1). For x 
+slightly larger than 1 ̸ 2, the image S(v) lies just above (1 ̸ 2, 0), quite far away. Therefore S is discontinuous
+
+at (1 ̸ 2, 1 ̸ 2).
+
+We solved this problem for the 3x mod 1 map in Chapter 1 by sewing together the ends of the unit interval to make a circle. Is there 
+a geometric object for which S can be made continuous? The problem is that when the image value 1 is reached (for either coordinate x 
+or y), the map wants to restart at the image value 0.
+
+The torus  2 is constructed by identifying the two pairs of opposite sides of the unit square in  2 . This results in a 
+two-dimensional object resembling a doughnut, shown in Figure 2.28. We have simultaneously glued together the x-axis at 0 and 1, and 
+the y-axis at 0 and 1. The torus is the natural domain for maps that are formed by integer matrices modulo one.
+
+92 CHALLENGE 2
+
+(a)
+
+(b)
+
+(c)
+
+Figure 2.28 Construction of a torus in two easy steps.
+
+(a) Begin with unit square. (b) Identify (glue together) vertical sides. (c) Identify horizontal sides.
+
+Given a 2 2 matrix A, we can deﬁne a map from the torus to itself by multiplying the matrix A times a vector (x, y), followed by 
+taking the output vector modulo 1. If the matrix A has integer entries, then the map so deﬁned is continuous on the torus. In the 
+following steps we derive some fundamental properties of torus maps, and then specialize to the particular map (2.43), called the cat 
+map.
+
+Assume in Steps 1–6 that A has integer entries, and that the determinant of A, det(A)  ad  bc, is nonzero.
+
+Step 1 Show that the fact that A is a 2 2 matrix with integer entries implies that the torus map S(v)  Av (mod 1) is a continuous map 
+on the torus  2 . (You will need to explain why the points (0, y) and (1, y), which are identiﬁed together on the torus, map to the 
+same point on the torus. Similarly for (x, 0) and (x, 1).)
+
+) n1 ,n2 .
+
+Step 2
+
+(a) Show that A
+
+x  n1  y  n2  (
+
+A
+
+x y ( )
+
+(mod 1) for any integers
+
+(b) Show that S 2 (v)  A 2 v (mod 1).
+
+(c) Show that S n (v)  A n v (mod 1) for any positive integer n.
+
+Step 2 says that in computing the nth iterate of S, you can wait until the end to apply the modulo 1 operation.
+
+A real number r is rational if r  p ̸ q, where p and q are integers. A number that is not rational is called irrational. Note that the 
+sum or product of two rational numbers is rational, the sum of a rational and an irrational is irrational,
+
+93 T WO -D I M E N S I O N A L M A P S
+
+and the product of a rational and an irrational is irrational unless the rational is zero.
+
+Step 3 Assume that A has no eigenvalue equal to 1. Show that S(v)  v implies that both components of v are rational numbers.
+
+Step 4 Assume that A has no eigenvalues of magnitude one. Since the eigenvalues of A n are the nth powers of the eigenvalues of A 
+(see Appendix A), this assumption guarantees that for all n, the matrix A n does not have an eigenvalue equal to 1. Show that a point 
+v  (x, y) in the unit square is eventually periodic if and only if its coordinates are rational. (The 3x (mod 1) map of Chapter 1 had 
+a similar property.) [Hint: Use Step 3 to show that if any component is irrational, then v cannot be eventually periodic. If both 
+components of v are rational, show that there are only a ﬁnite number of possibilities for iterates of v.]
+
+Step 5 Show that the image of the map S covers the square precisely |det(A)| times. More precisely, if v 0 is a point in the square, 
+show that the number of solutions of S(v)  v 0 is |det A|. [Hint: Draw the image under A of the unit square in the plane. It is a 
+parallelogram with one vertex at the origin and three other vertices with integer coordinates. The two sides with the origin as 
+vertex are the vectors (a, c) and (b, d). The area of the parallelogram is therefore |det(A)|. Show that the number of solutions of 
+Av  v 0 (mod 1) is the same for all v 0 in the square. Therefore the parallelogram can be cut up by mod 1 slices and placed onto the 
+square, covering it |det(A)| times. See Figure 2.29.]
+
+(a)
+
+(b)
+
+Figure 2.29 Dynamics of the cat map.
+
+(a) The unit square and its image under the cat map (2.43). (b) Since det(A)  1, the image of the unit square, modulo 1, covers the 
+unit square exactly once.
+
+94 CHALLENGE 2
+
+Step 6 Deﬁne the trace of A by tr(A)  a  d, the sum of the diagonal entries. Prove that the number of ﬁxed points of S on the torus 
+is |det A  tr A  1|, as long as that number is not zero. [Hint: Apply Step 5 to the matrix A  I.]
+
+Now we study a particular choice of A. Deﬁne the matrix 2 1 A 1 1 ( ) as in Equation (2.43). The resulting map S, called the “cat 
+map”, is shown in Figure 2.30.
+
+Step 7 Let F n denote the nth Fibonacci number, where F 0  F 1  1, and where F n  F n1  F n2 for n 
+ 2. Prove that
+
+F 2n F2n1  An  . F 2n1 F2n2  ( )
+
+Step 8 Find all ﬁxed points and period-two orbits of the cat map. [Hint: For the period-2 points, ﬁnd all solutions of a c a   5 3  
+m b d b a c c   3 (2.44) 2  n b d d
+
+(a)
+
+(b)
+
+Figure 2.30 An illustration of multiplication by the matrix A in (2.43). (a) Cat in unit square. (b) Image of the unit square under 
+the matrix A.
+
+95 T WO -D I M E N S I O N A L M A P S
+
+where a, b, c, d, m, n are integers.] Answers: (0,0) is the only ﬁxed point; the period-2 orbits are:
+
+.2 .4 {(
+
+.8 .6 ) ( )}
+
+,
+
+and
+
+.4 .8 {(
+
+.6 .2 ) (
+
+,
+
+)}
+
+.
+
+Step 9 Use Step 6 to ﬁnd a formula for the number of ﬁxed points of S n . (Answer: |(F 2n  1)(F 2n2  1)  F 2n1 2 |.)
+
+The formula in Step 9 can be checked against Figure 2.31 for low values of n. For example, Figure 2.31(a) shows a plot of the ﬁxed 
+points of S 4 in the unit square. There are 45 points, each with coordinates expressible as (i ̸ 15, j ̸ 15) for some integers i, j. 
+One of them is a period-one point of S (the origin), and four of them are the period-two points (two different orbits) of S found in 
+Step 8. That leaves a total of 10 different period-four orbits. In counting, remember that the points are deﬁned modulo 1, so that a 
+point on the boundary of the square will also appear as the same point on the opposite boundary. The period-ﬁve points in Figure 
+2.31(b) are somewhat easier to count; they are the 120 points of form (i ̸ 11, j ̸ 11) where 0 i, j 10, omitting the origin, which is a 
+period-one point. There are 24 period-ﬁve orbits. The period-three points show up as the medium-sized crosses in Figure 2.31(c). 
+They are the 15 points of form (i ̸ 4, j ̸ 4) where 0 i, j 3, again omitting the origin. Can you guess the denominators of the 
+period-six points? See Step 12 for the answer.
+
+(a)
+
+(b)
+
+(c)
+
+Figure 2.31 Periodic points of the cat map on the torus.
+
+(a) Period-four points (small crosses), period-two points (large crosses). (b) Periodﬁve points. (c) Period-six points (small 
+crosses), period-three points (medium crosses), period-two points (large crosses)
+
+96 CHALLENGE 2
+
+Step 10 Prove the identities F n F n2  F n1 2  (1) n and F 2n  F n 2  F n1 2 for Fibonacci numbers, and use them to simplify the 
+formula for the number of ﬁxed points of S n to (F n  F n2 ) 2  2  2(1) n .
+
+Step 11 Write out the periodic table for S (list number of periodic points for each period) for periods up to 10. See Table 1.3 of 
+Chapter 1 for the form of a periodic table. Compare this with Figure 2.31 where applicable. Show that S has periodic points of all 
+periods.
+
+Step 12 Here is the formula for the denominator of the period n orbits. The orbits consist of points a ̸ b where
+
+F n  F n2 if n is odd and n 5F n1 if n is even { For example, the denominator of the period-two points is 5F 1  5, and the 
+denominator of the period-three points is F 3  F 1  4. Conﬁrm this with the answers from Step 8 and Figure 2.31(a). Prove this 
+formula for general n. [Thanks to Joe Miller for simplifying this formula.]
+
+ 1
+
+b
+
+Postscript. How robust are the answers you derived in Challenge 2? If you’re still reading, you have done an exhaustive accounting of 
+the periodic orbits for the cat map (2.43). Does this accounting apply only to the cat map, or are the same formulas valid for 
+cat-like maps?
+
+Using a few advanced ideas, you can show that the results apply as well to maps in a neighborhood of the cat map in “function space”, 
+including nearby nonlinear maps. Exactly the same number of orbits of each period exist for these maps. The reasoning is as follows. 
+As we will see in Chapter 11, as a map is perturbed (say, by moving a parameter a), a ﬁxed point p of f a k cannot appear or 
+disappear (as a moves) without an eigenvalue of the matrix Df a k (p) crossing through 1. (At such a crossing, the Jacobian of f a k  
+I is singular and the implicit function theorem is violated, allowing a solution of f k  I  0 to appear or disappear as the map is 
+perturbed.)
+
+The eigenvalues of the cat map A are e 1  (3  √ 5) ̸ 2  2.618 and e 2  (3  √ 5) ̸ 2  0.382, and the eigenvalues of A k are e 1 k and 
+e 2 k . Since eigenvalues move continuously as a parameter in the matrix is varied, any map whose Jacobian entries are close to those 
+of the cat map will have eigenvalues close to |e 1 | and |e 2 |, bounded away from 1, and so the eigenvalues of Df k (p) will not 
+equal 1. This rules out the appearance and disappearance of periodic points for linear and nonlinear maps sufﬁciently similar to the 
+cat map, showing that the same formulas derived in Challenge 2 hold for them as well. Nonlinear maps of the torus close to the cat 
+map such as
+
+f(x, y)  (2x  y  a cos 2  x, x  y  b sin 2  y) (mod 1)
+
+where |a|, |b| are sufﬁciently small have this property, and so have the same number of periodic points of each period as the cat 
+map.
+
+97 T WO -D I M E N S I O N A L M A P S
+
+E XERCISES
+
+2.1. For each of the following linear maps, decide whether the origin is a sink, source, or saddle.
+
+(a)
+
+4 ( 1
+
+1 (b) ( 1
+
+1 ̸ )
+
+̸ 4
+
+2 3
+
+̸
+
+4
+
+30
+
+3
+
+)
+
+(c)
+
+0.4 ( 0.4
+
+)
+
+2.4
+
+1.6
+
+n 4.5 8 6 2.2. Find lim . n→  2 3.5 9 ( ) ( )
+
+2.3. Let g(x, y)  (x 2  5x sources, or saddles.
+
+ y, x2 
+
+). Find and classify the ﬁxed points of g as sinks,
+
+2.4. Find and classify all ﬁxed points and period-two orbits of the H´enon map (2.27) with
+
+(a) a  0.56 and b  0.5
+
+(b) a  0.21 and b  0.6
+
+2.5. Let f(x, y, z)  (x 2 y, y 2 , xz  y) be a map on  3 . Find and classify the ﬁxed points of f.
+
+2.6. Let f(x, y)  (sin 3  x, 2 y ). Find all ﬁxed points and their stability. Where does the orbit of each initial value go?
+
+2.7. Set b  0.3 in the H´enon map (2.27). (a) Find the range of parameters a for which the map has one ﬁxed sink and one saddle 
+ﬁxed point. (b) Find the range of parameters a for which the map has a period-two sink.
+
+2.8. Calculate the image ellipse of the unit disk under each of the following maps.
+
+(a)
+
+2 ( 2
+
+)
+
+0.5 0.5
+
+(b)
+
+2 ( 2
+
+)
+
+1
+
+2
+
+What are the areas of these ellipses?
+
+2.9. Find the inverse map for the cat map deﬁned in (2.43). Check your answer by composing with the cat map.
+
+2.10. (a) Find a 2 2 matrix A  I with integer entries, a rational number x, and an irrational number y such that S(x, y)  (x, y). 
+Here S is the mod 1 map associated to A. (b) Same question but require x and y to be irrational. According to Step 4 of Challenge 2, 
+each of your answers must have an eigenvalue equal to 1.
+
+2.11. Let a be a vector in R m and M be an m m matrix. Deﬁne f(x)  Mx  a. Find a condition on M (speciﬁcally, on the eigenvalues of 
+M) that guarantees that f has exactly one ﬁxed point.
+
+98 LAB VISIT 2
+
+☞ LAB VISIT 2
+
+Is the Solar System Stable?
+
+KING OSCAR’S CONTEST in 1889 was designed to answer the question of whether the solar system is stable, once and for all. The actual 
+result clariﬁed just how difﬁcult the question is. If the contest were repeated today, there would be no greater hope of producing 
+a deﬁnitive answer, despite (or one might say, because of) all that has been learned about the problem in the intervening century.
+
+Poincar´e’s entry showed that in the presence of homoclinic intersections, there is sensitive dependence on initial conditions. If 
+this exists in our solar system, then long-term predictability is severely compromised. The positions, velocities, and masses of the 
+planets of the solar system are known with considerably more precision than was known in King Oscar’s time. However, even these 
+current measurements fall far short of the accuracy needed to make long-term predictions in the presence of sensitive dependence on 
+initial conditions. Two key questions are: (1) whether chaos exists in planetary trajectories, and (2) if there are chaotic 
+trajectories, whether the chaos is sufﬁciently pronounced to cause ejection of a planet from the system, or a planetary collision.
+
+The question of whether chaos exists in the solar system has led to innovations in theory, algorithms, computer software, and 
+hardware in an attempt to perform accurate long-term solar system simulations. In 1988, Sussman and Wisdom reported on an 845 Myr 
+(Myr denotes one million years) integration of the gravitational equations for the solar system. This integration was performed in a 
+special-purpose computer that they designed for this problem, called the Digital Orrery, which has since been retired to the 
+Smithsonian Institution in
+
+Sussman, G. J., Wisdom, J., “Numerical evidence that the motion of Pluto is chaotic.” Science 241, 433-7 (1988).
+
+Laskar, J., “A numerical experiment on the chaotic behaviour of the solar system.” Nature 338, 237-8 (1989).
+
+Sussman, G.J., Wisdom, J., “Chaotic evolution of the solar system.” Science 257, 56-62 (1992).
+
+Laskar, J., Robutel, P., “The chaotic obliquity of the planets.” Nature 361, 608-612 (1993).
+
+Touma, J., Wisdom, J., “The chaotic obliquity of Mars.” Science 259, 1294-1297 (1993).
+
+99 T WO -D I M E N S I O N A L M A P S
+
+Figure 2.32 Comparison of two computer simulations.
+
+The difference in the position of Pluto in two simulations with slightly different initial conditions is plotted as a function of 
+time. The vertical scale is ln of the difference, in units of AU (astronomical units).
+
+Washington, D.C. A surprising result of the integration was an indication of sensitive dependence in the orbit of Pluto.
+
+Figure 2.32 shows exponential divergence of nearby trajectories over a 100 Myr simulation, done by Sussman and Wisdom in 1992 with a 
+successor of the Digital Orrery, built as a collaboration between MIT and Hewlett-Packard. They made two separate computer runs of 
+the simulated solar system. The runs were identical except for a slight difference in the initial condition for Pluto. The curve 
+shows the distance between the positions of Pluto for the two solar system simulations.
+
+The plot in Figure 2.32 is semilog, meaning that the vertical axis is logarithmic. Assume that the distance d between the Plutos in 
+the two almost parallel universes grows exponentially with time, say as d  ae kt . Then log d  log a  kt, which is a linear relation 
+between log d and t. If we plot log d versus t, we will get a line with slope k. This is what Figure 2.32 shows in rough terms. In 
+Chapter 3 the slope k will be called the Lyapunov exponent. A careful look at the ﬁgure yields the slope to be approximately 1 ̸ 12, 
+meaning that the distance between
+
+100 LAB VISIT 2
+
+nearby initial conditions is multiplied by a factor of e 1 ̸ 12 each million years, or by a factor of e  2.718 each 12 million years. 
+We can say that the exponential separation time for Pluto is about 12 million years on the basis of this simulation.
+
+Laskar, working at the time at the Bureau des Longitudes in Paris, used quite different techniques to simulate the solar system 
+without Pluto, and concluded that the exponential separation time for this system is on the order of 5 million years. He attributed 
+the chaotic behavior to resonances among the inner planets Mercury, Venus, Earth, and Mars. Recent simulations by Sussman and Wisdom 
+have also arrived at the approximate value of 5 million years for some of the inner planets.
+
+To put these times in perspective, note that e 19  1.5 10 8 , which is the number of kilometers from the sun to the earth, or one 
+astronomical unit. Therefore a difference or uncertainty of 1 km in a measured position could grow to an uncertainty of 1 
+astronomical unit in about 19 time units, or 19 5  95 Myrs. The solar system has existed for several billions of years, long enough 
+for this to happen many times over.
+
+The ﬁnding of chaos in solar system trajectories does not in itself mean that the solar system is on the verge of disintegration, or 
+that Earth will soon cross the path of Venus. It does, however, establish a limit on the ability of celestial mechanics to predict 
+such an event in the far future.
+
+A more recent conclusion may have an impact on life on Earth within a scant few millions of years. The two research groups mentioned 
+above published articles within one week of one another in 1993 regarding the erratic obliquity of planets in the solar system. The 
+obliquity of a planet is the tilt of the spin axis with respect to the “plane” of the solar system. The obliquity of Earth is 
+presently about 23.3 ◦ , with estimated variations over time of 1 ◦ either way. Large variations in the obliquity, for example 
+those that would turn a polar icecap toward the sun for extended periods, would have a signiﬁcant effect on climate.
+
+The existence of a large moon has a complicating and apparently stabilizing effect on the obliquity of Earth. A more straightforward 
+calculation can be made for Mars. Laskar and Robutel found that in a 45 Myr simulation, the obliquity of Mars can oscillate 
+erratically by dozens of degrees, for some initial conﬁgurations. For other initial conditions, the oscillations are regular.
+
+Figure 2.33(a) shows the variation of the obliquity of Mars for 80 Myrs into the past, from a computer simulation due to Touma and 
+Wisdom. This simulation takes the present conditions as initial conditions and moves backwards in time. Figure 2.33(b) is a 
+magniﬁcation of part (a) for the last 10 Myrs only. It shows an abrupt transition about 4 Myrs ago, from oscillations about 35 ◦ 
+obliquity to oscillations about 25 ◦ obliquity.
+
+101 T WO -D I M E N S I O N A L M A P S
+
+Figure 2.33 The obliquity of Mars.
+
+(a) The result of a computer simulation of the solar system shows that the obliquity of Mars undergoes erratic variation as a 
+function of time. (b) Detail from (a), showing only the last 10 million years. There is an abrupt transition about 4 million years 
+ago.
+
+102 LAB VISIT 2
+
+No one knows whether the graphs shown here are correct over a severalmillion-year time range. Perhaps core samples from the poles of 
+Mars (not yet obtained) could shed light on this question. If the initial position, velocity, mass, and other physical parameters of 
+Mars used in the simulations were changed from the values used in the simulations, the results would be different, because of the 
+sensitive dependence of the problem. Any calculation of the obliquity or the position of Mars for many millions of years can only be 
+considered as representative of the wide range of possibilities afforded by chaotic dynamics.
+
+While sensitive dependence on initial conditions causes unpredictability at large time scales, it can provide opportunity at shorter, 
+predictable time scales. One of the ﬁrst widely available English translations of Poincar´e’s writings on celestial mechanics was 
+commissioned by the U.S. National Aeronautics and Space Administration (NASA). Several years ago, their scientists exploited the 
+sensitive dependence of the three-body problem to achieve a practical goal.
+
+In 1982, NASA found itself unable to afford to send a satellite to the Giacobini-Zinner comet, which was scheduled to visit the 
+vicinity of Earth’s orbit in 1985. It would pass quite far from the current Earth position (50 million miles), but near Earth’s 
+orbit. This led to the possibility that a satellite already near Earth’s orbit could be sent to the correct position with a 
+relatively low expenditure of energy.
+
+A 1000-lb. satellite called ISEE-3 had been launched in 1978 to measure the solar wind and to count cosmic rays. ISEE-3 was parked in 
+a “halo orbit”, centered on the Lagrange point L 1 . The halo orbit is shown in Color Plate 13. A Lagrange point is a point of 
+balance between the gravitational pull of the Earth and Sun. In the rotating coordinate system in which the Earth and Sun are ﬁxed, 
+the L 1 point is an unstable equilibrium. Lagrange points are useful because little energy is required to orbit around them.
+
+The ISEE-3 satellite was nearing the end of its planned mission, and had a limited amount of maneuvering fuel remaining. NASA 
+scientists renamed the satellite the International Comet Explorer (ICE) and plotted a three-year trajectory for the Giacobini-Zinner 
+comet. The new trajectory took advantage of near collisions with the Moon, or “lunar swingbys”, to make large changes in the 
+satellite’s trajectory with small fuel expenditures. The ﬁrst thruster burn, on June 10, 1982, changed the satellite’s velocity by 
+less than 10 miles per hour. In all, 37 burns were needed to make small changes in the trajectory, resulting in 5 lunar swingbys.
+
+Dynamical motion of gravitational bodies is especially sensitive at a swingby. Since the distance between the two bodies is small, 
+the forces between them is relatively large. This is where small changes can have a large effect.
+
+103 T WO -D I M E N S I O N A L M A P S
+
+The ﬁrst lunar swingby occurred on March 30, 1983. A schematic picture of the satellite trajectory is shown in Color Plate 14. The 4 
+other near collisions with the moon are shown in the following Color Plates 15–16. During the ﬁnal swingby on Dec. 22, 1983, denoted 
+by 5 in the ﬁgure, the satellite passed within 80 miles of the surface of the moon on its way toward the comet. ICE passed through 
+the tail of the Giacobini-Zinner comet on Sept. 11, 1985, exactly as planned.
+
+104 CHAPTER THREE
+
+Chaos T
+
+HE CONCEPT of an unstable steady state is familiar in science. It is not possible in practice to balance a ball on the peak of a 
+mountain, even though the conﬁguration of the ball perfectly balanced on the peak is a steady state. The problem is that the 
+trajectory of any initial position of the ball near, but not exactly at, the steady state, will evolve away from the steady state. We 
+investigated sources and saddles, which are unstable ﬁxed points of maps, in Chapters 1 and 2.
+
+What eventually happens to the ball placed near the peak? It moves away from the peak and settles in a valley at a lower altitude. 
+The valley represents a stable steady state. One type of behavior for an initial condition that begins near an unstable steady state 
+is to move away and be attracted by a stable steady state, or perhaps a stable periodic state.
+
+We have seen this behavior in maps of the real line. Consider an initial condition that is near a source p of a map f. At the 
+beginning of such an orbit,
+
+105 C H AO S
+
+unstable behavior is displayed. Exponential separation means that the distance between the orbit point and the source increases at an 
+exponential rate. Each iteration multiplies the distance between them by |f′(p)|  1. We s
