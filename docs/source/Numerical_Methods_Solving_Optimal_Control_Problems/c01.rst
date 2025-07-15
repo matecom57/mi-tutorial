@@ -16,8 +16,11 @@ methods will be explained, and then applied to three different test problems to 
 perform. The results show that the Forward Backward Sweep is the best of the three methods
 with the Shooter Method being a competitor.
 
-Chapter 1:
-Introduction
+Existen diversos procesos numéricos para aproximar un problema de control óptimo. Aquí se explican tres de ellos: el barrido hacia adelante y hacia atrás, el método Shooter y un método de optimización con la caja de herramientas de optimización de MATLAB. Se explicarán los métodos y se aplicarán a tres problemas de prueba diferentes para evaluar su rendimiento. Los resultados muestran que el barrido hacia adelante y hacia atrás es el mejor de los tres, con el método Shooter como competidor.
+
+
+Chapter 1: Introduction
+
 Numerical mathematics is study of quantitative approximations to the solutions of
 mathematical problems including consideration of and bounds to the errors involved. Optimal
 control theory is no exception to this rule. The purpose here is to implement three different
@@ -30,36 +33,42 @@ which will be explained in detail later on. Finally, a ‘winner’ will be chos
 the results of each method applied to the three test problems, in order to see which method is
 best.
 
-Chapter 2:
-General Set up
+Las matemáticas numéricas estudian las aproximaciones cuantitativas a las soluciones de problemas matemáticos, incluyendo la consideración y la limitación de los errores. La teoría del control óptimo no es una excepción. El objetivo es implementar tres algoritmos numéricos diferentes en MATLAB para aproximar la solución de un problema de control óptimo. Una vez desarrollados los métodos, se analizará el concepto de convergencia de cada uno, así como sus posibles defectos o problemas. Posteriormente, se utilizarán los tres métodos para encontrar la solución a tres problemas de prueba diferentes, con el fin de analizar su funcionamiento y comparar sus resultados. Cada uno de los tres problemas se elige por razones específicas que se explicarán en detalle más adelante. Finalmente, se elegirá un método ganador, si es posible, entre los resultados de cada método aplicado a los tres problemas de prueba, para determinar cuál es el mejor.
+
+
+Chapter 2: General Set up
+
 This thesis is dedicated to comparing different numerical processes for solving an optimal
 control problem. Though only a few specific problems will be studied, some general theory and
 processes must be established first before any specific details can be discussed. This chapter will
 be broken into three separate sections. The first section will be dedicated to discussing general
 optimization; the second will cover optimal control theory; and the third will discuss the specific
 details needed for the family of problems in question.
-Section 1:
-Optimization
+
+Section 1: Optimization
+
 The first idea that needs to be set up and defined is what an optimization problem is and
 its relevance. In mathematics, optimization is the process in which the best feasible solution for
 a problem is found. This usually entails finding either a maximum or minimum, which are called
 extrema, of the possible solutions. This can be done in various ways, though the most common
 involves using some version of the derivative of the function.
+
 In optimization, when discussing extrema, a point needs to be made to determine if the
 extrema in question is over the whole domain of the function or just over a certain interval or
 region. If 𝑓 has a maximum (or minimum) over the entire domain, 𝐷, of the function, this is
 called the absolute maximum (or minimum). This means is that, for some 𝑐 in the domain of 𝑓,
 𝑓(𝑐) ≥ 𝑓(𝑥) ∀𝑥 ∈ 𝐷 (or 𝑓(𝑐) ≤ 𝑓(𝑥) ∀𝑥 ∈ 𝐷). These extrema values are referred to as global
 extrema. However, these are not the only type of extreme; there are local extrema are when
-
 there exist a maximum (or minimum) on a small interval, 𝐼, such that 𝐼 ⊂ 𝐷. This means that for
 some 𝑑 ∈ 𝐼, 𝑓(𝑑) ≥ 𝑓(𝑥) ∀𝑥 ∈ 𝐼 (or 𝑓(𝑑) ≤ 𝑓(𝑥) ∀𝑥 ∈ 𝐼).
+
 When it comes to whether or not there even exists an extrema value, a reference can be
 made back to the Extreme Value Theorem [5], which states: If 𝑓: 𝑈 → ℝ, where 𝑈 ⊂ ℝ𝑛 , is
 continuous over a closed interval, [𝑎, 𝑏], then 𝑓 attains an absolute maximum value, 𝑓(𝑐), and a
 absolute minimum value, 𝑓(𝑑), for some numbers 𝑐, 𝑑 ∈ [𝑎, 𝑏]. For more on this, see [6] and [7].
-Section 2:
-Optimal Control Theory
+
+Section 2: Optimal Control Theory
+
 From a general perspective, an optimal control problem is an optimization problem. The
 difference between the two is that, in optimal control theory, the optimizer is a function, not just
 a single value. This function that optimizes is called the optimal control. The technical
@@ -72,16 +81,19 @@ the desired control is found. With these definitions, a basic optimal control pr
 defined. This basic problem will be referred to as our standard problem (SP).
 
 Standard Problem
-(SP)
-𝑡1
-max 𝐽(𝑢) where 𝐽(𝑢) = ∫ 𝑓(𝑡, 𝑥(𝑡), 𝑢(𝑡)) 𝑑𝑡
-𝑢
-𝑡0
-𝑥 ′ (𝑡) = 𝑔(𝑡, 𝑥(𝑡), 𝑢(𝑡))
-𝑥(𝑡0 ) = 𝑥0 , 𝑥(𝑡1 ) is free
+
+.. math::
+
+   max_u 𝐽(𝑢) where 𝐽(𝑢) = \int_{t_0}^{t_1} 𝑓(𝑡, 𝑥(𝑡), 𝑢(𝑡)) 𝑑𝑡
+
+   𝑥' (𝑡) = 𝑔(𝑡, 𝑥(𝑡), 𝑢(𝑡))
+  
+   𝑥(t_0) = 𝑥_0 , 𝑥(𝑡_1) is free
+
 (2.01)
 (2.02)
 (2.03)
+
 The optimal control, 𝑢∗ , is the function that optimizes the objective function, 𝐽(𝑢), as
 seen in (2.01). This control is not bounded. The other arguments in equation (2.01) are 𝑡, which
 is the time variable, and 𝑥(𝑡), which is the state equation. The relationship between 𝑢 and 𝑥 is
