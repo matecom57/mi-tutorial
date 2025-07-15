@@ -128,3 +128,9 @@ Contents
     Fundamentals_Physics_Resnick/c21
 
 
+.. toctree::
+    :maxdepth: 1
+    :caption: Numerical_Methods_Solving_Optimal_Control_Problems
+
+    Numerical_Methods_Solving_Optimal_Control_Problems/c01
+

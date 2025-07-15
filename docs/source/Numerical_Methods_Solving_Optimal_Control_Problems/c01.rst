@@ -1,0 +1,172 @@
+Numerical Methods for Solving Optimal Control Problems
+======================================================
+
+A Thesis Presented for the
+Master of Science
+Degree
+The University of Tennessee, Knoxville
+
+Garrett Robert Rose
+May 2015
+
+There are many different numerical processes for approximating an optimal control
+problem. Three of those are explained here: The Forward Backward Sweep, the Shooter
+Method, and an Optimization Method using the MATLAB Optimization Tool Box. The
+methods will be explained, and then applied to three different test problems to see how they
+perform. The results show that the Forward Backward Sweep is the best of the three methods
+with the Shooter Method being a competitor.
+
+Chapter 1:
+Introduction
+Numerical mathematics is study of quantitative approximations to the solutions of
+mathematical problems including consideration of and bounds to the errors involved. Optimal
+control theory is no exception to this rule. The purpose here is to implement three different
+numerical algorithms in MATLAB to approximate the solution to an optimal control problem.
+Once the methods are developed, the concept of convergence for each method will be discussed
+as well as any flaws or problems with each specific method. After this, the three methods will be
+used to find the solution to three different test problems in order to see how the methods work
+and compare their results to each other. Each of three problems is chosen for specific reasons
+which will be explained in detail later on. Finally, a ‘winner’ will be chosen, if possible, from
+the results of each method applied to the three test problems, in order to see which method is
+best.
+
+Chapter 2:
+General Set up
+This thesis is dedicated to comparing different numerical processes for solving an optimal
+control problem. Though only a few specific problems will be studied, some general theory and
+processes must be established first before any specific details can be discussed. This chapter will
+be broken into three separate sections. The first section will be dedicated to discussing general
+optimization; the second will cover optimal control theory; and the third will discuss the specific
+details needed for the family of problems in question.
+Section 1:
+Optimization
+The first idea that needs to be set up and defined is what an optimization problem is and
+its relevance. In mathematics, optimization is the process in which the best feasible solution for
+a problem is found. This usually entails finding either a maximum or minimum, which are called
+extrema, of the possible solutions. This can be done in various ways, though the most common
+involves using some version of the derivative of the function.
+In optimization, when discussing extrema, a point needs to be made to determine if the
+extrema in question is over the whole domain of the function or just over a certain interval or
+region. If 𝑓 has a maximum (or minimum) over the entire domain, 𝐷, of the function, this is
+called the absolute maximum (or minimum). This means is that, for some 𝑐 in the domain of 𝑓,
+𝑓(𝑐) ≥ 𝑓(𝑥) ∀𝑥 ∈ 𝐷 (or 𝑓(𝑐) ≤ 𝑓(𝑥) ∀𝑥 ∈ 𝐷). These extrema values are referred to as global
+extrema. However, these are not the only type of extreme; there are local extrema are when
+
+there exist a maximum (or minimum) on a small interval, 𝐼, such that 𝐼 ⊂ 𝐷. This means that for
+some 𝑑 ∈ 𝐼, 𝑓(𝑑) ≥ 𝑓(𝑥) ∀𝑥 ∈ 𝐼 (or 𝑓(𝑑) ≤ 𝑓(𝑥) ∀𝑥 ∈ 𝐼).
+When it comes to whether or not there even exists an extrema value, a reference can be
+made back to the Extreme Value Theorem [5], which states: If 𝑓: 𝑈 → ℝ, where 𝑈 ⊂ ℝ𝑛 , is
+continuous over a closed interval, [𝑎, 𝑏], then 𝑓 attains an absolute maximum value, 𝑓(𝑐), and a
+absolute minimum value, 𝑓(𝑑), for some numbers 𝑐, 𝑑 ∈ [𝑎, 𝑏]. For more on this, see [6] and [7].
+Section 2:
+Optimal Control Theory
+From a general perspective, an optimal control problem is an optimization problem. The
+difference between the two is that, in optimal control theory, the optimizer is a function, not just
+a single value. This function that optimizes is called the optimal control. The technical
+definition of an optimal control problem is the process of determining control and state
+trajectories for a dynamic system over a period of time to minimize a performance index. The state
+variable (or function) is the set of variables (functions) used to describe the mathematical state of
+the system. The control or control function is an operation that controls the recording,
+processing, or transmission of data. These two functions drive how the system works and how
+the desired control is found. With these definitions, a basic optimal control problem can be
+defined. This basic problem will be referred to as our standard problem (SP).
+
+Standard Problem
+(SP)
+𝑡1
+max 𝐽(𝑢) where 𝐽(𝑢) = ∫ 𝑓(𝑡, 𝑥(𝑡), 𝑢(𝑡)) 𝑑𝑡
+𝑢
+𝑡0
+𝑥 ′ (𝑡) = 𝑔(𝑡, 𝑥(𝑡), 𝑢(𝑡))
+𝑥(𝑡0 ) = 𝑥0 , 𝑥(𝑡1 ) is free
+(2.01)
+(2.02)
+(2.03)
+The optimal control, 𝑢∗ , is the function that optimizes the objective function, 𝐽(𝑢), as
+seen in (2.01). This control is not bounded. The other arguments in equation (2.01) are 𝑡, which
+is the time variable, and 𝑥(𝑡), which is the state equation. The relationship between 𝑢 and 𝑥 is
+defined by equations (2.02) and (2.03) and is denoted by the relationship in the map 𝑢(𝑡) → 𝑥 =
+𝑥(𝑢). Though this relationship does indeed exist, 𝑥 is really just a function of the independent
+time variable, but in writing 𝑥(𝑢), the dependence that 𝑥 has on 𝑢 is shown. Equation (2.02) is
+the constraint equation on the state, and the initial and terminal conditions are given by (2.03).
+By setting 𝑥(𝑡1 ) to be free, this simply means that the state can grow over time unconditionally.
+To solve our basic optimal control problem, a set of what is called necessary conditions
+must be satisfied. In mathematics, a necessary condition is a condition that must be satisfied for
+a statement to be true, but that does not in and of itself make it true. In regards to (SP), there are
+such conditions that must be satisfied in order to solve the problem. In the 1950’s, a Russian
+mathematician by the name of Lev Pontryagin and his co-workers in Moscow derived such
+conditions. Pontryagin introduced the adjoint function to affix to the differential equation to
+the objective functional. These functions serve a similar purpose as the Lagrange multipliers in
+
+multivariable calculus. The derivation of these results can be found in [1]. The next few
+paragraphs will summarize these results.
+The necessary conditions needed to solve the basic problem are derived from what is
+referred to as the Hamiltonian, 𝐻, which is given by equation (2.04).
+𝐻(𝑡, 𝑥, 𝑢, 𝜆) = 𝑓(𝑡, 𝑥, 𝑢) + 𝜆𝑔(𝑡, 𝑥, 𝑢)
+(2.04)
+Here 𝜆 denotes the adjoint and is dependent on 𝑡, 𝑥, and 𝑢. Using this, Pontryagin determined
+that the following conditions are satisfied by the optimal control, denoted as 𝑢∗ , when the
+Hamiltonian is nonlinear in 𝑢.
+𝜕𝐻
+= 0 at 𝑢∗ ⟹ 𝑓𝑢 + 𝜆𝑔𝑢 = 0
+𝜕𝑢
+𝜆′ = −
+𝜕𝐻
+⟹ 𝜆′ = ℎ(𝑡, 𝑥, 𝜆, 𝑢) − (𝑓𝑥 + 𝜆𝑔𝑥 )
+𝜕𝑥
+𝜆(𝑡1 ) = 0
+{
+𝑥 ′ = 𝑔(𝑡, 𝑥, 𝑢)
+𝑥(𝑡0 ) = 𝑥0
+Optimality Condition(2.05)
+Adjoint Equation(2.06)
+Transversality Condition(2.07)
+Dynamics of the State Equation (2.08)
+With these conditions, there is now a process on how to solve the standard problem
+defined by SP. This process can be found in Table 1.
+
+Table 1: Analytical Process
+(1) Form the Hamiltonian (2.04) for the problem.
+(2) Write the adjoint differential equation, transversality boundary condition, and
+the optimality condition in terms of three unknowns, 𝑢∗ , 𝑥 ∗ , and 𝜆.
+(3) Use the optimality equation 𝐻𝑢 = 0 to solve for 𝑢∗ in terms of 𝑥 ∗ and 𝜆.
+(4) Solve the two differential equations for 𝑥 ∗ and 𝜆 with two boundary
+conditions.
+(5) After finding the optimal state and adjoint, solve for the optimal control using
+the formula derived by step (3).
+If it is possible to solve for the optimal control in terms of 𝑥 ∗ and 𝜆, then the formula for
+𝑢∗ is called the characterization of the optimal control. The state equation and adjoint equations
+together with the characterization and boundary conditions are called the optimality system.
+Now that the process on how to solve SP has been defined, it should be noted that it is not
+enough to simply solve the necessary conditions in order to solve the optimal control problem.
+Justification for the found solutions to be the actual solution for (SP) requires examining some
+existence and uniqueness conditions. A true existence results guarantees an optimal control,
+with finite objective functional. Such results usually require restrictions on either 𝑓 or 𝑔 or even
+possibly both. For the analysis of the methods, an assumption of existence will be made, but for
+reference on existence and uniqueness, refer back to [1].
+Existence is only half of what is desired. Uniqueness of the optimal control is also
+needed. Suppose an optimal control exists, 𝑢∗ , such that 𝐽(𝑢) ≤ 𝐽(𝑢∗ ) for all controls 𝑢. Now,
+
+𝑢∗ is unique if and only if 𝐽(𝑢∗ ) = 𝐽(𝑢). This implies that 𝑢∗ = 𝑢 at all but finitely many points.
+In this case, the associated states will be identical. The state 𝑥 ∗ , is the unique optimal state.
+In most cases, if the solution to the state system is unique, then the corresponding optimal
+control is also unique. This, however, can only be said for small time intervals.
+Now, in general, uniqueness of the optimal control does not always imply that there is a
+unique optimality system. To prove the uniqueness of the optimal control directly, the objective
+functional 𝐽(𝑡, 𝑥(𝑢)) must have strict concavity established. However, this process is, in most
+cases, difficult to prove. Thus, other ways to prove uniqueness must be found, such as proving
+𝑓,𝑔 and the right hand side of the adjoint equation are Lipschitz in their state and adjoint
+arguments. This only proves uniqueness for small time periods. Sometimes, one must bound the
+optimality system to get this property easily.
+Section 3:
+Numerical Processes
+Though most problems have a theoretical answer, it is, in practice, very difficult to find
+explicitly. Hence the necessity of numerical processes. Like mentioned in Section 2.2, the
+main analytical technique is provided by Pontryagin’s Maximum Principle which gives
+necessary conditions that the control and the state need to satisfy. These conditions can be
+solved explicitly sometimes; however, for most problems, the conditions are too complicated to
+be solved explicitly. This is especially true for problems that also involve additional constraints
+on the state or the control. Because of these, numerical approaches are used to construct
+approximations to these difficult equations.
+
+
