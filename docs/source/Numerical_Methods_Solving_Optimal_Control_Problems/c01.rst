@@ -102,6 +102,7 @@ defined by equations (2.02) and (2.03) and is denoted by the relationship in the
 time variable, but in writing 𝑥(𝑢), the dependence that 𝑥 has on 𝑢 is shown. Equation (2.02) is
 the constraint equation on the state, and the initial and terminal conditions are given by (2.03).
 By setting 𝑥(𝑡1 ) to be free, this simply means that the state can grow over time unconditionally.
+
 To solve our basic optimal control problem, a set of what is called necessary conditions
 must be satisfied. In mathematics, a necessary condition is a condition that must be satisfied for
 a statement to be true, but that does not in and of itself make it true. In regards to (SP), there are
@@ -109,46 +110,62 @@ such conditions that must be satisfied in order to solve the problem. In the 195
 mathematician by the name of Lev Pontryagin and his co-workers in Moscow derived such
 conditions. Pontryagin introduced the adjoint function to affix to the differential equation to
 the objective functional. These functions serve a similar purpose as the Lagrange multipliers in
-
 multivariable calculus. The derivation of these results can be found in [1]. The next few
 paragraphs will summarize these results.
+
 The necessary conditions needed to solve the basic problem are derived from what is
 referred to as the Hamiltonian, 𝐻, which is given by equation (2.04).
-𝐻(𝑡, 𝑥, 𝑢, 𝜆) = 𝑓(𝑡, 𝑥, 𝑢) + 𝜆𝑔(𝑡, 𝑥, 𝑢)
+
+.. math::
+
+   𝐻(𝑡, 𝑥, 𝑢, 𝜆) = 𝑓(𝑡, 𝑥, 𝑢) + 𝜆𝑔(𝑡, 𝑥, 𝑢)
 (2.04)
+
 Here 𝜆 denotes the adjoint and is dependent on 𝑡, 𝑥, and 𝑢. Using this, Pontryagin determined
 that the following conditions are satisfied by the optimal control, denoted as 𝑢∗ , when the
 Hamiltonian is nonlinear in 𝑢.
-𝜕𝐻
-= 0 at 𝑢∗ ⟹ 𝑓𝑢 + 𝜆𝑔𝑢 = 0
-𝜕𝑢
-𝜆′ = −
-𝜕𝐻
-⟹ 𝜆′ = ℎ(𝑡, 𝑥, 𝜆, 𝑢) − (𝑓𝑥 + 𝜆𝑔𝑥 )
-𝜕𝑥
-𝜆(𝑡1 ) = 0
-{
-𝑥 ′ = 𝑔(𝑡, 𝑥, 𝑢)
-𝑥(𝑡0 ) = 𝑥0
+
+.. math::
+
+   \frac{𝜕𝐻}{\partial u} = 0 at 𝑢^∗ ⟹   𝑓_𝑢 + 𝜆𝑔_𝑢 = 0
+
+   𝜆′ = − \frac{𝜕𝐻}{\partial x} ⟹  𝜆' = ℎ(𝑡, 𝑥, 𝜆, 𝑢) − (𝑓_𝑥 + 𝜆𝑔_𝑥 )
+
+   𝜆(𝑡_1 ) = 0
+
+   𝑥' = 𝑔(𝑡, 𝑥, 𝑢)
+   𝑥(𝑡_0 ) = 𝑥_0
+
 Optimality Condition(2.05)
+
 Adjoint Equation(2.06)
+
 Transversality Condition(2.07)
+
 Dynamics of the State Equation (2.08)
+
 With these conditions, there is now a process on how to solve the standard problem
 defined by SP. This process can be found in Table 1.
 
 Table 1: Analytical Process
+
 (1) Form the Hamiltonian (2.04) for the problem.
+
 (2) Write the adjoint differential equation, transversality boundary condition, and
 the optimality condition in terms of three unknowns, 𝑢∗ , 𝑥 ∗ , and 𝜆.
+
 (3) Use the optimality equation 𝐻𝑢 = 0 to solve for 𝑢∗ in terms of 𝑥 ∗ and 𝜆.
+
 (4) Solve the two differential equations for 𝑥 ∗ and 𝜆 with two boundary
 conditions.
+
 (5) After finding the optimal state and adjoint, solve for the optimal control using
 the formula derived by step (3).
+
 If it is possible to solve for the optimal control in terms of 𝑥 ∗ and 𝜆, then the formula for
 𝑢∗ is called the characterization of the optimal control. The state equation and adjoint equations
 together with the characterization and boundary conditions are called the optimality system.
+
 Now that the process on how to solve SP has been defined, it should be noted that it is not
 enough to simply solve the necessary conditions in order to solve the optimal control problem.
 Justification for the found solutions to be the actual solution for (SP) requires examining some
@@ -156,13 +173,15 @@ existence and uniqueness conditions. A true existence results guarantees an opti
 with finite objective functional. Such results usually require restrictions on either 𝑓 or 𝑔 or even
 possibly both. For the analysis of the methods, an assumption of existence will be made, but for
 reference on existence and uniqueness, refer back to [1].
+
 Existence is only half of what is desired. Uniqueness of the optimal control is also
 needed. Suppose an optimal control exists, 𝑢∗ , such that 𝐽(𝑢) ≤ 𝐽(𝑢∗ ) for all controls 𝑢. Now,
-
 𝑢∗ is unique if and only if 𝐽(𝑢∗ ) = 𝐽(𝑢). This implies that 𝑢∗ = 𝑢 at all but finitely many points.
 In this case, the associated states will be identical. The state 𝑥 ∗ , is the unique optimal state.
+
 In most cases, if the solution to the state system is unique, then the corresponding optimal
 control is also unique. This, however, can only be said for small time intervals.
+
 Now, in general, uniqueness of the optimal control does not always imply that there is a
 unique optimality system. To prove the uniqueness of the optimal control directly, the objective
 functional 𝐽(𝑡, 𝑥(𝑢)) must have strict concavity established. However, this process is, in most
@@ -170,8 +189,9 @@ cases, difficult to prove. Thus, other ways to prove uniqueness must be found, s
 𝑓,𝑔 and the right hand side of the adjoint equation are Lipschitz in their state and adjoint
 arguments. This only proves uniqueness for small time periods. Sometimes, one must bound the
 optimality system to get this property easily.
-Section 3:
-Numerical Processes
+
+Section 3: Numerical Processes
+
 Though most problems have a theoretical answer, it is, in practice, very difficult to find
 explicitly. Hence the necessity of numerical processes. Like mentioned in Section 2.2, the
 main analytical technique is provided by Pontryagin’s Maximum Principle which gives
