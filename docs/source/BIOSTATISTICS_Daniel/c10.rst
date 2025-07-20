@@ -1,4 +1,0 @@
-C10. Regresión y Correlación Multiple
-=====================================
-
-La regre
