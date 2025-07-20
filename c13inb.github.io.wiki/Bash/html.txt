@@ -1,8 +1,0 @@
-[__DICOM__](http://es.wikipedia.org/wiki/DICOM)
-[image](https://github.com/c13inb/c13inb.github.io/assets/129544525/fdc38680-2baf-4acb-adcd-35ddafe2f937)
-[image](https://github.com/c13inb/c13inb.github.io/assets/129544525/0375fb49-773c-4e68-8044-dbdbdd7a102e)
-[image](https://github.com/c13inb/c13inb.github.io/assets/129544525/66fc01c1-6cfe-42c1-b77a-c2852a361918)
-[Aquí](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
-[The Unix Workbench](https://seankross.com/the-unix-workbench/command-line-basics.html)
-[aquí](https://open.win.ox.ac.uk/pages/fslcourse/lectures/scripting/all.htm)
-[aquí](https://superuser.com/questions/125728/what-is-the-difference-between-bash-and-sh.)
