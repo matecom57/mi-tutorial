@@ -2,45 +2,56 @@ C04 Motion in Two and Three Dimensions
 ==================================
 
 4-1 POSITION AND DISPLACEMENT
+-----------------------------
+
 Learning Objectives
+
 After reading this module, you should be able to . . .
+
 4.01 Draw two-dimensional and three-dimensional position
 vectors for a particle, indicating the components along the
 axes of a coordinate system.
-4.02 On a coordinate system, determine the direction and
 
-magnitude of a particle’s position vector from its compo-
-nents, and vice versa.
-4.03 Apply the relationship between a particle’s displace-
-ment vector and its initial and final position vectors.
+4.02 On a coordinate system, determine the direction and magnitude of a particle’s position vector from its components, and vice versa.
+
+4.03 Apply the relationship between a particle’s displacement vector and its initial and final position vectors.
 
 Key Ideas
-● The location of a particle relative to the origin of a coordi-
-:
-nate system is given by a position vector r , which in unit-
-vector notation is
-:
-r " xî # yĵ # zk̂.
 
-Here xî , yĵ , and zk̂ are the vector components of position
-vector :
-r , and x, y, and z are its scalar components (as well
+* The location of a particle relative to the origin of a coordinate system is given by a position vector :math:`\overrightarrow{r}`, which in unit-
+vector notation is
+
+.. math::
+
+   \overrightarrow{r} = x \hat{i} + y \hat{j} + k \hat{k}
+
+Here :math:`x \hat{i}, y \hat{j}`, and :math:`z \hat{k}` are the vector components of position
+vector :math:`\overrightarrow{r}`, and x, y, and z are its scalar components (as well
 as the coordinates of the particle).
-one or two angles for orientation, or by its vector or scalar
+
+* A position vector is described either by a magnitude and one or two angles for orientation, or by its vector or scalar
 components.
-● If a particle moves so that its position vector changes from
-:
-r 1 to :
-r 2, the particle’s displacement -:
-r is
--:
-r ":
-r2 $ :
-r 1.
+
+ * If a particle moves so that its position vector changes from :math:`\overrightarrow{r}_1` to :math:`\overrightarrow{r}_2`
+, the particle’s displacement :math:`\Delta \overrightarrow{r}` is
+
+.. math::
+
+   \Delta \overrightarrow{r} = \overrightarrow{r}_2 - \overrightarrow{r}_1
+
 The displacement can also be written as
-● A position vector is described either by a magnitude and
+
+.. math::
+
+   \Delta \overrightarrow{r} = (x_2-x_1) \hat{i} + (y_2-y_1) \hat{j} + (k_2-k_1>
+
+   = \Delta x \hat{i} + \Delta y \hat{j} + \Delta k \hat{k}
+
+
 
 What Is Physics?
+----------------
+
 In this chapter we continue looking at the aspect of physics that analyzes
 motion, but now the motion can be in two or three dimensions. For example,
 medical researchers and aeronautical engineers might concentrate on the
