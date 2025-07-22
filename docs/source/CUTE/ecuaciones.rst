@@ -27,3 +27,8 @@ Ecuaciones
    x_2
    \end{pmatrix}
 
+.. math::
+
+   \dot{p}_1 = -x_1 - (p_1 - p_1 x_2 + p_2 x_2 + p_2x_2 - 0-4 p_1 u_1
+
+
