@@ -22,4 +22,5 @@ Contents
 
     Programming_3D_Applications_with_HTML5_and_WebGL_c01
     Fundamentals_of_Physics_Resnick_c04
+    CUTE/ecuaciones
 
