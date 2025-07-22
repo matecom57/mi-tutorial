@@ -43,7 +43,11 @@ Ecuaciones
   \begin{pmatrix}
    -x_1 \\
    x_2 
+   \end{pmatrix} - ( \begin{pmatrix}
+   1 & -x_2  \\
+   x_1 & -1
    \end{pmatrix} \begin{pmatrix}
-   x_1  \\
-   x_2
-   \end{pmatrix}
+   p_1  \\
+   p_2
+   \end{pmatrix} 
+
