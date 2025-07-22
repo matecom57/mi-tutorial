@@ -1,4 +1,4 @@
-Ecuaciones
+Ecuaciones - 02
 ==========
 
 .. math::
