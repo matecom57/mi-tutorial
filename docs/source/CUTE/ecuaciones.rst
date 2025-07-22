@@ -1,4 +1,4 @@
-Ecuaciones - 06
+Ecuaciones - 07
 ==========
 
 .. math::
