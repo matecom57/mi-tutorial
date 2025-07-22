@@ -10,11 +10,14 @@ Ecuaciones
 .. math::
 
    \begin{pmatrix}
-   x_1 & 0 \\
-   x_2 & 0
+   \dot{x}_1  \\
+   \dot{x}_2 
    \end{pmatrix} =
   \begin{pmatrix}
    1 & -x_1 \\
    x_2 & -1
-   \end{pmatrix} =
+   \end{pmatrix} \begin{pmatrix}
+   x_1  \\
+   x_2
+   \end{pmatrix}
 
