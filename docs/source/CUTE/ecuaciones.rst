@@ -43,7 +43,7 @@ Ecuaciones - 04
    \begin{pmatrix}
    -x_1 \\
    x_2 
-   \end{pmatrix} -  ( \begin{pmatrix}
+   \end{pmatrix} - \left[ ( \begin{pmatrix}
    1 & x_2  \\
    -x_1 & -1
    \end{pmatrix} \begin{pmatrix}
@@ -55,5 +55,5 @@ Ecuaciones - 04
    \end{pmatrix} \begin{pmatrix}
    p_1  \\
    p_2
-   \end{pmatrix} )
+   \end{pmatrix} \right]
 
