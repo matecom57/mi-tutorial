@@ -12,4 +12,9 @@ Ecuaciones
    \begin{pmatrix}
    x_1 & 0 \\
    x_2 & 0
-   \end{pmatrix}
+   \end{pmatrix} =
+  \begin{pmatrix}
+   1 & -x_1 \\
+   x_2 & -1
+   \end{pmatrix} =
+
