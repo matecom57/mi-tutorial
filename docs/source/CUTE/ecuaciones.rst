@@ -1,4 +1,4 @@
-Ecuaciones - 03
+Ecuaciones - 04
 ==========
 
 .. math::
@@ -43,7 +43,7 @@ Ecuaciones - 03
    \begin{pmatrix}
    -x_1 \\
    x_2 
-   \end{pmatrix} - \left ( \begin{pmatrix}
+   \end{pmatrix} -  ( \begin{pmatrix}
    1 & x_2  \\
    -x_1 & -1
    \end{pmatrix} \begin{pmatrix}
@@ -55,5 +55,5 @@ Ecuaciones - 03
    \end{pmatrix} \begin{pmatrix}
    p_1  \\
    p_2
-   \end{pmatrix} \rigth )
+   \end{pmatrix} )
 
