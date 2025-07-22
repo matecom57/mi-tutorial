@@ -1,4 +1,4 @@
-Ecuaciones - 05
+Ecuaciones - 06
 ==========
 
 .. math::
@@ -43,7 +43,7 @@ Ecuaciones - 05
    \begin{pmatrix}
    -x_1 \\
    x_2 
-   \end{pmatrix} - \left[ ( \begin{pmatrix}
+   \end{pmatrix} - \left[  \begin{pmatrix}
    1 & x_2  \\
    -x_1 & -1
    \end{pmatrix} \begin{pmatrix}
