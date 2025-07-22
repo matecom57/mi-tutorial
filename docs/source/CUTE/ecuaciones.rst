@@ -40,7 +40,7 @@ Ecuaciones - 02
    \dot{p}_1  \\
    \dot{p}_2
    \end{pmatrix} =
-  \begin{pmatrix}
+   \begin{pmatrix}
    -x_1 \\
    x_2 
    \end{pmatrix} - \left ( \begin{pmatrix}
