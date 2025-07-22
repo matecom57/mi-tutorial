@@ -7,3 +7,9 @@ Ecuaciones
 
    \dot{x}_2 = -x_2 + x_1 x_2 - 0.2 x_2 u_2
 
+.. math::
+
+   \begin{pmatrix}
+   x_1 & 0 \\
+   x_2 & 0
+   \end{pmatrix}
