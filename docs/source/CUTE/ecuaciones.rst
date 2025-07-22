@@ -51,9 +51,9 @@ Ecuaciones
    p_2
    \end{pmatrix} - \begin{pmatrix}
    x_2 + 0.4u_1  & x_2  \\
-   0 & -x_1 + 0.2 u_2 
+   0             &  -x_1 + 0.2 u_2 
    \end{pmatrix} \begin{pmatrix}
    p_1  \\
    p_2
-   \end{pmatrix}
+   \end{pmatrix} \rigth )
 
