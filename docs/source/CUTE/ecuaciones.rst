@@ -29,6 +29,8 @@ Ecuaciones
 
 .. math::
 
-   \dot{p}_1 = -x_1 - (p_1 - p_1 x_2 + p_2 x_2 + p_2x_2 - 0-4 p_1 u_1
+   \dot{p}_1 = -x_1 - (p_1 - p_1 x_2 + p_2 x_2 - 0.4 p_1 u_1
+
+   \dot{p}_2 = x_2 - (-p_2 + p_2 x_1 - p_1 x_1 - 0.2 p_2 u_2
 
 
