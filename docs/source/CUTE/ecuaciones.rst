@@ -19,5 +19,11 @@ Ecuaciones
    \end{pmatrix} \begin{pmatrix}
    x_1  \\
    x_2
+   \end{pmatrix} - \begin{pmatrix}
+   x_2+ 0.4u_1 & 0 \\
+   0 & -x_1 + 0.2 u_2
+   \end{pmatrix} \begin{pmatrix}
+   x_1  \\
+   x_2
    \end{pmatrix}
 
