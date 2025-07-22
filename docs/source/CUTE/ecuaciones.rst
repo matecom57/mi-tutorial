@@ -34,3 +34,16 @@ Ecuaciones
    \dot{p}_2 = x_2 - (-p_2 + p_2 x_1 - p_1 x_1 - 0.2 p_2 u_2)
 
 
+.. math::
+
+   \begin{pmatrix}
+   \dot{p}_1  \\
+   \dot{p}_2
+   \end{pmatrix} =
+  \begin{pmatrix}
+   -x_1 \\
+   x_2 
+   \end{pmatrix} \begin{pmatrix}
+   x_1  \\
+   x_2
+   \end{pmatrix}
