@@ -72,4 +72,4 @@ EcuDif_Relay-pTeor_p3.R
 
 
 .. image:: retardo01.png
-
+   :scale: 50%
