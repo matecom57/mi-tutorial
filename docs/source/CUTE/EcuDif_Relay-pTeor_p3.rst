@@ -71,5 +71,5 @@ EcuDif_Relay-pTeor_p3.R
    points(rn$t, rn$f, type='l', col='red')
 
 
-.. image:: Rplots.pdf
+.. image:: retardo01.png
 
