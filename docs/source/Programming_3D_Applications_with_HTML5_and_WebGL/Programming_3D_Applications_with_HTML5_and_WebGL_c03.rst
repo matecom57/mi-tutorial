@@ -1,8 +1,10 @@
 ﻿Programming_3D_Applications_with_HTML5_and_WebGL_c03
-
+===================================================
 
 CHAPTER 3
+
 Three.js—A JavaScript 3D Engine
+
 The previous chapter demonstrated both the power and complexity of programming
 in WebGL. WebGL allows access to the full capabilities of the GPU to create beautiful
 real-time 3D renderings and animations in web pages. But to do anything more than

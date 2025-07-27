@@ -30,6 +30,7 @@ Contents
     :caption: Programming_3D_Applications_with_HTML5_and_WebGL
 
     Programming_3D_Applications_with_HTML5_and_WebGL/Programming_3D_Applications_with_HTML5_and_WebGL_c01
+    Programming_3D_Applications_with_HTML5_and_WebGL/Programming_3D_Applications_with_HTML5_and_WebGL_c02
     Programming_3D_Applications_with_HTML5_and_WebGL/Programming_3D_Applications_with_HTML5_and_WebGL_c03
 
 
