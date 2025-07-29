@@ -40,3 +40,10 @@ Contents
 
     Artificial_Intelligence_for_Engineers_Zhen/Artificial_Intelligence_for_Engineers_Zhen_c01
 
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Linux
+
+    linux/gnu_linux
+
