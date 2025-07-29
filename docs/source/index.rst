@@ -60,4 +60,8 @@ Contents
     DeepR_Programming_Marek/DeepR_Programming_Marek_c01
     DeepR_Programming_Marek/DeepR_Programming_Marek_c02
 
+.. toctree::
+    :maxdepth: 1
+    :caption:
 
+    python/python01
