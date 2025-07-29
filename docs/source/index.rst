@@ -52,3 +52,12 @@ Contents
     :caption: RR
 
     RR/rr
+
+.. toctree::
+    :maxdepth: 1
+    :caption: DeepR_Programming_Marek
+
+    DeepR_Programming_Marek/DeepR_Programming_Marek_c01
+    DeepR_Programming_Marek/DeepR_Programming_Marek_c02
+
+
