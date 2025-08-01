@@ -62,7 +62,7 @@ Contents
 
 .. toctree::
     :maxdepth: 1
-    :caption:
+    :caption: buenos
 
     python/python01
 
