@@ -10,6 +10,7 @@ Lenguajes de Programacion
     python/python01
     lenguaje_programacion_multiparadigma
     programacion_orientada_objetos
+    programacion_funcional
 
 
 
