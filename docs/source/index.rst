@@ -49,22 +49,10 @@ Contents
 
 .. toctree::
     :maxdepth: 1
-    :caption: RR
-
-    RR/rr
-
-.. toctree::
-    :maxdepth: 1
     :caption: DeepR_Programming_Marek
 
     DeepR_Programming_Marek/DeepR_Programming_Marek_c01
     DeepR_Programming_Marek/DeepR_Programming_Marek_c02
-
-.. toctree::
-    :maxdepth: 1
-    :caption: buenos
-
-    python/python01
 
     Control_Theory_for_Practical_Applications_Hao/index2
 
@@ -74,3 +62,4 @@ Contents
     Reportes/wifi
     Reportes/wifi2
 
+    Lenguajes_Programacion/lenguajes_programacion
