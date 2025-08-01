@@ -70,6 +70,7 @@ Contents
 
     Docker/docker
     Reportes/firefox
+    Reportes/firefox2
     Reportes/wifi
     Reportes/wifi2
 
