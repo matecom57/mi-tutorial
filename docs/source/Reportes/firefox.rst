@@ -1,6 +1,8 @@
 Firefox
 =======
 
+echinocactus
+
 Si todo lo demás falla o si no tienes tiempo para depurar, puedes desinstalar, borrar todas las preferencias y los datos del perfil, y 
 reinstalar, eso debería funcionar:
 
