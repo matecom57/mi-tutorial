@@ -1,6 +1,17 @@
 Firefox
 =======
 
+amonra@charon:~$ which firefox
+/usr/bin/firefox
+
+amonra@charon:~$ firefox&
+
+monra@charon:~$ snap list | grep firefox
+firefox            134.0.2-1        5647   latest/stable  mozilla**    -
+
+
+
+
 echinocactus
 
 Si todo lo demás falla o si no tienes tiempo para depurar, puedes desinstalar, borrar todas las preferencias y los datos del perfil, y 
