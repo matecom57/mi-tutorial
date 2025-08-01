@@ -8,6 +8,7 @@ Lenguajes de Programacion
     programacion-imperativa
     RR/rr
     python/python01
+    lenguaje_programacion_multiparadigma
 
 
 
