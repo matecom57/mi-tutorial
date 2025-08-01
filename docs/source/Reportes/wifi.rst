@@ -44,3 +44,6 @@ Código
 This will list all connections, and you should see your connected Wi-Fi network listed as "activated".
 
 
+sudo apt install network-manager
+
+
