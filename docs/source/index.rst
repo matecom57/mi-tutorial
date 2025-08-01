@@ -70,4 +70,5 @@ Contents
 
     Docker/docker
     Reportes/firefox
+    Reportes/wifi
 
