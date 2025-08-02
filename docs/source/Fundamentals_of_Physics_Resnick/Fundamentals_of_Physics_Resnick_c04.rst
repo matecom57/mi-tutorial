@@ -1,45 +1,58 @@
-Motion in Two and Three Dimensions
+C04 Motion in Two and Three Dimensions
+======================================
 
 4-1 POSITION AND DISPLACEMENT
+
 Learning Objectives
+
 After reading this module, you should be able to . . .
+
 4.01 Draw two-dimensional and three-dimensional position
 vectors for a particle, indicating the components along the
 axes of a coordinate system.
-4.02 On a coordinate system, determine the direction and
 
+4.02 On a coordinate system, determine the direction and
 magnitude of a particle’s position vector from its compo-
 nents, and vice versa.
+
 4.03 Apply the relationship between a particle’s displace-
 ment vector and its initial and final position vectors.
 
 Key Ideas
-● The location of a particle relative to the origin of a coordi-
-:
-nate system is given by a position vector r , which in unit-
+
+* The location of a particle relative to the origin of a coordinate system is given by a position vector r , which in unit-
 vector notation is
-:
-r " xî # yĵ # zk̂.
 
-Here xî , yĵ , and zk̂ are the vector components of position
-vector :
-r , and x, y, and z are its scalar components (as well
+.. math::
+
+\overrightarrow{x} = x \hat{i} + y \hat{j} + z \hat{k} 
+
+Here :math:`x \hat{î}, y \hat{j}`, and  :math:`k \hat{k}` are the vector components of position
+vector :math:`\overrightarrow{r}`, and x, y, and z are its scalar components (as well
 as the coordinates of the particle).
-one or two angles for orientation, or by its vector or scalar
-components.
-● If a particle moves so that its position vector changes from
-:
-r 1 to :
-r 2, the particle’s displacement -:
-r is
--:
-r ":
-r2 $ :
-r 1.
-The displacement can also be written as
-● A position vector is described either by a magnitude and
 
+* A position vector is described either by a magnitude and one or two angles for orientation, or by its vector or scalar
+components.
+
+* If a particle moves so that its position vector changes from :math:`\overrightarrow{r}_1` to :math:`\overrightarrow{r}_2`,
+the particle’s displacement :math:`\Delta \overrightarrow{x}` is
+
+.. math::
+
+   \Delta \overrightarrow{r} = \overrightarrow{r}_2 - \overrightarrow{r}_1
+
+
+The displacement can also be written as
+
+.. math::
+
+   \Delta \overrightarrow{r} = (x_2 - x_1) \hat{i} + (y_2 - y_1) \hat{j} + (z_2 - z_1) \hat{k}
+   = \Delta x \hat{i} + \Delta y \hat{j} + \Delta z \hat{k}
+
+ 
 What Is Physics?
+----------------
+
 In this chapter we continue looking at the aspect of physics that analyzes
 motion, but now the motion can be in two or three dimensions. For example,
 medical researchers and aeronautical engineers might concentrate on the
@@ -52,344 +65,290 @@ overhand push shot, in which the ball is pushed away from about shoulder
 height and then released. Or the player might use an underhand loop shot, in
 which the ball is brought upward from about the belt-line level and released.
 The first technique is the overwhelming choice among professional players, but
-the legendary Rick Barry set the record for free-throw shooting with the under-
-hand technique.
+the legendary Rick Barry set the record for free-throw shooting with the underhand technique.
+
 Motion in three dimensions is not easy to understand. For example, you are
 probably good at driving a car along a freeway (one-dimensional motion) but
 would probably have a difficult time in landing an airplane on a runway (three-
 dimensional motion) without a lot of training.
+
 In our study of two- and three-dimensional motion, we start with position
 and displacement.
 
 Position and Displacement
-To locate the
-particle, this
-is how far
-parallel to z.
+-------------------------
+
 One general way of locating a particle (or particle-like object) is with a position
-vector :
-r , which is a vector that extends from a reference point (usually the
-origin) to the particle. In the unit-vector notation of Module 3-2, :
-r can be written
-This is how far
-parallel to y.
-(4-1)
-:
-r " xî # yĵ # zk̂,
-:
-where xî , yĵ , and zk̂ are the vector components of r and the coefficients x, y, and z
+vector :math:`\overrightarrow{r}`, which is a vector that extends from a reference point (usually the
+origin) to the particle. In the unit-vector notation of Module 3-2, :math:`\overrightarrow{r}`
+can be written
+
+.. math::
+
+   \overrightarrow{x} = x \hat{i} + y \hat{j} + z \hat{k}
+
+where :math;`x \hat{i}, y \hat{j}`, and :math;`z \hat{k}` are the vector components of :math:`\overrightarrow{r}` and the coefficients x, y, and z
 are its scalar components.
+
 The coefficients x, y, and z give the particle’s location along the coordinate
 axes and relative to the origin; that is, the particle has the rectangular coordinates
 (x, y, z). For instance, Fig. 4-1 shows a particle with position vector
-y
-This is how far
-parallel to x.
-(2 m)jˆ
-(–3 m)iˆ
-ˆ
-(5 m)k
-r " ($3 m)î # (2 m)ĵ # (5 m)k̂
-r
-and rectangular coordinates ($3 m, 2 m, 5 m). Along the x axis the particle is
-3 m from the origin, in the $î direction. Along the y axis it is 2 m from the
-origin, in the #ĵ direction. Along the z axis it is 5 m from the origin, in the #k̂
+
+.. math::
+
+   \overrightarrow{x} = (-3 m) \hat{i} + (2 m) \hat{j} + (5 m) \hat{k}
+
+and rectangular coordinates (-3 m, 2 m, 5 m). Along the x axis the particle is
+3 m from the origin, in the :math:`\hat{î}` direction. Along the y axis it is 2 m from the
+origin, in the :math:`+\hat{j}` direction. Along the z axis it is 5 m from the origin, in the :math:`+\hat{k}`
 direction.
+
 As a particle moves, its position vector changes in such a way that the vector
-always extends to the particle from the reference point (the origin). If the posi-
-:
-tion vector changes—say, from :
-r 1 to r 2 during a certain time interval—then the
-:
-particle’s displacement - r during that time interval is
-:
-:
-x
-O
-:
-:
-- r " r 2 $ r 1.
-z
-Figure 4-1 The position vector :
-r for a parti-
-cle is the vector sum of its vector compo-
-nents.
-(4-2)
+always extends to the particle from the reference point (the origin). If the position vector changes—say, from 
+:math:`\overrightarrow{r}_1` to :math:`\overrightarrow{r}_2` during a certain time interval—then the
+particle’s displacement :math:`\Delta \overrightarrow{r}` during that time interval is
+
+.. math::
+
+   \Delta \overrightarrow{r} = \overrightarrow{r}_2 - \overrightarrow{r}_1
+
 Using the unit-vector notation of Eq. 4-1, we can rewrite this displacement as
-:
-- r " (x2 î # y2 ĵ # z2 k̂) $ (x1î # y1 ĵ # z1 k̂)
+
+.. math::
+
+   \Delta \overrightarrow{r} = (x_2 \hat{i} + y_2 \hat{j} + z_2 \hat{k}) - (x_1 \hat{i} + y_1 \hat{j} + z_1 \hat{k})
+
 or as
-:
-- r " (x2 $ x1)î # (y2 $ y1)ĵ # (z2 $ z1)k̂,
-(4-3)
-:
-where coordinates (x1, y1, z1) correspond to position vector r 1 and coordinates
-:
-(x2, y2, z2) correspond to position vector r 2 . We can also rewrite the displacement
-by substituting -x for (x2 $ x1), -y for (y2 $ y1), and -z for (z2 $ z1):
--:
-r " -xî # -y ĵ # -zk̂.
-(4-4)
+
+.. math::
+
+   \Delta \overrightarrow{r} = (x_2-x_1) \hat{i} + (y_2-y_1) \hat{j} + (z_2-z_1) \hat{k}
+
+where coordinates :math:`(x_1, y_1, z_1)` correspond to position vector :math:`\overrightarrow{r}_1`
+and coordinates :math:`(x_2, y_2, z_2)` correspond to position vector :math:`\overrightarrow{r}_2`. We can also rewrite the displacement
+by substituting :math:`\Delta x` for :math:`(x_2-x_1)`, :math:`\Delta y` for :math:`(y_2-y_1)`, and :math:`\Delta z` for :math:`(z_2-z_1)`:
 
 Sample Problem 4.01 Two-dimensional position vector, rabbit run
 
 A rabbit runs across a parking lot on which a set of
-coordinate axes has, strangely enough, been drawn. The co-
-ordinates (meters) of the rabbit’s position as functions of
+coordinate axes has, strangely enough, been drawn. The coordinates (meters) of the rabbit’s position as functions of
 time t (seconds) are given by
-and
-x " $0.31t 2 # 7.2t # 28(4-5)
-y " 0.22t 2 $ 9.1t # 30.(4-6)
-(a) At t " 15 s, what is the rabbit’s position vector :
-r in unit-
+
+.. math::
+
+   x = -0.31 t^2 + 7.2t + 28
+
+and 
+
+.. math::
+
+   y = 0.22 t^2 - 9.1t + 30
+
+(a) At t = 15 s, what is the rabbit’s position vector :math:`\overrightarrow{r}`
+in unit-
 vector notation and in magnitude-angle notation?
 
 KEY IDEA
+
 The x and y coordinates of the rabbit’s position, as given by
 Eqs. 4-5 and 4-6, are the scalar components of the rabbit’s
+position vector :math:`\overrightarrow{r}`. Let’s evaluate those coordinates at the
+given time, and then we can use Eq. 3-6 to evaluate the magnitude and orientation of the position vector.
 
-position vector :
-r . Let’s evaluate those coordinates at the
-given time, and then we can use Eq. 3-6 to evaluate the mag-
-nitude and orientation of the position vector.
 Calculations: We can write
-:
-r (t) " x(t)î # y(t)ĵ.
-(We write r (t) rather than r because the components are
-:
-functions of t, and thus r is also.)
-At t " 15 s, the scalar components are
-x " ($0.31)(15)2 # (7.2)(15) # 28 " 66 m
+
+.. math::
+
+   \overrightarrow{r}(x) = x(t) \hat{i} + y(t) \hat{j} 
+
+(We write :math:`\overrightarrow{r}(t)` rather than :math:`\overrightarrow{r}` because the components are
+functions of t, and thus :math:`\overrightarrow{r}` is also.)
+
+At t = 15 s, the scalar components are
+
+.. math::
+
+   x = (-0.31)(15)^2 + (7.2)(15)  + 28 = 66 m
 
 and
+
+.. math::
+
+   x = (0.22)(15)^2 - (9.1)(15)  + 30 = -57 m
+
 so
-y " (0.22)(15)2 $ (9.1)(15) # 30 " $57 m,
-:
-r " (66 m)î $ (57 m)ĵ,
-(Answer)
+
+.. math::
+
+   \overrightarrow{r} = (66 m) \hat{i} - (57 m) \hat{j} 
 
 which is drawn in Fig. 4-2a. To get the magnitude and angle
-of :
-r , notice that the components form the legs of a right tri-
+of :math:`\overrightarrow{r}`, notice that the components form the legs of a right tri-
 angle and r is the hypotenuse. So, we use Eq. 3-6:
 
-r " 2x2 # y2 " 2(66 m)2 # ($57 m)2
+.. math::
 
-Check: Although u " 139° has the same tangent as $41°,
-the components of position vector :
-r indicate that the de-
-sired angle is 139° $ 180° " $41°.
-(b) Graph the rabbit’s path for t " 0 to t " 25 s.
-(Answer)
-$
-y
-$57 m
-" tan$1
-" $413 . (Answer)
-x
-66 m
+   r = \sqrt{x^2 + y^2} = \sqrt{(66 m)^2 + (-57 m)^2} = 87 m
+
+and :math:`\theta = \tan^{-1} \frac{y}{x} = \tan^{-1} \frac{-57 m}{66 m} = -41^o` 
+
+Check: Although :math:`\theta=139^o` has the same tangent as :math:`-41^o`,
+the components of position vector :math:`\overrightarrow{r}` indicate that the desired angle is :math:`139^o - 180^o = -41^o`.
+
+(b) Graph the rabbit’s path for t = 0 to t = 25 s.
+
 Graphing: We have located the rabbit at one instant, but to
 see its path we need a graph. So we repeat part (a) for sev-
 eral values of t and then plot the results. Figure 4-2b shows
 the plots for six values of t and the path connecting them.
 
 4-2 AVERAGE VELOCITY AND INSTANTANEOUS VELOCITY
+-----------------------------------------------
+
 Learning Objectives
+
 After reading this module, you should be able to . . .
+
 4.04 Identify that velocity is a vector quantity and thus has
 both magnitude and direction and also has components.
+
 4.05 Draw two-dimensional and three-dimensional velocity
 vectors for a particle, indicating the components along the
 axes of the coordinate system.
+
 4.06 In magnitude-angle and unit-vector notations, relate a parti-
 cle’s initial and final position vectors, the time interval between
 those positions, and the particle’s average velocity vector.
+
 4.07 Given a particle’s position vector as a function of time,
 determine its (instantaneous) velocity vector.
 
 Key Ideas
-:
-● If a particle undergoes a displacement - r in time interval -t,
-its average velocity :
-vavg for that time interval is
-:
-:
-vavg "
--r
-.
--t
-:
-● As -t is shrunk to 0, vavg reaches a limit called either the
-velocity or the instantaneous velocity :
-v:
-:
-v"
-d:
-r
-,
-dt
+
+* If a particle undergoes a displacement :math:`\Delta \overrightarrow{r}` in time interval :math:`\Delta t`,
+its average velocity :math:`\overrightarrow{v}_{avg}`  for that time interval is
+
+.. math::
+
+   \overrightarrow{v}_{avg} = \frac{\Delta \overrightarrow{r}}{\Delta t}
+
+* As :math:`\Delta t` is shrunk to 0, :math:`\overrightarrow{v}_{avg}` reaches a limit called either the
+velocity or the instantaneous velocity :math:`\overrightarrow{v}`:
+
+.. math::
+
+   \overrightarrow{v} = \frac{d \overrightarrow{r}}{d t}
+
 which can be rewritten in unit-vector notation as
-:
-v " vx î # vy ĵ # vzk̂,
-where vx " dx/dt, vy " dy/dt, and vz " dz/dt.
-:
-● The instantaneous velocity v of a particle is always directed
+
+.. math::
+
+   \overrightarrow{v} = v_x \hat{i} + v_y \hat{j} + v_z \hat{k}
+
+where :math:`v_x = dx/dt, v_y= dy/dt`, and :math:`v_z = dz/dt`.
+
+* The instantaneous velocity v of a particle is always directed
 along the tangent to the particle’s path at the particle’s
 position.
 
 Average Velocity and Instantaneous Velocity
+-------------------------------------------
+
 If a particle moves from one point to another, we might need to know how fast it
 moves. Just as in Chapter 2, we can define two quantities that deal with “how
 fast”: average velocity and instantaneous velocity. However, here we must con-
 sider these quantities as vectors and use vector notation.
-If a particle moves through a displacement -:
-r in a time interval -t, then its
-average velocity :
-v avg is
-displacement
-average velocity "
-,
-time interval
-:
-:
-v avg "
+
+If a particle moves through a displacement :math:`\Delta \overrightarrow{r}`
+in a time interval :math:`\Delta t`, then its
+average velocity :math:`\overrightarrow{v}_{avg}` is
+
+.. math::
+
+   average velocity = \frac{displacement}{time interval}
+
 or
--r
-.
--t
-(4-8)
-:
-This tells us that the direction of v avg (the vector on the left side of Eq. 4-8) must
-:
-be the same as that of the displacement - r (the vector on the right side). Using
+
+.. math::
+
+   \overrightarrow{v}_{avg} = \frac{\Delta \overrightarrow{r}}{\Delta t}
+
+This tells us that the direction of :math:`\overrightarrow{v}_{avg}` (the vector on the left side of Eq. 4-8) must
+be the same as that of the displacement :math:`\Delta \overrightarrow{r}` (the vector on the right side). Using
 Eq. 4-4, we can write Eq. 4-8 in vector components as
-:
-v avg "
--x
--y
--z
--xî # -yĵ # -zk̂
-"
-î #
-ĵ #
-k̂.
--t
--t
--t
--t
-(4-9)
-For example, if a particle moves through displacement (12 m)î # (3.0 m)k̂ in
+
+.. math::
+
+   \overrightarrow{v}_(avg) = \frac{\Delta x \hat{i} + \Delta y \hat{j} +\Delta z \hat{k} {\Delta t} = \frac{\Delta x } {\Delta t} \hat{i} + \frac{\Delta y } {\Delta t} \hat{j} + \frac{\Delta z } {\Delta t} \hat{k}  
+
+For example, if a particle moves through displacement :math:`(12 m) \hat{î} + (3.0 m) \hat{k}` in
 2.0 s, then its average velocity during that move is
 
-:
-v avg "
--:
-r
-(12 m)î # (3.0 m)k̂
-"
-" (6.0 m/s)î # (1.5 m/s)k̂.
--t
-2.0 s
+
+.. math::
+
+   \overrightarrow{v}_(avg) = \frac{\overrightarrow{r}} {\Delta t} = \frac{(12 m) \hat{i} + (3.0 m) \hat{k} } {2.0 s} = (6.0 m/s) \hat{i} + (1.5 m/s) \hat{k}.
+
 That is, the average velocity (a vector quantity) has a component of 6.0 m/s along
 the x axis and a component of 1.5 m/s along the z axis.
+
 When we speak of the velocity of a particle, we usually mean the particle’s
-instantaneous velocity :
-v at some instant. This :
-v is the value that :
-v avg approaches
-in the limit as we shrink the time interval -t to 0 about that instant. Using the lan-
-guage of calculus, we may write :
-v as the derivative
-:
-:
-v"
-dr
-.
-dt
-(4-10)
+instantaneous velocity :math:`\overrightarrow{v}` at some instant. This :math:`\overrightarrow{v}`
+is the value that :math:`\overrightarrow{v}_{avg}` approaches
+in the limit as we shrink the time interval :math:`\Delta t` to 0 about that instant. Using the language of calculus, we may write :math:`\overrightarrow{v}`
+as the derivative
+
+.. math::
+
+   \overrightarrow{v} = \frac{d \overrightarrow{r}}{d t}
+
 Figure 4-3 shows the path of a particle that is restricted to the xy plane. As
 the particle travels to the right along the curve, its position vector sweeps to the
-right. During time interval -t, the position vector changes from :
-r 1 to :
-r 2 and the
-:
-particle’s displacement is - r .
-To find the instantaneous velocity of the particle at, say, instant t1 (when the
-particle is at position 1), we shrink interval -t to 0 about t1. Three things happen
-as we do so. (1) Position vector :
-r 2 in Fig. 4-3 moves toward :
-r 1 so that -:
-r shrinks
+right. During time interval :math:`\Delta t`, the position vector changes from :math:`\overrightarrow{r}_1`
+to :math:`\overrightarrow{r}_2` and the
+particle’s displacement is :math:`\Delta \overrightarrow{r}`.
 
-toward zero. (2) The direction of - r /-t (and thus of v avg) approaches the
+To find the instantaneous velocity of the particle at, say, instant t1 (when the
+particle is at position 1), we shrink interval :math:`\Delta t` to 0 about :math:`t_1`. Three things happen
+as we do so. (1) Position vector :math:`\overrightarrow{r}_2` in Fig. 4-3 moves toward :math:`\overrightarrow{r}_1`
+so that :math:`\Delta \overrightarrow{r}` shrinks
+toward zero. (2) The direction of :math:`\Delta \overrightarrow{r}/\Delta t`
+(and thus of :math:`\overrightarrow{v}_{avg}`) approaches the
 direction of the line tangent to the particle’s path at position 1. (3) The average
-:
-:
-velocity v avg approaches the instantaneous velocity v at t1.
-:
-:
-In the limit as -t : 0, we have v avg : v and, most important here, :
-v avg takes
-:
-on the direction of the tangent line. Thus, v has that direction as well:
+velocity :math:`\overrightarrow{v}_{avg}` approaches the instantaneous velocity :math:`\overrightarrow{v}`
+ at :math:`t_1`.
+
+In the limit as :math:`\Delta t \to 0`, we have :math:`\overrightarrow{v}_{avg} \to :math:`\overrightarrow{v}`
+and, most important here, :math:`\overrightarrow{v}_{avg}` takes
+on the direction of the tangent line. Thus, :math:`\overrightarrow{v}` has that direction as well:
 v of a particle is always tangent to the
+
 The direction of the instantaneous velocity :
 particle’s path at the particle’s position.
-:
-The result is the same in three dimensions: v is always tangent to the particle’s path.
-:
-To write Eq. 4-10 in unit-vector form, we substitute for r from Eq. 4-1:
-:
-v"
-dx
-dy
-dz
-d
-(xî # yĵ # zk̂) "
-î #
-ĵ #
-k̂.
-dt
-dt
-dt
-dt
-This equation can be simplified somewhat by writing it as
-:
-v " vx î # vy ĵ # vz k̂,
-(4-11)
 
-where the scalar components of :
-v are
-vx "
-dx
-dy
-, vy "
-, and
-dt
-dt
-vz "
-dz
-.
-dt
-(4-12)
-:
-For example, dx/dt is the scalar component of v along the x axis. Thus, we can find
-:
-:
-the scalar components of v by differentiating the scalar components of r .
-:
-Figure 4-4 shows a velocity vector v and its scalar x and y components. Note
-that :
-v is tangent to the particle’s path at the particle’s position. Caution: When a
-position vector is drawn, as in Figs. 4-1 through 4-3, it is an arrow that extends
-from one point (a “here”) to another point (a “there”). However, when a velocity
-vector is drawn, as in Fig. 4-4, it does not extend from one point to another.
-Rather, it shows the instantaneous direction of travel of a particle at the tail, and
-its length (representing the velocity magnitude) can be drawn to any scale.
+The result is the same in three dimensions: :math:`\overrightarrow{v}` is always tangent to the particle’s path.
+
+To write Eq. 4-10 in unit-vector form, we substitute for :math:`\overrightarrow{r}` from Eq. 4-1:
+
+.. math::
+
+   \overrightarrow{v} = \frac{d}{dt} (x \hat{i} + y \hat{j} + z \hat{k}) = \frac{d x}{dt} {dt}  \hat{i} + \frac{d y}{dt}  \hat{j} +  \frac{d z}{dt}  \hat{k}
+
+This equation can be simplified somewhat by writing it as
+
+.. math::
+
+   \overrightarrow{v} = v_x \hat{i} + v_y \hat{j} + v_z \hat{k} 
+
+where the scalar components of :math:`\overrightarrow{v}` are
+
+.. math::
+
+   v_x = \frac{d x}{d t}, v_y = \frac{d y}{d t}, and v_z = \frac{d z}{d t}
 
 Checkpoint 1
+
 The figure shows a circular path taken by a particle.
-:
 If the instantaneous velocity of the particle is v "
 (2 m /s)î $ (2 m /s)ĵ , through which quadrant is the par-
 ticle moving at that instant if it is traveling (a) clockwise
