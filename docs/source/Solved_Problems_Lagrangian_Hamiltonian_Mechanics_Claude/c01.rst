@@ -1,4 +1,5 @@
 Foreword
+========
 
 Mechanics is an old science, but it acquired its great reputation at the end of the 17th century, due to Newton’s works. A century 
 later, Euler and, above all, Lagrange renewed it and led it towards a formulation not only aesthetically elegant but also capable 
@@ -22,9 +23,8 @@ withdrawn because we judged them less instructive for physics, even if the mathe
 consequences of features treated in the textbook.
 
 Of course, the present work is a natural complement of the course-book; nevertheless, we have tried to make it self-contained and, 
-with this in mind,
-
-we add in each chapter a succinct, although clear and complete, summary of each topic. These summaries are adequate to tackle and 
+with this in mind, we add in each chapter a succinct, although clear and complete, summary of each 
+topic. These summaries are adequate to tackle and 
 solve the problems presented afterwards; every concept or notion necessary for obtaining the solution is presented and developed 
 therein. Our aim is to make the reader familiar with the Lagrangian and Hamiltonian approaches, which may be diﬃcult to grasp, to 
 demonstrate the power of this formalism and help to develop skills for managing the techniques essential for this kind of study. 
@@ -64,7 +64,9 @@ At the beginning of the book, a synoptic table gathers, chapter by chapter, the 
 of them, its reference (number, title, page number), its diﬃculty (1 to 3 stars), as well as the important features or the 
 peculiar aspects treated in this problem.
 
-Two purposes are pursued • To concretize, through simple and often academic examples, notions that seem apparently very abstract. 
+Two purposes are pursued 
+
+• To concretize, through simple and often academic examples, notions that seem apparently very abstract. 
 The methods to ﬁnd the solution are not necessarily the most elegant or the quickest, but it is important to check, via these 
 simple examples, one’s understanding of these new tools for mechanics. Sometimes the same problem, or the same physical situation, 
 is studied once more in a subsequent chapter with new tools in order to emphasize some novel feature of the method.
@@ -80,10 +82,12 @@ the drawing or plotting of curves, the authors have used the freewares xﬁg or 
 diﬀerential equations have been solved with the help of the Mathematica software package.
 
 Chapter 1 The Lagrangian Formulation
+------------------------------------
 
 Summary
 
 1.1. Generalized Coordinates
+----------------------------
 
 A mechanical system is composed, in ﬁne, of a given number N of elements α, with a mass m α , which can be considered as pointlike 
 and located at position r α . The conﬁguration of this system is speciﬁed by the set of the constituent coordinates. However, in 
@@ -100,6 +104,7 @@ variables q i . Sometimes one encounters an explicit time dependence of the cons
 surface which moves itself.
 
 1.2. Lagrange’s Equations
+-------------------------
 
 The Lagrangian formulation of mechanics consists in writing Newton’s equations, which depend on N vectorial quantities r α , in 
 terms of n scalar quantities q i (q 1 , q 2 , . . . , q n ). To begin with, let us consider the case for which the n generalized 
@@ -107,44 +112,58 @@ coordinates are independent; in this case, n is called the number of degrees of 
 relies on the kinetic energy T, which is a kinematic quantity deﬁned in terms of velocities 1 v α = r ˙ α = dr α /dt of each 
 element by
 
-N 1 T = ∑ v α 2 . 2 α=1
+.. math::
+
+   T = \frac{1}{2} \sum_{\alpha=1}^N v_{\alpha}^2
 
 If the particle positions are given in terms of generalized coordinates, the kinetic energy is expressed not only in terms of n 
 generalized coordinates q i , but also in terms of n generalized velocities q˙ i = dq i /dt and, possibly, in terms of time: T(q, 
 q,˙ t). From the kinetic energy, one builds n kinematical quantities A i , called generalized accelerations, deﬁned by the 
 following relation:2 
 
-d A i (q, q,˙ ¨q, t) = T(q, q,˙ t) − ∂ q i T(q, q,˙ t). ∂q ˙ i  dt
+.. math::
+
+   A_i (q, \dot{q}, \ddot{q}, t) = \frac{d}{dt} \partial_{\dot{q}_i}T(q, \dot{q}, t) - \partial_{q_i}T(q, \dot{q}, t)
 
 (1.1)
 
 Then, Newton’s equations are translated into the Lagrangian formalism through a set of n dynamical equations, called Lagrange’s 
 equations, which are written (1.2)
 
-A i (q, q,˙ ¨q, t) = Q i (q, q,˙ t),
+.. math::
 
-where Q i (q, q,˙ t) are dynamical quantities, called generalized forces, which will be deﬁned later.
+   A_i (q, \dot{q}, \ddot{q}, t) = Q_i (q, \dot{q}, t),
+
+
+where :math:`Q`_i (q, \dot{q},t)` are dynamical quantities, called generalized forces, which will 
+be deﬁned later.
 
 The Lagrange equations are a set of n coupled diﬀerential equations of second order.
 
-Directions for use and precisions
+**Directions for use and precisions**
 
 The ﬁrst task is to obtain the expression of the kinetic energy as a function3  of the generalized velocities, possibly of the 
 generalized coordinates, and
 
-1
+---------------------------------
 
-2
+1. As usual in mechanics, a dot above a quantity means its ﬁrst derivative with respect to time, 
+two dots its second derivative,... : :math:`\dot{f} = df/dt, \ddot{f} = d^2 f/dt^2`, . . .
 
-3
-
-As usual in mechanics, a dot above a quantity means its ﬁrst derivative with respect to time, two dots its second derivative, . . 
-. : f ˙ = df/dt, ¨f = d 2 f/dt 2 , . . .
-
-With typographical simplicity in view, we will use a simpliﬁed notation to deﬁne partial derivatives for a function of several 
+2. With typographical simplicity in view, we will use a simpliﬁed notation to deﬁne partial 
+derivatives for a function of several 
 variables
 
-y) f(x, y) f(x, y) ∂f(x, ∂2  ∂2  ∂ x f(x, y) = , ∂ x 2 2 f(x, y) = , ∂ xy 2 f(x, y) = . ∂x ∂x 2 ∂x∂y
+.. math::
+
+   \partial_x f(x, y) = \frac{\partial f(x, y)}{\partial x}, \partial^2_{x^2} f(x, y) = 
+\frac{\partial^2 f(x, y)}{\partial x^2}, \partial^2_{xy} f(x, y) = \frac{\partial^2 f(x, 
+y)}{\partial x \partial y},
+
+3. The choice for generalized coordinates is, a priori, arbitrary. The best starting choice is that 
+which gives the most simple form to the kinetic energy.
+
+
 
 (although rarely) of time 4 (see Exercise 1.4). To obtain the kinetic energy, one supposes ﬁrst that the generalized coordinates 
 depend on time q(t); naturally the derivatives of these functions with respect to time ˙q(t) appear in the expression of the 
@@ -152,21 +171,20 @@ velocities. Thus the kinetic energy is expressed in terms of q and q.˙ Subseque
 Sometimes, the kinetic energy exhibits only generalized velocities, and sometimes both generalized velocities and coordinates.
 
 Just as an example, let us consider a particle with mass m, moving on a plane: if one locates the particle by the Cartesian 
-coordinates (x, y) the kinetic energy is expressed only as function of generalized velocities since T(x,˙ y)˙ = 1 2 m(x˙ 2 + y˙ 2 
-), whereas if one chooses polar coordinates ( ρ , φ ) the same kinetic energy contains, in addition to the generalized velocities, 
-the coordinate ρ since T( ρ , ρ ˙ , φ ) = 1 2 m( ρ ˙ 2 + ρ 2 φ 2 ).
+coordinates (x, y) the kinetic energy is expressed only as function of generalized velocities since 
+:math:`T(\dot{x}, \dot{y}) = \frac{1}{2} m( \dot{x}^2 + \dot{y}^2^)`, whereas if one chooses polar coordinates ( ρ , φ ) the same kinetic energy contains, in addition to the generalized velocities, 
+the coordinate ρ since :math:`T( ρ , \dot{ρ}, \dot{\phi}) = \frac{1}{2} m( \fot{ρ}^2 + ρ^2 
+\dot{\phi}^2 )`.
 
 Once the expression for the kinetic energy is obtained the rest of the treatment is as follows:
 
-• One derives the function T(q, q,˙ t) with respect to the generalized coordi-
+• One derives the function :math:`T(q, \dot{q},t)` with respect to the generalized 
+coordinates :math:`q_i` to get :math:`\partial_{q_i} T(q, \dot{q},t)`.
 
-nates q i to get ∂ q i T(q, q,˙ t).
+• One derives the function :math:`T(q, \dot{q},t)`  with respect to the generalized 
+velocities :math:`\dot{q}_i` to get :math:`\partial_{\dot{q}_i} T(q, \dot{q},t)`.
 
-• One derives the function T(q, q,˙ t) with respect to the generalized velocities
-
-q˙ i to get ∂ q ˙ i T(q, q,˙ t).
-
-• One derives with respect to time the function ∂ q ˙ i T(q, q,˙ t), considering that one handles a function q(t), for which q˙ = 
+• One derives with respect to time the function :math:`\partial_{\dot{q}_i} T(q, \dot{q},t)`, considering that one handles a function q(t), for which q˙ = 
 dq(t)/dt and ¨q = d ˙q(t)/dt. The generalized acceleration A i (q, q,˙ ¨q, t) follows from (1.1).
 
 Proceeding with the previous example and polar coordinates, this series of operations leads to the generalized acceleration:
