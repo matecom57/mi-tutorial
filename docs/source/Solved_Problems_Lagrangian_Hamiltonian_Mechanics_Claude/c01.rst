@@ -1,0 +1,1803 @@
+Foreword
+
+Mechanics is an old science, but it acquired its great reputation at the end of the 17th century, due to Newton’s works. A century 
+later, Euler and, above all, Lagrange renewed it and led it towards a formulation not only aesthetically elegant but also capable 
+of applications to other ﬁelds of physics. Fifty years later, Hamilton and Jacobi gave their names to very important further 
+contributions. Lastly, at the end of the xix th century, Poincaré took a new step with the introduction of geometry in the analysis 
+of physical problems. During the xx th century, physicists produced new developments from the works of their famous predecessors.
+
+This book is addressed to readers already familiar with the Newtonian approach for mechanics. Several training textbooks – some of 
+them excellent – rely on this approach. On the other hand, it seems that exercises based on Lagrangian and Hamiltonian formulations 
+are rather scarce in the literature; we hope that the present work may help to ﬁll this gap.
+
+In a previous book published in French by EDP, Grenoble-Sciences collection, under the name La mécanique: de la formulation 
+lagrangienne au chaos hamiltonien, we proposed, for undergraduate students, a comprehensible synthesis of all the modern facets of 
+mechanics and their relationships to other domains of physics. This textbook contains a great number of exercises and problems, 
+many of them original, dealing with the theories of Lagrange, Hamilton and Poincaré. We gave only the results or brief hints for 
+solving these problems. Some problems can be considered as diﬃcult, or even disconcerting, and readers encouraged us to provide 
+the solution of those exercises which illustrate all the topics presented in the book. This is the aim of the present work. We 
+retained from the foregoing book most of the problems presented here, very often trying to make them clearer, sometimes trying to 
+ﬁnd interesting extensions. We also proposed new ones better suited to our pedagogic goal. In the same spirit, others have been 
+withdrawn because we judged them less instructive for physics, even if the mathematical points they dealt with were logical 
+consequences of features treated in the textbook.
+
+Of course, the present work is a natural complement of the course-book; nevertheless, we have tried to make it self-contained and, 
+with this in mind,
+
+we add in each chapter a succinct, although clear and complete, summary of each topic. These summaries are adequate to tackle and 
+solve the problems presented afterwards; every concept or notion necessary for obtaining the solution is presented and developed 
+therein. Our aim is to make the reader familiar with the Lagrangian and Hamiltonian approaches, which may be diﬃcult to grasp, to 
+demonstrate the power of this formalism and help to develop skills for managing the techniques essential for this kind of study. 
+The problems are selected with this purpose and they illustrate very often practical physical situations and sometimes aspects of 
+everyday life.
+
+This book is built around eight chapters entitled:
+
+1. The Lagrangian formulation
+
+2. Lagrangian systems
+
+3. Hamilton’s principle (also called the least action principle)
+
+4. The Hamiltonian formalism
+
+5. The Hamilton-Jacobi formalism
+
+6. Integrable systems
+
+7. Quasi-integrable systems
+
+8. From order to chaos In each chapter, the reader will ﬁnd:
+
+• A clear, succinct and rather deep summary of all the notions that must be understood, the important points that must be memorized 
+and the notations and symbols used in the problems.
+
+• The statements of the problems which are presented consecutively. These statements are suﬃciently detailed so that, with the 
+help of the lesson summaries, it is unnecessary for the reader to search for other sources of information. Whenever a ﬁgure turns 
+out to be essential for a good understanding of the text, it appears in the statement. The progressive diﬃculty of the problems is 
+symbolized with an increasing number of stars (from 1 to 3) added to the title.
+
+• Detailed answers to the problems which are grouped together at the end of the chapter. A number of additional ﬁgures are 
+inserted in the corresponding text in order to exhibit essential points or to avoid lengthy circumlocutions.
+
+At the beginning of the book, a synoptic table gathers, chapter by chapter, the set of all the proposed problems, giving, for each 
+of them, its reference (number, title, page number), its diﬃculty (1 to 3 stars), as well as the important features or the 
+peculiar aspects treated in this problem.
+
+Two purposes are pursued • To concretize, through simple and often academic examples, notions that seem apparently very abstract. 
+The methods to ﬁnd the solution are not necessarily the most elegant or the quickest, but it is important to check, via these 
+simple examples, one’s understanding of these new tools for mechanics. Sometimes the same problem, or the same physical situation, 
+is studied once more in a subsequent chapter with new tools in order to emphasize some novel feature of the method.
+
+• To emphasize the power of these new tools in physics applied to ﬁelds as miscellaneous as traditional mechanics, optics, 
+electromagnetism, waves in general, and quantum mechanics. Concerning these fascinating and up to date subjects in physics, we will 
+focus only on the mechanical aspect. However, the reader could satisfy his curiosity, with help of keywords, by looking for further 
+information ﬁrstly in a good and complete encyclopedia, then on the web using a engine such as Google (or, for more exotic 
+subjects, Yahoo). He will ﬁnd exhaustive lectures as well as recent articles.
+
+We strongly recommend that the reader carries out some applications and draws the ﬁgures proposed in the detailed solutions. For 
+the drawing or plotting of curves, the authors have used the freewares xﬁg or xmgrace that can be downloaded from the web. The 
+diﬀerential equations have been solved with the help of the Mathematica software package.
+
+Chapter 1 The Lagrangian Formulation
+
+Summary
+
+1.1. Generalized Coordinates
+
+A mechanical system is composed, in ﬁne, of a given number N of elements α, with a mass m α , which can be considered as pointlike 
+and located at position r α . The conﬁguration of this system is speciﬁed by the set of the constituent coordinates. However, in 
+most situations, internal constraints (for example in a rigid body the distance between the constituents is independent of the 
+conﬁguration) or external constraints (for example a point subjected to remain on a given surface) impose a number of 
+relationships between the coordinates; in such cases, a smaller set of speciﬁcations allows us to characterize the conﬁguration 
+of the system.
+
+The n variables (n ≤ 3N), which unambiguously deﬁne the conﬁguration of the system are called generalized coordinates; they are 
+denoted generically as q, for the set (q 1 , q 2 , . . . , q n ) of the n generalized coordinates q i . In any practical case, 
+generalized coordinates are either lengths, or angles. Generalized coordinates being suﬃcient to completely describe the 
+conﬁguration, there exist N mathematical relations r α (q, t) (α = 1, . . . , N), each coordinate position depending only on n 
+variables q i . Sometimes one encounters an explicit time dependence of the constraints, for example when a point moves on a 
+surface which moves itself.
+
+1.2. Lagrange’s Equations
+
+The Lagrangian formulation of mechanics consists in writing Newton’s equations, which depend on N vectorial quantities r α , in 
+terms of n scalar quantities q i (q 1 , q 2 , . . . , q n ). To begin with, let us consider the case for which the n generalized 
+coordinates are independent; in this case, n is called the number of degrees of freedom for the system. The Lagrangian formalism 
+relies on the kinetic energy T, which is a kinematic quantity deﬁned in terms of velocities 1 v α = r ˙ α = dr α /dt of each 
+element by
+
+N 1 T = ∑ v α 2 . 2 α=1
+
+If the particle positions are given in terms of generalized coordinates, the kinetic energy is expressed not only in terms of n 
+generalized coordinates q i , but also in terms of n generalized velocities q˙ i = dq i /dt and, possibly, in terms of time: T(q, 
+q,˙ t). From the kinetic energy, one builds n kinematical quantities A i , called generalized accelerations, deﬁned by the 
+following relation:2 
+
+d A i (q, q,˙ ¨q, t) = T(q, q,˙ t) − ∂ q i T(q, q,˙ t). ∂q ˙ i  dt
+
+(1.1)
+
+Then, Newton’s equations are translated into the Lagrangian formalism through a set of n dynamical equations, called Lagrange’s 
+equations, which are written (1.2)
+
+A i (q, q,˙ ¨q, t) = Q i (q, q,˙ t),
+
+where Q i (q, q,˙ t) are dynamical quantities, called generalized forces, which will be deﬁned later.
+
+The Lagrange equations are a set of n coupled diﬀerential equations of second order.
+
+Directions for use and precisions
+
+The ﬁrst task is to obtain the expression of the kinetic energy as a function3  of the generalized velocities, possibly of the 
+generalized coordinates, and
+
+1
+
+2
+
+3
+
+As usual in mechanics, a dot above a quantity means its ﬁrst derivative with respect to time, two dots its second derivative, . . 
+. : f ˙ = df/dt, ¨f = d 2 f/dt 2 , . . .
+
+With typographical simplicity in view, we will use a simpliﬁed notation to deﬁne partial derivatives for a function of several 
+variables
+
+y) f(x, y) f(x, y) ∂f(x, ∂2  ∂2  ∂ x f(x, y) = , ∂ x 2 2 f(x, y) = , ∂ xy 2 f(x, y) = . ∂x ∂x 2 ∂x∂y
+
+(although rarely) of time 4 (see Exercise 1.4). To obtain the kinetic energy, one supposes ﬁrst that the generalized coordinates 
+depend on time q(t); naturally the derivatives of these functions with respect to time ˙q(t) appear in the expression of the 
+velocities. Thus the kinetic energy is expressed in terms of q and q.˙ Subsequently, these functions are considered as independent. 
+Sometimes, the kinetic energy exhibits only generalized velocities, and sometimes both generalized velocities and coordinates.
+
+Just as an example, let us consider a particle with mass m, moving on a plane: if one locates the particle by the Cartesian 
+coordinates (x, y) the kinetic energy is expressed only as function of generalized velocities since T(x,˙ y)˙ = 1 2 m(x˙ 2 + y˙ 2 
+), whereas if one chooses polar coordinates ( ρ , φ ) the same kinetic energy contains, in addition to the generalized velocities, 
+the coordinate ρ since T( ρ , ρ ˙ , φ ) = 1 2 m( ρ ˙ 2 + ρ 2 φ 2 ).
+
+Once the expression for the kinetic energy is obtained the rest of the treatment is as follows:
+
+• One derives the function T(q, q,˙ t) with respect to the generalized coordi-
+
+nates q i to get ∂ q i T(q, q,˙ t).
+
+• One derives the function T(q, q,˙ t) with respect to the generalized velocities
+
+q˙ i to get ∂ q ˙ i T(q, q,˙ t).
+
+• One derives with respect to time the function ∂ q ˙ i T(q, q,˙ t), considering that one handles a function q(t), for which q˙ = 
+dq(t)/dt and ¨q = d ˙q(t)/dt. The generalized acceleration A i (q, q,˙ ¨q, t) follows from (1.1).
+
+Proceeding with the previous example and polar coordinates, this series of operations leads to the generalized acceleration:
+
+A ρ = m(¨ρ − ρ φ 2 );
+
+¨φ A φ φ
+
+=
+
+m(
+
+ρ2 
+
++
+
+2
+
+ρ
+
+˙
+
+ρ
+
+).
+
+From Newton’s equations, the product of mass with acceleration is determined by the forces acting on the system; similarly the link 
+between the generalized accelerations and generalized forces through Lagrange’s equations matches Newton’s equations.
+
+As long as the forces are not speciﬁed, the functions q(t) entering the generalized accelerations are arbitrary. Equating 
+generalized accelerations to generalized forces leads to a system of diﬀerential equations which are fulﬁlled only for special 
+functions q(t), which are precisely the solutions of the true physical motion and which are called trajectories. To determine them 
+unambiguously, it is necessary to set the initial values q(0) and ˙q(0).
+
+1.3. Generalized Forces
+
+To deﬁne generalized forces, one must ﬁrst introduce the notion of virtual displacement. Let us imagine that, at a given time, 
+two conﬁgurations of the system are described by the coordinates q et q + δq, compatible with the constraints imposed on the 
+system. The quantity δq is called a virtual displacement.
+
+In this displacement, the constituents α are displaced by a quantity δr α and the forces f α acting on them produce a total work
+
+N δW = ∑ f α · δr α . α=1
+
+This last quantity is said to be a virtual work and it can be put under a form expressed in terms of the virtual displacements δq:
+
+n δW = ∑ Q i δq i . i=1
+
+(1.3)
+
+This expression deﬁnes the generalized forces 5 Q i (q, q,˙ t). Let us note that a virtual displacement is only compatible with 
+the constraints and can be entirely diﬀerent from a real displacement of the system which results from the temporal evolution 
+given by Lagrange’s equations (1.2).
+
+Let us emphasize a point. In the Lagrangian formalism, the forces responsible for the constraints are inaccessible, since the 
+generalized coordinates were chosen precisely to get rid of them. Since they are generally uninteresting quantities, this is of 
+little consequence and, in fact, lies at the origin of the elegance of Lagrange’s equations. If, after all, we insist on obtaining 
+the expression of these constraint forces, we have to introduce supplementary generalized coordinates (to get rid of cumbersome 
+constraints) in order to obtain a non vanishing virtual work concerning this type of force (see Problems 1.4 and 1.7).
+
+When the system is at rest, generalized velocities and accelerations vanish; Lagrange’s equations (1.2) then imply a vanishing 
+value for the generalized force. The relation:
+
+Q i = 0 at rest
+
+(1.4)
+
+represents d’Alembert’s principle.
+
+1.4. Lagrange Multipliers
+
+Let us consider now the case where the n generalized coordinates are not independent. It is useful to remind ourselves that these 
+coordinates were introduced with the purpose of taking into account a number of constraints.
+
+The present case thus corresponds to a situation for which the system is subject to additional constraints. Practically, this 
+happens when the constraints are not able to reduce the number of generalized coordinates or when the search for new generalized 
+coordinates turns out to be a too painful procedure.
+
+All the virtual displacements are no longer possible, but compelled to obey new conditions taking into account the supplementary 
+constraints. For simplicity, let us consider only one condition written under a diﬀerential form:
+
+n ∑ Λ i δq i = 0. i=1
+
+(1.5)
+
+This equation deﬁnes the quantity Λ i , an important ingredient in constrained Lagrange equations. There exists a special very 
+simple kind of constraint, known as holonomic, for which this quantity is the diﬀerential of a single function Φ:
+
+n ∑ Λ i δq i = dΦ(q). i=1
+
+The constraint is thus equivalent to the fact that Φ(q) is a constant. This allows us, in principle, to express one generalized 
+coordinate as a function of the n − 1 others; it is enough then to proceed like this in the expressions of the kinetic energy and 
+generalized forces 6 in order to work now with n−1 generalized coordinates. Indeed the system depends on n − 1 rather than n 
+degrees of freedom.
+
+If the constraint is not holonomic, or if elimination is not an easy task, then we keep the original generalized coordinates and 
+introduce Lagrange multipliers. It is not our intention, in this brief summary, to develop
+
+6
+
+In particular, this is the case for rolling without slipping motion in two dimensions. This is no more the case in three 
+dimensions.
+
+Let us stress the fact that a rolling without slipping motion necessarily implies a non vanishing tangential reaction force acting 
+on the rolling surface. Nevertheless in a virtual displacement, this force does not perform work. The deep reason for this is a 
+consequence of the fact that, in this virtual displacement δ φ , the application point of the force follows a cycloid and there is 
+a displacement only of second order in δ φ in the perpendicular direction and of third order in the tangential direction (see 
+Exercise 1.5).
+
+the general theory of Lagrange multipliers. We simply give the form of constrained Lagrange equations when the system is subject to 
+l diﬀerential constraints of type (1.5):
+
+l A i (q, q,˙ ¨q, t) = Q i (q, q,˙ t) + ∑ λ k Λ i k (q, t). k=1
+
+(1.6)
+
+The quantities λ k are the Lagrange multipliers. Their values must be determined at the same time as the trajectories q(t) by 
+solving the n diﬀerential equations and the l constraints equations imposed on the coordinates. The Lagrange multipliers can be 
+interpreted in terms of reaction forces associated with the constraints (see Exercise 1.8).
+
+Problem Statements
+
+1.1. The Wheel Jack [Solution and Figure p. 24]
+
+This exercise is simply an application of d’Alembert principle
+
+
+
+A wheel jack is an articulated machine which is designed to lift up heavy burdens (a coach for example); it is represented in Fig. 
+1.1. It is composed of two rigid bases (one resting on the ground, the other sustaining the burden with weight P); they form an 
+articulated lozenge with side l, which may be deformed by mean of a threaded stem with a step h, (the axis of the jack changes by a 
+length h for each revolution of the crank) driven by a force F applied on the crank of arm length a.
+
+We assume no friction on the mechanical parts of the jack (fortunately frictional forces do exist and allow the mass to be 
+supported without any eﬀort!).
+
+1. Examine the constraints imposed on the system and show that it has
+
+only one degree of freedom. Which generalized coordinate seems to you
+
+the most appropriate?
+
+2. Using d’Alembert’s principle, deduce the relationship between the weight to be lifted up and the exerted force, as a function of 
+the characteristics of the jack and of the angle θ between the lozenge side and the threaded stem.
+
+Numerical application: Calculate the ratio of the weight and the force for a jack with crank arm length a = 20 cm, with h = 2 mm, 
+at the beginning of the lifting process when θ = 30 ◦ .
+
+1.2. The Sling [Solution p. 26]
+
+Very simple application of Lagrange’s equations
+
+
+
+A rigid stem is maintained ﬁxed at one of its ends O. It turns around O in the horizontal plane with a constant angular speed ω = 
+φ (see Fig. 1.2). A pointlike mass m slips without friction on this stem. It is placed at rest at a point A such that OA = a.
+
+1. Find the most natural generalized coordinate and assess the real and generalized forces.
+
+2. Write and solve the Lagrange equation.
+
+1.3. Rope Slipping on a Table [Solution p. 27]
+
+Classical problem for which the Lagrangian formalism is well suited
+
+
+
+A part L − l of a rope with length L and with constant linear mass μ is originally at rest on a horizontal table. The rest of the 
+rope, with length l, hangs vertically in a constant gravitational ﬁeld g.
+
+The rope is placed without any initial velocity. One assumes that the part which hangs over the edge of the table remains always 
+vertical 7 (Fig. 1.3).
+
+Fig. 1.3 Rope slipping on a table
+
+1. In a ﬁrst study, assume that friction on the table is absent. Find a generalized coordinate and assess the real and generalized 
+forces. Write and solve the Lagrange equation.
+
+2. Assume a solid friction, with a constant friction coeﬃcient f (the dynamical friction coeﬃcient is assumed equal to the static 
+coeﬃcient). What is the minimum length l 0 necessary to induce sliding of the rope. If l > l0  write and solve the Lagrange 
+equation.
+
+1.4. Reaction Force for a Bead on a Hoop
+
+[Solution and Figures p. 28]
+
+
+
+Calculation of a reaction force by adding a generalized coordinate
+
+Let us consider a system composed of a pierced bead M, with mass m, which slides without friction on a massless hoop with center O, 
+radius R, which itself rotates around one ﬁxed diameter Oz, parallel to the vertical.
+
+7
+
+Indeed the linear momentum acquired by the horizontal part of the rope when it falls has the consequence that it keeps falling and 
+the rope does not turn at right angles. Moreover a rope is a ﬂexible system which can exhibit transverse deformations and the fall 
+can cause undulations. Of course, all these complications are neglected.
+
+The angle φ , between the plane of the hoop and the ﬁxed vertical plane xOz, varies in time according to a known law imposed by 
+the operator: φ (t). A generalized coordinate is chosen as the angle θ between the direction OM and the vertical direction Oz.
+
+This system is embedded in a constant gravitational ﬁeld g, acting along the vertical axis.
+
+1. Give the expression of the kinetic energy in terms of the generalized coordinate.
+
+2. Give the expression of the generalized force.
+
+3. Write down the corresponding Lagrange equation.
+
+4. This simple question illustrates the diﬀerence between virtual work and real work. We are interested in the reaction force of 
+the hoop on the bead. Introducing a new generalized coordinate which allows virtual work for the component of the reaction force 
+normal to the plane of the hoop, determine this force. Check your result with the Coriolis inertial force.
+
+1.5. Huygens Pendulum
+
+[Solution and Figures p. 31]
+
+
+
+Work done by contact forces responsible for a motion without slipping
+
+In a vertical plane xOz, a point M, with mass m, is ﬁxed to a massless hoop, with radius R, which can roll without slipping on a 
+horizontal stem Ox, placed above it. It is well known that the curve followed by M is a cycloid. We choose as generalized 
+coordinate the angle φ , such that R φ is the abscissa of the center C of the hoop. The origin O is taken when M is in its lowest 
+position, CM being then parallel to Oz. The system is subject to a constant gravitational ﬁeld g directed along the downward 
+vertical.
+
+1. Write the Lagrange equation relative to the coordinate φ .
+
+2. Make a change of variable and take instead x = sin( φ /2). Show that x varies in time following a harmonic motion with angular 
+frequency ω = √ g/(4R). Deduce that φ evolves periodically with the same angular frequency, independently of its amplitude. This 
+pendulum is said to be isochronous and is known as Huygens pendulum.
+
+1.6. Cylinder Rolling on a Moving Tray
+
+[Solution and Figure p. 33]
+
+
+
+Work performed by contact forces responsible for a motion without slipping
+
+A homogeneous cylinder, with radius R, mass M and moment of inertia I around its axis, rolls without slipping on a horizontal tray. 
+We impose a translational motion on the tray, perpendicular to the axis of the cylinder, with a given time law a(t). This situation 
+represents for instance the motion of a bottle in the boot of a car.
+
+1. As generalized coordinate, one can choose the angle θ that speciﬁes an
+
+arbitrary point of the cylinder along the horizontal direction. Show that
+
+the position X of the center of the cylinder in the Galilean frame is
+
+linked to θ by an holonomic constraint which is to be determined. What
+
+is the corresponding generalized acceleration? Solve the corresponding
+
+Lagrange equation and give the real acceleration of the cylinder.
+
+2. Repeat this question choosing now as the generalized coordinate the position X of the center of the cylinder.
+
+1.7. Motion of a Badly Balanced Cylinder
+
+[Solution and Figure p. 35]
+
+
+
+Application of Koenig’s theorem; holonomic forces
+
+An inhomogeneous cylinder (center C), with radius R and mass M, has its center of mass G at a distance a from its axis. The mass 
+density is constant along a straight line parallel to the axis. This property implies that one of the principal axes for the 
+cylinder is also parallel to its axis. We denote by I the moment of inertia of the cylinder with respect to the straight line 
+parallel to the axis which passes through G. We study the motion without slipping of the cylinder subject to a constant vertical 
+gravitational ﬁeld g; the cylinder rolls on a ﬁxed horizontal plane, the plane of its circular section being always ﬁxed (the 
+instantaneous rotation vector ω is always parallel to the axis).
+
+Equation of motion 1. To deﬁne the cylinder conﬁguration, let us take as the single generalized coordinate the angle θ between 
+the downward vertical and the direction CG. Taking into account the constraint for rolling without slipping, write the 
+corresponding Lagrange equation.
+
+2. After multiplying both sides of this equation by the angular velocity ˙ θ, express the conservation of energy E (we speak of a 
+constant of the
+
+motion). To get an idea of this type of motion, plot the angular velocity as ˙ a function of the angle, for several diﬀerent 
+values of the energy: θ(θ, E).
+
+Vertical reaction force
+
+Explain why the cylinder can exhibit singular behaviour if it rolls too quickly. Using a second generalized coordinate, which 
+breaks the contact with the plane, determine the vertical component F v (θ, E) of the reaction force to the plane. It is naturally 
+supposed that this force is weakest when the center of mass is in its highest position. Deduce the maximum energy of the system.
+
+Horizontal reaction force
+
+Rolling without slipping is possible only because the plane exerts a horizontal reaction force to the cylinder. But we know that 
+the ratio between the horizontal and vertical components of the reaction force cannot exceed the friction coeﬃcient f. To obtain 
+this horizontal reaction force F h (θ, E), we must consider two generalized coordinates in order to break the constraint of rolling 
+without slipping. Study graphically, as a function of the energy, the conditions that must be fulﬁlled to achieve rolling without 
+slipping.
+
+1.8. Free Axle on a Inclined Plane
+
+[Solution and Figures p. 39]
+
+To understand how to use Lagrange multipliers
+
+
+
+A massless axle CC ′ maintains two identical wheels, of centers C and C ′ and radius R, in planes normal to it and separated by a 
+distance L = CC ′ . These wheels, for which the axle is a symmetry axis, have a mass m, and the three moments of inertia are I 1 = 
+I 2 = I (in the plane of the wheel) and I 3 (along CC ′ ).
+
+The mechanical system consists of the set of the axle and the two wheels (see Fig. 1.4). We study the rolling without slipping of 
+this system on a inclined plane making an angle α with the horizontal plane. For rigidly locked wheels, the motion is identical to 
+that of a cylinder, that is a uniformly accelerated motion.
+
+The aim of this problem is to study the motion when the wheels roll independently of each other.
+
+One chooses a system of perpendicular axes in the inclined plane: horizontal XX ′ , and Y Y ′ along the direction of steepest 
+upward slope. The center O of the axle is characterized by its coordinates X et Y in this frame with an arbitrary origin A. The 
+direction C ′ C makes an angle θ with the horizontal line XX ′ . We denote by φ and φ ′ the angles which mark the positions of 
+reference points on the circumference of the wheels with respect to the line normal to the inclined plane. Thus, the system is 
+described in terms of 5 generalized coordinates (X, Y, θ, φ , φ ′ ).
+
+α
+
+Fig. 1.4 Axle with independent wheels rolling without slipping on a inclined plane
+
+1. There exist four scalar relationships concerning the constraints of rolling without slipping for each of the wheels (two per 
+wheel). In fact, two of them are identical. Give the three independent constraint relationships and show that one of them is 
+holonomic whereas the other two are not.
+
+2. Introducing three Lagrange multipliers strained Lagrange equations.
+
+λ 1 , λ 2 , λ 3 , write the ﬁve con-
+
+3. Interpret the three Lagrange multipliers in terms of contact forces.
+
+4. To solve the eight equations (ﬁve Lagrange equations plus three constraint equations), it is judicious to change variables by 
+deﬁning σ = ( φ + φ ′ )/2
+
+and δ = ( φ − φ ′ ).
+
+Rewrite the Lagrange equations in terms of these new variables. According to the initial conditions, study the various types of 
+behavior for the axle. In particular, give the equations of the motion if, initially, the axle center is located at A and sets oﬀ 
+down the slope with a speed V 0 , the axle itself being horizontal and having an initial angular velocity ˙ θ(0) = ω.
+
+5. In this framework, calculate the Lagrange multipliers λ i which represent the reaction forces.
+
+1.9. The Turn Indicator
+
+[Solution and Figure p. 43]
+
+
+
+Mechanics in the “clouds”
+
+In the absence of any visual reference, the pilot of an aircraft would ignore whether he is turning or not, without a small 
+gyroscope (10 cm or so), refereed to as “turn indicator” or “needle”. Such a gyroscope of center O is presented in Fig. 1.5. An 
+axis X ′ OX, parallel and ﬁrmly attached to the fuselage of the aircraft, is assumed to remain horizontal during the turn. A 
+frame, with normal OZ, is free to oscillate around X ′ X. The mechanical system under study is the inertia ﬂywheel of the 
+gyroscope which is a cylinder with symmetry axis Y ′ OY . The axes of inertia are OX, OY , OZ, which form a direct orthogonal 
+trihedron OXY Z, and the corresponding moments of inertia are respectively I X = I Z and I Y = I.
+
+z
+
+z ′
+
+ω
+
+Z
+
+α
+
+θ
+
+Y ′
+
+O
+
+Y
+
+Fig. 1.5 Gyroscope inside a plane. Only the axis Y ′ Y of the gyroscope, the true vertical Oz and the apparent vertical Oz ′ are 
+represented
+
+A small electric motor maintains the ﬂywheel rotation around the axis Y ′ Y and imposes a constant angular velocity Ω on it. The 
+apparent vertical for the aircraft – namely the normal to the wing plane– is denoted Oz ′ . A small spiral spring acts to force the 
+axes Oz ′ and OZ to coincide with a restoring torque C = −kθ, where θ is the angle between the Oz ′ and OZ axes. A needle measures 
+the angle θ.
+
+The aircraft turns, with constant angular velocity ω (see Fig. 1.5; the eﬀective rotation axis is located out of the plane, but 
+this does not matter for the reasoning), around the true vertical Oz (parallel to gravitational acceleration g ). The angle between 
+Oz and Oz ′ is denoted α and it is assumed to be constant throughout the turn.
+
+One chooses as generalized coordinate the angle θ which is the only freedom left to the gyroscope.
+
+In a ﬁrst study, the apparent vertical is supposed to coincide with the true vertical: α = 0.
+
+1. Write down the kinetic energy of the ﬂywheel.
+
+2. In the following, we assume the condition ω ≪ Ω, which is always satisﬁed in practical circumstances.
+
+3. We are interested in the equilibrium solution (θ = const) (obtained in practice with a small pneumatic shock absorber). Give ω 
+as a function of θ; the second order terms ω 2 are neglected. The pilot reads the angle θ and deduces the value ω.
+
+As a matter of fact, the real situation is a little more complicated. Exactly as does a cyclist, the aircraft banks during the 
+turn, and this corresponds to an angle α = 0. The pilot maintains the inclination and the velocity V ̸ of the plane during the turn.
+
+1. Give α as a function of V , ω and g. The simplest method is to consider a static problem in the frame of the plane.
+
+2. How is the relationship between ω and θ modiﬁed if the (obligatory) inclination of the plane is correctly taken into account. 
+What relation should exist between V , g and the characteristics of the instrument in order to achieve maximum sensitivity (to give 
+the biggest value of θ for a given ω). It is legitimate to employ the approximation α = ∼ tan(α).
+
+1.10. An Experiment to Measure the Rotational Velocity of the Earth
+
+[Solution p. 46]
+
+
+
+An alternative to the Foucault pendulum, realized by A.H. Compton
+
+Imagine yourself sitting on a seat of a carousel turning with constant angular velocity ω. You now take hold of the axis of a disc 
+which can rotate without friction with an angular velocity φ . Initially, the axis is maintained in the vertical direction and the 
+disc is motionless in the frame of the carousel. Now pivot the axis into the horizontal plane. In so doing, you feel a reaction
+
+due to the axis and, to your great surprise, the disc starts turning spontaneously around its axis. Pursue the change of 
+orientation of the axis until its complete reversal along the vertical. You will notice that the rotation velocity increases.
+
+It is easy to do the experiment, sitting on a turning stool, with a bike wheel grasped in your hands.
+
+Being located at the pole and considering the Earth as the carousel, this simple experiment directly establishes the earth’s 
+rotation, using a much less cumbersome set up than Foucault’s pendulum. It was proposed and realized by A.H. Compton (Phys. Rev. 5, 
+February 1915, 109).
+
+1. Determine the angular velocity of the disc φ around its axis for each
+
+angle θ(t) between its axis and the rotation axis of the carousel.
+
+2. What is the prediction of the calculation if the experiment is realized not at the pole but at a place located at latitude λ ?
+
+1.11. Generalized Inertial Forces
+
+[Solution p. 48]
+
+
+
+How to use the Lagrangian formalism in a non Galilean frame?
+
+In establishing formula (1.1), there is no hypothesis concerning the choice of the physical frame. The kinetic energy and the 
+acceleration that come out are those relative to this peculiar frame. If this frame is not Galilean, one has to take into account 
+inertial forces and equate m α a α to f α (v) + f α (i) , the sum of the true force acting on the particle α and the corresponding 
+inertial force.
+
+It is important to recall that the inertial force is itself the sum of a driving force due to the acceleration of the origin, of a 
+Coriolis force (depending on the velocity v α in the given frame) and of a centrifugal force:
+
+f (i) α = −m α a (e) − 2m α ω × v α − m α (dω/dt) × r α − m α ω × (ω × r α ).
+
+In this case, the formalism leads to Lagrange equations containing additional generalized forces Q i → Q i (v) + Q i (i) .
+
+1. If the given frame moves translationally with an acceleration a (e) (which
+
+can depend on time) with respect to the Galilean frame, show that the
+
+generalized inertial force is simply:
+
+(e) Q i = −Ma (e) ∂ q i R cm ,
+
+where M is the total mass of the system and R cm is the center of mass coordinate. As an application, write Lagrange’s equations 
+for a pendulum
+
+of length l in a constant gravitational ﬁeld, whose point of suspension is subject to an imposed arbitrary vertical motion h(t).
+
+2. If the given frame rotates uniformly with a constant instantaneous rotation vector ω with respect to the Galilean frame, show 
+that there exists a generalized Coriolis force
+
+d [∂q ˙ i  Q (cor) i = ∂ q i (ω · L) − (ω · L)] dt
+
+and a generalized centrifugal force
+
+Q (cent) i = ∂ q i T,
+
+where
+
+L ∑ α
+
+=
+
+mα 
+
+rα 
+
+×
+
+v
+
+α
+
+is the angular momentum of the system about a point of the axis in the chosen frame and
+
+1 = m α × r α )2 (ω T 2 ∑ α
+
+is the driving kinetic energy of the system (energy of the coincident points).
+
+Hints: it is expedient to introduce the mixed product [a, b, c] = a · (b × c) and its invariance properties under even permutations 
+and change of sign under odd permutations. The following vectorial calculus formulae may also be useful.
+
+a × (b × c) = (a · c) b − (a · b) c;
+
+(a × b) · (c × d) = (a · c) (b · d) − (a · d) (b · c) .
+
+Problem Solutions
+
+1.1. The Wheel Jack [Statement and Figure p. 14]
+
+1. Let ABCD denote the lozenge of the jack, the apex A lying beneath the weight, B at the crank and C on the ground; let O be the 
+center of the lozenge, in the middle of the threaded stem BD (see Fig. 1.6).
+
+A priori the conﬁguration of the system is given by α, the angle between the crank and the vertical, and by the form of the 
+lozenge, that is by the values of DB and AC. A ﬁrst holonomic constraint is due to the invariance of the length, l, of the side of 
+the lozenge: OA 2 + OB 2 = l 2 .
+
+One has a second holonomic constraint due to the threaded stem, which gives a relation between α and DB (when α varies by 2π, DB 
+varies by h). Finally only the angle α is needed to describe the conﬁguration of the system; it has one degree of freedom.
+
+A
+
+l
+
+l
+
+a
+
+D
+
+O
+
+C
+
+B
+
+Fig. 1.6 Lozenge ABCD representing schematically the wheel-jack
+
+Let us make a virtual displacement δα such that the stem length DB increases by an amount δx = h δα/(2π) and the length OB = OD by 
+δOB = δx/2. The length OA decreases, in order to fulﬁll the relation
+
+OA 2 + OB 2 = l 2 .
+
+Using these conditions, it is easy to see that δCA = 2δOA = −δx/ tan θ. Thus the variation in the altitude of the weight is given 
+as a function of the virtual displacement by: δz = δCA = −h δα/(2π tan θ).
+
+2. The forces concerned are – the weight P acting at A, which produces an amount of work:
+
+δW P = −P δz = Ph δα/(2π tan θ);
+
+– the reaction force of the ground acting at C which remains at rest; thus the work due to this force vanishes;
+
+– the force F acting on the crank, the virtual work of which is given by δW F = −Fa δα (if one wishes to maintain equilibrium, the 
+force must be opposed to the direct rotation considered previously).
+
+The total virtual work is the sum of all these contributions, namely
+
+Ph Fa = Qα  δW = δα. δα [ 2π tan θ ]
+
+One deduces the generalized force Q α = Ph/(2π tan θ) − Fa.
+
+At equilibrium, d’Alembert’s principle imposes a null generalized force and leads to the required expression:
+
+P 2π a tan θ = . F h
+
+To insure a ratio as large as possible (this is precisely the justiﬁcation of the jack principle), one must thus choose a large 
+crank arm and/or a small step h for the screw.
+
+Numerical application: With a = 20 cm, h = 0.2 cm and tan θ = 0.577, one ﬁnds P/F ∼ 363; these values allow us to maintain a 
+16,000 N coach with a = force of only F = 11 N (remember that P = 16, 000/4 in this special case).
+
+1.2. The Sling [Statement and Figure p. 15]
+
+The system Oxyz is Galilean; the axis Oz is vertical and its unit vector k is directed upwards. In the plane xOy, it is natural to 
+specify the position of the mass by its distance to O: OM = ρ . The angle φ between Ox and OM is proportional to time, φ = ωt, 
+since the angular velocity is kept constant φ = ω. Note that φ is not a coordinate, since it is an externally imposed function.
+
+1. The forces are the weight, along Oz, and the reaction force of the mass on
+
+the stem, perpendicular to the stem since we have a frictionless contact.
+
+None of these forces performs work during the virtual displacement δ ρ
+
+along OM. The virtual work thus vanishes and the resulting generalized
+
+force is null:
+
+Q ρ = 0.
+
+2. The expression for the kinetic energy is easy to obtain; it is the usual expression in polar coordinates
+
+1 T = + ω 2 ρ 2 ) . m 2 ( ρ
+
+From this, one obtains, with (1.1), the generalized acceleration A ρ = m ( ¨ρ − ω 2 ρ ) . Lastly, the Lagrange equation A ρ = Q ρ 
+= 0 provides the diﬀerential equation ¨ρ − ω 2 ρ = 0. The general solution is well known: ρ (t) = A cosh(ωt)+B sinh(ωt). The 
+integration constants are determined from the initial conditions ρ ˙ (0) = 0 and ρ (0) = a. One ﬁnds A = a, B = 0. The solution is 
+thus given by:
+
+ρ (t) = a cosh(ωt).
+
+Note: The equation ¨ρ − ω 2 ρ = 0 represents the fundamental principle of dynamics in a rotating frame (acceleration = centrifugal 
+force). In this case, a classical treatment is even simpler.
+
+1.3. Rope Slipping on a Table
+
+[Statement and Figure p. 16]
+
+1. Let M be the total mass of the rope and μ = L/M its linear mass. One can choose as generalized coordinate the length x which 
+hangs vertically. Since the rope is not elastic, all the points α of the rope have the same velocity v α = x,˙ ∀α. The kinetic 
+energy of the rope is deduced:
+
+1 1 1 T = ∑ mα v α 2 = = . M x L x 2 α 2 2 μ
+
+The acceleration follows from (1.1): A = μ L¨x.
+
+Concerning the real external forces, one distinguishes the weight of the rope and the reaction force of the table (perpendicular to 
+the table since there is no friction); both are vertical. Let us make a virtual displacement δx. The work produced by the weight 
+and by the reaction force on
+
+the horizontal part of the table vanishes because the displacement is perpendicular to them. There remains the work of the hanging 
+portion μ gx of the weight. This work is equal to δW = μ gx δx = Q δx; the expression of the generalized force follows: Q = μ gx.
+
+The Lagrange equation A = Q leads to μ L¨x = μ gx, or ¨x − ω 2 x = 0 with ω = √ g/L. The solution of this diﬀerential equation 
+is x(t) = A cosh(ωt) + B sinh(ωt). The integration constants are determined from the initial conditions ˙x(0) = 0, x(0) = l. They 
+imply A = l, B = 0, hence the solution:
+
+g/L . x(t) = l cosh t ( √ )
+
+2. In this case, the reaction force R has both a vertical component R v and a horizontal one R h . At equilibrium, the part on the 
+table is subject to the weight P , to the reaction force R and to the rope tension T due to the hanging part. One must have P + R + 
+T = 0. Projection of this equality on the vertical axis gives P = R v = μ (L − l)g. Projection on the horizontal axis gives R h = 
+T. On the other hand, the tension is also equal to the weight of the hanging part (in order to insure equilibrium):
+
+T = μ l g = R h .
+
+This reasoning “à la Newton” is simpler to understand. The condition of static solid friction imposes R h ≤ f R v or l ≤ f(L − 
+l). It follows that there exists a critical length l 0 for equilibrium: l ≤ l 0 . This minimum length necessary for the motion of 
+the rope is thus:
+
+f l0 = L. 1+f
+
+The kinetic energy takes the same form as before and hence A = μ L¨x. In contrast to the previous case, the horizontal reaction 
+produces work (the tension is an internal force that does no work) and its virtual work is −R h δx (the force acts against the 
+motion). The total virtual work is thus δW = ( μ gx − R h ) δx. On the other hand, for a dynamical friction action, one has: R h = 
+fR v = fP = f μ g(L − x). The generalized force is derived as: Q = μ g [(1 + f)x − fL].
+
+The Lagrange equation A = Q implies
+
+g g ¨x = or ¨x = ) = ω d 2 (x − l 0 ), [(1 + f)x fL] (1 + f)(x l0  L L
+
+where we introduced a new dynamical angular frequency in the presence of friction ω d = √ g(1 + f)/L. The solution of the 
+resulting diﬀerential equation, with the correct initial conditions, is given by an expression of the form:
+
+g(1 + f) x(t) = l 0 + (l − l 0 ) cosh t . L √ ( )
+
+which is valid for a time less than the time required for the rope to fall.
+
+One should think about the fact, which may seem paradoxical, that, in the presence of friction, the variation in time for the 
+hanging length is greater than the corresponding rate without friction: ω d > ω.
+
+1.4. Reaction Force for a Bead on a Hoop
+
+[Statement p. 16]
+
+1. It is possible to begin with Cartesian coordinates expressed in terms of R, θ, φ , but it is as simple to deal directly with 
+spherical coordinates since the proposed variables are precisely this type of coordinate. Let us denote as usual the unit vector u 
+r (along OM), u θ (along the motion on the circle) and u φ (along the normal to the hoop plane). The expression for the bead 
+velocity is given by v = R( ˙ θu θ + φ sin θu φ ). This is simply the velocity expressed with spherical coordinates when the bead 
+is
+
+constrained to move on a circle (R ˙ = 0). From the velocity, the kinetic energy is expressed as
+
+1 T = θ ˙ 2 + φ (t) 2 sin 2 θ mR2  . 2 ( )
+
+In this particular case, it would be incorrect to consider φ as a generalized coordinate; it is simply an externally imposed 
+function. We are faced with a constraint (the hoop) which varies with time. As a consequence, the kinetic energy depends explicitly 
+on time through the function φ (t) (see Fig. 1.7).
+
+z
+
+θ
+
+•
+
+M
+
+O
+
+y
+
+(t)
+
+φ
+
+x
+
+X
+
+Fig. 1.7 Bead M slipping without rubbing on a hoop with an imposed external rotation
+
+2. Let us give the bead a virtual displacement δθ; it moves physically with δr = R δθ u θ . Since we have a contact without 
+friction, the reaction force is always perpendicular to the hoop and does no work. The only force which produces work is the weight
+
+P = mg(sin θ u θ − cos θ u r ).
+
+The corresponding virtual work is
+
+δW = P · δr = mgR sin θ δθ.
+
+Identifying this expression to Q θ δθ, one obtains the generalized force:
+
+Q θ = mgR sin θ.
+
+3. From the kinetic energy and using (1.1), one deduces the acceleration:
+
+¨θ A θ = mR 2 ( − φ 2 cos θ sin θ).
+
+The corresponding Lagrange equation A θ = Q θ leads, after simpliﬁcation, to the diﬀerential equation:8 
+
+¨θ g = φ (t) 2 cos θ sin θ. sin + θ R
+
+It is easy to check this result with the help of the fundamental principle of dynamics using the momentum of the weight and of the 
+centrifugal force; this gives the time derivative of the angular momentum (see Fig. 1.8).
+
+θ
+
+mR sin θ φ 2
+
+mg
+
+Fig. 1.8 Weight and centrifugal force acting on the bead
+
+The system has only one degree of freedom and it is meaningless to calculate an acceleration A φ , because φ is not a generalized 
+coordinate.
+
+4. We are concerned with the component f of the reaction force along the normal u φ to the plane of the hoop. 9 If one wishes to 
+calculate it, one must introduce generalized coordinates which give a non null work for this force during the virtual displacement. 
+In order to do this, let us introduce, in addition to θ, the angle φ between the plane of the hoop and the plane xOz. It coincides 
+with the angle corresponding to the imposed rotation but, now, instead of considering it as a given function, it must be considered 
+as a full generalized coordinate. Let δ φ be a virtual displacement of the bead. It moves with δr = R sin θ · δ φ u φ . The virtual 
+work is δW = f · δr = f R sin θ δ φ = Q φ δ φ . Hence the expression for the generalized force is Q φ = f R sin θ.
+
+8
+
+9
+
+The sign in front of the gravitational restoring term may seem strange. It follows from our choice concerning the deﬁnition of the 
+angle θ (from the vertical axis directed upwards).
+
+We could be interested as well by the component in the hoop plane, but along the radial direction.
+
+Using the kinetic energy and (1.1), the Lagrange equation A φ = Qφ  explicitly gives
+
+¨φ mR 2 sin 2 θ + 2mR 2 φ θ sin θ cos θ = fR sin θ.
+
+After simpliﬁcation, one arrives at the required expression:
+
+¨φ f(t) = 2m R φ (t) θ ˙ cos θ + m R (t) sin θ.
+
+In contrast to its virtual work which vanishes, this force produces work during a real displacement of the bead.
+
+Once more, one can check this result classically. In the rotating frame, there exist two terms in the component of the inertial 
+force perpendicular to the hoop plane: the usual Coriolis force and a contribution due to the variation of the angular velocity.
+
+1.5. The Huygens Pendulum
+
+[Statement and Figure p. 17]
+
+Remarks concerning the cycloid
+
+Let us consider an arbitrary point P on a circle (not depicted) such that when the center C lies on the vertical through O, the 
+angle CP with the upward vertical is α. When the circle has rolled by an angle φ , the contact point I is horizontally displaced by 
+R φ (rolling without slipping). The coordinates for P are easily obtained:
+
+(R( φ − sin( φ + α)), R(cos( φ + α) − 1)) .
+
+z
+
+I
+
+O
+
+x
+
+φ
+
+C
+
+• M
+
+m g
+
+•
+
+• Fig. 1.9 The rope of the Huygens pendulum oscillates between two cycloids. Thus, its length decreases with the deviation from the 
+vertical
+
+The trajectory followed by the point P is a cycloid which exhibits cusps when φ = −α modulo 2π.
+
+1. For the point M under consideration, α = π and its coordinates are
+
+(R( φ + sin φ ), −R(1 + cos φ )), see Fig. 1.9.
+
+The kinetic energy of this point can be calculated at once:
+
+1 mv2  T = = mR 2 φ 2 (1 + cos φ ) 2
+
+and the generalized acceleration follows from (1.1):
+
+¨φ A φ = mR 2 (1 + cos φ ) − 2 sin φ 2 . [ φ ]
+
+Let us make a virtual displacement δ φ and study the various forces. – First, the weight: the corresponding work is expressed as
+
+δW = P · δOM = −mgR sin φ δ φ ,
+
+which provides us with the generalized force Q φ = −mgR sin φ .
+
+– Secondly, the contact force exerted at the point of contact I between the circle and the axis Ox. To ﬁrst order in δ φ the 
+arbitrary point P is displaced by
+
+(Rδ φ (1 − cos( φ + α)), −Rδ φ sin( φ + α)) .
+
+For the given point I, α = − φ , and, to ﬁrst order, this displacement vanishes. It is a cusp for which both velocity components 
+are null. The contact force does not furnish virtual work and the corresponding generalized force is null.
+
+The Lagrange equation (1.2) A φ = Q φ leads, with the deﬁnition
+
+1 g/R, ω = 2 √
+
+to the following diﬀerential equation:
+
+¨φ 2 (1 + cos φ ) − φ 2 sin φ = −4ω 2 sin φ .
+
+2. Let us transform ﬁrst the expression for the Lagrange equation with the help of well known trigonometric formulae in terms of φ 
+/2; after sim¨φ pliﬁcation, we are left with the equation: 2 cos( φ /2) − φ 2 sin( φ /2) = −4ω 2 sin( φ /2). Now, let us switch 
+to the variable x = sin( φ /2). This last equation is then transformed into the much simpler diﬀerential equation:
+
+¨x + ω 2 x = 0.
+
+The solution is x(t) = x 0 sin ωt = sin( φ (t, x 0 )/2). Let T = 2π/ω; then, it is easily seen that φ (t+T, x 0 ) = φ (t, x 0 ), 
+independently of the amplitude x 0 . In other words, we have to deal with a synchronous pendulum with a period T given by:
+
+R T = 4π . √ g
+
+Now let us consider a simple pendulum whose string is attached at one end to a ﬁxed point on the Oz axis, with a length 4R and 
+which is constrained by two cycloids symmetric with respect to Oz, in such a way that the free string length decreases with the 
+oscillation amplitude. It is possible to show that the pendulum bob follows a cycloid similar to that studied in this problem. 
+Indeed, a very good isochronism can be obtained by attaching the string to a ﬂexible blade.
+
+1.6. Cylinder Rolling on a Moving Tray
+
+[Statement p. 18]
+
+Let Oxyz represent a Galilean frame, C the center of the cylinder with abscissa X, H the contact point of the cylinder on the tray 
+(see Fig. 1.10). Considering this point as belonging to the tray, its velocity is a˙ (imposed by the operator); considering this 
+point as belonging to the cylinder, its ˙ velocity is X ˙ + R θ. The non slipping rolling condition imposes equality ˙ for both 
+velocities a˙ = X ˙ + R θ. This expression gives a link between the generalized coordinate X and the generalized coordinate θ. The 
+constraint is holonomic.
+
+θ
+
+C
+
+H
+
+a(t)
+
+X
+
+Fig. 1.10 Cylinder rolling without slipping on a tray driven with a motion a(t). X denotes the coordinate of the center of the 
+cylinder and θ its rotation angle
+
+Now consider the cylinder; its kinetic energy is given by T = 1 2 M X ˙ 2 + 1 2 I θ 2 . The system is described by one degree of 
+freedom.
+
+1. Let us choose ﬁrst the θ coordinate. Taking into account the previous relation, the kinetic energy can be recast as
+
+1 ˙ 1 T = θ ˙ + θ 2 . M a R I 2 ( ) 2 2
+
+Using (1.1), the value for the acceleration is easily obtained:
+
+¨θ = + A θ ( I MR 2 ) − MR¨a(t).
+
+The only force to be considered for the virtual work is the weight (the force necessary for the rolling has already be taken into 
+account through the relation between the X and θ coordinates (see Problem 1.5)). For a virtual displacement δθ, the center of mass 
+altitude does not vary and the work performed by the weight is null. One deduces a vanishing generalized force: Q θ = 0. The 
+Lagrange equation leads to:
+
+¨θ MR = ¨a, I + MR2 
+
+¨θ which, coupled with the already quoted relation = (¨a − ¨X)/R, allows us to ﬁnd the acceleration of the center of the 
+cylinder:
+
+I ¨X = ¨a(t). I + MR2 
+
+2. Let us now choose X as the coordinate. The expression for the kinetic energy is at present:
+
+1 1 I 2 ˙ T = X ˙ 2 + (˙a − X) 2 . M 2 2R
+
+One obtains the corresponding acceleration as:
+
+I I A X = M + ¨X − ¨a. ( R 2 ) R2 
+
+For a virtual displacement δX, the virtual work furnished by the weight is still null, with the consequence of a vanishing 
+generalized force Q X = 0. In this case, the Lagrange equation leads to
+
+I I M + ¨X − ¨a = 0, ( R 2 ) R2 
+
+or, in other words:
+
+I ¨X = ¨a(t). I + MR2 
+
+One ﬁnds the same result, as required.
+
+1.7. Motion of a Badly Balanced Cylinder
+
+[Statement p. 18]
+
+1. The Galilean frame Oxyz is depicted in Fig. 1.11 and the angle θ is deﬁned positively in the trigonometric sense.
+
+z
+
+G
+
+a
+
+•
+
+C
+
+θ
+
+O
+
+R
+
+X
+
+I
+
+x
+
+Fig. 1.11 Cylinder rolling without slipping on a horizontal plane. The center of gravity G is out of true by a distance a
+
+The velocity component for point G can be calculated very easily:
+
+v G = (X ˙ + a θ ˙ cos θ, a θ ˙ sin θ).
+
+The non slipping rolling condition imposes the constraint
+
+X ˙ + R θ ˙ = 0.
+
+This holonomic constraint allows us to retain the angle θ as the unique coordinate (because X = −Rθ). Applying Koenig’s theorem, 
+one obtains the total kinetic energy of the cylinder as the sum of the translational energy for the center of mass 1 2 Mv G 2 and 
+the rotational energy in the ˙ center of mass frame which is simply 1 2 I θ 2 . Explicitly:
+
+1 T(θ, θ) ˙ = θ ˙ 2 [ I + M(R 2 + a 2 − 2aR cos θ) ] . 2
+
+With the help of formula (1.1), the acceleration is derived
+
+¨θ A θ = [ I + M(R 2 + a 2 − 2aR cos θ) ] + MaR θ ˙ 2 sin θ.
+
+The generalized force must now be calculated; the weight P is the only force that performs work during a virtual displacement δθ:
+
+δW = P · δz G = −Mga sin θ δθ,
+
+which is identiﬁed with the expression δW = Q θ δθ, in order to give the generalized force Q θ = −Mga sin θ. The Lagrange 
+equation follows from (1.2):
+
+¨θ ˙ 2 θ [ I + M(R 2 + a 2 − 2aR cos θ) ] + MaR sin θ = −Mga sin θ. (1.7)
+
+Multiplying by θ, ˙ the Lagrange equation, A θ − Q θ = 0, can be recast ˙ in the form dE(θ, ˙ θ)/dt = 0 where E(θ, θ) is the 
+energy function, which remains constant at the value E.
+
+1 E = θ ˙ 2 [ I + M(R 2 + a 2 − 2aR cos θ) ] − Mga cos θ. 2
+
+From this last equation, it is easy to deduce the velocity in terms of the coordinate
+
+2(E + Mga cos θ) . θ ˙ = ± √ I + M(R 2 + a 2 − 2aR cos θ)
+
+(1.8)
+
+It is useful to discuss the problem of sign and distinguish several regimes which depend on the sign of the quantity E + Mga cos θ.
+
+– If E < −Mga, the sign of the numerator under the square root is always negative and Equation (1.8) cannot be satisﬁed. No 
+motion is possible.
+
+˙ – If E > Mga, the sign is always positive and θ maintains a constant sign, which depends on the initial conditions. The cylinder 
+always rolls in the same direction, the angular velocity being comprised between two extreme values.
+
+˙ – If −Mga < E < Mga, the numerator of θ in (1.8) vanishes for two values of the angle: θ = ±θ 0 , with cos θ 0 = | E | /(Mga). 
+The cylinder moves by oscillating between these two values where the velocity vanishes and then changes sign.
+
+The curve which corresponds to the value E = Mga discriminating the last two regimes is called a separatrix.
+
+All these regimes are illustrated in the upper part of Fig. 1.12.
+
+2. To obtain the vertical component F v of the reaction force, it is necessary that it does work to which end one must introduce 
+another coordinate which allows such work. Thus the ordinate of the center C is no longer considered to be a constant R but rather 
+a new coordinate q, subject to a virtual variation. In contrast, the cylinder radius is still R and the constraint relation remains 
+unchanged. The Cartesian coordinates for
+
+point G are changed to x G = X + a sin θ, z G = q − a cos θ.
+
+We recalculate the total kinetic energy as:
+
+37
+
+1 1 T(q,˙ θ, θ) ˙ = + 2aq˙ θ ˙ sin θ θ ˙ 2 [ I + M(R 2 + a 2 − 2aR cos θ) ] . M q + 2 [ ] 2
+
+˙ θ
+
+4 3 2 1 0 −1 −2 −3 −4
+
+−π
+
+−4 3π 
+
+−2 π 
+
+−4 π 
+
+0
+
+π
+
+4
+
+π
+
+2
+
+3π
+
+π
+
+4
+
+F h /Fv 
+
+2
+
+1
+
+0
+
+−1
+
+θ
+
+θ
+
+˙ Fig. 1.12 Upper part: phase portrait θ(θ, E) for several values of the energy E. The outermost curve corresponds to maximum 
+energy just before the cylinder takes oﬀ
+
+Lower part: ratio between the tangential and normal components of the reaction force. This ratio must be less than the f 
+coeﬃcient.
+
+The parameters are: M = R = g = 1, a = 0, 3, I = 0, 4.
+
+The acceleration relative to q can now be obtained:
+
+¨θ ˙ 2 A q = M ¨q + a sin θ + a θ cos θ . [ ]
+
+For a virtual displacement δq, the weight produces an amount of work −Mgδq and work corresponding to the reaction force an amount 
+F v δq (it acts so as to oppose the weight). Hence, we obtain the generalized force Q q = (F v − Mg). The Lagrange equation, A q = 
+Q q , in which we substitute q = R (¨q = 0) ﬁnally provides the reaction force:
+
+¨θ d 2 cos θ F v (θ, E) = M sin θ + θ ˙ 2 cos θ) 2 . g + a( = M g a [ ] [ dt ]
+
+The energy dependence for the F v component is obtained using the rela˙ ¨θ tion θ(θ, E) given by (1.8) and the expression (θ, E) 
+from (1.7). Moreover the condition F v > 0 must be satisﬁed in order to keep contact with the ground; this is an eﬀect of a 
+centrifugal force which is too strong. The outer curve of the upper part of the Fig. 1.12 corresponds to an energy ˜E responsible 
+for the critical situation F v (π, ˜E) = 0. For a greater value of the energy, the cylinder no longer stays on the ground and all 
+the previous equations are meaningless.
+
+3. We now investigate the horizontal component F h of the reaction force. In order to make it perform work, we have to consider the 
+X coordinate as an independent coordinate no longer connected to θ by a constraint relationship. The Cartesian coordinates of point 
+G are, in this case,
+
+x G = X + a sin θ, z G = R − a cos θ. The total kinetic energy becomes:
+
+1 1 T(X, ˙ θ, θ) ˙ = X ˙ 2 + 2aX ˙ θ ˙ cos θ θ ˙ 2 [ I + Ma 2 ] . M + 2 [ ] 2
+
+The acceleration relative to the X coordinate is deduced from (1.1)
+
+A X = M ¨X + a d( θ ˙ cos θ)/dt . [ ]
+
+During a virtual displacement δX, the only work comes from the F h force: δW = F h δX (F h as given here includes its sign which 
+can be positive or negative); the value of the generalized force is derived at once: Q X = F h . ˙ The Lagrange equation A X = Q X 
+, in which one inserts X ˙ = −R θ, gives the expression for the component of the reaction force:
+
+d . F h (θ, E) = M ˙ θ(a cos θ − R) dt [ ]
+
+The ratio between the tangential and normal components of the force is plotted in the lower part of Fig. 1.12. For a given friction 
+coeﬃcient f, characteristic of the materials, the energy must be such as to allow this ratio to be less than < f.
+
+1.8. Free Axle on a Inclined Plane
+
+[Statement p. 19]
+
+Let us use the convention for axes proposed in the statement. The natural frame is deﬁned by the inclined plane, with origin A, 
+with horizontal axis AX, axis AY in the direction of steepest slope, and axis AZ normal to the plane. The coordinates of the center 
+of the axle, O, are denoted X and Y . Let K be the unit vector normal to the plane, u the unit vector along OC and v the unit 
+vector of the plane perpendicular to OC. Of course, one has OC = (L/2)u. Starting with AC = AO + OC the velocity for point ˙ C 
+follows: V C = V O + (L/2) θ v. In the following discussion, to obtain a quantity relative to wheel C ′ , it is enough to change L 
+→ −L and φ → φ ′ in the corresponding quantity relative to the wheel C (see the conﬁguration in Fig. 1.13).
+
+C
+
+v
+
+θ
+
+u
+
+Y
+
+O
+
+K
+
+C’
+
+g sin α
+
+A
+
+X
+
+Fig. 1.13 Position of the axle and the two wheels on the inclined plane. The axle center O is speciﬁed by its two coordinates X, Y 
+and the axle direction by the angle θ made with the horizontal
+
+1. The axle being massless, only the wheels contribute to the kinetic energy. The instantaneous rotation vector for wheel C is ω = 
+θ ˙ K + φ u. The kinetic energy for this wheel is T C = 1 2 mV C 2 +T C (r) . The rotational energy T C (r) is calculated using ω, 
+the moments of inertia of the wheel and the translational kinetic energy using the expression for the velocity given previously. 
+Thus, one obtains:
+
+1 1 T C = + (L 2 /4) θ ˙ 2 + L θ ˙ v · V O θ ˙ 2 + I 3 φ 2 m + I VO 2  2 [ ] 2 [ ]
+
+with a corresponding expression for the other wheel. With V O 2 = X ˙ 2 +Y 2 , the kinetic energy of the system, which is the sum 
+of the kinetic energy of the two wheels, is calculated as:
+
+1 1 + I + mL2  I3  . T = m X ˙ 2 + Y ˙ 2 θ ˙ 2 + φ 2 + φ ( ) ( 4 ) 2 ( )
+
+From this expression and from deﬁnition (1.1), one deduces the accelerations
+
+A X = 2m¨X,
+
+A Y = 2m¨Y ,
+
+¨θ 1 Aθ =2 I+ , mL2  ( 4 )
+
+¨φ Aφ =I 3 ,
+
+¨φ ′ A φ ′ =I 3 .
+
+We may now express the conditions for rolling without slipping.
+
+Let H be the contact point of the wheel C with the plane; the required conditions impose V H = 0. This last velocity is calculated 
+from that of C and from the instantaneous rotation vector: V H = V C +ω×CH. The non slipping rolling condition provides two scalar 
+conditions. The same thing is applied to wheel C ′ . Among these four conditions, two of them are identical (those referred to 
+(1.9)). Finally, one has three constraint equations:
+
+X ˙ cos θ + Y ˙ sin θ = 0;
+
+(1.9)
+
+1 Y ˙ cos θ − X ˙ sin θ + θ ˙ + R φ = 0; L 2
+
+(1.10)
+
+1 Y ˙ cos θ − X ˙ sin θ − θ ˙ + R φ = 0 L 2
+
+(1.11)
+
+After simple elimination, these conditions can be recast in the simpler form:
+
+2X ˙ − R φ + φ sin = 0; θ ( )
+
+(1.12)
+
+2Y ˙ + R φ + φ cos = 0; θ ( )
+
+(1.13)
+
+L θ ˙ + R φ − φ = 0. ( )
+
+(1.14)
+
+The conditions (1.14) (holonomic) and (1.12), (1.13) (non holonomic) are the relations required for a non slipping rolling motion. 
+We are faced with 5 generalized coordinates X, Y, θ, φ , φ ′ and 3 diﬀerential conditions of type (1.5):
+
+5 ∑ Λ i (k) δq i = 0.
+
+The vectors Λ (k) possess the following components:
+
+Λ (1) = (2, 0, 0, −R sin θ, −R sin θ);
+
+Λ (2) = (0, 2, 0, R cos θ, R cos θ);
+
+Λ (3) = (0, 0, L, R, −R)
+
+2. The application points for the reaction forces due to the ground are not displaced during a virtual displacement, because of the 
+non slipping rolling condition (see the reasoning of Problem 1.5); these reaction forces do not imply generalized forces. The only 
+non vanishing virtual work comes from the weight; it is calculated from the displacement of the center of mass O. We easily get δW 
+= −2mg δz O = −2mg sin α δY . The only non vanishing generalized force is thus Q Y = −2mg sin α.
+
+Introducing three Lagrange multipliers λ 1 , λ 2 , λ 3 , the constrained Lagrange equations (1.6) are written
+
+m¨X = λ 1 ;
+
+(1.15)
+
+m¨Y = −mg sin α + λ 2 ;
+
+(1.16)
+
+¨θ 1 2 I + = Lλ 3 ; mL2  ( 4 )
+
+(1.17)
+
+¨φ I 3 = −λ 1 R sin θ + λ 2 R cos θ + Rλ 3 ; ¨φ ′ I 3 = −λ 1 R sin θ + λ 2 R cos θ − Rλ 3 .
+
+(1.18)
+
+(1.19)
+
+3. The interpretation of the Lagrange multipliers
+
+The right hand side of Equation (1.6), multiplied by δq i and summed over i, gives, in the case of only one constraint:
+
+∑ Q i δq i + ∑ λΛ i δq i .
+
+The last term, which is null because of the constraint, takes the form of a virtual work, product of the force responsible for the 
+constraint by the displacement of the application point. In our problem, the expression corresponding to the multiplier λ 1 is λ 1 
+(2δX − R (δ φ + δ φ ′ ) sin θ). It produces the work performed by the sum of the horizontal components of the reaction force λ 1 
+to cancel the horizontal displacement δX −Rδ φ sin θ of the ﬁrst wheel and δX − Rδ φ ′ sin θ of the second wheel with respect to 
+the plane.
+
+λ 2 is interpreted as the sum of the components of reaction forces along OY , and, lastly, λ 3 is interpreted as the diﬀerence of 
+the components along v which acts against the axle rotation.10 
+
+4. Let us make the proposed change of variables. After some rearrangements θ ˙ + R δ ˙ = 0; and from (1.18–1.19) λ3  based on ¨δ 
+(1.14), one obtains L = (I 3 /2R) . Using (1.17), one arrives at
+
+¨θ 1 2I + + (I 3 L 2 /2R 2 ) = 0, mL2  [ 2 ]
+
+¨θ ¨δ or = 0, then = 0. The axle spins with a constant angular velocity ω and, with a convenient choice of the time origin, θ = ωt. 
+It follows that:
+
+δ − δ 0 = −(Lω/R) t and λ 3 = 0.
+
+Let us derive the two non-holonomic constraints (1.10), (1.11). Using the proposed variables, after some algebra, one obtains
+
+¨σ ( I 3 + mR 2 ) = mgR cos α cos(ωt),
+
+which can be integrated to give
+
+4Γ 2 V0  t , σ − σ 0 = − cos(ωt) Rω ( R )
+
+where Γ = 4 1 ( mgR 2 sin α ) / ( I 3 + mR 2 ) .
+
+Other results are obtained with no particular diﬃculty. Let us summarize the solution of the problem
+
+θ(t) = ωt;
+
+Lω t; δ(t) − δ 0 = R
+
+4Γ2  V0  mgR2  sin α t , σ(t) − σ 0 = − cos(ωt) − with Γ = Rω R 4 (I 3 + mR 2 )
+
+V0  Γ X(t) = (2ωt − sin(2ωt)) ; cos(ωt) 1 + ω [ ωV 0 ]
+
+V0  Γ Y (t) = (cos(2ωt) − 1) , sin(ωt) + ω [ ωV 0 ]
+
+δ 0 and σ 0 are two integration constants which ﬁx the initial values of the angles φ and φ ′ .
+
+10
+
+In order to ﬁnd each reaction force separately, a relation is missing. In fact, very much as in a hyperstatic system (a table with 
+four legs or more on the ground) it is impossible, without further information, to obtain the distribution of the reaction forces 
+(reaction force on each leg).
+
+If we move in a frame which drifts horizontally with constant speed 2Γ/ω, we recognize a periodic trajectory which passes through 
+the four partic-
+
+ular points (0, 0), (−2, 0), (−1, 1 − 2Γ/(ωV 0 )), (−1, −1 − 2Γ/(ωV 0 )).
+
+In the inclined plane, the trajectory of the axle center is plotted in Fig. 1.14 in units of V 0 /ω and for several values of the Γ 
+parameter. The line of steepest slope is directed downwards while the horizontal is from left to right.
+
+Fig. 1.14 Trajectories of the axle center for several values of parameter Γ in the inclined plane
+
+5. Finally, the reaction forces are obtained quite easily
+
+λ 1 (t) = m (−ωV 0 cos(ωt) + 4Γ sin(2ωt));
+
+λ 2 (t) = m (−ωV 0 sin(ωt) − 4Γ cos(2ωt) + g sin α);
+
+λ 3 (t) = 0.
+
+1.9. The Turn Indicator [Statement p. 21]
+
+We will refer to Fig. 1.15 for the axis and frame conventions. The ﬂywheel ˆ rotates around Y with a constant angular velocity Ω. 
+The frame rotates ˙ ˆ with respect to the plane XOz with the instantaneous rotation vector θ X. Finally, the plane XOz itself 
+rotates with respect to the Earth’s frame of reference (assumed to be Galilean) with the instantaneous rotation vector ωˆ z . The 
+instantaneous rotation vector of the ﬂywheel with respect to the ˆ Galilean frame is thus ω = ωˆ z + θ ˙ X ˆ + ΩY . This vector is 
+projected onto the axes (XY Z), which are the principle axes of the ﬂywheel, to obtain the components: ω X , ω Y , ω Z .
+
+Fig. 1.15 Gyroscope in rotation around the axis Y ′ Y of its frame with an imposed constant velocity Ω. The frame can oscillate 
+also around an axis X ′ X locked on a tray rotating at constant velocity ω. The only degree of freedom is the angle θ between the 
+normal to the frame Z ′ Z and the rotation axis Ox of the tray
+
+1. The rotational kinetic energy is equal to
+
+1 T rot = ω X 2 + I Y ω Y 2 + I Z ω Z 2 ) . IX  2 (
+
+To this energy one must, in principle, add the center of mass kinetic energy of the ﬂywheel. Since this energy is independent of 
+θ, it is of no consequence for our study. Performing the calculations with the previously obtained components of ω one obtains:
+
+˙ 1 1 T = I X θ 2 + ω 2 cos 2 θ . + I (Ω sin ω θ)2  2 ( ) 2
+
+2. The only dynamical variable is θ and the system has only one degree of freedom, since ω and Ω are imposed variables. The 
+acceleration is calculated from (1.1):
+
+¨θ 1 A θ = I X + IωΩ cos θ + (I X − I) sin(2θ). ω2  2
+
+The forces acting on the ﬂywheel are the weight and the eﬀorts exerted on the axis by the frame and the restoring force of the 
+spring. For a
+
+virtual displacement δθ, the center of mass altitude does not vary and the work of the weight vanishes. The axis X ′ X does not 
+change its direction and the forces that maintain it perform no work. Lastly, the restoring force performs an amount of work δW = 
+−C δθ = −kθ δθ; this implies a generalized force Q θ = −kθ. The Lagrange equation A θ = Qθ  leads to the diﬀerential equation:
+
+¨θ 1 I X + IωΩ cos θ + (I X − I) sin(2θ) = −kθ. ω2  2
+
+¨θ 3. At equilibrium, one has θ = const ⇒ = 0. If the terms in ω 2 are neglected with respect to ωΩ, the previous equation gives 
+the required relation:
+
+kθ . ω =IΩ cos θ
+
+4. The lift (component of the air reaction force perpendicular to the relative velocity) is perpendicular to the wings and is thus 
+directed along the apparent vertical. In the frame of the aeroplane, this lift balances the weight (vertical) and the centrifugal 
+force (horizontal). A simple drawing shows immediately that tan(α) = centrifugal force/weight, or (R being the radius of the circle 
+corresponding to the turn):
+
+V2  ωV = . tan α = Rg g
+
+5. The restoring torque is exerted between the apparent vertical and the normal to the frame; the angle between these two 
+directions is θ. However the angle between the instantaneous rotation vector ω and the true vertical is now θ + α; this is 
+precisely the angle which appears in the expression of the kinetic energy whose value is presently
+
+1 1 T = θ ˙ 2 + ω 2 cos 2 (θ + α) . IX  + I (Ω sin(θ + ω α))2  2 ( ) 2
+
+The rest of the calculation is similar to that quoted in questions 2 and 3. We arrive at the following result:
+
+kθ . ω =IΩ cos(θ + α)
+
+To obtain a maximum sensitivity, one requires that a small speed variation leads to a large variation of the reading; this happens 
+when cos(θ+α) is maximum. In the vicinity of θ ∼ −α, the relation ω(θ) becomes linear = and
+
+∼ kα ∼ k tan α | ω | = IΩ = IΩ ,
+
+or, with the result of the last question, ω = kωV/(IΩg), that is:
+
+ΩI V = . k g
+
+Consequently, the rotational direction and the speed of the engine must be correctly chosen in order that the ﬂywheel plane is as 
+close as possible to the true vertical; this is obviously not the situation depicted in the drawing of the statement!
+
+1.10. An Experiment to Measure the Rotational Velocity of the Earth
+
+[Statement p. 22]
+
+We still refer to the Fig. 1.15 of Problem 1.9 since we deal with the same system, a gyroscope, but employed in a diﬀerent 
+context.
+
+With respect to its frame OXY Z, the disc rotates around the axis OY with angular velocity Ω which, following the statement 
+notation, is simply ˙ φ . The frame itself rotates with angular velocity θ around the axis OX. Lastly, the carousel rotates around 
+axis Oz with angular velocity ω with respect to a Galilean frame.
+
+1. As a consequence, the instantaneous rotation vector is Ω = ωˆ z + θ ˙ ˆ X+ φ Y ,
+
+which can be rewritten in terms of its components in the frame of the
+
+inertial axes of the disc
+
+ˆ Ω = Ω X X ˆ + Ω Y Y ˆ + Ω Z Z.
+
+Simple projection leads to the expression Ω =
+
+ˆ ω cos θ Z.
+
+1
+
+θ ˙ X ˆ + (ω sin θ + φ
+
+)Y ˆ +
+
+The kinetic energy, written ﬁrst as T = recast as
+
+2
+
+[ IΩX 2 
+
++ IΩ Y 2 + I Z ΩZ 2 
+
+] , is
+
+1 T = θ ˙ 2 + ω 2 sin 2 θ φ + ω cos θ I Y . I + 2 [ ( ) ( ) 2 ]
+
+The rotation ω and the pivoting motion θ(t) are imposed externally. The only coordinate describing the system is thus φ . As a 
+result, the acceleration is
+
+d cos + . Aφ =I Y φ ω θ dt ( )
+
+Let us perform a virtual displacement which consists, at a given time, of a small rotation δ φ for the disc while maintaining the 
+frame ﬁxed.
+
+The weight performs no work since the center of mass is kept ﬁxed; the forces that lock the frame do not furnish work since the 
+frame does not move. Finally, if we suppose a frictionless rotation of the disc around the axis OY , the reaction force on the 
+rotational axis also does not produce work. In summary, the virtual work of external forces vanishes and the generalized force Q φ 
+is null.
+
+Be careful: In a real displacement, the momentum of the forces exerted on the frame is not null.
+
+The Lagrange equation A φ = Q φ = 0 leads to the interesting conclusion φ +ω cos θ = const. At the initial time t = 0, one has θ = 
+0 and φ = 0 (the disc is at rest with its axis in the vertical position), whence ω = const. We are led to the desired expression:
+
+φ (t) = ω (1 − cos θ(t)) .
+
+When the axis is horizontal (θ = π/2) one obtains
+
+complete turn (θ = π) φ = 2ω.
+
+φ
+
+= ω and after a
+
+2. It is always possible to choose the carousel axes OXY z with the axis Oz along the true vertical, the axis OX in the southerly 
+direction and axis OY in the easterly direction. The instantaneous rotation vector of ˆ the carousel is now given by (ω sin λ) zˆ 
+− (ω cos λ) X. The rest of the treatment is completely similar to that of the previous question. The instantaneous rotation vector 
+for the disc is therefore written:
+
+Ω = (ω sin λ)ˆ z + ( θ ˙ − ω cos λ) X ˆ + φ Y .
+
+With respect to the previous study, it is suﬃcient to replace ω by ω sin λ and θ ˙ by θ ˙ − ω cos λ. We then arrive at the 
+equation φ + ω sin λ cos θ = const, which, using the initial conditions, leads to the ﬁnal expression:
+
+φ (t) = ω sin λ (1 − cos θ(t)) .
+
+After a complete turn, the angular velocity of the disc is: φ = 2ω sin λ. There is no eﬀect at all at the equator, whereas the 
+eﬀect is maximum at the pole.
+
+Remarks:
+
+– In contrast to some other problems, the Lagrangian formalism is much more convenient here than a treatment “à la Newton”.
+
+– Mistakes are not reserved to beginners. A.H Compton, Nobel prize, who imagined this experiment, found a result which was half the 
+exact value.
+
+1.11. Generalized Inertial Forces
+
+[Statement p. 23]
+
+The previously derived formula
+
+d A i = T) − ∂ q i T = ∑ m α a α · (∂ q i r α ) (∂q ˙ i  dt α
+
+is valid in any frame. On the other hand, Newton’s formula m α a α = f α (v) , in terms of the true force, is valid only in a 
+Galilean frame. If we want to work in the frame under consideration, we must replace this last equation (e) by m α a α = f α (v) + 
+f α (e) + f (cor) α + f (cent) α where f α = −m α a α (e) is the driven inertial force of the origin, f (cor) α = −m α a (cor) α 
+is the inertial Coriolis force and f (cent) α = −m α a (cent) α is the inertial centrifugal force. Substituting these values in 
+the expression A i and performing virtual displacements, the virtual work can be expressed in the form
+
+∑ A i δq i = δW (v) + δW (e) + δW (cor) + δW (cent) . i
+
+The work
+
+δW (u) ∑ i
+
+=
+
+Qi (u) 
+
+δqi 
+
+is that due to the generalized force of type u:
+
+Q i (u) = ∑ f α (u) · (∂ q i r α ). α
+
+1. Translation case
+
+In case of pure translation, the instantaneous rotation vector is null ω = 0. This means that the Coriolis and centrifugal forces 
+are also null; there remains only the driven inertial force. Moreover, the corresponding (e) acceleration is independent of the 
+point mass: a α = a (e) ; ∀α. The generalized force is derived as:
+
+Q i (e) = −a (e) · ∑ m α (∂ q i r α ), α
+
+or ∂q i  ∑ [ ( α )]
+
+Qi (e) 
+
+=
+
+−a(e) 
+
+·
+
+mα 
+
+rα 
+
+.
+
+Introducing the center of mass coordinate
+
+1 R cm = ∑ m α r α , M α
+
+one easily arrives at the desired formula:
+
+∂Rcm  Q i (e) = −Ma (e) · . ∂qi
+
+Application to the pendulum:
+
+Let us direct the vertical downwards and let us specify the direction of the pendulum, with mass m and length l, by the angle θ. 
+The point of suspension, A, is subject to a variation OA = h(t). In the system of ˙ reference of the pendulum, the kinetic energy 
+is simply T = 1 2 ml 2 θ 2 and the generalized force due to the weight is Q (v) = −mgl sin θ. However, one must add to this force 
+the driven inertial force. Since a (e) = (0, ¨h) and (∂R cm /∂θ)= (l cos θ, −l sin θ), the inertial force is easily derived as Q 
+(e) = ml¨h sin θ. The Lagrange equation in the pendulum frame is written, after simpliﬁcation:
+
+¨θ ¨h(t) g + sin θ = 0. l
+
+2. Uniform rotation case
+
+In the case of a uniform rotation around a ﬁxed point taken as origin, the driven acceleration of the origin vanishes and the 
+instantaneous rotation vector ω is constant, with the consequence dω/dt = 0. Students often forget the term dω/dt in generalized 
+forces which vanishes only in the case of a uniform rotation; this is often a good approximation (the Earth’s rotation around its 
+axis, or the revolution of the Earth around the sun), but not a general situation. With our hypothesis, we are faced with two 
+inertial forces:
+
+– the Coriolis force: f (cor) α = −2m α ω × v α where v α is the velocity of the point α in the considered frame (relative 
+velocity);
+
+– the centrifugal force: f (cent) α = −m α ω × (ω × r α ).
+
+They give rise to two generalized forces Q (cor) i and Q (cent) i .
+
+We consider ﬁrst the Coriolis force
+
+Q (cor) i = −2 ∑ m α (ω × v α ) · (∂ q i r α ) = −2 ∑ m α [ω, v α , ∂ q i r α ] , α α
+
+using the notation [ ] for the mixed product.
+
+Let us introduce, in our system of reference, the angular momentum with respect to an arbitrary point O chosen on the axis: L= ∑ α 
+r α × m α v α , which, with the known relation v α = dr α /dt = ∑ i q˙ i (∂ q i r α ) + ∂ t r α , allows us to write
+
+ω · L = ∑ m α q˙ i [ω, r α , ∂ q i r α ] + ∑ m α [ω, r α , ∂ t r α ] . α,i α,i
+
+Then
+
+∂ q ˙ i ∑ α
+
+(ω
+
+·
+
+L)
+
+=
+
+mα 
+
+[ω,
+
+rα 
+
+,
+
+∂q i 
+
+rα 
+
+].
+
+We take the total derivative with respect to time, in which we put dr α /dt
+
+= v α and d(∂ q i r α )/dt = ∂ q i v α , to ﬁnd
+
+d [∂q ˙ i  (ω · L)] = m α [ω, v α , ∂ q i r α ] + m α [ω, r α , ∂ q i v α ] . dt ∑ ∑ α α
+
+Moreover, one has
+
+∂ q i (ω · L) = ∑ m α [ω, ∂ q i r α , v α ] + ∑ m α [ω, r α , ∂ q i v α ] . α α
+
+It then suﬃces to take the diﬀerence between these two last equations to ﬁnd:
+
+· L) d ∂(ω ∂(ω · L) Q (cor) i = − . ∂ q i dt ( ∂ q ˙ i )
+
+Note that it is not necessary to suppose a uniform rotation; if a term ω ˙ is present in the Coriolis force, it appears in the term 
+d[∂ q ˙ i (ω · L)]/dt and the previous formula is still valid.
+
+Let us consider now the centrifugal force
+
+Q (cent) i = − ∑ m α [ω × (ω × r α )] · (∂ q i r α ). α
+
+A well known formula in vector analysis gives ω × (ω × r α ) = (ω · r α )ω −ω 2 r α and allows us to write:
+
+Q (cent) i = − ∑ m α [(ω · r α ) (ω · (∂ q i r α )) − ω 2 r α · (∂ q i r α )]. α
+
+On the other hand, the driving rotational kinetic energy (energy of the coincident points) is
+
+1 T = ∑ m α (ω × r α ) 2 . 2 α
+
+After derivation, one obtains
+
+∂ q i T = ∑ m α (ω × r α ) · (ω × ∂ q i r α ) . α
+
+Finally, let us use the vectorial property
+
+(ω × r α ) · (ω × ∂ q i r α ) = ω 2 (r α · (∂ q i r α )) − (ω · r α ) (ω · (∂ q i r α )) .
+
+Then:
+
+∂T
+
+Q (cent) i ∑ ∂qi  α
+
+

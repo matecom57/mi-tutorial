@@ -66,3 +66,5 @@ Contents
 
     Fundamentals_of_Physics_Resnick/index2
 
+    Solved_Problems_Lagrangian_Hamiltonian_Mechanics_Claude/index2
+
