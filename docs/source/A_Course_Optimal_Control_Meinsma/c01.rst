@@ -1,0 +1,2850 @@
+Preface
+
+This book reflects a long history of teaching optimal control for students in mathe-
+matics and engineering at the universities of Twente and Groningen, the Netherlands.
+In fact, the book has grown out of lecture notes that were tested, adapted, and expanded
+over many years of teaching.
+
+The present book provides a self-contained treatment of what the undersigned consider to be the core topics of optimal control for finite-dimensional deterministic
+dynamical systems. The style of writing aims at carefully guiding the students through the
+mathematical developments, and emphasizes motivational examples; either of a math-
+ematical nature or motivated by applications of optimal control.
+
+Chapter 1 covers the basics of the classical calculus of variations, including
+second-order conditions and integral constraints. This directly motivates the introduction of the minimum principle (more commonly known as the maximum principle)
+in Chapter 2. Although the presentation of the book aims at minimizing generalities, the
+treatment of the minimum principle as given in Chapter 2 is self-contained, and suited
+for a basic course on optimal control. Chapter 3 continues with the dynamic programming approach to optimal control, culminating in the Hamilton-Jacobi-Bellman
+equation. The connection with the minimum principle is discussed, as well as the
+relation between infinite horizon optimal control and Lyapunov functions. In Chapter 4,
+the theory of Chapters 2 and 3 is applied, and specialized, to linear control systems with
+quadratic cost criteria (LQ-optimal control). This includes a succinct but detailed
+treatment of Riccati differential equations and algebraic Riccati equations. The chapter
+is concluded with a section on controller design based on LQ-optimal control.
+
+In our experience, the material of Chapters 1–4 provides a good coverage of an
+introductory, but mathematically self-contained, course on optimal control for final
+year BSc (or beginning MSc) students in (applied) mathematics and beginning MSc
+students in engineering. We have taught the course for such an audience for many years
+as an 8-week course of 4 lecture hours and 2 tutorial hours per week (5 ECTS in the
+European credit system). Of course, the contents of the course can still be adapted. For
+example, in some of the editions of the course we did not cover Section 1.7 on integral
+constraints, but instead we paid more attention to Lyapunov stability theory as detailed
+in Appendix B.
+
+Required background for the course is linear algebra and calculus, basic knowledge
+of differential equations, and (rudimentary) acquaintance with control systems. Some
+mathematical background is summarized in Appendix A for easy recollection and for
+bringing students to the same mathematical level. Appendix B goes further: it does not
+only recall some of the basics of differential equations, but also provides a rather
+detailed treatment of Lyapunov stability theory including LaSalle’s invariance principle,
+as occasionally used in Chapters 3 and 4 of the book.
+
+Chapter 5 of the book is of a different nature. It is not considered to be part of the
+basic material for a course on optimal control. Instead, it provides brief outlooks to a
+number of (somewhat arbitrarily chosen) topics that are related to optimal control, in
+order to raise interest of students. As such Chapter 5 is written differently from Chapters
+1–4. In particular the treatment of the covered topics is not always self-contained.
+
+At the end of each of Chapters 1–4, as well as of Appendix B, there is a rich collection
+of exercises, including a number of instructive examples of applications of optimal
+control. Solutions to the odd-numbered exercises are provided.
+
+Main contributors to the first versions of the lecture notes (developed since the
+1990s) were Hans Zwart, Jan Willem Polderman (both University of Twente), and Henk
+Nijmeijer (University of Twente, currently Eindhoven University of Technology). We
+thank them for their initial contributions.
+
+In 2006–2008 Arjan van der Schaft (University of Groningen) made a number of
+substantial revisions and modifications to the then available lecture notes. In the period
+2010–2018 Gjerrit Meinsma (University of Twente) rewrote much of the material, and
+added more theory, examples, and illustrations. Finally, in 2021–2023 the book took its
+final shape. We thank the students and teaching assistants for providing us with constant feedback and encouragement over the years.
+
+We have profitably used many books and papers in the writing of this book. Some
+of these books are listed in the References at the end. In particular some of our
+examples and exercises are based on those in Bryson and Ho (1975) and Seierstad and
+Sydsaeter (1987). We thank Leonid Mirkin (Technion, Haifa) for Example 4.6.2.
+
+Unavoidably, there will be remaining typos and errors in the book. Mentioning
+of them to us is highly welcomed. A list of errata will be maintained at the
+website https://people.utwente.nl/g.meinsma?tab=projects.
+This website can also be reached by scanning the QR code below.
+
+Chapter 1 Calculus of Variations
+--------------------------------
+
+1.1 Introduction
+----------------
+
+Optimal control theory is deeply rooted in the classical mathematical subject
+referred to as the calculus of variations; the name of which seems to go back to
+the famous mathematician Leonhard Euler (1707–1783). Calculus of variations
+deals with minimization of expressions of the form
+
+.. math::
+
+   \int_0^T F(t, x(t), \dot{̇x}(t)) dt
+
+over all functions
+
+.. math::
+
+   x: [0,T ] → ^Rn
+
+Here :math:`F : R × R^n × R^n → `R is some given function. Recall that:math:`\dot{x}̇x(t`) denotes the
+derivative of x with respect to its argument, i.e., :math:`\dot{x} = \frac{dx(t)}{dt}`. In contrast to
+basic optimization—where we optimize over a finite number of variables—we
+minimize in principle over all (sufficiently smooth) functions :math:`x: [0,T ] → ^R^`n.
+Many fruitful applications of the calculus of variations have been developed in
+physics, in particular, in connection with Hamilton’s principle of least action.
+Also in other sciences such as economics, biology, and chemistry, the calculus
+of variations has led to many useful applications.
+
+We start with some motivating examples. The first example is the celebrated brachistochrone problem. This problem was introduced in 1696 by
+Johann Bernoulli and it was one of the first problems of this type1. When
+Bernoulli formulated the problem it immediately attracted a lot of attention and
+several mathematicians submitted solutions to this problem, including Leibniz,
+Newton, l’Hôpital, and Johann Bernoulli’s older brother Jakob.
+
+1Newton’s minimal resistance problem can also be seen as a calculus of variations problem,
+and it predates the brachistochrone problem by almost 10 years.
+
+Example 1.1.1 (Brachistochrone). A present-day formulation2 of the brachistochrone problem is as follows. Consider two points A = (x0, y0) and B = (x1, y1)
+in R2. The problem is to find a path (a function) y : [x0,x1] → R through A and B
+such that a point mass released with zero speed at A and that glides along this
+path without friction reaches B in minimal time. It is assumed that the gravitational acceleration g is constant. Figure 1.1 depicts four possible such paths
+and, actually, one of them is the optimal solution. Can you guess which one?
+This is a hard problem, and we will solve this problem step by step in a series of
+examples (Examples 1.2.4 and 1.3.1). First we set it up as a calculus of variations
+problem. It is convenient to take the vertical displacement y to increase when
+going down (i.e., y points downwards, in the same direction as the gravitational
+force, see Fig. 1.2). Also, without loss of generality we take (x0, y0) = (x0, 0). That
+is, we release the point mass at zero altitude. As the mass moves friction free we
+have that kinetic plus potential energy is constant, i.e.,
+
+.. math::
+
+   \frac{1}{2} mv^2 - mg y = c
+
+for some constant c. Here v is the speed of the mass. We release the mass at
+zero altitude and with zero speed, so c = 0. Hence the speed v follows uniquely
+from y as
+
+.. math::
+
+   v = \sqrt{2g y}.
+
+By the Pythagorean theorem, an infinitesimal horizontal displacement dx corresponds to a displacement along the curve y(x) of :math:`ds 
+:=\sqrt{1+ \dot{y}^2(x)} dx`, see`Fig. 1.3. The amount of time that this takes is
+
+.. math::
+
+   dt = \frac{ds}{v} = \sqrt{\frac{1+ \dot{y}^̇2(x)^}{2g y(x)} dx.
+
+This way the time T needed to travel from (x0, 0) to (x1, y1) can be seen as an
+integral over x,
+
+
+.. math::
+ 
+   T = \int_0^T 1 dt = \int_{x_0}^{x_1} \sqrt{\frac{1+ \dot{y}^2(x)^}{2g y(x)} dx}
+
+Thus the brachistochrone problem is to minimize the integral (1.1) over all functions y : [x0,x1] → R subject to y(x0) = y0 = 0 and y(x1) = y1. 
+
+**Example 1.1.2 (Optimal economic investment).** This example is based on an
+example from Seierstad and Sydsaeter (1987). We consider a simple model of
+
+2For more on the history of the brachistochrone problem and subsequent developments see
+H.J. Sussmann and J.C. Willems. 300 years of optimal control: from the brachistochrone to the
+maximum principle. IEEE Control Systems Magazine, 17:32–44, 1997.
+
+an economy of some country. We distinguish its capital stock x(t) in, say, euros,
+which is a measure of the physical capital in the country at time t. We also need
+the net national product y(t) in euros per unit time, which is the value of all
+that is produced at time t per unit time in the country. The derivative  ̇x(t) of
+capital stock with respect to t is the increase in physical capital, and it is called
+investment. Therefore, what is left for consumption (euros per unit time) at time
+t is the difference between national product and investment,
+
+.. math::
+
+   c(t) := y(t) −\dot{x}̇ (t).
+
+This is called consumption. It is assumed that the national product y follows
+from capital stock x, so at all times t
+
+.. math::
+
+   y(t) = φ(x(t)) (1.2)
+
+for some function φ (which we assume to be twice continuously differentiable).
+It is a standard assumption that φ is strictly increasing and concave, that is,
+φ(x) > 0 and φ(x) ≤ 0 for all x > 0, see Fig. 1.4(a). This captures the not unrea-
+sonable assumption that the national product increases with increasing capital
+stock, but that the rate of this increase reduces as x gets larger.
+
+Suppose the economy at t = 0 has a certain initial capital stock
+
+x(0) = x0. (1.3)
+
+Then, given an arbitrary investment function  ̇x(t), all variables in our model are
+determined since
+
+.. math::
+
+   x(t) = x_0 + \int^t^_0 \dit{x}̇ (τ)dτ. 
+
+(1.4)
+
+The question now is: what is a good investment function  ̇x(t)? A way to answer
+this question is as follows. Suppose we have a utility function u(c) that models the enjoyment of consuming c. Standard assumptions on utility functions
+are that they are strictly increasing, strictly concave, and twice continuously
+differentiable, so :math:`u´(c) > 0, u´´(c) < 0` for all c > 0, see Fig. 1.4(b). This is just to
+say that additional enjoyment of additional consumption flattens at high levels
+of consumption.
+
+An investment function  ̇x(t) is now considered optimal if it maximizes the
+integrated utility :math:`\int_0^T u(c(t)) e^{−α}t d`t, that is, if it maximizes
+
+.. math::
+
+   \int^T_0 u(c(t)) e^{−α}t dt  \int^T^_0 -u(φ(x(t))−\dot{ }̇ (t)e{−α}t dt
+
+ (1.5)
+
+over all investment functions  ̇x(t) or, equivalently, over all functions x(t) satisfying (1.3). The term e−αt is a so-called discount factor (and α is a discount
+rate, assumed positive). This is included to express that the importance of the
+future utility u(c(t)) is considered to be declining with t further in the future.
+The optimization problem is of the same type as before apart from the fact that
+we are maximizing instead of minimizing. Clearly, maximizing the integrated
+utility (1.5) is equivalent to minimizing its negation
+
+.. mat::
+
+   \int^T_0 −u(c(t)) ^{e−}αt dt \int^T_0 −(φ(x(t))−\dot{ }̇ (t)) e^{−α}t dt.
+
+The end time of the planning period is denoted as T , and we will assume in
+addition that
+
+
+x(T ) = xT (1.6)
+
+for some given desired capital stock xT . This type of model for optimal economic growth was initiated by F.P. Ramsey in 1928. 
+
+**Example 1.1.3 (Cheese production).** A cheesemaker is to deliver an amount of
+xT kilos of cheese at a delivery time T . The cheesemaker wants to find a production schedule for completing the order with minimal costs. Let x(t) denote
+the amount of cheese at time t. We assume that both producing and storing
+cheese is costly. The total cost might be modeled as
+
+.. math::
+
+   \int^T_0 α \dot{x}^̇2(t)+βx(t)dt, 
+
+(1.7)
+
+where βx(t) models the storage cost per unit time and αx ̇ 2(t) models the pro-
+duction cost per unit time. The constants α,β are positive numbers. The objec-
+tive of the cheesemaker is to determine a production profile x(t) that minimizes
+
+the above cost, subject to the conditions
+x(0) = 0, x(T ) = xT ,  ̇x(t) ≥ 0. (1.8)
+
+Example 1.1.4 (Shortest path). What is the shortest path between two points
+
+(x0, y0) and (x1, y1) in R2? Of course we know the answer but let us anyway for-
+mulate this problem in more detail.
+
+Clearly the path is characterized by a function y : [x0,x1] → R. As explained
+in Example 1.1.1, the length ds of an infinitesimal part of the path follows from
+an infinitesimal part dx as ds =
+
+1+ y ̇ 2(x)dx, see Fig. 1.3. So the total length of
+
+the path is
+x1
+x0
+
+1+ y ̇ 2(x)dx. (1.9)
+
+This has to be minimized subject to
+y(x0) = y0, y(x1) = y1. (1.10)
+Note that this problem is different from the brachistochrone problem. 
+With the exception of the final example, the optimal solution—if one exists
+at all—is not easy to find.
+1.2 Euler-Lagrange Equation
+The examples given in the preceding section are instances of what is called the
+simplest problem in the calculus of variations:
+Definition 1.2.1 (Simplest problem in the calculus of variations). Given a final
+
+time T > 0 and a function F : [0,T ] × Rn × Rn → R, and x0,xT ∈ Rn, the sim-
+plest problem in the calculus of variations is to minimize the cost J defined as
+
+J(x) =
+T
+0
+F(t, x(t),  ̇x(t))dt (1.11)
+over all functions x : [0,T ] → Rn that satisfy the boundary conditions
+x(0) = x0, x(T ) = xT . (1.12)
+
+
+The function J is called the cost (function) or cost criterion, and the inte-
+grand F of this cost is called the running cost or the Lagrangian. For n = 1
+
+the problem is visualized in Fig. 1.5: given the two points (0,x0) and (T,xT )
+each smooth function x that connects the two points determines a cost J(x)
+as defined in (1.11), and the problem is to find the function x that minimizes
+this cost.
+
+The calculus of variations problem can be regarded as an infinite-
+dimensional version of the basic optimization problem of finding a z∗ ∈ Rn
+
+that minimizes a function K : Rn → R. The difference is that the function K
+is replaced by an integral expression J, while vectors z ∈ Rn are replaced by
+functions x : [0,T ] → Rn.
+
+Mathematically, Definition 1.2.1 is not complete. We have to be more precise
+about the class of functions x over which we want to minimize the cost (1.11).
+
+A minimal requirement is that x is differentiable. Also, optimization prob-
+lems usually require some degree of smoothness on the cost function, and this
+
+imposes further restrictions on x as well as on F. Most of the times we assume
+that F(t,x,x ̇) and x(t) are either once or twice continuously differentiable in all
+their arguments. This is abbreviated to C1 (for once continuously differentiable)
+and C2 (for twice continuously differentiable).
+We next derive a differential equation that every solution to the simplest
+problem in the calculus of variations must satisfy. This differential equation is
+the generalization of the well-known first-order condition in basic optimization
+that the gradient vector ∂K(z∗)
+
+∂z must be equal to zero for every z∗ ∈ Rn that min-
+imizes a differentiable function K : Rn → R.
+
+Theorem 1.2.2 (Euler-Lagrange equation—necessary first-order condition for
+
+optimality). Suppose that F is C1. Necessary for a C1 function x∗ to mini-
+mize (1.11) subject to (1.12) is that it satisfies the differential equation
+
+∂
+∂x − d
+dt
+∂
+∂x ̇
+F(t, x∗(t),  ̇x∗(t)) = 0 for all t ∈ [0,T ].
+
+(Recall page ix for an explanation of the notation.)
+Proof. Suppose x∗ is a C1 solution to the simplest problem in the calculus of
+
+variations, and let δx : [0,T ] → Rn be an arbitrary C1 function on [0,T ] that van-
+ishes at the boundaries,
+
+δx (0) = δx (T ) = 0. (1.14)
+We use it to form a variation of the optimal solution
+x(t) = x∗(t)+αδx (t),
+
+in which α ∈ R. Notice that this x for every α ∈ R satisfies the boundary condi-
+tions x(0) = x∗(0) = x0 and x(T ) = x∗(T ) = xT , see Fig. 1.6. Since x∗ is a mini-
+mizing solution for our problem we have that
+
+J(x∗) ≤ J(x∗ +αδx ) for all α ∈ R. (1.15)
+
+For every fixed function δx the cost J(x∗ + αδx ) is a function of the scalar vari-
+able α,
+
+ ̄J(α) := J(x∗ +αδx ), α ∈ R.
+The minimality condition (1.15) thus implies that  ̄J(0) ≤  ̄J(α) for all α ∈ R. Given
+that x∗,δx and F are all assumed C1, it follows that  ̄J(α) is differentiable as a
+function of α, and so the above implies that  ̄J
+
+(0) = 0. This derivative is3
+
+ ̄J
+(0) =
+d
+dα
+T
+0
+F(t, x∗(t)+αδx (t),  ̇x∗(t)+αδ ̇
+x (t)) dt
+α=0
+
+=
+T
+0
+∂F(t, x∗(t),  ̇x∗(t))
+∂xT δx (t)+
+
+∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇T δ ̇
+
+x (t)dt. (1.16)
+In the rest of the proof we assume that F and x∗ and δx are C2. (The case when
+
+they are only C1 is slightly more involved; this is covered in Exercise 1.7.) Inte-
+gration by parts of the second term in (1.16) yields4
+
+T
+0
+∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇T δ ̇
+x (t) dt
+= ∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇T δx (t)
+T
+0
+−
+T
+0
+d
+dt
+∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇T
+
+δx (t) dt.
+(1.17)
+
+3Leibniz’ integral rule says that d
+dα
+
+G(α,t)dt =  ∂G(α,t)
+
+∂α dt if G(α,t) and ∂G(α,t)
+
+∂α are continu-
+ous in t and α. Here they are continuous because F and δx are assumed C1.
+
+4The integration by parts rule holds if ∂
+
+∂x ̇T F(t, x∗(t),  ̇x∗(t)) and δx (t) are C1 with respect to
+
+time. This holds if F, x∗,δx are C2 in all their arguments.
+
+Plugging (1.17) into (1.16) and using that  ̄J
+
+(0) = 0 we find that
+
+0 = ∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇T δx (t)
+T
+0
++
+T
+0
+∂
+∂x − d
+dt
+∂
+∂x ̇
+F(t, x∗(t),  ̇x∗(t))
+T
+δx (t)dt.
+(1.18)
+The first term on the right-hand side is actually zero because of the boundary
+conditions (1.14). Hence we have
+0 =
+T
+0
+∂
+∂x − d
+dt
+∂
+∂x ̇
+F(t, x∗(t),  ̇x∗(t))
+T
+δx (t)dt. (1.19)
+So far the perturbation δx in our derivation was some fixed function. However
+since δx can be arbitrarily chosen, the equality (1.19) must hold for every C2
+perturbation δx that satisfies (1.14). But this implies, via the result presented
+next (Lemma 1.2.3), that the term in between the square brackets in (1.19) is
+zero for all t ∈ [0,T ], i.e., that (1.13) holds. ■
+
+(t)
+x (t)
+a t
+ ̄ b t
+FIGURE 1.7: The function δx (t) defined in (1.21).
+
+Lemma 1.2.3 (Fundamental lemma (or Lagrange’s lemma)). A continuous
+function φ : [0,T ] → Rn has the property that
+T
+0
+φT
+(t)δx (t) dt = 0 (1.20)
+for every C2 function δx : [0,T ] → Rn satisfying (1.14) iff φ(t) = 0 for all t ∈ [0,T ].
+Proof. We prove it for n = 1. Figure 1.7 explains it all: suppose that φ is not the
+zero function, i.e., that φ(t
+
+ ̄) is nonzero for some t
+
+ ̄ ∈ [0,T ]. For example, φ(t
+ ̄) > 0.
+Then, by continuity, φ(t) is positive on some interval [a,b] around t
+ ̄ (with 0 ≤
+a < b ≤ T ). In order to provide a formal proof consider the function δx defined
+as
+δx (t) =
+
+((t − a)(b − t))3 t ∈ [a,b],
+0 elsewhere, (1.21)
+
+see Figure 1.7. Clearly this δx fulfills the requirements of (1.14), but it vio-
+lates (1.20) because both φ and δx are positive on [a,b], and hence the integral
+
+in (1.20) is positive as well. A similar argument works for φ(t
+
+ ̄) < 0. The assump-
+tion that φ(t
+
+ ̄)
+= 0 at some t
+
+ ̄ ∈ [0,T ] hence is wrong.
+
+Theorem 1.2.2 was derived independently by Euler and Lagrange, and in
+honor of its inventors Equation (1.13) is nowadays called the Euler-Lagrange
+equation (or the Euler equation).
+
+We want to stress that the Euler-Lagrange equation is only a necessary con-
+dition for optimality. All it guarantees is that a “small” perturbation of x∗ results
+
+in a “very small” change in cost. To put it more mathematically, solutions x∗ of
+the Euler-Lagrange equation are precisely those functions for which for every
+allowable function δx and α ∈ R we have
+J(x∗ +αδx ) = J(x∗)+o(α),
+with o some little-o function5. Such solutions x∗ are referred to as stationary
+solutions. They might be minimizing J(x), or maximizing J(x), or neither.
+Interestingly, the Euler-Lagrange equation does not depend on the initial or
+final values x0,xT . More on this in § 1.5.
+
+Example 1.2.4 (Brachistochrone; Example 1.1.1 continued). The Euler-
+Lagrange equation for the brachistochrone problem, see (1.1), reads
+
+∂
+∂y − d
+dx
+∂
+∂y ̇
+
+1+ y ̇ 2(x)
+2g y(x) = 0, (1.22)
+with the boundary conditions y(x0) = y0 and y(x1) = y1. One may expand (1.22)
+but in this form the problem is still rather complicated, and defying an explicit
+solution. In the following section, we use a more sophisticated approach. 
+Example 1.2.5 (Shortest path; Example 1.1.4 continued). The Euler-Lagrange
+equation for the shortest path problem described by (1.9) and (1.10) is
+0 =
+∂
+∂y − d
+dx
+∂
+∂y ̇
+
+1+ y ̇ 2(x), (1.23)
+
+with boundary conditions y(x0) = y0 and y(x1) = y1. Since ∂
+∂y
+
+1+ y ̇ 2(x) is zero,
+
+we obtain from (1.23) that
+0 = d
+dx
+∂
+∂y ̇
+
+1+ y ̇ 2(x) = d
+dx
+⎛
+⎜
+⎝
+y ̇ (x)
+
+1+ y ̇ 2(x)
+⎞
+⎟
+⎠ = y ̈ (x)(1+ y ̇ 2(x))−3/2. (1.24)
+
+Clearly, the solution of (1.24) is given by the differential equation
+y ̈ (x) = 0,
+
+which is another way of saying that y(x) is a straight line. In light of the bound-
+ary conditions y(x0) = y0 and y(x1) = y1, it has the unique solution
+
+y∗(x) = y0 + y1−y0
+x1−x0
+(x − x0).
+
+5A little-o function o : Rm → Rk is any function with the property that limy→0
+o(y)
+y
+= 0.
+
+This solution is not surprising. It is of course the solution, although formally
+we may not yet draw this conclusion because the theory presented so far only
+claims that solutions of (1.24) are stationary solutions, not necessarily optimal
+solutions. Optimality is proved later (Example 1.6.8). 
+Example 1.2.6 (Economic investment; Example 1.1.2 continued). For the
+problem of Example 1.1.2 the Euler-Lagrange equation (1.13) takes the form
+∂
+∂x − d
+dt
+∂
+∂x ̇
+
+u
+
+φ(x(t))− x ̇ (t)
+
+e−αt
+
+= 0,
+
+which is the same as
+u
+
+φ(x(t))− x ̇ (t)
+
+φ
+(x(t)) e−αt − d
+dt
+
+−u
+
+φ(x(t))− x ̇ (t)
+
+e−αt
+
+= 0, (1.25)
+where u and φ denote the usual derivatives of functions of one variable. Taking
+the time derivative in (1.25) yields
+u
+
+φ(x(t))− x ̇ (t)
+
+φ
+(x(t)) e−αt
+
++u
+φ(x(t))− x ̇ (t)
+ φ
+(x(t))  ̇x(t)− x ̈ (t)
+
+e−αt −u
+
+φ(x(t)− x ̇ (t))
+e−αt = 0.
+
+Dividing by e−αt (and omitting the time argument) we obtain
+u
+(φ(x)− x ̇ )φ
+
+(x)+u(φ(x)− x ̇ )(φ
+
+(x)  ̇x − x ̈ )−u
+
+(φ(x)− x ̇ ) = 0.
+
+This, together with the boundary conditions (1.3) and (1.6), has to be solved
+for the unknown function x(t), or—see also (1.4)—for the unknown investment
+
+function  ̇x(t). This can be done once the utility function u(c) and the consump-
+tion function φ(x) are specified. 
+
+Example 1.2.7 (Cheese production; Example 1.1.3 continued). Corresponding
+to the criterion to be minimized, (1.7), we find the Euler-Lagrange equation
+0 =
+∂
+∂x − d
+dt
+∂
+∂x ̇
+(αx ̇ 2(t)+βx(t)) = β− d
+dt
+
+2αx ̇ (t)
+
+= β−2αx ̈ (t).
+
+So  ̈x(t) = β
+2α, that is,
+x(t) = β
+4α
+t
+2 + x ̇0t + x0. (1.26)
+The constants x0 and x ̇0 follow from the boundary conditions x(0) = 0 and
+x(T ) = xT , i.e., x0 = 0 and x ̇0 = xT /T − βT /(4α). Of course, it still remains to be
+seen whether the x(t) defined in (1.26) is indeed minimizing (1.7). Notice that
+the extra constraint,  ̇x(t) ≥ 0, from (1.8) puts a further restriction on the total
+amount of xT and the final time T .
+
+All examples so far considered scalar-valued functions x, but the theory
+holds for general vector-valued functions. Here is an example.
+Example 1.2.8 (Two-dimensional problem). Consider minimization of the
+integral
+J(x1, x2) :=
+π
+2
+0
+x ̇ 2
+1(t)+ x ̇ 2
+2(t)−2x1(t)x2(t)dt
+
+over all functions x1, x2 : [0,T ] → R subject to the boundary conditions
+x1(0) = 0, x2(0) = 0, x1(π
+2 ) = 1, x2(π
+2 ) = 1.
+Since the minimization is over a vector x =  x1
+x2
+
+
+of two components, the Euler-
+Lagrange equation is given by a two-dimensional system of differential equa-
+tions
+
+−2x2(t)
+−2x1(t)
+− d
+dt
+2  ̇x1(t)
+2  ̇x2(t)
+=
+0
+0
+,
+
+that is,  ̈x1(t) = −x2(t) and  ̈x2(t) = −x1(t). This yields the fourth-order differen-
+tial equations for each of the components, d4
+
+dt 4 x1(t) = x1(t) and d4
+
+dt 4 x2(t) = x2(t).
+These are linear differential equations with constant coefficients, and they can
+be solved with standard methods (see Appendix A.4). The general solution is
+
+x1(t) = a et +b e−t +c cos(t)+d sin(t),
+x2(t) = −x ̈ 1(t) = −a et −b e−t +c cos(t)+d sin(t),
+with a,b,c,d ∈ R. The given boundary conditions are satisfied iff a = b = c = 0
+and d = 1, that is,
+x∗1(t) = x∗2(t) = sin(t).
+
+
+
+1.3 Beltrami Identity
+In many applications, the running cost F(t,x,x ̇) does not depend on t and thus
+has the form
+F(x,x ̇).
+Obviously the partial derivative ∂F(x,x ̇)
+
+∂t is zero now. An interesting consequence
+
+is that then
+F(x(t),  ̇x(t))− x ̇ T
+(t)
+∂F(x(t),  ̇x(t))
+∂x ̇
+
+is constant over time for every solution x of the Euler-Lagrange equation. To see
+this, we differentiate the above expression with respect to time (and for ease of
+notation we momentarily write x(t) simply as x):
+d
+dt
+F(x,  ̇x)− x ̇ T ∂F(x,  ̇x)
+∂x ̇
+
+= d
+dt
+F(x,  ̇x)− d
+dt
+
+x ̇ T ∂F(x,  ̇x)
+∂x ̇
+
+
+=
+x ̇ T ∂F(x,  ̇x)
+∂x
++ x ̈ T ∂F(x,  ̇x)
+∂x ̇
+−
+x ̈ T ∂F(x,  ̇x)
+∂x ̇ + x ̇ T d
+dt
+∂F(x,  ̇x)
+∂x ̇
+
+
+= x ̇ T
+∂F(x,  ̇x)
+∂x − d
+dt
+∂F(x,  ̇x)
+∂x ̇
+. (1.27)
+This is zero for every solution x of the Euler-Lagrange equation. Hence every
+stationary solution x∗ has the property that
+F(x∗(t),  ̇x∗(t))− x ̇ T
+∗(t)
+∂F(x∗(t),  ̇x∗(t))
+∂x ̇ = C ∀t ∈ [0,T ]
+
+for some integration constant C. This identity is known as the Beltrami iden-
+tity. We illustrate the usefulness of this identity by explicitly solving the brachis-
+tochrone problem. It is good to realize, though, that the Beltrami identity is
+
+not equivalent to the Euler-Lagrange equation. Indeed, every constant function
+x(t) satisfies the Beltrami identity. The Beltrami identity and the Euler-Lagrange
+equation are equivalent for scalar functions x : [0,T ] → R if  ̇x(t) is nonzero for
+almost all t, as can be seen from (1.27).
+
+0 c2 x
+y
+c2
+
+x
+
+y
+A
+
+B
+
+FIGURE 1.8: Top: shown in red is the cycloid x(φ) = c2
+
+2 (φ − sin(φ)), y(φ) =
+
+c2
+2 (1 − cos(φ)) for φ ∈ [0, 2π]. It is the curve that a point on a rolling disk of
+radius c2/2 traces out. Bottom: a downwards facing cycloid (solution of the
+brachistochrone problem). See Example 1.3.1.
+
+FIGURE 1.9: Cycloids (1.29) for various c > 0. Given a B to the right and
+
+below A = (0, 0) there is a unique cycloid that joins A and B. See Exam-
+ple 1.3.1.
+
+Example 1.3.1 (Brachistochrone; Example 1.1.1 continued). The running cost
+F(x, y, y ̇) of the brachistochrone problem is
+F(y, y ̇) =
+1+ y ̇2
+2g y .
+
+It does not depend on x, so Beltrami applies which says that the solution of the
+brachistochrone problem makes the following function constant (as a function
+of x):
+
+F(y(x),  ̇y(x))− y ̇ (x)
+
+∂F(y(x),  ̇y(x))
+∂y ̇ =
+
+1+ y ̇ 2(x)
+2g y(x) − y ̇ 2(x)
+
+2g y(x)(1+ y ̇ 2(x))
+
+= 1
+
+2g y(x)(1+ y ̇ 2(x))
+.
+
+Denote this constant as C. Squaring and inverting both sides gives
+y(x)(1+ y ̇ 2(x)) = c2, (1.28)
+where c2 = 1/(2gC2). This equation can be solved parametrically by6
+x(φ) = c2
+2 (φ−sin(φ)), y(φ) = c2
+
+2 (1−cos(φ)). (1.29)
+The curve (x(φ), y(φ)) is known as the cycloid. It is the curve that a fixed point
+
+on the boundary of a wheel with radius c2/2 traces out while rolling with-
+6Quick derivation: since the cotangent cos(φ/2)/sin(φ/2) for φ ∈ [0, 2π] ranges over all
+
+real numbers once (including ±∞) it follows that any dy/dx can uniquely be written
+as dy/dx = cos(φ/2)/sin(φ/2) with φ ∈ [0, 2π]. Then (1.28) implies that y(φ) = c2/(1 +
+cos2(φ/2)/sin2(φ/2)) = c2 sin2(φ/2) = c2(1 − cos(φ))/2 and then dx/dφ = (dy/dφ)/(dy/dx) =
+[c2 sin(φ/2)cos(φ/2)]/[cos(φ/2)/sin(φ/2)] = c2 sin2(φ/2) = c2(1 − cos(φ))/2. Integrating this
+expression shows that x(φ) = c2(φ − sin(φ))/2 + d where d is some integration constant. This d
+equals zero because (x, y) :=(0,0) is on the curve. (See Exercise 1.4 for more details.)
+
+out slipping on a horizontal line (think of the valve on your bike’s wheel), see
+Fig. 1.8. For the cycloid, the Beltrami identity and the Euler-Lagrange equation
+are equivalent because  ̇y(x) is nonzero almost everywhere. Hence all sufficiently
+smooth stationary solutions of the brachistochrone problem are precisely these
+cycloids.
+
+Varying c in (1.29) generates a family of cycloids, see Fig. 1.9. Given a desti-
+nation point B to the right and below A = (0, 0) there is a unique cycloid that
+
+connects A and B, and the solution of the brachistochrone problem is that
+segment of the cycloid. Notice that for certain final destinations B the curve
+extends below the final destination! 
+
+1 1 x
+r(x)
+
+dx
+
+FIGURE 1.10: Given a nonnegative function r : [−1,1] → [0,∞) and its
+surface of revolution, the infinitesimal dx-strip of this surface has area
+2πr(x)
+1+ r ̇ 2(x)dx. See Example 1.3.2.
+
+Example 1.3.2 (Minimal surface). This is an elaborate example. We want to
+
+determine a nonnegative radius r : [−1, 1] → [0,∞) for which the surface of rev-
+olution about the x-axis,
+
+{(x, y, z) | x ∈ [−1, 1], y2 + z2 = r2(x)},
+has minimal area, see Fig. 1.10. We assume that the radii at the endpoints are
+the same and equal to a given ρ > 0,
+r(−1) = r(+1) = ρ.
+The area of the surface of revolution over an infinitesimal dx-strip at x equals
+2πr(x)
+
+1+ r ̇ 2(x)dx (see Fig. 1.10) and therefore the total area J(r) of the sur-
+face of revolution is
+
+J(r) =
+1
+−1
+2πr(x)
+
+1+ r ̇ 2(x)dx.
+
+FIGURE 1.11: (a) The endpoint radius ra(±1) :=a cosh(1/a) of the catenoid
+as a function of a. Its minimal value ra(±1) is ρ∗ = 1.509 (attained at a∗ =
+0.834); (b) the area of the catenoid as a function of endpoint radius ρ; (c)
+the area of the catenoid (in red) and of the Goldschmidt solution (in yellow)
+as a function of endpoint radius ρ. The two areas are the same at ρG =
+1.895. This ρG corresponds to aG = 1.564 (see part (a) of this figure). See
+Example 1.3.2.
+
+Beltrami applies and it gives us that
+2πr(x)
+
+1+ r ̇ 2(x)− r ̇ (x)2πr(x)
+r ̇ (x)
+1+ r ̇ 2(x)
+= C
+
+for some constant C. Multiplying left and right by the nonzero 1+ r ̇ 2(x)/(2π)
+turns this into
+r(x)(1+ r ̇ 2(x))− r(x)  ̇r2(x) = C
+2π
+
+1+ r ̇ 2(x),
+
+that is,
+r(x) = C
+2π
+
+1+ r ̇ 2(x).
+
+Since the radius r(x) is nonnegative we have that C ≥ 0, and thus a :=C/(2π) is
+nonnegative as well. Squaring left- and right-hand side we end up with
+r2(x) = a2(1+ r ̇ 2(x)). (1.30)
+The nonnegative even solutions of this differential equation are7
+ra(x) := a cosh(x/a), a ≥ 0. (1.31)
+Figure 1.10 shows an example of such a hyperbolic cosine. The two-dimensional
+surface of revolution of a hyperbolic cosine is called catenoid. From the shape
+of hyperbolic cosines, it will be clear that for every a > 0 the derivative  ̇r(x) is
+nonzero almost everywhere, and so the Beltrami identity and Euler-Lagrange
+equation are equivalent.
+
+But are such hyperbolic cosines optimal solutions? Not necessarily, and Fig-
+ure 1.11(a) confirms this. It depicts the endpoint radius ρ of the hyperbolic
+
+cosine solution
+ra(±1) = a cosh(1/a)
+
+as a function of a (notice the flipped axes in Figure 1.11(a)). The figure demon-
+strates that the endpoint radius has a minimum, and the minimum is ρ∗ =
+
+1.509, and it is attained at a∗ = 0.834. So if we choose an endpoint radius ρ less
+
+than ρ∗ then none of these hyperbolic cosines ra is the solution to our prob-
+lem! Also, if ρ > ρ∗ then apparently there are two hyperbolic cosines that meet
+
+the endpoint condition, ra(±1) = ρ, and at most one of them is the optimal
+solution. It can be shown that the area of the catenoid is
+J(ra) = 2πa2( 1
+a +sinh( 1
+a )cosh( 1
+a )).
+
+7This hyperbolic cosine solution can be derived using separation of variables (see
+Appendix A.3). However, there is a technicality in this derivation that is often overlooked, see
+Exercise 1.6, but we need not worry about that now.
+
+It is interesting to plot this against ra(±1) = a cosh(1/a). This is done in
+Fig. 1.11(b). The blue curve is for a < a∗, and the red curve is for a > a∗. The
+plot reveals that for a given ra(±1) > ρ∗ the area of the catenoid is the smallest
+for the largest of the two a’s. Thus we need to only consider a ≥ a∗.
+Now the case that ρ < ρ∗. Then no hyperbolic cosine meets the endpoint
+condition. What does it mean? It means that no smooth function r(x) exists
+that is stationary and satisfies r(±1) < ρ∗. A deeper analysis shows that the
+
+only other stationary surface of revolution is the so-called Goldschmidt solu-
+tion, see Fig. 1.12. The Goldschmidt solution consists of the two disks with
+
+radius ρ at respective centers (x, y, z) = (±1, 0, 0), and the line of radius zero,
+{(x, y, z) | x ∈ (−1, 1), y = z = 0}, that connects the two disks. The area of the
+Goldschmidt solution is the sum of the areas of the two disks at the endpoints,
+2 × πρ2. (The line does not contribute to the area.) This set can not be written
+as the surface of revolution of a graph (x, r(x)) of a function r, thus it is not a
+surprise that it does not show up in our analysis.
+It can be shown that a global optimal solution exists, and since it must be
+
+stationary it is either the Goldschmidt solution or the catenoid for an appropri-
+ate a ≥ a∗. If ρ < ρ∗ then clearly the Goldschmidt solution is the only stationary
+
+solution, hence is optimal. For the other case, ρ > ρ∗, something odd occurs:
+Fig. 1.11(c) gives us the area of the surface of revolution of the Goldschmidt
+solution as well as that of the catenoid. We see that there is an endpoint radius,
+ρG = 1.895, at which the Goldschmidt and catenoid solutions have the same
+
+area. This point is attained at aG = 1.564. For ρ > ρG the catenoid (for the corre-
+sponding a > aG) has the smallest area, hence is optimal, but for ρ < ρG it is the
+
+Goldschmidt solution that is globally optimal. The conclusion is that the opti-
+mal shape depends discontinuously on the endpoint radius ρ! 
+
+FIGURE 1.12: The Goldschmidt solution is the union of disks around the
+two endpoints, combined with a line that connects the centers of the two
+disks. See Example 1.3.2.
+Example 1.3.3 (Lagrangian mechanics). Consider the one-dimensional motion
+of a mass m attached to a linear spring with spring constant k, see Fig. 1.13.
+Denote the extension of the spring caused by the mass by q ∈ R. Remarkably
+
+FIGURE 1.13: A mass m attached to a linear spring with spring constant k.
+See Example 1.3.3.
+
+enough, the dynamics of the mass is given by the Euler-Lagrange equation cor-
+responding to
+
+F(q,q ̇) := 1
+2mq ̇2 − 1
+2kq2,
+
+that is, the difference of the kinetic energy 1
+
+2mq ̇2 of the mass and the potential
+
+energy 1
+2kq2 of the spring. Indeed, the Euler-Lagrange equation corresponding
+to this F(q,q ̇) is
+0 =  ∂
+∂q − d
+dt
+∂
+∂q ̇
+
+( 1
+2mq ̇ 2(t)− 1
+2kq2(t)) = −kq(t)− d
+dt
+(mq ̇ (t)) = −kq(t)−mq ̈ (t),
+which can be recognized as Newton’s law (mass times acceleration, mq ̈ (t),
+equals the force impressed on the mass by the spring, −kq(t)). Hence according
+to Beltrami the quantity
+∂F(q(t),  ̇q(t))
+∂q ̇ q ̇ (t)−F(q(t),  ̇q(t)) = mq ̇ 2(t)−
+
+1
+2mq ̇ 2(t)− 1
+2kq2(t)
+
+
+= 1
+2mq ̇ 2(t)+ 1
+2kq2(t)
+
+is constant over time. This quantity is nothing else than the total energy, that is,
+
+kinetic plus potential energy. Thus the Beltrami identity is in this case the well-
+known conservation of energy of a mechanical system with conservative forces
+
+(in this case the spring force).
+In general, in classical mechanics the difference of the kinetic and potential
+energy F(q(t),  ̇q(t)) is referred to as the Lagrangian, while the integral
+T
+0
+F(q(t),  ̇q(t)) dt
+is referred to as the action integral. The stationary property of the action integral
+
+is known as Hamilton’s principle; see, e.g., Lanczos (1986) for the close connec-
+tion between the calculus of variations and classical mechanics.
+
+1.4 Higher-Order Euler-Lagrange Equation
+
+The Euler-Lagrange equation can directly be extended to the case that the inte-
+gral J(x) depends on higher-order derivatives of x. Let us state explicitly the
+
+second-order case.
+
+Proposition 1.4.1 (Higher-order Euler-Lagrange equation). Consider the prob-
+lem of minimizing
+
+J(x) :=
+T
+0
+F(t, x(t),  ̇x(t),  ̈x(t)) dt (1.32)
+over all C2 functions x : [0,T ] → Rn that satisfy the boundary conditions
+x(0) = x0, x(T ) = xT ,
+x ̇ (0) = xd
+0 ,  ̇x(T ) = xd
+
+T , (1.33)
+
+for given x0,xd
+0 ,xT ,xd
+T ∈ Rn. Suppose F is C2. A necessary condition that a C2
+function x∗ minimizes (1.32) and satisfies (1.33) is that x∗ is a solution of the
+differential equation
+∂
+∂x − d
+dt
+∂
+∂x ̇
++
+d2
+dt 2
+∂
+∂x ̈
+F(t, x∗(t),  ̇x∗(t),  ̈x∗(t)) = 0 ∀t ∈ [0,T ]. (1.34)
+Proof. We prove it for the case that F and x∗ are C3. (If they are only C2
+
+then one can use the lemma of du Bois-Reymond as explained for the stan-
+dard problem in Exercise 1.7.) Define  ̄J(α) = J(x∗ + αδx ) where δx : [0,T ] → Rn
+
+is a C3 perturbation that satisfies the boundary conditions δx (0) = δx (T ) = 0
+and δ ̇
+x (0) = δ ̇(T ) = 0. Then, as before, the derivative  ̄J
+
+(0) is zero. Analogously
+
+to (1.16) we compute  ̄J
+
+(0). For ease of exposition we momentarily omit all time
+
+arguments in x∗(t) and δx (t) and, sometimes, F:
+0 =  ̄J
+(0) =
+d
+dα
+T
+0
+F(t, x∗ +αδx ,  ̇x∗ +αδ ̇
+x ,  ̈x∗ +αδ ̈
+x )dt
+α=0
+
+=
+T
+0
+∂F
+∂xT δx +
+∂F
+∂x ̇T δ ̇
+x +
+∂F
+∂x ̈T δ ̈
+x dt. (1.35)
+
+Integration by parts of the second term of the integrand yields
+T
+0
+∂F
+∂x ̇T δ ̇
+x dt =
+∂F
+∂x ̇T δx
+T
+0    =0
+−
+T
+0
+ d
+dt
+∂F
+∂x ̇T
+
+δx dt = −T
+0
+ d
+dt
+∂F
+∂x ̇T
+
+δx dt.
+
+The last equality follows from the boundary condition that δx (0) = δx (T ) = 0.
+Integration by parts of the third term in (1.35) similarly gives
+T
+0
+∂F
+∂x ̈T δ ̈
+x dt =
+∂F
+∂x ̈T δ ̇
+x
+T
+0    =0
+−
+T
+0
+ d
+dt
+∂F
+∂x ̈T
+
+δ ̇
+x dt = −T
+0
+ d
+dt
+∂F
+∂x ̈T
+
+δ ̇
+x dt, (1.36)
+
+where now the second equality is the result of the boundary conditions that
+δ ̇
+x (0) = δ ̇
+x (T ) = 0. In fact, we can apply integration by parts again on the final
+term of (1.36) to obtain
+T
+0
+∂F
+∂x ̈T δ ̈
+x dt = −T
+0
+ d
+dt
+∂F
+∂x ̈T
+
+δ ̇
+x dt =
+−
+d
+dt
+∂F
+∂x ̈T
+δx
+T
+0    =0
++
+T
+0
+d2
+dt 2
+∂F
+∂x ̈T
+δx dt.
+
+Thus (1.35) equals
+0 =  ̄J
+(0) =
+T
+0
+∂F
+∂xT − d
+dt
+∂F
+∂x ̇T
+
++ d2
+dt 2
+∂F
+∂x ̈T
+
+δx dt.
+
+As before, Lemma 1.2.3 now yields (1.34). ■
+
+x 0 x
+
+y(x)
+
+FIGURE 1.14: Elastic bar. See Example 1.4.2.
+
+Example 1.4.2 (Elastic bar). Consider an elastic bar clamped at its two ends,
+see Fig. 1.14. The bar bends under the influence of gravity. The horizontal and
+vertical positions we denote by x and y, respectively. The shape of the bar is
+modeled with the function y(x). We assume the bar has a uniform cross section
+(independent of x). If the curvature of the elastic bar is not too large then the
+potential energy due to elastic forces can be considered, up to first order, to be
+proportional to the square of the second derivative,
+V1 := k
+2
+
+0
+d2y(x)
+dx2
+2
+dx,
+
+where k is a constant depending on the elasticity of the bar. Furthermore, the
+potential energy due to gravity is given by
+V2 :=
+
+0
+gρ(x)y(x)dx.
+
+Here, ρ(x) is the mass density of the bar at x, and, again, we assume that the
+curvature is small. The total potential energy thus is
+
+0
+k
+2
+d2y(x)
+dx2
+2
++ gρ(x)y(x)dx.
+
+The minimal potential energy solution satisfies the Euler-Lagrange equa-
+tion (1.34), and this gives the fourth-order differential equation
+
+k d4y(x)
+dx4 = −gρ(x) ∀x ∈ [0, ].
+
+If ρ(x) is constant then y(x) is a polynomial of degree 4. Figure 1.14 depicts
+a solution for constant ρ and boundary conditions y(0) = y( ) = 0 and  ̇y(0) =
+y ̇ ( ) = 0. In this case, the solution is y(x) = − gρ
+4!k
+
+x(x − )
+2
+. 
+
+1.5 Relaxed Boundary Conditions
+In the problems considered so far, the initial x(0) and final x(T ) were fixed. A
+useful extension is obtained by removing some of these conditions. This means
+that we allow more functions x to optimize over, and, consequently, we expect
+that the Euler-Lagrange equation still holds for the optimal solution. To get an
+idea we first look at an example.
+Suppose x has three components and that the first component of x(0) and
+the last component of x(T ) are free to choose:
+x(0) =
+⎡
+⎣
+free
+fixed
+fixed
+⎤
+⎦, x(T ) =
+⎡
+⎣
+fixed
+fixed
+free
+⎤
+⎦. (1.37)
+
+In the proof of Theorem 1.2.2 we found the following necessary first-order con-
+dition for optimality (Eqn. (1.18)):
+
+∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇T δx (t)
+T
+0
++
+T
+0
+∂
+∂x − d
+dt
+∂
+∂x ̇
+F(t, x∗(t),  ̇x∗(t))
+T
+δx (t)dt = 0.
+(1.38)
+This equality needs to hold for every possible perturbation δx . In particular, it
+needs to hold for every perturbation δx that is zero at t = 0 and t = T . For these
+
+special perturbations, the first-order condition (1.38) reduces to that of the stan-
+dard problem, i.e., that
+
+T
+0
+∂
+∂x − d
+dt
+∂
+∂x ̇
+F(t, x∗(t),  ̇x∗(t))
+T
+δx (t)dt = 0
+
+for all such special δx . It proves that also for relaxed boundary conditions the
+
+Euler-Lagrange equation holds (as was to be expected). Knowing this, the first-
+order condition (1.38) simplifies to
+
+∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇T δx (t)
+T
+0
+= 0. (1.39)
+When is this equal to zero for every allowable perturbation? Since the perturbed
+
+x∗(t) + αδx (t) for our example must obey the boundary condition (1.37) it fol-
+lows that the allowable perturbations are exactly those that satisfy
+
+δx (0) =
+⎡
+⎣
+free
+0
+0
+⎤
+⎦, δx (T ) =
+⎡
+⎣
+0
+0
+free
+⎤
+⎦.
+
+Clearly, the first-order condition (1.39) holds for all such δx iff
+∂F(0, x(0),  ̇x(0))
+∂x ̇ =
+⎡
+⎣
+0
+free
+free
+⎤
+⎦, ∂F(T, x(T ),  ̇x(T ))
+∂x ̇ =
+⎡
+⎣
+free
+free
+0
+⎤
+⎦.
+
+This example demonstrates that to every initial or final entry of x that is free to
+choose there corresponds a condition on the derivative of F with respect to that
+component of x ̇ . Incidentally, by allowing functions x with free entries at initial
+and/or final time, it can now make sense to include an initial- and/or final cost
+to the cost function:
+J(x) =
+T
+0
+F(t, x(t),  ̇x(t)) dt +G(x(0))+K(x(T )). (1.40)
+
+Here G(x(0)) denotes an initial cost, and K(x(T )) a final cost (also known as ter-
+minal cost). The addition of these two costs does not complicate matters much,
+
+as detailed in the next proposition.
+Proposition 1.5.1 (Relaxed boundary conditions). Let T > 0, and suppose F :
+[0,T ] × Rn × Rn → R is C1, and that K,G : Rn → R are C1. Let I0,IT be subsets of
+{1,...,n}, and consider the functions x : [0,T ] → Rn whose initial x(0) and final
+x(T ) are fixed except for the components
+xi(0) = free ∀i ∈ I0 and xj(T ) = free ∀j ∈ IT .
+Among these functions, a C1 function x∗ is a stationary solution of the
+cost (1.40) iff it satisfies the Euler-Lagrange equation (1.13) together with
+∂F(0, x∗(0),  ̇x∗(0))
+∂x ̇i
+
+− ∂G(x∗(0))
+∂xi
+= 0 ∀i ∈ I0, (1.41)
+
+∂F(T, x∗(T ),  ̇x∗(T ))
+∂x ̇j
++
+∂K(x∗(T ))
+∂xj
+= 0 ∀j ∈ IT . (1.42)
+Proof. See Exercise 1.10. ■
+This general result is needed in the next chapter when we tackle the optimal
+control problem. A common special case is the free endpoint problem, which is
+when x(0) is completely fixed and x(T ) is completely free. In the terminology
+
+of Proposition 1.5.1 this means I0 =  and IT = {1,...,n}. In this case Proposi-
+tion 1.5.1 simplifies as follows.
+
+Corollary 1.5.2 (Free endpoint). Let T > 0,x0 ∈ Rn, and suppose both F : [0,T ]×
+Rn ×Rn → R and K : Rn → R are C1. Necessary for a C1 function x∗ : [0,T ] → Rn
+to minimize
+J(x) =
+T
+0
+F(t, x(t),  ̇x(t)) dt +K(x(T ))
+
+over all functions with x(0) = x0 is that it satisfies the Euler-Lagrange equa-
+tion (1.13) together with the free endpoint boundary condition
+
+∂F(T, x∗(T ),  ̇x∗(T ))
+∂x ̇ +
+
+∂K(x∗(T ))
+∂x = 0 ∈ Rn. (1.43)
+
+Example 1.5.3 (Quadratic cost with fixed and free endpoint). Let α ∈ R, and
+consider minimization of
+1
+−1
+α2x2(t)+ x ̇ 2(t)dt (1.44)
+over all functions x : [−1, 1] → R. First we solve the standard problem, so where
+both x(0) and x(T ) are fixed. For instance, assume that
+x(−1) = 1, x(1) = 1. (1.45)
+The running cost α2x2(t)+ x ̇ 2(t) is a sum of two squares, so with minimization
+we would like both terms small. But one depends on the other. The parameter
+α models a trade-off between small  ̇x2(t) and small x2(t). Whatever α is, the
+optimal solution x needs to satisfy the Euler-Lagrange equation,
+0 =
+∂
+∂x − d
+dt
+∂
+∂x ̇
+
+α2x2(t)+ x ̇ 2(t)
+
+= 2α2x(t)− d
+dt
+(2  ̇x(t)) = 2α2x(t)−2  ̈x(t).
+
+Therefore
+x ̈ (t) = α2x(t).
+This differential equation can be solved using characteristic equations (do this
+yourself, see Appendix A.4), and the general solution is
+x(t) = c eαt +d e−αt (1.46)
+
+with c,d two arbitrary constants. The two constants follow from the two bound-
+ary conditions (1.45):
+
+1 = x(−1) = c e−α +d e+α,
+1 = x(1) = c e+α +d e−α .
+The solution is c = d = 1/(eα +e−α). That c equals d is expected because of the
+
+symmetry of the boundary conditions. We see that there is exactly one func-
+tion x that satisfies the Euler-Lagrange equation and that meets the boundary
+
+conditions:
+
+For α = 0 the solution is a constant, x∗(t) = 1, which, in hindsight, is not a
+surprise because for α = 0 the running cost is just F(t, x(t),  ̇x(t)) = x ̇ 2(t) and
+then clearly a zero derivative (a constant x(t)) is optimal. For large values of
+α, on the other hand, the term x2(t) is penalized strongly in the running cost,
+x ̇ 2(t) + α2x2(t), so then it pays to take x(t) close to zero, even if that is at the
+expense of some increase of  ̇x2(t). Indeed this is what happens.
+Consider next the free endpoint problem with
+x(−1) = 1 but where x(1) is free.
+We stick to the same cost function (1.44). In the terminology of (1.40) this means
+we take the initial and final costs equal to zero, G(x) = K(x) = 0. Hence ∂K(x(T ))
+∂x =
+
+0, and the free endpoint boundary condition (1.43) thus becomes
+0 = ∂F(T, x(T ),  ̇x(T ))
+∂x ̇ +
+∂K(x(T ))
+∂x = ∂α2x2(1)+ x ̇ 2(1)
+
+∂x ̇ +0 = 2  ̇x(1).
+The parameters c,d in (1.46) now follow from the initial condition x(−1) = 1 and
+the above boundary condition 0 = x ̇ (1):
+1 = x(−1) = c e−α +d e+α,
+0 = x ̇ (1) = cαe+α −dαe−α .
+The solution is
+c = e−α
+e2α +e−2α , d = e+α
+e2α +e−2α ,
+
+(check it for yourself ). We see that also in this case the first-order conditions
+together with the boundary condition have a unique solution,
+
+The free endpoint condition is that the derivative of x is zero at the final time.
+Again we see that the solution approaches zero fast if α is large. 
+1.6 Second-Order Conditions for Minimality
+The Euler-Lagrange equation was derived from the condition that minimizing
+solutions x∗ are necessarily stationary solutions, i.e., solutions for which
+J(x∗ +αδx ) = J(x∗)+o(α)
+
+for every fixed admissible perturbation function δx and all scalars α. But not all
+stationary solutions are minimizing solutions. To be minimizing the above term
+“o(α)” needs to be nonnegative in a neighborhood of α = 0. In this section we
+analyze this problem. We derive a necessary condition and a sufficient condition
+for stationary solutions to be minimizing. These conditions are second-order
+conditions and they require a second-order Taylor series expansion of F(t,x, y)
+for fixed t around (x, y) ∈ Rn ×Rn:
+F(t,x +δx , y +δy ) = F(t,x, y)+
+
+∂F(t,x, y)
+∂xT
+∂F(t,x, y)
+∂y T
+δx
+δy
+
++
+1
+2
+
+δT
+x δT
+y
+
+⎡
+⎢
+⎢
+⎣
+∂2F(t,x, y)
+∂x∂xT
+
+∂2F(t,x, y)
+∂x∂y T
+
+∂2F(t,x, y)
+∂y∂xT
+
+∂2F(t,x, y)
+∂y∂y T
+⎤
+⎥
+⎥
+⎦
+  
+Hessian of F
+
+δx
+δy
+(1.47)
+
++o
+#
+#
+#
+δx
+δy
+#
+#
+#
+2
+.
+
+(The role of the transpose is explained on page x. More details about this nota-
+tion can be found in Appendix A.2.) We assume that F(t,x, y) is C2 so the above
+
+Taylor series is valid, and the 2n ×2n Hessian of F exists and is symmetric.
+Theorem 1.6.1 (Legendre condition—second-order necessary condition).
+Consider the simplest problem in the calculus of variations, and suppose that F
+is C2. Let x∗ be a C2 solution of the Euler-Lagrange equation (1.13) and which
+satisfies the boundary conditions (1.12). Necessary for x∗ to be minimizing is
+that
+∂2F(t, x∗(t),  ̇x∗(t))
+∂x ̇∂x ̇T ≥ 0 ∀t ∈ [0,T ]. (1.48)
+Proof. For ease of notation we prove it for the case that x has one component.
+Similar to the proof of Theorem 1.2.2, let δx be a C2-perturbation on [0,T ] that
+satisfies the boundary condition (1.14). Let α ∈ R and define  ̄J(α) as
+ ̄J(α) := J(x∗ +αδx ).
+By construction we have that every solution x∗ of the Euler-Lagrange equation
+achieves  ̄J
+
+(0) = 0. For simplicity of notation we omit time arguments in what
+
+follows. With the help of (1.47) we find that
+ ̄J(0) =
+T
+0
+
+δx δ ̇
+x
+
+⎡
+⎣
+∂2F(t,x∗,  ̇x∗)
+∂x2
+∂2F(t,x∗,  ̇x∗)
+∂x∂x ̇
+∂2F(t,x∗,  ̇x∗)
+∂x∂x ̇
+∂2F(t,x∗,  ̇x∗)
+∂x ̇2
+⎤
+⎦
+  
+Hessian
+
+δx
+δ ̇
+x
+dt
+
+=
+T
+0
+∂2F
+∂x2 δ2
+x +2 ∂2F
+∂x∂x ̇ δxδ ̇
+x + ∂2F
+∂x ̇2 δ ̇2
+x dt.
+
+If x∗ is optimal then this has to be nonnegative for every allowable δx . This
+does not necessarily mean that the Hessian is positive semi-definite because
+δx and δ ̇
+x are related. Indeed, using integration by parts, the cross term can be
+rewritten as
+T
+0
+2 ∂2F
+∂x∂x ̇ δxδ ̇
+x dt =
+T
+0
+∂2F
+∂x∂x ̇ ( d
+dt δ2
+x )dt = ∂2F
+∂x∂x ̇ δ2
+x
+T
+0    0
+−
+T
+0
+( d
+dt
+∂2F
+∂x∂x ̇ )δ2
+x dt.
+
+Therefore
+ ̄J(0) =
+T
+0
+ ∂2F
+∂x2 − d
+dt
+∂2F
+∂x∂x ̇
+
+δ2
+x + ∂2F
+∂x ̇2 δ ̇2
+x dt. (1.50)
+If x∗ is optimal then  ̄J(0) ≥ 0 for every allowable perturbation δx . Lemma 1.6.2
+(presented next) applied to (1.50) shows that this implies that ∂2F(t,x∗(t),  ̇x∗(t))
+∂x ̇2 is
+nonnegative for all time, i.e., that (1.48) holds. ■
+The above proof uses the following lemma.
+Lemma 1.6.2 (Technical lemma). Let φ and ψ be continuous functions from
+[0,T ] to R, and suppose that
+T
+0
+φ(t)δ2
+x (t)+ψ(t)δ ̇2
+
+x (t) dt ≥ 0 (1.51)
+
+for every C2 function δx : [0,T ] → R with δx (0) = δx (T ) = 0. Then
+ψ(t) ≥ 0 ∀t ∈ [0,T ].
+Proof. Suppose, on the contrary, that ψ(t
+
+ ̄) < 0 for some t
+
+ ̄ ∈ [0,T ]. Then for every
+
+> 0 we can construct a possibly small interval [a,b] about t
+
+ ̄ in [0,T ] and a C2
+
+function δx on [0,T ] that is zero for t
+
+∈ [a,b] and that satisfies
+
+b
+a
+δ2
+x (t)dt <
+and b
+a
+δ ̇2
+x (t)dt > 1.
+
+This may be clear from Figure 1.15. Such a δx satisfies all the conditions of the
+lemma but renders the integral in (1.51) negative for small enough
+
+> 0. That is
+
+a contradiction, and so the assumption that ψ(t
+
+ ̄) < 0 is wrong. ■
+
+(t)
+x (t)
+a b 0 T
+
+FIGURE 1.15: About the construction of a δx (t) that violates (1.51). See the
+proof of Lemma 1.6.2.
+
+This second-order condition (1.48) is known as the Legendre condition.
+Notice that the inequality (1.48) means that ∂2F(t,x∗(t),  ̇x∗(t))
+
+∂x ̇∂x ̇T (which is an n × n
+matrix if x has n components) is a symmetric positive semi-definite matrix at
+every moment in time.
+Example 1.6.3 (Example 1.1.3 continued). The running cost of Example 1.1.3 is
+F(t,x,x ̇) = αx ̇2 +βx,
+and so the second derivative with respect to x ̇ is ∂2F(t,x,x ̇)
+
+∂x ̇2 = 2α. It is given that
+
+α > 0, hence the Legendre condition,
+∂2F(t, x∗(t),  ̇x∗(t))
+∂x ̇2 ≥ 0 ∀t ∈ [0,T ],
+
+trivially holds for the solution x∗ of the Euler-Lagrange equation. 
+Example 1.6.4 (Example 1.5.3 continued). The running cost of Example 1.5.3 is
+F(t,x,x ̇) = α2x2 + x ̇2. Therefore ∂2F(t, x(t),  ̇x(t))/∂x ̇2 = 2 ≥ 0 for all functions x
+and all t. This holds in particular for x∗, so the Legendre condition holds. 
+Example 1.6.5 (Optimal investment, Example 1.1.2 continued). The running
+cost F for the optimal investment application of Example 1.1.2 is
+F(t,x,x ̇) = −u
+
+φ(x)− x ̇
+
+e−αt .
+
+This is derived from (1.5), but we added a minus sign because the application is
+about maximization, not minimization. Now
+∂2F(t,x,x ̇)
+∂x ̇2 = −u
+φ(x)− x ̇
+
+e−αt
+,
+
+and this is nonnegative for every t,x,x ̇ since the utility function u is assumed
+to be concave, i.e., u(c) ≤ 0 for all c > 0. So, apart from the standard economic
+interpretation that utility functions are concave, this assumption is also crucial
+for the optimization problem to have a solution. 
+In the preceding examples, the Legendre condition was easy to verify
+because the second derivative of F with respect to x ̇ turned out to be trivially
+nonnegative for all x,x ̇ and all time, and not just for the optimal x∗(t),  ̇x∗(t).
+
+The Euler-Lagrange condition together with the Legendre condition is nec-
+essary but is still not sufficient for minimality. This is illustrated by the next
+
+example.
+Example 1.6.6 (Stationary solution, but not a minimizer). The Euler-Lagrange
+equation for the minimization of
+1
+0
+x ̇ (t)
+2π
+2
+− x2(t)dt
+
+is the differential equation (2π)
+
+2x(t) + x ̈ (t) = 0. Assuming the boundary condi-
+tions
+
+x(0) = x(1) = 0,
+it is easy to see that the stationary solutions are
+x∗(t) = Asin(2πt), A ∈ R.
+Each such solution x∗ satisfies the Legendre condition (1.48) since
+∂2F(t, x∗(t),  ̇x∗(t))
+∂x ̇2 = 2
+(2π)2 > 0.
+
+Also, each such x∗ renders the integral in (1.52) equal to zero. There are how-
+ever many other functions x that satisfy x(0) = x(1) = 0 but for which the inte-
+gral (1.52) takes a negative value. For example x(t) = −t 2 + t. By scaling this last
+
+function with a constant we can make the cost as negative as we desire. Thus in
+this example there is no optimal solution x∗. 
+
+A closer look at the proof of Theorem 1.6.1 actually provides us with an ele-
+gant sufficient condition for optimality, in fact for global optimality. If the Hes-
+sian of F, defined earlier as
+
+H(t,x, y) :=
+⎡
+⎢
+⎢
+⎢
+⎣
+∂2F(t,x, y)
+∂x∂xT
+
+∂2F(t,x, y)
+∂x∂y T
+
+∂2F(t,x, y)
+∂y∂xT
+
+∂2F(t,x, y)
+∂y∂y T
+⎤
+⎥
+⎥
+⎥
+⎦
+, (1.53)
+
+for each t is positive semi-definite for all x ∈ Rn and all y ∈ Rn, then at each t the
+running cost F(t,x,x ̇) is convex in x,x ̇ (see Appendix A.7). For convex functions
+it is known that stationarity implies global optimality:
+Theorem 1.6.7 (Convexity—global optimal solutions). Consider the simplest
+
+problem in the calculus of variations, and suppose that F is C2. If the Hes-
+sian (1.53) is positive semi-definite8 for all x, y ∈ Rn and all t ∈ [0,T ] then every
+
+C1 solution x∗ of the Euler-Lagrange equation that meets the boundary condi-
+tions is a global optimal solution.
+
+If the Hessian is positive definite for all x, y ∈ Rn and all t ∈ [0,T ] then this
+x∗ is the unique optimal solution.
+
+Proof. Suppose that the Hessian is positive semi-definite. Let x∗, x be two func-
+tions that satisfy the boundary conditions, and suppose x∗ satisfies the Euler-
+Lagrange equation. Define the function δ = x − x∗ and  ̄J(α) = J(x∗ + αδ). This
+
+way  ̄J(0) = J(x∗) while  ̄J(1) = J(x). We need to prove that  ̄J(1) ≥  ̄J(0).
+8The relation between positive semi-definite Hessians and convexity is explained in
+Appendix A.7.
+
+As before, we have that  ̄J
+
+(0) is zero by the fact that x∗ satisfies the Euler-
+Lagrange equation.
+
+The second derivative of  ̄J(α) with respect to α is (omitting time arguments)
+ ̄J(α) =
+T
+0
+
+δT δ ̇T
+H(t, x∗ +αδ,  ̇x∗ +αδ ̇)
+δ
+δ ̇
+dt.
+
+Since H(t,x, y) is positive semi-definite for all x, y ∈ Rn and all t, we see that
+ ̄J(α) ≥ 0 for all α ∈ R. Therefore for every β ≥ 0 there holds
+ ̄J
+(β) =  ̄J
+(0)+
+β
+0
+ ̄J(α)dα ≥  ̄J
+(0) = 0.
+
+But then  ̄J(1) =  ̄J(0)+1
+0  ̄J
+(β)dβ ≥  ̄J(0), which is what we had to prove.
+Next suppose that H(t,x, y) is positive definite and that x
+
+= x∗. Then δ := x−
+x∗ is not the zero function and so by positive definiteness of H(t,x, y) we have
+J(α) > 0 for every α ∈ [0, 1]. Then J(x) =  ̄J(1) >  ̄J(0) = J(x∗). ■
+This result produces a lot, but also requires a lot. Indeed the convexity
+assumption fails in many cases of interest. Here are a couple examples where
+the convexity assumption is satisfied.
+Example 1.6.8 (Shortest path; Example 1.2.5 continued). In the notation of the
+shortest path Example 1.1.4 we have F(x, y, y ̇) = 1+ y ̇2, and so we find that
+∂F(x, y, y ̇)
+∂y ̇ = y ̇
+(1+ y ̇2)1/2 ,
+
+and
+∂2F(x, y, y ̇)
+∂y ̇2 = 1
+(1+ y ̇2)3/2 .
+
+Clearly, this second derivative is positive for all y, y ̇ ∈ R. This implies that
+the solution y∗ found in Example 1.2.5—namely, the straight line through the
+points (x0, y0) and (x1, y1)—satisfies the Legendre condition.
+The Hessian (1.53) is
+H(x, y, y ̇) =
+$
+0 0
+0 1
+(1+y ̇2)3/2 %
+≥ 0.
+
+It is positive semi-definite, and, hence, the straight-line solution y∗ is globally
+optimal. 
+Example 1.6.9 (Quadratic cost; Example 1.5.3 continued). For the quadratic
+cost
+J(x) :=
+1
+−1
+α2x2(t)+ x ̇ 2(t)dt,
+
+as used in Example 1.5.3, the Hessian is constant,
+H(t,x,x ̇) =
+2α2 0
+0 2
+.
+
+This Hessian is positive definite for every α
+
+= 0 and, hence, the solution x∗ of
+
+the Euler-Lagrange equation found in Example 1.5.3 is the unique optimal solu-
+tion of the problem. For α = 0, the Hessian is positive semi-definite, so Theo-
+rem 1.6.7 guarantees that x∗ is optimal, but possibly not unique. (Actually, for
+
+α = 0 the solution x∗ found in Example 1.5.3 is the unique differentiable optimal
+solution because it achieves a zero cost, J(x∗) = 0, and for all other differentiable
+x the cost is positive). 
+The Legendre condition (1.48) is only one of several necessary conditions for
+optimality. Additional necessary conditions go under the names of Weierstrass
+and Jacobi. Actually, the necessary condition of Weierstrass follows nicely from
+the dynamic programming approach as explained in Chapter 3, Exercise 3.10
+(p. 114).
+
+One can pose many different types of problems in the calculus of varia-
+tions by giving different boundary conditions, for instance, involving  ̇x(T ), or by
+
+imposing further constraints on the required solution. An example of the latter
+
+we saw in (1.8) where  ̇x(t) needs to be nonnegative for all time. Also, in Exer-
+cise 1.18, we explain what to do if x(T ) needs to satisfy an inequality. Another
+
+variation is considered in the next section.
+1.7 Integral Constraints
+
+FIGURE 1.16: Three areas enclosed by ropes of the same length. See § 1.7.
+An interesting extension is when the function x that is to minimize the cost
+J(x) :=
+T
+0
+F(t, x(t),  ̇x(t))dt
+
+is not free to choose, but is subject to an integral constraint
+C(x) :=
+T
+0
+M(t, x(t),  ̇x(t))dt = c0.
+
+The standard example of this type is Queen Dido’s isoperimetric problem. This
+is the problem of determining an area as large as possible that is enclosed by
+a rope of a given length. Intuition tells us that the optimal area is a disk (the
+
+right-most option in Fig. 1.16). To put it more mathematically, in this prob-
+lem we have to find a function x : [0,T ] → R with given boundary values x(0) =
+
+x0, x(T ) = xT , that maximizes the area
+J(x) =
+T
+0
+x(t)dt
+subject to the constraint that
+T
+0
+
+1+ x ̇ 2(t)dt =
+
+for a given .
+How to solve such constrained minimization problems? A quick-and-dirty
+
+argument goes as follows: from calculus it is known that the solution of a min-
+imization problem of some function J(x) subject to the constraint C(x)−c0 = 0
+
+is a stationary solution of the augmented function J defined as
+J(x,μ) := J(x)+μ(C(x)−c0) =
+T
+0
+F(t, x(t),  ̇x(t))+μM(t, x(t),  ̇x(t))dt −μc0
+for some Lagrange multiplier9 μ ∈ R. The stationary solutions (x∗,μ∗) of J(x,μ)
+must satisfy the Euler-Lagrange equation,
+∂
+∂x − d
+dt
+∂
+∂x ̇
+(F(t, x∗(t),  ̇x∗(t))+μ∗M(t, x∗(t),  ̇x∗(t)) = 0.
+
+Below we formally prove that this argument is essentially correct. This may
+sound a bit vague, but it does put us on the right track. The theorem presented
+next is motivated by the above, but the proof is given from scratch. The proof
+assumes knowledge of the inverse function theorem.
+Theorem 1.7.1 (Euler-Lagrange for integral-constrained minimization). Let c0
+be some constant. Suppose that F and M are C1 in all of its components, and
+that x∗ is a minimizer of
+T
+0
+F(t, x(t),  ̇x(t))dt
+subject to boundary conditions x(0) = x0, x(T ) = xT and integral constraint
+T
+0
+M(t, x(t),  ̇x(t))dt = c0,
+and that x∗ is C2. Then either there is a Lagrange multiplier μ∗ ∈ R such that
+∂
+∂x − d
+dt
+∂
+∂x ̇
+
+F(t, x∗(t),  ̇x∗(t))+μ∗M(t, x∗(t),  ̇x∗(t))
+
+= 0 (1.54)
+9Lagrange multipliers are usually denoted as λ. We use μ in order to avoid a confusion in the
+next chapter.
+
+for all t ∈ [0,T ], or M satisfies the Euler-Lagrange equation itself,
+∂
+∂x − d
+dt
+∂
+∂x ̇
+M(t, x∗(t),  ̇x∗(t)) = 0 ∀t ∈ [0,T ]. (1.55)
+
+Proof. This is not an easy proof. Suppose x∗ solves the constrained minimiza-
+tion problem, and fix two C2 functions δx ,
+
+x that vanish at the boundaries,
+
+δx (0) = 0 =
+
+x (0), δx (T ) = 0 =
+x (T ).
+
+Define J(x) = T
+
+0 F(t, x(t),  ̇x(t))dt and C(x) = T
+
+0 M(t, x(t),  ̇x(t))dt and consider
+the mapping that sends two real numbers (α,β) to the two real numbers
+ ̄J(α,β)
+C ̄(α,β)
+:=
+J(x∗ +αδx +β
+x )
+C(x∗ +αδx +β
+x )
+.
+
+The mapping from (α,β) to (  ̄J(α,β),C ̄(α,β)) is C1. So if the Jacobian at (α,β) =
+(0, 0),
+
+D :=
+⎡
+⎢
+⎢
+⎣
+∂  ̄J(α,β)
+∂α
+∂  ̄J(α,β)
+∂β
+∂C ̄(α,β)
+∂α
+∂C ̄(α,β)
+∂β
+⎤
+⎥
+⎥
+⎦
+(α=0,β=0)
+
+(1.56)
+
+of this mapping is nonsingular then by the inverse function theorem there is
+
+a neighborhood of (α,β) = (0, 0) on which the mapping is invertible. In par-
+ticular, we then can find small enough α,β such that C ̄(α,β) = C ̄(0, 0) = c0—
+
+hence satisfying the integral constraint—but rendering a cost  ̄J(α,β) smaller
+than  ̄J(0, 0) = J(x∗). This contradicts that x∗ is minimizing. Conclusion: at an
+
+optimal x∗ the Jacobian (1.56) is singular for all allowable perturbation func-
+tions δx ,
+
+x .
+We rewrite the Jacobian (1.56) in terms of F and M. To this end define the
+functions f and m as
+f(t) =
+∂
+∂x − d
+dt
+∂
+∂x ̇
+F(t, x∗(t),  ̇x∗(t)),
+
+m(t) =
+∂
+∂x − d
+dt
+∂
+∂x ̇
+M(t, x∗(t),  ̇x∗(t)).
+
+This way the Jacobian (1.56) becomes (verify this for yourself )
+D =
+$T
+0 f(t)δx (t)dt T
+0 f(t)
+x (t)dt
+
+T
+0 m(t)δx (t)dt T
+0 m(t)
+x (t)dt
+%
+. (1.57)
+
+If m(t) = 0 for all t then (1.55) holds and the proof is complete. Remains to con-
+sider the case that m(t0)
+
+= 0 for at least one t0. Suppose, to obtain a contraction,
+
+that given such a t0 there is a t for which
+f(t0) f(t)
+m(t0) m(t)
+
+is nonsingular. Now take δx to have support around t0 and
+
+x to have support
+
+around t. Then by nonsingularity of (1.58) also (1.57) is nonsingular if the sup-
+port is taken small enough. However nonsingularity of the Jacobian is impossi-
+ble by the fact that x∗ solves the minimization problem. Therefore we conclude
+
+that (1.58) is singular at every t. This means that
+f(t0)m(t)− f(t)m(t0) = 0 ∀t.
+In other words f(t)+μ∗m(t) = 0 for all t if we take μ∗ = −f(t0)/m(t0). ■
+The theorem says that the solution x∗ satisfies either (1.54) or (1.55). The
+first of these two is called the normal case, and the second the abnormal case.
+Notice that the abnormal case completely neglects the running cost F. The next
+example indicates that we usually have the normal case.
+Example 1.7.2 (Normal and abnormal Euler-Lagrange equation). Consider
+minimizing 1
+
+0 x(t)dt subject to the boundary conditions x(0) = 0, x(1) = 1 and
+
+integral constraint
+1
+0
+x ̇ 2(t)dt = C (1.59)
+for some given C. The (normal) Euler-Lagrange equation (1.54) becomes
+0 =
+∂
+∂x − d
+dt
+∂
+∂x ̇
+(x∗(t)+μx ̇ 2
+
+∗(t)) = 1− d
+dt
+
+2μx ̇ ∗(t)
+
+= 1−2μx ̈ ∗(t).
+
+The general solution of this equation is x∗(t) = 1
+
+4μ t 2 +bt +c. The constants b,c
+are determined by the boundary conditions x(0) = 0, x(1) = 1, leading to
+x∗(t) = 1
+4μ t
+2 +(1− 1
+4μ)t.
+
+With this form the integral constraint (1.59) becomes
+C =
+1
+0
+x ̇ 2
+∗(t)dt =
+1
+0
+( 1
+2μ t +1− 1
+4μ)
+2 dt = 1+
+1
+48μ2 . (1.60)
+If C < 1 then clearly no solution μ exists, and it is not hard to see that then
+no smooth function with x(0) = 0 and x(1) = 1 exists that meets the integral
+constraint (see Exercise 1.21). For C > 1 there are two μ’s that satisfy (1.60):
+μ∗ = ±1
+48(C −1),
+
+and the resulting two functions x∗ (for C = 2) then are
+
+Clearly, out of these two, the cost J(x∗) := 1
+
+0 x∗(t)dt is minimal for the positive
+
+solution μ∗.
+In the abnormal case, (1.55), we have that
+0 =
+∂
+∂x − d
+dt
+∂
+∂x ̇
+x ̇ 2
+∗(t) = −2  ̈x∗(t).
+
+Hence x∗(t) = bt + c for some b,c. Given the boundary conditions x(0) =
+0, x(1) = 1 it is immediate that this allows for only one solution: x∗(t) = t:
+
+Now  ̇x∗(t) = 1, and the constant C in the integral constraint necessarily equals
+C = 1
+0 x ̇ 2
+
+∗(t)dt = 1. This corresponds to μ = ∞. In this case the integral con-
+straint together with the boundary conditions is tight. There are, so to say, no
+
+degrees of freedom left to shape the function. In particular, there is no feasi-
+ble variation, x = x∗+αδx , and since the standard Euler-Lagrange equation was
+
+derived from such a variation, it is no surprise that the standard Euler-Lagrange
+equation does not apply in this case. 
+1.8 Exercises
+1.1 Determine all solutions x : [0,T ] → R of the Euler-Lagrange equation for
+the cost J(x) = T
+
+0 F(t, x(t),  ̇x(t))dt with
+
+(a) F(t,x,x ̇) = x ̇2 −α2x2.
+(b) F(t,x,x ̇) = x ̇2 +2x.
+(c) F(t,x,x ̇) = x ̇2 +4tx ̇.
+(d) F(t,x,x ̇) = x ̇2 + xx ̇ + x2.
+(e) F(t,x,x ̇) = x2 +2t xx ̇ (this one is curious).
+1.2 Consider minimization of
+1
+0
+x ̇ 2(t)+12t x(t)dt
+over all functions x : [0, 1] → R that satisfy the boundary conditions
+x(0)=0, x(1)=1.
+
+(a) Determine the Euler-Lagrange equation for this problem.
+(b) Determine the solution x∗ of the Euler-Lagrange equation and that
+satisfies the boundary conditions.
+1.3 Trivial running cost. Consider minimization of
+J(x) :=
+T
+0
+F(t, x(t),  ̇x(t))dt
+
+over all functions x : [0,T ] → R with given boundary conditions x(0) =
+x0, x(T ) = xT . Assume that the running cost has the particular form,
+F(t, x(t),  ̇x(t)) = d
+dt G(t, x(t))
+for some C2 function G(t,x).
+(a) Derive the Euler-Lagrange equation for this problem.
+(b) Show that every differentiable function x : [0,T ] → R satisfies the
+Euler-Lagrange equation.
+(c) Explain this remarkable phenomenon by expressing J(x) in terms of
+the function G and boundary values x0,xT .
+1.4 Technical problem: the lack of Lipschitz continuity in the Beltrami identity
+for the brachistochrone problem, and how to circumvent it. The footnote
+of Example 1.3.1 derives the cycloid equations (1.29) from
+c2 = y(x)(1+ y ̇ 2(x)), y(0) = 0. (1.61)
+The derivation was quick, and this exercise shows that it was a bit dirty as
+well.
+(a) Let x(φ), y(φ) be the cycloid solution (1.29). Use the identity dy
+dx =
+
+dy/dφ
+dx/dφ to show that they satisfy (1.61).
+(b) The curve of this cycloid solution for φ ∈ [0, 2π] is
+
+From this solution we construct a new solution by inserting in the
+middle a constant part of some length Δ ≥ 0:
+
+Argue that for every Δ ≥ 0 also this new function satisfies the Bel-
+trami identity (1.61) for all x ∈ (0,c2π+Δ).
+
+(c) This is not what the footnote of Example 1.3.1 says. What goes wrong
+in this footnote?
+(d) This new function y(x) is constant over the interval [ c2π
+2 , c2π
+2 + Δ].
+
+Show that a constant function y(x) does not satisfy the Euler-
+Lagrange equation of the brachistochrone problem.
+
+(e) It can be shown that y(x) solves (1.61) iff it is of this new form for
+
+some Δ ≥ 0 (possibly Δ = ∞). Argue that the only function that sat-
+isfies the Euler-Lagrange equation with y(0) = 0 is the cycloid solu-
+tion (1.29).
+
+0 x1
+y
+
+y1
+y(x)
+
+air speed v
+
+FIGURE 1.17: Solid of least resistance. See Exercise 1.5.
+
+1.5 A simplified Newton’s minimal resistance problem. Consider a solid of rev-
+olution with diameter y(x) as shown in Fig. 1.17. At x = 0 the diameter is
+
+0, and at x = x1 it is y1 > 0. If the air flows with a constant speed v, then
+the total air resistance (force) can be modeled as
+4πρv2
+x1
+0
+y(x)  ̇y3(x)
+1+ y ̇ 2(x)
+dx.
+
+Here ρ is the air density. The question is: given y(0) = 0 and y(x1) = y1 > 0,
+for which function y : [0,x1] → R is the resistance minimal? Now we are
+going to cheat! To make the problem a lot easier we discard the quadratic
+term in the denominator of the running cost, that is, we consider instead
+the cost function
+J(y) := 4πρv2
+x1
+0
+y(x)  ̇y3(x)dx.
+
+Given the boundary conditions y(0) = 0 and y(x1) = y1 > 0, show that
+y(x) =
+x
+x1
+3/4
+y1
+
+is a solution of the Beltrami identity with the given boundary conditions.
+(This function y is depicted in Fig. 1.17.)
+
+1.6 Technical problem: the lack of Lipschitz continuity in the minimal-surface
+problem, and how to circumvent it. In Example 1.3.2 we claimed that
+ra(x) :=a cosh(x/a) is the only positive even solution of (1.30). That is
+
+not completely correct. In this exercise we see that the differential equa-
+tion (1.30), as derived from the Beltrami identity, has more solutions, but
+
+that ra(x) is the only even solution that satisfies the Euler-Lagrange equa-
+tion. We assume that a > 0.
+
+(a) Show that the function
+f (r ) :=
+
+r 2/a2 −1 (1.62)
+is not Lipschitz continuous at r = a (see Appendix B.1). Hence we
+can expect multiple solutions of the differential equation dr(x)
+dx = r2(x)/a2 −1 if r(x) = a.
+(b) Show that (1.30) can be separated as
+
+dr(x)
+r2(x)/a2 −1
+= dx.
+
+(c) If r(x0) > a, show that r(x) = a cosh((x − c)/a) around x = x0 for
+some c.
+(d) Argue that r(x) is a solution of (1.30) iff it is pieced together from a
+hyperbolic cosine, a constant, and a hyperbolic cosine again, as in
+
+Here c ≤ d. (Notice that for x ∈ [c,d] the value of r(x) equals a, so at
+
+that point the function f as defined in (1.62) is not Lipschitz contin-
+uous.)
+
+(e) If c < d then on the strip [c,d] the function r(x) is a constant (equal
+to a > 0). Show that this r(x) does not satisfy the Euler-Lagrange
+equation. (Recall that the Beltrami identity may have more solutions
+than the Euler-Lagrange equation.)
+(f ) Verify that ra(x) :=a cosh(x/a) is the only function that satisfies the
+
+Euler-Lagrange equation of the minimal-surface problem (Exam-
+ple 1.3.2) and that has the symmetry property that r(−1) = r(+1).
+
+1.7 Lemma of du Bois-Reymond. The proof of Theorem 1.2.2 at some point
+assumes that both x∗ and F are C2. The lemma of du Bois-Reymond that
+we explore in this exercise shows that the result also holds if x∗ and F are
+merely C1. Throughout this exercise we assume that x∗ and F are C1.
+
+(a) Lemma of du Bois-Reymond. Let f : [0,T ] → R be a continuous func-
+tion, and suppose that T
+
+0 f (t)φ(t)dt = 0 for all continuous functions
+
+φ : [0,T ] → R for which T
+
+0 φ(t)dt = 0. Show that f (t) is constant on
+
+[0,T ].
+[Hint: If f is not constant then a,b ∈ [0,T ] exist for which f (a)
+=
+
+f (b). Then construct a φ for which T
+
+0 f (t)φ(t)dt
+= 0.]
+
+(b) We showed in the proof of Theorem 1.2.2 that C1 optimal solutions
+x∗ satisfy
+T
+0
+∂F(t, x∗(t),  ̇x∗(t))
+∂xT δx (t)+
+
+∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇T δ ̇
+
+x (t)dt = 0 (1.63)
+for all t ∈ [0,T ] and all C1 functions δx : [0,T ] → Rn with δx (0) =
+δx (T ) = 0. In the proof of Theorem 1.2.2, we performed integration
+by parts on the second term of the integral in (1.63). Now, instead,
+we perform integration by parts on the first term in (1.63). Use that
+to show that (1.63) holds iff
+T
+0
+−
+t
+0
+∂F(τ, x∗(τ),  ̇x∗(τ))
+∂xT dτ+
+
+∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇T
+δ ̇
+x (t)dt = 0
+
+for all C1 functions δx : [0,T ] → Rn with δx (0) = δx (T ) = 0.
+
+(c) Use the lemma of du Bois-Reymond to show that C1 optimal solu-
+tions x∗ satisfy
+
+∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇ = c +
+t
+0
+∂F(τ, x∗(τ),  ̇x∗(τ))
+∂x
+dτ ∀t ∈ [0,T ]
+
+for some constant c ∈ Rn. [Hint: T
+0 δ ̇
+x (t)dt = 0.]
+(d) Show that for C1 optimal solutions x∗ the expression
+d
+dt
+∂F(t, x∗(t),  ̇x∗(t))
+∂x ̇
+
+is well defined and continuous at every t ∈ [0,T ].
+
+(e) Show that C1 optimal solutions x∗ satisfy the Euler-Lagrange equa-
+tion (1.13).
+
+1.8 Free endpoint. Minimize
+x2(1)+
+1
+0
+x ̇ 2(t)dt
+
+over all functions x subject to x(0) = 1 and free endpoint x(1).
+1.9 Free endpoint. Consider minimization of
+J(x) =
+1
+0
+x ̇ 2(t)−2x(t)  ̇x(t)− x ̇ (t)dt
+
+with initial condition x(0) = 1 and free endpoint x(1).
+
+(a) Show that no function x exists that satisfies the Euler-Lagrange
+
+equation with x(0) = 1 and the free endpoint boundary condi-
+tion (1.43).
+
+(b) Conclude that there is no C1 function x that minimizes J(x) subject
+to x(0) = 1 with free endpoint.
+(c) Determine all functions x that satisfy the Euler-Lagrange equation
+and such that x(0) = 1. Then compute J(x) explicitly and conclude,
+once more, that the free endpoint problem has no solution.
+1.10 Relaxed boundary conditions. In this exercise we prove Proposition 1.5.1.
+(a) For G(x) = K(x) = 0 the first-order conditions are that (1.38) holds for
+all possible perturbations. Adapt this equation for the case that G(x)
+and K(x) are arbitrary C1 functions.
+(b) Prove that this equality implies that the Euler-Lagrange equation
+holds.
+(c) Finish the proof of Proposition 1.5.1.
+
+1.11 Show that the minimal surface example (Example 1.3.2) satisfies the Leg-
+endre second-order necessary condition of Theorem 1.6.1.
+
+1.12 Smoothness assumptions in Legendre’s necessary condition. Theorem 1.6.1
+assumes that F is C2, but looking at the proof it seems we need F to be C3
+(see Eqn. (1.50)). However, C2 is sufficient: argue that the integral in (1.49)
+is nonnegative for all allowable δx only if the Legendre condition holds.
+[Hint: Formulate a lemma similar to Lemma 1.6.2.]
+
+1.13 Show that the minimization problem in Example 1.2.8 satisfies the Legen-
+dre condition. [Hint: The condition now involves a 2×2 matrix.]
+
+1.14 The optimal solar challenge. A solar vehicle receives power from solar
+radiation. This power p(x,t) depends on position x (due to clouds) and
+
+on time t (due to moving clouds and the sun’s angle of inclination). Driv-
+ing at some speed x ̇ also consumes power. Denote this power loss by f (x ̇).
+
+This assumes that it is a function of speed alone, which is reasonable if we
+do not change speed aggressively and if friction depends only on speed.
+Driving at higher speed requires more energy per meter than driving at
+lower speed. This means that f is convex, in fact
+f (x ̇) ≥ 0, f 
+
+(x ̇) > 0, f (x ̇) > 0.
+Suppose the solar team starts at
+x(0) = 0,
+
+and at time T it wants to be at some position x(T ) = xT , and, of course,
+all that using minimal net energy
+T
+0
+f (  ̇x(t))− p(x(t),t)dt.
+(a) Derive the Euler-Lagrange equation for this problem.
+(b) Argue from the Euler-Lagrange equation that we should speed up if
+we drive into a cloud.
+(c) Is Legendre’s second-order condition satisfied?
+(d) From now on assume that
+f (x ̇) = x ̇2
+(this is actually quite reasonable, modulo scaling) and that p(x,t)
+does not depend on time,
+p(x,t) = q(x),
+i.e., that the sun’s angle does not change much over our time window
+[0,T ] and that clouds are not moving. Use the Beltrami identity to
+express  ̇x(t) in terms of q(x(t)) and the initial speed  ̇x(0) and initial
+q(0).
+(e) Argue once again (but now using the explicit relation of the previous
+part) that we should speed up if we drive into a cloud.
+(f ) (A computer might be useful for this part.) Continue with f (x ̇) = x ̇2
+and p(x,t) = q(x). Suppose that up to position x = 20 the sky is clear
+but that from x = 20 onwards heavy clouds limit the power input:
+q(x) =
+
+100 x < 20,
+4 x > 20.
+
+Determine the optimal speed  ̇x∗(t),t ∈ [0, 7] that brings us from
+x(0) = 0 to x(7) = 90.
+1.15 Consider minimization of
+
+1
+0
+x ̇ 2(t)− x(t) dt
+over all functions x : [0, 1]→R that satisfy the boundary conditions x(0)=0,
+x(1) = 1.
+(a) Determine the Euler-Lagrange equation for this problem.
+(b) Determine the solution x∗ of the Euler-Lagrange equation and that
+satisfies the boundary conditions.
+
+(c) Does the x∗ found in (b) satisfy Legendre’s second-order condition?
+(d) Is the convexity condition (Theorem 1.6.7) satisfied?
+(e) Show that the solution x∗ found in (b) is globally optimal.
+1.16 Convex quadratic cost. Consider minimization of the quadratic cost
+
+J(x) =
+1
+0
+x ̇ 2(t)+ x2(t)+2t x(t)dt
+
+with boundary conditions
+x(0) = 0, x(1) = 1
+over all functions x : [0, 1] → R.
+(a) Determine the Euler-Lagrange equation for this problem.
+(b) Determine the function x∗ that satisfies the Euler-Lagrange equation
+and the given boundary conditions.
+(c) Does x∗ satisfy Legendre’s second-order condition?
+(d) Show that
+J(x∗ +δx ) = J(x∗)+
+1
+0
+δ2
+x (t)+δ ̇2
+x (t)dt
+
+for every continuously differentiable function δx with δx (0) = δx (1) =
+0, and conclude that x∗ is globally optimal.
+(e) Is the convexity condition (Theorem 1.6.7) satisfied?
+1.17 Smoothness. This exercise is from Liberzon (2012). It shows that smooth
+running costs F may result in non-smooth optimal solutions x∗. Consider
+minimization of
+J(x) =
+1
+−1
+(1− x ̇ (t))2x2(t)dt
+subject to the boundary conditions
+x(−1) = 0, x(1) = 1.
+(a) Show that J(x) ≥ 0 for every function x.
+(b) Determine a continuous optimal solution x∗ and argue that it is
+unique. (Hint: J(x∗) = 0 and do not use Euler-Lagrange or Beltrami.)
+
+(c) Argue that there is no continuously differentiable optimal solu-
+tion x∗.
+
+1.18 Inequalities. The calculus of variations problems considered in this
+chapter all assume that the entries of x(0) and x(T ) are either fixed
+or completely free. But what if we demand an inequality? Consider,
+as an example, the calculus of variations problem with standard cost
+T
+0 F(t, x(t),  ̇x(t))dt and standard initial condition, x(0) = x0, but whose
+final condition is an inequality,
+x(T ) ≥ xT .
+Assume sufficient smoothness of all functions involved.
+
+(a) Show that optimal solutions x∗ must obey the Euler-Lagrange equa-
+tion, and the inequality
+
+∂F(x∗(T ),  ̇x∗(T ),T )
+∂x ̇ ≥ 0.
+(b) Verify this statement for the cost 1
+
+0 (x(t) − x ̇ (t))2 dt with x(0) =
+
+1, x(1) ≥ xT , and distinguish the cases xT ≤ e and xT > e.
+1.19 The hanging cable. Every hanging cable eventually comes to a halt in a
+position of minimal energy, such as these three:
+
+What is the shape of this minimal energy position? When hanging still it
+
+has no kinetic energy, it only has potential energy. If the cable is very flex-
+ible then the potential energy is only due to its height y. We assume that
+
+the cable is very thin, does not stretch and that it has a constant mass per
+
+unit length. In a constant gravitational field with gravitational accelera-
+tion g the potential energy J(y) equals
+
+J(y) =
+x1
+x0
+ρg y(x)
+
+1+ y ̇ 2(x)dx,
+
+with ρ the mass per unit length of the cable. We want to minimize the
+potential energy over all functions y : [x0,x1] → R, subject to y(x0) =
+y0, y(x1) = y1 and such that the length of the cable is . The length of the
+cable can be expressed as
+x1
+x0
+
+1+ y ̇ 2(x)dx = .
+
+To solve this problem we use Theorem 1.7.1.
+
+(a) Consider first the normal case, and the associated Euler-Lagrange
+equation (1.54). Analyze the Beltrami identity of this case to show
+that the minimal energy solution y∗ satisfies
+y∗(x)+μ∗ 1
+ρg = a
+
+1+ y ̇ 2(x)
+
+for some constant a and Lagrange multiplier μ∗. (Hint: We con-
+sidered a similar problem in Example 1.3.2.) It can be shown that
+
+the general solution of the above differential equation is y∗(x) =
+a cosh( x−b
+a )−μ∗ 1
+ρg with b ∈ R.
+
+(b) Show that the minimal energy solution y∗ (if it exists) is of the form
+y∗(x) =
+
+a cosh( x−b
+a )−μ∗ 1
+ρg in the normal case (Eqn. (1.54))
+cx +d in the abnormal case (Eqn. (1.55))
+for certain constants a,b,c,d ∈ R and Lagrange multiplier μ∗ ∈ R.
+(c) Describe in terms of and x0,x1, y0, y1 when we have the normal
+case, the abnormal case, or no solution at all.
+1.20 Integral constraint. Minimize 1
+
+0 x ̇ 2(t)dt subject to x(0) = x(π) = 0 and
+
+1
+0 x2(t)dt = 1.
+1.21 Consider Example 1.7.2. Prove that for C < 1 there is no smooth function
+that satisfies the boundary conditions and integral constraint.
+1.22 Discrete calculus of variations. A discrete version of the simplest problem
+
+in the calculus of variations (Definition 1.2.1) can be formulated as fol-
+lows. Consider a final time T , a function F : {0, 1,...,T − 1} × Rn × Rn → R,
+
+denoted as F(t,x1,x2), and fixed x0,xT ∈ Rn. Consider the problem of
+minimizing
+T
+&−1
+t=0
+F(t, x(t), x(t +1))
+over all sequences x(0), x(1), x(2),..., x(T − 1), x(T ) with x(0) = x0, x(T ) =
+xT (fixed initial and final conditions). In order to derive a discrete version
+of the Euler-Lagrange equation for this problem we proceed as follows.
+Let
+(x∗(0), x∗(1),..., x∗(T −1), x∗(T ))
+
+be a minimizing sequence with x∗(0) = x0, x∗(T ) = xT , and consider vari-
+ations
+
+(x∗(0), x∗(1),..., x∗(T −1), x∗(T )) + (δx (0),δx (1),...,δx (T −1),δx (T ))
+with δx (0) = δx (T ) = 0.
+
+(a) Show that this implies that
+T
+&−1
+t=0
+∂F(t, x∗(t), x∗(t +1))
+∂x1T δx (t)+
+T
+&−1
+t=0
+∂F(t, x∗(t), x∗(t +1))
+∂x2T δx (t+1) = 0
+
+for all δx (t) with δx (0) = δx (T ) = 0.
+(b) Rearrange this equation (partly changing the summation index) so
+as to obtain the equivalent condition
+T
+&−1
+t=1
+∂F(t, x∗(t), x∗(t +1))
+∂x1T +
+
+∂F(t −1, x∗(t −1), x∗(t))
+∂x2T
+
+δx (t) = 0,
+
+and show that this implies
+∂F(t, x∗(t), x∗(t +1))
+∂x1 +
+
+∂F(t −1, x∗(t −1), x∗(t))
+∂x2 = 0
+
+for all t = 1,...,T −1. This system of equations can be called the dis-
+crete Euler-Lagrange equation.
+
+(c) Extend this to the minimization of (with S(x(T )) some final cost)
+T
+&−1
+t=0
+F(t, x(t), x(t +1))+S(x(T ))
+over all sequences x(0), x(1),..., x(T ) with x(0) = x0.
+
+(d) Show how this could be used for obtaining numerical schemes solv-
+ing the ordinary Euler-Lagrange equation (1.13). For example, given
+
+a running cost F ̃(t, x(t),  ̇x(t)),t ∈ [0,T ], replace  ̇x(t) by its approxi-
+mation x(t +1)− x(t) so as to obtain the discretized running cost
+
+F(t, x(t), x(t +1)) := F ̃(t, x(t), x(t +1)− x(t)).
+Write out the discrete Euler-Lagrange equation in this case.
+
+
