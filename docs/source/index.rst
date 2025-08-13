@@ -70,3 +70,5 @@ Contents
 
     Introduction_Machine_Learning_Python_Andreas/index2
 
+    Python_Data_Analytics_3E_Fabio/index2
+
