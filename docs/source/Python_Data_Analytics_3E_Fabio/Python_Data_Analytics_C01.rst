@@ -267,8 +267,18 @@ the main statistical concepts is also necessary because the methods applied to t
 data are based on these concepts. Just as you can say that computer science gives you the tools for data analysis, 
 you can also say that statistics provide the concepts that form the basis of data analysis.
 
+Como verá a lo largo del libro, el análisis de datos requiere un gran número de matemáticas complejas para tratar y 
+procesar los datos. Necesita ser competente en todo esto, al menos lo suficiente como para comprender lo que está haciendo. 
+También es necesario estar familiarizado con los principales conceptos estadísticos, ya que los métodos aplicados al 
+análisis e interpretación de datos se basan en ellos. Así como se puede decir que la informática proporciona las 
+herramientas para el análisis de datos, también se puede decir que la estadística proporciona los conceptos que forman la 
+base del análisis de datos.
+
 This discipline provides many tools to the analyst, and a good knowledge of how to best use them requires years of 
 experience. Among the most commonly used statistical techniques in data analysis are
+
+Esta disciplina proporciona numerosas herramientas al analista, y un buen conocimiento de cómo utilizarlas óptimamente 
+requiere años de experiencia. Entre las técnicas estadísticas más utilizadas en el análisis de datos se encuentran
 
 • Bayesian methods
 
@@ -279,6 +289,9 @@ experience. Among the most commonly used statistical techniques in data analysis
 Having to deal with these cases, you’ll discover how mathematics and statistics are closely related. Thanks to the 
 special Python libraries covered in this book, you will be able to manage and handle them.
 
+Al abordar estos casos, descubrirá la estrecha relación entre las matemáticas y la estadística. Gracias a las bibliotecas 
+especiales de Python que se tratan en este libro, podrá gestionarlas y manejarlas.
+
 Machine Learning and Artificial Intelligence
 --------------------------------------------
 
@@ -287,12 +300,27 @@ visualization and techniques such as clustering and regression, which help you f
 during this phase of research, you may often prefer to use special procedures that are highly specialized in 
 searching patterns within the dataset.
 
+Una de las herramientas más avanzadas del análisis de datos es el aprendizaje automático. De hecho, a pesar de la 
+visualización de datos y técnicas como la agrupación en clústeres y la regresión, que ayudan a encontrar información sobre 
+el conjunto de datos, durante esta fase de la investigación, a menudo se prefieren procedimientos especiales altamente 
+especializados en la búsqueda de patrones dentro del conjunto de datos.
+
+
 Machine learning is a discipline that uses a whole series of procedures and algorithms that analyze the data in 
 order to recognize patterns, clusters, or trends and then extracts useful information for analysis in an automated 
 way.
 
+Machine learning is a discipline that uses a whole series of procedures and algorithms that analyze the data in order to 
+recognize patterns, clusters, or trends and then extracts useful information for analysis in an automated way.
+
+
+
 This discipline is increasingly becoming a fundamental tool of data analysis, and thus knowledge of it, at least in 
 general, is of fundamental importance to the data analyst.
+
+
+Esta disciplina se está convirtiendo cada vez más en una herramienta fundamental del análisis de datos, y por ello su 
+conocimiento, al menos en general, es de fundamental importancia para el analista de datos.
 
 Professional Fields of Application
 ----------------------------------
@@ -306,12 +334,27 @@ came from can improve their interpretation. Often, however, this is too costly f
 the best intentions, and so it is good practice to find consultants or key figures to whom you can pose the right 
 questions.
 
+
+Otro punto muy importante es el dominio de la competencia en datos (su fuente: biología, física, finanzas, pruebas de 
+materiales, estadísticas de población, etc.). De hecho, si bien los analistas cuentan con una formación especializada en 
+estadística, también deben ser capaces de documentar la fuente de los datos, con el fin de percibir y comprender mejor los 
+mecanismos que los generaron. De hecho, los datos no son simples cadenas o números; son la expresión, o más bien la medida, 
+de cualquier parámetro observado. Por lo tanto, comprender mejor la procedencia de los datos puede mejorar su 
+interpretación. Sin embargo, esto suele resultar demasiado costoso para los analistas de datos, incluso para aquellos con 
+las mejores intenciones, por lo que es recomendable buscar consultores o figuras clave a quienes se puedan plantear las 
+preguntas adecuadas.
+
+
 Understanding the Nature of the Data
 ------------------------------------
 
 The object of data analysis is basically the data. The data then will be the key player in all processes of data 
 analysis. The data constitute the raw material to be processed, and thanks to their processing and analysis, it is 
 possible to extract a variety of information in order to increase the level of knowledge of the system under study.
+
+El objeto del análisis de datos son básicamente los datos. Estos serán, por lo tanto, la pieza clave en todos los procesos 
+de análisis de datos. Los datos constituyen la materia prima para su procesamiento, y gracias a su procesamiento y 
+análisis, es posible extraer información diversa para aumentar el nivel de conocimiento del sistema en estudio.
 
 When the Data Become Information
 --------------------------------
@@ -320,11 +363,20 @@ Data are the events recorded in the world. Anything that can be measured or cate
 Once collected, these data can be studied and analyzed, both to understand the nature of events and very often also 
 to make predictions or at least to make informed decisions.
 
+Los datos son los eventos registrados en el mundo. Todo lo que se pueda medir o categorizar se puede convertir en datos. 
+Una vez recopilados, estos datos se pueden estudiar y analizar, tanto para comprender la naturaleza de los eventos como, a 
+menudo, para hacer predicciones o, al menos, para tomar decisiones informadas.
+
+
 When the Information Becomes Knowledge
 --------------------------------------
 
 You can speak of knowledge when the information is converted into a set of rules that helps you better understand 
 certain mechanisms and therefore make predictions on the evolution of some events.
+
+Se puede hablar de conocimiento cuando la información se convierte en un conjunto de reglas que ayudan a comprender mejor 
+ciertos mecanismos y por tanto a realizar predicciones sobre la evolución de algunos acontecimientos.
+
 
 Types of Data
 -------------
@@ -339,10 +391,19 @@ Categorical data are values or observations that can be divided into groups or c
 categorical values: nominal and ordinal. A nominal variable has no intrinsic order that is identified in its 
 category. An ordinal variable instead has a predetermined order.
 
+Los datos categóricos son valores u observaciones que pueden dividirse en grupos o categorías. Existen dos tipos de valores 
+categóricos: nominales y ordinales. Una variable nominal no tiene un orden intrínseco identificado en su categoría. Una 
+variable ordinal, en cambio, tiene un orden predeterminado.
+
 Numerical data are values or observations that come from measurements. There are two types of numerical values: 
 discrete and continuous numbers. Discrete values can be counted and are distinct and separated from each other. 
 Continuous values, on the other hand, are values produced by measurements or observations that assume any value 
 within a defined range.
+
+Los datos numéricos son valores u observaciones que provienen de mediciones. Existen dos tipos de valores numéricos: 
+discretos y continuos. Los valores discretos pueden contarse y son distintos y están separados entre sí. Los valores 
+continuos, por otro lado, son valores generados por mediciones u observaciones que asumen cualquier valor dentro de un 
+rango definido.
 
 The Data Analysis Process
 -------------------------
@@ -352,6 +413,13 @@ processed in order to produce data visualizations and make predictions, thanks t
 collected data. Then, data analysis is nothing more than a sequence of steps, each of which plays a key role in the 
 subsequent ones. So, data analysis is schematized as a process chain consisting of the following sequence of 
 stages:
+
+El análisis de datos puede describirse como un proceso que consta de varios pasos en los que los datos brutos se 
+transforman y procesan para generar visualizaciones y predicciones, gracias a un modelo matemático basado en los datos 
+recopilados. El análisis de datos es, por lo tanto, una secuencia de pasos, cada uno de los cuales desempeña un papel clave 
+en los siguientes. Así pues, el análisis de datos se esquematiza como una cadena de procesos que consta de la siguiente 
+secuencia de etapas:
+
 
 • Problem definition
 
@@ -381,24 +449,48 @@ Problem Definition
 The process of data analysis actually begins long before the collection of raw data. In fact, data analysis always 
 starts with a problem to be solved, which needs to be defined.
 
+El proceso de análisis de datos comienza mucho antes de la recopilación de datos brutos. De hecho, el análisis de datos 
+siempre comienza con un problema por resolver, que debe definirse.
+
+
 The problem is defined only after you have focused the system you want to study; this may be a mechanism, an 
 application, or a process in general. Generally this study can be in order to better understand its operation, but 
 in particular, the study is designed to understand the principles of its behavior in order to be able to make 
 predictions or choices (defined as an informed choice).
+
+El problema se define solo después de haber definido el sistema que se desea estudiar; este puede ser un mecanismo, una 
+aplicación o un proceso en general. Generalmente, este estudio puede tener como objetivo comprender mejor su 
+funcionamiento, pero en particular, está diseñado para comprender los principios de su comportamiento y así poder realizar 
+predicciones o tomar decisiones (definidas como una decisión informada).
 
 The definition step and the corresponding documentation (deliverables) of the scientific problem or business are 
 both very important in order to focus the entire analysis strictly on getting results. In fact, a comprehensive or 
 exhaustive study of the system is sometimes complex and you do not always have enough information to start with. So 
 the definition of the problem and especially its planning can determine the guidelines for the whole project.
 
+Tanto la definición como la documentación correspondiente (entregables) del problema científico o empresarial son 
+fundamentales para centrar todo el análisis estrictamente en la obtención de resultados. De hecho, un estudio exhaustivo 
+del sistema a veces resulta complejo y no siempre se cuenta con suficiente información para empezar. Por lo tanto, la 
+definición del problema y, en especial, su planificación pueden determinar las directrices de todo el proyecto.
+
 Once the problem has been defined and documented, you can move to the project planning stage of data analysis. 
 Planning is needed to understand which professionals and resources are necessary to meet the requirements to carry 
 out the project as efficiently as possible. You consider the issues involving the resolution of the problem. You 
 look for specialists in various areas of interest and install the software needed to perform data analysis.
 
+Una vez definido y documentado el problema, se puede pasar a la etapa de planificación del proyecto, que consiste en el 
+análisis de datos. La planificación es necesaria para comprender qué profesionales y recursos son necesarios para cumplir 
+con los requisitos y ejecutar el proyecto de la forma más eficiente posible. Se consideran los problemas que implica la 
+resolución del problema. Se buscan especialistas en diversas áreas de interés e se instala el software necesario para 
+realizar el análisis de datos.
+
 Also during the planning phase, you choose an effective team. Generally, these teams should be crossdisciplinary in 
 order to solve the problem by looking at the data from different perspectives. So, building a good team is 
 certainly one of the key factors leading to success in data analysis.
+
+Durante la fase de planificación, también se elige un equipo eficaz. Generalmente, estos equipos deben ser 
+interdisciplinarios para resolver el problema analizando los datos desde diferentes perspectivas. Por lo tanto, formar un 
+buen equipo es, sin duda, uno de los factores clave para el éxito en el análisis de datos.
 
 Data Extraction
 ---------------
@@ -409,18 +501,37 @@ success of the analysis as well. The sample data collected must reflect as much 
 is, how the system responds to stimuli from the real world. For example, if you’re using huge datasets of raw data 
 and they are not collected competently, these may portray false or unbalanced situations.
 
+Una vez definido el problema, el primer paso es obtener los datos para realizar el análisis. Estos datos deben 
+seleccionarse con el objetivo principal de construir el modelo predictivo, por lo que su selección también es crucial para 
+el éxito del análisis. Los datos de muestra recopilados deben reflejar en la medida de lo posible el mundo real, es decir, 
+cómo responde el sistema a los estímulos del mundo real. Por ejemplo, si se utilizan grandes conjuntos de datos sin 
+procesar y no se recopilan correctamente, estos pueden representar situaciones falsas o desequilibradas.
+
 Thus, poor choice of data, or even performing analysis on a dataset that’s not perfectly representative of the 
 system, will lead to models that will move away from the system under study.
+
+Así, una mala elección de los datos, o incluso realizar un análisis en un conjunto de datos que no sea perfectamente 
+representativo del sistema, conducirá a modelos que se alejarán del sistema en estudio.
 
 The search and retrieval of data often require a form of intuition that goes beyond mere technical research and 
 data extraction. This process also requires a careful understanding of the nature and form of the data, which only 
 good experience and knowledge in the problem’s application field can provide.
 
+La búsqueda y recuperación de datos a menudo requiere una intuición que va más allá de la mera investigación técnica y la 
+extracción de datos. Este proceso también exige una comprensión profunda de la naturaleza y la forma de los datos, algo que 
+solo puede proporcionarse con una buena experiencia y conocimiento en el ámbito de aplicación del problema.
+
+
 Regardless of the quality and quantity of data needed, another issue is using the best data sources.
+
+Independientemente de la calidad y cantidad de datos necesarios, otra cuestión es utilizar las mejores fuentes de datos.
 
 If the studio environment is a laboratory (technical or scientific) and the data generated are experimental, then 
 in this case the data source is easily identifiable. In this case, the problems will be only concerning the 
 experimental setup.
+
+Si el entorno del estudio es un laboratorio (técnico o científico) y los datos generados son experimentales, la fuente de 
+datos es fácilmente identificable. En este caso, los problemas solo se relacionarán con la configuración experimental.
 
 But it is not possible for data analysis to reproduce systems in which data are gathered in a strictly experimental 
 way in every field of application. Many fields require searching for data from the surrounding world, often relying 
@@ -429,12 +540,26 @@ finding a good data source that is able to provide all the information you need 
 challenging. Often it is necessary to retrieve data from multiple data sources to supplement any shortcomings, to 
 identify any discrepancies, and to make the dataset as general as possible.
 
+Sin embargo, el análisis de datos no puede reproducir sistemas donde los datos se recopilan de forma estrictamente 
+experimental en todos los campos de aplicación. Muchos campos requieren la búsqueda de datos del mundo circundante, a 
+menudo basándose en datos experimentales externos, o incluso con mayor frecuencia, mediante entrevistas o encuestas. Por lo 
+tanto, en estos casos, encontrar una buena fuente de datos que proporcione toda la información necesaria para el análisis 
+puede ser todo un reto. A menudo es necesario recuperar datos de múltiples fuentes para subsanar cualquier deficiencia, 
+identificar discrepancias y generalizar al máximo el conjunto de datos.
+
 When you want to get the data, a good place to start is the web. But most of the data on the web can be difficult 
 to capture; in fact, not all data are available in a file or database, but might be content that is inside HTML 
 pages in many different formats. To this end, a methodology called web scraping allows the collection of data 
 through the recognition of specific occurrence of HTML tags within web pages. There is software specifically 
 designed for this purpose, and once an occurrence is found, it extracts the desired data. Once the search is 
 complete, you will get a list of data ready to be subjected to data analysis.
+
+Para obtener datos, un buen punto de partida es la web. Sin embargo, la mayoría de los datos en la web pueden ser difíciles 
+de capturar; de hecho, no todos están disponibles en un archivo o base de datos, sino que pueden ser contenido dentro de 
+páginas HTML en diversos formatos. Para ello, una metodología llamada web scraping permite la recopilación de datos 
+mediante el reconocimiento de la ocurrencia específica de etiquetas HTML en las páginas web. Existe software diseñado 
+específicamente para este propósito, que, una vez encontrada, extrae los datos deseados. Una vez completada la búsqueda, 
+obtendrá una lista de datos lista para su análisis.
 
 Data Preparation
 ----------------
@@ -444,12 +569,23 @@ requires more resources and more time to be completed. Data are often collected 
 of which has data in it with a different representation and format. So, all of these data have to be prepared for 
 the process of data analysis.
 
+Entre todos los pasos del análisis de datos, la preparación de los mismos, aunque aparentemente menos problemática, 
+requiere de hecho más recursos y tiempo. Los datos suelen recopilarse de diferentes fuentes, cada una con una 
+representación y un formato diferentes. Por lo tanto, todos estos datos deben prepararse para el proceso de análisis.
+
 The preparation of the data is concerned with obtaining, cleaning, normalizing, and transforming data into an 
 optimized dataset, that is, in a prepared format that’s normally tabular and is suitable for the methods of 
 analysis that have been scheduled during the design phase.
 
+La preparación de los datos se ocupa de la obtención, limpieza, normalización y transformación de los datos en un conjunto 
+de datos optimizado, es decir, en un formato preparado que normalmente es tabular y es adecuado para los métodos de 
+análisis que se han programado durante la fase de diseño.
+
 Many potential problems can arise, including invalid, ambiguous, or missing values, replicated fields, and 
 out-of-range data.
+
+Pueden surgir muchos problemas potenciales, incluidos valores no válidos, ambiguos o faltantes, campos replicados y datos 
+fuera de rango.
 
 Data Exploration/Visualization
 ------------------------------
