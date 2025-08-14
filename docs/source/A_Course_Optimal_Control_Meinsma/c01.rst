@@ -1,8 +1,7 @@
 Preface
 =======
 
-This book reflects a long history of teaching optimal control for students in mathe-
-matics and engineering at the universities of Twente and Groningen, the Netherlands.
+This book reflects a long history of teaching optimal control for students in mathematics and engineering at the universities of Twente and Groningen, the Netherlands.
 In fact, the book has grown out of lecture notes that were tested, adapted, and expanded
 over many years of teaching.
 
@@ -10,6 +9,12 @@ The present book provides a self-contained treatment of what the undersigned con
 dynamical systems. The style of writing aims at carefully guiding the students through the
 mathematical developments, and emphasizes motivational examples; either of a math-
 ematical nature or motivated by applications of optimal control.
+
+El presente libro ofrece un tratamiento completo de lo que los abajo firmantes 
+consideran los temas centrales del control óptimo para sistemas dinámicos deterministas 
+de dimensión finita. El estilo de redacción busca guiar cuidadosamente a los 
+estudiantes a través de los desarrollos matemáticos y enfatiza ejemplos motivadores, ya 
+sea de naturaleza matemática o inspirados en aplicaciones del control óptimo.
 
 Chapter 1 covers the basics of the classical calculus of variations, including
 second-order conditions and integral constraints. This directly motivates the introduction of the minimum principle (more commonly known as the maximum principle)
@@ -23,6 +28,22 @@ quadratic cost criteria (LQ-optimal control). This includes a succinct but detai
 treatment of Riccati differential equations and algebraic Riccati equations. The chapter
 is concluded with a section on controller design based on LQ-optimal control.
 
+El Capítulo 1 abarca los fundamentos del cálculo clásico de variaciones, incluyendo 
+condiciones de segundo orden y restricciones integrales. Esto motiva directamente la 
+introducción del principio de mínimo (más comúnmente conocido como principio de máximo) 
+en el Capítulo 2. Si bien la presentación del libro busca minimizar generalidades, el 
+tratamiento del principio de mínimo, tal como se presenta en el Capítulo 2, es 
+autocontenido y adecuado para un curso básico sobre control óptimo. El Capítulo 3 
+continúa con el enfoque de programación dinámica para el control óptimo, culminando en 
+la ecuación de Hamilton-Jacobi-Bellman. Se discute la conexión con el principio de 
+mínimo, así como la relación entre el control óptimo de horizonte infinito y las 
+funciones de Lyapunov. En el Capítulo 4, la teoría de los Capítulos 2 y 3 se aplica, y 
+se especializa, a sistemas de control lineal con criterios de costo cuadrático (control 
+óptimo LQ). Esto incluye un tratamiento sucinto pero detallado de las ecuaciones 
+diferenciales de Riccati y las ecuaciones algebraicas de Riccati. El capítulo concluye 
+con una sección sobre el diseño de controladores basado en el control óptimo LQ.
+
+
 In our experience, the material of Chapters 1–4 provides a good coverage of an
 introductory, but mathematically self-contained, course on optimal control for final
 year BSc (or beginning MSc) students in (applied) mathematics and beginning MSc
@@ -33,6 +54,17 @@ example, in some of the editions of the course we did not cover Section 1.7 on i
 constraints, but instead we paid more attention to Lyapunov stability theory as detailed
 in Appendix B.
 
+En nuestra experiencia, el material de los capítulos 1 a 4 ofrece una buena cobertura 
+de un curso introductorio, pero matemáticamente completo, sobre control óptimo para 
+estudiantes de último año de grado (o de máster) en matemáticas (aplicadas) y 
+estudiantes de máster en ingeniería. Llevamos muchos años impartiendo el curso para 
+este público con una duración de 8 semanas, con 4 horas lectivas y 2 horas de tutoría 
+semanales (5 ECTS en el sistema de créditos europeos). Por supuesto, el contenido del 
+curso puede adaptarse. Por ejemplo, en algunas ediciones no cubrimos la sección 1.7 
+sobre restricciones integrales, sino que prestamos más atención a la teoría de 
+estabilidad de Lyapunov, como se detalla en el Apéndice B.
+
+
 Required background for the course is linear algebra and calculus, basic knowledge
 of differential equations, and (rudimentary) acquaintance with control systems. Some
 mathematical background is summarized in Appendix A for easy recollection and for
@@ -41,20 +73,54 @@ only recall some of the basics of differential equations, but also provides a ra
 detailed treatment of Lyapunov stability theory including LaSalle’s invariance principle,
 as occasionally used in Chapters 3 and 4 of the book.
 
+Los requisitos previos para el curso son álgebra lineal y cálculo, conocimientos 
+básicos de ecuaciones diferenciales y un conocimiento básico de sistemas de control. El 
+Apéndice A resume algunos conocimientos matemáticos para facilitar su memorización y 
+para que los estudiantes alcancen el mismo nivel. El Apéndice B va más allá: no solo 
+recuerda algunos fundamentos de las ecuaciones diferenciales, sino que también ofrece 
+un tratamiento bastante detallado de la teoría de estabilidad de Lyapunov, incluyendo 
+el principio de invariancia de LaSalle, que se utiliza ocasionalmente en los capítulos 
+3 y 4 del libro.
+
+
 Chapter 5 of the book is of a different nature. It is not considered to be part of the
 basic material for a course on optimal control. Instead, it provides brief outlooks to a
 number of (somewhat arbitrarily chosen) topics that are related to optimal control, in
 order to raise interest of students. As such Chapter 5 is written differently from Chapters
 1–4. In particular the treatment of the covered topics is not always self-contained.
 
+El capítulo 5 del libro es de naturaleza diferente. No se considera parte del material 
+básico de un curso sobre control óptimo. En cambio, ofrece breves perspectivas sobre 
+varios temas (seleccionados de forma algo arbitraria) relacionados con el control 
+óptimo, con el fin de despertar el interés de los estudiantes. Por ello, el capítulo 5 
+está escrito de forma diferente a los capítulos 1 a 4. En particular, el tratamiento de 
+los temas tratados no siempre es autoconclusivo.
+
 At the end of each of Chapters 1–4, as well as of Appendix B, there is a rich collection
 of exercises, including a number of instructive examples of applications of optimal
 control. Solutions to the odd-numbered exercises are provided.
+
+Al final de cada uno de los capítulos 1 a 4, así como del apéndice B, se incluye una 
+amplia colección de ejercicios, que incluye varios ejemplos instructivos de 
+aplicaciones del control óptimo. Se proporcionan las soluciones de los ejercicios 
+impares.
 
 Main contributors to the first versions of the lecture notes (developed since the
 1990s) were Hans Zwart, Jan Willem Polderman (both University of Twente), and Henk
 Nijmeijer (University of Twente, currently Eindhoven University of Technology). We
 thank them for their initial contributions.
+
+Main contributors to the first versions of the lecture notes (developed since the 
+1990s) were Hans Zwart, Jan Willem Polderman (both University of Twente), and Henk 
+Nijmeijer (University of Twente, currently Eindhoven University of Technology). We 
+thank them for their initial contributions.
+
+Main contributors to the first versions of the lecture notes (developed since the 
+1990s) were Hans Zwart, Jan Willem Polderman (both University of Twente), and Henk 
+Nijmeijer (University of Twente, currently Eindhoven University of Technology). We 
+thank them for their initial contributions.
+
+
 
 In 2006–2008 Arjan van der Schaft (University of Groningen) made a number of
 substantial revisions and modifications to the then available lecture notes. In the period

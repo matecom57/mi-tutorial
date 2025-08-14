@@ -26,9 +26,8 @@ Contents
     Fundamentals_of_Physics_Resnick/index2
     Introduction_Machine_Learning_Python_Andreas/index2
     Lenguajes_Programacion/index2
+    Python_Data_Analytics_3E_Fabio/index2
 
-Procesamiento-Imagen.rst
-Python_Data_Analytics_3E_Fabio
 Reportes
 Resonadores_Bruker.rst
 Solved_Problems_Lagrangian_Hamiltonian_Mechanics_Claude
