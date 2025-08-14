@@ -1,4 +1,5 @@
 Preface
+=======
 
 This book reflects a long history of teaching optimal control for students in mathe-
 matics and engineering at the universities of Twente and Groningen, the Netherlands.
