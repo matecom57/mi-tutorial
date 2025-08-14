@@ -23,8 +23,8 @@ Contents
     A_Course_Optimal_Control_Meinsma/index2
     CUTE/index2
     Control_Theory_for_Practical_Applications_Hao/index2
+    Fundamentals_of_Physics_Resnick/index2
 
-Fundamentals_of_Physics_Resnick
 Introduction_Machine_Learning_Python_Andreas
 Lenguajes_Programacion
 Procesamiento-Imagen.rst
