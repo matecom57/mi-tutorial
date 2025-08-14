@@ -21,4 +21,27 @@ Contents
     :caption: todos
 
     A_Course_Optimal_Control_Meinsma/index2
+    CUTE/index2
+
+Control_Theory_for_Practical_Applications_Hao
+Fundamentals_of_Physics_Resnick
+Introduction_Machine_Learning_Python_Andreas
+Lenguajes_Programacion
+Procesamiento-Imagen.rst
+Python_Data_Analytics_3E_Fabio
+Reportes
+Resonadores_Bruker.rst
+Solved_Problems_Lagrangian_Hamiltonian_Mechanics_Claude
+_static
+api.rst
+conf.py
+copiar_clus.sh
+cross.rst
+cute.rst
+index.rst
+linux
+sphinx
+usage.rst
+(base) iMac-de-Fernando:source santosg$ 
+
 
