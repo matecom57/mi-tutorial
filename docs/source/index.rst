@@ -30,16 +30,4 @@ Contents
     Solved_Problems_Lagrangian_Hamiltonian_Mechanics_Claude/index2
 
 
-_static
-api.rst
-conf.py
-copiar_clus.sh
-cross.rst
-cute.rst
-index.rst
-linux
-sphinx
-usage.rst
-(base) iMac-de-Fernando:source santosg$ 
-
 
