@@ -20,55 +20,5 @@ Contents
     :maxdepth: 1
     :caption: todos
 
-    Programming_3D_Applications_with_HTML5_and_WebGL_c01
-    Fundamentals_of_Physics_Resnick_c04
-    CUTE/ecuaciones
-    CUTE/EcuDif_Relay-pTeor_p3
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Programming_3D_Applications_with_HTML5_and_WebGL
-
-    Programming_3D_Applications_with_HTML5_and_WebGL/Programming_3D_Applications_with_HTML5_and_WebGL_c01
-    Programming_3D_Applications_with_HTML5_and_WebGL/Programming_3D_Applications_with_HTML5_and_WebGL_c02
-    Programming_3D_Applications_with_HTML5_and_WebGL/Programming_3D_Applications_with_HTML5_and_WebGL_c03
-    Programming_3D_Applications_with_HTML5_and_WebGL/Programming_3D_Applications_with_HTML5_and_WebGL_c04
-
-.. toctree::
-    :maxdepth: 1   
-    :caption: Artificial_Intelligence_for_Engineers
-
-    Artificial_Intelligence_for_Engineers_Zhen/Artificial_Intelligence_for_Engineers_Zhen_c01
-
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Linux
-
-    linux/gnu_linux
-
-.. toctree::
-    :maxdepth: 1
-    :caption: DeepR_Programming_Marek
-
-    DeepR_Programming_Marek/DeepR_Programming_Marek_c01
-    DeepR_Programming_Marek/DeepR_Programming_Marek_c02
-
-    Control_Theory_for_Practical_Applications_Hao/index2
-
-    Docker/docker
-    Reportes/firefox
-    Reportes/firefox2
-    Reportes/wifi
-    Reportes/wifi2
-
-    Lenguajes_Programacion/lenguajes_programacion
-
-    Fundamentals_of_Physics_Resnick/index2
-
-    Solved_Problems_Lagrangian_Hamiltonian_Mechanics_Claude/index2
-
-    Introduction_Machine_Learning_Python_Andreas/index2
-
-    Python_Data_Analytics_3E_Fabio/index2
+    A_Course_Optimal_Control_Meinsma/index2
 
