@@ -25,8 +25,8 @@ Contents
     Control_Theory_for_Practical_Applications_Hao/index2
     Fundamentals_of_Physics_Resnick/index2
     Introduction_Machine_Learning_Python_Andreas/index2
+    Lenguajes_Programacion/index2
 
-Lenguajes_Programacion
 Procesamiento-Imagen.rst
 Python_Data_Analytics_3E_Fabio
 Reportes
