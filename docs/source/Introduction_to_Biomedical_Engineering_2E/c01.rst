@@ -50,7 +50,17 @@ illustrative examples ampliﬁes concepts and develops problem-solving skills. T
 provides the necessary background to use MATLAB 1 and SIMULINK 1 . MATLAB 1 and SIMULINK 1 are available 
 from:
 
-The Mathworks, Inc.
+Si bien intentamos ser bastante rigurosos en nuestros análisis y demostraciones, nuestro objetivo final es 
+ayudar a los estudiantes a comprender la naturaleza de la ingeniería biomédica. Por lo tanto, hemos hecho 
+concesiones cuando ha sido necesario y, en ocasiones, hemos utilizado matemáticas menos rigurosas para 
+facilitar su comprensión. El uso abundante de ejemplos ilustrativos amplía los conceptos y desarrolla las 
+habilidades de resolución de problemas. A lo largo del texto, se utilizan MATLAB 1 (un solucionador de 
+ecuaciones matriciales) y SIMULINK 1 (una extensión de MATLAB para simular sistemas dinámicos) como 
+herramientas informáticas para facilitar la resolución de problemas. El Apéndice proporciona la información 
+necesaria para utilizar MATLAB 1 y SIMULINK 1. MATLAB 1 y SIMULINK 1 están disponibles en:
+
+ The Mathworks, 
+Inc.
 
 24 Prime Park Way Natick, Massachusetts 01760 Phone: (508) 647-7000 Email: info@mathworks.com WWW: 
 http://www.mathworks.com {extend}
@@ -61,6 +71,13 @@ design, analysis, and modeling procedures in that domain. In addition, examples 
 encountered, as well as the techniques used to solve them, are provided. Selected problems, ranging from 
 simple to difﬁcult, are presented at the end of each chapter in the same general order as covered in the 
 text.
+
+Los capítulos se redactan para ofrecer una perspectiva histórica de los principales avances en un campo 
+específico de la ingeniería biomédica, así como de los principios fundamentales que sustentan los 
+procedimientos de diseño, análisis y modelado de la ingeniería biomédica en dicho campo. Además, se 
+proporcionan ejemplos de algunos de los problemas encontrados, así como las técnicas empleadas para 
+resolverlos. Al final de cada capítulo se presentan problemas seleccionados, de simples a complejos, en el 
+mismo orden general que se abordan en el texto.
 
 The material in this textbook has been designed for a one-semester, two-semester, or three-quarter sequence 
 depending on the needs and interests of the instructor. Chapter 1 provides necessary background to 
@@ -73,11 +90,21 @@ chapters on bioinstrumentation, biosensors, and biosignal processing should be c
 interdependent on each other. The remainder of the textbook presents material on biomedical technology 
 (Chapters 12-17).
 
-A website is available at http://intro-bme-book.bme.uconn.edu/ that provides an errata and extra material.
+El material de este libro de texto se ha diseñado para una secuencia de un semestre, dos semestres o tres 
+trimestres, según las necesidades e intereses del instructor. El capítulo 1 proporciona los antecedentes 
+necesarios para comprender la historia y apreciar el campo de la ingeniería biomédica. El capítulo 2 
+presenta el capítulo de vital importancia sobre la moral y la ética con base biomédica. El capítulo 3 
+proporciona anatomía y fisiología básicas. Los capítulos 4-10 proporcionan las áreas básicas de la 
+ingeniería biomédica: biomecánica, ingeniería de rehabilitación, biomateriales, ingeniería de tejidos, 
+bioinstrumentación, biosensores y procesamiento de bioseñales. Para ayudar a los instructores a planificar 
+la secuencia del material que deseen enfatizar, se sugiere que los capítulos sobre bioinstrumentación, 
+biosensores y procesamiento de bioseñales se cubran juntos, ya que son interdependientes entre sí. El resto 
+del libro de texto presenta material sobre tecnología biomédica (capítulos 12-17).
 
-1
+ A website is available at 
+http://intro-bme-book.bme.uconn.edu/ that provides an errata and extra material.
 
-BIOMEDICAL ENGINEERING: A HISTORICAL PERSPECTIVE
+c1 BIOMEDICAL ENGINEERING: A HISTORICAL PERSPECTIVE
 
 Joseph Bronzino PhD, PE
 
@@ -99,23 +126,22 @@ Chapter Contents
 
 1.6.2 IEEE Engineering in Medicine and Biology Society (EMBS)
 
-1.6.3 Biomedical Engineering Society (BMES) Exercises References and Suggested Reading
+1.6.3 Biomedical Engineering Society (BMES) 
+
+Exercises 
+
+References and Suggested Reading
+
 
 At the conclusion of this chapter, students will be able to:
 
-&
-
-&
-
-&
-
-Identify the major role that advances in medical technology have played in the establishment of the modern 
+* Identify the major role that advances in medical technology have played in the establishment of the modern 
 health care system.
 
-Deﬁne what is meant by the term biomedical engineering and the roles biomedical engineers play in the 
+* Deﬁne what is meant by the term biomedical engineering and the roles biomedical engineers play in the 
 health care delivery system.
 
-Explain why biomedical engineers are professionals.
+* Explain why biomedical engineers are professionals.
 
 In the industrialized nations, technological innovation has progressed at such an accelerated pace that it 
 is has permeated almost every facet of our lives. This is especially true in the area of medicine and the 
@@ -125,6 +151,14 @@ therapeutic treatments is a relatively new phenomenon. Of particular importance 
 has been the establishment of the modern hospital as the center of a technologically sophisticated health 
 care system.
 
+En los países industrializados, la innovación tecnológica ha avanzado a un ritmo tan acelerado que ha 
+permeado casi todos los aspectos de nuestra vida. Esto es especialmente cierto en el ámbito de la medicina y 
+la prestación de servicios de salud. Si bien el arte de la medicina tiene una larga historia, la evolución 
+de un sistema de salud con base tecnológica, capaz de proporcionar una amplia gama de tratamientos 
+diagnósticos y terapéuticos eficaces, es un fenómeno relativamente nuevo. De particular importancia en este 
+proceso evolutivo ha sido el establecimiento del hospital moderno como el centro de un sistema de salud 
+tecnológicamente sofisticado.
+ 
 Since technology has had such a dramatic impact on medical care, engineering professionals have become 
 intimately involved in many medical ventures. As a result, the discipline of biomedical engineering has 
 emerged as an integrating medium for two dynamic professions, medicine and engineering, and has assisted in 
@@ -132,14 +166,30 @@ the struggle against illness and disease by providing tools (such as biosensors,
 processing, and artiﬁcial intelligence) that can be utilized for research, diagnosis, and treatment by 
 health care professionals.
 
+Dado el drástico impacto de la tecnología en la atención médica, los profesionales de la ingeniería se han 
+involucrado estrechamente en numerosas iniciativas médicas. Como resultado, la ingeniería biomédica ha 
+emergido como un medio integrador para dos profesiones dinámicas, la medicina y la ingeniería, y ha 
+contribuido a la lucha contra las enfermedades al proporcionar herramientas (como biosensores, 
+biomateriales, procesamiento de imágenes e inteligencia artificial) que los profesionales de la salud pueden 
+utilizar para la investigación, el diagnóstico y el tratamiento.
+
+
 Thus, biomedical engineers serve as relatively new members of the health care delivery team that seeks new 
 solutions for the difﬁcult problems confronting modern society. The purpose of this chapter is to provide a 
 broad overview of technology’s role in shaping our modern health care system, highlight the basic roles 
 biomedical engineers play, and present a view of the professional status of this dynamic ﬁeld.
 
-1.1 EVOLUTION OF THE MODERN HEALTH CARE SYSTEM
+Por lo tanto, los ingenieros biomédicos son miembros relativamente nuevos del equipo de atención médica que 
+busca nuevas soluciones a los complejos problemas que enfrenta la sociedad moderna. El propósito de este 
+capítulo es ofrecer una visión general del rol de la tecnología en la configuración de nuestro sistema de 
+salud moderno, destacar las funciones básicas que desempeñan los ingenieros biomédicos y presentar una 
+perspectiva del estatus profesional de este dinámico campo.
 
-Primitive humans considered diseases to be ‘‘visitations,’’ the whimsical acts of affronted gods or spirits. 
+
+1.1 EVOLUTION OF THE MODERN HEALTH CARE SYSTEM
+----------------------------------------------
+
+Primitive humans considered diseases to be "visitations," the whimsical acts of affronted gods or spirits. 
 As a result, medical practice was the domain of the witch doctor and the medicine man and medicine woman. 
 Yet even as magic became an integral part of the healing process, the cult and the art of these early 
 practitioners were never entirely limited to the supernatural. These individuals, by using their natural 
