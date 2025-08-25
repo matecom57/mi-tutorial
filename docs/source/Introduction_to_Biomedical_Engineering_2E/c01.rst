@@ -1,0 +1,1046 @@
+c01
+====
+
+
+The purpose of the second edition remains the same as the ﬁrst edition: that is, to serve as an 
+introduction to and overview of the ﬁeld of biomedical engineering. Many chapters have undergone major 
+revision from the previous edition with new endof-chapter problems added. Some chapters were combined and 
+some chapters were eliminated completely, with several new chapters added to reﬂect changes in the ﬁeld.
+
+Over the past ﬁfty years, as the discipline of biomedical engineering has evolved, it has become clear that 
+it is a diverse, seemingly all-encompassing ﬁeld that includes such areas as bioelectric phenomena, 
+bioinformatics, biomaterials, biomechanics, bioinstrumentation, biosensors, biosignal processing, 
+biotechnology, computational biology and complexity, genomics, medical imaging, optics and lasers, radiation 
+imaging, rehabilitation engineering, tissue engineering, and moral and ethical issues. Although it is not 
+possible to cover all of the biomedical engineering domains in this textbook, we have made an effort to 
+focus on most of the major ﬁelds of activity in which biomedical engineers are engaged.
+
+The text is written primarily for engineering students who have completed differential equations and a basic 
+course in statics. Students in their sophomore year or junior year should be adequately prepared for this 
+textbook. Students in the biological sciences, including those in the ﬁelds of medicine and nursing, can 
+also read and understand this material if they have the appropriate mathematical background.
+
+Although we do attempt to be fairly rigorous with our discussions and proofs, our ultimate aim is to help 
+students grasp the nature of biomedical engineering. Therefore, we have compromised when necessary and have 
+occasionally used less rigorous mathematics in order to be more understandable. A liberal use of 
+illustrative examples ampliﬁes concepts and develops problem-solving skills. Throughout the text, MATLAB 1 
+(a matrix equation solver) and SIMULINK 1 (an extension to MATLAB 1
+
+for simulating dynamic systems) are used as computer tools to assist with problem solving. The Appendix 
+provides the necessary background to use MATLAB 1 and SIMULINK 1 . MATLAB 1 and SIMULINK 1 are available 
+from:
+
+The Mathworks, Inc.
+
+24 Prime Park Way Natick, Massachusetts 01760 Phone: (508) 647-7000 Email: info@mathworks.com WWW: 
+http://www.mathworks.com {extend}
+
+Chapters are written to provide some historical perspective of the major developments in a speciﬁc 
+biomedical engineering domain as well as the fundamental principles that underlie biomedical engineering 
+design, analysis, and modeling procedures in that domain. In addition, examples of some of the problems 
+encountered, as well as the techniques used to solve them, are provided. Selected problems, ranging from 
+simple to difﬁcult, are presented at the end of each chapter in the same general order as covered in the 
+text.
+
+The material in this textbook has been designed for a one-semester, two-semester, or three-quarter sequence 
+depending on the needs and interests of the instructor. Chapter 1 provides necessary background to 
+understand the history and appreciate the ﬁeld of biomedical engineering. Chapter 2 presents the vitally 
+important chapter on biomedically-based morals and ethics. Basic anatomy and physiology are provided in 
+Chapter 3. Chapters 4-10 provide the basic core biomedical engineering areas: biomechanics, rehabilitation 
+engineering, biomaterials, tissue engineering, bioinstrumentation, biosensors, and biosignal processing. To 
+assist instructors in planning the sequence of material they may wish to emphasize, it is suggested that the 
+chapters on bioinstrumentation, biosensors, and biosignal processing should be covered together as they are 
+interdependent on each other. The remainder of the textbook presents material on biomedical technology 
+(Chapters 12-17).
+
+A website is available at http://intro-bme-book.bme.uconn.edu/ that provides an errata and extra material.
+
+1
+
+BIOMEDICAL ENGINEERING: A HISTORICAL PERSPECTIVE
+
+Joseph Bronzino PhD, PE
+
+Chapter Contents
+
+1.1 Evolution of the Modern Health Care System
+
+1.2 The Modern Health Care System
+
+1.3 What Is Biomedical Engineering?
+
+1.4 Roles Played by Biomedical Engineers
+
+1.5 Professional Status of Biomedical Engineering
+
+1.6 Professional Societies
+
+1.6.1 American Institute for Medical and Biological Engineering (AIMBE)
+
+1.6.2 IEEE Engineering in Medicine and Biology Society (EMBS)
+
+1.6.3 Biomedical Engineering Society (BMES) Exercises References and Suggested Reading
+
+At the conclusion of this chapter, students will be able to:
+
+&
+
+&
+
+&
+
+Identify the major role that advances in medical technology have played in the establishment of the modern 
+health care system.
+
+Deﬁne what is meant by the term biomedical engineering and the roles biomedical engineers play in the 
+health care delivery system.
+
+Explain why biomedical engineers are professionals.
+
+In the industrialized nations, technological innovation has progressed at such an accelerated pace that it 
+is has permeated almost every facet of our lives. This is especially true in the area of medicine and the 
+delivery of health care services. Although the art of medicine has a long history, the evolution of a 
+technologically based health care system capable of providing a wide range of effective diagnostic and 
+therapeutic treatments is a relatively new phenomenon. Of particular importance in this evolutionary process 
+has been the establishment of the modern hospital as the center of a technologically sophisticated health 
+care system.
+
+Since technology has had such a dramatic impact on medical care, engineering professionals have become 
+intimately involved in many medical ventures. As a result, the discipline of biomedical engineering has 
+emerged as an integrating medium for two dynamic professions, medicine and engineering, and has assisted in 
+the struggle against illness and disease by providing tools (such as biosensors, biomaterials, image 
+processing, and artiﬁcial intelligence) that can be utilized for research, diagnosis, and treatment by 
+health care professionals.
+
+Thus, biomedical engineers serve as relatively new members of the health care delivery team that seeks new 
+solutions for the difﬁcult problems confronting modern society. The purpose of this chapter is to provide a 
+broad overview of technology’s role in shaping our modern health care system, highlight the basic roles 
+biomedical engineers play, and present a view of the professional status of this dynamic ﬁeld.
+
+1.1 EVOLUTION OF THE MODERN HEALTH CARE SYSTEM
+
+Primitive humans considered diseases to be ‘‘visitations,’’ the whimsical acts of affronted gods or spirits. 
+As a result, medical practice was the domain of the witch doctor and the medicine man and medicine woman. 
+Yet even as magic became an integral part of the healing process, the cult and the art of these early 
+practitioners were never entirely limited to the supernatural. These individuals, by using their natural 
+instincts and learning from experience, developed a primitive science based on empirical laws. For example, 
+through acquisition and coding of certain reliable practices, the arts of herb doctoring, bone setting, 
+surgery, and midwifery were advanced. Just as primitive humans learned from observation that certain plants 
+and grains were good to eat and could be cultivated, so the healers and shamans observed the nature of 
+certain illnesses and then passed on their experiences to other generations.
+
+Evidence indicates that the primitive healer took an active, rather than a simply intuitive interest in the 
+curative arts, acting as a surgeon and a user of tools. For instance, skulls with holes made in them by 
+trephiners have been collected in various parts of Europe, Asia, and South America. These holes were cut out 
+of the bone with ﬂint instruments to gain access to the brain. Although one can only speculate the purpose 
+of these early surgical operations, magic and religious beliefs seem to be the most likely reasons. Perhaps 
+this procedure liberated from the skull the malicious demons that were thought to be the cause of extreme 
+pain (as in the case of migraine) or attacks of falling to the ground (as in epilepsy). That this procedure 
+was carried out
+
+on living patients, some of whom actually survived, is evident from the rounded edges on the bone 
+surrounding the hole which indicate that the bone had grown again after the operation. These survivors also 
+achieved a special status of sanctity so that, after their death, pieces of their skull were used as amulets 
+to ward off convulsive attacks. From these beginnings, the practice of medicine has become integral to all 
+human societies and cultures.
+
+It is interesting to note the fate of some of the most successful of these early practitioners. The 
+Egyptians, for example, have held Imhotep, the architect of the ﬁrst pyramid (3000 BC ), in great esteem 
+through the centuries, not as a pyramid builder, but as a doctor. Imhotep’s name signiﬁed ‘‘he who cometh 
+in peace’’ because he visited the sick to give them ‘‘peaceful sleep.’’ This early physician practiced his 
+art so well that he was deiﬁed in the Egyptian culture as the god of healing.
+
+Egyptian mythology, like primitive religion, emphasized the interrelationships between the supernatural and 
+one’s health. For example, consider the mystic sign Rx, which still adorns all prescriptions today. It has a 
+mythical origin in the legend of the Eye of Horus. It appears that as a child Horus lost his vision after 
+being viciously attacked by Seth, the demon of evil. Then Isis, the mother of Horus, called for assistance 
+to Thoth, the most important god of health, who promptly restored the eye and its powers. Because of this 
+intervention, the Eye of Horus became the Egyptian symbol of godly protection and recovery, and its 
+descendant, Rx, serves as the most visible link between ancient and modern medicine.
+
+The concepts and practices of Imhotep and the medical cult he fostered were duly recorded on papyri and 
+stored in ancient tombs. One scroll (dated c. 1500 BC ), acquired by George Elbers in 1873, contains 
+hundreds of remedies for numerous afﬂictions ranging from crocodile bite to constipation. A second famous 
+papyrus (dated c. 1700 BC ), discovered by Edwin Smith in 1862, is considered to be the most important and 
+complete treatise on surgery of all antiquity. These writings outline proper diagnoses, prognoses, and 
+treatment in a series of surgical cases. These two papyri are certainly among the outstanding writings in 
+medical history.
+
+As the inﬂuence of ancient Egypt spread, Imhotep was identiﬁed by the Greeks with their own god of 
+healing, Aesculapius. According to legend, the god Apollo fathered Aesculapius during one of his many 
+earthly visits. Apparently Apollo was a concerned parent, and, as is the case for many modern parents, he 
+wanted his son to be a physician. He made Chiron, the centaur, tutor Aesculapius in the ways of healing. 
+Chiron’s student became so proﬁcient as a healer that he soon surpassed his tutor and kept people so 
+healthy that he began to decrease the population of Hades. Pluto, the god of the underworld, complained so 
+violently about this course of events that Zeus killed Aesculapius with a thunderbolt and in the process 
+promoted Aesculapius to Olympus as a god.
+
+Inevitably, mythology has become entangled with historical facts, and it is not certain whether Aesculapius 
+was in fact an earthly physician like Imhotep, the Egyptian. However, one thing is clear; by 1000 BC , 
+medicine was already a highly respected profession. In Greece, the Aesculapia were temples of the healing 
+cult and may be considered among the ﬁrst hospitals (Fig. 1.1). In modern terms, these temples were 
+essentially sanatoriums that had strong religious overtones. In them, patients
+
+were received and psychologically prepared, through prayer and sacriﬁce, to appreciate the past 
+achievements of Aesculapius and his physician priests. After the appropriate rituals, they were allowed to 
+enjoy ‘‘temple sleep.’’ During the night, ‘‘healers’’ visited their patients, administering medical advice 
+to clients who were awake or interpreting dreams of those who had slept. In this way, patients became 
+convinced that they would be cured by following the prescribed regimen of diet, drugs, or bloodletting. On 
+the other hand, if they remained ill, it would be attributed to their lack of faith. With this approach, 
+patients, not treatments, were at fault if they did not get well. This early use of the power of suggestion 
+was effective then and is still important in medical treatment today. The notion of ‘‘healthy mind, healthy 
+body’’ is still in vogue today.
+
+One of the most celebrated of these ‘‘healing’’ temples was on the island of Cos, the birthplace of 
+Hippocrates, who as a youth became acquainted with the curative arts through his father, also a physician. 
+Hippocrates was not so much an innovative physician as a collector of all the remedies and techniques that 
+existed up to that time. Since he viewed the physician as a scientist instead of a priest, Hippocrates also 
+injected an essential ingredient into medicine: its scientiﬁc spirit. For him, diagnostic
+
+observation and clinical treatment began to replace superstition. Instead of blaming disease on the gods, 
+Hippocrates taught that disease was a natural process, one that developed in logical steps, and that 
+symptoms were reactions of the body to disease. The body itself, he emphasized, possessed its own means of 
+recovery, and the function of the physician was to aid these natural forces. Hippocrates treated each 
+patient as an original case to be studied and documented. His shrewd descriptions of diseases are models for 
+physicians even today. Hippocrates and the school of Cos trained a number of individuals who then migrated 
+to the corners of the Mediterranean world to practice medicine and spread the philosophies of their 
+preceptor. The work of Hippocrates and the school and tradition that stem from him constitute the ﬁrst real 
+break from magic and mysticism and the foundation of the rational art of medicine. However, as a 
+practitioner, Hippocrates represented the spirit, not the science, of medicine, embodying the good 
+physician: the friend of the patient and the humane expert.
+
+As the Roman Empire reached its zenith and its inﬂuence expanded across half the world, it became heir to 
+the great cultures it absorbed, including their medical advances. Although the Romans themselves did little 
+to advance clinical medicine (the treatment of the individual patient), they did make outstanding 
+contributions to public health. For example, they had a well-organized army medical service, which not only 
+accompanied the legions on their various campaigns to provide ‘‘ﬁrst aid’’ on the battleﬁeld but also 
+established ‘‘base hospitals’’ for convalescents at strategic points throughout the empire. The construction 
+of sewer systems and aqueducts were truly remarkable Roman accomplishments that provided their empire with 
+the medical and social advantages of sanitary living. Insistence on clean drinking water and unadulterated 
+foods affected the control and prevention of epidemics, and however primitive, made urban existence 
+possible. Unfortunately, without adequate scientiﬁc knowledge about diseases, all the preoccupation of the 
+Romans with public health could not avert the periodic medical disasters, particularly the plague, that 
+mercilessly befell its citizens.
+
+Initially, the Roman masters looked upon Greek physicians and their art with disfavor. However, as the years 
+passed, the favorable impression these disciples of Hippocrates made upon the people became widespread. As a 
+reward for their service to the peoples of the Empire, Caesar (46 BC ) granted Roman citizenship to all 
+Greek practitioners of medicine in his empire. Their new status became so secure that when Rome suffered 
+from famine that same year, these Greek practitioners were the only foreigners not expelled from the city. 
+On the contrary, they were even offered bonuses to stay!
+
+Ironically, Galen, who is considered the greatest physician in the history of Rome, was himself a Greek. 
+Honored by the emperor for curing his ‘‘imperial fever,’’ Galen became the medical celebrity of Rome. He was 
+arrogant and a braggart and, unlike Hippocrates, reported only successful cases. Nevertheless, he was a 
+remarkable physician. For Galen, diagnosis became a ﬁne art; in addition to taking care of his own 
+patients, he responded to requests for medical advice from the far reaches of the empire. He was so 
+industrious that he wrote more than 300 books of anatomical observations, which included selected case 
+histories, the drugs he prescribed, and his
+
+boasts. His version of human anatomy, however, was misleading because he objected to human dissection and 
+drew his human analogies solely from the studies of animals. However, because he so dominated the medical 
+scene and was later endorsed by the Roman Catholic Church, Galen actually inhibited medical inquiry. His 
+medical views and writings became both the ‘‘bible’’ and ‘‘the law’’ for the pontiffs and pundits of the 
+ensuing Dark Ages.
+
+With the collapse of the Roman Empire, the Church became the repository of knowledge, particularly of all 
+scholarship that had drifted through the centuries into the Mediterranean. This body of information, 
+including medical knowledge, was literally scattered through the monasteries and dispersed among the many 
+orders of the Church.
+
+The teachings of the early Roman Catholic Church and the belief in divine mercy made inquiry into the causes 
+of death unnecessary and even undesirable. Members of the Church regarded curing patients by rational 
+methods as sinful interference with the will of God. The employment of drugs signiﬁed a lack of faith by 
+the doctor and patient, and scientiﬁc medicine fell into disrepute. Therefore, for almost a thousand years, 
+medical research stagnated. It was not until the Renaissance in the 1500s that any signiﬁcant progress in 
+the science of medicine occurred. Hippocrates had once taught that illness was not a punishment sent by the 
+gods but a phenomenon of nature. Now, under the Church and a new God, the older views of the supernatural 
+origins of disease were renewed and promulgated. Since disease implied demonic possession, monks and priests 
+treated the sick through prayer, the laying on of hands, exorcism, penances, and exhibition of holy 
+relics—practices ofﬁcially sanctioned by the Church.
+
+Although deﬁcient in medical knowledge, the Dark Ages were not entirely lacking in charity toward the sick 
+poor. Christian physicians often treated the rich and poor alike, and the Church assumed responsibility for 
+the sick. Furthermore, the evolution of the modern hospital actually began with the advent of Christianity 
+and is considered one of the major contributions of monastic medicine. With the rise in 335 AD of 
+Constantine I, the ﬁrst of the Roman emperors to embrace Christianity, all pagan temples of healing were 
+closed, and hospitals were established in every cathedral city. [Note: The word hospital comes from the 
+Latin hospes, meaning, ‘‘host’’ or ‘‘guest.’’ The same root has provided hotel and hostel.] These ﬁrst 
+hospitals were simply houses where weary travelers and the sick could ﬁnd food, lodging, and nursing care. 
+The Church ran these hospitals, and the attending monks and nuns practiced the art of healing.
+
+As the Christian ethic of faith, humanitarianism, and charity spread throughout Europe and then to the 
+Middle East during the Crusades, so did its hospital system. However, trained ‘‘physicians’’ still practiced 
+their trade primarily in the homes of their patients, and only the weary travelers, the destitute, and those 
+considered hopeless cases found their way to hospitals. Conditions in these early hospitals varied widely. 
+Although a few were well ﬁnanced and well managed and treated their patients humanely, most were 
+essentially custodial institutions to keep troublesome and infectious people away from the general public. 
+In these establishments, crowding, ﬁlth, and high mortality among both patients and attendants were 
+commonplace. Thus, the hospital was viewed as an institution to be feared and shunned.
+
+The Renaissance and Reformation in the ﬁfteenth and sixteenth centuries loosened the Church’s stronghold on 
+both the hospital and the conduct of medical practice. During the Renaissance, ‘‘true learning’’—the desire 
+to pursue the true secrets of nature, including medical knowledge—was again stimulated. The study of human 
+anatomy was advanced and the seeds for further studies were planted by the artists Michelangelo, Raphael, 
+Durer, and, of course, the genius Leonardo da Vinci. They viewed the human body as it really was, not simply 
+as a text passage from Galen. The painters of the Renaissance depicted people in sickness and pain, sketched 
+in great detail, and in the process, demonstrated amazing insight into the workings of the heart, lungs, 
+brain, and muscle structure. They also attempted to portray the individual and to discover emotional as well 
+as physical qualities. In this stimulating era, physicians began to approach their patients and the pursuit 
+of medical knowledge in similar fashion. New medical schools, similar to the most famous of such 
+institutions at Salerno, Bologna, Montpelier, Padua, and Oxford, emerged. These medical training centers 
+once again embraced the Hippocratic doctrine that the patient was human, disease was a natural process, and 
+commonsense therapies were appropriate in assisting the body to conquer its disease.
+
+During the Renaissance, fundamentals received closer examination and the age of measurement began. In 1592, 
+when Galileo visited Padua, Italy, he lectured on mathematics to a large audience of medical students. His 
+famous theories and inventions (the thermoscope and the pendulum, in addition to the telescopic lens) were 
+expounded upon and demonstrated. Using these devices, one of his students, Sanctorius, made comparative 
+studies of the human temperature and pulse. A future graduate of Padua, William Harvey, later applied 
+Galileo’s laws of motion and mechanics to the problem of blood circulation. This ability to measure the 
+amount of blood moving through the arteries helped to determine the function of the heart.
+
+Galileo encouraged the use of experimentation and exact measurement as scientiﬁc tools that could provide 
+physicians with an effective check against reckless speculation. Quantiﬁcation meant theories would be 
+veriﬁed before being accepted. Individuals involved in medical research incorporated these new methods into 
+their activities. Body temperature and pulse rate became measures that could be related to other symptoms to 
+assist the physician in diagnosing speciﬁc illnesses or disease. Concurrently, the development of the 
+microscope ampliﬁed human vision, and an unknown world came into focus. Unfortunately, new scientiﬁc 
+devices had little effect on the average physician, who continued to blood-let and to disperse noxious 
+ointments. Only in the universities did scientiﬁc groups band together to pool their instruments and their 
+various talents.
+
+In England, the medical profession found in Henry VIII a forceful and sympathetic patron. He assisted the 
+doctors in their ﬁght against malpractice and supported the establishment of the College of Physicians, the 
+oldest purely medical institution in Europe. When he suppressed the monastery system in the early sixteenth 
+century, church hospitals were taken over by the cities in which they were located. Consequently, a network 
+of private, nonproﬁt, voluntary hospitals came into being. Doctors and medical students replaced the 
+nursing sisters and monk physicians. Consequently, the professional nursing class became almost nonexistent 
+in these public institutions.
+
+Only among the religious orders did nursing remain intact, further compounding the poor lot of patients 
+conﬁned within the walls of the public hospitals. These conditions were to continue until Florence 
+Nightingale appeared on the scene years later.
+
+Still another dramatic event occurred. The demands made upon England’s hospitals, especially the urban 
+hospitals, became overwhelming as the population of these urban centers continued to expand. It was 
+impossible for the facilities to accommodate the needs of so many. Therefore, during the seventeenth century 
+two of the major urban hospitals in London, St. Bartholomew’s and St. Thomas, initiated a policy of 
+admitting and attending to only those patients who could possibly be cured. The incurables were left to meet 
+their destiny in other institutions such as asylums, prisons, or almshouses.
+
+Humanitarian and democratic movements occupied center stage primarily in France and the American colonies 
+during the eighteenth century. The notion of equal rights ﬁnally arose, and as urbanization spread, 
+American society concerned itself with the welfare of many of its members. Medical men broadened the scope 
+of their services to include the ‘‘unfortunates’’ of society and helped to ease their suffering by 
+advocating the power of reason and spearheading prison reform, child care, and the hospital movement. 
+Ironically, as the hospital began to take up an active, curative role in medical care in the eighteenth 
+century, the death rate among its patients did not decline but continued to be excessive. In 1788, for 
+example, the death rate among the patients at the Hotel Dru in Paris, thought to be founded in the seventh 
+century and the oldest hospital in existence today, was nearly 25%. These hospitals were lethal not only to 
+patients, but also to the attendants working in them, whose own death rate hovered between 6 and 12% per 
+year.
+
+Essentially, the hospital remained a place to avoid. Under these circumstances, it is not surprising that 
+the ﬁrst American colonists postponed or delayed building hospitals. For example, the ﬁrst hospital in 
+America, the Pennsylvania Hospital, was not built until 1751, and the City of Boston took over two hundred 
+years to erect its ﬁrst hospital, the Massachusetts General, which opened its doors to the public in 1821.
+
+Not until the nineteenth century could hospitals claim to beneﬁt any signiﬁcant number of patients. This 
+era of progress was due primarily to the improved nursing practices fostered by Florence Nightingale on her 
+return to England from the Crimean War (Fig. 1.2). She demonstrated that hospital deaths were caused more 
+frequently by hospital conditions than by disease. During the latter part of the nineteenth century she was 
+at the height of her inﬂuence, and few new hospitals were built anywhere in the world without her advice. 
+During the ﬁrst half of the nineteenth century Nightingale forced medical attention to focus once more on 
+the care of the patient. Enthusiastically and philosophically, she expressed her views on nursing: ‘‘Nursing 
+is putting us in the best possible condition for nature to restore and preserve health. . . . The art is 
+that of nursing the sick. Please mark, not nursing sickness.’’
+
+Although these efforts were signiﬁcant, hospitals remained, until this century, institutions for the sick 
+poor. In the 1870s, for example, when the plans for the projected Johns Hopkins Hospital were reviewed, it 
+was considered quite appropriate to allocate 324 charity and 24 pay beds. Not only did the hospital 
+population before the turn of the century represent a narrow portion of the socioeconomic spectrum,
+
+but it also represented only a limited number of the type of diseases prevalent in the overall population. 
+In 1873, for example, roughly half of America’s hospitals did not admit contagious diseases, and many others 
+would not admit incurables. Furthermore, in this period, surgery admissions in general hospitals constituted 
+only 5%, with trauma (injuries incurred by traumatic experience) making up a good portion of these cases.
+
+American hospitals a century ago were rather simple in that their organization required no special 
+provisions for research or technology and demanded only cooking
+
+and washing facilities. In addition, since the attending and consulting physicians were normally unsalaried 
+and the nursing costs were quite modest, the great bulk of the hospital’s normal operation expenses were for 
+food, drugs, and utilities. Not until the twentieth century did modern medicine come of age in the United 
+States. As we shall see, technology played a signiﬁcant role in its evolution.
+
+1.2 THE MODERN HEALTH CARE SYSTEM
+
+Modern medical practice actually began at the turn of the twentieth century. Before 1900, medicine had 
+little to offer the average citizen since its resources were mainly physicians, their education, and their 
+little black bags. At this time physicians were in short supply, but for different reasons than exist today. 
+Costs were minimal, demand small, and many of the services provided by the physician also could be obtained 
+from experienced amateurs residing in the community. The individual’s dwelling was the major site for 
+treatment and recuperation, and relatives and neighbors constituted an able and willing nursing staff. 
+Midwives delivered babies, and those illnesses not cured by home remedies were left to run their fatal 
+course. Only in the twentieth century did the tremendous explosion in scientiﬁc knowledge and technology 
+lead to the development of the American health care system with the hospital as its focal point and the 
+specialist physician and nurse as its most visible operatives.
+
+In the twentieth century, advances in the basic sciences (chemistry, physiology, pharmacology, and so on) 
+began to occur much more rapidly. It was an era of intense interdisciplinary cross-fertilization. 
+Discoveries in the physical sciences enabled medical researchers to take giant strides forward. For example, 
+in 1903 William Einthoven devised the ﬁrst electrocardiograph and measured the electrical changes that 
+occurred during the beating of the heart. In the process, Einthoven initiated a new age for both 
+cardiovascular medicine and electrical measurement techniques.
+
+Of all the new discoveries that followed one another like intermediates in a chain reaction, the most 
+signiﬁcant for clinical medicine was the development of x-rays. When W.K. Roentgen described his ‘‘new 
+kinds of rays,’’ the human body was opened to medical inspection. Initially these x-rays were used in the 
+diagnosis of bone fractures and dislocations. In the United States, x-ray machines brought this modern 
+technology to most urban hospitals. In the process, separate departments of radiology were established, and 
+the inﬂuence of their activities spread, with almost every department of medicine (surgery, gynecology, and 
+so forth) advancing with the aid of this new tool. By the 1930s, x-ray visualization of practically all the 
+organ systems of the body was possible by the use of barium salts and a wide variety of radiopaque 
+materials.
+
+The power this technological innovation gave physicians was enormous. The x-ray permitted them to diagnose a 
+wide variety of diseases and injuries accurately. In addition, being within the hospital, it helped trigger 
+the transformation of the hospital from a passive receptacle for the sick poor to an active curative 
+institution for all citizens of the American society.
+
+The introduction of sulfanilamide in the mid-1930s and penicillin in the early 1940s signiﬁcantly reduced 
+the main danger of hospitalization: cross infection among
+
+patients. With these new drugs in their arsenals, surgeons were able to perform their operations without 
+prohibitive morbidity and mortality due to infection. Also consider that, even though the different blood 
+groups and their incompatibility were discovered in 1900 and sodium citrate was used in 1913 to prevent 
+clotting, the full development of blood banks was not practical until the 1930s when technology provided 
+adequate refrigeration. Until that time, ‘‘fresh’’ donors were bled, and the blood was transfused while it 
+was still warm.
+
+As technology in the United States blossomed so did the prestige of American medicine. From 1900 to 1929 
+Nobel Prize winners in physiology or medicine came primarily from Europe, with no American among them. In 
+the period 1930 to 1944, just before the end of World War II, seven Americans were honored with this award. 
+During the post-war period of 1945 to 1975, 37 American life scientists earned similar honors, and from 
+1975–2003, the number was 40. Thus, since 1930 a total of 79 American scientists have performed research 
+signiﬁcant enough to warrant the distinction of a Nobel Prize. Most of these efforts were made possible by 
+the technology (Fig. 1.3) available to these clinical scientists.
+
+The employment of the available technology assisted in advancing the development of complex surgical 
+procedures (Fig. 1.4). The Drinker respirator was introduced in 1927 and the ﬁrst heart–lung bypass in 
+1939. In the 1940s, cardiac catheterization and angiography (the use of a cannula threaded through an arm 
+vein
+
+and into the heart with the injection of radiopaque dye for the x-ray visualization of lung and heart 
+vessels and valves) were developed. Accurate diagnoses of congenital and acquired heart disease (mainly 
+valve disorders due to rheumatic fever) also became possible, and a new era of cardiac and vascular surgery 
+began.
+
+Another child of this modern technology, the electron microscope, entered the medical scene in the 1950s and 
+provided signiﬁcant advances in visualizing relatively small cells. Body scanners to detect tumors arose 
+from the same science that brought societies reluctantly into the atomic age. These ‘‘tumor detectives’’ 
+used radioactive material and became commonplace in newly established departments of nuclear medicine in all 
+hospitals.
+
+The impact of these discoveries and many others was profound. The health care system that consisted 
+primarily of the ‘‘horse and buggy’’ physician was gone forever, replaced by the doctor backed by and 
+centered around the hospital, as medicine began to change to accommodate the new technology.
+
+Following World War II, the evolution of comprehensive care greatly accelerated. The advanced technology 
+that had been developed in the pursuit of military objectives
+
+now became available for peaceful applications with the medical profession beneﬁting greatly from this 
+rapid surge of technological ﬁnds. For instance, the realm of electronics came into prominence. The 
+techniques for following enemy ships and planes, as well as providing aviators with information concerning 
+altitude, air speed, and the like, were now used extensively in medicine to follow the subtle electrical 
+behavior of the fundamental unit of the central nervous system, the neuron, or to monitor the beating heart 
+of a patient.
+
+Science and technology have leap-frogged past one another throughout recorded history. Anyone seeking a 
+causal relation between the two was just as likely to ﬁnd technology the cause and science the effect as to 
+ﬁnd science the cause and technology the effect. As gunnery led to ballistics, and the steam engine to 
+thermodynamics, so powered ﬂight led to aerodynamics. However, with the advent of electronics this causal 
+relationbetweentechnologyandsciencechangedtoasystematicexploitationofscientiﬁc research and the pursuit of 
+knowledge that was undertaken with technical uses in mind.
+
+The list becomes endless when one reﬂects upon the devices produced by the same technology that permitted 
+humans to stand on the moon. What was considered science ﬁction in the 1930s and the 1940s became reality. 
+Devices continually changed to incorporate the latest innovations, which in many cases became outmoded in a 
+very short period of time. Telemetry devices used to monitor the activity of a patient’s heart freed both 
+the physician and the patient from the wires that previously restricted them to the four walls of the 
+hospital room. Computers, similar to those that controlled the ﬂight plans of the Apollo capsules, now 
+completely inundate our society. Since the 1970s, medical researchers have put these electronic brains to 
+work performing complex calculations, keeping records (via artiﬁcial intelligence), and even controlling 
+the very instrumentation that sustains life. The development of new medical imaging techniques (Fig. 1.5) 
+such as computerized tomography (CT) and magnetic resonance imaging (MRI) totally depended on a continually 
+advancing computer technology. The citations and technological discoveries are so myriad it is impossible to 
+mention them all.
+
+‘‘Spare parts’’ surgery is now routine. With the ﬁrst successful transplantation of a kidney in 1954, the 
+concept of artiﬁcial organs gained acceptance and ofﬁcially came into vogue in the medical arena (Fig. 
+1.6). Technology to provide prosthetic devices such as artiﬁcial heart valves and artiﬁcial blood vessels 
+developed. Even an artiﬁcial heart program to develop a replacement for a defective or diseased human heart 
+began. Although, to date, the results have not been satisfactory, this program has provided ‘‘ventricular 
+assistance’’ for those who need it. These technological innovations radically altered surgical organization 
+and utilization. The comparison of a hospital in which surgery was a relatively minor activity as it was a 
+century ago to the contemporary hospital in which surgery plays a prominent role dramatically suggests the 
+manner in which this technological effort has revolutionized the health profession and the institution of 
+the hospital.
+
+Through this evolutionary process, the hospital became the central institution that provided medical care. 
+Because of the complex and expensive technology that could be based only in the hospital and the education 
+of doctors oriented both as clinicians and investigators toward highly technological norms, both the patient 
+and the
+
+physician were pushed even closer to this center of attraction. In addition, the effects of the increasing 
+maldistribution and apparent shortage of physicians during the 1950s and 1960s also forced the patient and 
+the physician to turn increasingly to the ambulatory clinic and the emergency ward of the urban hospital in 
+time of need.
+
+Emergency wards today handle not only an ever-increasing number of accidents (largely related to alcohol and 
+the automobile) and somatic crises such as heart attacks and strokes, but also problems resulting from the 
+social environments that surround the local hospital. Respiratory complaints, cuts, bumps, and minor trauma 
+constitute a signiﬁcant number of the cases seen in a given day. Added to these individuals are those who 
+live in the neighborhood of the hospital and simply cannot afford their own physician. Often such 
+individuals enter the emergency ward for routine care of colds, hangovers, and even marital problems. 
+Because of these developments, the hospital has evolved as the focal point of the present system of health 
+care delivery. The hospital, as presently organized, specializes in highly technical and complex medical 
+procedures. This evolutionary process became inevitable as technology produced increasingly sophisticated 
+equipment that private practitioners or even large group practices were economically unequipped to acquire 
+and maintain. Only the hospital could provide this type of service. The steady expansion of scientiﬁc and 
+technological innovations has not only necessitated specialization for all health professionals (physicians, 
+nurses, and technicians) but has also required the housing of advanced technology within the walls of the 
+modern hospital.
+
+In recent years, technology has struck medicine like a thunderbolt. The Human Genome Project was perhaps the 
+most prominent scientiﬁc and technological effort of the 1990s. Some of the engineering products vital to 
+the effort included automatic sequencers, robotic liquid handling devices, and software for databasing and 
+sequence assembly. As a result, a major transition occurred, moving biomedical engineering to focus on the 
+cellular and molecular level rather than solely on the organ system level. With the success of the genome 
+project, new vistas have been opened (e.g., it is now possible to create individual medications based on 
+one’s DNA) (Fig. 1.7). Advances in nanotechnology, tissue engineering, and artiﬁcial organs are clear 
+indications that science ﬁction will continue to become reality. However, the social and economic 
+consequences of this vast outpouring of information and innovation must be fully understood if this 
+technology is to be exploited effectively and efﬁciently.
+
+As one gazes into the crystal ball, technology offers great potential for affecting health care practices 
+(Fig. 1.8). It can provide health care for individuals in remote rural areas by means of closed-circuit 
+television health clinics with complete communication links to a regional health center. Development of 
+multiphasic screening
+
+systems can provide preventive medicine to the vast majority of the population and restrict admission to the 
+hospital to those needing the diagnostic and treatment facilities housed there. Automation of patient and 
+nursing records can inform physicians of the status of patients during their stay at the hospital and in 
+their homes. With the creation of a central medical records system, anyone who changes residences or becomes 
+ill away from home can have records made available to the attending physician easily and rapidly. Tissue 
+engineering—the application of biological, chemical, and engineering principles towards the repair, 
+restoration, and regeneration of living tissue using biomaterials, cells, and factors alone or in 
+combinations—has gained a great deal of attention and is projected to grow exponentially in the ﬁrst 
+quarter of the twenty-ﬁrst century. These are just a few of the possibilities that illustrate the potential 
+of technology in creating the type of medical care system that will indeed be accessible, of high quality, 
+and reasonably priced for all. [Note: for an extensive review of major events in the evolution of biomedical 
+engineering see Nebekar, 2002.]
+
+1.3 WHAT IS BIOMEDICAL ENGINEERING?
+
+Many of the problems confronting health professionals today are of extreme importance to the engineer 
+because they involve the fundamental aspects of device and systems analysis, design, and practical 
+application—all of which lie at the heart of processes that are fundamental to engineering practice. These 
+medically relevant design problems can range from very complex large-scale constructs, such as the design 
+and implementation of automated clinical laboratories, multiphasic screening facilities (i.e., centers that 
+permit many tests to be conducted), and hospital information systems, to the creation of relatively small 
+and simple devices, such as recording electrodes and transducers that may be used to monitor the activity of 
+speciﬁc physiological processes in either a research or clinical setting. They encompass the many 
+complexities of remote monitoring and telemetry and include the requirements of emergency vehicles, 
+operating rooms, and intensive care units.
+
+The American health care system, therefore, encompasses many problems that represent challenges to certain 
+members of the engineering profession called biomedical engineers. Since biomedical engineering involves 
+applying the concepts, knowledge, and approaches of virtually all engineering disciplines (e.g., electrical, 
+mechanical, and chemical engineering) to solve speciﬁc health care related problems, the opportunities for 
+interaction between engineers and health care professionals are many and varied.
+
+Biomedical engineers may become involved, for example, in the design of a new medical imaging modality or 
+development of new medical prosthetic devices to aid people with disabilities. Although what is included in 
+the ﬁeld of biomedical engineering is considered by many to be quite clear, many conﬂicting opinions 
+concerning the ﬁeld can be traced to disagreements about its deﬁnition. For example, consider the terms 
+biomedical engineering, bioengineering, biological engineering, and clinical (or medical) engineer, which 
+are deﬁned in the Bioengineering Education Directory. Although Pacela deﬁned bioengineering as the broad 
+umbrella term used to describe
+
+this entire ﬁeld, bioengineering is usually deﬁned as a basic-research-oriented activity closely related 
+to biotechnology and genetic engineering, that is, the modiﬁcation of animal or plant cells or parts of 
+cells to improve plants or animals or to develop new microorganisms for beneﬁcial ends. In the food 
+industry, for example, this has meant the improvement of strains of yeast for fermentation. In agriculture, 
+bioengineers may be concerned with the improvement of crop yields by treating plants with organisms to 
+reduce frost damage. It is clear that bioengineers for the future will have tremendous impact on the quality 
+of human life. The full potential of this specialty is difﬁcult to imagine. Typical pursuits include the 
+following:
+
+& & & &
+
+& & & &
+
+Development of improved species of plants and animals for food production Invention of new medical 
+diagnostic tests for diseases Production of synthetic vaccines from clone cells Bioenvironmental engineering 
+to protect human, animal, and plant life from toxicants and pollutants Study of protein-surface interactions 
+Modeling of the growth kinetics of yeast and hybridoma cells Research in immobilized enzyme technology 
+Development of therapeutic proteins and monoclonal antibodies
+
+The term biomedical engineering appears to have the most comprehensive meaning. Biomedical engineers apply 
+electrical, chemical, optical, mechanical, and other engineering principles to understand, modify, or 
+control biological (i.e., human and animal) systems. Biomedical engineers working within a hospital or 
+clinic are more properly called clinical engineers, but this theoretical distinction is not always observed 
+in practice, and many professionals working within U.S. hospitals today continue to be called biomedical 
+engineers.
+
+The breadth of activity of biomedical engineers is signiﬁcant. The ﬁeld has moved from being concerned 
+primarily with the development of medical devices in the 1950s and 1960s to include a more wide-ranging set 
+of activities. As illustrated in Figure 1.9, the ﬁeld of biomedical engineering now includes many new 
+career areas.
+
+These areas include
+
+&
+
+&
+
+& &
+
+& &
+
+&
+
+Application of engineering system analysis (physiologic modeling, simulation, and control to biological 
+problems Detection, measurement, and monitoring of physiologic signals (i.e., biosensors and biomedical 
+instrumentation) Diagnostic interpretation via signal-processing techniques of bioelectric data Therapeutic 
+and rehabilitation procedures and devices (rehabilitation engineering) Devices for replacement or 
+augmentation of bodily functions (artiﬁcial organs) Computer analysis of patient-related data and clinical 
+decision making (i.e., medical informatics and artiﬁcial intelligence) Medical imaging; that is, the 
+graphical display of anatomic detail or physiologic function
+
+&
+
+The creation of new biologic products (i.e., biotechnology and tissue engineering)
+
+Typical pursuits of biomedical engineers include
+
+& & & & & & & & & & & & & &
+
+Research in new materials for implanted artiﬁcial organs Development of new diagnostic instruments for 
+blood analysis Writing software for analysis of medical research data Analysis of medical device hazards for 
+safety and efﬁcacy Development of new diagnostic imaging systems Design of telemetry systems for patient 
+monitoring Design of biomedical sensors Development of expert systems for diagnosis and treatment of 
+diseases Design of closed-loop control systems for drug administration Modeling of the physiologic systems 
+of the human body Design of instrumentation for sports medicine Development of new dental materials Design 
+of communication aids for individuals with disabilities Study of pulmonary ﬂuid dynamics
+
+& &
+
+Study of biomechanics of the human body Development of material to be used as replacement for human skin
+
+The preceding list is not intended to be all-inclusive. Many other applications use the talents and skills 
+of the biomedical engineer. In fact, the list of biomedical engineers’ activities depends on the medical 
+environment in which they work. This is especially true for clinical engineers, biomedical engineers 
+employed in hospitals or clinical settings. Clinical engineers are essentially responsible for all the 
+high-technology instruments and systems used in hospitals today; for the training of medical personnel in 
+equipment safety; and for the design, selection, and use of technology to deliver safe and effective health 
+care.
+
+Engineers were ﬁrst encouraged to enter the clinical scene during the late 1960s in response to concerns 
+about the electrical safety of hospital patients. This safety scare reached its peak when consumer 
+activists, most notably Ralph Nader, claimed that ‘‘at the very least, 1,200 Americans are electrocuted 
+annually during routine diagnostic and therapeutic procedures in hospitals.’’ This concern was based 
+primarily on the supposition that catheterized patients with a low-resistance conducting pathway from 
+outside the body into blood vessels near the heart could be electrocuted by voltage differences well below 
+the normal level of sensation. Despite the lack of statistical evidence to substantiate these claims, this 
+outcry served to raise the level of consciousness of health care professionals with respect to the safe use 
+of medical devices.
+
+In response to this concern, a new industry—hospital electrical safety—arose almost overnight. Organizations 
+such as the National Fire Protection Association (NFPA) wrote standards addressing electrical safety in 
+hospitals. Electrical safety analyzer manufacturers and equipment safety consultants became eager to serve 
+the needs of various hospitals that wanted to provide a ‘‘safety ﬁx,’’ and some companies developed new 
+products to ensure patient safety, particularly those specializing in power distribution systems (most 
+notably isolation transformers). To alleviate these fears, the Joint Commission on the Accreditation of 
+Healthcare Organizations (then known as the Joint Commission on Accreditation of Hospitals) turned to NFPA 
+codes as the standard for electrical safety and further speciﬁed that hospitals must inspect all equipment 
+used on or near a patient for electrical safety at least every six months. To meet this new requirement 
+hospital administrators considered a number of options, including: (1) paying medical device manufacturers 
+to perform these electrical safety inspections, (2) contracting for the services of shared-services 
+organizations, or (3) providing these services with in-house staff. When faced with this decision, most 
+large hospitals opted for in-house service and created whole departments to provide the technological 
+support necessary to address these electrical safety concerns.
+
+As a result, a new engineering discipline—clinical engineering—was born. Many hospitals established 
+centralized clinical engineering departments. Once these departments were in place, however, it soon became 
+obvious that electrical safety failures represented only a small part of the overall problem posed by the 
+presence of medical equipment in the clinical environment. At the time, this equipment was neither totally 
+understood nor properly maintained. Simple visual inspections often revealed broken
+
+knobs, frayed wires, and even evidence of liquid spills. Many devices did not perform in accordance with 
+manufacturers’ speciﬁcations and were not maintained in accordance with manufacturers’ recommendations. In 
+short, electrical safety problems were only the tip of the iceberg. By the mid-1970s, complete performance 
+inspections before and after equipment use became the norm and sensible inspection procedures were 
+developed. In the process, these clinical engineering pioneers began to play a more substantial role within 
+the hospital. As new members of the hospital team, they
+
+&
+
+&
+
+&
+
+&
+
+Became actively involved in developing cost-effective approaches for using medical technology Provided 
+advice to hospital administrators regarding the purchase of medical equipment based on its ability to meet 
+speciﬁc technical speciﬁcations Started utilizing modern scientiﬁc methods and working with 
+standards-writing organizations Became involved in the training of health care personnel regarding the safe 
+and efﬁcient use of medical equipment
+
+Then, during the 1970s and 1980s, a major expansion of clinical engineering occurred, primarily due to the 
+following events:
+
+&
+
+&
+
+&
+
+&
+
+The Veterans’ Administration (VA), convinced that clinical engineers were vital to the overall operation of 
+the VA hospital system, divided the country into biomedical engineering districts, with a chief biomedical 
+engineer overseeing all engineering activities in the hospitals in that district.
+
+Throughout the United States, clinical engineering departments were established in most large medical 
+centers and hospitals and in some smaller clinical facilities with at least 300 beds.
+
+Health care professionals (i.e., physicians and nurses) needed assistance in utilizing existing technology 
+and incorporating new innovations.
+
+Certiﬁcation of clinical engineers became a reality to ensure the continued competence of practicing 
+clinical engineers.
+
+During the 1990s, the evaluation of clinical engineering as a profession continued with the establishment of 
+the American College of Clinical Engineering (ACCE) and the Clinical Engineering Division within the 
+International Federation of Medical and Biological Engineering (IFMBE).
+
+Clinical engineers today provide extensive engineering services for the clinical staff and serve as a 
+signiﬁcant resource for the entire hospital (Fig. 1.10). Possessing indepth knowledge regarding available 
+in-house technological capabilities as well as the technical resources available from outside ﬁrms, the 
+modern clinical engineer enables the hospital to make effective and efﬁcient use of most if not all of its 
+technological resources.
+
+Biomedical engineering is thus an interdisciplinary branch of engineering heavily based both in engineering 
+and in the life sciences. It ranges from theoretical, nonexperimental undertakings to state-of-the-art 
+applications. It can encompass research, development, implementation, and operation. Accordingly, like 
+medical practice itself, it is unlikely that any single person can acquire expertise that
+
+encompasses the entire ﬁeld. As a result, there has been an explosion of biomedical engineering specialists 
+to cover this broad spectrum of activity. Yet, because of the interdisciplinary nature of this activity, 
+there is considerable interplay and overlapping of interest and effort between them. For example, biomedical 
+engineers engaged in the development of biosensors may interact with those interested in prosthetic devices 
+to develop a means to detect and use the same bioelectric signal to power a prosthetic device. Those engaged 
+in automating the clinical chemistry laboratory may collaborate with those developing expert systems to 
+assist clinicians in making clinical decisions based on speciﬁc laboratory data. The possibilities are 
+endless.
+
+Perhaps a greater potential beneﬁt occurring from the utilization of biomedical engineers is the 
+identiﬁcation of problems and needs of our present health care delivery system that can be solved using 
+existing engineering technology and systems methodology. Consequently, the ﬁeld of biomedical engineering 
+offers hope in the continuing battle to provide high-quality health care at a reasonable cost. If properly 
+directed towards solving problems related to preventive medical approaches, ambulatory care services, and 
+the like, biomedical engineers can provide the tools and techniques to make our health care system more 
+effective and efﬁcient.
+
+1.4 ROLES PLAYED BY BIOMEDICAL ENGINEERS
+
+In its broadest sense, biomedical engineering involves training essentially three types of individuals: (1) 
+the clinical engineer in health care, (2) the biomedical design engineer for industry, and (3) the research 
+scientist. Currently, one might also distinguish among three speciﬁc roles these biomedical engineers can 
+play. Each is different enough to merit a separate description. The ﬁrst type, the most common, might be 
+called the ‘‘problem solver.’’ This biomedical engineer (most likely the clinical engineer or biomedical 
+design engineer) maintains the traditional service relationship with the life scientists who originate a 
+problem that can be solved by applying the speciﬁc expertise of the engineer. For this problem-solving 
+process to be efﬁcient and successful, however, some knowledge of each other’s language and a ready 
+interchange of information must exist. Biomedical engineers must understand the biological situation to 
+apply their judgment and contribute their knowledge toward the solution of the given problem as well as to 
+defend their methods in terms that the life scientist can understand. If they are unable to do these things, 
+they do not merit the ‘‘biomedical’’ appellation.
+
+The second type, which is more rare, might be called the ‘‘technological entrepreneur’’ (most likely a 
+biomedical design engineer in industry). This individual assumes that the gap between the technological 
+education of the life scientist or physician and present technological capability has become so great that 
+the life scientist cannot pose a problem that will incorporate the application of existing technology. 
+Therefore, technological entrepreneurs examine some portion of the biological or medical front and identify 
+areas in which advanced technology might be advantageous. Thus, they pose their own problem and then proceed 
+to provide the solution, at ﬁrst conceptually and then in the form of hardware or software. Finally, these 
+individuals must convince the medical community that they can provide a useful tool because, contrary to the 
+situation in which problem solvers ﬁnd themselves, the entrepreneur’s activity is speculative at best and 
+has no ready-made customer for the results. If the venture is successful, however, whether scientiﬁcally or 
+commercially, then an advance has been made much earlier than it would have been through the conventional 
+arrangement. Because of the nature of their work, technological entrepreneurs should have a great deal of 
+engineering and medical knowledge as well as experience in numerous medical systems.
+
+The third type of biomedical engineer, the ‘‘engineer–scientist’’ (most likely found in academic 
+institutions and industrial research labs), is primarily interested in applying engineering concepts and 
+techniques to the investigation and exploration of biological processes. The most powerful tool at their 
+disposal is the construction of an appropriate physical or mathematical model of the speciﬁc biological 
+system under study. Through simulation techniques and available computing machinery, they can use this model 
+to understand features that are too complex for either analytical computation or intuitive recognition. In 
+addition, this process of simulation facilitates the design of appropriate experiments that can be performed 
+on the actual biological system. The results of these experiments can, in turn, be used to amend the model.
+
+Thus, increased understanding of a biological mechanism results from this iterative process.
+
+This mathematical model can also predict the effect of these changes on a biological system in cases where 
+the actual experiments may be tedious, very difﬁcult, or dangerous. The researchers are thus rewarded with 
+a better understanding of the biological system, and the mathematical description forms a compact, precise 
+language that is easily communicated to others. The activities of the engineer–scientist inevitably involve 
+instrument development because the exploitation of sophisticated measurement techniques is often necessary 
+to perform the biological side of the experimental work. It is essential that engineer–scientists work in a 
+biological environment, particularly when their work may ultimately have a clinical application. It is not 
+enough to emphasize the niceties of mathematical analysis while losing the clinical relevance in the 
+process. This biomedical engineer is a true partner of the biological scientist and has become an integral 
+part of the research teams being formed in many institutes to develop techniques and experiments that will 
+unfold the mysteries of the human organism. Each of these roles envisioned for the biomedical engineer 
+requires a different attitude, as well as a speciﬁc degree of knowledge about the biological environment. 
+However, each engineer must be a skilled professional with a signiﬁcant expertise in engineering 
+technology. Therefore, in preparing new professionals to enter this ﬁeld at these various levels, 
+biomedical engineering educational programs are continually being challenged to develop curricula that will 
+provide an adequate exposure to and knowledge about the environment, without sacriﬁcing essential 
+engineering skills. As we continue to move into a period characterized by a rapidly growing aging 
+population, rising social and economic expectations, and a need for the development of more adequate 
+techniques for the prevention, diagnosis, and treatment of disease, development and employment of biomedical 
+engineers have become a necessity. This is true not only because they may provide an opportunity to increase 
+our knowledge of living systems, but also because they constitute promising vehicles for expediting the 
+conversion of knowledge to effective action.
+
+The ultimate role of the biomedical engineer, like that of the nurse and physician, is to serve society. 
+This is a profession, not just a skilled technical service. To use this new breed effectively, health care 
+practitioners and administrators should be aware of the needs for these new professionals and the roles for 
+which they are being trained. The great potential, challenge, and promise in this endeavor offer not only 
+signiﬁcant technological beneﬁts but also humanitarian beneﬁts.
+
+1.5 PROFESSIONAL STATUS OF BIOMEDICAL ENGINEERING
+
+Biomedical engineers are professionals. Professionals have been deﬁned as an aggregate of people ﬁnding 
+identity in sharing values and skills absorbed during a common course of intensive training. Whether 
+individuals are professionals is determined by examining whether or not they have internalized certain given 
+professional values. Furthermore, a professional is someone who has internalized professional values and is 
+licensed on the basis of his or her technical competence. Professionals generally
+
+
+accept scientiﬁc standards in their work, restrict their work activities to areas in which they are 
+technically competent, avoid emotional involvement, cultivate objectivity in their work, and put their 
+clients’ interests before their own.
+
+The concept of a profession that is involved in the design, development, and management of medical 
+technology encompasses three primary occupational models: science, business, and profession. Consider 
+initially the contrast between science and profession. Science is seen as the pursuit of knowledge, its 
+value hinging on providing evidence and communicating with colleagues. Profession, on the other hand, is 
+viewed as providing a service to clients who have problems they cannot handle themselves. Scientists and 
+professionals have in common the exercise of some knowledge, skill, or expertise. However, while scientists 
+practice their skills and report their results to knowledgeable colleagues, professionals such as lawyers, 
+physicians, and engineers serve lay clients. To protect both the professional and the client from the 
+consequences of the layperson’s lack of knowledge, the practice of the profession is often regulated through 
+such formal institutions as state licensing. Both professionals and scientists must persuade their clients 
+to accept their ﬁndings. Professionals endorse and follow a speciﬁc code of ethics to serve society. On 
+the other hand, scientists move their colleagues to accept their ﬁndings through persuasion.
+
+Consider, for example, the medical profession. Its members are trained in caring for the sick, with the 
+primary goal of healing them. These professionals not only have a responsibility for the creation, 
+development, and implementation of that tradition, but they are also expected to provide a service to the 
+public, within limits, without regard to self-interest. To ensure proper service, the profession closely 
+monitors the licensing and certiﬁcation process. Thus, medical professionals themselves may be regarded as 
+a mechanism of social control. However, this does not mean that other facets of society are not involved in 
+exercising oversight and control of physicians in their practice of medicine.
+
+A ﬁnal attribute of professionals is that of integrity. Physicians tend to be both permissive and 
+supportive in relationships with patients and yet are often confronted with moral dilemmas involving the 
+desires of their patients and social interest. For example, how to honor the wishes of terminally ill 
+patients while not facilitating the patients’ deaths is a moral question that health professionals are 
+forced to confront. A detailed discussion of the moral issues posed by medical technology is presented in 
+Chapter 2.
+
+One can determine the status of professionalization by noting the occurrence of six crucial events: (1) the 
+ﬁrst training school; (2) the ﬁrst university school; (3) the ﬁrst local professional association; (4) 
+the ﬁrst national professional association; (5) the ﬁrst state license law; and (6) the ﬁrst formal code 
+of ethics.
+
+The early appearances of the training school and the university afﬁliation underscore the importance of the 
+cultivation of a knowledge base. The strategic innovative role of the universities and early teachers lies 
+in linking knowledge to practice and creating a rationale for exclusive jurisdiction. Those practitioners 
+pushing for prescribed training then form a professional association. The association deﬁnes the tasks of 
+the profession: raising the quality of recruits; redeﬁning their function to permit the use of less 
+technically skilled people to perform the more routine, less involved
+
+tasks; and managing internal and external conﬂicts. In the process, internal conﬂict may arise between 
+those committed to previously established procedures and newcomers committed to change and innovation. At 
+this stage, some form of professional regulation, such as licensing or certiﬁcation, surfaces because of a 
+belief that it will ensure minimum standards for the profession, enhance status, and protect the layperson 
+in the process.
+
+The last area of professional development is the establishment of a formal code of ethics, which usually 
+includes rules to exclude unqualiﬁed and unscrupulous practitioners, rules to reduce internal competition, 
+and rules to protect clients and emphasize the ideal service to society. A code of ethics usually comes at 
+the end of the professionalization process.
+
+In biomedical engineering, all six of these critical steps have been taken. The ﬁeld of biomedical 
+engineering, which originated as a professional group interested primarily in medical electronics in the 
+late 1950s, has grown from a few scattered individuals to a very well-established organization. There are 
+approximately 48 international societies throughout the world serving an increasingly expanding community of 
+biomedical engineers. Today, the scope of biomedical engineering is enormously diverse. Over the years, many 
+new disciplines such as tissue engineering and artiﬁcial intelligence, which were once considered alien to 
+the ﬁeld, are now an integral part of the profession.
+
+Professional societies play a major role in bringing together members of this diverse community to share 
+their knowledge and experience in pursuit of new technological applications that will improve the health and 
+quality of life of human beings. Intersocietal cooperation and collaborations, both at national and 
+international levels, are more actively fostered today through professional organizations such as the 
+Biomedical Engineering Society (BMES), the American Institute of Medical and Biological Engineers (AIMBE), 
+and the Engineering in Medicine and Biology Society (EMBS) of the Institute of Electrical and Electronic 
+Engineers (IEEE).
+
+1.6 PROFESSIONAL SOCIETIES
+
+1.6.1 American Institute for Medical and Biological Engineering
+
+The United States has the largest biomedical engineering community in the world. Major professional 
+organizations that address various cross sections of the ﬁeld and serve biomedical engineering 
+professionals include: (1) the American College of Clinical Engineering, (2) the American Institute of 
+Chemical Engineers, (3) the American Medical Informatics Association, (4) the American Society of 
+Agricultural Engineers, (5) the American Society for Artiﬁcial Internal Organs, (6) the American Society of 
+Mechanical Engineers, (7) the Association for the Advancement of Medical Instrumentation, (8) the Biomedical 
+Engineering Society, (9) the IEEE Engineering in Medicine and Biology Society, (10) an interdisciplinary 
+Association for the Advancement of Rehabilitation and Assistive Technologies, and (11) the Society for 
+Biomaterials. In an effort to unify all the disparate components of the biomedical engineering
+
+community in the United States as represented by these various societies, the American Institute for Medical 
+and Biological Engineering (AIMBE) was created in 1992. The primary goal of AIMBE is to serve as an umbrella 
+organization in the United States for the purpose of unifying the bioengineering community, addressing 
+public policy issues, and promoting the engineering approach in society’s effort to enhance health and 
+quality of life through the judicious use of technology. For information, contact AIMBE, 1901 Pennsylvania 
+Avenue N.W., Suite 401, Washington, D.C. 20006 (http://aimbe.org/; Email: info@aimbe.org).
+
+1.6.2 IEEE Engineering in Medicine and Biology Society
+
+The Institute of Electrical and Electronic Engineers (IEEE) is the largest international professional 
+organization in the world, and it accommodates 37 societies and councils under its umbrella structure. Of 
+these 37, the Engineering in Medicine and Biology Society (EMBS) represents the foremost international 
+organization serving the needs of over 8000 biomedical engineering members around the world. The major 
+interest of the EMBS encompasses the application of concepts and methods from the physical and engineering 
+sciences to biology and medicine. Each year the society sponsors a major international conference while 
+cosponsoring a number of theme-oriented regional conferences throughout the world. Premier publications 
+consist of a monthly journal (Transactions on Biomedical Engineering), three quarterly journals 
+(Transactions on Neural Systems and Rehabilitation Engineering, Transactions on Information Technology in 
+Biomedicine, and Transactions on Nanobioscience), and a bimonthly magazine (IEEE Engineering in Medicine and 
+Biology Magazine). Secondary publications, authored in collaboration with other societies, include 
+Transactions on Medical Imaging, Transactions on Neural Networks, Transactions on Pattern Analysis, and 
+Machine Intelligence. For more information, contact the IEEE EMBS Executive Ofﬁce, IEEE, 445 Hoes Lane, 
+Piscataway, NJ, 08855–1331 USA (http://www.embs. org/; Email: emb-exec@ieee.org).
+
+1.6.3 Biomedical Engineering Society
+
+Established in 1968, the Biomedical Engineering Society (BMES) was founded to address a need for a society 
+that afforded equal status to representatives of both biomedical and engineering interests. With that in 
+mind, the primary goal of the BMES, as stated in their Articles of Incorporation, is ‘‘to promote the 
+increase of biomedical engineering knowledge and its utilization.’’ Regular meetings are scheduled 
+biannually in both the spring and fall. Additionally, special interest meetings are interspersed throughout 
+the year, and are promoted in conjunction with other biomedical engineering societies such as AIMBE and 
+EMBS. The primary publications associated with the BMES include: Annals of Biomedical Engineering, a monthly 
+journal presenting original research in several biomedical ﬁelds; BMES Bulletin, a quarterly newsletter 
+presenting a wider array of subject matter relating both to biomedical engineering and BMES news and events; 
+and the BMES Membership Directory, an annual publication listing the contact information of the society’s
+
+individual constituents. For more information, contact the BMES directly: BMES, 8401 Corporate Drive, Suite 
+225, Landover, MD 20785–2224, USA (http:// www.bmes.org/default.asp; Email: info@bmes.org).
+
+The activities of these biomedical engineering societies are critical to the continued advancement of the 
+professional status of biomedical engineers. Therefore, all biomedical engineers, including students in the 
+profession, are encouraged to become members of these societies and engage in the activities of true 
+professionals.
+
+EXERCISES
+
+1. Select a speciﬁc medical technology from the following list of historical periods. Describe the 
+fundamental principles of operation and discuss their impact on health care delivery: (a) 1900–1939; (b) 
+1945–1970; (c) 19701980; (d) 1980–2003.
+
+2. Provide a review of the effect computer technology has had on health care delivery, citing the computer 
+application and the time frame of its implementation.
+
+3. The term genetic engineering implies an engineering function. Is there one? Should this activity be 
+included in the ﬁeld of biomedical engineering?
+
+4. Discuss in some detail the role the genome project has had and is anticipated to have on the development 
+of new medical technology.
+
+5. Using your crystal ball, what advances in engineering and/or life science do you think will have the 
+greatest effect on clinical care or biomedical research?
+
+6. The organizational structure of a hospital involves three major groups: (1) the board of trustees, (2) 
+administrators, and (3) the medical staff. Specify the major responsibilities of each. In what group should 
+a department of clinical engineering reside? Explain your answer.
+
+7. Based on its deﬁnition, what attributes should a clinical engineer have?
+
+8. List at least seven (7) speciﬁc activities of clinical engineers.
+
+9. Provide modern examples (i.e., names of individuals and their activities) of the three major roles played 
+by biomedical engineers: (a) The problem solver; (b) The technological entrepreneur; (c) The 
+engineer–scientist.
+
+10. Do the following groups ﬁt the deﬁnition of a profession? Discuss how they do or do not: (a) 
+Registered nurses; (b) Biomedical technicians; (c) Respiratory therapists; (d) Hospital administrators.
+
+11. List the areas of knowledge necessary to practice biomedical engineering.
+
+Identify where in the normal educational process one can acquire knowledge. How best can administrative 
+skills be acquired?
+
+12. Provide a copy of the home page for a biomedical engineering professional society and a list of the 
+society’s major activities for the coming year.
+
+13. What is your view regarding the role biomedical engineers will play in the health care system of 
+tomorrow?
+
+14. Discuss the trade-offs in health care that occur as a result of limited ﬁnancial resources.
+
+15. Discuss whether medical technology is an economic cost factor, beneﬁt, or both.
+
+REFERENCES AND SUGGESTED READING
+
+Aston, C. (2001). Biological warfare canaries. IEEE Spectrum 38:10, 35–40.
+
+Bankman, I.N. (2000). Handbook of Medical Imaging. CRC Press, Boca Raton, FL. Bronzino, J.D. (2005). 
+Biomedical Engineering Handbook, 2nd Ed. CRC Press, Boca Raton,
+
+FL.
+
+Bronzino, J.D. (1992). Management of Medical Technology: A Primer for Clinical Engineer-
+
+ing. Butterworth, Stoneham, MA.
+
+Carson, E. and Cobelli, C. (2001). Modeling Methodology for Physiology and Medicine.
+
+Academic Press, San Diego, CA.
+
+Laurenchin, C.T. (2003). Repair and restore with tissue engineering. EMBS Magazine 22:5,
+
+16–17.
+
+Nebekar, F. (2002). Golden accomplishments in biomedical engineering. EMBS Magazine
+
+21:3, 17–48.
+
+Pacela, A. (1990). Bioengineering Education Directory. Quest Publishing, Brea, CA. Palsson, B.O. and Bhatia, 
+S.N. (2004). Tissue Engineering. Prentice Hall, Englewood, NJ. The EMBS Magazine published by the Institute 
+of Electrical and Electronic Engineers, edited
+
+by John Enderle, especially Writing the book on BME, 21:3, 2002.
+
+

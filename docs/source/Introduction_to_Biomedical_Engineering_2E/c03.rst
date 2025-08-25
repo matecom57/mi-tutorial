@@ -1,0 +1,1461 @@
+c03
+===
+
+
+ANATOMY AND PHYSIOLOGY
+
+Susan Blanchard, PhD
+
+Chapter Contents
+
+3.1 Introduction
+
+3.2 Cellular Organization
+
+3.2.1 Plasma Membrane
+
+3.2.2 Cytoplasm and Organelles
+
+3.2.3 DNA and Gene Expression
+
+3.3 Tissues
+
+3.4 Major Organ Systems
+
+3.4.1 Circulatory System
+
+3.4.2 Respiratory System
+
+3.4.3 Nervous System
+
+3.4.4 Skeletal System
+
+3.4.5 Muscular System
+
+3.5 Homeostasis Exercises Suggested Reading
+
+At the conclusion of this chapter, the reader will be able to:
+
+&
+
+& & &
+
+Deﬁne anatomy and physiology and explain why they are important to biomedical engineering.
+
+Deﬁne important anatomical terms.
+
+Describe the cell theory.
+
+List the major types of organic compounds and other elements found in cells.
+
+&
+
+& & &
+
+&
+
+&
+
+Explain how the plasma membrane maintains the volume and internal concentrations of a cell.
+
+Calculate the internal osmolarity and ionic concentrations of a model cell at equilibrium. List and describe 
+the functions of the major organelles found within mammalian cells. Describe the similarities, differences, 
+and purposes of replication, transcription, and translation.
+
+List and describe the major components and functions of ﬁve organ systems: Circulatory, respiratory, 
+nervous, skeletal, and muscular.
+
+Deﬁne homeostasis and describe how feedback mechanisms help maintain it.
+
+3.1 INTRODUCTION
+
+Since biomedical engineering is an interdisciplinary ﬁeld based in both engineering and the life sciences, 
+it is important for biomedical engineers to have knowledge about and be able to communicate in both areas. 
+Biomedical engineers must understand the basic components of the body and how they function well enough to 
+exchange ideas and information with physicians and life scientists. Two of the most basic terms and areas of 
+study in the life sciences are anatomy and physiology. Anatomy refers to the internal and external 
+structures of the body and their physical relationships, whereas physiology refers to the study of the 
+functions of those structures.
+
+Figure 3.1a shows a male body in anatomical position. In this position, the body is erect and facing forward 
+with the arms hanging at the sides and the palms facing outward. This particular view shows the anterior 
+(ventral) side of the body, whereas Figure 3.1c illustrates the posterior (dorsal) view of another male body 
+that is also in anatomical position and Figure 3.1b presents the lateral view of the female body. In 
+clinical practice, directional terms are used to describe the relative positions of various parts of the 
+body. Proximal parts are nearer to the trunk of the body or to the attached end of a limb than are distal 
+parts (Fig. 3.1a). Parts of the body that are located closer to the head than other parts when the body is 
+in anatomical position are said to be superior (Fig. 3.1b), whereas those located closer to the feet than 
+other parts are termed inferior. Medial implies that a part is toward the midline of the body, whereas 
+lateral means away from the midline (Fig. 3.1c). Parts of the body that lie in the direction of the head are 
+said to be in the cranial direction, whereas those parts that lie in the direction of the feet are said to 
+be in the caudal direction (Fig. 3.2).
+
+Anatomical locations can also be described in terms of planes. The plane that divides the body into two 
+symmetric halves along its midline is called the midsaggital plane (Fig. 3.2). Planes that are parallel to 
+the midsaggital plane but do not divide the body into symmetric halves are called sagittal planes. The 
+frontal plane is perpendicular to the midsaggital plane and divides the body into asymmetric anterior and 
+posterior portions. Planes that cut across the body and are perpendicular to the midsaggital and frontal 
+planes are called transverse planes.
+
+Human bodies are divided into two main regions, axial and appendicular. The axial part consists of the head, 
+neck, thorax (chest), abdomen, and pelvis whereas the
+
+appendicular part consists of the upper and lower extremities. The upper extremities, or limbs, include the 
+shoulders, upper arms, forearms, wrists, and hands whereas the lower extremities include the hips, thighs, 
+lower legs, ankles, and feet. The abdominal region can be further divided into nine regions or four 
+quadrants.
+
+The cavities of the body hold the internal organs. The major cavities are the dorsal and ventral body 
+cavities and the smaller cavities include the nasal, oral, orbital (eye), tympanic (middle ear), and 
+synovial (movable joint) cavities. The dorsal body cavity includes the cranial cavity that holds the brain 
+and the spinal cavity that contains the spinal cord. The ventral body cavity contains the thoracic and 
+abdominopelvic cavities that are separated by the diaphragm. The thoracic cavity contains the lungs and the 
+mediastinum, which contains the heart and its attached blood vessels, the trachea, the esophagus, and all 
+other organs in this region except for the lungs. The abdominopelvic cavity is divided by an imaginary line 
+into the abdominal and pelvic cavities. The former is the largest cavity in the body and holds the stomach, 
+small and large intestines, liver, spleen, pancreas, kidneys, and gall bladder. The latter contains the 
+urinary bladder, the rectum, and the internal portions of the reproductive system.
+
+The anatomical terms described previously are used by physicians, life scientists, and biomedical engineers 
+when discussing the whole human body or its major parts. Correct use of these terms is vital for biomedical 
+engineers to communicate with health care professionals and to understand the medical problem of concern or 
+interest. Although it is important to be able to use the general terms that describe
+
+the human body, it is also important for biomedical engineers to have a basic understanding of some of the 
+more detailed aspects of human anatomy and physiology.
+
+3.2 CELLULAR ORGANIZATION
+
+Although there are many smaller units such as enzymes and organelles that perform physiological tasks or 
+have deﬁnable structures, the smallest anatomical and physiological unit in the human body that can, under 
+appropriate conditions, live and reproduce on its own is the cell. Cells were ﬁrst discovered more than 300 
+years ago shortly after Antony van Leeuwenhoek, a Dutch optician, invented the microscope. With his 
+microscope, van Leeuwenhoek was able to observe ‘‘many very small animalcules, the motions of which were 
+very pleasing to behold’’ in tartar scrapings from his teeth. Following the efforts of van Leeuwenhoek, 
+Robert Hooke, a Curator of Instruments for the Royal Society of England, in the late 1600s further described 
+cells when he used one of the earliest microscopes to look at the plant cell walls that remain in cork. 
+These observations and others led to the cell theory developed by
+
+Theodor Schwann and Matthias Jakob Schleiden and formalized by Rudolf Virchow in the mid-1800s. The cell 
+theory states that: (1) all organisms are composed of one or more cells, (2) the cell is the smallest unit 
+of life, and (3) all cells come from previously existing cells. Thus, cells are the basic building blocks of 
+life.
+
+Cells are composed mostly of organic compounds and water with more than 60% of the weight in a human body 
+coming from water. The organic compoundscarbohydrates, lipids, proteins, and nucleic acids—that cells 
+synthesize are the molecules that are fundamental to sustaining life. These molecules function as energy 
+packets, storehouses of energy and hereditary information, structural materials, and metabolic workers. The 
+most common elements found in humans (in descending order based on percent of body weight) are oxygen, 
+carbon, hydrogen, nitrogen, calcium, phosphorus, potassium, sodium, chlorine, magnesium, sulfur, iron, and 
+iodine. Carbon, hydrogen, oxygen, and nitrogen contribute more than 99% of all the atoms in the body. Most 
+of these elements are incorporated into organic compounds, but some exist in other forms, such as phosphate 
+groups and ions.
+
+Carbohydrates are used by cells not only as structural materials but also to transport and store energy. 
+There are three classes of carbohydrates: monosaccharides (e.g., glucose), oligosaccharides (e.g., lactose, 
+sucrose, maltose), and polysaccharides (e.g., glycogen). Lipids are greasy or oily compounds that will 
+dissolve in each other but not in water. They form structural materials in cells and are the main reservoirs 
+of stored energy. Proteins are the most diverse form of biological molecules. Specialized proteins called 
+enzymes make metabolic reactions proceed at a faster rate than would occur if the enzymes were not available 
+and enable cells to produce the organic compounds of life. Other proteins provide structural elements in the 
+body, act as transport channels across plasma membranes, function as signals for changing activities, and 
+provide chemical weapons against disease-carrying bacteria. These diverse proteins are built from a small 
+number (20) of essential amino acids.
+
+Nucleotides and nucleic acids make up the last category of important biological molecules. Nucleotides are 
+small organic compounds that contain a ﬁve-carbon sugar (ribose or deoxyribose), a phosphate group, and a 
+nitrogen-containing base that has a single or double carbon ring structure. Adenosine triphosphate (ATP) is 
+the energy currency of the cell and plays a central role in metabolism. Other nucleotides are subunits of 
+coenzymes which are enzyme helpers. The two nucleic acids are deoxyribonucleic acid (DNA) and ribonucleic 
+acid (RNA). DNA (Fig. 3.3) is a unique, helical molecule that contains chains of paired nucleotides that run 
+in opposite directions. Each nucleotide contains either a pyrimidine base—thymine (T) or cytosine (C)—with a 
+single ring structure or a purine base—adenine (A) or guanine (G)with a double ring. In the double helix of 
+DNA, thymine always pairs with adenine (T–A) and cytosine always pairs with guanine (C–G). RNA is similar to 
+DNA except that it consists of a single helical strand, contains ribose instead of deoxyribose, and has 
+uracil (U) instead of thymine.
+
+All cells are surrounded by a plasma membrane that separates, but does not isolate, the cell’s interior from 
+its environment. Animal cells, such as those found in humans, are eukaryotic cells. A generalized animal 
+cell is shown in Figure 3.4. In addition to the plasma membrane, eukaryotic cells contain membrane-bound 
+organelles and a
+
+membrane-bound nucleus. Prokaryotic cells (e.g., bacteria) lack membrane-bound structures other than the 
+plasma membrane. In addition to a plasma membrane, all cells have a region that contains DNA (which carries 
+the hereditary instructions for the cell) and cytoplasm (which is a semiﬂuid substance that includes 
+everything inside the plasma membrane except for the DNA).
+
+3.2.1 Plasma Membrane
+
+The plasma membrane performs several functions for the cell. It gives mechanical strength, provides 
+structure, helps with movement, and controls the cell’s volume and its activities by regulating the movement 
+of chemicals in and out of the cell. The plasma membrane is composed of two layers of phospholipids 
+interspersed with proteins and cholesterol (Fig. 3.5). The proteins in the plasma membranes of mammalian 
+cells provide binding sites for hormones, recognition markers for identifying cells as one type or another, 
+adhesive mechanisms for binding adjacent cells to each other, and channels for transporting materials across 
+the plasma membrane. The phospholipids are arranged with their ‘‘water loving’’ (hydrophilic) heads pointing 
+outward and their ‘‘water fearing’’ (hydrophobic) tails pointing inward. This doublelayer arrangement of 
+phospholipids interspersed with protein channels helps maintain the internal environment of a cell by 
+controlling the substances that move across the membrane, whereas the cholesterol molecules act as 
+stabilizers to prevent extensive lateral movement of the lipid molecules.
+
+Some molecules (e.g., oxygen, carbon dioxide, and water) can easily cross the plasma membrane, whereas other 
+substances (e.g., large molecules and ions) must move through the protein channels. Osmosis is the process 
+by which substances move across a selectively permeable membrane such as a cell’s plasma membrane, whereas 
+diffusion refers to the movement of molecules from an area of relatively high concentration to an area of 
+relatively low concentration. Substances that can easily cross the plasma membrane achieve diffusion 
+equilibrium when there is no net movement of these substances across the membrane (i.e., the concentration 
+of the substance inside the cell equals the concentration of the substance outside of the cell). Active 
+transport, which requires an input of energy, usually in the form of ATP, can be used to move ions and 
+molecules across the plasma membrane and is often used to move them from areas of low concentration to areas 
+of high concentration. This mechanism helps maintain concentrations of ions and molecules inside a cell that 
+are different from the concentrations outside the cell. A typical mammalian cell has internal sodium ion (Na 
+þ )
+
+concentrations of 12 mM (12 moles of Na þ per 1000 liters of solution) and extracellular Na þ concentrations 
+of 120 mM, whereas intracellular and extracellular potassium ion (K þ ) concentrations are on the order of 
+125 mM and 5 mM, respectively. In addition to positively charged ions (cations), cells also contain 
+negatively charged ions (anions). A typical mammalian cell has intracellular and extracellular chloride ion 
+(Cl À ) concentrations of 5 mM and 125 mM and internal anion (e.g., proteins, charged amino acids, sulfate 
+ions, and phosphate ions) concentrations of 108 mM. These transmembrane ion gradients are used to make ATP, 
+to drive various transport processes, and to generate electrical signals.
+
+Example Problem 3.1
+
+How many molecules of sodium and potassium ions would a cell that has a volume of 2 nl contain?
+
+Solution
+
+Assuming that the intracellular concentrations of Na þ and K þ are 12 mM and 125 mM, respectively, the 
+number of molecules for each can be determined by using the volume of the cell and Avogadro’s number.
+
+moles
+
+molecules
+
+Na þ : 12
+
+K þ : 125
+
+Â 6:023 Â 1023  1000 liters
+
+Â 2 Â 10 À9 liters ¼ 1:45 Â 10 13 molecules
+
+mole
+
+moles
+
+molecules
+
+Â 6:023 Â 1023  1000 liters
+
+Â 2 Â 10 À9 liters ¼ 1:51 Â 10 14 molecules
+
+mole
+
+&
+
+The plasma membrane plays an important role in regulating cell volume by controlling the internal osmolarity 
+of the cell. Osmolarity is deﬁned in terms of concentration of dissolved substances. A 1 osmolar (1 Osm) 
+solution contains 1 mole of dissolved particles per liter of solution whereas a 1 milliosmolar (1 mOsm) 
+solution has 1 mole of dissolved particles per 1000 liters of solution. Thus, solutions with high osmolarity 
+have low concentrations of water or other solvents. For biological purposes, solutions with 0.1 Osm glucose 
+and 0.1 Osm urea have essentially the same concentrations of water. It is important to note that a 0.1 M 
+solution of sodium chloride (NaCl) will form a 0.2 Osm solution since NaCl dissociates into Na þ and Cl À 
+ions and thus has twice as many dissolved particles as a solution of a substance (e.g., glucose) that does 
+not dissociate into smaller units. Two solutions are isotonic if they have the same osmolarity. One solution 
+is hypotonic to another if it has a lower osmolarity and hypertonic to another if it has a higher 
+osmolarity. It is important to note that tonicity (isotonic, hypotonic, or hypertonic) is determined by only 
+those molecules that cannot cross the plasma membrane since molecules that can freely cross will eventually 
+reach equilibrium with the same concentration inside and outside of the cell.
+
+Consider a simple model cell that consists of a plasma membrane and cytoplasm. The cytoplasm in this model 
+cell contains proteins that cannot cross the plasma membrane and water which can. At equilibrium, the total 
+osmolarity inside the cell
+
+must equal the total osmolarity outside the cell. If the osmolarity inside and the osmolarity outside of the 
+cell are out of balance, there will be a net movement of water from the side of the plasma membrane where it 
+is more highly concentrated to the other side until equilibrium is achieved. For example, assume that a 
+model cell (Fig. 3.6) contains 0.2 M protein and is placed in a hypotonic solution that contains 0.1 M 
+sucrose. The plasma membrane of this model cell is impermeable to proteins and sucrose but freely permeable 
+to water. The volume of the cell, 1 nl, is very small relative to the volume of the solution. In other 
+words, changes in the cell’s volume have no measurable effect on the volume of the external solution. What 
+will happen to the volume of the cell as it achieves equilibrium?
+
+At equilibrium, the osmolarity inside the cell must equal the osmolarity outside the cell. The initial 
+osmolarity inside the cell is 0.2 Osm since the proteins do not dissociate into smaller units. The 
+osmolarity outside the cell is 0.1 Osm due to the sucrose solution. A 0.2 Osm solution has 0.2 moles of 
+dissolved particles per liter of solution whereas a 0.1 Osm solution has half as many moles of dissolved 
+particles per liter. The osmolarity inside the cell must decrease by a factor of 2 in order to achieve 
+equilibrium. Since the plasma membrane will not allow any of the protein molecules to leave the cell, this 
+can only be achieved by doubling the cell’s volume. Thus, there will be a net movement of water across the 
+plasma membrane until the cell’s volume increases to 2 nl and the cell’s internal osmolarity is reduced to 
+0.1 Osm—the same as the
+
+osmolarity of the external solution. The water moves down its concentration gradient by diffusing from where 
+it is more highly concentrated in the 0.1 M sucrose solution to where it is less concentrated in the 0.2 M 
+protein solution in the cell.
+
+Example Problem 3.2
+
+What would happen to the model cell in Figure 3.6 if it were placed in pure water?
+
+Solution
+
+Water can pass through the plasma membrane and would ﬂow down its concentration gradient from where it is 
+more concentrated (outside of the cell) to where it is less concentrated (inside of the cell). Eventually, 
+enough water would move into the cell to rupture the plasma membrane since the concentration of water 
+outside of the cell would be higher than the concentration of water inside of the cell as long as there were 
+proteins trapped within the cell. &
+
+Example Problem 3.3
+
+Assume that the model cell in Figure 3.6 has an initial volume of 2 nl and contains 0.2 M protein. The cell 
+is placed in a large volume of 0.2 M NaCl. In this model, neither Na þ nor Cl À can cross the plasma 
+membrane and enter the cell. Is the 0.2 M NaCl solution hypotonic, isotonic, or hypertonic relative to the 
+osmolarity inside the cell? Describe what happens to the cell as it achieves equilibrium in this new 
+environment. What will be the ﬁnal osmolarity of the cell? What will be its ﬁnal volume?
+
+Solution
+
+The osmolarity inside the cell is 0.2 Osm. The osmolarity of the 0.2 M NaCl solution is 0.4 Osm (0:2 Osm Na 
+þ þ 0:2 Osm Cl À ). Thus, the NaCl solution is hypertonic relative to the osmolarity inside the cell 
+(osmolarity outside > osmolarity inside ). Since none of the particles (protein, Na þ , and Cl À ) can cross 
+the membrane, water will move out of the cell until the osmolarity inside the cell is 0.4 Osm. This will be 
+achieved when the volume inside the cell has been reduced from 2 nl to 1 nl.
+
+C1 V1 ¼C2 V2 
+
+0:2 Osm
+
+Â 2 nl ¼ V2  0:4 Osm
+
+1 nl ¼ V2 
+
+&
+
+Real cells are much more complex than the simple model described here. In addition to achieving osmotic 
+balance at equilibrium, real cells must also achieve electrical balance with regard to the ions that are 
+present in the cytoplasm. The principle of electrical neutrality requires that the overall concentration of 
+cations in a biological compartment (e.g., a cell) must equal the overall concentration of anions in that 
+compartment. Consider another model cell (Fig. 3.7) with internal and external cation and anion 
+concentrations similar to those of a typical mammalian cell. Is the cell at equilibrium if the plasma 
+membrane is freely permeable to K þ and Cl À but
+
+impermeable to Na þ and the internal anions? The total osmolarity inside the cell is 250 mOsm (12 mM Na þ , 
+125 mM K þ , 5 mM Cl À , 108 mM anions) while the total osmolarity outside the cell is also 250 mOsm (120 mM 
+Na þ , 5 mM K þ , 125 mM Cl À ) so the cell is in osmotic balance (i.e., there will be no net movement of 
+water across the plasma membrane). If the average charge per molecule of the anions inside the cell is 
+considered to be À1:2, then the cell is also approximately in electrical equilibrium (12 þ 125 positive 
+charges for Na þ and K þ ; 5 þ 1:2 Â 108 negative charges for ClÀ  and the other anions). Real cells, 
+however, cannot maintain this equilibrium without expending energy since real cells are slightly permeable 
+to Na þ . In order to maintain equilibrium and keep Na þ from accumulating intracellularly, mammalian cells 
+must actively pump Na þ out of the cell against its diffusion and electrical gradients. Since Na þ is pumped 
+out through specialized protein channels at a rate equivalent to the rate at which it leaks in through other 
+channels, it behaves osmotically as if it cannot cross the plasma membrane. Thus, mammalian cells exist in a 
+steady state, rather than at equilibrium, since energy in the form of ATP must be used to prevent a net 
+movement of ions across the plasma membrane.
+
+Example Problem 3.4
+
+Consider a simple model cell, such as the one in Figure 3.7, which has the following ion concentrations. Is 
+the cell at equilibrium? Explain your answer.
+
+Solution
+
+Yes. The cell is both electrically and osmotically at equilibrium because the charges within the inside and 
+outside compartments are equal and the osmolarity inside the cell equals the osmolarity outside of the cell.
+
+Inside
+
+Outside
+
+Positive Negative Osmolarity
+
+158 þ 20 ¼ 178 mM 52 þ 1:2 Â 104 ¼ 177 mM 158 þ 20 þ 52 þ 104 ¼ 334 mM
+
+178 mM pos % 177 mMneg 
+
+4 þ 163 ¼ 167 mM 167 mM 4 þ 163 þ 167 ¼ 334 mM
+
+167 mM pos ¼ 167 mMneg 
+
+334 mM inside ¼ 334 mMoutside 
+
+&
+
+One of the consequences of the distribution of charged particles in the intracellular and extracellular 
+ﬂuids is that an electrical potential exists across the plasma membrane. The value of this electrical 
+potential depends on the intracellular and extracellular concentrations of ions that can cross the membrane 
+and will be described more fully in Chapter 11.
+
+In addition to controlling the cell’s volume, the plasma membrane also provides a route for moving large 
+molecules and other materials into and out of the cell. Substances can be moved into the cell by means of 
+endocytosis (Fig. 3.8a) and out of the cell by means of exocytosis (Fig. 3.8b). In endocytosis, material 
+(e.g., a bacterium) outside of the cell is engulfed by a portion of the plasma membrane that encircles it to 
+form a vesicle. The vesicle then pinches off from the plasma membrane and moves its contents to the inside 
+of the cell. In exocytosis, material within the cell is surrounded by a membrane to form a vesicle. The 
+vesicle then moves to the edge of the cell where its membrane fuses with the plasma membrane and its 
+contents are released to the exterior of the cell.
+
+3.2.2 Cytoplasm and Organelles
+
+The cytoplasm contains ﬂuid (cytosol) and organelles. Ions (such as Na þ , K þ , and Cl À ) and molecules 
+(such as glucose) are distributed through the cytosol via diffusion. Membrane-bound organelles include the 
+nucleus, rough and smooth endoplasmic reticulum, the Golgi apparatus, lysosomes, and mitochondria. 
+Nonmembranous organelles include nucleoli, ribosomes, centrioles, microvilli, cilia, ﬂagella, and the 
+microtubules, intermediate ﬁlaments, and microﬁlaments of the cytoskeleton.
+
+The nucleus (Fig. 3.4) consists of the nuclear envelope (a double membrane) and the nucleoplasm (a ﬂuid 
+that contains ions, enzymes, nucleotides, proteins, DNA, and small amounts of RNA). Within its DNA, the 
+nucleus contains the instructions for life’s processes. Nuclear pores are protein channels that act as 
+connections for ions and RNA, but not proteins or DNA, to leave the nucleus and enter the cytoplasm and for 
+some proteins to enter the nucleoplasm. Most nuclei contain one or more nucleoli.
+
+Each nucleolus contains DNA, RNA, and proteins and synthesizes the components of the ribosomes that cells 
+use to make proteins.
+
+The smooth and rough endoplasmic reticulum (ER), Golgi apparatus, and assorted vesicles (Figs. 3.4, 3.9a, 
+and 3.9b) make up the cytomembrane system which delivers proteins and lipids for manufacturing membranes and 
+accumulates and stores proteins and lipids for speciﬁc uses. The ER also acts as a storage site for calcium 
+ions. The rough ER differs from the smooth ER in that it has ribosomes attached to its exterior surface. 
+Ribosomes provide the platforms for synthesizing proteins. Those that are synthesized on the rough ER are 
+passed into its interior where nonproteinaceous side chains are attached to them. These modiﬁed proteins 
+move to the smooth ER where they are packaged in vesicles. The smooth ER also manufactures and packages 
+lipids into vesicles and is responsible for releasing stored calcium ions. The vesicles leave the smooth ER 
+and become attached to the Golgi apparatus where their contents are released, modiﬁed, and repackaged into 
+new vesicles. Some of these vesicles, called lysosomes, contain digestive enzymes which are used to break 
+down materials that move into the cells via endocytosis. Other vesicles contain proteins such as hormones 
+and neurotransmitters that are secreted from the cells by means of exocytosis.
+
+The mitochondria (Figs. 3.9c and 3.10) contain two membranes: an outer membrane that surrounds the organelle 
+and an inner membrane that divides the organelle’s interior into two compartments. Approximately 95% of the 
+ATP required by the cell is produced in the mitochondria in a series of oxygen-requiring reactions which 
+produce carbon dioxide as a byproduct. Mitochondria are different from most other organelles in that they 
+contain their own DNA. The majority of the mitochondria in sexually reproducing organisms, such as humans, 
+come from the mother’s egg cell because the father’s sperm contributes little more than the DNA in a haploid 
+(half) set of chromosomes to the developing offspring.
+
+Microtubules, intermediate ﬁlaments, and microﬁlaments provide structural support and assist with 
+movement. Microtubules are long, hollow, cylindrical structures that radiate from microtubule organizing 
+centers and, during cell division, from centrosomes, a specialized region of the cytoplasm that is located 
+near the nucleus
+
+and contains two centrioles (Figs. 3.4 and 3.11a) oriented at right angles to each other. Microtubules 
+consist of spiraling subunits of a protein called tubulin, whereas centrioles consist of nine triplet 
+microtubules that radiate from their centers like the spokes of a wheel. Intermediate ﬁlaments are hollow 
+and provide structure to the plasma membrane and nuclear envelope. They also aid in cell-to-cell junctions 
+and in maintaining the spatial organization of organelles. Myoﬁlaments are found in most cells and are 
+composed of strings of protein molecules. Cell movement can occur when actin and myosin, protein subunits of 
+myoﬁlaments, interact. Microvilli (Fig. 3.11b) are extensions of the plasma membrane that contain 
+microﬁlaments. They increase the surface area of a cell to facilitate absorption of extracellular 
+materials.
+
+Cilia (Fig. 3.11c) and ﬂagella are parts of the cytoskeleton that have shafts composed of nine pairs of 
+outer microtubules and two single microtubules in the center. Both types of shafts are anchored by a basal 
+body which has the same structure as a centriole. Flagella function as whiplike tails that propel cells such 
+as sperm. Cilia are generally shorter and more profuse than ﬂagella and can be found on specialized cells 
+such as those that line the respiratory tract. The beating of the cilia helps move mucustrapped bacteria and 
+particles out of the lungs.
+
+3.2.3 DNA and Gene Expression
+
+DNA (Fig. 3.3) is found in the nucleus and mitochondria of eukaryotic cells. In organisms that reproduce 
+sexually, the DNA in the nucleus contains information from both parents whereas that in the mitochondria 
+comes from the organism’s mother. In the nucleus, the DNA is wrapped around protein spools, called 
+nucleosomes, and is organized into pairs of chromosomes. Humans have 22 pairs of autosomal chromosomes and 
+two sex chromosomes, XX for females and XY for males (Fig. 3.12). If the DNA from all 46 chromosomes in a 
+human somatic cell (i.e., any cell
+
+that does not become an egg or sperm cell) was stretched out end to end, it would be about 2 nm wide and 2 m 
+long. Each chromosome contains thousands of individual genes that are the units of information about 
+heritable traits. Each gene has a particular location in a speciﬁc chromosome and contains the code for 
+producing one of the three forms of RNA (ribosomal RNA, messenger RNA, and transfer RNA). The Human Genome 
+Project was begun in 1990 and had as its goal to ﬁrst identify the location of at least 3000 speciﬁc human 
+genes and then to determine the sequence of nucleotides (about 3 billion!) in a complete set of haploid 
+human chromosomes (one chromosome from each of the 23 pairs). See Chapter 13 for more information about the 
+Human Genome Project.
+
+DNA replication occurs during cell division (Fig. 3.13). During this semiconservative process, enzymes unzip 
+the double helix, deliver complementary bases to the nucleotides, and bind the delivered nucleotides into 
+the developing complementary strands. Following replication, each strand of DNA is duplicated so that two 
+double helices now exist, each consisting of one strand of the original DNA and one new strand. In this way, 
+each daughter cell gets the same hereditary information that was contained in the original dividing cell. 
+During replication, some enzymes check for accuracy while others repair pairing mistakes so that the error 
+rate is reduced to approximately one per billion.
+
+Since DNA remains in the nucleus where it is protected from the action of the cell’s enzymes and proteins 
+are made on ribosomes outside of the nucleus, a method (transcription) exists for transferring information 
+from the DNA to the cytoplasm. During transcription (Fig. 3.14), the sequence of nucleotides in a gene that 
+codes for a protein is transferred to messenger RNA (mRNA) through complementary base pairing of the 
+nucleotide sequence in the gene. For example, a DNA sequence of TACGCTCCGATA would become AUGCGAGGCUAU in 
+the mRNA. The process is somewhat more complicated since the transcript produced directly from the DNA 
+contains sequences of nucleotides, called introns, that are removed before the ﬁnal mRNA is produced. The 
+mRNA also has a tail, called a poly-A tail, of about 100–200 adenine nucleotides attached to one end. A cap 
+with a nucleotide that has a methyl group and phosphate groups bonded to it is attached at the other end of 
+the mRNA. Transcription differs from replication in that (1) only a certain stretch of DNA acts as
+
+the template and not the whole strand, (2) different enzymes are used, and (3) only a single strand is 
+produced.
+
+After being transcribed, the mRNA moves out into the cytoplasm through the nuclear pores and binds to 
+speciﬁc sites on the surface of the two subunits that make up a ribosome (Fig. 3.15). In addition to the 
+ribosomes, the cytoplasm contains amino acids and another form of RNA, transfer RNA (tRNA). Each tRNA 
+contains a triplet of bases, called an anticodon, and binds at an area away from the triplet to an amino 
+acid that is speciﬁc for that particular anticodon. The mRNA that was produced from the gene in the nucleus 
+also contains bases in sets of three. Each triplet in mRNA is called a codon. The four possibilities for 
+nucleotides (A, U, C, G) in each of the three
+
+places give rise to 64 (4 3 ) possible codons. These 64 codons make up the genetic code. Each codon codes 
+for a speciﬁc amino acid, but some amino acids are speciﬁed by more than one codon (see Table 3.1). For 
+example, AUG is the only mRNA codon for methionine (the amino acid that always signals the starting place 
+for translation—the process by which the information from a gene is used to produce a protein) whereas UUA, 
+UUG, CUU, CUC, CUA, and CUG are all codons for leucine. The anticodon on the tRNA that delivers the 
+methionine to the ribosome is UAC, whereas tRNAs with anticodons of AAU, AAC, GAA, GAG, GAU, and GAC deliver 
+leucine.
+
+During translation, the mRNA binds to a ribosome and tRNA delivers amino acids to the growing polypeptide 
+chain in accordance with the codons speciﬁed by the mRNA. Peptide bonds are formed between each newly 
+delivered amino acid and the previously delivered one. When the amino acid is bound to the growing chain, it 
+is released from the tRNA, and the tRNA moves off into the cytoplasm where it joins with another amino acid 
+that is speciﬁed by its anticodon. This process continues until a stop codon (UAA, UAG, or UGA) is reached 
+on the mRNA.
+
+The protein is then released into the cytoplasm or into the rough ER for further modiﬁcations.
+
+Example Problem 3.5
+
+Consider a protein that contains the amino acids asparagine, phenylalanine, histidine, and serine in 
+sequence. Which nucleotide sequences on DNA (assuming that there were no introns) would result in this 
+series of amino acids? What would be the anticodons for the tRNAs that delivered these amino acids to the 
+ribosomes during translation?
+
+Solution
+
+The genetic code (Table 3.1) provides the sequence for the mRNA codons that specify these amino acids. The 
+mRNA codons can be used to determine the sequence in the original DNA and the anticodons of the tRNA since 
+the mRNA bases must pair with the bases in both DNA and tRNA. Note that DNA contains thymine (T) but no 
+uracil (U) and that both mRNA and tRNA contain U and not T. See Figs. 3.3 and 3.14 for examples of base 
+pairing.
+
+3.3 TISSUES
+
+Groups of cells and surrounding substances that function together to perform one or more specialized 
+activities are called tissues (Fig. 3.16). There are four primary types of tissue in the human body: 
+epithelial, connective, muscle, and nervous. Epithelial tissues are either composed of cells arranged in 
+sheets that are one or more layers thick or are organized into glands that are adapted for secretion. They 
+are also characterized by having a free surface (e.g., the inside surface of the intestines or the outside 
+of the skin) and a basilar membrane. Typical functions of epithelial tissue include absorption (lining of 
+the small intestine), secretion (glands), transport (kidney
+
+tubules), excretion (sweat glands), protection (skin, Fig. 3.16a), and sensory reception (taste buds). 
+Connective tissues are the most abundant and widely distributed. Connective tissue proper can be loose 
+(loosely woven ﬁbers found around and between organs), irregularly dense (protective capsules around 
+organs), and regularly dense (ligaments and tendons), whereas specialized connective tissue includes blood 
+(Fig. 3.16b), bone, cartilage, and adipose tissue. Muscle tissue provides movement for the body through its 
+specialized cells that can shorten in response to stimulation and then return to their uncontracted state. 
+Figure 3.16c shows the three types of muscle tissue: skeletal (attached to bones), smooth (found in the 
+walls of blood vessels), and cardiac (found only in the heart). Nervous tissue consists of neurons (Fig. 
+3.16d) that conduct electrical impulses and glial cells that protect, support, and nourish neurons.
+
+3.4 MAJOR ORGAN SYSTEMS
+
+CHAPTER 3
+
+ANATOMY AND PHYSIOLOGY
+
+Combinations of tissues that perform complex tasks are called organs, and organs that function together form 
+organ systems. The human body has 11 major organ systems: integumentary, endocrine, lymphatic, digestive, 
+urinary, reproductive, circulatory, respiratory, nervous, skeletal, and muscular. The integumentary system 
+(skin, hair, nails, and various glands) provides protection for the body. The endocrine system (ductless 
+glands such as the thyroid and adrenals) secretes hormones that regulate many chemical actions within cells. 
+The lymphatic system (glands, lymph nodes, lymph, lymphatic vessels) returns excess ﬂuid and protein to the 
+blood and helps defend the body against infection and tissue damage. The digestive system (stomach, 
+intestines, and other structures) ingests food and water, breaks food down into small molecules that can be 
+absorbed and used by cells, and removes solid wastes. The urinary system (kidneys, ureters, urinary bladder, 
+and urethra) maintains the ﬂuid volume of the body, eliminates metabolic wastes, and helps regulate blood 
+pressure and acid–base and water–salt balances. The reproductive system (ovaries, testes, reproductive 
+cells, and accessory glands and ducts) produces eggs or sperm and provides a mechanism for the production 
+and nourishment of offspring. The circulatory system (heart, blood, and blood vessels) serves as a 
+distribution system for the body. The respiratory system (airways and lungs) delivers oxygen to the blood 
+from the air and carries away carbon dioxide. The nervous system (brain, spinal cord, peripheral nerves, and 
+sensory organs) regulates most of the body’s activities by detecting and responding to internal and external 
+stimuli. The skeletal system (bones and cartilage) provides protection and support as well as sites for 
+muscle attachments, the production of blood cells, and calcium and phosphorus storage. The muscular system 
+(skeletal muscle) moves the body and its internal parts, maintains posture, and produces heat. Although 
+biomedical engineers have made major contributions to understanding, maintaining, and/or replacing 
+components in each of the eleven major organ systems, only the last ﬁve in the preceding list will be 
+examined in greater detail.
+
+3.4.1 Circulatory System
+
+The circulatory system (Fig. 3.17) delivers nutrients and hormones throughout the body, removes waste 
+products from tissues, and provides a mechanism for regulating temperature and removing the heat generated 
+by the metabolic activities of the body’s internal organs. Every living cell in the body is no more than 
+10–100 mm from a capillary (small blood vessels with walls only one cell thick that are 8 mm in diameter, 
+approximately the same size as a red blood cell). This close proximity allows oxygen, carbon dioxide, and 
+most other small solutes to diffuse from the cells into the capillary or from the capillary into the cells 
+with the direction of diffusion determined by concentration and partial pressure gradients.
+
+The heart (Fig. 3.18), the pumping station that moves blood through the blood vessels, consists of two 
+pumps—the right side and the left side. Each side has one
+
+chamber (the atrium) that receives blood and another chamber (the ventricle) that pumps the blood away from 
+the heart. The right side moves deoxygenated blood that is loaded with carbon dioxide from the body to the 
+lungs, and the left side receives oxygenated blood that has had most of its carbon dioxide removed from the 
+lungs and pumps it to the body. The vessels that lead to and from the lungs make up the pulmonary 
+circulation, and those that lead to and from the rest of the tissues in the body make up the systemic 
+circulation (Fig. 3.19). Blood vessels that carry blood away from the heart are called arteries and those 
+that carry blood toward the heart are called veins. The pulmonary artery is the only artery that carries 
+deoxygenated blood, and the pulmonary vein is the only vein that carries oxygenated blood. The average adult 
+has about 5 L of blood with 80–90% in the systemic circulation at any one time; 75% of the blood is in the 
+systemic circulation in the veins, 20% in the arteries, and 5% in the capillaries. Cardiac output is the 
+product of the heart rate and the volume of blood pumped from the heart with each beat (i.e., the stroke 
+volume). Each time the heart beats, about 80 ml of blood leave the heart. Thus, it takes about 60 beats for 
+the average red blood cell to make one complete cycle of the body.
+
+In the normal heart, the cardiac cycle, which refers to the repeating pattern of contraction (systole) and 
+relaxation (diastole) of the chambers of the heart, begins with a self-generating electrical pulse in the 
+pacemaker cells of the sinoatrial node
+
+(Fig. 3.20). This rapid electrical change in the cells is the result of the movement of ions across their 
+plasma membranes. The permeability of the plasma membrane to Na þ changes dramatically and allows these ions 
+to rush into the cell. This change in the electrical potential across the plasma membrane from one in which 
+the interior of the cell is more negative than the extracellular ﬂuid (approximately À90 mV) to one in 
+which the interior of the cell is more positive than the extracellular ﬂuid (approximately 20 mV) is called 
+depolarization. After a very short period of time (<0.3 s), changes in the membrane and activation of the 
+sodium–potassium pumps result in repolarization, the restoration of the original ionic balance in the cells. 
+The entire electrical event in which the polarity of the potential across the plasma membrane rapidly 
+reverses and then becomes reestablished is called an action potential. The cells in the sinoatrial node 
+depolarize on the average of every 0.83 s in a typical adult at rest. This gives a resting heart rate of 72 
+beats per minute with about 8 5 of each beat spent in diastole and 8 3 in systole.
+
+Cardiac cells are linked and tightly coupled so that action potentials spread from one cell to the next. 
+Activation wavefronts move across the atria at a rate of about 1 m/s. When cardiac cells depolarize, they 
+also contract. The contraction process in the atria (atrial systole) moves blood from the right atrium to 
+the right ventricle and from the left atrium to the left ventricle (Fig. 3.21). The activation wavefront 
+then moves to the atrioventricular (AV) node where it slows to a rate of about 0.05 m/s to allow time for 
+the ventricles to completely ﬁll with the blood from the atria. After leaving the AV node, the activation 
+wavefront moves to specialized conduction tissue, the Purkinje system, which spreads the wavefront very 
+rapidly (at about 3 m/s) to many cells in both venricles. The activation wavefront spreads through 
+ventricular tissue at about
+
+0.5 m/s. This results in the simultaneous contraction of both ventricles (ventricular systole) so that blood 
+is forced from the heart into the pulmonary artery from the right ventricle and into the aorta from the left 
+ventricle.
+
+The electrocardiogram (ECG; Fig. 3.22) is an electrical measure of the sum of these ionic changes within the 
+heart. The P wave represents the depolarization of the atria and the QRS represents the depolarization of 
+the ventricles. Ventricular repolarization shows up as the T wave and atrial repolarization is masked by 
+ventricular depolarization. Changes in the amplitude and duration of the different parts of the
+
+ECG provide diagnostic information for physicians. Many biomedical engineers have worked on methods for 
+recording and analyzing ECGs.
+
+Example Problem 3.6
+
+What would be the heart rate given by an ECG in which 10 R-waves occurred in 6.4 s?
+
+Solution
+
+A sequence of 10 R-waves represents 9 R–R intervals (see Fig. 3.22) or beats of the heart.
+
+
+
+9 beats
+
+6:4 s
+
+
+
+60 s
+
+1 min
+
+
+
+¼ 84 bpm
+
+&
+
+Example Problem 3.7
+
+What would be the cardiac output of the heart in Example Problem 3.6 if the stroke volume were 75 ml?
+
+Solution
+
+The cardiac output (given in liters per minute) is the product of the heart rate and the stroke volume.
+
+beats ml ml liters Â CO ¼ 84 75 ¼ 6300 ¼ 6:3 min beat min min
+
+&
+
+During atrial and ventricular systole, special one-way valves (Fig. 3.23a) keep the blood moving in the 
+correct direction. When the atria contract, the atrioventricular valves (tricuspid and mitral) open to allow 
+blood to pass into the ventricles. During ventricular systole, the semilunar valves (aortic and pulmonary) 
+open to allow blood to leave the heart while the atrioventricular valves close and prevent blood from 
+ﬂowing backwards from the ventricles to the atria. The aortic and pulmonary valves prevent blood from 
+ﬂowing back from the pulmonary artery and aorta into the right and left ventricles, respectively. If a 
+valve becomes calciﬁed or diseased or is not properly formed during embryonic development, it can be 
+replaced by an artiﬁcial valve (Fig. 3.23b), a device that has been developed by cooperative work between 
+biomedical engineers and physicians.
+
+Blood pressure can be measured directly or indirectly (noninvasively). Direct blood pressure measurements 
+are made by introducing a catheter or needle that is coupled to a pressure transducer into a vein or artery. 
+Indirect methods include sphygmomanometry, in which a cuff is used to apply sufﬁcient pressure to an 
+artery, usually in the arm, to prevent the ﬂow of blood through the artery, and a stethoscope is used to 
+listen to the change in sounds as the cuff is slowly deﬂated. The ﬁrst Korotkoff sounds occur when the 
+systolic pressure, the highest pressure reached when the ventricles contract and eject blood, ﬁrst exceeds 
+the pressure in the cuff so that blood once again ﬂows through the artery beneath the stethoscope. The 
+Korotkoff sounds become mufﬂed and disappear when the pressure in the cuff drops below the diastolic
+
+pressure, the minimum pressure that occurs at the end of ventricular relaxation. Another indirect 
+measurement is the oscillometric method, which uses a microprocessor to periodically inﬂate and slowly 
+deﬂate a cuff. When blood breaks through the occlusion caused by the cuff, the walls of the artery begin to 
+vibrate slightly due to the turbulent nature of the blood ﬂow. The onset of these oscillations in pressure 
+correlates with the systolic pressure. The oscillations decrease in amplitude over time with the diastolic 
+pressure event corresponding to the point at which the rate of amplitude decrease suddenly changes slope. A 
+third indirect measurement, the ultrasonic method, depends on the Doppler shift of sound waves that hit red 
+blood cells that are ﬂowing with the blood.
+
+Blood in the systemic circulation leaves the heart through the aorta with an average 
+internalpressureofabout100 mmHg(maximumsystolicpressureofabout120 mmHg with a diastolic pressure of about 80 
+mm Hg in a normal adult) and moves to medium-sized arteries (Fig. 3.17a) and arterioles. Arterioles lead to 
+capillaries (average internal pressure of about 30 mm Hg), which are followed by venules. Venules lead to 
+medium-sized veins, then to large veins, and ﬁnally to the venae cavae (average internal pressure of about 
+10 mm Hg) which return blood to the heart at the right atrium. Blood in the pulmonary circulation (Fig. 
+3.19) leaves the pulmonary artery and moves to arterioles and then the capillary beds within the lungs. It 
+returns to the heart through the left atrium. Blood ﬂow is highest in the large arteries and veins (3040 
+cm/s in the aorta; 5 cm/s in the venae cavae) and slowest in the capillary beds (1 mm/s) where the exchange 
+of nutrients, metabolic wastes, gases, and hormones takes place. Pressures in the pulmonary circulation are 
+lower (25 mm Hg/10 mm Hg) than in the systemic circulation due to the decreased pumping power of the smaller 
+right ventricle as compared to the left and to the lower resistance of blood vessels in the lungs.
+
+Example Problem 3.8
+
+What would be the pulse pressure and the mean arterial pressure for a person with a blood pressure reading 
+of 118 mm Hg/79 mm Hg?
+
+Solution
+
+The pulse pressure is deﬁned as the difference between the systolic (118 mm Hg) and disastolic (79 mm Hg) 
+pressures, which would be 39 mm Hg in this case.
+
+Mean arterial pressure is the average blood pressure in the arteries and is estimated as the diastolic 
+pressure plus one-third of the pulse pressure, which would be 92 mm Hg in this example. &
+
+3.4.2 Respiratory System
+
+The respiratory system (Fig. 3.24a) moves air to and from the gas exchange surfaces in the body where 
+diffusion can occur between air and the circulating blood. It includes the conduction zone and the 
+respiratory zone. In the conduction zone (mouth, nose, sinuses, pharynx, trachea, bronchi, and bronchioles), 
+the air that enters the body is warmed, humidiﬁed, ﬁltered, and cleaned. Mucus is secreted by cells in the 
+conduction zone and traps small particles (> 6 mm) before they can reach the respiratory zone. Epithelial 
+cells that line the trachea and bronchi have cilia that beat in a coordinated fashion to move mucus toward 
+the pharynx where it can be swallowed or expectorated. The respiratory zone, consisting of respiratory 
+bronchioles with outpouchings of alveoli and terminal clusters of alveolar sacs, is where gas exchange
+
+between air and blood occurs (Fig. 3.24b). The respiratory zone comprises most of the mass of the lungs.
+
+Certain physical properties—compliance, elasticity, and surface tension—are characteristic of lungs. 
+Compliance refers to the ease with which lungs can expand under pressure. A normal lung is about 100 times 
+more distensible than a toy balloon. Elasticity refers to the ease with which the lungs and other thoracic 
+structures return to their initial sizes after being distended. This aids in pushing air out of the lungs 
+during expiration. Surface tension is exerted by the thin ﬁlm of ﬂuid in the alveoli and acts to resist 
+distention. It creates a force that is directed inward and creates pressure in the alveolus which is 
+directly proportional to the surface tension and inversely proportional to the radius of the alveolus (Law 
+of Laplace). Thus, the pressure inside an alveolus with a small radius would be higher than the pressure 
+inside an adjacent alveolus with a larger radius and would result in air ﬂowing from the smaller alveolus 
+into the larger one. This could cause the smaller alveolus to collapse. This does not happen in normal lungs 
+because the ﬂuid inside the alveoli contains a phospholipid that acts as a surfactant. The surfactant 
+lowers the surface tension in the alveoli and allows them to get smaller during expiration without 
+collapsing. Premature babies often suffer from respiratory distress syndrome because their lungs lack 
+sufﬁcient surfactant to prevent their alveoli from collapsing. These babies can be kept alive with 
+mechanical ventilators or surfactant sprays until their lungs mature enough to produce surfactant.
+
+Breathing, or ventilation, is the mechanical process by which air is moved into (inspiration) and out of 
+(expiration) the lungs. A normal adult takes about 15 to 20 breaths per minute. During inspiration, the 
+inspiratory muscles contract and enlarge the thoracic cavity, the portion of the body where the lungs are 
+located. This causes the alveoli to enlarge and the alveolar gas to expand. As the alveolar gas expands, the 
+partial pressure within the respiratory system drops below atmospheric pressure by about 3 mm Hg so that air 
+easily ﬂows in (Boyle’s Law). During expiration, the inspiratory muscles relax and return the thoracic 
+cavity to its original volume. Since the volume of the gas inside the respiratory system has decreased, its 
+pressure increases to a value that is about 3 mm Hg above atmospheric pressure. Air now moves out of the 
+lungs and into the atmosphere.
+
+Lung mechanics refers to the study of the mechanical properties of the lung and chest wall, whereas lung 
+statics refers to the mechanical properties of a lung in which the volume is held constant over time. 
+Understanding lung mechanics requires knowledge about the volumes within the lungs. Lung capacities contain 
+two or more volumes. The tidal volume (TV) is the amount of air that moves in and out of the lungs during 
+normal breathing (Fig. 3.25). The total lung capacity (TLC) is the amount of gas contained within the lungs 
+at the end of a maximum inspiration. The vital capacity (VC) is the maximum amount of air that can be 
+exhaled from the lungs after inspiration to TLC. The residual volume (RV) is the amount of gas remaining in 
+the lungs after maximum exhalation. The amount of gas that can be inhaled after inhaling during tidal 
+breathing is called the inspiratory reserve volume (IRV). The amount of gas that can be expelled by a 
+maximal exhalation after exhaling during tidal breathing is called the expiratory reserve volume (ERV). The 
+inspiratory capacity (IC) is the
+
+maximum amount of gas that can be inspired after a normal exhalation during tidal breathing, and the 
+functional residual capacity (FRC) is the amount of gas that remains in the lungs at this time.
+
+Allofthevolumesandcapacitiesexcept thosethatinclude theresidual volume canbe measured with a spirometer. The 
+classic spirometer is an air-ﬁlled container that is constructed from two drums of different sizes. One 
+drum contains water and the other air-ﬁlled drum is inverted over an air-ﬁlled tube and ﬂoats in the 
+water. The tube is connectedtoamouthpieceusedbythepatient.Whenthepatientinhales,thelevelofthe 
+ﬂoatingdrumdrops.Whenthepatientexhales,theleveloftheﬂoatingdrumrises.These changes in ﬂoating drum 
+position can be recorded and used to measure lung volumes.
+
+Example Problem 3.9
+
+The total lung capacity of a patient is 5.9 liters. If the patient’s inspiratory capacity was found to be 
+3.3 liters using spirometry, what would be the patient’s functional residual capacity? What would you need 
+to measure to determine the patient’s residual volume?
+
+Solution
+
+From Figure 3.25, total lung capacity (TLC) is equal to the sum of inspiratory capacity (IC) and functional 
+residual capacity (FRC).
+
+TLC ¼ IC þ FRC
+
+5:9 liters ¼ 3:3 liters þ FRC
+
+FRC ¼ 2:6 liters
+
+TLC, which cannot be determined by means of spirometry, and vital capacity (VC), which can be measured using 
+spirometry, must be known to determine residual volume (RV) since
+
+TLC À VC ¼ RV
+
+&
+
+Because spirograms record changes in volume over time, ﬂow rates can be determined for different maneuvers. 
+For example, if a patient exhales as forcefully as possible to residual volume following inspiration to TLC, 
+then the forced expiratory volume (FEV 1:0 ) is the total volume exhaled at the end of 1 s. The FEV 1:0 is 
+normally about 80% of the vital capacity. Restrictive diseases, in which inspiration is limited by reduced 
+compliance of the lung or chest wall or by weakness of the inspiratory muscles, result in reduced values for 
+FEV 1:0 and vital capacity but their ratio remains about the same. In obstructive diseases, such as asthma, 
+the FEV 1:0 is reduced much more than the vital capacity. In these diseases, the TLC is abnormally large but 
+expiration ends prematurely. Another useful measurement is the forced expiratory ﬂow rate (FEF25À À 75 % ), 
+which is the average ﬂow rate measured over the middle half of the expiration (i.e., from 25 to 75% of the 
+vital capacity). Flow-volume loops provide another method for analyzing lung function by relating the rate 
+of inspiration and expiration to the volume of air that is moved during each process.
+
+The TLC can be measured using the gas dilution technique. In this method, patients inspire to TLC from a gas 
+mixture containing a known amount of an inert tracer gas such as helium, and hold their breaths for 10 s. 
+During this time, the inert gas becomes evenly distributed throughout the lungs and airways. Due to 
+conservation of mass, the product of initial tracer gas concentration (which is known) times the amount 
+inhaled (which is measured) equals the product of ﬁnal tracer gas concentration (which is measured during 
+expiration) times the TLC. Body plethysmography, which provides the most accurate method for measuring lung 
+volumes, uses an airtight chamber in which the patient sits and breathes through a mouthpiece. This method 
+makes use of Boyle’s Law, which states that the product of pressure and volume for gas in a chamber is 
+constant under isothermal conditions. Changes in lung volume and pressure at the mouth when the patient 
+pants against a closed shutter can be used to calculate the functional residual capacity. Since the 
+expiratory reserve volume can be measured, the residual volume can be calculated by subtracting it from the 
+functional residual capacity.
+
+Example Problem 3.10
+
+A patient is allowed to breathe a mixture from a 2-liter reservoir that contains 10% of an inert gas (i.e., 
+one that will not cross from the lungs into the circulatory system). At the end of a period that is 
+sufﬁcient for the contents of the reservoir and the lungs to equilibrate, the concentration of the inert 
+gas is measured and is found to be 2.7%. What is the patient’s total lung capacity?
+
+Solution
+
+The total amount of inert gas is the same at the beginning and end of the measurement, but its concentration 
+has changed from 10% (C 1 ) to 2.7% (C 2 ). At the beginning, it is conﬁned to a 2-liter reservoir (V 1 ). 
+At the end, it is in both the reservoir and the patient’s lungs (V 2 ¼ V 1 þ TLC).
+
+C1 V1 ¼C2 V2 
+
+(0:1) (2 liters) ¼ (0:027) (2 liters þ TLC)
+
+0:2 liters À 0:054 liters ¼ 0:027 TLC
+
+5:4 liters ¼ TLC
+
+&
+
+External respiration occurs in the lungs when gases are exchanged between the blood and the alveoli (Fig. 
+3.26). Each adult lung contains about 3:5 Â 10 8 alveoli, which results in a large surface area (60 – 70 m 2 
+) for gas exchange to occur. Each alveolus is only one cell layer thick, making the air–blood barrier only 
+two cells thick (an alveolar cell and a capillary endothelial cell) which is about 2 mm. The partial 
+pressure of oxygen in the alveoli is higher than the partial pressure of oxygen in the blood so oxygen moves 
+from the alveoli into the blood. The partial pressure of carbon dioxide in the alveoli is lower than the 
+partial pressure of carbon dioxide in the blood so carbon dioxide moves from the blood into the alveoli. 
+During internal respiration, carbon dioxide and oxygen move between the blood and the extracellular ﬂuid 
+surrounding the body’s cells. The direction and rate of movement of a gas depend
+
+on the partial pressures of the gas in the blood and the extracellular ﬂuid, the surface area available for 
+diffusion, the thickness of the membrane that the gas must pass through, and a diffusion constant that is 
+related to the solubility and molecular weight of the gas (Fick’s Law).
+
+Mechanical ventilators can be used to deliver air or oxygen to a patient. They can be electrically or 
+pneumatically powered and can be controlled by microprocessors. Negative pressure ventilators such as iron 
+lungs surround the thoracic cavity and force air into the lungs by creating a negative pressure around the 
+chest. This type of ventilator greatly limits access to the patient. Positive pressure ventilators apply 
+high-pressure gas at the entrance to the patient’s lungs so that air or oxygen ﬂows down a pressure 
+gradient and into the patient. These ventilators can be operated in control mode to breathe for the patient 
+at all times or in assist mode to help with ventilation when the patient initiates the breathing cycle. This 
+type of ventilation changes the pressure within the thoracic cavity to positive during inspiration, which 
+affects venous return to the heart and cardiac output (the amount of blood the heart moves with each beat). 
+High frequency jet ventilators deliver very rapid (60–900 breaths per minute) low-volume bursts of air to 
+the lungs. Oxygen and carbon dioxide are exchanged by molecular diffusion rather than by the mass movement 
+of air. This method causes less interference with cardiac output than does positive pressure ventilation. 
+Extracorporeal membrane oxygenation (ECMO) uses the technology that was developed for cardiopulmonary bypass 
+machines. Blood is removed from the patient and passed through an artiﬁcial lung where oxygen and carbon 
+dioxide are exchanged. It is warmed to body temperature before being returned to the patient. This technique 
+allows the patient’s lungs to rest and heal themselves and has been used successfully on some cold-water 
+drowning victims and on infants with reversible pulmonary disease.
+
+3.4.3 Nervous System
+
+The nervous system, which is responsible for the integration and control of all the body’s functions, has 
+two major divisions: the central nervous system and the peripheral nervous system (Fig. 3.27). The former 
+consists of all nervous tissue enclosed by bone (e.g., the brain and spinal cord), whereas the latter 
+consists of all nervous tissue not enclosed by bone, which enables the body to detect and respond to both 
+internal and external stimuli. The peripheral nervous system consists of the 12 pairs of cranial and 31 
+pairs of spinal nerves with afferent (sensory) and efferent (motor) neurons.
+
+The nervous system has also been divided into the somatic and autonomic nervous systems. Each of these 
+systems consists of components from both the central and peripheral nervous systems. For example, the 
+somatic peripheral nervous system consists of the sensory neurons, which convey information from receptors 
+for pain, temperature, and mechanical stimuli in the skin, muscles, and joints to the central nervous 
+system, and the motor neurons, which return impulses from the central nervous system to these same areas of 
+the body. The autonomic nervous system is concerned with the involuntary regulation of smooth muscle, 
+cardiac muscle, and glands and consists of the sympathetic and parasympathetic divisions.
+
+The sympathetic division causes blood vessels in the viscera and skin to constrict, vessels in the skeletal 
+muscles to dilate, and heart rate to increase, whereas the parasympathetic division has the opposite effect 
+on the vessels in the viscera and skin, provides no innervation to the skeletal muscles, and causes heart 
+rate to decrease. Thus, the sympathetic division prepares the body for ‘‘ﬁght or ﬂight’’ and the 
+parasympathetic division returns the body to normal operating conditions.
+
+Specialized cells that conduct electrical impulses (neurons) or protect, support, and nourish neurons (glial 
+cells) make up the different parts of the nervous system. The cell body of the neuron (Fig. 3.16d) gives 
+rise to and nourishes a single axon and multiple, branching dendrites. The dendrites are the main receptor 
+portion of the neuron although the cell body can also receive inputs from other neurons. Dendrites usually 
+receive signals from thousands of contact points (synapses) with other neurons. The axon extends a few 
+millimeters (in the brain) to a meter (from the spinal cord to the foot) and carries nerve signals to other 
+nerve cells in the brain or spinal cord or to glands and muscles in the periphery of the body. Some axons 
+are surrounded by sheaths of myelin that are formed by specialized, nonneural cells called Schwann cells. 
+Each axon has many branches, called presynaptic terminals, at its end. These knoblike protrusions contain 
+synaptic vesicles that hold neurotransmitters. When the neuron is stimulated by receiving a signal at its 
+dendrites, the permeability of the cell’s plasma membrane to sodium increases, as occurs in cardiac cells, 
+and an
+
+action potential moves from the dendrite to the cell body and then on to the axon. Gaps, called nodes of 
+Ranvier, in the myelin sheaths of some axons allow the action potential to move more rapidly by essentially 
+jumping from one node to the next. The vesicles in the presynaptic terminals release their neurotransmitter 
+into the space between the axon and an adjacent neuron, muscle cell, or gland. The neurotransmitter diffuses 
+across the synapse and causes a response (Fig. 3.28).
+
+Neurons interconnect in several types of circuits. In a divergent circuit, each branch in the axon of the 
+presynaptic neuron connects with the dendrite of a different postsynaptic neuron. In a convergent circuit, 
+axons from several presynaptic neurons meet at the dendrite(s) of a single postsynaptic neuron. In a simple 
+feedback circuit, the axon of a neuron connects with the dendrite of an interneuron that connects back with 
+the dendrites of the ﬁrst neuron. A two-neuron circuit is one in which a sensory neuron synapses directly 
+with a motor neuron, whereas a three-neuron circuit consists of a sensory neuron, an interneuron in the 
+spinal cord, and a motor neuron. Both of these circuits can be found in reﬂex arcs (Fig. 3.29). The reﬂex 
+arc is a special type of neural circuit that begins with a sensory neuron at a receptor (e.g., a pain 
+receptor in the ﬁngertip) and ends with a motor neuron at an effector (e.g., a skeletal muscle). Withdrawal 
+reﬂexes are elicited primarily by stimuli for pain and heat great enough to be painful and are also known 
+as protective or escape reﬂexes. They allow the body to respond quickly to dangerous situations without 
+taking additional time to send signals to and from the brain and to process the information.
+
+The brain is a large soft mass of nervous tissue and has three major parts: (1) cerebrum, (2) diencephalon, 
+and (3) brain stem and cerebellum. The cerebrum (Fig. 3.30), which is divided into two hemispheres, is the 
+largest and most obvious portion of the brain and consists of many convoluted ridges (gyri), narrow grooves
+
+(sulci), and deep ﬁssures which result in a total surface area of about 2:25 m 2 . The outer layer of the 
+cerebrum, the cerebral cortex, is composed of gray matter (neurons with unmyelinated axons) that is 2–4 mm 
+thick and contains over 50 billion neurons and 250 billion glial cells called neuroglia. The thicker inner 
+layer is the white matter that consists of interconnecting groups of myelinated axons that project from the 
+cortex to other cortical areas or from the thalamus (part of the diencephalon) to the cortex. The connection 
+between the two cerebral hemispheres is called the corpus callosum (Fig. 3.30b). The left side of the cortex 
+controls motor and sensory functions from the right side of the body, whereas the right side controls the 
+left side of the body. Association areas that interpret incoming data or coordinate a motor response are 
+connected to the sensory and motor regions of the cortex.
+
+Fissures divide each cerebral hemisphere into a series of lobes that have different functions. The functions 
+of the frontal lobes include initiating voluntary movement of the skeletal muscles, analyzing sensory 
+experiences, providing responses relating to personality, and mediating responses related to memory, 
+emotions, reasoning, judgment, planning, and speaking. The parietal lobes respond to stimuli from cutaneous 
+(skin) and muscle receptors throughout the body. The temporal lobes interpret some sensory experiences, 
+store memories of auditory and visual experiences, and contain auditory centers that receive sensory neurons 
+from the cochlea of the ear. The occipital lobes integrate eye movements by directing and focusing the eye 
+and are responsible for correlating visual images with previous visual experiences and other sensory 
+stimuli. The insula is a deep portion of the cerebrum that lies under the parietal, frontal, and temporal 
+lobes. Little is known about its function, but it seems to be associated with gastrointestinal and other 
+visceral activities.
+
+The diencephalon is the deep part of the brain that connects the midbrain of the brain stem with the 
+cerebral hemispheres. Its main parts are the thalamus, hypothalamus, and epithalamus (Fig. 3.30b). The 
+thalamus is involved with sensory and motor systems, general neural background activity, and the expression 
+of emotion and
+
+uniquely human behaviors. Due to its two-way communication with areas of the cortex, it is linked with 
+thought, creativity, interpretation and understanding of spoken and written words, and identiﬁcation of 
+objects sensed by touch. The hypothalamus is involved with integration within the autonomic nervous system, 
+temperature regulation, water and electrolyte balance, sleep–wake patterns, food intake, behavioral 
+responses associated with emotion, endocrine control, and sexual responses. The epithalamus contains the 
+pineal body that is thought to have a neuroendocrine function.
+
+The brain stem connects the brain with the spinal cord and automatically controls vital functions such as 
+breathing. Its principal regions include the midbrain, pons, and medulla oblongota (Fig. 3.30b). The 
+midbrain connects the pons and cerebellum with the cerebrum and is located at the upper end of the brain 
+stem. It is involved with visual reﬂexes, the movement of eyes, focusing of the lenses, and the dilation of 
+the pupils. The pons is a rounded bulge between the midbrain and medulla oblongata which functions with the 
+medulla oblongata to control respiratory functions, acts as a relay station from the medulla oblongata to 
+higher structures in the brain, and is the site of emergence of cranial nerve V. The medulla oblongata is 
+the lowermost portion of the brain stem and connects the pons to the spinal cord. It contains vital centers 
+that regulate heart rate, respiratory rate, constriction and dilation of blood vessels, blood pressure, 
+swallowing, vomiting, sneezing, and coughing. The cerebellum is located behind the pons and is the second 
+largest part of the brain. It processes sensory information that is used by the motor systems and is 
+involved with coordinating skeletal muscle contractions and impulses for voluntary muscular movement that 
+originate in the cerebral cortex. The cerebellum is a processing center that is involved with coordination 
+of balance, body positions, and the precision and timing of movements.
+
+3.4.4 Skeletal System
+
+The average adult skeleton contains 206 bones, but the actual number varies from person to person and 
+decreases with age as some bones become fused. Like the body, the skeletal system is divided into two parts: 
+the axial skeleton and the appendicular skeleton (Fig. 3.31). The axial skeleton contains 80 bones (skull, 
+hyoid bone, vertebral column, and thoracic cage), whereas the appendicular skeleton contains 126 (pectoral 
+and pelvic girdles and upper and lower extremities). The skeletal system protects and supports the body, 
+helps with movement, produces blood cells, and stores important minerals. It is made up of strong, rigid 
+bones that are composed of specialized connective tissue, bear weight, and form the major supporting 
+elements of the body. Some support also comes from cartilage which is a smooth, ﬁrm, resilient, nonvascular 
+type of connective tissue. Since the bones of the skeleton are hard, they protect the organs, such as the 
+brain and abdominal organs, that they surround.
+
+There are 8 cranial bones that support, surround, and protect the brain. Fourteen facial bones form the face 
+and serve as attachments for the facial muscles that primarily move skin rather than bone. The facial bones, 
+except for the lower jaw (mandible), are joined with each other and with the cranial bones. There are 6 
+auditory ossicles, 3 in each ear, that transmit sound waves from the external environment to the inner ear. 
+The hyoid bone, which is near the skull but not part
+
+of it, is a small U-shaped bone that is located in the neck just below the lower jaw. It is attached to the 
+skull and larynx (voice box) by muscles and ligaments and serves as the attachment for several important 
+neck and tongue muscles.
+
+The vertebral column starts out with approximately 34 bones, but only 26 independent ones are left in the 
+average human adult. There are 7 cervical bones, including the axis which acts as a pivot around which the 
+head rotates, and the atlas which sits on the axis and supports the ‘‘globe’’ of the head. These are 
+followed by 5 cervical, 12 thoracic, and 5 lumbar vertebrae and then the sacrum and the coccyx. The last two 
+consist of 5 fused vertebrae. The vertebral column supports the weight of and allows movement of the head 
+and trunk, protects the spinal cord, and provides places for the spinal nerves to exit from the spinal cord. 
+There are 4 major curves (cervical, thoracic, lumbar, and sacral/coccygeal) in the adult vertebral column 
+which allow it to ﬂex and absorb shock. Although movement between any 2 adjacent vertebrae is generally 
+quite limited, the total amount of movement provided by the vertebral column can be extensive. The thoracic 
+cage consists of 12 thoracic vertebrae (which are counted as part of the vertebral column), 12 pairs of ribs 
+and their associated cartilage, and the sternum (breastbone). It protects vital organs and prevents the 
+collapse of the thorax during ventilation.
+
+Bones are classiﬁed as long, short, ﬂat, or irregular according to their shape. Long bones, such as the 
+femur and humerus, are longer than they are wide. Short bones, such as those found in the ankle and wrist, 
+are as broad as they are long. Flat bones, such as the sternum and the bones of the skull, have a relatively 
+thin and ﬂattened shape. Irregular bones do not ﬁt into the other categories and include the bones of the 
+vertebral column and the pelvis.
+
+Bones make up about 18% of the mass of the body and have a density of 1:9 g=cm3 . There are two types of 
+bone: spongy and compact (cortical). Spongy bone forms the ends (epiphyses) of the long bones and the 
+interior of other bones and is quite porous. Compact bone forms the shaft (diaphysis) and outer covering of 
+bones and has a tensile strength of 120 N=mm2 , compressive strength of 170 N=mm2 , and Young’s modulus of 
+1:8 Â 104 N=mm2 . The medullary cavity, a hollow space inside the diaphysis, is ﬁlled with fatty, yellow 
+marrow or red marrow that contains bloodforming cells.
+
+Bone is a living organ that is constantly being remodeled. Old bone is removed by special cells called 
+osteoclasts, and new bone is deposited by osteoblasts. Bone remodeling occurs during bone growth and to 
+regulate calcium availability. The average skeleton is totally remodeled about three times during a person’s 
+lifetime. Osteoporosis is a disorder in which old bone is broken down faster than new bone is produced so 
+that the resulting bones are weak and brittle.
+
+The bones of the skeletal system are attached to each other at ﬁbrous, cartilaginous, or synovial joints 
+(Fig. 3.32). The articulating bones of ﬁbrous joints are bound tightly together by ﬁbrous connective 
+tissue. These joints can be rigid and relatively immovable to slightly movable. This type of joint includes 
+the suture joints in the skull. Cartilage holds together the bones in cartilaginous joints. These joints 
+allow limited motion in response to twisting or compression and include the joints of the vertebral system 
+and the joints that attach the ribs to the vertebral column and to the sternum.
+
+Synovial joints, such as the knee, are the most complex and varied and have ﬂuid-ﬁlled joint cavities, 
+cartilage that covers the articulating bones, and ligaments that help hold the joints together.
+
+Synovial joints are classiﬁed into six types based on their structure and the type of motion they permit. 
+Gliding joints (Fig. 3.33) are the simplest type of synovial joint, allow back-and-forth or side-to-side 
+movement, and include the intercarpal articulations in the wrist. Hinge joints such as the elbow permit 
+bending in only one plane and are the most common type of synovial joint. The atlas and axis provide an 
+example of a pivot joint that permits rotation. In condyloid articulations, an oval, convex surface of one 
+bone ﬁts into a concave depression on another bone. Condyloid joints, which include the metacarpophalangeal 
+joints (knuckles) of the ﬁngers, permit ﬂexion–extension and rotation and are considered to bebiaxial 
+because rotation islimitedto two axes of movement. The saddle joint, represented by the joint at the base of 
+the thumb, is a modiﬁedcondyloidjointthatpermitsmovement inseveraldirections(multiaxial). Balland-socket 
+joints allow motion in many directions around a ﬁxed center. In these joints, the ball-shaped head of one 
+bone ﬁts into a cuplike concavity of another bone. This 
+multiaxialjointisthemostfreelymovableofallandincludestheshoulderandhipjoints. Biomedical engineers have 
+helped develop artiﬁcial joints that are routinely used as replacements in diseased or injured hips, 
+shoulders, and knees (Fig. 3.34).
+
+3.4.5 Muscular System
+
+The muscular system (Fig. 3.35) is composed of 600–700 skeletal muscles, depending on whether certain 
+muscles are counted as separate or as pairs, and makes up 40% of the body’s mass. The axial musculature 
+makes up about 60% of the skeletal muscles in the body and arises from the axial skeleton (Fig. 3.31). It 
+positions the head and spinal column and moves the rib cage during breathing. The appendicular musculature 
+moves or stabilizes components of the appendicular skeleton.
+
+The skeletal muscles in the muscular system maintain posture, generate heat to maintain the body’s 
+temperature, and provide the driving force that is used to move the bones and joints of the body and the 
+skin of the face. Muscles that play a major
+
+role in accomplishing a movement are called prime movers, or agonists. Muscles that act in opposition to a 
+prime mover are called antagonists, whereas muscles that assist a prime mover in producing a movement are 
+called synergists. The continual contraction of some skeletal muscles helps maintain the body’s posture. If 
+all of these muscles relax, which happens when a person faints, the person collapses.
+
+A system of levers, which consist of rigid lever arms that pivot around ﬁxed points, is used to move 
+skeletal muscle (Fig. 3.36). Two forces act on every lever: the weight to be moved (i.e., the resistance to 
+be overcome) and the pull or effort applied (i.e., the applied force). Bones act as lever arms and joints 
+provide a fulcrum. The resistance to be overcome is the weight of the body part that is moved and the 
+applied force is generated by the contraction of a muscle or muscles at the insertion, the point of 
+attachment of a muscle to the bone it moves. An example of a ﬁrst-class lever, one in which the fulcrum is 
+between the force and the weight, is the movement of the facial portion of the head when the face is tilted 
+upwards. The fulcrum is formed by the joint between the atlas and the occipital bone of the skull and the 
+vertebral muscles inserted at the back of the head generate the applied force that moves the weight, the 
+facial portion of the head. A second-class lever is one in which the weight is between the force and the 
+fulcrum. This can be found in the body when a person stands on ‘‘tip toe.’’ The ball of the foot is the 
+fulcrum and the applied force is generated by the calf muscles on the back of the leg. The weight that is 
+moved is that of the whole body. A third-class lever is one in which the force is between the weight and the 
+fulcrum. When a person has a bent elbow and holds a ball in front of the body, the applied force is 
+generated by the contraction of the biceps brachii muscle. The weight to be moved
+
+includes the ball and the weight of the forearm and hand, and the elbow acts as the fulcrum.
+
+The three types of muscle tissue—cardiac, skeletal, and smooth—share four important characteristics: (1) 
+contractility, the ability to shorten; (2) excitability, the capacity to receive and respond to a stimulus; 
+(3) extensibility, the ability to be stretched; (4) and elasticity, the ability to return to the original 
+shape after being stretched or contracted. Cardiac muscle tissue is found only in the heart, whereas smooth 
+muscle tissue is found within almost every other organ where it forms sheets, bundles, or sheaths around 
+other tissues. Skeletal muscles are composed of skeletal muscle tissue, connective tissue, blood vessels, 
+and nervous tissue.
+
+Each skeletal muscle is surrounded by a layer of connective tissue (collagen ﬁbers) that separates the 
+muscle from surrounding tissues and organs. These ﬁbers come together at the end of the muscle to form 
+tendons which connect the skeletal muscle to bone, to skin (face), or to the tendons of other muscles 
+(hand). Other connective tissue ﬁbers divide the skeletal muscles into compartments called fascicles that 
+contain bundles of muscle ﬁbers. Within each fascicle, additional connective tissue surrounds each skeletal 
+muscle ﬁber and ties adjacent ones together. Each skeletal muscle ﬁber has hundreds of nuclei just beneath 
+the cell membrane. Multiple nuclei provide multiple copies of the genes that direct the production of 
+enzymes and structural proteins needed for normal contraction so that contraction can occur faster.
+
+In muscle ﬁbers, the plasma membrane is called the sarcolemma and the cytoplasm is called the sarcoplasm 
+(Fig. 3.37). Transverse tubules (T tubules) begin at the sarcolemma and extend into the sarcoplasm at right 
+angles to the surface of the sarcolemma. The T tubules, which play a role in coordinating contraction, are 
+ﬁlled with extracellular ﬂuid and form passageways through the muscle ﬁber. They make close contact with 
+expanded chambers, cisternae, of the sarcoplasmic reticulum, a specialized form of the ER. The cisternae 
+contain high concentrations of calcium ions which are needed for contraction to occur.
+
+The sarcoplasm contains cylinders 1 or 2 mm in diameter that are as long as the entire muscle ﬁber and are 
+called myoﬁbrils. The myoﬁbrils are attached to the sarcolemma at each end of the cell and are responsible 
+for muscle ﬁber contraction. Myoﬁlaments—protein ﬁlaments consisting of thin ﬁlaments (primarily actin) 
+and thick ﬁlaments (mostly myosin)—are bundled together to make up myoﬁbrils. Repeating functional units 
+of myoﬁlaments are called sarcomeres (Fig. 3.38). The sarcomere is the smallest functional unit of the 
+muscle ﬁber and has a resting length of about 2:6 mm. The thin ﬁlaments are attached to dark bands, called 
+Z lines, which form the ends of each sarcomere. Thick ﬁlaments containing double-headed myosin molecules 
+lie between the thin ones. It is this overlap of thin and thick ﬁlaments that gives skeletal muscle its 
+banded, striated appearance. The I band is the area in a relaxed muscle ﬁber that just contains actin 
+ﬁlaments, whereas the H zone is the area that just contains myosin ﬁlaments. The H zone and the area in 
+which the actin and myosin overlap form the A band.
+
+When a muscle contracts, myosin molecules in the thick ﬁlaments form crossbridges at active sites in the 
+actin of the thin ﬁlaments and pull the thin ﬁlaments toward the center of the sarcomere. The 
+cross-bridges are then released and reformed at a different active site further along the thin ﬁlament. 
+This results in a motion that is similar to the hand-over-hand motion that is used to pull in a rope. This 
+action, the sliding ﬁlament mechanism, is driven by ATP energy and results in shortening of the muscle. 
+Shortening of the muscle components (contraction) results in bringing the muscle’s attachments (e.g., bones) 
+closer together (Fig. 3.38).
+
+Muscle ﬁbers have connections with nerves. Sensory nerve endings are sensitive to length, tension, and pain 
+in the muscle and send impulses to the brain via the spinal cord, whereas motor nerve endings receive 
+impulses from the brain and spinal cord that lead to excitation and contraction of the muscle. Each motor 
+axon branches and supplies several muscle ﬁbers. Each of these axon branches loses its myelin sheath and 
+splits up into a number of terminals that make contact with the surface of the muscle. When the nerve is 
+stimulated, vesicles in the axon terminals release a neurotransmitter, acetylcholine, into the synapse 
+between the neuron and the muscle. Acetylcholine diffuses across the synapse and binds to receptors in a 
+special area, the motor end plate, of the sarcolemma. This causes the sodium channels in the sarcolemma to 
+open up, and an action potential is produced in the muscle ﬁber. The resulting action potential spreads 
+over the entire sarcolemmal surface and travels down all of the T tubules where it triggers a sudden massive 
+release of calcium by the cisternae.
+
+Calcium triggers the production of active sites on the thin ﬁlaments so that crossbridges with myosin can 
+form and contraction occurs. Acetylcholinesterase breaks down the acetylcholine while the contraction 
+process is underway so that the original relatively low permeability of the sarcolemma to sodium is 
+restored.
+
+A motor unit is a complex consisting of one motor neuron and the muscle ﬁbers it innervates. All the muscle 
+ﬁbers in a single motor unit contract at the same time, whereas muscle ﬁbers in the same muscle but 
+belonging to different motor units may contract at different times. When a contracted muscle relaxes, it 
+returns to its original (resting) length if another contracting muscle moves it or if it is acted upon by 
+gravity. During relaxation, ATP is expended to move calcium back to the cisternae. The active sites that 
+were needed for cross-bridge formation become covered so that actin and myosin can no longer interact. When 
+the cross-bridges disappear, the muscle returns to its resting length (i.e., it relaxes).
+
+The human body contains two types of skeletal muscle ﬁbers: fast and slow. Fast ﬁbers can contract in 10 
+ms or less following stimulation and make up most of the skeletal muscle ﬁbers in the body. They are large 
+in diameter and contain densely packed myoﬁbrils, large glycogen reserves (used to produce ATP), and 
+relatively few mitochondria. These ﬁbers produce powerful contractions that use up massive amounts of ATP 
+and fatigue (can no longer contract in spite of continued neural stimulation) rapidly. Slow ﬁbers take 
+about three times as long to contract as fast ﬁbers. They can continue to contract for extended periods of 
+time because they contain
+
+(1) a more extensive network of capillaries so that they can receive more oxygen,
+
+(2) a special oxygen-binding molecule called myoglobin, and (3) more mitochondria which can produce more ATP 
+than fast ﬁbers. Muscles contain different amounts of slow and fast ﬁbers. Those that are dominated by 
+fast ﬁbers (e.g., chicken breast muscles) appear white and those that are dominated by slow ﬁbers (e.g., 
+chicken legs) appear red. Most human muscles appear pink because they contain a mixture of both. Genes 
+determine the percentage of fast and slow ﬁbers in each muscle, but the ability of fast muscle ﬁbers to 
+resist fatigue can be increased through athletic training.
+
+3.5 HOMEOSTASIS
+
+Organ systems work together to maintain a constant internal environment within the body. Homeostasis is the 
+process by which physical and chemical conditions within the internal environment of the body are maintained 
+within tolerable ranges even when the external environment changes. Body temperature, blood pressure, and 
+breathing and heart rates are some of the functions that are controlled by homeostatic mechanisms that 
+involve several organ systems working together.
+
+Extracellular ﬂuid—the ﬂuid that surrounds and bathes the body’s cells—plays an important role in 
+maintaining homeostasis. It circulates throughout the body and carries materials to and from the cells. It 
+also provides a mechanism for maintaining optimal temperature and pressure levels, the proper balance 
+between acids and bases, and concentrations of oxygen, carbon dioxide, water, nutrients, and many of the 
+chemicals that are found in the blood.
+
+Three components—sensory receptors, integrators, and effectors—interact to maintain homeostasis (Fig. 3.39). 
+Sensory receptors, which may be cells or cell parts, detect stimuli (i.e., changes to their environment) and 
+send information about the stimuli to integrators. Integrators are control points that pull together 
+information from one or more sensory receptors. Integrators then elicit a response from effectors. The brain 
+is an integrator that can send messages to muscles or glands or both. The messages result in some type of 
+response from the effectors. The brain receives information about how parts of the body are operating and 
+can compare this to information about how parts of the body should be operating.
+
+Positive feedback mechanisms are ones in which the initial stimulus is reinforced by the response. There are 
+very few examples of this in the human body since it disrupts homeostasis. Childbirth provides one example. 
+Pressure from the baby’s head in the birth canal stimulates receptors in the cervix which send signals to 
+the hypothalamus. The hypothalamus responds to the stimulus by releasing oxytocin which enhances uterine 
+contractions. Uterine contractions increase in intensity and force the baby further into the birth canal 
+which causes additional stretching of the receptors in the cervix. The process continues until the baby is 
+born, the pressure on the cervical stretch receptors ends, and the hypothalamus is no longer stimulated to 
+release oxytocin.
+
+Negative feedback mechanisms result in a response that is opposite in direction to the initiating stimulus. 
+For example, receptors in the skin and elsewhere in the body detect the body’s temperature. Temperature 
+information is forwarded to the hypothalamus in the brain which compares the body’s current temperature to 
+what the temperature should be (approximately 378C). If the body’s temperature is too low, messages are sent 
+to contract the smooth muscles in blood vessels near the skin (reducing the diameter of the blood vessels 
+and the heat transferred through the skin), to skeletal muscles to start contracting rapidly (shivering), 
+and to the arrector pili muscles (Fig. 3.16a) to erect the hairs and form ‘‘goose bumps.’’ The metabolic 
+activity of the muscle contractions generates heat and warms the body. If the body’s temperature is too 
+high, messages are sent to relax the smooth muscles in
+
+the blood vessels near the skin (increasing the diameter of the blood vessels and the amount of heat 
+transferred through the skin) and to sweat glands to release moisture and thus increase evaporative cooling 
+of the skin. When the temperature of circulating blood changes enough in the appropriate direction that it 
+reaches the set point of the system, the hypothalamus stops sending signals to the effector muscles and 
+glands.
+
+Another example of a negative feedback mechanism in the body involves the regulation of glucose in the blood 
+stream by clusters of cells, the pancreatic islets (Fig. 3.40). There are between 2 Â 10 5 and 2 Â 10 6 
+pancreatic islets scattered throughout the adult pancreas. When glucose levels are high, beta cells in the 
+islets produce insulin which facilitates glucose transport across plasma membranes and into cells and 
+enhances the conversion of glucose into glycogen which is stored in the liver. During periods of fasting or 
+whenever the concentration of blood glucose drops below normal (70–110 mg/dl), alpha cells produce glucagon 
+which stimulates the liver to convert glycogen into glucose and the formation of glucose from 
+noncarbohydrate sources such as amino acids and lactic acid. When glucose levels return to normal, the 
+effector cells in the pancreatic islets stop producing their respective hormone (i.e., insulin or glucagon). 
+Some biomedical engineers are working on controlled drug delivery systems that can sense blood glucose 
+levels and emulate the responses of the pancreatic islet cells, whereas other biomedical engineers are 
+trying to develop an artiﬁcial pancreas that would effectively maintain appropriate blood glucose levels.
+
+EXERCISES
+
+1. Using as many appropriate anatomical terms as apply, write sentences which describe the positional 
+relationship between your mouth and (1) your left ear, (2) your nose, and (3) the big toe on your right 
+foot.
+
+2. Using as many appropriate anatomical terms as apply, describe the position of the stomach in the body and 
+its position relative to the heart.
+
+3. Search the Internet to ﬁnd a transverse section of the body that was imaged using computerized 
+tomography (CT) or magnetic resonance imaging (MRI). Print the image and indicate its web address.
+
+4. Search the Internet to ﬁnd a frontal section of the body that was imaged using CT or MRI. Print the 
+image and indicate its web address.
+
+5. Name and give examples of the four classes of biologically important organic compounds. What are the 
+major functions of each of these groups?
+
+6. What are the molarity and osmolarity of a 1-liter solution that contains half a mole of calcium chloride? 
+How many molecules of chloride would the solution contain?
+
+7. Consider a simple model cell, such as the one in Figure 3.6, that consists of cytoplasm and a plasma 
+membrane. The cell’s initial volume is 2 nl and contains 0.2 M protein. The cell is placed in a large volume 
+of 0:05 M CaCl2 . Neither Ca þþ nor Cl À can cross the plasma membrane and enter the cell. Is the 0:05 M 
+CaCl 2 solution hypotonic, isotonic, or hypertonic relative to the
+
+osmolarity inside the cell? Describe what happens to the cell as it achieves equilibrium in this new 
+environment. What will be the ﬁnal osmolarity of the cell? What will be its ﬁnal volume?
+
+8. What does the principle of electrical neutrality mean in terms of the concentration of ions within a 
+cell?
+
+9. Consider the same model cell that was used in Exercise 7, but instead of being placed in 0:05 M CaCl 2 , 
+the cell is placed in 0:2 M urea. Unlike Caþþ  and Cl À , urea can cross the plasma membrane and enter the 
+cell. Describe
+
+what happens to the cell as it achieves equilibrium in this environment. What will be the ﬁnal osmolarity 
+of the cell? What will be its ﬁnal volume?
+
+10. Brieﬂy describe the path that a protein (e.g., a hormone) which is manufactured on the rough ER would 
+take in order to leave the cell.
+
+11. What major role do mitochondria have in the cell? Why might it be important to have this process 
+contained within an organelle?
+
+12. List and brieﬂy describe three organelles that provide structural support and assist with cell 
+movement.
+
+13. Find a location on the Internet that describes the Human Genome Project.
+
+Print its home page and indicate its web address. Find and print an ideogram of a chromosome that shows a 
+gene that causes cystic ﬁbrosis.
+
+14. Brieﬂy describe the major differences between replication and transcription.
+
+15. Describe how the hereditary information contained in genes within the cell’s DNA is expressed as 
+proteins which direct the cell’s activities.
+
+16. Six different codons code for leucine while only one codes for methionine. Why might this be important 
+for regulating translation and producing proteins?
+
+17. Insulin (Fig. 3.41) was the ﬁrst protein to be sequenced biochemically.
+
+Assuming that there were no introns involved in the process, what are the possible DNA sequences that 
+produced the last four amino acids in the molecule?
+
+18. Copy the title page and abstract of ﬁve peer-reviewed journal articles that discuss engineering 
+applications for ﬁve different organ systems in the body (one article per organ system). Review articles, 
+conference proceeding papers, copies of keynote addresses and other speeches, book chapters, articles from 
+the popular press and newspapers, and editorials are not acceptable. Good places to look are the Annals of 
+Biomedical Engineering, the IEEE Transactions on Biomedical Engineering, the IEEE Engineering in Medicine 
+and Biology Magazine, and Medical and Biological Engineering and Computing. What information in the article 
+indicates that it was peer-reviewed?
+
+19. Trace the path of a single red blood cell from a capillary bed in your right hand to the capillary beds 
+of your right lung and back. What gases are exchanged? Where are they exchanged during this process?
+
+20. Draw and label a block diagram of pulmonary and systemic blood ﬂow that includes the chambers of the 
+heart, valves, major veins and arteries that enter and leave the heart, the lungs, and the capillary bed of 
+the body. Use arrows to indicate the direction of ﬂow through each component.
+
+21. Find on the Internet an example of an ECG representing normal sinus rhythm and use it to demonstrate how 
+heart rate is determined.
+
+22. Why are R waves (Fig. 3.22) used to determine heart rate rather than T waves?
+
+23. How can the stroke volume be determined if a thermal dilution technique is used to determine cardiac 
+output?
+
+24. What would be the pulse pressure and mean arterial pressure for a hypertensive person with a systolic 
+pressure of 145 mm Hg and a diastolic pressure of 98 mm Hg?
+
+25. The total lung capacity of a patient is 5.5 liters. Find the patient’s inspiratory reserve volume if the 
+patient’s vital capacity was 4.2 liters, the tidal volume was 500 ml, and the expiratory reserve volume was 
+1.2 liters.
+
+26. What would you need to know or measure to determine the residual volume of the patient described in 
+Example Problem 3.10?
+
+27. Brieﬂy describe the functions and major components of the central, peripheral, somatic, automatic, 
+sympathetic, and parasympathetic nervous systems. Which ones are subsets of others?
+
+28. Explain how sarcomeres shorten and how that results in muscle contraction.
+
+29. How do the muscular and skeletal systems interact to produce movement?
+
+30. Draw a block diagram to show the negative feedback mechanisms that help regulate glucose levels in the 
+blood. Label the inputs, sensors, integrators, effectors, and outputs.
+
+SUGGESTED READING
+
+Brown, B.H., Smallwood, R.H., Barber, D.C., Lawford, P.V. and Hose, D.R. (1999). Medical Physics and 
+Biomedical Engineering. Institute of Physics Publishing, Bristol and Philadelphia. Cooper, G.M. (2000). The 
+Cell—A Molecular Approach, 2nd Ed. ASM Press, Washington, D.C. Deutsch, S. and Deutsch, A. (1993). 
+Understanding the Nervous System: An Engineering
+
+Perspective. IEEE Press, New York.
+
+Fox, S.I. (2004). Human Physiology, 8th Ed. McGraw-Hill, Boston.
+
+Germann, W.J. and Stanﬁeld, C.L. (2005). Principles of Human Physiology, 2nd Ed. Pearson
+
+Benjamin Cummings, San Francisco.
+
+Guyton, A.C. (1991). Basic Neuroscience: Anatomy & Physiology. W. B. Saunders, Philadelphia. Guyton, A.C. 
+and Hall, J.E. (2000). Textbook of Medical Physiology, 10th Ed. W. B. Saunders,
+
+Philadelphia.
+
+Harold, F.M. (2001). The Way of the Cell: Molecules, Organisms and the Order of Life. Oxford
+
+Univ. Press, New York.
+
+Karp, G. (2002). Cell and Molecular Biology—Concepts and Experiments, 3rd Ed. Wiley, New
+
+York.
+
+Katz, A.M. (1986). Physiology of the Heart. Raven Press, New York.
+
+Keynes, R.D. and Aidley, D.J. (1991). Nerve & Muscle, 2nd Ed. Cambridge Univ. Press,
+
+Cambridge.
+
+Leff, A.R. and Schumacker, P.T. (1993). Respiratory Physiology: Basics and Applications.
+
+Saunders, Philadelphia.
+
+Lodish, H., Berk, A., Zipursky, S.L., Matsudaira, P., Baltimore, D. and Darnell, J. (2000).
+
+Molecular Cell Biology, 4th Ed. W. H. Freeman, New York.
+
+Martini, F.H. (2001). Fundamentals of Anatomy & Physiology, 5th Ed. Prentice Hall, Upper
+
+Saddle River, NJ.
+
+Matthews, G.G. (1991). Cellular Physiology of Nerve and Muscle. Blackwell Scientiﬁc, Boston. Pollack, G.H. 
+(2001). Cells, Gels and the Engines of Life—A New Unifying Approach to Cell
+
+Function. Ebner & Sons, Seattle, WA.
+
+Rhoades R. and Pﬂanzer, R. (2003). Human Physiology, 4th Ed. Thomson Learning, Paciﬁc
+
+Grove, CA.
+
+Silverthorn, D.U. (2004). Human Physiology—An Integrated Approach, 3rd Ed. Pearson Benja-
+
+min Cummings, San Francisco.
+
+To¨zeren A. and Byers, S.W. (2004). New Biology for Engineers and Computer Scientists. Pearson
+
+Education, Upper Saddle River, NJ.
+
+Van De Graaff, K.M., Fox, S.I. and LaFleur, K.M. (1997). Synopsis of Human Anatomy &
+
+Physiology. Wm. C. Brown, Dubuque, IA.
+
+West, J.B. (1990). Respiratory Physiology—The Essentials, 4th Ed. Williams & Wilkins, Baltimore. Widmaier, 
+E.P., Raff, H. and Strang, K.T. (2004). Vander, Sherman, & Luciano’s Human
+
+Physiology—The Mechanisms of Body Function. McGraw-Hill, Boston.
+
+

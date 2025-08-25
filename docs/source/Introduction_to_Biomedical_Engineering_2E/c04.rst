@@ -1,0 +1,2882 @@
+c04
+===
+
+
+BIOMECHANICS
+
+Joseph L. Palladino, PhD Roy B. Davis, PhD
+
+Chapter Contents
+
+4.1 Introduction
+
+4.2 Basic Mechanics
+
+4.2.1 Vector Mathematics
+
+4.2.2 Coordinate Transformations
+
+4.2.3 Static Equilibrium
+
+4.2.4 Anthropomorphic Mass Moments of Inertia
+
+4.2.5 Equations of Motion
+
+4.3 Mechanics of Materials
+
+4.4 Viscoelastic Properties
+
+4.5 Cartilage, Ligament, Tendon, and Muscle
+
+4.5.1 Cartilage
+
+4.5.2 Ligaments and Tendons
+
+4.5.3 Muscle Mechanics
+
+4.6 Clinical Gait Analysis
+
+4.6.1 The Clinical Gait Model
+
+4.6.2 Kinematic Data Analysis
+
+4.6.3 Kinetic Data Analysis
+
+4.6.4 Clinical Gait Interpretation
+
+4.7 Cardiovascular Dynamics
+
+4.7.1 Blood Rheology
+
+4.7.2 Arterial Vessels
+
+4.7.3 Heart Mechanics
+
+4.7.4 Cardiovascular Modeling
+
+Exercises Suggested Reading
+
+At the conclusion of this chapter, students will be able to:
+
+&
+
+& &
+
+& & &
+
+& &
+
+& & & &
+
+Understand the application of engineering kinematic relations to biomechanical problems.
+
+Understand the application of engineering kinetic relations to biomechanical problems. Understand the 
+application of engineering mechanics of materials to biological structures.
+
+Use MATLAB to write and solve biomechanical static and dynamic equations.
+
+Use Simulink to study viscoelastic properties of biological tissues.
+
+Understand how kinematic equations of motion are used in clinical analysis of human gait.
+
+Understand how kinetic equations of motion are used in clinical analysis of human gait. Explain how 
+biomechanics applied to human gait is used to quantify pathological conditions, to suggest surgical and 
+clinical treatments, and to quantify their effectiveness. Understand basic rheology of biological ﬂuids.
+
+Understand the development of models that describe blood vessel mechanics. Understand basic heart mechanics.
+
+Explain how biomechanics applied to the cardiovascular system is used to quantify the effectiveness of the 
+heart as a pump, to study heart–vessel interaction, and to develop clinical applications.
+
+4.1 INTRODUCTION
+
+Biomechanics combines engineering and the life sciences by applying principles from classical mechanics to 
+the study of living systems. This relatively new ﬁeld covers a broad range of topics, including strength of 
+biological materials, bioﬂuid mechanics in the cardiovascular and respiratory systems, material properties 
+and interactions of medical implants and the body, heat and mass transfer into biological tissues (e.g., 
+tumors), biocontrol systems regulating metabolism or voluntary motion, and kinematics and kinetics applied 
+to study human gait. The great breadth of the ﬁeld of biomechanics arises from the complexities and variety 
+of biological organisms and systems.
+
+The goals of this chapter are twofold—to apply basic engineering principles to biological structures, and 
+then to develop clinical applications. Section 4.2 provides a review of concepts from introductory statics 
+and dynamics. Section 4.3 presents concepts from mechanics of material that are fundamental for engineers 
+and accessible to those with only a statics/dynamics background. Section 4.4 introduces viscoelastic 
+complexities characteristic of biological materials, with the concepts further applied in Section 4.5: 
+Cartilage, Ligament, Tendon, and Muscle. The last two sections bring all of this information together in two 
+‘‘real world’’ biomechanics applications: human gait analysis and cardiovascular dynamics.
+
+The human body is a complex machine with the skeletal system and ligaments forming the framework and the 
+muscles and tendons serving as the motors and cables. Human gait biomechanics may be viewed as a structure 
+(skeleton) comprised of levers (bones) with pivots (joints) that move as the result of net forces produced 
+by pairs of agonist and antagonist muscles. Consequently, the strength of the structure and the action of 
+muscles will be of fundamental importance. Using a similar functional model, the cardiovascular system may 
+be viewed as a complex pump (heart) pumping a complex ﬂuid (blood) into a complex set of pipes (blood 
+vessels). An extensive suggested reading list for both gait and cardiovascular dynamics permits the reader 
+to go beyond the very introductory nature of this textbook.
+
+The discipline of mechanics has a long history. For lack of more ancient records, the history of mechanics 
+starts with the ancient Greeks and Aristotle (384–322 BC ). Hellenic mechanics devised a correct concept of 
+statics, but those of dynamics, fundamental in living systems, did not begin until the end of the Middle 
+Ages and the beginning of the modern era. Starting in the sixteenth century, the ﬁeld of dynamics advanced 
+rapidly with work by Kepler, Galileo, Descartes, Huygens, and Newton. Dynamic laws were subsequently 
+codiﬁed by Euler, LaGrange, and LaPlace (see A History of Mechanics by Dugas).
+
+In Galileo’s Two New Sciences (1638) the subtitle Attenenti all Mecanica & i Movimenti Locali (Pertaining to 
+Mechanics and Local Motions) refers to force, motion, and strength of materials. Since then, ‘‘mechanics’’ 
+has been extended to describe the forces and motions of any system, ranging from quanta, atoms, molecules, 
+gases, liquids, solids, structures, stars, and galaxies. The biological world is consequently a natural 
+object for the study of mechanics.
+
+The relatively new ﬁeld of biomechanics applies mechanical principles to the study of living systems. The 
+eminent professor of biomechanics Dr. Y.C. Fung describes the role of biomechanics in biology, physiology, 
+and medicine:
+
+Physiology can no more be understood without biomechanics than an airplane can without aerodynamics. For an 
+airplane, mechanics enables us to design its structure and predict its performance. For an organ, 
+biomechanics helps us to understand its normal function, predict changes due to alteration, and propose 
+methods of artiﬁcial intervention. Thus diagnosis, surgery and prosthesis are closely associated with 
+biomechanics.1 
+
+Clearly, biomechanics is essential to assessing and improving human health.
+
+The following is a brief list of biomechanical milestones, especially those related to the topics in this 
+chapter:
+
+Galen of Pergamon (129–199) Published extensively in medicine, including De Motu Muscularum (On the 
+Movements of Muscles). He realized that motion requires muscle contraction.
+
+Leonardo da Vinci (1452–1519) Made the ﬁrst accurate descriptions of ball-andsocket joints, such as the 
+shoulder and hip, calling the latter the ‘‘polo dell’omo’’
+
+(pole of man). His drawings depicted mechanical force acting along the line of muscle ﬁlaments.
+
+AndreasVesalius(1514–1564)PublishedDeHumaniCorporisFabrica(TheFabricof the Human Body). Based on human 
+cadaver dissections, his work led to a more accurate anatomical description of human musculature than 
+Galen’s and demonstrated that motion results from the contraction of muscles that shorten and thicken.
+
+Galileo Galilei (1564–1642) Studied medicine and physics, integrated measurement and observation in science, 
+and concluded that mathematics is an essential tool of science. His analyses included the biomechanics of 
+jumping and the gait analysis of horses and insects, as well as dimensional analysis of animal bones.
+
+Santorio Santorio (1561–1636) Used Galileo’s method of measurement and analysis and found that the human 
+body changes weight with time. This observation led to the study of metabolism and, thereby, ushered in the 
+scientiﬁc study of medicine.
+
+William Harvey (1578–1657) Developed an experimental basis for the modern circulation concept of a closed 
+path between arteries and veins. The structural basis, the capillary, was discovered by Malpighi in 1661.
+
+Giovanni Borelli (1608–1679) A mathematician who studied body dynamics, muscle contraction, animal movement, 
+and motion of the heart and intestines. He published De Motu Animalium (On the Motion of Animals) in 1680.
+
+Jan Swammerdam (1637–1680) Introduced the nerve–muscle preparation, stimulating muscle contraction by 
+pinching the attached nerve in the frog leg. He also showed that muscles contract with little change in 
+volume, refuting the previous belief that muscles contract when ‘‘animal spirits’’ ﬁll them, causing 
+bulging.
+
+Robert Hooke (1635–1703) Devised Hooke’s Law, relating the stress and elongation of elastic materials, and 
+used the term cell in biology.
+
+Isaac Newton (1642–1727) Not known for biomechanics work, but he developed calculus, the classical laws of 
+motion, and the constitutive equation for viscous ﬂuid, all of which are fundamental to biomechanics.
+
+Nicholas Andre´(1658–1742) Coined the term orthopaedics at the age of eighty and believed that muscular 
+imbalances cause skeletal deformities.
+
+Stephen Hales (1677–1761) Was likely the ﬁrst to measure blood pressure, as described in his book 
+Statistical Essays: Containing Haemostaticks, or an Account of some Hydraulick and Hydrostatical Experiments 
+made on the Blood and Blood-Vessels of Animals; etc., in 1733.
+
+Leonard Euler (1707–1783) Generalized Newton’s laws of motion to continuum representations that are used 
+extensively to describe rigid body motion, and studied pulse waves in arteries.
+
+Thomas Young (1773–1829) Studied vibrations and voice, wave theory of light and vision, and devised Young’s 
+modulus of elasticity.
+
+Ernst Weber (1795–1878) and Eduard Weber (1806–1871) Published Die Mechanik der meschlichen Gerwerkzeuge (On 
+the Mechanics of the Human Gait Tools) in 1836, pioneering the scientiﬁc study of human gait.
+
+Hermann von Helmholtz (1821–1894) Studied an immense array of topics, including optics, acoustics, 
+thermodynamics, electrodynamics, physiology, and medicine, including ophthalmoscopy, ﬂuid mechanics, nerve 
+conduction speed, and the heat of muscle contraction.
+
+Etienne Marey (1830–1904) Analyzed the motion of horses, birds, insects, ﬁsh, and humans. His inventions 
+included force plates to measure ground reaction forces and the Chronophotographe a pellicule, or motion 
+picture camera.
+
+Wilhelm Braune and Otto Fischer (research conducted from 1895–1904) Published Der Gang des Menschen (The 
+Human Gait), containing the mathematical analysis of human gait and introducing methods still in use. They 
+invented ‘‘cyclography’’ (now called interrupted-light photography with active markers), pioneered the use 
+of multiple cameras to reconstruct 3D motion data, and applied Newtonian mechanics to estimate joint forces 
+and limb accelerations.
+
+4.2 BASIC MECHANICS
+
+This section reviews some of the main points from any standard introductory mechanics (statics and dynamics) 
+course. Good references abound, such as Engineering Mechanics by Merriam and Kraige (2002). A review of 
+vector mathematics is followed by matrix coordinate transformations, a topic new to some students. Euler’s 
+equations of motion (section 4.2.5) may also be new material. For both topics, Principles of Dynamics by 
+Greenwood provides a comprehensive reference.
+
+4.2.1 Vector Mathematics
+
+Forces may be written in terms of scalar components and unit vectors (of magnitude equal to one), or in 
+polar form with magnitude and direction. Figure 4.1 shows that
+
+the 2-dimensional vector F is comprised of the i component, F x , in the x direction, and the j component, F 
+y , in the y direction, or
+
+F¼Fx i þ Fy j
+
+(4:1)
+
+as in 20i þ 40j lb. In this chapter vectors are set in bold type. This same vector may be written in polar 
+form in terms of the vector’s magnitude jFj, also called the norm, and the vector’s angle of orientation, u:
+
+qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ jFj ¼ F x 2 þ Fy 2 
+
+(4:2)
+
+Fy  u ¼ arctan Fx 
+
+(4:3)
+
+yielding jFj ¼ 44:7 lb and u ¼ 63:4  . Vectors are similarly represented in three dimensions in terms of 
+their i, j and k components:
+
+F¼Fx i þ Fy j þ Fz k
+
+(4:4)
+
+with k in the z direction.
+
+Often, a vector’s magnitude and two points along its line of action are known. Consider the 3-dimensional 
+vector in Figure 4.2. F has magnitude of 10 lb, and its line of action passes from the origin (0,0,0) to the 
+point (2,6,4). F is written as the product of the magnitude jFj and a unit vector e F that points along its 
+line of action:
+
+F ¼ jFjeF 
+
+2i þ 6j þ 4k ¼ 10 lb pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ  2 2 þ 6 2 þ 4 2 
+
+F ¼ 2:67i þ 8:02j þ 5:34k lb
+
+The quantity in parentheses is the unit vector of F, or
+
+eF ¼
+
+2i þ 6j þ 4k pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ • 2 2 þ 6 2 þ 42 
+
+
+
+¼ 0:267i þ 0:802j þ 0:534k
+
+and the magnitude of F is
+
+pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ jFj ¼ 2:67 2 þ 
+8:02 2 þ 5:342  ¼ 10 lb
+
+The vector F in Figure 4.2 may also be deﬁned in 3-D space in terms of the angles between its line of 
+action and each coordinate axis. Consider the angles u x , u y , and uz  that are measured from the positive 
+x, y, and z axes, respectively, to F. Then
+
+Fx  cos u x ¼ jFj
+
+(4:5)
+
+Fy  cos u y ¼ jFj
+
+(4:6)
+
+Fz  cos u z ¼ jFj
+
+(4:7)
+
+These ratios are termed the direction cosines of F. The unit vector e F is equivalent to
+
+e F ¼ cos u x i þ cos u y j þ cos u z k
+
+(4:8)
+
+or, in general
+
+B F x i þ F y j þ Fz k C e F ¼ @ qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ2 z ﬃ A F 2 þ F 2 þ F 
+x y
+
+0
+
+1
+
+(4:9)
+
+The angles u x , u y , and u z for this example are consequently
+
+2:67 u x ¼ arccos ¼ 74:5   10 
+
+8:02 u y ¼ arccos ¼ 36:7   10 
+
+5:34 u z ¼ arccos ¼ 57:7   10 
+
+Vectors are added by summing their components:
+
+A¼Ax i þ Ay j þ Az k
+
+B¼Bx i þ By j þ Bz k
+
+C ¼ A þ B ¼ (A x þ B x )i þ (A y þ B y )j þ (A z þ B z )k
+
+In general, a set of forces may be combined into an equivalent force denoted the resultant R, where
+
+X X X R ¼ Fx i þ Fy j þ Fz k
+
+(4:10)
+
+as will be illustrated in subsequent sections. Vectors are subtracted similarly by subtracting vector 
+components.
+
+Vector multiplication consists of two distinct operations, the dot and cross products. The dot, or scalar, 
+product of vectors A and B produces a scalar via
+
+A Á B ¼ AB cos u
+
+(4:11)
+
+where u is the angle between the vectors. For an orthogonal coordinate system, where all axes are 908 apart
+
+iÁi¼jÁj¼kÁk¼1 i Á j ¼ j Á k ¼ k Á i ¼ ÁÁÁ ¼ 0
+
+(4:12)
+
+For example:
+
+A ¼ 3i þ 2j þ k ft B ¼ À2i þ 3j þ 10k lb
+
+A Á B ¼ 3(À2) þ 2(3) þ 1(10) ¼ 10 ft lb
+
+Note that the dot product is commutative (i.e., A Á B  B Á A).
+
+The physical interpretation of the dot product A Á B is the projection of A onto B, or, equivalently, the 
+projection of B onto A. For example, work is deﬁned as the force that acts in the same direction as the 
+motion of a body. Figure 4.3 (left) shows a force vector F dotted with a direction of motion vector d. The 
+work W done by F is given by F Á d  Fd cos u. Dotting F with d yields the component of F acting in the same 
+direction as d.
+
+The moment of a force about a point or axis is a measure of its tendency to cause rotation. The cross, or 
+vector, product of two vectors yields a new vector that points along the axis of rotation. For example, 
+Figure 4.3 (right) shows a vector F acting in the x–y plane at a distance from the body’s coordinate center 
+O. The vector r points from O to the line of action of F. The cross product r Â F is a vector that points in 
+the z direction along the body’s axis of rotation. If F and r are 3-dimensional (k components), their cross 
+product will have additional components of rotation about the x and y axes. The moment M resulting from 
+crossing r into F is written
+
+M¼Mx i þ My j þ Mz k
+
+(4:13)
+
+where M x , M y , and M z cause rotation of the body about the x, y, and z axes, respectively.
+
+Cross products may be taken by crossing each vector component term by term, for example:
+
+A Â B ¼ 3(À2)i Â i þ 3(3)i Â j þ 3(10)i Â k þ 2(À2)j Â i þ 2(3)j Â j þ 2(10)j Â k þ 1(À2)k Â i þ 1(3)k Â j þ 
+1(10)k Â k
+
+The magnitude jA Â Bj ¼ AB sin u, where u is the angle between A and B. Consequently, for an orthogonal 
+coordinate system the cross products of all like terms equal zero, and i Â j ¼ k, j Â k ¼ i, k Â i ¼ j, i Â 
+k ¼ Àj, and so on. The previous example yields
+
+A Â B ¼ 9k À 30j þ 4k þ 20i À 2j À 3i ¼ 17i À 32j þ 13k lb ft
+
+Note that the cross product is not commutative (i.e., A Â B  6 B Â A).
+
+Cross products of vectors are commonly computed using matrices. The previous example A Â B is given by the 
+matrix
+
+• i 
+
+j
+
+k
+
+ 
+
+  A Â B ¼  A x A y A z   
+
+ B x B y B z   
+
+ i   ¼  3   À2 
+
+j 2 3
+
+k    1 
+
+ 10  
+
+(4:14)
+
+¼ i[(2)(10) À (1)(3)] À j[(3)(10) À (1)(À2)] þ k[(3)(3) À (2)(À2)] ¼ i(20 À 3) À j(30 þ 2) þ k(9 þ 4) ¼ 17i 
+À 32j þ 13k lb ft
+
+Example Problem 4.1
+
+The vector F in Figure 4.4 has a magnitude of 10 kN and points along the dashed line as shown. (a) Write F 
+as a vector. (b) What is the component of F in the x–z plane? (c) What moment does F generate about the 
+origin (0,0,0)?
+
+Solution
+
+This example problem is solved using MATLAB. The ) prompt denotes input and the percent sign, %, precedes 
+comments (ignored by MATLAB). Lines that begin without the ) prompt are MATLAB output. Some spaces in the 
+following output were omitted to conserve space.
+
+) ) )
+
+%(a) First write the direction vector d that points along F % as a 1D array:
+
+d ¼ [12 À15 9]
+
+d ¼ 12 À15 9 ) % Now write the unit vector of F, giving its direction: ) unit_vector ¼ d/norm (d)
+
+unit_vector ¼ 0.5657
+
+À0.7071
+
+0.4243
+
+) % F consists of the magnitude 10 kN times this unit vector ) F ¼ 10 * unit_vector
+
+F ¼ 5.6569
+
+À7.0711
+
+4.2426
+
+) )
+
+% Or, more directly F ¼ 10 * (d/norm(d) )
+
+F ¼ 5.6569
+
+À7.0711
+
+4.2426
+
+) % (b) First write the vector r_xz that points in the xz plane: ) r_xz ¼ [12 0 9] r_xz ¼ 12 0 9
+
+) ) ) )
+
+% The dot product is given by the sum of all the term by term % multiplications of elements of vectors F and 
+r_xz F_dot_r_xz ¼ sum(F. * r_xz) % or simply, dot(F,r_xz)
+
+F_dot_r_xz ¼ 106.0660
+
+) ) )
+
+% (c) Cross F with a vector that points from the origin to F. % The cross product is given by the cross 
+function r_xz_cross_F ¼ cross(r_xz,F)
+
+r_xz_cross_F ¼ 63.6396
+
+0
+
+À84.8528
+
+) % Note that the cross product is not commutative ) cross(F,r_xz) ans ¼ À63.6396 0 84.8528
+
+) % Vectors are added and subtracted in MATLAB using the + and À ) % operations, respectively.
+
+&
+
+4.2.2 Coordinate Transformations 3-D Direction Cosines
+
+When studying the kinematics of human motion, it is often necessary to transform body or body segment 
+coordinates from one coordinate system to another. For example, coordinates corresponding to a coordinate 
+system determined by markers on the body (a moving coordinate system) must be translated to coordinates with 
+respect to the ﬁxed laboratory (inertial coordinate system). These 3-dimensional transformations use 
+direction cosines that are computed as follows.
+
+Consider the vector A measured in terms of the uppercase coordinate system XYZ, shown in Figure 4.5 in terms 
+of the unit vectors I, J, K.
+
+A¼Ax I þ Ay J þ Az K
+
+(4:15)
+
+The unit vectors I, J, K can be written in terms of i, j, k in the xyz system
+
+I ¼ cos u xX i þ cos u yX j þ cos u zX k
+
+(4:16)
+
+J ¼ cos u xY i þ cos u yY j þ cos u zY k
+
+(4:17)
+
+K ¼ cos u xZ i þ cos u yZ j þ cos u zZ k
+
+(4:18)
+
+where u xX is the angle between i and I, and similarly for the other angles.
+
+Substituting Eqs. 4.16–4.18 into Eq. 4.15 gives
+
+A ¼ A x [ cos u xX i þ cos u yX j þ cos u zX k]
+
+(4:19)
+
+þ A y [ cos u xY i þ cos u yY j þ cos u zY k]
+
+þ A z [ cos u xZ i þ cos u yZ j þ cos u zZ k]
+
+or
+
+A ¼ (A x cos u xX þ A y cos u xY þ A z cos u xZ )i
+
+(4:20)
+
+þ (A x cos u yX þ A y cos u yY þ A z cos u yZ )j
+
+þ (A x cos u zX þ A y cos u zY þ A z cos u zZ )k
+
+Consequently, A may be represented in terms of I, J, K or i, j, k.
+
+Euler Angles
+
+The coordinates of a body in one orthogonal coordinate system may be related to another orthogonal 
+coordinate system via Euler angle transformation matrices. For example, one coordinate system might 
+correspond to markers placed on the patient’s pelvis and the other coordinate system might correspond to the 
+patient’s thigh. The two coordinate systems are related by a series of rotations about each original axis in 
+turn. Figure 4.6 shows the xyz coordinate axes with a y–x–z rotation sequence. First, xyz is rotated about 
+the y axis (top), transforming the ijk unit vectors into the i 0 j 0 k0  unit vectors, via the equations
+
+i 0 ¼ cos u y i À sin u y k
+
+(4:21)
+
+j0 ¼j
+
+(4:22)
+
+k 0 ¼ sin u y i þ cos u y k
+
+(4:23)
+
+This new primed coordinate system is then rotated about the x axis (Fig. 4.6, middle), giving the 
+double-primed system:
+
+i00 ¼i0 
+
+(4:24)
+
+j 00 ¼ cos u x j 0 þ sin u x k0 
+
+(4:25)
+
+k 00 ¼ Àsin u x j 0 þ cos u x k0 
+
+(4:26)
+
+Finally, the double-primed system is rotated about the z axis, giving the triple-primed system:
+
+i 000 ¼ cos u z i 00 þ sin u z j00 
+
+(4:27)
+
+j 000 ¼Àsin u z i 00 þ cos u z j00 
+
+(4:28)
+
+k000 ¼k00 
+
+(4:29)
+
+The three rotations may be written in matrix form to directly translate ijk into i000 j000 k000 :
+
+2 3 2 32 32 32 3 i 000 cos u z sin u z 0 1 0 0 cos u y 0 À sin u y i 6 7 6 76 76 76 7 4 j 000 5 ¼ 4 À sin u 
+z cos u z 0 54 0 cos u x sin u x 54 0 1 0 54 j 5
+
+(4:30)
+
+k 000 0 0 1 0 À sin u x cos u x sin u y 0 cos u y k 2 32 32 3 cos u z sin u z cos u x sin u z sin u x cos u 
+y 0 À sin u y i 6 76 76 7 ¼ 4 À sin u z cos u z cos u x cos u z sin u x 54 0 1 0 54 j 5
+
+0
+
+À
+
+sin
+
+ux 
+
+cos
+
+ux 
+
+sin u y 0 cos uy 
+
+k
+
+2 3 2 32 3 i 000 cosu z cosu y þ sinu z sinu x sinu y sinu z cosu x Àcosu z sinu y þ sinu z sinu x cosu y i 
+4 j 000 5 ¼ 4 Àsinu z cosu y þ cosu z sinu x sinu y cosu z cosu x sinu z sinu y þ cosu z sinu x cosu y 54 j 
+5
+
+k000 
+
+cosu x sinuy 
+
+Àsinux 
+
+cosu x cosuy 
+
+k
+
+(4:31)
+
+If the angles of coordinate system rotation (u x , u y , u z ) are known, coordinates in the xyz 000 000 000 
+system can be transformed into the x y z system. Alternatively, if both the unprimed and triple-primed 
+coordinates are known, the angles may be computed as follows
+
+k 000 Á j ¼ À sin ux 
+
+(4:32)
+
+000 u x ¼ Àarcsin(k Á j)
+
+k 000 Á i ¼ cos u x sin uy  " 000 # k Ái u y ¼ arcsin cos ux 
+
+(4:33)
+
+000 i Á j ¼ sin u z cos ux  " 000 # i Áj u z ¼ arcsin cos ux 
+
+(4:34)
+
+Example Problem 4.2
+
+Write the Euler angle transformation matrices for the y–x–z rotation sequence using the MATLAB symbolic math 
+toolbox.
+
+Solution
+
+% eulerangles.m % % Euler angles for y-x-z rotation sequence % using MATLAB symbolic math toolbox % % x, y 
+and z are thetax, thetay and thetaz, respectively % First deﬁne them as symbolic variables
+
+syms x y z
+
+% Writing equations 4.21–23 as a matrix A
+
+A ¼ [ cos(y), 0, 0, 1, sin(y), 0,
+
+Àsin(y); 0; cos(y)]
+
+% equations 4.24–26 as matrix B
+
+B ¼ [ 1, 0, 0,
+
+0, cos(x), Àsin(x),
+
+0; sin(x); cos(x)]
+
+% and equations 4.27–29 as matrix C C ¼ [ cos(z), sin(z), 0;
+
+Àsin(z), cos(z), 0; 0, 0, 1]
+
+% The matrix equation 4.30 is created by multiplying matrices C, B % and A
+
+D ¼ C * B * A
+
+The resulting transformation matrix from the preceding m-ﬁle is D¼ [cos(z) * cos(y)+sin(z) * sin(x) * 
+sin(y), sin(z) * cos(x), Àcos(z) * sin(y)+sin(z) * sin(x) * cos(y)] [Àsin(z) * cos(y)+cos(z) * sin(x) * 
+sin(y), cos(z) * cos(x), sin(z) * sin(y)+cos(z) * sin(x) * cos(y)] [cos(x) * sin(y), Àsin(x), cos(x) * 
+cos(y)]
+
+Which is the same as Eq. 4.31.
+
+&
+
+The Euler transformation matrices are used differently depending on the available data. For example, if the 
+body coordinates in both the ﬁxed (unprimed) and body (triple-primed) systems are known, the body angles u 
+x , u y , and u z can be computed (e.g., Eqs. 4.32–4.34 for a y–x–z rotation sequence). Alternatively, the 
+body’s initial position and the angles u x , u y , and u z may be used to compute the body’s ﬁnal position.
+
+Example Problem 4.3
+
+An aircraft undergoes 30 degrees of pitch (u x ), then 20 degrees of roll (u y ), and ﬁnally 10 degrees of 
+yaw (u z ). Write a MATLAB function that computes the Euler angle transformation matrix for this series of 
+angular rotations.
+
+Solution
+
+Since computers use radians for trigonometric calculations, ﬁrst write two simple functions to compute 
+cosines and sines in degrees:
+
+function y ¼ cosd(x) %COSD(X) cosines of the elements of X measured in degrees. y ¼ cos(pi * x/180);
+
+function y ¼ sind(x) %SIND(X) sines of the elements of X measured in degrees. y ¼ sin(pi * x/180);
+
+Next write the x–y–z rotation sequence transformation matrix
+
+function D ¼ eulangle (thetax, thetay, thetaz) %EULANGLE matrix of rotations by Euler’s angles.
+
+% EULANGLE(thetax, thetay, thetaz) yields the matrix of % rotation of a system of coordinates by Euler’s % 
+angles thetax, thetay and thetaz, measured in degrees.
+
+% Now the ﬁrst rotation is about the x axis, so we use eqs. 4.24–26
+
+A¼[1 0 0
+
+0 cosd(thetax) Àsind(thetax)
+
+0 sind(thetax) cosd(thetax) ];
+
+% Next is the y axis rotation (Eqs. 4.21–23)
+
+B ¼ [ cosd(thetay) 0 sind(thetay)
+
+0
+
+1
+
+0
+
+Àsind(thetay) 0 cosd(thetay) ];
+
+% Finally, the z axis rotation (Eqs. 4.27–29)
+
+C¼[
+
+cosd(thetaz)
+
+Àsind(thetaz) 0
+
+sind(thetaz) cosd(thetaz) 0
+
+0
+
+0
+
+1
+
+];
+
+% Multiplying rotation matrices C, B and A as in Eq. 4.30 gives the solution:
+
+D¼C * B * A;
+
+Now use this function to compute the numerical transformation matrix:
+
+) eulangle(30,20,10) ans ¼
+
+0.9254 0.3188 À0.1632 0.8232
+
+0.3420 À0.4698
+
+À0.2049
+
+0.5438
+
+0.8138
+
+This matrix can be used to convert any point in the initial coordinate system (premaneuver) to its position 
+after the roll, pitch, and yaw maneuvers have been executed. &
+
+4.2.3 Static Equilibrium
+
+Newton’s equations of motion applied to a structure in static equilibrium reduce to the following vector 
+equations
+
+X F ¼ 0 (4:35) X
+
+M ¼ 0 (4:36)
+
+These equations are applied to biological systems in the same manner as standard mechanical structures. 
+Analysis begins with a drawing of the free-body diagram of the body segment(s) of interest with all 
+externally applied loads and reaction forces at the supports. Orthopedic joints can be modeled with 
+appropriate ideal joints (e.g., hinge, ball-and-socket, etc.) as discussed in Chapter 3 (Fig. 3.33).
+
+Example Problem 4.4
+
+Figure 4.7 (top) shows a Russell’s traction rig used to apply an axial, tensile force to a fractured femur 
+for immobilization. (a) What magnitude weight w must be suspended from the free end of the cable to maintain 
+the leg in static equilibrium? (b) Compute the average tensile force applied to the thigh under these 
+conditions.
+
+Solution
+
+The free body diagram for this system is shown in the lower panel of Figure 4.7. If the pulleys are assumed 
+frictionless and of small radius, the cable tension T is constant throughout. Using Eq. 4.35,
+
+F 1 þ F 2 þ F 3 þ F femur À mg j ¼ 0
+
+Writing each force in vector form,
+
+F 1 ¼ ÀF 1 i ¼ ÀTi F 2 ¼ (ÀF 2 cos 308)i þ (F 2 sin 308)j
+
+¼ (ÀT cos 308)i þ (T sin 308)j
+
+F 3 ¼ (F 3 cos 408)i þ (F 3 sin 408)j ¼ (T cos 408)i þ (T sin 408)j
+
+F femur ¼ (F femur cos 208)i À (F femur sin 208)j
+
+Using Table 4.1, and neglecting the weight of the thigh, the weight of the foot and leg is 0.061 multiplied 
+by total body weight, yielding mgj ¼ (0:061)(150j lb) ¼ 9:2j lb Summing the x components gives
+
+ÀT À T cos 308 þ T cos 408 þ F femur cos 208 ¼ 0
+
+Summing the y components gives
+
+T sin 308 þ T sin 408 À F femur sin 208 À mg ¼ 0
+
+The last two expressions may be solved simultaneously, giving both T, which is equal to the required 
+externally applied weight, and the axial tensile force, Ffemur  T ¼ 12:4 lb F femur¼ 14:5 lb
+
+Example Problem 4.5
+
+A 160-lb person is holding a 10-lb weight in his palm with the elbow ﬁxed at 908 ﬂexion (Fig. 4.8, top). 
+(a) What force must the biceps generate to hold the forearm in static equilibrium? (b) What force(s) does 
+the forearm exert on the humerus?
+
+Solution
+
+Figure 4.8 (bottom) shows the free-body diagram of this system. Due to the increased number of unknowns, 
+compared to the previous example, both Eqs. 4.35 and 4.36 will be used. Summing moments about the elbow at 
+point O, the equilibrium equation S M ¼ 0 can be written as
+
+Àr OE Â (ÀF A ) þ r OB Â (À10 lb)j þ r OP Â (À3:5 lb)j ¼ 0
+
+(À2 in)i Â (ÀF A )j þ (12 in)i Â (À10 lb)j þ (9:25 in)i Â (À3:5 lb)j ¼ 0
+
+(2 in)F A k À (120 lb in)k À (32:4 lb in)k ¼ 0 Solving this last expression for the one unknown, F A , the 
+vertical force at the elbow: F A ¼ 76:2 lb To ﬁnd the unknown horizontal force at the elbow, F C , and the 
+unknown force the biceps must generate, F B , the other equation of equilibrium SF ¼ 0 is used:
+
+F C i À F A j þ (ÀF B cos 758i þ F B sin 758j) À 10 lb j À 3:5 lb j ¼ 0 Summing the x and y components gives
+
+F C À F B cos (758) ¼ 0
+
+F B sin (758) À 10 lb À 3:5 lb ¼ 0 Solving these last two equations simultaneously and using F A ¼ 76:2 lb 
+gives the force of the biceps muscle, F B , and the horizontal elbow force, F C :
+
+ÀFA 
+
+þ
+
+F B ¼ 92:9 lb F C ¼ 24:1 lb &
+
+Example Problem 4.6
+
+The force plate depicted in Figure 4.9 has four sensors, one at each corner, that read the vertical forces F 
+1 , F 2 , F 3 , and F 4 . If the plate is square with side of length ‘ and forces F 1 À F 4 are known, write 
+two expressions that will give the x and y locations of the resultant force R.
+
+Solution
+
+The resultant magnitude R can be computed from the sum of forces in the z direction:
+
+X Fz ¼0
+
+F 1 þ F 2 þ F 3 þ F4 ÀR¼0
+
+R¼F 1 þ F 2 þ F 3 þ F4 
+
+The force plate remains horizontal; hence the sum of the moments about the x and y axes must each be zero. 
+Taking moments about the x axis,
+
+X Mx ¼0
+
+F 2 ‘ þ F 3 ‘ À Ry ¼ 0
+
+(F2  þ F 3 )‘ y¼ R
+
+Similarly, summing moments about the y axis,
+
+X My ¼0
+
+F 1 ‘ þ F 2 ‘ À Rx ¼ 0
+
+(F 1 þ F 2 )‘ x¼ R
+
+The coordinates x and y locate the resultant R.
+
+&
+
+4.2.4 Anthropomorphic Mass Moments of Inertia
+
+A body’s mass resists linear motion; its mass moment of inertia resists rotation. The resistance of a body 
+(or a body segment such as a thigh in gait analysis) to rotation is quantiﬁed by the body or body segment’s 
+moment of inertia I:
+
+Z I ¼ r 2 dm
+
+(4:37)
+
+m
+
+where m is the body mass and r is the the moment arm to the axis of rotation. The incremental mass dm can be 
+written rdV. For a body with constant density r the moment of inertia can be found by integrating over the 
+body’s volume V:
+
+Z I ¼ r r 2 dV
+
+(4:38)
+
+V
+
+This general expression can be written in terms of rotation about the x, y, and z axes:
+
+Z I xx ¼ (y 2 þ z 2 )rdV
+
+ZV  I yy ¼ (x 2 þ z 2 )rdV
+
+(4:39)
+
+ZV  I zz ¼ (x 2 þ y 2 )rdV
+
+The radius of gyration k is the moment arm between the axis of rotation and a single point where all of the 
+body’s mass is concentrated. Consequently, a body segment may be treated as a point mass with moment of 
+inertia,
+
+I ¼ mk2 
+
+(4:40)
+
+where m is the body segment mass. The moment of inertia with respect to a parallel axis I is related to the 
+moment of inertia with respect to the body’s center of mass Icm  via the parallel axis theorem:
+
+I ¼ I cm þ md2 
+
+(4:41)
+
+where d is the perpendicular distance between the two parallel axes. Anthropomorphic data for various body 
+segments are listed in Table 4.1.
+
+Example Problem 4.7
+
+A 150-lb person has a thigh length of 17 in. Find the moment of inertia of this body segment with respect to 
+its center of mass in SI units.
+
+Solution
+
+Thigh length in SI units is
+
+‘ thigh ¼ 17 in ¼ 0:432 m
+
+Table 4.1 lists ratios of segment weight to body weight for different body segments. Starting with body 
+mass,
+
+m body ¼ (150 lb)(0:454 kg=lb) ¼ 68:1 kg
+
+the thigh segment mass is
+
+m thigh ¼ (0:100)(68:1 kg) ¼ 6:81 kg
+
+Table 4.1 also lists body segment center of mass and radius of gyration as ratios with respect to segment 
+length for each body segment. Table 4.1 gives both proximal and distal segment length ratios. Note that 
+‘‘proximal’’ for the thigh refers toward the hip and ‘‘distal’’ refers toward the knee. Consequently, the 
+proximal thigh segment length is the distance between the thigh center of mass and the hip, and the distal 
+thigh segment length is the distance between the thigh center of mass and the knee. The moment of inertia of 
+the thigh with respect to the hip is therefore
+
+I thigh=hip ¼ mk 2 ¼ (6:81 kg)[(0:540)(0:432 m)] 2 ¼ 0:371 kg m2 
+
+The thigh’s moment of inertia with respect to the hip is related to the thigh’s moment of inertia with 
+respect to its center of mass via the parallel axis theorem (Eq. 4.41),
+
+I thigh=hip¼ I thigh=cmþ md2
+
+so
+
+I thigh=cm ¼ I thigh=hip À md2 
+
+In this case, distance d is given by the proximal segment length data:
+
+d ¼ (0:432 m)(0:433) ¼ 0:187 m
+
+and the ﬁnal result is
+
+I thigh=cm ¼ 0:371 kg m 2 À (6:81 kg)(0:187 m) 2 ¼ 0:133 kg m2 
+
+&
+
+4.2.5 Equations of Motion
+
+Vector equations of motion are used to describe the translational and rotational kinetics of bodies.
+
+Newton’s Equations of Motion
+
+Newton’s second law relates the net force F and the resulting translational motion as
+
+F ¼ ma
+
+(4:42)
+
+where a is the linear acceleration of the body’s center of mass for translation. For rotation
+
+M ¼ Ia
+
+(4:43)
+
+where Ia is the body’s angular momentum. Hence, the rate of change of a body’s angular momentum is equal to 
+the net moment M acting on the body. These two vector equations of motion are typically written as a set of 
+six x, y, and z component equations.
+
+Euler’s Equations of Motion
+
+Newton’s equations of motion describe the motion of the center of mass of a body. More generally, Euler’s 
+equations of motion describe the motion of a rigid body with respect to its center of mass. For the special 
+case where the xyz coordinate axes are chosen to coincide with the body’s principal axes,
+
+X M x ¼ I xx a x þ (I zz À I yy )! y ! z
+
+(4:44)
+
+X M y ¼ I yy a y þ (I xx À I zz )! z ! x
+
+(4:45)
+
+X M z ¼ I zz a z þ (I yy À I xx )! x ! y
+
+(4:46)
+
+M i is the net moment, I ii is the body’s moment of inertia with respect to the principal axes, and a i and 
+! i are the body’s angular acceleration and angular velocity, respectively. Euler’s equations require 
+angular measurements in radians. Their derivation is outside the scope of this chapter, but may be found in 
+any intermediate dynamics
+
+book. Equations 4.44–4.46 will be used in Section 4.6 to compute intersegmental or joint moments.
+
+4.3 MECHANICS OF MATERIALS
+
+Just as kinematic and kinetic relations may be applied to biological bodies to describe their motion and its 
+associated forces, concepts from mechanics of materials may be used to quantify tissue deformation, to study 
+distributed orthopedic forces, and to predict the performance of orthopedic implants and prostheses and of 
+surgical corrections. Since this topic is very broad, some representative concepts will be illustrated with 
+the following examples.
+
+An orthopedic bone plate is a ﬂat segment of stainless steel used to screw two failed sections of bone 
+together. The bone plate in Figure 4.10 has a rectangular cross-section, A, measuring 4.17 mm by 12 mm and 
+made of 316L stainless steel. An applied axial load, F, of 500 N produces axial stress, s, (force/area):
+
+F s ¼ A
+
+(4:47)
+
+500 N
+
+¼
+
+¼ 10 MPa (4:17 Â 10 À3 m)(12 Â 10 À3 m)
+
+The maximum shear stress, t max , occurs at a 458 angle to the applied load
+
+F458  t max ¼ A458 
+
+(4:48)
+
+(500 N) cos 458 ¼ ¼ 5 MPa Âcos 458 (0:00417 m)(0:012 m) Ã
+
+which is 0:5s, as expected from mechanics of materials principles. Prior to loading, two points were punched 
+15 mm apart on the long axis of the plate, as shown. After the 500 N load is applied, those marks are an 
+additional 0.00075 mm apart. The plate’s strain, e, relates the change in length, D‘ to the original length, 
+‘:
+
+D‘ e¼ ‘
+
+(4:49)
+
+0:00075 mm ¼ ¼ 50 Â 10À6  often reported as 50 m where m denotes microstrain (10 À6 ).
+
+15 mm
+
+The elastic modulus, E, relates stress and strain and is a measure of a material’s resistance to distortion 
+by a tensile or compressive load. For linearly elastic (Hookean) materials, E is a constant, and a plot of s 
+as a function of e is a straight line with slope E:
+
+s E¼ e
+
+Â 10 106  Pa E ¼ ¼ 200 GPa 50 Â 10À6 
+
+(4:50)
+
+For the bone plate,
+
+Materials such as metals and plastics display linearly elastic properties only in limited ranges of applied 
+loads. Biomaterials have even more complex elastic properties. Figure 4.11 shows tensile stress–strain 
+curves measured from longitudinal and transverse sections of bone. Taking the longitudinal curve ﬁrst, from 
+0–7000 m bone behaves as a purely elastic solid with E % 12 GPa. At a tensile stress of approximately 90 
+MPa, the stress–strain curve becomes nonlinear, yielding into the plastic region of deformation. This sample 
+ultimately fails at 120 MPa. Table 4.2 shows elastic moduli, yield stresses, and ultimate stresses for some 
+common orthopedic materials, both natural and implant.
+
+Figure 4.11 also shows that the elastic properties of bone differ depending on whether the sample is cut in 
+the longitudinal or transverse direction (i.e., bone is anisotropic). Bone is much weaker and less stiff in 
+the transverse compared to the longitudinal direction, as is illustrated by the large differences in the 
+yield and ultimate stresses and the slopes of the stress–strain curves for the two samples.
+
+Figure 4.12 shows that the elastic properties of bone also vary depending on whether the load is being 
+applied or removed, displaying hysteresis. From a thermodynamic view, the energy stored in the bone during 
+loading is not equal to the energy released during unloading. This energy difference becomes greater as the 
+maximum
+
+load increases (curves A to B to C). The ‘‘missing’’ energy is dissipated as heat due to internal friction 
+and damage to the material at high loads.
+
+The anisotropic nature of bone is sufﬁcient that its ultimate stress in compression is 200 MPa while in 
+tension it is only 140 MPa and in torsion 75 MPa. For torsional loading the shear modulus or modulus of 
+rigidity, denoted G, relates the shear stress to the shear strain. The modulus of rigidity is related to the 
+elastic modulus via Poisson’s ratio, n, where
+
+etransverse  n¼ elongitudinal 
+
+(4:51)
+
+Typically, n % 0:3, meaning that longitudinal deformation is three times greater than transverse 
+deformation. For linearly elastic materials, E, G, and n are related by
+
+¼
+
+(4:52)
+
+2(1 þ n)
+
+One additional complexity of predicting biomaterial failure is the complexity of physiological loading. For 
+example, bone is much stronger in compression than in tension. This property is demonstrated in ‘‘boot-top’’ 
+fractures in skiing. Since the foot is ﬁxed, the skier’s forward momentum causes a moment over the ski boot 
+top and produces three-point bending of the tibia. In this bending mode the anterior tibia undergoes 
+compression, while the posterior is in tension and potentially in failure. Contraction of the triceps surae 
+muscle produces high compressive stress at the posterior side, reducing the amount of bone tension. The 
+following example shows how topics from statics and mechanics of materials may be applied to biomechanical 
+problems.
+
+Example Problem 4.8
+
+Figure 4.13 (left) shows an orthopedic nail-plate used to ﬁx an intertrochanteric fracture. The hip applies 
+an external force of 400 N during static standing, as shown. The nail-plate is rectangular stainless steel 
+with cross-sectional dimensions of 10 mm (width) by 5 mm (height), and is well ﬁxed with screws along its 
+vertical axis and friction ﬁt into the trochanteric head (along the x axis). What forces, moments, 
+stresses, and strains will develop in this orthopedic device?
+
+Solution
+
+As for any statics problem, the ﬁrst task is constructing a free-body diagram, including all applied forces 
+and moments and all reaction forces and moments that develop at
+
+the supports. Because of the instability at the fracture site the nail-plate may be required to carry the 
+entire 400 N load. Consequently, one reasonable model of the nail-plate is a cantilever beam of length 0.06 
+m with a combined loading, as depicted in Figure 4.13 (right, top). The applied 400 N load consists of both 
+axial and transverse components:
+
+F x ¼ 400 N cos 208 ¼ 376 N
+
+F y ¼ 400 N sin 208 ¼ 137 N
+
+The axial load produces compressive normal stress; from Eq. 4.47,
+
+Fx  sx ¼ A
+
+376 N
+
+¼
+
+¼ 7:52 MPa (0:005 m)(0:01 m)
+
+in compression, which is only about 1% of the yield stress for stainless steel (Table 4.2). The maximum 
+shear stress due to the axial load is
+
+sx  tmax ¼ ¼ 3:76 MPa 2
+
+and occurs at 458 from the long axis. The axial strain can be computed using the elastic modulus for 
+stainless steel,
+
+s F=A E¼ ¼ e D‘=‘
+
+giving an expression for strain:
+
+F e¼ EA
+
+376 N Â ¼ ¼ 41:8 10À6  180 Â 10 9 Pa (0:005 m)(0:01 m) From this strain the axial deformation can be 
+computed:
+
+D‘ axial ¼ e ‘ ¼ 2:51 Â 10 À6 m
+
+which is negligible.
+
+The transverse load causes the cantilever section to bend. The equations describing beam bending can be 
+found in any mechanics of materials text (e.g., Roark 1989). Consider the beam in the left panel of Figure 
+4.14. If this beam is ﬁxed at the left hand side and subjected to a downward load on the right, it will 
+bend with the top of the beam elongating and the bottom shortening. Consequently, the top of the beam is in 
+tension and the bottom in compression. The point of transition, where there is no bending force, is denoted 
+the neutral axis, located at distance c. For a symmetric rectangular beam of height h, c is located at the 
+midline h/2. The beam resists bending via its area moment of inertia I. For a rectangular cross section of 
+width b and height h, I ¼ 12 1 bh 3 , depicted in the right panel of Figure 4.14.
+
+Beam tip deﬂection dy is equal to
+
+Fx2  dy ¼ (3L À x) 6EI
+
+(4:53)
+
+where x is the axial distance along the beam, L is the total beam length, and I is the beam’s 
+cross-sectional area moment of inertia. For this example,
+
+1 Â I ¼ m)(5 Â 10 À3 m) 3 ¼ 10:42 Â 10 À9 m4  (10 10À3  12
+
+Maximum deﬂection will occur at x ¼ L,
+
+dy max ¼ 3EI
+
+137 N(0:06 m)3  ¼ 3(180 Â 10 9 N=m 2 )(10:42 Â 10 À9 m 4 ) ¼ 5:26 Â 10 À4 m ¼ 0:526 mm
+
+(4:54)
+
+which is also negligible.
+
+Computation of maximum shear and bending stresses require maximum shear force V and bending moment M. 
+Starting by static analysis of the entire freebody
+
+X F x : A x À 376 N ¼ 0 X F y : A y À 137 N ¼ 0 X M A : M a À 137 N(0:06 m) ¼ 0
+
+Solving these equations gives A x ¼ 376 N, A y ¼ 137 N, and M a ¼ 8:22 N m. Taking a cut at any point x to 
+the right of A and isolating the left-hand section gives the freebody in Figure 4.13 (right, bottom). 
+Applying the equations of static equilibrium to this isolated section yields
+
+X F x : 376 N À N ¼ 0
+
+N(x) ¼ 376 N X F y : 137 N À V ¼ 0
+
+V(x) ¼ 137 N X M A : 8:22 N m À (137 N)(x m) þ M ¼ 0
+
+¼ (137 N m) x À 8:22 N m These last equations can be plotted easily using MATLAB, giving the axial force, 
+shear force, and bending moment diagrams shown in Figure 4.15.
+
+M(x)
+
+% Use MATLAB to plot axial force, shear force, and bending moment diagrams % for Example Problem 4.8
+
+X ¼ [0:0.01:0.06]; N ¼ x. * 0 + 376; V ¼ x. * 0 + 137; M ¼ 137. * x À 8.22;
+
+ﬁgure subplot (3,1,1), plot(x,N,x,N, ’x’) xlabel (’x [m]’) ylabel(’N [N]’) title (’Axial Force N’)
+
+
+subplot(3,1,2), plot(x,V,x,V,’x’) xlabel(’x [m]’) ylabel(’V [N]’) title(’Shear Force V’) subplot(3,1,3), 
+plot(x,M,x,M,’x’) xlabel(’x [m]’) ylabel(’M [NÀm]’) title (’Bending Moment M’)
+
+The maximum bending and shear stresses follow as
+
+s
+
+bmax
+
+Mmax  ¼ I
+
+c
+
+(4:55)
+
+where c, the distance to the beam’s neutral axis, is h/2 for this beam:
+
+sb max ¼ 10:42 Â 10 À9 m4 
+
+m)]
+
+¼ À197 MPa
+
+Vmax  h2  tb max ¼ 8I
+
+(4:56)
+
+Â 137 N(5 10À3  m)2  ¼ ¼ 4:11 MPa 8(10:42 Â 10 À9 m 4 )
+
+All of these stresses are well below s yield ¼ 700 MPa for stainless steel.
+
+&
+
+4.4 VISCOELASTIC PROPERTIES
+
+The Hookean elastic solid is a valid description of materials only within a narrow loading range. For 
+example, an ideal spring that relates force and elongation by a spring constant k is invalid in nonlinear 
+low-load and high-load regions. Further, if this spring is coupled to a mass and set into motion, the 
+resulting perfect harmonic oscillator will vibrate forever, which experience shows does not occur. Missing 
+is a description of the system’s viscous or damping properties. In this case, energy is dissipated as heat 
+in the spring and air friction on the moving system.
+
+Similarly, biomaterials all display viscoelastic properties. Different models of viscoelasticity have been 
+developed to characterize materials with simple constitutive equations. For example, Figure 4.16 shows three 
+such models that consist of a series ideal spring and dashpot (Maxwell), a parallel spring and dashpot 
+(Voight), and a series spring and dashpot with a parallel spring (Kelvin). Each body contains a dashpot, 
+which generates force in proportion to the derivative of its elongation. Consequently, the resulting models 
+exhibit stress and strain properties that vary in time.
+
+The dynamic response of each model can be quantiﬁed by applying a step change in force F and noting the 
+model’s resulting change in length, or position x, denoted the creep response. The converse experiment 
+applies a step change in x and measures the resulting change in F, denoted stress relaxation. Creep and 
+stress relaxation tests for each dynamic model can be carried out easily using the Simulink program. Figure 
+4.17 shows a purely elastic material subjected to a step change in applied force F. The material’s 
+subsequent position x follows the change in force directly. This material exhibits no creep. Figure 4.18 
+shows the purely elastic material subjected to a step change in position x. Again, the material responds 
+immediately with a step change in F (i.e., no stress relaxation is observed).
+
+James Clerk Maxwell (1831–1879) used a series combination of ideal spring and dashpot to describe the 
+viscoelastic properties of air. Figure 4.19 shows the Maxwell viscoelastic model subjected to a step change 
+in applied force, and Fig. 4.20 shows the Maxwell model’s stress relaxation response. The latter exhibits an 
+initial high stress followed by stress relaxation back to the initial stress level. The creep response, 
+however, shows that this model is not bounded in displacement since an ideal dashpot may be extended 
+forever.
+
+Woldemar Voight (1850–1919) used the parallel combination of an ideal spring and dashpot in his work with 
+crystallography. Figure 4.21 shows the creep test of the Voight viscoelastic model. Figure 4.22 shows that 
+this model is unbounded in force. That is, when a step change in length is applied, force goes to inﬁnity 
+since the dashpot cannot immediately respond to the length change.
+
+William Thompson (Lord Kelvin, 1824–1907) used the three-element viscoelastic model (Figure 4.16c) to 
+describe the mechanical properties of different solids in the form of a torsional pendulum. Figure 4.23 
+shows the three-element Kelvin model’s creep response. This model has an initial rapid jump in position with 
+subsequent slow creep. Figure 4.24 shows the Kelvin model stress relaxation test. Initially, the material is 
+very stiff with subsequent stress decay to a non zero steady-state level that is due to the extension of the 
+dashpot. The three-element Kelvin model is the simplest lumped viscoelastic model that is bounded both in 
+extension and force.
+
+The three-element viscoelastic model describes the basic features of stress relaxation and creep. Biological 
+materials often exhibit more complex viscoelastic properties. For example, plotting hysteresis as a function 
+of frequency of applied strain gives
+
+discrete curves for the lumped viscoelastic models. Biological tissues demonstrate broad, distributed 
+hysteresis properties. One solution is to describe biomaterials with a distributed network of three-element 
+models. A second method is to use the generalized viscoelastic model of Westerhof and Noordergraaf (1990) to 
+describe the viscoelastic wall properties of blood vessels. Making the elastic modulus (mathematically) 
+complex yields a model that includes the frequency dependent elastic modulus, stress relaxation, creep, and 
+hysteresis exhibited by arteries. Further, the Voight and Maxwell models emerge as special (limited) cases 
+of this general approach.
+
+4.5 CARTILAGE, LIGAMENT, TENDON, AND MUSCLE
+
+The articulating surfaces of bones are covered with articular cartilage, a biomaterial composed mainly of 
+collagen. Collagen is the main structural material of hard and
+
+soft tissues in animals. Isolated collagen ﬁbers have high tensile strength that is comparable to nylon 
+(50–100 MPa) and an elastic modulus of approximately 1 GPa. Elastin is a protein found in vertebrates and is 
+particularly important in blood vessels and the lungs. Elastin is the most linearly elastic biosolid known, 
+with an elastic modulus of approximately 0.6 MPa. It gives skin and connective tissue their elasticity.
+
+4.5.1 Cartilage
+
+Cartilage serves as the bearing surfaces of joints. It is porous and its complex mechanical properties arise 
+from the motion of ﬂuid in and out of the tissue when subjected to joint loading. Consequently, articular 
+cartilage is strongly viscoelastic with stress relaxation times in compression on the order of 1 to 5 
+seconds. Cartilage is anisotropic and displays hysteresis during cyclical loading. Ultimate compressive 
+stress of cartilage is on the order of 5 MPa.
+
+
+4.5.2 Ligaments and Tendons
+
+Ligaments join bones together and consequently serve as part of the skeletal framework. Tendons join muscles 
+to bones and transmit forces generated by contracting muscles to cause movement of the jointed limbs. 
+Tendons and ligaments primarily transmit tension; hence they are composed mainly of parallel bundles of 
+collagen ﬁbers and have similar mechanical properties. Human tendon has an ultimate stress of
+
+50–100 MPa and exhibits very nonlinear stress–strain curves. The middle stressstrain range is linear with an 
+elastic modulus of approximately 1–2 GPa. Both tendons and ligaments exhibit hysteresis, viscoelastic creep, 
+and stress relaxation. These materials may also be ‘‘preconditioned,’’ whereby initial tensile loading can 
+affect subsequent load-deformation curves. The material properties shift due to changes in the internal 
+tissue structure with repeated loading.
+
+4.5.3 Muscle Mechanics
+
+Chapter 3 introduced muscle as an active, excitable tissue that generates force by forming cross-bridge 
+bonds between the interdigitating actin and myosin myoﬁlaments. The quantitative description of muscle 
+contraction has evolved into two separate foci—lumped descriptions based on A. V. Hill’s contractile 
+element, and cross-bridge models based on A.F. Huxley’s description of a single sarcomere (Palladino and 
+Noordergraaf, 1998). The earliest quantitative descriptions of muscle are lumped whole muscle models with 
+the simplest mechanical description being a purely elastic spring. Potential energy is stored when the 
+spring is stretched, and shortening occurs when it is released. The idea of muscle elastance can be traced 
+back to Ernst Weber (1846) who considered muscle as an elastic material that changes state during activation 
+via conversion of chemical energy. Subsequently, investigators retained the elastic description but ignored 
+metabolic alteration of muscle stiffness. A purely elastic model of muscle can be refuted on thermodynamic 
+grounds since the potential energy stored during stretching is less than the sum of the energy released 
+during shortening as work and heat. Still, efforts to describe muscle by a combination of traditional 
+springs and dashpots continued. In 1922, Hill coupled the spring with a viscous medium, thereby 
+reintroducing viscoelastic muscle descriptions that can be traced back to the 1840s.
+
+Quick stretch and release experiments show that muscle’s viscoelastic properties are strongly time 
+dependent. In general, the faster a change in muscle length occurs, the more severely the contractile force 
+is disturbed. Muscle contraction clearly arises from a more sophisticated mechanism than a damped elastic 
+spring. In 1935, Fenn and Marsh added a series elastic element to Hill’s damped elastic model and concluded 
+that ‘‘muscle cannot properly be treated as a simple mechanical system.’’ Subsequently, Hill embodied the 
+empirical hyperbolic relation between load and initial velocity of shortening for skeletal muscle as a model 
+building block, denoted the contractile element. Hill’s previous viscoelastic model considered muscle to 
+possess a ﬁxed amount of potential energy whose rate of release is controlled by viscosity. Energy is now 
+thought to be controlled by some undeﬁned internal mechanism rather than by friction. This new feature of 
+muscle dynamics varying with load was a step in the right direction; however, subsequent models, including 
+heart studies, built models based essentially on the hyperbolic curve that was measured for tetanized 
+skeletal muscle. This approach can be criticized on two grounds, (1) embodiment of the contractile element 
+by a single force-velocity relation sets a single, ﬁxed relation between muscle energetics and force, and 
+(2) it yields no information on the contractile mechanism behind this relation. Failure of the contractile 
+element to describe
+
+a particular loading condition led investigators to add passive springs and dashpots liberally with the 
+number of elements reaching at least nine by the late 1960s. Distributed models of muscle contraction, to 
+date, have been conservative in design and have depended fundamentally on the Hill contractile element. 
+Recent models are limited to tetanized, isometric contractions or to isometric twitch contractions.
+
+A second, independent focus of muscle contraction research works at the ultrastructural level with the 
+sliding ﬁlament theory serving as the most widely accepted contraction mechanism. Muscle force generation 
+is viewed as the result of crossbridge bonds formed between thick and thin ﬁlaments at the expense of 
+biochemical energy. The details of bond formation and detachment are under considerable debate, with the 
+mechanism for relaxation particularly uncertain. Prior to actual observation of cross-bridges, A. F. Huxley 
+(1957) devised the cross-bridge model based on structural and energetic assumptions. Bonds between 
+myoﬁlaments are controlled via rate constants f and g that dictate attachment and detachment, respectively. 
+One major shortcoming of this idea was the inability to describe transients resulting from rapid changes in 
+muscle length or load, similar to the creep and stress relaxation tests previously discussed.
+
+Subsequent models adopt increasingly complex bond attachment and detachment rate functions and are often 
+limited in scope to description of a single pair of myoﬁlaments. Each tends to focus on description of a 
+single type of experiment (e.g., quick release). No model has been shown to broadly describe all types of 
+contractile loading conditions. Cross-bridge models have tended to rely on increasingly complex bond 
+attachment and detachment rate functions. This trend has reversed the issue of describing complex muscle 
+dynamics from the underlying (simpler) cross-bridges to adopting complex cross-bridge dynamics to describe a 
+particular experiment.
+
+Alternatively, Palladino and Noordergraaf (1998) proposed a large-scale, distributed muscle model that 
+manifests both contraction and relaxation as the result of fundamental mechanical properties of cross-bridge 
+bonds. As such, muscle’s complex contractile properties emerge from the underlying ultrastructure dynamics 
+(i.e., function follows from structure). Bonds between myoﬁlaments, which are biomaterials, are described 
+as viscoelastic material. The initial stimulus for contraction is electrical. Electrical propagation through 
+cardiac muscle occurs at ﬁnite speed, implying spatial asynchrony of stimulation. Furthermore, Ca þþ 
+release from the sarcoplasmic reticulum depends on diffusion for availability at the myosin heads. These 
+effects, as well as nonuniformity of structure, strongly suggest that contraction is asynchronous throughout 
+the muscle. Recognition of muscle’s distributed properties by abandoning the assumption of perfect synchrony 
+in contraction and consideration of myoﬁlament mass allow for small movements of thick with respect to thin 
+ﬁlaments. Such movements lead to bond detachment and heat production. Gross movement (e.g., muscle 
+shortening) exacerbates this process. Quick transients in muscle length or applied load have particularly 
+strong effects and have been observed experimentally. Muscle relaxation is thereby viewed as a consequence 
+of muscle’s distributed properties.
+
+The new distributed muscle model is built from the following main features: sarcomeres consist of 
+overlapping thick and thin ﬁlaments connected by cross-bridge
+
+bonds which form during activation and detach during relaxation. Figure 4.25 shows a schematic of a muscle 
+ﬁber (cell) comprised of a string of series sarcomeres. Crossbridge bonds are each described as 
+three-element viscoelastic solids, and myoﬁlaments as masses. Force is generated due to viscoelastic 
+cross-bridge bonds that form and are stretched between the interdigitating matrix of myoﬁlaments. The 
+number of bonds formed depends on the degree of overlap between thick and thin ﬁlaments and is dictated 
+spatially and temporally due to ﬁnite electrical and chemical activation rates. Asynchrony in bond 
+formation and unequal numbers of bonds formed in each half sarcomere, as well as mechanical disturbances 
+such as muscle shortening and imposed length transients, cause small movements of the myoﬁlaments. Since 
+myoﬁlament masses are taken into account, these movements take the form of damped vibrations with a 
+spectrum of frequencies due to the distributed system properties. When the stress in a bond goes to zero, 
+the bond detaches. Consequently, myoﬁlament motion and bond stress relaxation lead to bond detachment and 
+produce relaxation without assumption of bond detachment rate functions. In essence, relaxation results from 
+inherent system instability. Although the model is built from linear, time-invariant components (springs, 
+dashpots, and masses), the highly dynamic structure of the model causes its mechanical properties to be 
+highly nonlinear and timevarying, as is found in muscle ﬁbers and strips.
+
+Sensitivity of the model to mechanical disturbances is consistent with experimental evidence from muscle 
+force traces, aequorin measurements of free calcium ion, and high speed X-ray diffraction studies which all 
+suggest enhanced bond detachment. The model is also consistent with sarcomere length feedback studies in 
+which reduced
+
+internal motion delays relaxation, and it predicted muscle ﬁber (cell) dynamics prior to their experimental 
+measurement.
+
+This model proposes a structural mechanism for the origin of muscle’s complex mechanical properties and 
+predicts new features of the contractile mechanism (e.g., a mechanism for muscle relaxation and prediction 
+of muscle heat generation). This new approach computes muscle’s complex mechanical properties from physical 
+description of muscle anatomical structure, thereby linking subcellular structure to organlevel function.
+
+This chapter describes some of the high points of biological tissues’ mechanical properties. More 
+comprehensive references include Fung’s Biomechanics: Mechanical Properties of Living Tissues, Nigg and 
+Herzog’s Biomechanics of the Musculo-Skeletal System, and Mow and Hayes’ Basic Orthopaedic Biomechanics. 
+Muscle contraction research has a long history, as chronicled in the book Machina Carnis by Needham. For a 
+more comprehensive history of medicine see Singer and Underwood’s (1962) book. The next two sections apply 
+biomechanics concepts introduced in Sections 4.2–4.5 to human gait analysis and to the quantitative study of 
+the cardiovascular system.
+
+4.6 CLINICAL GAIT ANALYSIS
+
+An example of applied dynamics in human movement analysis is clinical gait analysis. Clinical gait analysis 
+involves the measurement of the parameters that characterize a patient’s gait pattern, the interpretation of 
+the collected and processed data, and the recommendation of treatment alternatives. It is a highly 
+collaborative process that requires the cooperation of the patient and the expertise of a multidisciplinary 
+team that typically includes a physician, a physical therapist or kinesiologist, and an engineer or 
+technician. The engineer is presented with a number of challenges. The fundamental objective in data 
+collection is to monitor the patient’s movements accurately and with sufﬁcient precision for clinical use 
+without altering the patient’s typical performance. While measurement devices for clinical gait analysis are 
+established to some degree (i.e., commercially available) the protocols for the use of the equipment 
+continue to develop. The validity of these protocols and associated models and the care with which they are 
+applied ultimately dictate the meaning and quality of the resulting data provided for interpretation. This 
+is one area in which engineers in collaboration with their clinical partners can have a signiﬁcant impact 
+on the clinical gait analysis process.
+
+Generally, data collection for clinical gait analysis involves the placement of highly reﬂective markers on 
+the surface of the patient’s skin. These external markers then reﬂect light to an array of video-based 
+motion cameras that surround the measurement volume. The instantaneous location of each of these markers can 
+then be determined stereometrically based on the images obtained simultaneously from two or more cameras. 
+Other aspects of gait can be monitored as well, including ground reactions via force platforms embedded in 
+the walkway and muscle activity via electromyography with either surface or intramuscular ﬁne wire 
+electrodes, depending on the location of the particular muscle.
+
+In keeping with the other material presented in this chapter, the focus of this section will pertain to the 
+biomechanical aspects of clinical gait analysis and includes an outline of the computation of segmental and 
+joint kinematics and joint kinetics and a brief illustration of how the data are interpreted.
+
+4.6.1 The Clinical Gait Model
+
+The gait model is the algorithm that transforms the data collected during walking trials into the 
+information required for clinical interpretation. For example, the gait model uses the data associated with 
+the three-dimensional displacement of the markers on the patient to compute the angles that describe how the 
+patient’s body segment and lower extremity joints are moving. The design of the gait model is predicated on 
+a clear understanding of the needs of the clinical interpretation team (e.g., the speciﬁc aspects of gait 
+dynamics of interest). To meet these clinical speciﬁcations, gait model development is constrained both by 
+the technical limitations of the measurement system and by the broad goal of developing protocols that may 
+be appropriate for a wide range of patient populations that vary in age, gait abnormality, walking ability, 
+etc. An acceptable model must be sufﬁciently general to be used for many different types of patients (e.g., 
+adults and children with varying physical and cognitive involvement), be sufﬁciently sophisticated to allow 
+detailed biomechanical questions to be addressed, and be based on repeatable protocols that are feasible in 
+a clinical setting.
+
+4.6.2 Kinematic Data Analysis
+
+Reﬂective markers placed on the surface of the patient’s skin are monitored or tracked in space and time by 
+a system of video-based cameras. These marker trajectories are used to compute coordinate systems that are 
+anatomically aligned and embedded in each body segment under analysis. These anatomical coordinate systems 
+provide the basis for computing the absolute spatial orientation (or attitude) of the body segment or the 
+angular displacement of one segment relative to another (e.g., joint angles). For this analysis, at least 
+three non-colinear markers or points of reference must be placed on or identiﬁed for each body segment 
+included in the analysis. These markers form a plane from which a segmentally ﬁxed coordinate system may be 
+derived. Any three markers will allow the segment motion to be monitored, but unless these markers are 
+referenced to the subject’s anatomy, such kinematic quantiﬁcation is of limited clinical value. Markers 
+must either be placed directly over palpable bony landmarks on the segment or at convenient (i.e., visible 
+to the measurement cameras) locations on the segment that are referenced to the underlying bone(s). An 
+examination of the pelvic and thigh segments illustrates these two alternatives.
+
+Pelvic Anatomical Coordinate System
+
+For the pelvis, markers placed over the right and left anterior–superior–iliac–spine (ASIS) and either the 
+right or left posterior–superior–iliac–spine (PSIS) will allow for
+
+the computation of an anatomically aligned coordinate system, as described in the following example.
+
+Example Problem 4.9
+
+Given the following three-dimensional locations in meters for a set of pelvic markers expressed relative to 
+an inertially ﬁxed laboratory coordinate system (Figure 4.26),
+
+Right ASIS : RASIS ¼ À0:850i À 0:802j þ 0:652k Left ASIS : LASIS ¼ À0:831i À 0:651j þ 0:652k
+
+PSIS ¼ À1:015i À 0:704j þ 0:686k compute an anatomical coordinate system for the pelvis.
+
+Solution
+
+These three anatomical markers form a plane. The line between the right ASIS and left 
+ASISrepresentsonecoordinatesystemaxis.Anothercoordinateaxisisperpendicularto the pelvicplane.The third 
+coordinateaxisis computedto beorthogonalto theﬁrst two:
+
+1. Subtract vector RASIS from vector LASIS, LASIS À RASIS ¼ (À0:831 À (À0:850))i þ (À0:651 À (À0:802))j þ 
+(0:652 À 0:652)k to ﬁnd r 1 ¼ 0:0190i þ 0:1510j þ 0:0000k and its associated unit vector:
+
+0:019i þ 0:151j þ 0:000k e r1 ¼ 
+pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ 
+0:019 2 þ 0:151 2 þ 0:0002  e r1 ¼ 0:125i þ 0:992j þ 0:000k
+
+Unit vector e r1 represents the medial–lateral direction or y axis for the pelvic anatomical coordinate 
+system e pay (Fig. 4.26).
+
+2. A second vector in the pelvic plane is required to compute the coordinate axis that is perpendicular to 
+the plane. Consequently, subtract vector RASIS from vector PSIS to ﬁnd r 2 ¼ À0:165i þ 0:098j þ 0:034k
+
+3. Take the vector cross product e pay Â r 2 to yield  i j k      r 3 ¼  0:125 0:992 0:000     À0:165 0:098 
+0:034    ¼ [(0:992)(0:034)À(0:000)(0:098)]i þ [(0:000)(À0:165)À(0:125)(0:034)]j þ 
+[(0:125)(0:098)À(0:992)(À0:165)]k ¼ 0:034iÀ0:004j þ 0:176k and its associated unit vector:
+
+e r3 ¼ e paz ¼ 0:188i À 0:024j þ 0:982k Unit vector e r3 represents the anterior–superior direction or z 
+axis of the pelvic anatomical coordinate system e paz (Fig. 4.26).
+
+4. The third coordinate axis is computed to be orthogonal to the ﬁrst two. Take the vector cross product e 
+pay Â e paz to compute the fore–aft direction, or x axis, of the pelvic anatomical coordinate system: e pax 
+¼ 0:974i À 0:123j À 0:190k For this example, the anatomical coordinate system for the pelvis can be 
+expressed as follows:
+
+2
+
+4
+
+{e pa } ¼
+
+epax  epay  epaz 
+
+3 2 5 ¼ 4
+
+32
+
+54
+
+3
+
+0:974 0:125 0:188
+
+À0:123 0:992 À0:024
+
+À0:190 0:000 0:982
+
+i j k
+
+5
+
+Note that the coefﬁcients associated with these three axes represent the direction cosines that deﬁne the 
+orientation of the pelvic coordinate system relative to the laboratory coordinate system. & In summary, by 
+monitoring the motion of the three pelvic markers, the instantaneous orientation of an anatomical coordinate 
+system for the pelvis, {e pa }, comprised of axes e pax , e pay , and e paz , can be determined. The 
+absolute angular displacement of this coordinate system can then be computed via Euler angles as pelvic 
+tilt, obliquity, and rotation using Eqs. 4.32–4.34. An example of these angle computations is presented 
+later in this section.
+
+Thigh Anatomical Coordinate System
+
+The thigh presents a more signiﬁcant challenge than the pelvis since three bony anatomical landmarks are 
+not readily available as reference points during gait. A model based on markers placed over the medial and 
+lateral femoral condyles and the greater trochanter is appealing but plagued with difﬁculties. A marker 
+placed over the medial femoral condyle is not always feasible during gait (e.g., with patients whose knees 
+make contact while walking). A marker placed over the greater trochanter is often described in the 
+literature but should not be used as a reference because of its signiﬁcant movement relative to the 
+underlying greater trochanter during gait (skin motion artifact).
+
+In general, the approach used to quantify thigh motion (and the shank and foot) is to place additional 
+anatomical markers on the segment(s) during a static subject calibration process so that the relationship 
+between these static anatomical markers (that are removed before gait data collection) and the motion 
+markers (that remain on the patient during gait data collection) may be calculated. It is assumed that this 
+mathematical relationship remains constant during gait (i.e., the instrumented body segments are assumed to 
+be rigid). This process is illustrated in the following example.
+
+Example Problem 4.10
+
+Given the following marker coordinate data that have been acquired while the patient stands quietly (also in 
+meters),
+
+lateral femoral condyle marker LK ¼ À0:881i À 0:858j þ 0:325k
+
+medial femoral condyle marker MK ¼ À0:855i À 0:767j þ 0:318k
+
+compute an anatomical coordinate system for the thigh.
+
+Solution
+
+A thigh plane is formed based on three anatomical markers or points: the hip center, the lateral femoral 
+condyle marker LK, and the medial femoral condyle marker MK.
+
+The knee center location can then be estimated as the midpoint between LK and MK. With these points, the 
+vector from the knee center to the hip center represents the longitudinal axis of the coordinate system. A 
+second coordinate axis is perpendicular to the thigh plane. The third coordinate axis is computed to be 
+orthogonal to the ﬁrst two.
+
+The location of the knee center of rotation may be approximated as the midpoint between the medial and 
+lateral femoral condyle markers,
+
+LK þ MK
+
+2
+
+(À0:881) þ (À0:855) (À0:858) þ (À0:767) ¼ i þ j 2 2
+
+(0:325) þ (0:318) þ
+
+k
+
+2
+
+yielding
+
+knee center location K ¼ À0:868i À 0:812j þ 0:321k
+
+The location of the center of the head of the femur, referred to as the hip center, is commonly used in this 
+calculation by approximating its location based on patient anthropometry and a statistical model of pelvic 
+geometry that is beyond the scope of this chapter. In this case, it can be located at approximately (Davis 
+et al., 1991)
+
+hip center location H ¼ À0:906i À 0:763j þ 0:593k
+
+Now the anatomical coordinate system for the thigh may be computed as follows.
+
+1. Subtract the vector K from H, giving
+
+r 4 ¼ À0:038i þ 0:049j þ 0:272k and its associated unit vector
+
+e r4 ¼ e taz ¼ À0:137i þ 0:175j þ 0:975k Unit vector e r4 represents the longitudinal direction, or z axis, 
+of the thigh anatomical coordinate system e taz .
+
+2. As with the pelvis, a second vector in the thigh plane is required to compute the coordinate axis that is 
+perpendicular to the plane. Consequently, subtract vector LK from MK:
+
+r 5 ¼ 0:026i þ 0:091j À 0:007k 3. Form the vector cross product r 5 Â e taz to yield
+
+r 6 ¼ 0:090i À 0:024j þ 0:017k and its associated unit vector
+
+e r6 ¼ e tax ¼ 0:949i À 0:258j þ 0:180k Unit vector e r6 represents the fore–aft direction, or x axis, of 
+the thigh anatomical coordinate system e tax .
+
+4. Again, the third coordinate axis is computed to be orthogonal to the ﬁrst two.
+
+Determine the medial–lateral or y axis of the thigh anatomical coordinate system, e tay , from the cross 
+product e taz Â e tax :
+
+e tay ¼ 0:284i þ 0:950j À 0:131k
+
+For this example, the anatomical coordinate system for the thigh can be expressed as 2 3 2 32 3 e tax 0:949 
+À0:258 0:180 i {e ta } ¼ 4 e tay 5 ¼ 4 0:284 0:950 À0:131 54 j 5 e taz À0:137 0:175 0:975 k
+
+This deﬁnes an anatomical coordinate system ﬁxed to the thigh, {e ta }, comprised of axes e tax , e tay , 
+and e taz . Its basis, however, includes an external marker (medial femoral condyle MK) that must be removed 
+before the walking trials. Consequently, the location of the knee center cannot be computed as described in 
+the preceeding example. This dilemma is resolved by placing another marker on the surface of the thigh such 
+that it also forms a plane with the hip center and lateral knee marker. These three reference points can 
+then be used to compute a ‘‘technical’’ coordinate system for the thigh to which the knee center location 
+may be mathematically referenced.&
+
+Example Problem 4.11
+
+Continuing Example Problem 4.10, and given the coordinates of another marker placed on the thigh but not 
+anatomically aligned,
+
+thigh wand marker TW ¼ À0:890i À 0:937j þ 0:478k
+
+compute a technical coordinate system for the thigh.
+
+Solution
+
+A technical coordinate system for the thigh can be computed as follows.
+
+1. Compute the longitudinal direction, or z axis, of the technical thigh coordinate system e tt . Start by 
+subtracting vector LK from the hip center H to form
+
+r 7 ¼ À0:025i þ 0:094j þ 0:268k
+
+and its associated unit vector
+
+e r7 ¼ e ttz ¼ À0:088i þ 0:330j þ 0:940k
+
+Unit vector e r7 represents the z axis of the thigh technical coordinate system, e ttz .
+
+2. To compute the axis that is perpendicular to the plane formed by LK, H and TW, subtract vector LK from TW 
+to compute
+
+r 8 ¼ À0:009i À 0:079j þ 0:153k
+
+3. Calculate the vector cross product r 7 Â r 8 to yield
+
+r 9 ¼ 0:036i þ 0:001j þ 0:003k
+
+with its associated unit vector
+
+e r9 ¼ e ttx ¼ 0:996i þ 0:040j þ 0:079k
+
+Unit vector e r9 represents the fore–aft direction, or x axis, of the thigh technical coordinate system e 
+ttx .
+
+4. The third coordinate axis is computed to be orthogonal to the ﬁrst two axes.
+
+Compute the vector cross product e ttz Â e ttx to determine the media–lateral direction, or y axis, of the 
+thigh technical coordinate system:
+
+e tty ¼ À0:012i þ 0:943j þ 0:333k
+
+Forthisexample,thetechnicalcoordinatesystemforthethighcanbeexpressedas 2 3 2 32 3 e ttx 0:996 0:040 0:079 i 
+{e tt } ¼ 4 e tty 5 ¼ 4 À0:012 0:943 0:333 54 j 5 e ttz À0:088 0:330 0:940 k Note that this thigh technical 
+coordinate system {e tt } computed during the standing subject calibration can also be computed after each 
+walking trial. That is, its computation is based on markers (the lateral femoral condyle and thigh wand 
+markers) and an anatomical landmark (the hip center) that are available for both the standing and walking 
+trials. Consequently, the technical coordinate system {e tt } becomes the embedded reference coordinate 
+system to which other entities can be related. The thigh anatomical coordinate system {e ta } can be related 
+to the thigh technical coordinate system {e tt } by using either direction cosines or Euler angles as 
+described in Section 4.2.2. Also, the location of markers that must be removed after the standing subject 
+calibration (e.g., the medial femoral condyle marker MK), or computed anatomical locations (e.g., the knee 
+center), can be transformed into the technical coordinate system {e tt } and later retrieved for use in 
+walking trial data reduction. &
+
+Segment and Joint Angles
+
+Tracking the anatomical coordinate system for each segment allows for the determination of either the 
+absolute angular orientation (or attitude) of each segment in space or the angular position of one segment 
+relative to another. In the preceding example, the three pelvic angles that deﬁne the position of the 
+pelvic anatomical coordinate system {e pa } relative to the laboratory (inertially ﬁxed) coordinate system 
+can be computed from the Euler angles as described in Section 4.2.2 with Eqs. 4.32–4.34. Note that in these 
+equations the laboratory coordinate system represents the proximal (unprimed) coordinate system and the 
+pelvic anatomical coordinate system {e pa } represents the distal (triple primed) coordinate system. 
+Consequently, Eq. 4.32
+
+u x ¼ Àarcsin(k 000 Á j)
+
+becomes
+
+u x ¼ Àarcsin(e paz Á j)
+
+¼ Àarcsin((0:188i À 0:024j þ 0:982k) Á j) ¼ Àarcsin(À0:024) ¼ 1  of pelvic obliquity
+
+Similarly, Eq. 4.33
+
+000 (k Á i) u y ¼ arcsin  cos u x 
+
+becomes
+
+(e Á i) paz u y ¼ arcsin  cos u x 
+
+(0:188i À 0:024j þ 0:982k) Á i ¼ arcsin  cos 1 
+
+
+
+0:188 ¼ arcsin  cos 1  
+
+¼ 11  of anterior pelvic tilt
+
+and Eq. 4.34
+
+000 (i Á j) u z ¼ arcsin  cos u x 
+
+becomes
+
+(e Á j) pax u z ¼ arcsin  cos u x 
+
+(0:974i À 0:123j À 0:190k) Á j ¼ arcsin  cos 1 
+
+
+
+À0:123 ¼ arcsin  cos 1  
+
+¼ À7  of pelvic rotation
+
+This Euler angle computation may be repeated to solve for the three hip angles that deﬁne the position of 
+the thigh anatomical coordinate system {e ta } relative to the pelvic anatomical coordinate system {e pa }. 
+For the hip angles, the proximal (unprimed) coordinate system is the pelvis and the distal (triple-primed) 
+coordinate system is the thigh. Substituting the values of {e pa } and {e ta } from Example Problems 4.9 and 
+4.10 into Eq. 4.32 yields:
+
+u x ¼ Àarcsin(e taz Á e pay )
+
+¼ Àarcsin((À0:137i þ 0:175j þ 0:975k) Á (0:125i þ 0:992j þ 0:000k)) ¼ Àarcsin(0:156) ¼ À9  of hip 
+abduction--adduction
+
+The negative sign is associated with hip adduction of the left thigh or hip abduction of the right thigh.
+
+Further substitution of values of {e pa } and {e ta } into Eqs. 4.33 and 4.34 yields
+
+hip flexion--extension u y ¼ 20 
+
+hip internal--external rotation u z ¼ À8 
+
+For hip internal–external rotation, the negative sign is associated with hip internal rotation of the left 
+thigh or hip external rotation of the right thigh. A negative hip ﬂexion–extension angle corresponds to hip 
+extension, independent of side. This process may be repeated for other body segments such as the shank (or 
+lower leg), foot, trunk, arms, and head with the availability of properly deﬁned anatomical coordinate 
+systems.
+
+4.6.3 Kinetic Data Analysis
+
+The marker displacement or motion data provide an opportunity to appreciate segment and joint kinematics. 
+Kinematic data can be combined with ground reaction data (i.e., forces and torque) and their points of 
+application, referred to as the centers of pressure. Combined with estimates of segment mass and mass 
+moments of inertia, the net joint reactions (i.e., joint forces and moments) may then be computed.
+
+To illustrate the details of this computational process, consider the following determination of the 
+reactions at the ankle (Fig. 4.27) for an individual with mass of 25.2 kg. Data for one instant in the gait 
+cycle are shown in the following table.
+
+Anthropomorphic relationships presented in Table 4.1 are used to estimate the mass and mass moments of 
+inertia of the foot as well as the location of its center of gravity. The mass of the foot, m foot , may be 
+estimated to be 1.45% of the body mass, or 0.365 kg, and the location of the center of gravity is 
+approximated as 50% of the foot length. The length of the foot ‘ foot may be approximated as the distance 
+between the ankle center and the toe marker, determined as follows:
+
+T À A ¼ (0:421 À 0:357)i þ (0:819 À 0:823)j þ (0:051 À 0:056)k ¼ 0:064i À 0:004j À 0:005k ‘ foot ¼ jT À Aj 
+qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ 
+¼ (0:064) 2 þ (À0:004) 2 þ (À0:005) 2 ¼ 0:064 m
+
+Then the location of the center of gravity can be determined relative to the ankle center as
+
+‘foot  (T À A) A þ ¼ (0:357i 0:823j 0:056k) þ þ þ 2 jT À Aj
+
+giving the location of the center of gravity:
+
+0:064
+
+2
+
+!
+
+!
+
+0:064i À 0:004j À 0:005k
+
+0:064
+
+CG ¼ 0:389i þ 0:821j þ 0:054k
+
+which allows computation of position vectors r 1 and r 2 (Fig. 4.27). With a foot length of 0.064 m, a foot 
+mass of 0.365 kg, and a proximal radius of gyration per segment length of 0.690, the mass moment of inertia 
+relative to the ankle center may be estimated with Eq. 4.40 as
+
+I foot=ankle ¼ (0:365 kg)[(0:690)(0:064 m)]2 
+
+¼ 7:12 Â 10 À4 kg m2 
+
+The centroidal mass moment of inertia, located at the foot’s center of mass, may then be estimated using the 
+parallel axis theorem (Eq. 4.41):
+
+I foot=cm ¼Ifoot=ankle Àmfoot d2 
+
+Note that the center of mass is equivalent to the center of gravity in a uniform gravitational ﬁeld. In 
+this case, d is the distance between the foot’s center of mass and the ankle. Table 4.1 shows the ratio of 
+the foot center of mass location relative to its proximal end to be 0.5, so d ¼ 0:5(‘ foot ) ¼ 0:032 m. 
+Therefore,
+
+I foot=cm ¼ (7:12 Â 10 À4 kg m 2 ) À (0:365 kg)(0:032 m)2  ¼ 3:38 Â 10 À4 kg m2 
+
+I foot=cm represents the centroidal mass moment of inertia about the transverse principal axes of the foot 
+(y 0 and z 0 in Fig. 4.27). Consequently,
+
+I y 0 y 0 ¼ 3:38 Â 10 À4 kg m2  I z 0 z 0 ¼ 3:38 Â 10 À4 kg m2 
+
+The foot is approximated as a cylinder with a length to radius ratio of 6. The ratio of transverse to 
+longitudinal (x 0 ) mass moments of inertia can be shown to be approximately 6.5. Then the longitudinal mass 
+moment of inertia (about x 0 in Fig. 4.27) may be estimated as
+
+I x 0 x 0 ¼ 5:20 Â 10 À5 kg m2  Having estimated the anthropomorphic values for the foot, the kinetic 
+analysis may now begin. The unknown ankle reaction force, F A , may be found by using Newton’s Second Law, 
+or S F ¼ ma:
+
+F g þ F A À m foot gk ¼ m foot afoot 
+
+F A ¼ m foot a foot À F g þ m foot gk
+
+¼ (0:365 kg)[2:09i À 0:357j À 0:266k] m=s
+
+À (3:94i À 15:21j þ 242:4k) N þ (0:365 kg)(9:81 m=s 2 )k ¼ À3:18i þ 15:08j À 238:9k N
+
+Euler’s equations of motion (Eqs. 4.44–4.46) are then applied to determine the unknown ankle moment reaction 
+M A . Euler’s equations are deﬁned relative to the principal axes ﬁxed to the segment (i.e., x 0 , y 0 , 
+and z 0 ﬁxed to the foot). It is noted, however, that the data required for the solution presented 
+previously (e.g., v foot and a foot ) are expressed relative to the laboratory coordinate system (x, y, z). 
+Consequently, vectors required for the solution of Euler’s equations must ﬁrst be transformed into the foot 
+coordinate system. In the preceding data set, the foot anatomical coordinate system was given as
+
+e fax ¼ 0:977i À 0:0624j À 0:202k e fay ¼ 0:0815i þ 0:993j þ 0:0877k e faz ¼ 0:195i À 0:102j þ 0:975k
+
+where e fax , e fay , and e faz correspond to x 0 , y 0 , and z 0 , or i 0 , j0 , and k 0 . Recall from the 
+discussion in Section 4.2.2 that coefﬁcients in the expression for e fax represent the cosines of the 
+angles between x 0 and x, x 0 and y, and x 0 and z, respectively. Similarly, the coefﬁcients in the 
+expression for e fay represent the cosines of the angles between y0  and x, y 0 and y, and y 0 and z, and 
+the coefﬁcients in the expression for e faz represent the cosines of the angles between z 0 and x, z 0 and 
+y, and z 0 and z. Consequently, these relationships can be transposed as
+
+i ¼ 0:977i 0 þ 0:0815j 0 þ 0:195k0  j ¼ À0:0624i 0 þ 0:993j 0 À 0:102k0  k ¼ À0:202i 0 þ 0:0877j 0 þ 0:975k0 
+
+In this form, these relationships can be used to transform vectors expressed in terms of lab coordinates:
+
+A ¼ Ax i þ Ay j þ Az k
+
+into foot coordinates:
+
+A ¼ Ax i 0 þ Ay j 0 þ Az k0 
+
+To demonstrate this process, consider the foot angular velocity vector
+
+v foot ¼ 0:042i þ 2:22j À 0:585k rad=s
+
+Substituting the relationships for the lab coordinate system in terms of the foot coordinate system v foot 
+becomes,
+
+v foot ¼ 0:042(0:977i 0 þ 0:0815j 0 þ 0:195k 0 )
+
+þ 2:22(À0:0624i0  À 0:585(À0:202i0 
+
+þ þ
+
+0:993j 0 À 0:102k 0 )
+
+0:0877j0 
+
+þ
+
+0:975k 0 )
+
+¼ 0:0210i 0 þ 2:16j 0 À 0:789k 0 rad=s
+
+In a similar manner, the other vectors required for the computation are transformed into the foot coordinate 
+system:
+
+r 1 ¼ À0:032i þ 0:002j þ 0:002k ¼ À0:032i 0 À 0:004k 0 m r 2 ¼ 0:033i À 0:005j À 0:054k
+
+¼ 0:0435i 0 À 0:007j 0 À 0:0457k 0 m F g ¼ 3:94i À 15:21j þ 242:36k
+
+¼ À44:16i 0 þ 6:47j 0 þ 238:62k 0 N T g ¼ 0:995k
+
+¼ À0:201i 0 þ 0:0873j 0 þ 0:970k 0 N m F A ¼ À3:18i þ 15:1j À 239k
+
+¼ 44:2i 0 À 6:23j 0 À 235k 0 N
+
+v foot ¼ 0:0420i þ 2:22j À 0:585k
+
+¼ 0:021i 0 þ 2:16j 0 À 0:789k 0 rad=s
+
+a foot ¼ À0:937i þ 8:85j À 5:16k
+
+¼ À0:425i 0 þ 8:26j 0 À 6:116k 0 rad=s2 
+
+Expanding Euler’s equations of motion (Eqs. 4.44–4.46),
+
+M Ax 0 þ (r 1 Â F A ) x 0 þ (r 2 Â F g ) x 0 þ T gx 0 ¼ I x 0 x 0 a x 0 þ (I z 0 z 0 À I y 0 y 0 )v y 0 vz 0 
+
+M Ay 0 þ (r 1 Â F A ) y 0 þ (r 2 Â F g ) y 0 þ T gy 0 ¼ I y 0 y 0 a y 0 þ (I x 0 x 0 À I z 0 z 0 )v z 0 vx 0 
+
+M Az 0 þ (r 1 Â F A ) z 0 þ (r 2 Â F g ) z 0 þ T gz 0 ¼ I z 0 z 0 a z 0 þ (I y 0 y 0 À I x 0 x 0 )v x 0 vy 0 
+
+where (r 1 Â F A ) x 0 represents the x 0 component of r 1 Â F A , (r 2 Â F g ) x 0 represents the x0  
+component of r 2 Â Fg , and so forth.
+
+Substitution of the required values and arithmetic reduction yields
+
+M A 0 ¼ 1:50i 0 þ 15:9j 0 À 1:16k 0 Nm
+
+which can be transformed back into ﬁxed lab coordinates,
+
+M A ¼ 2:54i þ 15:9j À 0:037k Nm
+
+By combining the ankle moment with the ankle angular velocity, the instantaneous ankle power may be computed 
+as
+
+M A Á v ankle ¼ (2:54i þ 15:9j À 0:037k Nm) Á ( À0:000759i þ 1:47j þ 0:0106k rad=s) ¼ 23:3 Watts
+
+or
+
+M A 0 Á v ankle 0 ¼ (1:50i 0 þ 15:9j 0 À 1:16k 0 Nm) Á ( À0:0946i 0 þ 1:46j 0 À 0:140k 0 rad=s)
+
+¼ 23:3 Watts
+
+which is thought to represent a quantitative measure of the ankle’s contribution to propulsion.
+
+4.6.4 Clinical Gait Interpretation
+
+The information and data provided for treatment decision making in clinical gait analysis include not only 
+the quantitative variables described previously (i.e., 3-D kinematics such as angular displacement of the 
+torso, pelvis, hip, knee, and ankle/foot, and 3-D kinetics such as moments and power of the hip, knee, and 
+ankle) but also
+
+& & & &
+
+Clinical examination measures Biplanar video recordings of the patient walking Stride and temporal gait data 
+such as step length and walking speed Electromyographic (EMG) recordings of selected lower extremity muscles
+
+Generally, the interpretation of gait data involves the identiﬁcation of abnormalities, the determination 
+of the causes of the apparent deviations, and the recommendation of treatment alternatives. As each 
+additional piece of data is incorporated, a coherent picture of the patient’s walking ability is developed 
+by correlating corroborating data sets and resolving apparent contradictions in the information. Experience 
+allows the team to distinguish a gait anomaly that presents the difﬁculty for the patient from a gait 
+compensatory mechanism that aids the patient in circumventing the gait impediment to some degree.
+
+To illustrate aspects of this process, consider the data presented in Figures 4.28–4.30 which were measured 
+from a 9-year-old girl with cerebral palsy spastic diplegia. Cerebral palsy is a nonprogressive 
+neuromuscular disorder that is caused by an injury to the brain during or shortly after birth. The neural 
+motor cortex is most often affected. In the ambulatory patient, this results in reduced control of the 
+muscles required for balance and locomotion, causing overactivity, inappropriately timed activity, and 
+muscle spasticity. Treatment options include physical therapy, bracing (orthoses), spasmolytic medications 
+such as botulinum toxin and Baclofen, and orthopedic surgery and neurosurgery.
+
+The sagittal plane kinematics for the left side of this patient (Fig. 4.28) indicate signiﬁcant involvement 
+of the hip and knee. Her knee is effectively ‘‘locked’’ in an excessively ﬂexed position throughout stance 
+phase (0–60% of the gait cycle) when her foot is contacting the ﬂoor. Knee motion in swing phase (60–100%) 
+is also limited, with the magnitude and timing of peak knee ﬂexion in swing reduced and delayed. The range 
+of motion of her hip during gait is less than normal, failing to reach full extension at the end of stance 
+phase. The motion of her pelvis is signiﬁcantly greater than normal, tilting anteriorly in early stance 
+coincident with extension of the hip and tilting posteriorly in swing coincident with ﬂexion of the hip.
+
+The deviations noted in these data illustrate neuromuscular problems commonly seen in this patient 
+population. Inappropriate hamstring tightness, observed during the clinical examination, and inappropriate 
+muscle activity during stance, seen in Figure 4.29, prevent the knee from properly extending. This ﬂexed 
+knee position also impedes normal extension of the hip in stance due to hip extensor weakness (also observed 
+during the clinical examination). Hip extension is required in stance to allow the thigh to rotate under the 
+advancing pelvis and upper body. To compensate for her reduced ability to extend the hip, she rotates her 
+pelvis anteriorly in early stance to help move the thigh through its arc of motion. The biphasic pattern of 
+the pelvic curve indicates that this is a bilateral issue to some degree.
+
+The limited knee ﬂexion in swing combines with the plantar ﬂexed ankle position to result in foot 
+clearance problems during swing phase. The inappropriate activity of the rectus femoris muscle (Fig. 4.29) 
+in midswing suggests that spasticity of that muscle, a knee extensor (also observed during clinical 
+examination), impedes knee ﬂexion. Moreover, the inappropriate activity of the ankle plantar ﬂexor, 
+primarily the gastrocnemius muscle, in late swing suggests that it is overpowering the pretibial muscles, 
+primarily the anterior tibialis muscle, resulting in plantar ﬂexion of the ankle or ‘‘foot drop.’’
+
+The sagittal joint kinetics for this patient (Fig. 4.30) demonstrate asymmetrical involvement of the right 
+and left sides. Of special note is that her right knee and hip are compensating for some of the dysfunction 
+observed on the left side. Speciﬁcally, the progressively increasing right knee ﬂexion beginning at 
+midstance (1st row, center) and continuing into swing aids her contralateral limb in forward advancement 
+during swing (i.e., her pelvis can rock posteriorly along with a ﬂexing hip to advance
+
+the thigh). One potentially adverse consequence of this adaptation is the elevated knee extensor moment in 
+late stance that increases patella–femoral loading with indeterminate effects over time. The asymmetrical 
+power production at the hip also illustrates clearly that the right lower extremity, in particular the 
+muscles that cross the hip, provides the propulsion for gait with signiﬁcant power generation early in 
+stance to pull the body forward and elevate its center of gravity. Moreover, the impressive hip power 
+generation, both with respect to magnitude and timing, at toe-off accelerates the stance limb into swing and 
+facilitates knee ﬂexion in spite of the elevated knee extensor moment magnitude. This is important to 
+appreciate given the bilateral spastic response of the plantar ﬂexor muscles, as evidenced by the premature 
+ankle power generation and the presentation of a spastic stretch reﬂex in the clinical examination. This 
+girl uses her hip musculature, right more than left, to a much greater degree than her ankle plantar ﬂexors 
+to propel herself forward during gait.
+
+This cursory case examination illustrates the process whereby differences from normal gait are recognized 
+and the associated biomechanical etiology is explored. Some of the effects on gait of neuromuscular 
+pathology in the sagittal plane have been
+
+considered in this discussion. Clinical gait analysis can also document and elucidate gait abnormalities 
+associated with static bony rotational deformities. It also is useful in areas of clinical research by 
+documenting treatment efﬁcacy associated with bracing, surgery, etc. It should be noted, however, that 
+although engineers and applied physicists have been involved in this work for well over a hundred years, 
+there remains signiﬁcant opportunity for improvement in the biomechanical protocols and analytical tools 
+used in clinical gait analysis—there remains much to learn.
+
+4.7 CARDIOVASCULAR DYNAMICS
+
+One major organ system beneﬁting from the application of mechanics principles is cardiovascular system 
+dynamics, or hemodynamics, the study of the motion of blood. From a functional point of view, the 
+cardiovascular system is comprised of a complex pump, the heart, that generates pressure resulting in the 
+ﬂow of a complex ﬂuid, blood, through a complex network of complex pipes, the blood vessels. 
+Cardiovascular dynamics focuses on the measurement and analysis of blood pressure, volume, and
+
+ﬂow within the cardiovascular system. The complexity of this elegant system is such that mechanical models, 
+typically formulated as mathematical equations, are relied on to understand and integrate experimental data, 
+to isolate and identify physiological mechanisms, and to lead ultimately to new clinical measures of heart 
+performance and health and to guide clinical therapies.
+
+As described in Chapter 3, the heart is a four-chambered pump connected to two main collections of blood 
+vessels, the systemic and pulmonary circulations. This pump is electrically triggered and under neural and 
+hormonal control. One-way valves control blood ﬂow. Total human blood volume is approximately 5.2 liters. 
+The left ventricle, the strongest chamber, pumps 5 liters per minute at rest, almost the body’s entire blood 
+volume. With each heartbeat, the left ventricle pumps 70 ml, with an average of 72 beats per minute. During 
+exercise, left ventricular output may increase sixfold and heart rate more than doubles. The total length of 
+the circulatory system vessels is estimated at 100,000 km, a distance two and one half times around the 
+earth. The left ventricle generates approximately 1.7 watts of mechanical power at rest, increasing 
+threefold during heavy exercise. One curious constant is the total number of heartbeats in a lifetime, 
+around one billion in mammals (Vogel, 1992). Larger animals have slower heart rates and live longer lives, 
+and vice versa for small animals.
+
+4.7.1 Blood Rheology
+
+Blood is comprised of ﬂuid, called plasma, and suspended cells, including erythrocytes (red blood cells), 
+leukocytes (white cells), and platelets. From a mechanical point of view, a ﬂuid is distinguished from a 
+solid as follows. Figure 4.31 shows a two-dimensional block of solid material (left panel) subjected to two 
+opposite, parallel, transverse external forces, depicted by the solid arrows at the top and bottom surfaces. 
+This applied shear force is resisted by the solid via internally generated reaction forces, depicted by the 
+dashed arrows. When applied to a ﬂuid (right panel), the ﬂuid cannot resist the applied shear but rather 
+ﬂows.
+
+The applied shear forces lead to shear stresses (force per area) and the measure of ﬂow can be quantiﬁed 
+by the resulting shear strain rate. In essence, the harder one pushes on a ﬂuid (higher shear stress) the 
+faster the ﬂuid ﬂows (higher shear strain rate). The relationship between shear stress (t) and shear 
+strain rate (_g) is the ﬂuid’s viscosity (m). Viscosity is often written as Z in biomedical applications. 
+As shown in
+
+Figure 4.32, many ﬂuids, including water, are characterized by a constant (linear) viscosity and are called 
+Newtonian. Others possess nonlinear shear stress–strain rate relations, and are non-Newtonian ﬂuids. For 
+example, ﬂuids that behave more viscously as shear strain rate increases (shear thickening) are called 
+dilatant. One example of dilatant behavior is Dow Corning 3179 dilatant compound, a silicone polymer 
+commonly known as ‘‘Silly Putty.’’ When pulled slowly, this ﬂuid stretches (plastic deformation); when 
+pulled quickly it behaves as a solid and fractures. Fluids that appear less viscous with higher shear strain 
+rates (shear thinning) are called pseudo-plastic. For example, no-drip latex paint ﬂows when applied with a 
+brush or roller (applied shear stress) but does not ﬂow after application.
+
+Biological ﬂuids are typically non-Newtonian. Blood plasma is Newtonian and is very similar in physical 
+properties to water. Whole blood behaves as a Bingham plastic, whereby a nonzero shear stress (yield stress) 
+is required before this ﬂuid begins to ﬂow. Blood is often characterized by a power law function, of the 
+form
+
+t ¼ k_gn 
+
+(4:57)
+
+where k and n are constants derived from a straight-line ﬁt of ln t plotted as a function _ of ln g, since
+
+_ ln t ¼ ln k þ n ln g
+
+Another common description of blood’s viscosity is the Casson equation:
+
+t 2 ¼ t 2 0 þ k_g 2
+
+(4:58)
+
+From a Casson plot, the yield stress t 0 can be measured. Rheology, the study of deformation and ﬂow of 
+ﬂuids, focuses on these often complex viscous properties of ﬂuids. Textbooks with rheological data for 
+bioﬂuids include Bioﬂuid Mechanics by Mazumdar (1992) and Basic Transport Phenomena in Biomedical 
+Engineering by Fournier (1999).
+
+Example Problem 4.12
+
+The following rheological data were measured on a blood sample:
+
+Fit the data to a power law function using a MATLAB m-ﬁle.
+
+Solution
+
+% Power Law Fit of Blood Data % % Store shear strain rate and stress data in arrays alpha ¼ 
+[1.5,2,3.2,6.5,11.5,16,25,50,100] ; T ¼ [12.5,16,25.2,40,62,80.5,120,240,475] ; % Take natural logs of both 
+x ¼ log(alpha) ; y ¼ log(T) ; % Use MATLAB’s polyﬁt function to do linear curve ﬁt coeff ¼ polyﬁt (x,y,1) 
+% Write curve ﬁt coefﬁcients as a new x-y function for plotting x1¼[0;0.01;5] y1¼polyval (coeff,x1) % Plot 
+the original data as ’o’ points plot(x,y, ’o’) hold on % Overlay a plot of the curve-ﬁt line plot(x1,y1) 
+grid on
+
+title (’Power Law Function’) xlabel(’ln Strain Rate [ln (1/s)]’) ylabel(’ln Shear Stress [ln dyne/cm2]’) % 
+The resulting plot appears in Figure 4.33.
+
+&
+
+When subjected to very low shear rates blood’s apparent viscosity is higher than expected. This is due to 
+the aggregation of red blood cells, called rouleaux. Such low shear rates are lower than those typically 
+occurring in major blood vessels or in medical devices. In very small tubes (<1 mm diameter), blood’s 
+apparent viscosity at high shear rates is smaller than in larger tubes, known as the Fahraeus-Lindquist 
+effect, arising from plasma–red cell dynamics. Beyond these two special cases, blood behaves as a Newtonian 
+ﬂuid and is widely accepted as such in the scientiﬁc community. We shall see that the assumption of 
+Newtonian ﬂuid greatly simpliﬁes mechanical description of the circulation.
+
+4.7.2 Arterial Vessels
+
+Mechanical description of blood vessels has a long and somewhat complicated history. Much of the advanced 
+mathematics and applied mechanics associated with this work is beyond the scope of this textbook. This 
+section will therefore give an overview of some of the main developments and will present a simpliﬁed, 
+reduced arterial system model for use in the following subsection. The reader is referred to the following 
+textbooks for more in-depth coverage: Circulatory System Dynamics (1978) by
+
+Noordergraaf, Hemodynamics (1989) by Milnor, and Bioﬂuid Mechanics (1992) by Mazumdar, and for basic ﬂuid 
+mechanics, Fluid Mechanics (2003) by White.
+
+Study of the mechanical properties of the heart as a pump requires the computation of pressures and ﬂows 
+arising from forces and motion of the underlying heart muscle. Consequently, general equations of motion in 
+the cardiovascular system typically arise from the conservation of linear momentum. The Reynold’s transport 
+theorem, a conservation equation from ﬂuid mechanics, applied to linear momentum yields the following 
+general equation of motion for any ﬂuid:
+
+dV rg À r þ r Á t ij ¼ r dt
+
+(4:59)
+
+where r is ﬂuid density (mass/volume), p is pressure, t ij are viscous forces, and V is velocity. r is the 
+differential operator
+
+q q q r¼i j k þ þ qx qy qz
+
+The general velocity V is a vector function of position and time and is written
+
+V(x, y, z, t) ¼ u(x, y, z, t)i þ u(x, y, z, t)j þ w(x, y, z, t)k where u, u, and w are the local velocities 
+in the x, y, and z directions, respectively.
+
+Equation 4.59 is comprised of four terms: gravitational, pressure, and viscous forces, plus a time-varying 
+term. Note that this is a vector equation and so can be expanded in x, y, and z components as the set of 
+three equations:
+
+qp qt xx qt yx qt zx qu qu qu qu rg x À ¼ r u v w þ þ þ þ þ þ qx qx qy qz  qt qx qy qz 
+
+(4:60)
+
+qt xy qt yy qt zy qv qv qv qv qp rg y À ¼ r u v w þ þ þ þ þ þ qy qx qy qz  qt qx qy qz 
+
+(4:61)
+
+qp qt xz qt yz qt zz qw qw qw qw rg z À ¼ r u v w þ þ þ þ þ þ qz qx qy qz  qt qx qy qz 
+
+(4:62)
+
+This set of nonlinear, partial differential equations is general but not solvable; solution requires making 
+simplifying assumptions. For example, if the ﬂuid’s viscous forces are neglected Eq. 4.59 reduces to 
+Euler’s equation for inviscid ﬂow. The latter, when integrated along a streamline, yields the famous 
+Bernoulli equation relating pressure and ﬂow. In application, Bernoulli’s inviscid, and consequently 
+frictionless, origin is sometimes forgotten.
+
+If ﬂow is steady, the right-hand term of Eq. 4.59 goes to zero. For incompressible ﬂuids, including 
+liquids, density r is constant, which greatly simpliﬁes integration of the gravitational and time-varying 
+terms that contain r. Similarly, for Newtonian ﬂuids, viscosity m is constant. In summary, although we can 
+write perfectly general equations of motion, the difﬁculty of solving these equations requires making 
+reasonable simplifying assumptions.
+
+Two reasonable assumptions for blood ﬂow in major vessels are that of Newtonian and incompressible 
+behavior. These assumptions reduce Eq. 4.59 to the Navier-Stokes equations:
+
+qp q2 u 2 u 2 u q q du rg x À 2 þ 2 þ 2 ¼ r m þ qx  qx qy qz  dt
+
+(4:63)
+
+qp q2 v v 2 v q2  q dv rg y À 2 þ 2 þ 2 ¼ r m þ qy  qx qy qz  dt
+
+(4:64)
+
+qp q2 w 2 w 2 w q q dw rg z À 2 þ 2 þ 2 ¼ r m þ qz  qx qy qz  dt
+
+(4:65)
+
+Blood vessels are more easily described using a cylindrical coordinate system rather than a rectangular one. 
+Hence the coordinates x, y, and z may be transformed to radius r, angle u, and longitudinal distance x. If 
+we assume irrotational ﬂow, u ¼ 0 and two Navier-Stokes equations sufﬁce:
+
+dP dw dw dw 2 w dw d2 w d 1 À Àm 2 þ 2 ¼ r u w þ þ þ dx  dt dr dx   dr r dr dx 
+
+(4:66)
+
+dP du du du 2 u du d2 u d 1 u À Àm 2 þ 2 À 2 ¼ r u w þ þ þ dr  dt dr dx   dr r dr dx r 
+
+(4:67)
+
+where w is longitudinal velocity dx=dt, and u is radial velocity dr=dt. Most arterial models also make use 
+of the continuity equation, arising from the conservation of mass:
+
+du
+
+u
+
+dw
+
+þ þ ¼0 dr r dx
+
+(4:68)
+
+In essence, the net rate of mass storage in a system is equal to the net rate of mass inﬂux minus the net 
+rate of mass efﬂux.
+
+Noordergraaf and his colleagues (1969) rewrote the Navier-Stokes Equation 4.66 as
+
+dP dQ À ¼ RQ L þ dx dt
+
+(4:69)
+
+where P is pressure, Q is the volume rate of ﬂow, R is an equivalent hydraulic resistance, and L is ﬂuid 
+inertance. The Navier-Stokes equations describe ﬂuid mechanics within the blood vessels. Since arterial 
+walls are elastic, equations of motion for the arterial wall are also required. The latter have evolved from 
+linear elastic, linear viscoelastic, to complex viscoelastic (see Noordergraaf, 1978). The most general 
+mechanical description of linear anisotropic arterial wall material requires 21 parameters (see Fung’s 1977 
+text), most of which have never been measured. Noordergraaf et al. divided the arterial system into short 
+segments and combined the ﬂuid
+
+mechanical equation (Eq. 4.69) with the continuity equation for each vessel segment. The arterial wall 
+elasticity leads to a time-varying amount of blood stored in the vessel as it bulges with each heartbeat. 
+For a segment of artery, the continuity equation becomes
+
+dQ dP À ¼ GP C þ dx dt
+
+(4:70)
+
+where G is leakage through the blood vessel wall. This pair of hydraulic equations (Eqs. 4.69 and 4.70) was 
+used to describe each of 125 segments of the arterial system and was the ﬁrst model sufﬁciently detailed 
+to explain arterial pressure and ﬂow wave reﬂection. Arterial branching leads to reﬂected pressure and 
+ﬂow waves that interact in this pulsatile system. Physical R–L–C circuits were constructed and built into 
+large transmission line networks with measured voltages and currents corresponding to hydraulic pressures 
+and ﬂows, respectively. If distributed arterial properties such as pulse wave reﬂection are not of 
+interest, the arterial system load seen by the heart can be much reduced, as an electrical network may be 
+reduced to an equivalent circuit.
+
+The most widely used arterial load is the three-element model shown in Figure 4.34. The model appears as an 
+electrical circuit due to its origin prior to the advent of the digital computer. Z 0 is the characteristic 
+impedance of the aorta, in essence the aorta’s ﬂow resistance. C s is transverse arterial compliance, the 
+inverse of elastance, and describes stretch of the arterial system in the radial direction. R s is the 
+peripheral resistance, describing the systemic arteries’ ﬂow resistance downstream of the aorta. This 
+simple network may be used to represent the systemic arterial load seen by the left ventricle. The following 
+ordinary differential equation relates pressure at the left-hand side, p(t), to ﬂow, Q(t):
+
+dp 1 dQ Z C s p(t) ¼ Q(t) 1 þ þ Z 0 Cs  þ dt R s  R s 0  dt
+
+(4:71)
+
+Example Problem 4.13
+
+Using basic circuit theory, derive the differential equation Eq. 4.71 from Figure 4.34.
+
+Solution
+
+Deﬁne node 1 as shown in Figure 4.35. By Kirchoff’s current law, the ﬂow Q going into node 1 is equal to 
+the sum of the ﬂows Q 1 and Q 2 coming out of the node:
+
+Q¼Q 1 þ Q2 
+
+We can write Q 1 and Q 2 as
+
+dp Q1 ¼Cs  dt1 
+
+p1  Q2 ¼ Rs 
+
+so
+
+dp p1  Q¼Cs  þ dt 1 Rs 
+
+From Ohm’s law,
+
+pÀp 1 ¼Q Z0 
+
+Solving the last expression for p 1 and substituting back into the ﬂow expression:
+
+d 1 Q ¼ C s ] þ [p À Q Z 0 ] [p À Q Z0  dt Rs 
+
+dp dQ 1 Z ¼C s C s pÀ Q À Z0  þ dt dt R s Rs 0 
+
+Grouping terms for Q on the left and p on the right gives Eq. 4.71.
+
+&
+
+4.7.3 Heart Mechanics
+
+Mechanical performance of the heart, more speciﬁcally the left ventricle, is typically characterized by 
+estimates of ventricular elastance. The heart is an elastic bag that stiffens and relaxes with each 
+heartbeat. Elastance is a measure of stiffness, classically deﬁned as the differential relation between 
+pressure and volume:
+
+¼ dVv 
+
+(4:72)
+
+Here, p v and V v denote ventricular pressure and volume, respectively. For any instant in time, ventricular 
+elastance E v is the differential change in pressure with respect to volume. Mathematically, this relation 
+is clear. Measurement of E v is much less clear.
+
+In the 1970s Kennish et al. tried to estimate the differential relation of Eq. 4.72 using the ratio of 
+ﬁnite changes in ventricular pressure and volume:
+
+Dpv  Ev ¼ DVv 
+
+(4:73)
+
+This approach leads to physically impossible results. For example, before the aortic valve opens, the left 
+ventricle is generating increasing pressure while there is not yet any change in volume. The ratio in Eq. 
+4.73 gives an inﬁnite elastance when the denominator is zero. Suga and Sagawa (1974) used the ratio of 
+pressure to volume itself, rather than differential or discrete changes, to estimate elastance:
+
+p v (t) E v (t) ¼ V v (t) À Vd 
+
+(4:74)
+
+In this equation, V d is a dead volume that remains constant. Now all other terms are allowed to be varying 
+with time. Ventricular elastance measured in this way leads to elastance curves, as depicted in Figure 4.36. 
+These curves show wide variation, as suggested by the large error bars. The distinctive asymmetric shape 
+leads to a major contradiction. A simple experiment involves clamping the aorta, thereby preventing the left 
+ventricle from ejecting blood, denoted an isovolumic beat. Equation 4.74 shows that under isovolumic 
+conditions (V v is constant) ventricular pressure p v must have the same shape as elastance E v (t). 
+However, experiments show that isovolumic
+
+pressure curves are symmetric, unlike Figure 4.36. A further complication is the requirement of ejecting 
+beats for measuring E v (t), which requires not only the heart (a ventricle) but also a circulation (blood 
+vessels). Hence, time-varying elastance curves, such as those in Figure 4.36, are measures of both a 
+particular heart (the source) combined with a particular circulation (its load). Experiments show that 
+elastance curves measured in this way are subject to vascular changes, as well as the desired ventricular 
+properties. As such, this approach cannot uniquely separate out ventricular from vascular properties. 
+Consequently, a new measure of the heart’s mechanical properties is required.
+
+The problems just described (i.e., inconsistent isovolumic and ejecting behavior and the combined 
+heart–blood vessel properties) led to the development of a new mechanical description of the left ventricle 
+(Mulier, 1994; Palladino et al., 1997). This model should be simple and versatile, and should have direct 
+physiological signiﬁcance, in contrast with simulations which merely mimic physiological behavior. The 
+model was developed using isolated canine heart experiments, as depicted in Figure 4.37. The left ventricle 
+was ﬁlled with an initial volume of blood, subjected to
+
+different loading conditions, stimulated, and allowed to beat. Ventricular pressure, and in some experiments 
+ventricular outﬂow, was then measured and recorded.
+
+Experiments began with measurement of isovolumic ventricular pressure. For each experiment the isolated left 
+ventricle was ﬁlled with an initial volume (end-diastolic) and the aorta was clamped to prevent outﬂow of 
+blood. The ventricle was stimulated and generated ventricular pressure was measured and recorded. The 
+ventricle was then ﬁlled to a new end-diastolic volume and the experiment repeated. As in the famous 
+experiments of Otto Frank (c. 1895), isovolumic pressure is directly related to ﬁlling. Figure 4.38 shows a 
+set of isovolumic pressure curves measured on a normal canine left ventricle.
+
+These isovolumic pressure curves were then described by the following equation. Ventricular pressure p v is 
+a function of time t and ventricular volume V v according to
+
+" # ð t c t Þ a )e À ð t r tÀt b Þa  (1 À eÀ  p v ¼ a(V v À b) 2 þ (cV v À d) (1 À e À ð t c t p Þ a )e À ð 
+t r t p Àt b Þa 
+
+(4:75)
+
+or written more compactly,
+
+p v (t, V v ) ¼ a(V v À b) 2 þ (cV v À d)f(t)
+
+(4:76)
+
+where f(t) is the activation function in square brackets in Eq. 4.75. The constants a, b, c, d, t p , t c , 
+t r , and a were derived from the isolated canine ventricle experiments. Physiologically, Eq. 4.76 says that 
+the ventricle is a time- and volume-dependent
+
+pressure generator. The term to the left of the plus sign (including constants a and b) describes the 
+ventricle’s passive elastic properties. The term to the right (including c and d) describes its active 
+elastic properties, arising from the active generation of force in the underlying heart muscle. 
+Representative model quantities measured from canine experiments are given in Table 4.3. This model was 
+adapted to describe the human left ventricle using quantities in the right-hand column (Palladino et al., 
+1997).
+
+Example Problem 4.14
+
+Solve Eq. 4.75 and plot ventricular pressure p v (t) for one human heartbeat. Use initial ventricular volume 
+of 150 ml and the parameter values in Table 4.3.
+
+Solution
+
+The following MATLAB m-ﬁle will perform the required computation and plot the results, shown in Figure 
+4.39.
+
+% ventricle.m % % MATLAB m-ﬁle to compute isovolumic pressure using Mulier ventricle model % % Initial 
+conditions:
+
+% delt ¼ 0.001; % The interation time step delta t a ¼ 7e-4; b ¼ 20.; c ¼ 2.5; d ¼ 80.; tc ¼ 0.264; tp ¼ 
+0.371;
+
+tr ¼ 0.299; tb ¼ 0.258; alpha ¼ 2.88; Vv0 ¼ 150; % Initial (end-diastolic) ventricular volume % % Compute an 
+intermediate term denom % to simplify computations:
+
+%
+
+denom ¼ ((1: À exp ( À (tp=tc)^alpha) ) Ã exp ( À ( (tp À tb)=tr)^alpha) ); % % Compute for initial time t ¼ 
+0 (MATLAB does not allow 0 index) %
+
+t (1) ¼ 0.;
+
+Vv (1) ¼ Vv0;
+
+edp ¼ a Ã ( (Vv0 À b) )^2;
+
+pdp ¼ c Ã Vv0 À d;
+
+pp ¼ pdp/denom;
+
+t1 ¼ 0.; % Time step for ﬁrst exponential
+
+t2 ¼ 0.; % Time step for second exponential
+
+e1 ¼ exp ( À (t1=tc)^alpha);
+
+e2 ¼ exp ( À (t2=tr)^alpha);
+
+pv0 ¼ edp þ pp Ã ( (1: À e1) Ã e2);
+
+% % Main computation loop:
+
+% for j¼2:1000 t(j) ¼ t(j À 1) þ delt; Vv(j) ¼ Vv(j À 1); % edp ¼ a Ã ( (Vv(j) À b) )^2; pdp ¼ c Ã Vv(j) À 
+d; pp ¼ pdp/denom; t1 ¼ t(j); % Second exponential begins at t > tb t2 ¼ t(j) À tb; if (t2 < 0.); t2 ¼ 0.; 
+end e1 ¼ exp ( À (t1=tc)^alpha); e2 ¼ exp ( À (t2=tr)^alpha); pv(j) ¼ edp þ pp Ã ( (1: À e1) Ã e2); end
+
+% plot (t,pv) grid on title (‘Isovolumic Ventricular Pressure’) xlabel (‘Time [s]’) ylabel (‘Ventricular 
+Pressure Pv [mmHg]’)
+
+&
+
+4.7.4 Cardiovascular Modeling
+
+This concise model of the left ventricle was coupled to the reduced arterial load model of Figure 4.34 and 
+allowed to eject blood. Model parameter values for a normal arterial load are given in Table 4.4. Figure 
+4.40 shows results for a normal canine left
+
+ventricle ejecting into a normal arterial system. The solid curves (left ordinate) describe ventricular 
+pressure p u and root aortic pressure as functions of time. Clinically, arterial pressure is reported as two 
+numbers (e.g., 110/60). This corresponds to the maximum and minimum root arterial pulse pressures, in this 
+case about 120/65 mmHg. The dashed curve (right ordinate) shows ventricular outﬂow. The ventricle was 
+ﬁlled with an end-diastolic volume of 45 ml and it ejected 30 ml (stroke volume), giving an ejection 
+fraction of 66%, which is about normal for this size animal.
+
+The same ventricle may be coupled to a pathological arterial system, for example, one with doubled 
+peripheral resistance R s . This change is equivalent to narrowed blood vessels. As expected, increased 
+peripheral resistance raises arterial blood pressure (to 140/95 mmHg) and impedes the ventricle’s ability to 
+eject blood (Fig. 4.41). The ejection fraction decreases to 50% in this experiment. Other experiments, such 
+as altered arterial stiffness, may be performed. The model’s ﬂexibility allows description of heart 
+pathology as well as changes in blood vessels. This one ventricular equation with one set of measured 
+parameters is able to describe the wide range of hemodynamics observed experimentally (Palladino et al., 
+1997).
+
+The previous expressions for ventricular elastance deﬁned in Eqs. 4.73 and 4.74 have the same units as 
+elastance deﬁned classically as Eq. 4.72, but are mathematically not the same. Since ventricular pressure 
+is now deﬁned as an analytical function (Eq. 4.75), ventricular elastance, E u , deﬁned in the classical 
+sense as qp u =qV u , may be calculated as
+
+E u (t, V u ) ¼ 2a(V u À b) þ c (1 À e À ð t c t p Þ a )e À ð t r t p Àt b Þa 
+
+(4:77)
+
+or
+
+E u (t, V u ) ¼ 2a(V u À b) þ cf(t)
+
+(4:78)
+
+Figure 4.42 shows ventricular elastance curves computed using the new model’s analytical deﬁnition of 
+elastance (Eq. 4.77). Elastance was computed for a wide range of ventricular and arterial states, including 
+normal and pathological ventricles, normal and pathological arterial systems, and isovolumic and ejecting 
+beats. These elastance curves are relatively invariant and cluster in two groups—either normal or weakened 
+ventricle contractile state. Consequently, this new measure of elastance may now effectively assess the 
+health of the heart alone, separate from blood vessel pathology.
+
+Experiments showed that when the left ventricle ejects blood, ventricular pressure is somewhat different 
+than expected. As depicted in Figure 4.43, early during ejection the ventricle generates less pressure than 
+expected, denoted pressure deactivation. Later in systole the heart generates greater pressure, denoted 
+hyperactivation. These two variations with ﬂow have been termed the ejection effect (Danielsen et al., 
+2000). The ejection effect was incorporated into the ventricle model of Eq. 4.76 by adding a ﬂow-dependent 
+term:
+
+p u (t, V u , Q u ) ¼ a(V u À b) 2 þ (cV u À d)F(t, Q u )
+
+(4:79)
+
+with F replacing the time function f in Eq. 4.76:
+
+F(t, Q u ) ¼ f(t) À k 1 Q u (t) þ k 2 Q u 2 (t À t), t ¼ kt
+
+(4:80)
+
+and k 1 , k 2 , and k are additional model constants. In summary, the ventricle is a timevolume- and 
+ﬂow-dependent pressure generator. Figure 4.44 shows computed pressures and ﬂows for this formulation at 
+left, compared to the results minus the ejection effect at right for comparison. The ejection effect tends 
+to change the shape of both pressure and ﬂow curves to more closely resemble experimental curves.
+
+Addition of the ejection effect modiﬁes the computed ventricular elastance curves, as depicted in Figure 
+4.45. All curves are computed using the new function of Eq. 4.77. The dashed curve, minus the ejection 
+effect, is symmetric, as in Figure 4.42. Addition of the ejection effect (solid) makes ventricular elastance 
+asymmetrically skewed to the right, much like the measured curves of Suga and Sagawa depicted in Figure 
+4.36. As expected, the mechanical process of ejecting blood has a direct effect on the heart’s elastance.
+
+In summary, the left ventricle may be described as a time-, volume-, and ﬂowdependent pressure generator. A 
+small number of experimentally derived parameters is sufﬁcient to describe the wide range of observed 
+cardiovascular dynamics. This
+
+approach links experiment and theory, leading to new ideas and experiments. Work is currently underway to 
+devise a new measure of cardiovascular health using this model. In essence, it is thought that the magnitude 
+of the observed ejection effect for a particular heart should be directly related to its health.
+
+The left ventricle model of Eq. 4.75 was used to describe each of the four chambers of the human heart, 
+depicted in Figure 4.46 (Palladino et al., 2000). This complete model of the circulatory system displays a 
+remarkable range of cardiovascular physiology with a small set of equations and parameters. For example, 
+plotting ventricular pressure as a function of ventricular volume shows the mechanical work performed by the 
+ventricle, denoted pressure–volume work loops. The area within each loop corresponds to external work 
+performed by the heart. Figure 4.47 shows left and right ventricle work loops for the normal heart ejecting 
+into the normal (control) circulatory system, depicted by solid curves. The right ventricle work loop is 
+smaller, as expected, than the left. Figure 4.47 also shows the same two work loops for a weakened left 
+ventricle (dashed curves). As expected, the left ventricle work loop is diminished in size. This work loop 
+also shifts to the right on the volume axis. Since the weaker ventricle ejects less blood, more remains to 
+ﬁll the heart more for the subsequent beat (EDV of 194 instead of 122 ml). This increased ﬁlling partially
+
+compensates for the weakened ventricle via Starling’s law (increased pressure for increased ﬁlling).
+
+Changing only one model constant, c, in Eq. 4.75 is sufﬁcient to vary chamber contractile state. For 
+example, Table 4.5 shows examples of congestive heart failure, resulting from decreases in c for the left 
+ventricle and for the right ventricle.
+
+Decreasing left ventricular contractile state to one third of the control value (c ¼ 1:0) lowers left 
+ventricular ejection fraction from 53% to 25%, and root aortic pulse pressure decreases from 133/70 to 93/52 
+mmHg. Left ventricular stroke volume decreases less, from 64 to 48 ml, since it is compensated for by the 
+increased left end-diastolic volume (194 ml) via Starling’s law. Decreasing left ventricular contractile 
+state is equivalent to left congestive heart failure. Consequently, pulmonary venous volume increases from 
+1347 ml to 1981 ml (not shown), indicating pulmonary congestion for this case.
+
+Similar changes are noted when the right ventricle’s contractile state is halved (c ¼ 0:5). The right 
+ventricular ejection fraction drops from 46% to 24%, root pulmonary artery pulse pressure decreases from 
+49/15 to 29/12 mmHg, and right stroke volume decreases from 64 to 44 ml, with an increased end-diastolic 
+volume of 164 ml, from 141 ml. Conversely, c can be increased in any heart chamber to depict administration 
+of an inotropic drug. Although not plotted, pressures, ﬂows, and volumes are available at any circuit site, 
+all as functions of time.
+
+Changes in blood vessel properties may be studied alone or in combination with altered heart properties. 
+Other system parameters such as atrial performance, as well as other experiments, may be examined. The 
+modular form of this model allows its expansion for more detailed studies of particular sites in the 
+circulatory system.
+
+The ﬁeld of biomechanics applies physical principles to living systems using the language of mathematics. 
+Hemodynamics studies the human cardiovascular system, which is comprised of an interesting pump moving 
+interesting ﬂuid around a complicated network of interesting pipes. In developing hemodynamic principles, 
+experiments and analysis go hand-in-hand, ensuring the validity of principles with experiments and with 
+analysis clarifying, modifying, and often preceding experiments. In this fashion, interpretations of 
+cardiovascular health are further deﬁned.
+
+EXERCISES
+
+1. Write all the vector expressions of Eqs. 4.1 through 4.14 using MATLAB.
+
+2. Repeat Example Problem 4.2 using a z–x–y rotation sequence.
+
+3. Write the free-body diagrams for each of the three orientations of the humerus in Figure 3.36. For a 
+particular load and ﬁxed position, write and solve the equations of static equilibrium.
+
+4. Solve Example Problem 4.5 for forearm orientations angled u from the horizontal position. Let u vary from 
+0À708 (down) from the horizontal in 158 increments. Using MATLAB, plot the required biceps muscle force FB  
+for static equilibrium as a function of u. By how much does this force vary over this range?
+
+5. Repeat Problem 4, this time plotting forces F A , F B , and F C over the same range of angles u.
+
+6. Considering the previous problem, explain why Nautilus weight machines at the gym use asymmetric pulleys.
+
+7. The force plate in Figure 4.9 is 70 cm by 70 cm square. At a particular instant of the gait cycle each 
+transducer reads F 1 ¼ 210 N, F 2 ¼ 220 N, F 3 ¼ 150 N, and F 4 ¼ 180 N. Compute the resultant force and its 
+location.
+
+8. For your own body, compute the mass moment of inertia of each body segment in Table 4.1 with respect to 
+its center of mass.
+
+9. Repeat Example Problem 4.8 using a titanium rod with circular cross-sectional diameter of 9 mm.
+
+10. Write the Simulink models of the three-element Kelvin viscoelastic description and perform the creep and 
+stress relaxation tests, the results of which appear in Figures 4.23 and 4.24.
+
+11. Use the three-element Kelvin model to describe the stress relaxation of a biomaterial of your choice. 
+Using a stress response curve from the literature, compute the model spring constants K 1 and K 2 and the 
+viscous damping coefﬁcient b.
+
+12. Write and solve the kinematic equations deﬁning an anatomically referenced coordinate system for the 
+pelvis, {e pa }, using MATLAB.
+
+13. Using the kinematic data of Section 4.6.2, compute the instantaneous ankle power of the 25.2 kg patient 
+using MATLAB.
+
+14. Given the pelvis and thigh anatomical coordinate systems deﬁned in Example Problems 4.9 and 4.10, 
+compute the pelvis tilt, obliquity, and rotation angles using an x–y–z rotation sequence.
+
+15. Repeat Problem 14 (using an x–y–z rotation sequence) solving for hip ﬂexion/extension, hip 
+abduction/adduction, and internal/external hip rotation. Hint: {e ta } is the triple-primed coordinate 
+system and {e pa } is the unprimed system in this case.
+
+16. Using MATLAB, determine the effect that a 12-mm perturbation in each coordinate direction would have on 
+ankle moment amplitude (Section
+
+4.6.3).
+
+17. Fit the blood rheological data of Example Problem 4.12 to a Casson model and ﬁnd the yield stress t 0 
+for blood.
+
+18. Solve Eq. 4.71 for pressure p(t) when the aortic valve is closed. Using the parameter values in Table 
+4.4, plot p as a function of time for one heart beat (t ¼ 0 À 1 sec).
+
+19. Compute isovolumic ventricular pressure p v (t) for the canine heart with initial volumes V v ¼ 30, 40, 
+50, 60, 70 ml. Overlay these plots as in Figure
+
+4.38.
+
+20. Write a MATLAB m-ﬁle to compute ventricular elastance using Eq. 4.77.
+
+Compute and plot E v (t) for the parameter values in Example Problem 4.14.
+
+SUGGESTED READING
+
+Allard, P., Stokes, I.A.F. and Blanchi, J.P. (Eds.), (1995). Three-Dimensional Analysis of Human Movement. 
+Human Kinetics, Champagne, II.
+
+Burstein, A.H. and Wright, T.M. (1994). Fundamentals of Orthopaedic Biomechanics. Williams
+
+& Wilkins, Baltimore.
+
+Danielsen, M., Palladino, J.L. and Noordergraaf, A. (2000). The left ventricular ejection effect.
+
+In Mathematical Modelling in Medicine (J.T. Ottesen and M. Danielsen, Eds.). IOS Press,
+
+Amsterdam.
+
+Davis, R.B.D. III. (1986). Musculoskeletal biomechanics: Fundamental measurements and
+
+analysis. Chapter 6 in Biomedical Engineering and Instrumentation (J.D. Bronzino, Ed.)
+
+PWS Engineering, Boston.
+
+Davis R.B, O˜unpuu S, Tyburski D.J., Gage J.R. (1991). A gait analysis data collection and
+
+reduction technique. Human Movement Sci. 10, 575–587.
+
+Davis R, DeLuca P. (1996). Clinical gait analysis: Current methods and future directions. In
+
+Human Motion Analysis: Current Applications and Future Directions (G. Harris, and
+
+P. Smith, Eds.), IEEE Press, Piscataway, NJ.
+
+Dugas, R. (1988). A History of Mechanics, Dover, New York. Reprinted from a 1955 text. Fournier, R.L. 
+(1999). Basic Transport Phenomena in Biomedical Engineering. Taylor & Francis,
+
+Philadelphia.
+
+Fung, Y.C. (1977). A First Course in Continuum Mechanics, 2nd Ed. Prentice-Hall, Englewood
+
+Cliffs, NJ.
+
+Fung, Y.C. (1993). Biomechanics: Mechanical Properties of Living Tissues, 2nd Ed. Springer-
+
+Verlag, New York.
+
+Gage, J.R. (1991). Gait Analysis in Cerebral Palsy. MacKeith, London.
+
+Ganong, W.F. (1997). Review of Medical Physiology, 18th Ed. Appleton & Lange, Stamford,
+
+CT.
+
+Greenwood, D.T. (1965). Principles of Dynamics. Prentice-Hall, Englewood Cliffs, NJ. Huxley, A.F. (1957). 
+Muscle structure and theories of contraction. Prog. Biophys. 7: 255–318. Kennish, A., Yellin, E. and Frater, 
+R. W. (1995). Dynamic stiffness proﬁles in the left ventricle. J.
+
+Appl. Physiol. 39, 565.
+
+Mazumdar, J.N. (1992). Bioﬂuid Mechanics. World Scientiﬁc, Singapore.
+
+Meriam, J.L. and Kraige, L.G. (2002). Engineering Mechanics, 5th Ed., Wiley, New York. Milnor, W.R. (1989). 
+Hemodynamics, 2nd Ed. Williams and Wilkins, Baltimore.
+
+Milnor, W.R. (1990). Cardiovascular Physiology. Oxford Univ. Press, New York.
+
+Mow, V.C. and Hayes, W.C. (1999). Basic Orthopaedic Biomechanics, 2nd Ed. Lippincott-
+
+Raven, Philadelphia.
+
+McCulloch, A.D. (2003). Cardiac biomechanics. In Biomechanics Principles and Application.
+
+(Schneck, D.J. and Bronzino, J.D., Eds.). CRC Press, Boca Raton, FL.
+
+Mulier, J.P. (1994). Ventricular Pressure as a Function of Volume and Flow. Ph.D. dissertation,
+
+Univ. of Leuven, Belgium.
+
+Needham, D.M. (1971). Machina Carnis: The Biochemistry of Muscular Contraction in its
+
+Historical Development. Cambridge Univ. Press, Cambridge.
+
+Nichols, W.W. and O’Rourke, M.F. (1990). McDonald’s Blood Flow in Arteries: Theoretical,
+
+Experimental and Clinical Principles, 3rd Ed. Edward Arnold, London.
+
+Nigg, B.M. (1994). In Biomechanics of the Musculo-Skeletal System (Nig, B.M. and Herzog, W.,
+
+Eds.). Wiley, New York.
+
+Noordergraaf, A. (1969). Hemodynamics. In Biological Engineering. (Schwan, H.P., Ed.).
+
+McGraw-Hill, New York.
+
+Noordergraaf, A. (1978). Circulatory System Dynamics. Academic, New York.
+
+Palladino, J.L. and Noordergraaf, A. (1998). Muscle contraction mechanics from ultrastruc-
+
+tural dynamics. In Analysis and Assessment of Cardiovascular Function (Drzewiecki, G.M.
+
+and Li, J.K.-J., Eds.). Springer-Verlag, New York.
+
+Palladino, J.L., Mulier, J.P. and Noordergraaf, A. (1999). Closed-loop circulation model based
+
+on the Frank mechanism, Surv. Math. Ind. 7, 177–186.
+
+Palladino, J.L., Ribeiro, L.C. and Noordergraaf, A. (2000). Human circulatory system model
+
+based on Frank’s mechanism. In Mathematical Modelling in Medicine (Ottesen, J.T. and
+
+Danielsen, M., Eds.). IOS Press, Amsterdam.
+
+Roark, R.J. (1969). Formulas for Stress and Strain, 6th Ed. McGraw-Hill, New York.
+
+Singer, C. and Underwood, E.A. (1962). A Short History of Medicine, 2nd ed. Oxford Univ.
+
+Press, New York.
+
+Suga, H. and Sagawa, K. (1994). Instantaneous pressure–volume relationship under various
+
+end-diastolic volume, Circ. Res. 35, 117–126.
+
+Weber, E. (1846). Handwo terbuch der physiologie. Vol. 3B. R. Wagner, ed., Vieweg, Braun-
+
+schweig.
+
+Westerhof, N. and Noordergraaf, A. (1990). Arterial viscoelasticity: A generalized model,
+
+J. Biomech. 3, 357–379.
+
+White, F.M. (2003). Fluid Mechanics, 5th Ed. McGraw-Hill, New York.
+
+Winter, D.A. (1990). Biomechanics and Motor Control of Human Movement. Wiley, New York. Vogel, S. (1992). 
+Vital Circuits: On Pumps, Pipes, and the Workings of Circulatory System.
+
+Oxford Univ. Press, New York.
+
+

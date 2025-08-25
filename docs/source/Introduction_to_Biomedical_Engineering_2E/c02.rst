@@ -1,0 +1,1615 @@
+c02
+---
+
+MORAL AND ETHICAL ISSUES
+
+Joseph Bronzino PhD, PE
+
+Chapter Contents
+
+2.1 Morality and Ethics: A Definition of Terms
+
+2.2 Two Moral Norms: Beneficence and Nonmaleficence
+
+2.3 Redefining Death
+
+2.4 The Terminally Ill Patient and Euthanasia
+
+2.5 Taking Control
+
+2.6 Human Experimentation
+
+2.7 Definition and Purpose of Experimentation
+
+2.8 Informed Consent
+
+2.8.1 Basic Principles
+
+2.8.2 Medical Research Combined with Professional Care (Clinical Research)
+
+2.8.3 Nontherapeutic Biomedical Research Involving Human Subjects (Nonclinical Biomedical Research)
+
+2.9 Regulation of Medical Device Innovation
+
+2.10 Marketing Medical Devices
+
+2.11 Ethical Issues in Feasibility Studies
+
+2.12 Ethical Issues in Emergency Use
+
+2.13 Ethical Issues in Treatment Use
+
+2.14 The Role of the Biomedical Engineer in the FDA Process Exercises Suggested Reading
+
+After completing this chapter, students will be able to:
+
+& &
+
+&
+
+&
+
+&
+
+Deﬁne and distinguish between the terms morals and ethics.
+
+Present the rationale underlying two major philosophical schools of thought: utilitarianism and 
+nonconsequentialism.
+
+Present the codes of ethics for the medical profession, nursing profession, and biomedical engineering.
+
+Identify the modern moral dilemmas, including redeﬁning death, deciding how to care for the terminally ill, 
+and experimentation on humans, which arise from the two moral norms: beneﬁcence (the provision of beneﬁts) 
+and nonmaleﬁcence (the avoidance of harm).
+
+Discuss the moral judgments associated with present policies regarding the regulation of the development and 
+use of new medical devices.
+
+The tremendous infusion of technology into the practice of medicine has created a new medical era. Advances 
+in material science have led to the production of artiﬁcial limbs, heart valves, and blood vessels, thereby 
+permitting ‘‘spare-parts’’ surgery. Numerous patient disorders are now routinely diagnosed using a wide 
+range of highly sophisticated imaging devices, and the lives of many patients are being extended through 
+signiﬁcant improvements in resuscitative and supportive devices such as respirators, pacemakers, and 
+artiﬁcial kidneys.
+
+These technological advances, however, have not been entirely benign. They have had signiﬁcant moral 
+consequences. Provided with the ability to develop cardiovascular assist devices, perform organ transplants, 
+and maintain the breathing and heartbeat of terminally ill patients, society has been forced to reexamine 
+the meaning of such terms as death, quality of life, heroic efforts, and acts of mercy, and consider such 
+moral issues as the right of patients to refuse treatment (living wills) and to participate in experiments 
+(informed consent). As a result, these technological advances have made the moral dimensions of health care 
+more complex, and have posed new and troubling moral dilemmas for medical professionals, biomedical 
+engineers, and society at large.
+
+The purpose of this chapter is to examine some of the moral questions related to the use of new medical 
+technologies. The objective, however, is not to provide solutions or recommendations for these questions. 
+Rather, the intent is to demonstrate that each technological advance has consequences that affect the very 
+core of human values.
+
+Technology and ethics are not foreigners; they are neighbors in the world of human accomplishment. 
+Technology is a human achievement of extraordinary ingenuity and utility and is quite distant from the human 
+accomplishment of ethical values. They face each other, rather than interface. The personal face of ethics 
+looks at the impersonal face of technology to comprehend technology’s potential and its limits. The face of 
+technology looks to ethics to be directed to human purposes and beneﬁts.
+
+In the process of making technology and ethics face each other, it is our hope that individuals engaged in 
+the development of new medical devices, as well as those responsible for the care of patients, will be 
+stimulated to examine and evaluate critically ‘‘accepted’’ views and to reach their own conclusions. This 
+chapter, there-
+
+fore, begins with some deﬁnitions related to morality and ethics, followed by a more detailed discussion of 
+some of the moral issues of special importance to biomedical engineers.
+
+2.1 MORALITY AND ETHICS: A DEFINITION OF TERMS
+
+From the very beginning, individuals have raised concerns about the nature of life and its signiﬁcance. 
+Many of these concerns have been incorporated into the four fundamental questions posed by the German 
+philosopher Immanuel Kant (1724–1804): What can I know? What ought I to do? What can I hope? What is man? 
+Evidence that early societies raised these questions can be found in the generation of rather complex codes 
+of conduct embedded in the customs of the earliest human social organization, the tribe. By 600 BC , the 
+Greeks were successful in reducing many primitive speculations, attitudes, and views on these questions to 
+some type of order or system and integrating them into the general body of wisdom called philosophy. Being 
+seafarers and colonizers, the Greeks had close contact with many different peoples and cultures. In the 
+process, struck by the variety of customs, laws, and institutions that prevailed in the societies that 
+surrounded them, they began to examine and compare all human conduct in these societies. This part of 
+philosophy they called ethics.
+
+The term ethics comes from the Greek ethos, meaning ‘‘custom.’’ On the other hand, the Latin word for custom 
+is mos, and its plural, mores, is the equivalent of the Greek ethos and the root of the words moral and 
+morality. Although both terms (ethics and morality) are often used interchangeably, there is a distinction 
+between them that should be made.
+
+Philosophers deﬁne ethics as a particular kind of study and use morality to refer to its subject matter. 
+For example, customs that result from some abiding principal human interaction are called morals. Some 
+examples of morals in our society are telling the truth, paying one’s debts, honoring one’s parents, and 
+respecting the rights and property of others. Most members of society usually consider such conduct not only 
+customary but also correct or right. Thus, morality encompasses what people believe to be right and good and 
+the reasons they give for it.
+
+Most of us follow these rules of conduct and adjust our lifestyles in accordance with the principles they 
+represent. Many even sacriﬁce life itself rather than diverge from them, applying them not only to their 
+own conduct, but also to the behavior of others. Individuals who disregard these accepted codes of conduct 
+are considered deviants and, in many cases, are punished for engaging in an activity that society as a whole 
+considers unacceptable. For example, individuals committing ‘‘criminal acts’’ (deﬁned by society) are often 
+‘‘outlawed’’ and, in many cases, severely punished. These judgments regarding codes of conduct, however, are 
+not inﬂexible; they must continually be modiﬁed to ﬁt changing conditions and thereby avoid the trauma of 
+revolution as the vehicle for change.
+
+Morality represents the codes of conduct of a society, but ethics is the study of right and wrong, of good 
+and evil in human conduct. Ethics is not concerned with providing any judgments or speciﬁc rules for human 
+behavior, but rather with providing an
+
+objective analysis about what individuals ‘‘ought to do.’’ Deﬁned in this way, it represents the 
+philosophical view of morals, and, therefore, is often referred to as moral philosophy.
+
+Consider the following three questions: (1) Should badly deformed infants be kept alive?; (2) Should 
+treatment be stopped to allow a terminally ill patient to die?; (3) Should humans be used in experiments? 
+Are these questions of morality or ethics? In terms of the deﬁnitions just provided, all three of these 
+inquiries are questions of moral judgment.
+
+Philosophers argue that all moral judgments are considered to be normative judgments, which can be 
+recognized simply by their characteristic evaluative terms such as good, bad, right, or wrong. Typical 
+normative judgments include
+
+& & &
+
+Stealing is wrong.
+
+Everyone ought to have access to an education. Voluntary euthanasia should not be legalized.
+
+Each of these judgments expresses an evaluation (i.e., conveys a negative or positive attitude toward some 
+state of affairs). Each, therefore, is intended to play an actionguiding function.
+
+Arriving at moral judgments, however, requires knowledge of valid moral standards in our society. How is 
+such knowledge obtained? The efforts to answer this question lie in two competing schools of thought that 
+currently dominate normative ethical theory: utilitarianism, a form of consequentialism, and Kantianism, a 
+form of nonconsequentialism. Consequentialism holds that the morally right action is always the one among 
+the available options that has the best consequences. An important implication of consequentialism is that 
+no speciﬁc actions or courses of conduct are automatically ruled out as immoral or ruled in as morally 
+obligatory. The rightness or wrongness of an action is wholly contingent upon its effects.
+
+According to utilitarianism, there are two steps to determining what ought to be done in any situation. 
+First, determine which courses of action are open. Second, determine the consequences of each alternative. 
+When this has been accomplished, the morally right course of action is the one that maximizes pleasure, 
+minimizes pain, or both; the one that does the ‘‘greatest good for the greatest number.’’ Because the 
+central motivation driving the design, development, and use of medical devices is improvement of medicine’s 
+capacity to protect and restore health, an obvious virtue of utilitarianism is that it assesses medical 
+technology in terms of what many believe makes health valuable: the attainment of well-being and the 
+avoidance of pain.
+
+Utilitarianism, therefore, advocates that the end justiﬁes the means. As long as any form of treatment 
+maximizes good consequences, it should be used. Many people, though, believe that the end does not always 
+justify the means and that individuals have rights that are not to be violated no matter how good the 
+consequences might be.
+
+In opposition to utilitarianism stands the school of normative ethical thought known as nonconsequentialism. 
+Proponents of this school deny that moral evaluation is simply and wholly a matter of determining the 
+consequences of human conduct. They agree that other considerations are relevant to moral assessment and so 
+reject the view that morally right conduct is whatever has the best consequences. Based largely on the views 
+of Immanuel Kant, this ethical school of thought insists that there
+
+is something uniquely precious about human beings from the moral point of view. According to Kant’s theory, 
+humans have certain rights that do not apply to any other animal. For example, the moral judgments that we 
+should not kill and eat each other for food or hunt each other for sport or experiment on each other for 
+medical science are all based on this view of human rights. Humans are, in short, owed a special kind of 
+respect simply because they are people.
+
+To better understand the Kantian perspective, it may be helpful to recognize that Kant’s views are an 
+attempt to capture in secular form a basic tenet of Christian morality. What makes human beings morally 
+special entities deserving a unique type of respect? Christianity answers in terms of the doctrine of 
+ensoulment. This doctrine holds that only human beings are divinely endowed with an eternal soul. According 
+to Christian ethics, the soul makes humans the only beings with intrinsic value. Kant’s secular version of 
+the doctrine of ensoulment asserts that human beings are morally unique and deserve special respect because 
+of their autonomy. Autonomy is taken by Kant to be the capacity to make choices based on rational 
+deliberation. The central task of ethics then is to specify what human conduct is required to respect the 
+unique dignity of human beings. For most Kantians, this means determining what limits human beings must 
+observe in the way they treat each other and this, in turn, is taken to be a matter of specifying each 
+individual’s fundamental moral rights.
+
+These two ethical schools of thought, therefore, provide some rationale for moral judgments. However, when 
+there is no clear moral judgment, one is faced with a dilemma. In medicine, moral dilemmas arise in those 
+situations that raise fundamental questions about right and wrong in the treatment of sickness and the 
+promotion of health in patients. In many of these situations the health professional faces two alternative 
+choices, neither of which seems to be a satisfactory solution to the problem. For example, is it more 
+important to preserve life or prevent pain? Is it right to withhold treatment when doing so may lead to a 
+shortening of life? Does an individual have the right to refuse treatment when refusing it may lead to 
+death? All these situations seem to have no clear-cut imperative based on our present set of convictions 
+about right and wrong. That is the dilemma raised by Kant: what ought I do?
+
+Case Study: Stem Cell Research
+
+At the moment of conception, that is to say when sperm unites with egg, the process of fertilization occurs 
+(Fig 2.1). The formation of an embryo is initiated. Once the sperm enters the egg, there is an immediate 
+opening of ion channels, which depolarizes the plasma membrane of the cell, and prevents other sperm from 
+fusing with it. DNA replication then begins, and the ﬁrst cell division occurs approximately 36 hours 
+later. As the process continues, the cell begins to experience cleavage, in which the cells repeatedly 
+divide, cycling between the S (DNA synthesis) and M (mitosis) phases of cell division, essentially skipping 
+the G 1 and G 2 phases, when most cell growth normally occurs. Thus, there is no net growth of the cells, 
+merely subdivision into smaller cells, individually called blastomeres.
+
+Five days subsequent to fertilization, the number of cells composing the embryo is in the hundreds, and the 
+cells form tight junctions characteristic of a compact epithelium, which is arranged around a central 
+cavity. This is the embryonic stage known as the blastocyst. Within the cavity exists a mass of cells that 
+protrude inward. These cells are known as the inner cell mass and become the embryo. The exterior cells are 
+the trophoblast and eventually form the placenta. It is the cells from the inner cell mass of the blastocyst 
+that, when isolated and grown in a culture, are identiﬁed as embryonic stem cells.
+
+It is important to note that if cell division continues, determination and differentiation happen. 
+Differentiation occurs when a cell begins to exhibit the speciﬁc attributes of a predestined specialized 
+cellular role. Determination is related to differentiation, but is somewhat dissimilar. When a cell group 
+that has been determined is transplanted, it will not assimilate with the other cells, but will rather grow 
+into cells that comprised the original organ it was destined to become.
+
+Because the process of obtaining embryonic stem cells destroys the embryo, the following questions arise:
+
+Is the embryo a living human being, entitled to all of the same rights that a human at any other age would 
+be granted? Discuss the answer to this question from a utilitarian and a Kantian point of view.
+
+Should any research that is potentially beneﬁcial to the well-being of mankind be pursued?
+
+Should the federal government support such research?
+
+In the practice of medicine, moral dilemmas are certainly not new. They have been present throughout medical 
+history. As a result, over the years there have been efforts to provide a set of guidelines for those 
+responsible for patient care. These efforts have resulted in the development of speciﬁc codes of 
+professional conduct. Let us examine some of these codes or guidelines.
+
+For the medical profession, the World Medical Association adopted a version of the Hippocratic oath entitled 
+the Geneva Convention Code of Medical Ethics in 1949. This declaration contains the following statements:
+
+I solemnly pledge myself to consecrate my life to the services of humanity; I will give to my teachers the 
+respect and gratitude which is their due; I will practice my profession with conscience and dignity; The 
+health of my patient will be my ﬁrst consideration; I will respect the secrets which are conﬁded in me; I 
+will maintain by all the means in my power, the honour and the noble traditions of the medical profession; 
+My colleagues will be my brothers; I will not permit considerations of religion, nationality, race, party 
+politics or social standing to intervene between my duty and my patient; I will maintain the utmost respect 
+for human life from the time of conception; even under threat; I will not use my medical knowledge contrary 
+to the laws of humanity; I make these promises solemnly, freely and upon my honour.
+
+In the United States, the American Medical Association (AMA) adopted a set of Principles of Medical Ethics 
+in 1980, and revised them in June, 2001. Following is a comparison of the two sets of principles.
+
+For the nursing profession, the American Nurses Association formally adopted in 1976 the Code For Nurses, 
+whose statements and interpretations provide guidance for conduct and relationships in carrying out nursing 
+responsibilities.
+
+PREAMBLE: The Code for Nurses is based on belief about the nature of individuals, nursing, health, and 
+society. Recipients and providers of nursing services are viewed as individuals and groups who possess basic 
+rights and responsibilities, and whose values and circumstances command respect at all times. Nursing 
+encompasses the promotion and restoration of health, the prevention of illness, and the alleviation of 
+suffering. The statements of the Code and their interpretation provide guidance for conduct and
+
+relationships in carrying out nursing responsibilities consistent with the ethical obligations of the 
+profession and quality in nursing care.
+
+1. The nurse provides services with respect for human dignity and the uniqueness of the client unrestricted 
+by considerations of social or economic status, personal attributes, or the nature of health problems.
+
+2. The nurse safeguards the client’s right to privacy by judiciously protecting information of a 
+conﬁdential nature.
+
+3. The nurse acts to safeguard the client and the public when health care and safety are affected by the 
+incompetent, unethical, or illegal practice of any person.
+
+4. The nurse assumes responsibility and accountability for individual nursing judgments and actions.
+
+5. The nurse maintains competence in nursing.
+
+6. The nurse exercises informed judgment and uses individual competence and qualiﬁcations as criteria in 
+seeking consultation, accepting responsibilities, and delegating nursing activities to others.
+
+7. The nurse participates in activities that contribute to the ongoing development of the profession’s body 
+of knowledge.
+
+8. The nurse participates in the profession’s efforts to implement and improve standards of nursing.
+
+9. The nurse participates in the profession’s efforts to establish and maintain conditions of employment 
+conducive to high-quality nursing care.
+
+10. The nurse participates in the profession’s effort to protect the public from misinformation and 
+misrepresentation and to maintain the integrity of nursing.
+
+11. The nurse collaborates with members of the health professions and other citizens in promoting community 
+and national efforts to meet the health needs of the public.
+
+These codes take as their guiding principle the concepts of service to humankind and respect for human life. 
+When reading these codes of conduct, it is difﬁcult to imagine that anyone could improve on them as summary 
+statements of the primary goals of individuals responsible for the care of patients. However, some believe 
+that such codes fail to provide answers to many of the difﬁcult moral dilemmas confronting health 
+professionals today. For example, in many situations, all the fundamental responsibilities of the nurse 
+cannot be met at the same time. When a patient suffering from a massive insult to the brain is kept alive by 
+artiﬁcial means and this equipment is needed elsewhere, it is not clear from these guidelines how ‘‘nursing 
+competence is to be maintained to conserve life and promote health.’’ Although it may be argued that the 
+decision to treat or not to treat is a medical and not a nursing decision, both professions are so 
+intimately involved in the care of patients that they are both concerned with the ultimate implications of 
+any such decision.
+
+For biomedical engineers, an increased awareness of the ethical signiﬁcance of their professional 
+activities has also resulted in the development of codes of professional ethics. Typically consisting of a 
+short list of general rules, these codes express both the minimal standards to which all members of a 
+profession are expected to conform and the ideals for which all members are expected to strive. Such codes 
+provide a practical guide for the ethical conduct of the profession’s practitioners. Consider, for example, 
+the code of ethics endorsed by the American College of Clinical Engineers:
+
+As a member of the American College of Clinical Engineering, I subscribe to the established Code of Ethics 
+in that I will:
+
+&
+
+& & & & &
+
+&
+
+Accurately represent my level of responsibility, authority, experience, knowledge, and education.
+
+Strive to prevent a person from being placed at risk due to the use of technology. Reveal conﬂicts of 
+interest that may affect information provided or received. Respect the conﬁdentiality of information.
+
+Work toward improving the delivery of health care.
+
+Work toward the containment of costs by the better management and utilization of technology.
+
+Promote the profession of clinical engineering.
+
+Although these codes can be useful in promoting ethical conduct, such rules obviously cannot provide ethical 
+guidance in every situation. A profession that aims to maximize the ethical conduct of its members must not 
+limit the ethical consciousness of its members to knowledge of their professional code alone. It must also 
+provide them with resources that will enable them to determine what the code requires in a particular 
+concrete situation, and thereby enable them to arrive at ethically sound judgments in situations in which 
+the directives of the code are ambiguous or simply do not apply.
+
+2.2 TWO MORAL NORMS: BENEFICENCE AND NONMALEFICENCE
+
+Two moral norms have remained relatively constant across the various moral codes and oaths that have been 
+formulated for health care providers since the beginnings of Western medicine in classical Greek 
+civilization. They are beneﬁcence, the provision of beneﬁts, and nonmaleﬁcence, the avoidance of doing 
+harm. These norms are traced back to a body of writings from classical antiquity known as the Hippocratic 
+Corpus. Although these writings are associated with the name of Hippocrates, the acknowledged founder of 
+Western medicine, medical historians remain uncertain whether any, including the Hippocratic oath, were 
+actually his work. Although portions of the Corpus are believed to have been authored during the sixth 
+century BC , other portions are believed to have been written as late as the beginning of the Christian era. 
+Medical historians agree that many of the speciﬁc moral directives of the Corpus represent neither the 
+actual practices nor the moral ideals of the majority of physicians of ancient Greece and Rome.
+
+Nonetheless, the general injunction, ‘‘As to disease, make a habit of two things: (1) to help or, (2) at 
+least, to do no harm,’’ was accepted as a fundamental medical ethical norm by at least some ancient 
+physicians. With the decline of Hellenistic civilization and the rise of Christianity, beneﬁcence and 
+nonmaleﬁcence became increasingly accepted as the fundamental principles of morally sound medical practice. 
+Although beneﬁcence and nonmaleﬁcence were regarded merely as concomitant to the craft of medicine in 
+classical Greece and Rome, the emphasis upon compassion and the brotherhood of humankind, central to 
+Christianity, increasingly made these norms
+
+the only acceptable motives for medical practice. Even today, the provision of beneﬁts and the avoidance of 
+doing harm are stressed just as much in virtually all contemporary Western codes of conduct for health 
+professionals as they were in the oaths and codes that guided the health care providers of past centuries.
+
+Traditionally, the ethics of medical care have given greater prominence to nonmaleﬁcence than to 
+beneﬁcence. This priority was grounded in the fact that, historically, medicine’s capacity to do harm far 
+exceeded its capacity to protect and restore health. Providers of health care possessed many treatments that 
+posed clear and genuine risks to patients and that offered little prospect of beneﬁt. Truly effective 
+therapies were all too rare. In this context, it is surely rational to give substantially higher priority to 
+avoiding harm than to providing beneﬁts.
+
+The advent of modern science changed matters dramatically. Knowledge acquired in laboratories, tested in 
+clinics, and veriﬁed by statistical methods has increasingly dictated the practice of medicine. This 
+ongoing alliance between medicine and science became a critical source of the plethora of technologies that 
+now pervade medical care. The impressive increases in therapeutic, preventive, and rehabilitative 
+capabilities that these technologies have provided have pushed beneﬁcence to the forefront of medical 
+morality. Some have even gone so far as to hold that the old medical ethic of ‘‘Above all, do no harm’’ 
+should be superseded by the new ethic that ‘‘The patient deserves the best.’’ However, the rapid advances in 
+medical technology capabilities have also produced great uncertainty as to what is most beneﬁcial or least 
+harmful for the patient. In other words, along with increases in the ability to be beneﬁcent, medicine’s 
+technology has generated much debate about what actually counts as beneﬁcent or nonmaleﬁcent treatment. 
+Having reviewed some of the fundamental concepts of ethics and morality, let us now turn to several speciﬁc 
+moral issues posed by the use of medical technology.
+
+2.3 REDEFINING DEATH
+
+Although medicine has long been involved in the observation and certiﬁcation of death, many of its 
+practitioners have not always expressed philosophical concerns regarding the beginning of life and the onset 
+of death. Since medicine is a clinical and empirical science, it would seem that health professionals had no 
+medical need to consider the concept of death; the fact of death was sufﬁcient. The distinction between 
+life and death was viewed as the comparison of two extreme conditions separated by an inﬁnite chasm. With 
+the advent of technological advances in medicine to assist health professionals to prolong life, this view 
+has changed.
+
+There is no doubt that the use of medical technology has in many instances warded off the coming of the grim 
+reaper. One need only look at the trends in average life expectancy for conﬁrmation. For example, in the 
+United States today, the average life expectancy for males is 74.3 years and for females 76 years, whereas 
+in 1900 the average life expectancy for both sexes was only 47 years. Infant mortality has been 
+signiﬁcantly reduced in developed nations where technology is an integral part of the culture. Premature 
+births no longer constitute a threat to life because of the
+
+artiﬁcial environment that medical technology can provide. Today, technology has not only helped 
+individuals avoid early death but has also been effective in delaying the inevitable. Pacemakers, artiﬁcial 
+kidneys, and a variety of other medical devices have enabled individuals to add many more productive years 
+to their lives. Technology has been so successful that health professionals responsible for the care of 
+critically ill patients have been able to maintain their ‘‘vital signs of life’’ for extensive periods of 
+time. In the process, however, serious philosophical questions concerning the quality of the life provided 
+to these patients have arisen.
+
+Consider the case of the patient who sustains a serious head injury in an automobile accident. To the 
+attendants in the ambulance who reached the scene of the accident, the patient was unconscious, but still 
+alive with a beating heart. After the victim was rushed to the hospital and into the emergency room, the 
+resident in charge veriﬁed the stability of the vital signs of heartbeat and respiration during examination 
+and ordered a computerized tomography (CT) scan to indicate the extent of the head injury. The results of 
+this procedure clearly showed extensive brain damage. When the EEG was obtained from the scalp electrodes 
+placed about the head, it was noted to be signiﬁcantly abnormal. In this situation, then, the obvious 
+questions arise: What is the status of the patient? Is the patient alive?
+
+Alternatively, consider the events encountered during one open-heart surgery. During this procedure, the 
+patient was placed on the heart bypass machine while the surgeon attempted to correct a malfunctioning 
+valve. As the complex and long operation continued, the EEG monitors that had indicated a normal pattern of 
+electrical activity at the onset of the operation suddenly displayed a relatively straight line indicative 
+of feeble electrical activity. However, since the heart–lung bypass was maintaining the patient’s so-called 
+vital signs, what should the surgeon do? Should the medical staff continue on the basis that the patient is 
+alive, or is the patient dead?
+
+The increasing occurrence of these situations has stimulated health professionals to reexamine the 
+deﬁnition of death. In essence, advances in medical technology that delay death actually hastened its 
+redeﬁnition. This should not be so surprising because the deﬁnition of death has always been closely 
+related to the extent of medical knowledge and available technology. For many centuries, death was deﬁned 
+solely as the absence of breathing. Since it was felt that the spirit of the human being resided in the 
+spiritus (breath), its absence became indicative of death. With the continuing proliferation of scientiﬁc 
+information regarding human physiology and the development of techniques to revive a nonbreathing person, 
+attention turned to the pulsating heart as the focal point in determination of death. However, this view was 
+to change through additional medical and technological advances in supportive therapy, resuscitation, 
+cardiovascular assist devices, and organ transplantation.
+
+As understanding of the human organism increased, it became obvious that one of the primary constituents of 
+the blood is oxygen and that any organ deprived of oxygen for a speciﬁed period of time will cease to 
+function and die. The higher functions of the brain are particularly vulnerable to this type of insult, and 
+the removal of oxygen from the blood supply even for a short period of time (3 minutes) produces 
+irreversible damage to the brain tissues. Consequently, the evidence of death began to shift from the 
+pulsating heart to the vital, functioning brain. Once medicine was provided
+
+with the means to monitor the brain’s activity (i.e., the EEG), another factor was introduced in the 
+deﬁnition of death. Advocates of the concept of brain death argued that the human brain is truly essential 
+to life. When the brain is irreversibly damaged, so are the functions that are identiﬁed with self and our 
+own humanness: memory, feeling, thinking, and knowledge.
+
+As a result, it became widely accepted that in clinical death the spontaneous activity of the lungs, heart, 
+and brain is no longer present. The irreversible cessation of functioning of all three major organs (i.e., 
+heart, lungs, and brain) was required before anyone was pronounced dead. Although damage to any other organ 
+system such as the liver or kidney may ultimately cause the death of the individual through a fatal effect 
+on the essential functions of the heart, lungs, or brain, this aspect was not included in the deﬁnition of 
+clinical death.
+
+With the development of modern respirators, however, the medical profession encountered an increasing number 
+of situations in which a patient with irreversible brain damage could be maintained almost indeﬁnitely. 
+Once again, a new technological advance created the need to reexamine the deﬁnition of death.
+
+The movement toward redeﬁning death received considerable impetus with the publication of a report 
+sponsored by the Ad Hoc Committee of the Harvard Medical School in 1968, in which the committee offered an 
+alternative deﬁnition of death based on the functioning of the brain. The report of this committee was 
+considered a landmark attempt to deal with death in light of technology.
+
+In summary, the criteria for death established by this committee included the following: (1) the patient 
+must be unreceptive and unresponsive, that is, in a state of irreversible coma; (2) the patient must have no 
+movements of breathing when the mechanical respirator is turned off; (3) the patient must not demonstrate 
+any reﬂexes; and (4) the patient must have a ﬂat EEG for at least 24 hours, indicating no electrical brain 
+activity. When these criteria are satisﬁed, then death may be declared.
+
+At the time, the committee also strongly recommended that the decision to declare the person dead and then 
+to turn off the respirator should not be made by physicians involved in any later efforts to transplant 
+organs or tissues from the deceased individual. In this way, a prospective donor’s death would not be 
+hastened merely for the purpose of transplantation. Thus, complete separation of authority and 
+responsibility for the care of the recipient from the physician or group of physicians responsible for the 
+care of the prospective donor is essential.
+
+The shift to a brain-oriented concept involved deciding that much more than just biological life is 
+necessary to be a human person. The brain death concept was essentially a statement that mere vegetative 
+human life is not personal human life. In other words, an otherwise intact and alive but brain-dead person 
+is not a human person. Many of us have taken for granted the assertion that being truly alive in this world 
+requires an ‘‘intact functioning brain.’’ Yet, precisely this issue was at stake in the gradual movement 
+from using heartbeat and respiration as indices of life to using brain-oriented indices instead.
+
+Indeed, total and irreparable loss of brain function, referred to as brainstem death, whole brain death, or, 
+simply, brain death, has been widely accepted as the legal standard for death. By this standard, an 
+individual in a state of brain death is legally indistinguishable from a corpse and may be legally treated 
+as one even though respiratory and circulatory 
+functions may be sustained through the intervention of technology. Many take this legal standard to be the 
+morally appropriate one, noting that once destruction of the brain stem has occurred, the brain cannot 
+function at all, and the body’s regulatory mechanisms will fail unless artiﬁcially sustained. Thus 
+mechanical sustenance of an individual in a state of brain death is merely postponement of the inevitable 
+and sustains nothing of the personality, character, or consciousness of the individual. It is simply the 
+mechanical intervention that differentiates such an individual from a corpse and a mechanically ventilated 
+corpse is a corpse nonetheless.
+
+Even with a consensus that brainstem death is death, and thus that an individual in such a state is indeed a 
+corpse, difﬁcult cases remain. Consider the case of an individual in a persistent vegetative state, the 
+condition known as neocortical death. Although severe brain injury has been suffered, enough brain function 
+remains to make mechanical sustenance of respiration and circulation unnecessary. In a persistent vegetative 
+state, an individual exhibits no purposeful response to external stimuli and no evidence of self-awareness. 
+The eyes may open periodically and the individual may exhibit sleep–wake cycles. Some patients even yawn, 
+make chewing motions, or swallow spontaneously. Unlike the complete unresponsiveness of individuals in a 
+state of brainstem death, a variety of simple and complex responses can be elicited from an individual in a 
+persistent vegetative state. Nonetheless, the chances that such an individual will regain consciousness are 
+remote. Artiﬁcial feeding, kidney dialysis, and the like make it possible to sustain an individual in a 
+state of neocortical death for decades. This sort of condition and the issues it raises are exempliﬁed by 
+the famous case of Karen Ann Quinlan.
+
+In April 1975, this young woman suffered severe brain damage and was reduced to a chronic vegetative state 
+in which she no longer had any cognitive function. Accepting the doctors’ judgment that there was no hope of 
+recovery, her parents sought permission from the courts to disconnect the respirator that was keeping her 
+alive in the intensive care unit of a New Jersey hospital.
+
+The trial court, and then the Supreme Court of New Jersey, agreed that Karen’s respirator could be removed. 
+So it was disconnected. However, the nurse in charge of her care in the Catholic hospital opposed this 
+decision and, anticipating it, had begun to wean her from the respirator so that by the time it was 
+disconnected she could remain alive without it. So, Karen did not die. She remained alive for ten additional 
+years. In June 1985, she ﬁnally died of acute pneumonia. Antibiotics, which would have fought the 
+pneumonia, were not given.
+
+If brainstem death is death, is neocortical death also death? Again, the issue is not a straightforward 
+factual matter. For it, too, is a matter of specifying which features of living individuals distinguish them 
+from corpses and so make treatment of them as corpses morally impermissible. Irreparable cessation of 
+respiration and circulation, the classical criterion for death, would entail that an individual in a 
+persistent vegetative state is not a corpse and so, morally speaking, must not be treated as one. The 
+brainstem death criterion for death would also entail that a person in a state of neocortical death is not 
+yet a corpse. On this criterion, what is crucial is that brain damage be severe enough to cause failure of 
+the regulatory mechanisms of the body.
+
+
+Is an individual in a state of neocortical death any less in possession of the characteristics that 
+distinguish the living from cadavers than one whose respiration and circulation are mechanically maintained? 
+It is a matter that society must decide. And until society decides, it is not clear what counts as 
+beneﬁcent or nonmaleﬁcent treatment of an individual in a state of neocortical death.
+
+2.4 THE TERMINALLY ILL PATIENT AND EUTHANASIA
+
+Terminally ill patients today often ﬁnd themselves in a strange world of institutions and technology 
+devoted to assisting them in their ﬁght against death. However, at the same time, this modern 
+technologically oriented medical system may cause patients and their families considerable economic, 
+psychological, and physical pain. In enabling medical science to prolong life, modern technology has in many 
+cases made dying slower and more undigniﬁed. As a result of this situation, there is a moral dilemma in 
+medicine. Is it right or wrong for medical professionals to stop treatment or administer a lethal dose to 
+terminally ill patients?
+
+This problem has become a major issue for our society to consider. Although death is all around us in the 
+form of accidents, drug overdose, alcoholism, murder, and suicide, for most of us the end lies in growing 
+older and succumbing to some form of chronic illness. As the aged approach the end of life’s journey, they 
+may eventually wish for the day when all troubles can be brought to an end. Such a desire, frequently shared 
+by a compassionate family, is often shattered by therapies provided with only one concern: to prolong life 
+regardless of the situation. As a result, many claim a digniﬁed death is often not compatible with today’s 
+standard medical view.
+
+Consider the following hypothetical version of the kind of case that often confronts contemporary patients, 
+their families, health care workers, and society as a whole. Suppose a middle-aged man suffers a brain 
+hemorrhage and loses consciousness as a result of a ruptured aneurysm. Suppose that he never regains 
+consciousness and is hospitalized in a state of neocortical death, a chronic vegetative state. His life is 
+maintained by a surgically implanted gastronomy tube that drips liquid nourishment from a plastic bag 
+directly into his stomach. The care of this individual takes seven and one-half hours of nursing time daily 
+and includes shaving, oral hygiene, grooming, attending to his bowels and bladder, and so forth. Suppose 
+further that his wife undertakes legal action to force his caregivers to end all medical treatment, 
+including nutrition and hydration, so that complete bodily death of her husband will occur. She presents a 
+preponderance of evidence to the court to show that her husband would have wanted just this result in these 
+circumstances.
+
+The central moral issue raised by this sort of case is whether the quality of the individual’s life is 
+sufﬁciently compromised to make intentional termination of that life morally permissible. While alive, he 
+made it clear to both family and friends that he would prefer to be allowed to die rather than be 
+mechanically maintained in a condition of irretrievable loss of consciousness. Deciding whether his judgment 
+in such a case should be allowed requires deciding which capacities and qualities make life worth living, 
+which qualities are sufﬁcient to endow it with value worth
+
+sustaining, and whether their absence justiﬁes deliberate termination of a life, at least when this would 
+be the wish of the individual in question. Without this decision, the traditional norms of medical ethics, 
+beneﬁcence and nonmaleﬁcence, provide no guidance. Without this decision, it cannot be determined whether 
+termination of life support is a beneﬁt or harm to the patient.
+
+For many individuals, the ﬁght for life is a correct professional view. They believe that the forces of 
+medicine should always be committed to using innovative ways of prolonging life for the individual. However, 
+this cannot be the only approach to caring for the terminally ill. Certain moral questions regarding the 
+extent to which physicians engage in heroic efforts to prolong life must be addressed if the individual’s 
+rights are to be preserved. The goal of those responsible for patient care should not solely be to prolong 
+life as long as possible by the extensive use of drugs, operations, respirators, hemodialyzers, pacemakers, 
+and the like, but rather to provide a reasonable quality of life for each patient. It is out of this new 
+concern that euthanasia has once again become a controversial issue in the practice of medicine.
+
+ThetermeuthanasiaisderivedfromtwoGreekwordsmeaning‘‘good’’and‘‘death.’’ Euthanasia was practiced in many 
+primitive societies in varying degrees. For example, on the island of Cos, the ancient Greeks assembled 
+elderly and sick people at an annual banquet to consume a poisonous potion. Even Aristotle advocated 
+euthanasia for gravely deformed children. Other cultures acted in a similar manner toward their aged by 
+abandoning them when they felt these individuals no longer served any useful purpose. However, with the 
+spread of Christianity in the Western world, a new attitude developed toward euthanasia. Because of the 
+Judeo-Christian belief in the biblical statements ‘‘Thou shalt not kill’’ (Exodus 20:13) and ‘‘He who kills 
+a man should be puttodeath’’(Leviticus 24:17), thepracticeofeuthanasiadecreased.Asaresultofthese moral 
+judgments, killing was considered a sin, and the decision about whether someone should live or die was 
+viewed solely as God’s responsibility.
+
+In today’s society, euthanasia implies to many ‘‘death with dignity,’’ a practice to be followed when life 
+is merely being prolonged by machines and no longer seems to have value. In many instances, it has come to 
+mean a contract for the termination of life to avoid unnecessary suffering at the end of a fatal illness 
+and, therefore, has the connotation of relief from pain.
+
+Discussions of the morality of euthanasia often distinguish active from passive euthanasia, a distinction 
+that rests on the difference between an act of commission and an act of omission. When failure to take steps 
+that could effectively forestall death results in an individual’s demise, the resultant death is an act of 
+omission and a case of letting a person die. When a death is the result of doing something to hasten the end 
+of a person’s life (for example, giving a lethal injection), that death is caused by an act of commission 
+and is a case of killing a person. The important difference between active and passive euthanasia is that in 
+passive euthanasia, the physician does not do anything to bring about the patient’s death. The physician 
+does nothing, and death results due to whatever illness already afﬂicts the patient. In active euthanasia, 
+however, the physician does something to bring about the patient’s death. The physician who gives the 
+patient with cancer a lethal injection has caused the patient’s death, whereas if the physician merely 
+ceases treatment, the cancer is the cause of death.
+
+In active euthanasia, someone must do something to bring about the patient’s death, and in passive 
+euthanasia, the patient’s death is caused by illness rather than by anyone’s conduct. Is this notion 
+correct? Suppose a physician deliberately decides not to treat a patient who is terminally ill, and the 
+patient dies. Suppose further that the physician were to attempt self-exoneration by saying, ‘‘I did 
+nothing. The patient’s death was the result of illness. I was not the cause of death.’’ Under current legal 
+and moral norms, such a response would have no credibility. The physician would be blameworthy for the 
+patient’s death as surely as if he or she had actively killed the patient. Thus, the actions taken by a 
+physician to continue treatment to the very end are understood.
+
+Euthanasia may also be classiﬁed as involuntary or voluntary. An act of euthanasia is involuntary if it 
+hastens the individual’s death for his or her own good, but against the individual’s wishes. Involuntary 
+euthanasia, therefore, is no different in any morally relevant way from unjustiﬁable homicide. However, 
+what happens when the individual is incapable of agreeing or disagreeing? Suppose that a terminally ill 
+person is unconscious and cannot make his or her wishes known. Would hastening that person’s death be 
+permissible? It would be if there was substantial evidence that the individual had given prior consent. The 
+individual may have told friends and relatives that, under certain circumstances, efforts to prolong his or 
+her life should not be undertaken or continued and might even have recorded those wishes in the form of a 
+living will or an audiotape or videotape. When this level of substantial evidence of prior consent exists, 
+the decision to hasten death would be morally justiﬁed. A case of this sort would be a case of voluntary 
+euthanasia.
+
+For a living will to be valid, the person signing it must be of sound mind at the time the will is made and 
+shown not to have altered his or her opinion in the interim between its signing and the onset of the 
+illness. In addition, the witnesses must not be able to beneﬁt from the individual’s death. As the living 
+will itself states, it is not a legally binding document. It is essentially a passive request and depends on 
+moral persuasion. Proponents of the will, however, believe that it is valuable in relieving the burden of 
+guilt often carried by health professionals and the family in making the decision to allow a patient to die.
+
+Those who favor euthanasia point out the importance of individual rights and freedom of choice and look on 
+euthanasia as a kindness ending the misery endured by the patient. The thought of a digniﬁed death is much 
+more attractive than the process of continuous suffering and gradual decay into nothingness. Viewing each 
+person as a rational being possessing a unique mind and personality, proponents argue that terminally ill 
+patients should have the right to control the ending of their own life.
+
+On the other hand, those opposed to euthanasia demand to know who has the right to end the life of another. 
+Some use religious arguments, emphasizing that euthanasia is in direct conﬂict with the belief that God, 
+and God alone, has the power to decide when a human life ends. Their view is that anyone who practices 
+euthanasia is essentially acting in the place of God, and that no human should ever be considered 
+omnipotent.
+
+Others turn to the established codes, reminding those responsible for the care of patients that they must do 
+whatever is in their power to save a life. Their argument is
+
+that health professionals cannot honor their pledge and still believe that euthanasia is justiﬁed. If 
+terminally ill patients are kept alive, there is at least a chance of ﬁnding a cure that might be useful to 
+them. Opponents of euthanasia feel that legalizing it would destroy the bonds of trust between doctor and 
+patient. How would sick individuals feel if they could not be sure that their physician and nurse would try 
+everything possible to cure them, knowing that if their condition worsened, they would just lose faith and 
+decide that death would be better? Opponents of euthanasia also question whether it will be truly beneﬁcial 
+to the suffering person or will only be a means to relieve the agony of the family. They believe that 
+destroying life (no matter how minimal) merely to ease the emotional suffering of others is indeed unjust.
+
+Many fear that if euthanasia is legalized, it will be difﬁcult to deﬁne and develop clear-cut guidelines 
+that will serve as the basis for carrying out euthanasia. Furthermore, once any form of euthanasia is 
+accepted by society, its detractors fear that many other problems will arise. Even the acceptance of passive 
+euthanasia could, if carried to its logical conclusion, be applied in state hospitals and institutions for 
+the mentally retarded and the elderly. Such places currently house thousands of people who have neither hope 
+nor any prospect of a life that even approaches normality. Legalization of passive euthanasia could prompt 
+an increased number of suits by parents seeking to end the agony of incurably afﬂicted children or by 
+children seeking to shorten the
+
+suffering of aged and terminally ill parents. In Nazi Germany, for example, mercy killing was initially 
+practiced to end the suffering of the terminally ill. Eventually, however, the practice spread, so that even 
+persons with the slightest deviation from the norm (e.g., the mentally ill, minority groups such as Jews and 
+others) were terminated. Clearly, the situation is delicate and thought provoking.
+
+2.5 TAKING CONTROL
+
+Medical care decisions can be tremendously difﬁcult. They often involve unpleasant topics and arise when we 
+are emotionally and physically most vulnerable. Almost always these choices involve new medical information 
+that feels alien and can seem overwhelming. In an attempt to assist individuals to make these decisions, it 
+is often helpful to follow the pathway outlined here:
+
+1. Obtain all the facts (i.e., clarify the medical facts of the situation).
+
+2. Understand all options and their consequences.
+
+3. Place a value on each of the options based on your own set of personal values.
+
+The three-step facts/options/values path concerns the ‘‘how’’ of decisions, but equally important is the 
+‘‘who.’’ Someone must make every single medical decision. Ideally, decisions will be made by the person most 
+intimately involved—the patient. Very often, however, they are made by someone else—spouse, family, 
+physician, or by a group of those people acting on behalf of the patient. It is, therefore, important to 
+recognize the four concentric circles of consent:
+
+& &
+
+&
+
+&
+
+The ﬁrst, and primary, circle is the patient.
+
+The second circle is the use of advance directives, that is, choosing in advance through the use of such 
+documents as the living will.
+
+The third circle is others deciding for the patient (i.e., the move from personal control to surrogate 
+control).
+
+The fourth and ﬁnal circle is the courts and bureaucrats. It is the arena of last resort where our society 
+has decreed that we go when the patient may be incapacitated, when there is no clear advance directive, and 
+when it is not clear who should make the decision.
+
+These three steps and four circles are simply attempts to impose some order on the chaos that is medical 
+decision making. They can help individuals take control.
+
+2.6 HUMAN EXPERIMENTATION
+
+Medical research has long held an exalted position in our modern society. It has been acclaimed for its 
+signiﬁcant achievements that range from the development of the Salk and Sabin vaccines for polio to the 
+development of artiﬁcial organs. To determine their effectiveness and value, however, these new drugs and 
+medical devices eventually are used on humans. The issue is, therefore, not only whetherhumans should be 
+involved in
+
+clinical studies designed to beneﬁt themselves or their fellow humans but also clarifying or deﬁning more 
+precisely the conditions under which such studies are to be permitted.
+
+For example, consider the case of a 50-year-old female patient suffering from severe coronary artery 
+disease. What guidelines should be followed in the process of experimenting with new drugs or devices that 
+may or may not help her? Should only those procedures viewed as potentially beneﬁcial to her be tried? 
+Should experimental diagnostic procedures or equipment be tested on this patient to evaluate their 
+effectiveness when compared to more accepted techniques, even though they will not be directly beneﬁcial to 
+the patient?
+
+On the other hand, consider the situation of conducting research on the human fetus. This type of research 
+is possible as a result of the legalization of abortion in the United States and the technological advances 
+that have made fetal studies more practical than in the past. Under what conditions should medical research 
+be conducted on these subjects? Should potentially hazardous drugs be given to women planning to have 
+abortions to determine the effect of these drugs on the fetus? Should the fetus, once aborted, be used in 
+any experimental studies?
+
+Although these questions are difﬁcult to answer, clinical researchers responsible for the well-being of 
+their patients must face the moral issues involved in testing new equipment and procedures and at the same 
+time safeguard the individual rights of their patients.
+
+Case Study: Neonatal Intensive Care Unit (NICU)
+
+Throughout time, low birth weight, oftentimes arising from premature birth, has been a major factor 
+affecting infant survival. Underweight infants, who are typically classiﬁed as either low birth weight 
+(LBW) (less than 1500 g) or very low birth weight (VLBW) (less than 1000 g), must be treated with the utmost 
+caution and care to maximize their chances of survival. Advances in premature-infant medical care, such as 
+improved thermoregulation and ventilation techniques, have greatly decreased the mortality rate among LBW 
+and VLBW infants. Included in these advances was the creation of the NICU, where all the necessary equipment 
+needed to sustain the life of the child could be kept conveniently together (Figure 2.2).
+
+One of the most important devices used in the NICU is the incubator. This device, typically molded of 
+see-through plastic, is used to stabilize the body temperature of the infant. In essence, the incubator 
+allows the medical staff to keep the newborn warm without having to wrap it in blankets. The incubator also 
+aids in preventing infection and in stabilizing the humidity of the child’s environment. By keeping the 
+temperature and humidity levels of the newborn’s environment static, the baby remains well hydrated and 
+water loss is kept to a minimum.
+
+A complication that many preterm infants suffer from is the inability to breathe normally on their own. The 
+child may be completely unable to breathe
+
+for itself, or may suffer from a condition known as apnea, where the breathing pattern is either aperiodic 
+or irregular.
+
+In these cases, children susceptible to an apneic event are closely monitored so that if they stop 
+breathing, nurses can rush to the bedside and wake them up. However, it is often minutes before the nurse 
+can arrive at the scene. To facilitate the process of waking the infant experiencing an apneic event, 
+biomedical engineers developed a tactile vibrator that is triggered by such an event to vibrate against the 
+infant’s foot and wake him or her. To prove the device is effective and safe, a human experiment must be 
+initiated. In this case, the following questions need to be resolved:
+
+Who is responsible for proposing the conduction of this study?
+
+What should the approval process for such a study include?
+
+What should be the policy on informed consent?
+
+Should changes that were made in the device during the course of the study, which would alter the nature of 
+the initially proposed device, be allowed?
+
+2.7 DEFINITION AND PURPOSE OF EXPERIMENTATION
+
+What exactly constitutes a human experiment? Although experimental protocols may vary, it is generally 
+accepted that human experimentation occurs whenever the clinical
+
+situation of the individual is consciously manipulated to gather information regarding the capability of 
+drugs and devices. In the past, experiments involving human subjects have been classiﬁed as either 
+therapeutic or nontherapeutic. A therapeutic experiment is one that may have direct beneﬁt for the patient, 
+but the goal of nontherapeutic research is to provide additional knowledge without direct beneﬁt to the 
+person. The central difference is a matter of intent or aim rather than results.
+
+Throughout medical history, there have been numerous examples of therapeutic research projects. The use of 
+nonconventional radiotherapy to inhibit the progress of a malignant cancer, of pacemakers to provide the 
+necessary electrical stimulation for proper heart function, or of artiﬁcial kidneys to mimic nature’s 
+function and remove poisons from the blood were all, at one time, considered novel approaches that might 
+have some value for the patient. In the process, they were tried and found not only to be beneﬁcial for the 
+individual patient but also for humankind.
+
+Nontherapeutic research has been another important vehicle for medical progress. Experiments designed to 
+study the impact of infection from the hepatitis virus or the malarial parasite or the procedures involved 
+in cardiac catheterization have had signiﬁcant effects on the advancement of medical science and the 
+ultimate development of appropriate medical procedures for the beneﬁt of all humans.
+
+In the mid-1970s the National Commission for the Protection of Human Subjects of Biomedical and Behavioral 
+Research offered the terms practice and research to replace the conventional therapeutic and nontherapeutic 
+distinction. Quoting the commission, Alexander Capron in 1986 wrote:
+
+[T]he term ‘‘practice’’ refers to interventions that are designed solely to enhance the wellbeing of an 
+individual patient or client and that have a reasonable expectation of success. In the medical sphere, 
+practices usually involve diagnosis, preventive treatment, or therapy; in the social sphere, practices 
+include governmental programs such as transfer payments, education, and the like.
+
+By contrast, the term ‘‘research’’ designates an activity designed to test a hypothesis, to permit 
+conclusions to be drawn, and thereby to develop or contribute to generalizable knowledge (expressed, for 
+example, in theories, principles, statements of relationships). In the polar cases, then, practice uses a 
+proven technique in an attempt to beneﬁt one or more individuals, while research studies a technique in an 
+attempt to increase knowledge.
+
+Although the practice/research dichotomy has the advantage of not implying that therapeutic activities are 
+the only clinical procedures intended to beneﬁt patients, it is also based on intent rather than outcome. 
+Interventions are practices when they are proven techniques intended to beneﬁt the patient, but 
+interventions aimed at increasing generalizable knowledge constitute research. What about those 
+interventions that do not happily ﬁt into either category?
+
+One such intervention is nonvalidated practice, which may encompass prevention as well as diagnosed therapy. 
+The primary purpose of the use of a nonvalidated practice is to beneﬁt the patient while emphasizing that 
+it has not been shown to be safe and efﬁcacious. For humans to be subjected to nonvalidated practice, they 
+must be properly informed and give their consent.
+
+2.8 INFORMED CONSENT
+
+Informed consent has long been considered by many to be the most important moral issue in human 
+experimentation. It is the principal condition that must be satisﬁed for human experimentation to be 
+considered both lawful and ethical. All adults have the legal capacity to give medical consent (unless 
+speciﬁcally denied through some legal process). As a result, issues concerning legal capability are usually 
+limited to minors. Many states, if not all, have some exceptions that allow minors to give consent.
+
+Informed consent is an attempt to preserve the rights of individuals by giving them the opportunity for 
+self-determination, that is, to determine for themselves whether they wish to participate in any 
+experimental effort. In 1964 the World Medical Association (WMA) in Finland endorsed a code of ethics for 
+human experimentation as an attempt to provide some guidelines in this area. In October 2000 the 52nd WMA 
+General Assembly in Edinburgh, Scotland revised these guidelines.
+
+Because it is often essential to use the results obtained in human experiments to further scientiﬁc 
+knowledge, the World Medical Association prepared the following recommendations to serve as a guide to 
+physicians all over the world. However, it is important to point out that these guidelines do not relieve 
+physicians, scientists, and engineers from criminal, civil, and ethical responsibilities dictated by the 
+laws of their own countries.
+
+Case Study: The Artiﬁcial Heart
+
+In the early 1980s a screening committee had been set up to pick the ﬁrst candidate for the Jarvik 7, a new 
+(at the time) artiﬁcial heart (Figure 2.3). It was decided that the ﬁrst recipient had to be someone so 
+sick that death was imminent. It was thought unethical to pick someone who might have another year to live 
+because the artiﬁcial heart might well kill him or her.
+
+Is this an example of nonvalidated practice? Is informed consent still required?
+
+A week after the operation, Barney Clark began having seizures from head to toe. During one seizure, Clark’s 
+unconscious body quivered for several hours. The seizures and spells of mental confusion continued 
+throughout the next months. As a result, Clark expressed a desire to die. Although he did issue a positive 
+statement during a videotaped interview, Clark was not a happy man, tethered to a huge machine, barely 
+conscious, and in some pain. In March 1983 Barney Clark died of multiple organ collapse.
+
+Discuss in detail the notions of ‘‘criteria for success’’ and quality of life in this case.
+
+2.8.1 Basic Principles
+
+&
+
+&
+
+Biomedical research involving human subjects must conform to generally accepted scientiﬁc principles and 
+should be based on adequately performed laboratory and animal experimentation and on a thorough knowledge of 
+the scientiﬁc literature.
+
+The design and performance of each experimental procedure involving human subjects should be clearly 
+formulated in an experimental protocol, which should
+
+be transmitted to a specially appointed independent committee for consideration, comment, and guidance.
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+Biomedical research involving human subjects should be conducted only by scientiﬁcally qualiﬁed persons 
+and under the supervision of a clinically competent medical person. The responsibility for the human subject 
+must always rest with a medically qualiﬁed person and never rest on the subject of the research, even 
+though the subject has given his or her consent.
+
+Biomedical research involving human subjects cannot legitimately be carried out unless the importance of the 
+objective is in proportion to the inherent risk to the subject.
+
+Every biomedical research project involving human subjects should be preceded by careful assessment of 
+predictable risks in comparison with foreseeable beneﬁts to the subject or to others. Concern for the 
+interests of the subject must always prevail over the interests of science and society.
+
+The right of the research subject to safeguard his or her integrity must always be respected. Every 
+precaution should be taken to respect the privacy of the subject and to minimize the impact of the study on 
+the subject’s physical and mental integrity and on the personality of the subject.
+
+Doctors should abstain from engaging in research projects involving human subjects unless they are satisﬁed 
+that the hazards involved are believed to be predictable. Doctors should cease any investigation if the 
+hazards are found to outweigh the potential beneﬁts.
+
+In publication of the results of his or her research, the doctor is obliged to preserve the accuracy of the 
+results. Reports of experimentation not in accordance with the principles laid down in this Declaration 
+should not be accepted for publication.
+
+In any research on human beings, each potential subject must be adequately informed of the aims, methods, 
+anticipated beneﬁts, and potential hazards of the study and the discomfort it may entail. He or she should 
+be informed that he or she is at liberty to abstain from participation in the study and that he or she is 
+free to withdraw his or her consent to participation at any time. The doctor should then obtain the 
+subject’s freely given informed consent, preferably in writing.
+
+When obtaining informed consent for the research project, the doctor should be particularly cautious if the 
+subject is in a dependent relationship to him or her or may consent under duress. In that case, the informed 
+consent should be obtained by a doctor who is not engaged in the investigation and who is completely 
+independent of this ofﬁcial relationship.
+
+In the case of legal incompetence, informed consent should be obtained from the legal guardian in accordance 
+with national legislation. Where physical or mental incapacity makes it impossible to obtain informed 
+consent, or when the subject is a minor, permission from the responsible relative replaces that of the 
+subject in accordance with national legislation.
+
+The research protocol should always contain a statement of the ethical considerations involved and should 
+indicate that the principles enunciated in the present Declaration are complied with.
+
+2.8.2 Medical Research Combined with Professional Care (Clinical Research)
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+In the treatment of the sick person, the doctor must be free to use a new diagnostic and therapeutic 
+measure, if in his or her judgment it offers hope of saving life, reestablishing health, or alleviating 
+suffering.
+
+The potential beneﬁts, hazards, and discomfort of a new method should be weighed against the advantages of 
+the best current diagnostic and therapeutic methods.
+
+In any medical study, every patient—including those of a control group, if anyshould be assured of the 
+best-proven diagnostic and therapeutic method.
+
+The refusal of the patient to participate in a study must never interfere with the doctor–patient 
+relationship.
+
+If the doctor considers it essential not to obtain informed consent, the speciﬁc reasons for this proposal 
+should be stated in the experimental protocol for transmission to the independent committee.
+
+The doctor can combine medical research with professional care, the objective being the acquisition of new 
+medical knowledge, only to the extent that medical research is justiﬁed by its potential diagnostic or 
+therapeutic value for the patient.
+
+2.8.3 Nontherapeutic Biomedical Research Involving Human Subjects (Nonclinical Biomedical Research)
+
+&
+
+&
+
+&
+
+&
+
+In the purely scientiﬁc application of medical research carried out on a human being, it is the duty of the 
+doctor to remain the protector of the life and health of that person on whom biomedical research is being 
+carried out.
+
+The subjects should be volunteers (i.e., either healthy persons or patients for whom the experimental design 
+is not related to the patient’s illness).
+
+The investigator or the investigating team should discontinue the research if in his/her or their judgment 
+it may, if continued, be harmful to the individual.
+
+In research on humans, the interest of science and society should never take precedence over considerations 
+related to the well-being of the subject.
+
+These guidelines generally converge on six basic requirements for ethically sound human experimentation. 
+First, research on humans must be based on prior laboratory research and research on animals, as well as on 
+established scientiﬁc fact, so that the point under inquiry is well focused and has been advanced as far as 
+possible by nonhuman means. Second, research on humans should use tests and means of observation that are 
+reasonably believed to be able to provide the information being sought by the research. Methods that are not 
+suited for providing the knowledge sought are pointless and rob the research of its scientiﬁc value. Third, 
+research should be conducted only by persons with the relevant scientiﬁc expertise. Fourth,
+
+All foreseeable risks and reasonably probable beneﬁts, to the subject of the investigation and to science, 
+or more broadly to society, must be carefully assessed, and . . . the com-
+
+parison of those projected risks and beneﬁts must indicate that the latter clearly outweighs the former. 
+Moreover, the probable beneﬁts must not be obtainable through other less risky means.
+
+Fifth, participation in research should be based on informed and voluntary consent. Sixth, participation by 
+a subject in an experiment should be halted immediately if the subject ﬁnds continued participation 
+undesirable or a prudent investigator has cause to believe that the experiment is likely to result in 
+injury, disability, or death to the subject. Conforming to conditions of this sort probably does limit the 
+pace and extent of medical progress, but society’s insistence on these conditions is its way of saying that 
+the only medical progress truly worth having must be consistent with a high level of respect for human 
+dignity. Of these conditions, the requirement to obtain informed and voluntary consent from research 
+subjects is widely regarded as one of the most important protections.
+
+A strict interpretation of these criteria for subjects automatically rules out whole classes of individuals 
+from participating in medical research projects. Children, the mentally retarded, and any patient whose 
+capacity to think is affected by illness are excluded on the grounds of their inability to comprehend 
+exactly what is involved in the experiment. In addition, those individuals having a dependent relationship 
+to the clinical investigator, such as the investigator’s patients and students, would be eliminated based on 
+this constraint. Since mental capacity also includes the ability of subjects to appreciate the seriousness 
+of the consequences of the proposed procedure, this means that even though some minors have the right to 
+give consent for certain types of treatments, they must be able to understand all the risks involved.
+
+Any research study must clearly deﬁne the risks involved. The patient must receive a 
+totaldisclosureofallknowninformation.Inthepast,theevaluationofriskandbeneﬁtin manysituationsbelongedtothe 
+medicalprofessionalalone.Once made,itwasassumed that this decision would be accepted at face value by the 
+patient. Today, this assumption is not valid. Although the medical staff must still weigh the risks and 
+beneﬁts involved in any procedure they suggest, it is the patient who has the right to make the ﬁnal 
+determination.Thepatientcannot,ofcourse,decidewhethertheprocedureismedicallycorrect because that requires 
+more medical expertise than the average individual possesses. However, once the procedure is recommended, 
+the patient then must have enough information to decide whether the hoped-for beneﬁts are sufﬁcient to 
+risk the hazards. Only when this is accomplished can a valid consent be given.
+
+Once informed and voluntary consent has been obtained and recorded, the following protections are in place:
+
+&
+
+&
+
+&
+
+&
+
+It represents legal authorization to proceed. The subject cannot later claim assault and battery.
+
+It usually gives legal authorization to use the data obtained for professional or research purposes. 
+Invasion of privacy cannot later be claimed.
+
+It eliminates any claims in the event that the subject fails to beneﬁt from the procedure.
+
+It is defense against any claim of an injury when the risk of the procedure is understood and consented to.
+
+In a particular middle-sized city, it had been noted that children from the neighborhood were coming to the 
+emergency room of a local hospital for health care services. A major problem associated with this activity 
+was the absence of any record of treatment when the child showed up at a later date and was treated by 
+another clinician. In an effort to solve this problem, the establishment of a pilot Children’s Health Care 
+Network was proposed that would enable clinicians to be aware of the medical treatment record of children 
+coming from a particular school located near the hospital. The system required the creation of a 
+computerized medical record at the school for each child, which could be accessed and updated by the 
+clinicians at the local hospital.
+
+Discuss at length the degree to which this system should be attentive to the patient’s individual rights of 
+conﬁdentiality and privacy.
+
+Discuss in detail where and how the issue of consent should be handled.
+
+&
+
+It protects the investigator against any claim of an injury resulting from the subject’s failure to follow 
+safety instructions if the orders were well explained and reasonable.
+
+Nevertheless, can the aims of research ever be reconciled with the traditional moral obligations of 
+physicians? Is the researcher/physician in an untenable position? Informed and voluntary consent once again 
+is the key only if subjects of an experiment agree to participate in the research. What happens to them 
+during and because of the experiment is then a product of their own decision. It is not something that is 
+imposed on them, but rather, in a very real sense, something that they elected to have done to themselves. 
+Because their autonomy is thus respected, they are not made a mere resource for the beneﬁt of others. 
+Although they may suffer harm for the beneﬁt of others, they do so of their own volition, as a result of 
+the exercise of their own autonomy, rather than as a result of having their autonomy limited or diminished.
+
+For consent to be genuine, it must be truly voluntary and not the product of coercion. Not all sources of 
+coercion are as obvious and easy to recognize as physical violence. A subject may be coerced by fear that 
+there is no other recourse for treatment, by the fear that nonconsent will alienate the physician on whom 
+the subject depends for treatment, or even by the fear of disapproval of others. This sort of coercion, if 
+it truly ranks as such, is often difﬁcult to detect and, in turn, to remedy.
+
+Finally, individuals must understand what they are consenting to do. Therefore, they must be given 
+information sufﬁcient to arrive at an intelligent decision concerning whether to participate in the 
+research or not. Although a subject need not be given all the information a researcher has, it is important 
+to determine how much should be provided and what can be omitted without compromising the validity of the 
+subject’s consent. Another difﬁculty lies in knowing whether the subject is competent to understand the 
+information given and to render an intelligent opinion based on it. In any case, efforts must be made to 
+ensure that sufﬁcient relevant information is given and that the subject is sufﬁciently competent to 
+process it. These are matters of judgment that probably cannot be made with absolute precision and 
+certainty, but rigorous efforts must be made in good faith to prevent research on humans from involving 
+gross violations of human dignity.
+
+2.9 REGULATION OF MEDICAL DEVICE INNOVATION
+
+The Food and Drug Administration (FDA) is the sole federal agency charged by Congress with regulating 
+medical devices in the United States to ensure their safety and effectiveness. Unlike food and drugs, which 
+have been regulated by the FDA since
+
+1906, medical devices ﬁrst became subject to FDA regulation in 1938. At that time, the FDA’s major concern 
+was to ensure that legitimate medical devices were in the marketplace and were truthfully labeled, not 
+misbranded. Over time, the scope of FDA review of medical devices has evolved, as has the technology 
+employed by medical devices. The ﬁrst substantive legislative attempt to address the premarket review of 
+all medical devices occurred with the Medical Device Amendment of 1976 (Pub. L. No. 94-295, 90 Stat. 539). 
+This statute requires approval from the FDA before new devices are marketed and imposes requirements for the 
+clinical investigation of new medical devices on human subjects. For details related to the FDA process, 
+visit http://www.fda.gov/.
+
+The FDA is organized into ﬁve major program centers: the Center for Biologics Evaluation and Research, the 
+Center for Drug Evaluation and Research, the Center for Food Safety and Applied Nutrition, the Center for 
+Veterinary Medicine, and the Center for Devices and Radiological Health (CDRH). Each FDA program center has 
+primary jurisdiction over a different subject area. According to the FDA, the CDRH is responsible for 
+ensuring the safety and effectiveness of medical devices and eliminating unnecessary human exposure to 
+man-made radiation from medical, occupational, and consumer products.
+
+There are six distinct ofﬁces located within the CDRH: the Ofﬁce of Systems and Management,the Ofﬁce of 
+Compliance, the Ofﬁce of Science and Technology, the Ofﬁce of Health and Industry Programs, the Ofﬁce of 
+Surveillance and Biometrics, and the Ofﬁce of Device Evaluation (ODE). The ODE has several principal 
+functions, including
+
+&
+
+&
+
+&
+
+&
+
+&
+
+Advising the CDRH Director on all premarket notiﬁcation 510(k) submissions, premarket approvals (PMAs), 
+device classiﬁcations, and investigational device exemptions (IDEs) Planning, conducting, and coordinating 
+CDRH actions regarding approval, denial, and withdrawals of 510(k)s, PMAs, and IDEs Ongoing review, 
+surveillance, and medical evaluation of the labeling, clinical experience, and required reports submitted by 
+sponsors of approval applications Developing and interpreting regulations and guidelines regarding the 
+classiﬁcation of devices, 510(k)’s, PMAs, and IDEs Participating in the development of national and 
+international consensus standards
+
+Everyone who develops or markets a medical device will likely have multiple interactions with ODE before, 
+during, and after the development of a medical device.
+
+In principle, if a manufacturer makes medical claims about a product, it is considered a device, and may be 
+subject to FDA pre- and postmarket regulatory controls (Figure 2.5). The device deﬁnition distinguishes a 
+medical device from other FDAregulated products, such as drugs. According to the FDA, a medical device is
+
+An instrument, apparatus, machine, contrivance, implant, in vitro reagent, or other similar or related 
+article intended for use in the diagnosis of disease or other conditions, or in the cure, mitigation, 
+treatment, or prevention of disease in man or other animals OR
+
+intended to affect the structure or any function of the body of man or other animals, and which does not 
+achieve any of its primary intended purposes through chemical action or is not dependent upon being 
+metabolized.
+
+2.10 MARKETING MEDICAL DEVICES
+
+The four principal routes to marketing a medical device in the United States are as follows:
+
+Premarket Approval (PMA). A marketing approach for high-risk (Class III) medical devices must be 
+accomplished through a PMA unless the device can be marketed through the 510(k) process (see following 
+section). The PMA hinges on the FDA determining that the medical device is safe and effective. The PMA 
+process can be quite costly; the collection of the data required for a PMA may costs hundreds of thousands, 
+if not several million, dollars. Moreover, the timeline for a PMA applicant to collect the requisite data 
+could be several years. However, an approved PMA is akin to a private license granted to the applicant to 
+market a particular medical device, because other ﬁrms seeking to market the same type of device for the 
+same use must also have an approved PMA.
+
+Investigational Device Exemption (IDE). The IDE is an approved regulatory mechanism that permits 
+manufacturers to receive an exemption for those devices solely intended for investigational use on human 
+subjects (clinical evaluation). Because an IDE is speciﬁcally for clinical testing and not commercial 
+distribution, the FDCA authorizes the FDA to exempt these devices from certain requirements that apply to 
+devices in commercial distribution. The clinical evaluation of all devices may not be cleared for marketing, 
+unless otherwise exempt by resolution, requires an IDE. An IDE may be obtained either by an institutional 
+review board (IRB), or an IRB and the FDA.
+
+Product Development Protocol (PDP). An alternative to the IDE and PMA processes for Class III devices 
+subject to premarket approval. The PDP is a mechanism allowing a sponsor to come to early agreement with the 
+FDA as to what steps are necessary to demonstrate the safety and effectiveness of a new device. In the years 
+immediately subsequent to the enactment of the Medical Device Amendment, the FDA did not focus its energies 
+on the PDP, but worked to effectively implement the major provisions of the Amendment, including device 
+classiﬁcation systems and the 510(k) and PMA processes.
+
+510(k) Notiﬁcation. Unless speciﬁcally exempted by federal regulation, all manufacturers are required to 
+give the FDA 90 days’ notice before they intend to introduce a device to the U.S. market by submitting a 
+510(k). During that 90-day period, the FDA is charged with determining whether the device is or is not 
+substantially equivalent to a pre-Amendment device. The premarket notiﬁcation is referred to in the 
+industry as a 510(k) because 510(k) is the relevant section number of the FDCA. The 510(k) is used to 
+demonstrate that the medical device is or is not substantially equivalent to a legally marketed device.
+
+With respect to clinical research on humans, the FDA divides devices into two categories: devices that pose 
+signiﬁcant risk and those that involve insigniﬁcant risk. Examples of the former included orthopedic 
+implants, artiﬁcial hearts, and infusion pumps. Examples of the latter include various dental devices and 
+daily-wear contact lenses. Clinical research involving a signiﬁcant risk device cannot begin until an 
+institutional review board (IRB) has approved both the protocol and the informed consent form, and the FDA 
+itself has given permission. This requirement to submit an IDE application to the FDA is waived in the case 
+of clinical research in which the risk posed is insigniﬁcant. In this case, the FDA requires only that 
+approval from an IRB be obtained certifying that the device in question poses only insigniﬁcant risk. In 
+deciding whether to approve a proposed clinical investigation of a new device, the IRB and the FDA must 
+determine the following:
+
+1. Risk to subjects is minimized.
+
+2. Risks to subjects are reasonable in relation to anticipated beneﬁt and knowledge to be gained.
+
+3. Subject selection is equitable.
+
+4. Informed consent materials and procedures are adequate.
+
+5. Provisions for monitoring the study and protecting patient information are acceptable.
+
+The FDA allows unapproved medical devices to be used without an IDE in three types of situations: 
+feasibility studies, emergency use, and treatment use.
+
+2.11 ETHICAL ISSUES IN FEASIBILITY STUDIES
+
+In a feasibility study, or limited investigation, human research involving the use of a new device would 
+take place at a single institution and involve no more than 10 human subjects. The sponsor of a limited 
+investigation is required to submit to the FDA a ‘‘Notice of Limited Investigation,’’ which includes a 
+description of the device, a summary of the purpose of the investigation, the protocol, a sample of the 
+informed consent form, and a certiﬁcation of approval by the responsible medical board. In certain 
+circumstances, the FDA could require additional information or require the submission of a full IDE 
+application or suspend the investigation.
+
+Investigations of this kind are limited to: (1) investigations of new uses for existing devices, (2) 
+investigations involving temporary or permanent implants during the early developmental stages, and (3) 
+investigationsinvolving modiﬁcation of anexistingdevice.
+
+To comprehend adequately the ethical issues posed by clinical use of unapproved medical devices outside the 
+context of an IDE, it is necessary to use the distinctions between practice, nonvalidated practice, and 
+research elaborated upon in the previous pages. How do those deﬁnitions apply to feasibility studies?
+
+Clearly, the goal of the feasibility study—generalizable knowledge—makes it an instance of research rather 
+than practice. Manufacturers seek to determine the performance of a device with respect to a particular 
+patient population in an effort to gain information about its efﬁcacy and safety. Such information is 
+important to determine whether further studies (animal or human) need to be conducted, whether the device 
+needs modiﬁcation before further use, and the like. The main difference between use of an unapproved device 
+in a feasibility study and its use under the terms of an IDE is that the former would be subject to 
+signiﬁcantly less intensive FDA review than the latter. This, in turn, means that the responsibility for 
+ensuring that the use of the device is ethically sound would fall primarily to the IRB of the institution 
+conducting the study.
+
+The ethical concerns posed here can be best comprehended only with a clear understanding of what justiﬁes 
+research in the ﬁrst place. Ultimately, no matter how much basic research and animal experimentation has 
+been conducted on a given device, the risks and beneﬁts it poses for humans cannot be adequately determined 
+until it is actually used on humans. The beneﬁt of research on humans lies primarily in the generalizable 
+information that is provided. This information is crucial to medical science’s ability to generate new modes 
+of medical treatment that are both efﬁcacious and safe. Therefore, one condition for experimentation to be 
+ethically sound is that it must be scientiﬁcally sound.
+
+Although scientiﬁc soundness is a necessary condition of ethically sound research on humans, it is not of 
+and by itself sufﬁcient. The human subjects of such research are at risk of being mere research resources, 
+that is, having value only for the ends of the research. Human beings are not valuable wholly or solely for 
+the uses to which they can
+
+be put. They are valuable simply by being the kinds of entities they are. To treat them as such is to 
+respect them as people. Treating individuals as people means respecting their 
+autonomy.Thisrequirementismetbyensuringthatnocompetentperson issubjected to any clinical intervention 
+without ﬁrst giving voluntary and informed consent. Furthermore, respect for people means that the 
+physician will not subject a human to unnecessary risks and will minimize the risks to patients in required 
+procedures.
+
+Much of the scrutiny that the FDA imposes upon use of unapproved medical devices in the context of an IDE 
+addresses two conditions of ethically sound research: (1) is the experiment scientiﬁcally sound, and (2) 
+does it respect the rights of the human subjects involved? Medical ethicists argue that decreased FDA 
+scrutiny will increase the likelihood that either or both of these conditions will not be met. This 
+possibility exists because many manufacturers of medical devices are, after all, commercial enterprises, 
+companies that are motivated to generate proﬁt and thus to get their devices to market as soon as possible 
+with as little delay and cost as possible. These self-interest motives are likely, at times, to conﬂict 
+with the requirements of ethically sound research and thus to induce manufacturers to fail to meet these 
+requirements. Proﬁt is not the only motive that might induce manufacturers to contravene the requirements 
+of ethically sound research on humans. A manufacturer may sincerely believe that its product offers great 
+beneﬁt to many people and be prompted to take shortcuts that compromise the quality of the research. 
+Whether the consequences being sought by the research are desired for reasons of self-interest, altruism, or 
+both, the ethical issue is the same. Research subjects may be placed at risk of being treated as mere 
+objects rather than as people.
+
+What about the circumstances under which feasibility studies would take place? Are these not sufﬁciently 
+different from the ‘‘normal’’ circumstances of research to warrant reduced FDA scrutiny? As noted 
+previously, manufacturers seek to engage in feasibility studies to investigate new uses of existing devices, 
+to investigate temporary or permanent implants during the early developmental stages, and to investigate 
+modiﬁcations to an existing device. As was also noted, a feasibility study would take place at only one 
+institution and would involve no more than 10 human subjects. Given these circumstances, is the sort of 
+research that is likely to occur in a feasibility study less likely to be scientiﬁcally sound or to fail to 
+respect people than normal research on humans in ‘‘normal’’ circumstances?
+
+Research in feasibility studies would be done on a very small subject pool, and the harm of any ethical 
+lapses would likely affect fewer people than if such lapses occurred under more usual research 
+circumstances. Yet even if the harm done is limited to 10 or fewer subjects in a single feasibility study, 
+the harm is still ethically wrong. To wrong 10 or fewer people is not as bad as to wrong in the same way 
+more than 10 people, but it is to engage in wrongdoing nonetheless.
+
+Are ethical lapses more likely to occur in feasibility studies than in studies that take place within the 
+requirements of an IDE? Although nothing in the preceding discussion provides a deﬁnitive answer to this 
+question, it is a question to which the FDA should give high priority. The answer to this question might be 
+quite different when the device at issue is a temporary or permanent implant than when it is an already 
+approved device being put to new uses or modiﬁed in some way. Whatever the
+
+contemplated use under the feasibility studies mechanism, the FDA would be ethically advised not to allow 
+this kind of exception to IDE use of an unapproved device without a reasonably high level of certainty that 
+research subjects would not be placed in greater jeopardy than in ‘‘normal’’ research circumstances.
+
+2.12 ETHICAL ISSUES IN EMERGENCY USE
+
+WhataboutthemechanismforavoidingtherigorsofanIDEforemergencyuse? TheFDA has authorized emergency use in 
+instances where an unapproved device offers the only alternative for saving the life of a dying patient even 
+though an IDE has not yet been approved for the device or its use, or an IDE has been approved but the 
+physician who wishes to use the device is not an investigator under the IDE.
+
+The purpose of emergency use of an unapproved device is to attempt to save a dying patient’s life under 
+circumstances where no other alternative is available. This sort of use constitutes practice rather than 
+research. Its aim is primary beneﬁt to the patient rather than provision of new and generalizable 
+information. Because this sort of use occurs before the completion of clinical investigation of the device, 
+it constitutes a nonvalidated practice. What does this mean?
+
+First, it means that although the aim of the use is to save the life of the patient, the nature and 
+likelihood of the potential beneﬁts and risks engendered by use of the device are far more speculative than 
+in the sort of clinical intervention that constitutes validated practice. In validated practice, thorough 
+investigation of a device, including preclinical studies, animals studies, and studies on human subjects, 
+has established its efﬁcacy and safety. The clinician thus has a well-founded basis upon which to judge the 
+beneﬁts and risks such an intervention poses for the patient.
+
+It is precisely this basis that is lacking in the case of a nonvalidated practice. Does this mean that 
+emergency use of an unapproved device should be regarded as immoral? This conclusion would follow only if 
+there were no basis upon which to make an assessment of the risks and beneﬁts of the use of the device. The 
+FDA requires that a physician who engages in emergency use of an unapproved device must have substantial 
+reason to believe that beneﬁts will exist. This means that there should be a body of preclinical and animal 
+tests allowing a prediction of the beneﬁt to a human patient.
+
+Case Study: Medical Expert Systems
+
+Expert systems have been developed in various disciplines, including clinical decision making. These systems 
+have been designed to simulate the decisionmaking skills of physicians. Their adaptability, however, depends 
+on the presence of an accepted body of knowledge regarding the prescribed path physicians would take given 
+speciﬁc input data. These systems have been viewed as advisory systems providing the clinician with 
+suggested/recommended courses of action. The ultimate decision remains with the physician.
+
+Consider one such system designed to monitor drug treatment in a psychiatric clinic. This system, designed 
+and implemented by biomedical engineers working with clinicians, begins by the entry of a speciﬁc diagnosis 
+and immediately recommends the appropriate drugs to be considered for the treatment of someone with that 
+mental disorder (Figure 2.6). The physician selects one of the recommended drugs and conducts a dose regimen 
+to determine the effectiveness of the drug for the particular patient. During the treatment, blood tests are 
+conducted to ascertain the presence of drug toxicity, and other psychiatric measures obtained to determine 
+if the drug is having the desired effect.
+
+Case Study: Medical Expert Systems (Continued)
+
+As these data elements are entered, they are compared with standard expected outcomes, and if the outcomes 
+are outside the expected limits, an alert is sent to the physician indicating further action needs to be 
+taken.
+
+In this situation:
+
+Who is liable for mistreatment: the clinician, the programmer, or the systems administrator?
+
+What constitutes mistreatment?
+
+What is the role of the designers of such a system (i.e., what constitutes a successful design)?
+
+How does the clinic evaluate the performance of a physician using the system, and the system itself?
+
+Thus, although the beneﬁts and risks posed by use of the device are highly speculative, they are not 
+entirely speculative. Although the only way to validate a new technology is to engage in research on humans 
+at some point, not all nonvalidated technologies are equal. Some will be largely uninvestigated, and 
+assessment of their risks and beneﬁts will be wholly or almost wholly speculative. Others will at least 
+have the support of preclinicaland animaltests.Although thisisnotsufﬁcientsupportfor incorporatinguse of a 
+device into regular clinical practice, it may represent sufﬁcient support to justify use in the desperate 
+circumstances at issue in emergency situations. Desperate circumstances can justify desperate actions, but 
+desperate actions are not the same as reckless actions, hence the ethical soundness of the FDA’s requirement 
+that emergency use be supported by solid results from preclinical and animal tests of the unapproved device.
+
+A second requirement that the FDA imposes on emergency use of unapproved devices is the expectation that 
+physicians ‘‘exercise reasonable foresight with respect to potential emergencies and . . . make appropriate 
+arrangements under the IDE procedures.’’ Thus, a physician should not ‘‘create’’ an emergency in order to 
+circumvent IRB review and avoid requesting the sponsor’s authorization of the unapproved use of a device. 
+From a Kantian point of view, which is concerned with protecting the dignity of people, this is a 
+particularly important requirement. To create an emergency in order to avoid FDA regulations is to treat the 
+patient as a mere resource whose value is reducible to service to the clinician’s goals. Hence, the FDA is 
+quite correct to insist that emergencies are circumstances that reasonable foresight would not anticipate.
+
+Also important here is the nature of the patient’s consent. Individuals facing death are especially 
+vulnerable to exploitation and deserve greater measures for their protection than might otherwise be 
+necessary. One such measure would be to ensure that the patient, or the patient’s legitimate proxy, knows 
+the highly speculative nature of the intervention being offered. That is, to ensure that it is clearly 
+understood that the clinician’s estimation of the intervention’s risks and beneﬁts is far less solidly 
+grounded than in the case of validated practices. The patient’s consent must be based on an awareness that 
+the device being contemplated has not undergone complete and rigorous testing on humans and that estimations 
+of its potential are based wholly on
+
+preclinical and animal studies. Above all, the patient must not be led to believe that the risks and 
+beneﬁts of the intervention are not better understood than they in fact are. Another important point is to 
+ensure that the patient understands all of the options: not simply life or death, but also a life with 
+severely impaired quality. Although desperate circumstances may legitimate desperate actions, the decision 
+to take such actions must rest on the informed and voluntary consent of the patient, certainly for an 
+especially vulnerable patient.
+
+It is important here for a clinician involved in emergency use of an unapproved device to recognize that 
+these activities constitute a form of practice, albeit nonvalidated, and not research. Hence, the primary 
+obligation is to the well-being of the patient. The patient enters into the relationship with the clinician 
+with the same trust that accompanies any normal clinical situation. To treat this sort of intervention as if 
+it were an instance of research, and hence justiﬁed by its beneﬁts to science and society, would be an 
+abuse of this trust.
+
+2.13 ETHICAL ISSUES IN TREATMENT USE
+
+The FDA has adopted regulations authorizing the use of investigational new drugs in certain circumstances 
+where a patient has not responded to approved therapies. This treatment use of unapproved new drugs is not 
+limited to life-threatening emergency situations, but also is available to treat serious diseases or 
+conditions. The FDA has not approved treatment use of unapproved medical devices, but it is possible that a 
+manufacturer could obtain such approval by establishing a speciﬁc protocol for this kind of use within the 
+context of an IDE.
+
+The criteria for treatment use of unapproved medical devices would be similar to criteria for treatment use 
+of investigational drugs: (1) the device is intended to treat a serious or life-threatening disease or 
+condition, (2) there is no comparable or satisfactory alternative product available to treat that condition, 
+(3) the device is under an IDE, or has received an IDE exemption, or all clinical trials have been completed 
+and the device is awaiting approval, and (4) the sponsor is actively pursuing marketing approval of the 
+investigational device. The treatment use protocol would be submitted as part of the IDE and would describe 
+the intended use of the device, the rationale for use of the device, the available alternatives and why the 
+investigational product is preferable, the criteria for patient selection, the measures to monitor the use 
+of the device and to minimize risk, and technical information that is relevant to the safety and 
+effectiveness of the device for the intended treatment purpose.
+
+Were the FDA to approve treatment use of unapproved medical devices, what ethical issues would be posed? 
+First, because such use is premised on the failure of validated interventions to improve the patient’s 
+condition adequately, it is a form of practice rather than research. Second, since the device involved in an 
+instance of treatment use is unapproved, such use would constitute nonvalidated practice. As such, like 
+emergency use, it should be subject to the FDA’s requirement that prior preclinical tests and animal studies 
+have been conducted that provide substantial reason to believe that patient beneﬁt will result. As with 
+emergency use, although
+
+this does not prevent assessment of the intervention’s beneﬁts and risks from being highly speculative, it 
+does prevent assessment from being totally speculative. Here, too, although desperate circumstances can 
+justify desperate action, they do not justify reckless action. Unlike emergency use, the circumstances of 
+treatment use involve serious impairment of health rather than the threat of premature death. Hence, an 
+issue that must be considered is how serious such impairment must be to justify resorting to an intervention 
+with risks and beneﬁts that have not been solidly established.
+
+In cases of emergency use, the FDA requires that physicians not create an exception to an IDE to avoid 
+requirements that would otherwise be in place. As with emergency use of unapproved devices, the patients 
+involved in treatment uses would be particularly vulnerable patients. Although they are not dying, they are 
+facing serious medical conditions and are thereby likely to be less able to avoid exploitation than patients 
+under less desperate circumstances. Consequently, here too it is especially important that patients be 
+informed of the speculative nature of the intervention and of the possibility that treatment may result in 
+little to no beneﬁt to them.
+
+2.14 THE ROLE OF THE BIOMEDICAL ENGINEER IN THE FDA PROCESS
+
+On November 28, 1991, the Safe Medical Devices Act of 1990 (Public Law 101-629) went into effect. This 
+regulation requires a wide range of health care institutions, including hospitals, ambulatory-surgical 
+facilities, nursing homes, and outpatient treatment facilities, to report information that ‘‘reasonably 
+suggests’’ the likelihood that the death, serious injury, or serious illness of a patient at that facility 
+has been caused or contributed to by a medical device. When a death is device-related, a report must be made 
+directly to the FDA and to the manufacturer of the device. When a serious illness or injury is 
+device-related, a report must be made to the manufacturer or to the FDA in cases where the manufacturer is 
+not known. In addition, summaries of previously submitted reports must be submitted to the FDA on a 
+semiannual basis. Prior to this regulation, such reporting was wholly voluntary. This new regulation was 
+designed to enhance the FDA’s ability to learn quickly about problems related to medical devices, and it 
+supplements the medical device reporting (MDR) regulations promulgated in 1984. MDR regulations require that 
+manufacturers and importers submit reports of device-related deaths and serious injuries to the FDA. The new 
+law extends this requirement to users of medical devices along with manufacturers and importers. This act 
+gives the FDA authority over device-user facilities.
+
+The FDA regulations are ethically signiﬁcant because, by attempting to increase the FDA’s awareness of 
+medical device-related problems, it attempts to increase that agency’s ability to protect the welfare of 
+patients. The main controversy over the FDA’s regulation policies is essentially utilitarian in nature. 
+Skeptics of the law are dubious about its ability to provide the FDA with much useful information. They 
+worry that much of the information generated by this new law will simply duplicate information already 
+provided under MDR regulations. If this were the case, little or no beneﬁt to patients would accrue from 
+compliance with the regulation. Furthermore,
+
+these regulations, according to the skeptics, are likely to increase lawsuits ﬁled against hospitals and 
+manufacturers and will require device-user facilities to implement formal 
+systemsforreportingdevice-relatedproblemsandtoprovidepersonneltooperatethose 
+systems.Thiswould,ofcourse,addtothecostsofhealthcareandtherebyexacerbatethe problem of access to care, a 
+situation that many believe to be of crisis proportions already. In short, the controversy over FDA policy 
+centers on the worry that its beneﬁts to patients will be marginal and signiﬁcantly outweighed by its 
+costs.
+
+Biomedical engineers need to be aware of FDA regulations and the process for FDA approval of the use of 
+medical devices and systems. These regulatory policies are, in effect, society’s mechanism for controlling 
+the improper use of these devices.
+
+EXERCISES
+
+1. Explain the distinction between the terms ethics and morality. Provide examples that illustrate this 
+distinction in the medical arena.
+
+2. Provide three examples of medical moral judgments.
+
+3. What do advocates of the utilitarian school of thought believe?
+
+4. What does Kantianism expect in terms of the patient’s rights and wishes?
+
+5. Discuss how the code of ethics for clinical engineers provides guidance to practitioners in the ﬁeld.
+
+6. Discuss what is meant by brainstem death. How is this distinguished from neocortical death?
+
+7. Distinguish between active and passive euthanasia as well as voluntary and involuntary euthanasia. In 
+your view, which, if any, are permissible? Provide your reasoning and any conditions that must be satisﬁed 
+to meet your approval.
+
+8. If the family of a patient in the intensive care unit submits the individual’s living will document, 
+should it be honored immediately or should there be a discussion between physicians and the family? Who 
+should make the decision? Why?
+
+9. What constitutes a human experiment? Under what conditions are they permitted? What safeguards should 
+hospitals have in place?
+
+10. A biomedical engineer has designed a new sleep apnea monitor. Discuss the steps that should be taken 
+before it is used in a clinical setting.
+
+11. Discuss the distinctions between practice, research, and nonvalidated practice. Provide examples of each 
+in the medical arena.
+
+12. What are the two major conditions for ethically sound research?
+
+13. Informed consent is one of the essential factors in permitting humans to participate in medical 
+experiments. What ethical principles are satisﬁed by informed consent? What should be done to ensure it is 
+truly voluntary? What information should be given to human subjects?
+
+14. What are the distinctions between feasibility studies and emergency use?
+
+15. In the practice of medicine, health care professionals use medical devices to diagnose and treat 
+patients. Therefore, the clinical staff not only needs to
+
+become knowledgeable and skilled in their understanding of human physiology, they must also be competent in 
+using the medical tools at their disposal. This requirement often results in litigation when a device fails. 
+The obvious question is ‘‘who is to blame?’’ Consider the case of a woman undergoing a surgical procedure 
+that requires the use of a ground plate, i.e., usually an 8-by-11-inch pad that serves as a return path for 
+any electrical current that comes from electrosurgical devices used during the procedure. As a result of the 
+procedure, this woman received a major burn that seriously destroyed tissue at the site of the ground plate.
+
+(a) Discuss the possible individuals and/or organizations that may have been responsible for this injury.
+
+(b) Outside of seeking the appropriate responsible party, are there speciﬁc ethical issues here?
+
+SUGGESTED READING
+
+Abrams, N. and Buckner, M.D. (Eds.) (1983). Medical Ethics. MIT Press, Cambridge, MA. Bronzino, J.D., Smith, 
+V.H. and Wade, M.L. (1990). Medical Technology and Society. MIT
+
+Press, Cambridge, MA.
+
+Bronzino, J.D. (1992). Management of Medical Technology. Boston, Butterworth, 1992. Chapman, A.R. (1997). 
+Health Care and Information Ethics: Protecting Fundamental Human
+
+Rights. Sheed and Ward, Kansas City, KS.
+
+Dubler, N. and Nimmons, D. (1992). Ethics on Call. Harmony, New York.
+
+Jonsen, A.R. (1990). The New Medicine and the Old Ethics. Harvard Univ. Press, Cambridge,
+
+MA.
+
+Moskop, J.C. and Kopelman, L. (Eds.) (1985). Ethics and Critical Care Medicine. Reidel,
+
+Boston.
+
+Pence, G.E. (1990). Classic Cases in Medical Ethics. McGraw-Hill, New York.
+
+Rachels, J. (1986). Ethics at the End of Life: Euthanasia and Morality. Oxford Univ. Press,
+
+Oxford.
+
+Reiss, J. (2001). Bringing Your Medical Device to Market. FDLI Publishers, Washington DC. Seebauer, E.G. and 
+Barry, R.L. (2001). Fundamentals of Ethics for Scientists and Engineers.
+
+Oxford Press, New York.
+
+
+
