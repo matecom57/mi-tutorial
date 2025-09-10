@@ -1,0 +1,851 @@
+CHAPTER 2 It All Adds Up
+========================
+
+Now that are we are all suited up in our metaphorical capes and super hero outfits
+(i.e., we have installed Python and learned how to use the IDLE), it is time to put our
+new super powers to the test! Our first villain? Perhaps one of the most nefarious, vile,
+contemptuous beasts of all time; a criminal of the school system, running rampant and
+threatening to destroy – or bore – every student in its path. The villain’s name?
+
+Math.
+
+I know, not the most exciting of topics. At least, not at first glance. However, the truth
+of the matter is, math and, more importantly, mathematical functions are the bread
+and butter of the programming world. Without math, we wouldn’t be able to do any of
+the nifty things that computers and mobile devices allow us to do. There would be no
+computer games, no spaceships in outer space, no robots of the future to help us clean
+our filthy rooms.
+
+Without math, we would truly be a civilization lost.
+
+The purpose of this chapter, therefore, will be how to deal with math and
+create simple or complex mathematical equations using some of Python’s built-in
+mathematical functions.
+
+Similar to the print() function we learned back in Chapter 1, the math functions
+we are about to discuss will let us perform pre-built actions on data without having
+to code common elements of an application. So, for example, instead of writing a lot
+code explaining to the computer what addition is and how to actually add numbers
+(remember, a computer can only do what we tell it; it can’t think for itself – not yet
+anyway!), which would require thousands of lines of code were we to do it from scratch,
+all we have to do is type something simple, such as:
+
+1+1
+
+Go ahead – type that into the Python shell. When you do, it should dutifully return
+the answer: 2.
+
+Like the math you learned in school, Python was built to inherently understand basic
+mathematical functions. If you see this: 8/2, your brain knows that this equation involves
+division. If you see a + symbol, it is obviously addition, and a - means subtraction.
+Python understands these symbols as well and will perform math based upon them. Try
+typing this into the Python shell:
+
+2+2-1
+
+Python will return 3 in this instance, showcasing that it can understand the common
+mathematical operators. An operator, in Python, includes the following: +, -, and / – to
+name but a few.
+
+How about multiplication? Type this in:
+
+2x2
+
+What happened there? The program did not return 4 as we would have expected.
+Instead, it returned a SyntaxError: invalid syntax exception. SyntaxErrors mean that
+something is wrong in the Syntax – the written text – that you input into the shell or the
+Python file that prevents the program from running properly.
+
+In other words, Python does not understand you.
+
+Here, the solution is simple: in Python, the operator for multiplication is not an “x” –
+instead, it is an asterisk (*). To fix our SyntaxError, all we have to do is replace the wrong
+multiplication operator with the correct one, like so:
+
+2*2
+
+Now if you type that in, it will return the expected response – the number 4.
+
+Operator Precedence
+-------------------
+
+One of the evil villain Math’s super powers is to confuse us with concepts that seem too
+difficult to grasp. Never fear! With our super hero calculating powers, not even Math’s
+most complex riddles can stump us.
+
+Not that it won’t try, mind you!
+
+When performing calculations in Python, we always have to be aware of a thing called
+operator precedence. This is just fancy speak for the order in which Python performs
+mathematical problems. Certain operators have a higher precedence – meaning they
+go first in line – than other operators. As you can imagine, this can be confusing to a
+programmer and even the most seasoned veterans can make mistakes when entering
+calculations.
+
+To give you a clearer picture of how operator precedence works, here is a list of
+operators in Python, sorted by precedence or who gets to go first in an equation. Note:
+some of these operators may be unfamiliar to you – don’t worry too much about that
+right now; we will cover them in great detail throughout this book.
+
+• ** (Exponentiation)
+• *, / (Multiplication and division)
+• +, - (Addition and subtraction)
+• in, not in, is, is not, <, <=, >, >=, !=, == (These are known as comparisons, which allow you to compare one value to another)
+• not x
+• nnd
+• or
+• if-else
+
+To keep things simple, let’s work with the basic operators: *, /, +, and -
+(multiplication, division, addition, and subtraction). Type the following into your shell:
+
+10+10 * 20
+
+In this equation, we are asking what the value of 10 plus 10 is when multiplied by 20.
+Normally, we would expect that the answer would be 400, because the first value – 10
+plus 10 – should equal 20. Then, we would multiply that answer (20) by 20, resulting in
+400. However, when we enter the code in the shell, we get a surprising result, as shown in
+Figure 2-1.
+
+Your first thought may be: is Python bad at math? How did it come up with the
+answer: 210? This occurs because of operator precedence. Remember from our list of
+operator precedence, multiplication goes first in line, ahead of addition. Therefore,
+Python evaluates the multiplication first, then does the math. In this instance, Python
+views our equation this way: 20 * 10 + 10.
+
+I know what you are thinking: my head hurts.
+
+This may seem confusing at first glance, but fortunately, there is a simple solution.
+We can force Python to use an order of evaluation – the order in which to perform
+calculations – by using parentheses. This has two effects: first, it ensures Python
+performs the calculation we want and doesn’t confuse our precedence. Second, it lets
+other programmers know what you really intended with your equation, at a simple
+glance.
+
+Let’s try it out. Type the following into your shell:
+
+(10+10) * 20
+
+As you can see in Figure 2-2, now we get the result we want. By placing (10+10) inside
+of parentheses, we are telling Python – and other coders – that we intended for that part
+of the equation to be performed first (see Figure 2-2).
+
+To make matters a little more complicated, we can also do something known as
+nesting. This means that you place parentheses inside of other parentheses, to further
+dictate what order calculations should be performed. In a case such as this, the
+innermost parentheses are evaluated first, then the outer, then the rest of the equations.
+
+Consider this:
+
+((10+5) * 10) / 2
+
+If you were to type that equation into Python, it would perform the order of
+evaluation in the following manner:
+
+• 10 + 5 equals 15
+• 15 * 10 equals 150
+• 150 / 2 equals 75
+
+However, if we did not use parentheses, Python would read it this way:
+10 + 5 * 10 / 2
+
+Or
+
+• 10 / 2 equals 5
+• 5 * 5 equals 25
+• 25 + 10 equals 35
+
+This is, again, because Python performs multiplication and division before addition
+and subtraction when looking at operator precedence.
+
+So, to avoid any confusion, always use parentheses when performing anything other
+than simple mathematics.
+
+Data Types: Know Your Enemy
+--------------------------
+
+Super villains come in all shapes and sizes. You have your evil scientist, bent on
+destroying the world with death rays and genetically modified gorillas; there are the evil
+green ones, rippling with muscle and full of rage because ... well, for no real good reason
+at all. Then there are the ones that laugh all the time even though no one has told a
+single joke.
+
+There are thousands of types of villains, and as a fledgling super hero, you can
+bet it gets hard to keep them all in order. Is Mr. Mindblower a super smarty or is he a
+misunderstood villain who just can’t get his act together? What about the mysterious
+Stephen King Kong – half-gorilla, half-horror writer – what the heck is he? And how does
+he write so many books with those big gorilla knuckles?
+
+It’s enough to make you lose your mind.
+
+Or is that Mr. Mindblower at work again?
+
+Fortunately, there is a way to keep all of these villains organized. It’s called
+archetypes.
+
+In Python, we have a similar issue. There are all sorts of data floating around. We
+have numbers and text for starters. To make matters worse, we have different types of
+numbers. You have regular numbers, you have numbers with decimals, and you have
+numbers that represent things like time or money. There are even numbers that behave
+the same way that words behave.
+
+Fortunately, in Python there is a thing known as data types. These are ways to define
+or classify what type of data you are entering into your programs. While it might seem
+that this should be common sense – and sometimes it is – the truth is, Python only
+knows what you tell it to know. The same goes for all computer languages. In fact, all
+computer languages have data types, just like Python, so the concept of data types is
+something you can bring with you as you learn other languages.
+
+There are several forms of data types that we will be discussing in this book, but for
+this chapter, we are going to concentrate on one specific set: numbers.
+
+In general, Python recognizes numbers as numbers, but, as you can imagine, not all
+numbers are created equal. To keep things simple, for now, know that any number you
+see that is a whole number or that does not have a decimal point in it is called an integer.
+Integers include numbers like 0, 2, 5, 10, 100, 1000, 1032, and so on.
+
+Try out the following code:
+
+print(122)
+
+As we saw earlier, integers are for more than just printing to the user’s screen – we
+can do calculations, as you know. Let’s try the following:
+
+print(5/2)
+
+Something interesting happens when this code runs, as shown in Figure 2-4:
+
+The number returned does not fit into the criteria of an integer, despite the fact that
+we performed math on two integers. Whenever a number has a decimal, it is no longer
+considered an integer data type; it is, instead, a float or floating-point number.
+
+Just as we can perform equations on integers, so, too, can we perform them on floats.
+We show an example of this in Figure 2-5:
+
+When a float is added to another float, the result is another float. This holds true even
+if the number seems like it should be a whole number or integer. For example, if I asked
+for the result of 2.5 + 2.5, you would probably answer: 5. Let’s see what Python has to say
+about that:
+
+As you can see from Figure 2-6, Python did something we may not have expected: it
+returned 5.0 – a float.
+
+While this is an appropriate result, we may find ourselves in a situation where we
+need to change the data type of our numbers. For example, we may have a program
+where we do not want to show decimal points or want to round up our numbers. In this
+case, one option would be to convert our numbers.
+
+Before we learn about that, however, let’s try one more thing. What happens when
+we perform math on an integer and a float? Try the following (see Figure 2-7):
+
+print(5 - 2.5)
+
+You result should be:
+
+Anytime you perform math on an integer and a float, the result will be a float.
+
+Converting Number Data Types
+----------------------------
+
+The first thing we are going to learn how to do is convert an integer into a float. In our
+previous example, we used a simple method to convert our integer into a float: division.
+Another way that we can achieve the same effect is to use one of Python’s built-in
+functions known as float().
+
+Using float() is very simple – all you have to do is place the integer you want to
+convert inside of the parentheses (). Let’s give it a go!
+
+float(12)
+
+If you type that into the Python Shell, you will get the following result:
+
+As Figure 2-8 shows, your result should be 12.0 (instead of just regular 12 with no
+decimal point).
+
+To do the reverse – convert a float into an integer – we use another of Python’s super-
+duper handy built-in functions. Behold, int()!
+
+The function int() works the same as float(). Just type in the number you wish to
+convert in between the parentheses and Python does the rest. Try it out:
+
+int(12.0)
+
+This will return:
+
+As shown in Figure 2-9, we took a floating-point number – 12.0 – and converted it to
+an integer, 12, by removing the decimal point.
+
+What happens if we have a float that does not end in .0 though? Let’s find out with a
+simple test. Type this into your Python Shell:
+
+int(12.6)
+
+When you press enter, you will get the result: 12. Why not 13? When you convert a
+float to an integer, Python removes everything after the decimal point and ignores it. If
+you wanted to round up (or round down), you would need to use a different function,
+which we will cover later in this book.
+
+There are many data types that we can convert to other data types and we will
+be covering the rest of them throughout this book. For now, however, give yourself a
+round of applause – you’ve added two new super powers to your arsenal: the int() and
+float() functions!
+
+What Are Variables?
+------------------
+
+So far, we have learned some basic math operators and functions that we can use to
+convert data types from one to the other. However, for us to have any real power, we need
+to learn about a secret weapon known as the variable.
+
+There are several easy ways to think of variables that will make them easier to
+understand. One way is to think of them as a box that you store something in. In our
+case, the thing that we store in them is data. That data can be numbers, it can be text, it
+can be a monetary value, the name of your dog, a paragraph of text, or the security code
+to your secret lair.
+
+Variables serve many functions in Python, as well as other programming languages.
+One of the greatest uses of variables is to store information so that we do not have to
+continuously type it over and over again. For example, you might have a long list of
+numbers that you use frequently. Instead of typing that long list out every time you need
+it, you could just store it in a variable and call upon the variable instead.
+
+To use a variable, all you do is give it a name and then define its value. For example:
+
+a = 8675309
+
+This code creates the variable name – “a” – and then assigns it a value, which, in this
+case, is 8675309.
+99999999999
+Of course, storing data is one thing; using that data is another. Let’s go ahead and
+create a simple program that will give two variables some data and then print it out to
+the user’s screen. Remember how to create a new Python file from our first program
+example? In the Python Shell, click File, then New File. A new window will pop up. Enter
+the following code into the new window:
+a = 500
+b = 250
+print(a)
+print(b)
+Next, click File, then Save. Give the file the name VariableTest.py. To see the code in
+action, click Run, then Run Module.
+The code will run in the Python Shell, as shown in Figure 2-10:
+
+Figure 2-10. Printing the values of two variables
+
+Chapter 2 It All Adds Up
+
+28
+So, as you can see, we assigned the variable “a” the value of 500 and then assigned
+variable “b” the value of 250. Then, using the print function, we printed out the values of
+both variables. Now for some real fun!
+Printing out the value of variables is pretty boring, let’s be fair. However, printing
+is not the only thing that we can do with our variables. Let’s modify the code of
+VariableTest.py. Add the following code to the file, so that it looks like this:
+a = 500
+b = 250
+print(a)
+print(b)
+print(a+b)
+Save the file and then run it again to see the result, which should match Figure 2-11:
+
+Figure 2-11. Showing the results of adding – and printing – two variables
+Here, we created our two variables and gave them a value, just as before. We also
+printed them out. However, this time we also performed some math on them and
+printed out the result. The code in the line: print(a +b) tells Python to print whatever
+is inside of the print() function’s parentheses() – in this case, we are saying to print the
+equation (a) + (b), which is 750.
+Note that this does not change the value of the data in variable “a” or “b” – it simply
+performs math using them. To change the data inside of a variable, we have a few
+different options. Let’s create a new file and name it VariableChange.py. Enter this code
+into it:
+a=500
+b=250
+a=a+b
+print(a)
+Chapter 2 It All Adds Up
+
+29
+
+Run the code to see the result (shown in Figure 2-12):
+
+Figure 2-12 Assigning the result of two variables to a variable
+So what happened here? First, we named and defined the values of variables “a” and
+“b”. Then we added the values of the two variables together and reassigned the value
+of variable “a” to match the result of that equation. Then, we printed out variable “a” to
+show the new value, which was 750.
+When we type in a=, we told Python to change the value of “a” to whatever came after
+the equal (=) sign. Next Python added “a” and “b” together and assigned that value back
+to “a”. The equal sign (=) is known as the assignment operator.
+We can also create a whole new variable if we did not want to change the value of
+variable “a”. Let’s modify the code in VariableChange.py so that it matches the following:
+a=500
+b=250
+c=a+b
+print(c)
+This time, instead of changing the value of “a”, we simply created a new variable “c”
+and gave it the value of “a” + “b”, then printed out the contents of “c”.
+
+Super Hero Generator 3000
+Now that we have some code experience under our belt, let’s use it to build the basis of
+a program that we are going to create by the end of this book. The program is going to be
+a super hero generator that lets users create heroes (or villains) complete with statistics,
+random names, and randomly generated powers and statistics.
+Some of the following code will add text to our program, which we will be covering in
+great detail in Chapter 3. For now, we will be using this text as labels only, so you should
+have no trouble understanding the code.
+
+Chapter 2 It All Adds Up
+
+30
+Every hero has certain physical and mental attributes. If you have played role-playing
+games – or RPGs – before, then you are familiar with this concept. If not, no worries! Just
+look around at the people near you and observe them. You Phys Ed coach, for example,
+may have muscles and be in really good shape. This would mean he has more strength
+and endurance than, say, your science teacher.
+On the flip side, your science teacher is probably smarter and wiser than your
+P.E. coach, meaning that he has more intelligence and wisdom. Let’s start with these
+attributes as our first four stats – or statistics. We can always add more later.
+To determine the value of each, we need to assign a range of low to high. We can use
+a range of 0–20 for now, with 0 being low and 20 being high. So, if we were discussing
+strength, then 0 would be extremely weak and 20 would be Hercules. An average,
+therefore, would be 10.
+Likewise, for intelligence, we could say 0 would be a doorknob (hence the phrase
+“dumb as a doorknob”) and 20 would be Albert Einstein. Anyone falling in the 10 range
+would be considered of average intelligence.
+Now, we could allow players to set their own attribute scores, but then, we know
+that everyone would just set them to 20 and be the strongest, smartest person alive. And
+while that does define you and I perfectly, other mere mortals just don’t measure up to
+those high standards.
+Instead, what we would want to do is assign the values to their attributes randomly.
+Python is capable of creating random numbers fairly easily using a function called – you
+guessed it – random().
+Using random() is a bit different than other functions. To use it, we first have to
+import it into Python. We do this with a simple line of code:
+import random
+The random() function works like other functions, in that you can assign parameters
+to its parentheses. Create a new Python file called RandomGenerator.py and type in the
+following code:
+import random
+strength = random.randint(1,20)
+print(strength)
+Chapter 2 It All Adds Up
+
+31
+In this code, we first import the random() module, then create a variable named
+“strength”. One important thing to note about variables. There is a thing called naming
+conventions in the programming world. What that means is that there are certain “rules”
+you should follow when naming things. With a variable, you always want to name them
+something that will let you or a future programmer know what type of data is being held
+in the variable. Naming a variable “a”, for instance, does not give us much information.
+Naming it “strength” tells us exactly what the data inside is for.
+If your variable name has more than one word in it, always keep them as one word
+and simply capitalize the first letter of the second word. For example, if our variable
+were “Hero Strength”, we would name it heroStrength. If it were “Hero Strength Stats,” we
+would use heroStrengthStats.
+A second rule of thumb is to always keep it as short and simple as possible.
+Remember, variables are used to save time typing code, so long names defeat the
+purpose.
+Back to the code...
+After creating our variable “strength”, we want to assign a value to it. The next part of
+the code calls upon the random() module and uses an attribute called randint. Randint
+is a part of random() and tells Python not just to create a random number but to create
+a random integer. The value that we place in parentheses is the range of the random
+number. Remember, we want our stats to range between 1 and 20, so therefore, the value
+that we input was (1,20).
+Try running the code from RandomGenerator.py several times. You should get a
+random number each time:
+Now that we have our random number generator working and understand how to
+use it, let’s add some more stats:
+import random
+strength = random.randint(1,20)
+intelligence = random.randint(1,20)
+endurance = random.randint(1,20)
+wisdom = random.randint(1,20)
+
+Chapter 2 It All Adds Up
+
+32
+Next, we need to print these values to the screen to test them. For that, we are going
+to use some text as labels, then print the value of each variable after its respective label.
+Add this code after your variables:
+print("Your character's statistics are:")
+print("Strength:", strength)
+print("Intelligence", intelligence)
+print("Endurance", endurance)
+print("Wisdom", wisdom)
+Here we encounter a different use of the print() function. Before, we were using print()
+to print numbers and variables. However, now we are using a new data type, known as
+the string. A string is simply text. It can contain any letter, special character (!, @, #, $, %, ^,
+&, *, -, +, =, etc.), and any number. However, for it to be considered text, it must be placed
+between quotation marks “ ”. If not, Python will interpret it as something else. Don’t
+worry too much about this right now – we go over it in great detail in Chapter 3. For now,
+let’s examine one line of code:
+print("Your character's statistics are:")
+This code literally tells the computer to print “Your character’s statistics are:” to the
+screen.
+The next instruction is a little different:
+print("Strength:", strength)
+This print() function does two things. First, it says print the text between the
+parentheses: “Strength:”. Then, we add a comma (,), which tells Python there are further
+instructions for the print() function. Next, we include the name of the variable whose
+contents we want to print – in this case, the variable strength. Note that the variable is not
+in quotation marks. If it were, it would only print the word “strength” vs. the contents of
+the variable named strength.
+So now, your RandomGenerator.py file should look like this:
+import random
+strength = random.randint(1,20)
+intelligence = random.randint(1,20)
+endurance = random.randint(1,20)
+Chapter 2 It All Adds Up
+
+33
+
+wisdom = random.randint(1,20)
+print("Your character's statistics are:")
+print("Strength:", strength)
+print("Intelligence", intelligence)
+print("Endurance", endurance)
+print("Wisdom", wisdom)
+Let’s run the code a few times. Keep in mind that our program creates randomly
+generated numbers, so the results will vary each time we execute the code. Figure 2-13
+shows a sample of what it should look like:
+
+Figure 2-13. Generating random statistics
+Congratulations, you just created the beginning part of the Super Hero Generator
+3000 application!
+
+In This Episode!
+We covered a lot of ground in this exciting episode. You started out as a young sidekick,
+but your powers are steadily growing! Soon you’ll transform from Wonder Boy to...
+Wonder Man? I don’t know – we’ll work on the name. All that really matters is that you
+have made your first steps onto the path of coding like a super hero.
+
+Chapter 2 It All Adds Up
+
+34
+What perils lie ahead? Next Chapter, we will look at working with text and continue
+to build upon our Super Hero Generator 3000 application. We will also begin to
+document and comment on our work, a programming practice that is mandatory if you
+ever hope to be one of the greats!
+Before we can move forward though, let’s look at what we learned in this installment:
+• Data types: Data types exist in all programming languages and help
+define the sort of data a program is handling. Integer – or int – is a
+
+data type for whole numbers, while float is the data type for floating-
+point numbers, or numbers with decimals.
+
+• Operator precedence: Certain operators take precedence over – or go
+before – other operators when equations are performed.
+• Operators: Common operators include + (addition), - (subtraction), *
+(multiplication), and / (division).
+• Assignment operator: The equal sign (=) is known as an assignment
+operator, allowing you to assign a value to a variable.
+• Order of operation: The order that mathematical operations are
+performed is known as order of operation. We can control which
+math is performed in an equation first by encapsulating sections in
+parentheses. For example: (1+1) * 10 ensures that 1+1 is performed
+prior to the multiplication, despite the fact that multiplication has
+operator precedence over addition.
+
+• Converting data types: int() and float() allow us to convert a floating-
+point number to an integer and an integer to a floating-point number,
+
+respectively.
+• Variables: Variables are storage units for data. You can also think of
+them as labels that point to the location of data, but it may be easier
+to think of them as a box that can contain a piece of information. We
+create variables by naming them and assigning value to them with
+the assignment operator. For example: a = 12.
+Chapter 2 It All Adds Up
+
+35
+
+• Naming conventions: Naming conventions are loose rules that help
+make coding easier – for you and any future programmers reading
+your code. Think of them as a “best practice.” When naming a
+variable, for instance, always use lowercase letters for the first word
+and capital for any words following. Be sure to group multiple words
+into one word. For example: socialSecurity is good. Social Security is
+bad and will result in a SyntaxError. Also, try to name variables with
+short names that describe what the data in them is used for.
+• random() and randint(): random() is a module that lets you generate
+random numbers. You must import it into your program using
+the code: import random. To randomly generate an integer with
+a given range of numbers, type random.randint(1,20) or random.
+randint(5,100) if you wanted to generate numbers randomly from 1 to
+20 or 5 to 100, respectively. If you wanted to generate numbers from 0
+to 20, you must specify that in code, such as: random.randint(0,20).
+
+Chapter 2 It All Adds Up
+
+37
+
+© James R. Payne 2019
+J. R. Payne, Python for Teenagers, https://doi.org/10.1007/978-1-4842-4550-7_3
+CHAPTER 3
+
+String Things Along
+
+Welcome back intrepid hero! One thing you should know about super heroes and villains
+(especially villains) – they tend to rather worry. Thankfully, this chapter is all about
+increasing your abilities and granting you the new super power to handle all things text
+and text-related!
+We will learn the basics of handling and manipulating text, including common
+text functions and details about the text data type. We will also cover formatting text
+and converting text to different data types. Finally, we will cover the importance of
+good documentation and how to comment on your code to save you – and future
+programmers – a lot of headaches.
+So slip into you bright green tights and pop on that Day-Glo orange mask. Clean the
+ketchup stain off your Wonder Boy (or Girl) logo and get your fingers nice and limber.
+Prepare to code!
+
+Leave Your Comments at the Door
+Before we delve any further into the language of programming, it is important to cover a
+topic that we have alluded to, yet avoided, thus far. Just like proper naming conventions,
+the art of commenting – or documenting – your code is one of those best practices that a
+good coder always, well, practices. It’s sort of like ironing your cape before you leave the
+house. Sure, you can skip it, but then you risk your arch-nemesis making fun of you.
+There are several reasons to comment on your code. First of all, programmers often
+have to look back through their code at a date later than when they first programmed
+it. This can be days, weeks, months, and even years. Looking back through thousands
+of lines of code can be taxing, especially if you have to identify what each section does.
+If you have your sections labeled and sporting a brief description, it becomes easier to
+navigate and find problem areas or sections that you may need to update later on down
+the line.
+
+38
+Another reason you should practice documenting your code is that other
+programmers will likely need to review it at some point in time. These programmers
+could be your boss, your co-workers, or a coder in the future who needs to make changes
+to something you wrote before they were even hired.
+Finally, there are times where you will reuse code from one program in another one –
+we call this efficiency (so long as your company allows you to do this of course!). In these
+instances, finding the code snippet you are looking for will be much faster if you have
+commented/documented your work.
+There are many different ways that programmers leave comments – every person
+has their own style. Some companies may require that you document your code in a very
+specific, formatted style, while others leave it up to you.
+One other thing: while a comment is written in your code, the interpreter or compiler
+implicitly ignores them. This means that they do not affect your code at all – unless you
+enter them using the wrong syntax.
+To comment, you use the hashtag or # symbol. Anything appearing after the # on the
+rest of that line is considered a comment. Here is an example of a comment:
+# This block of code randomly calculates a hero's stats.
+If you run that code, nothing will happen, again, because Python ignores comments.
+They are not there for computer consumption, only for humans and sub-humans (a.k.a.
+programmers).
+Let’s look at how commenting looks next to code. Remember our RandomGenerator.
+py file from the last chapter? Open it up and add the following text to it:
+import random
+# This block of code randomly calculates a hero's status.
+strength = random.randint(1,20)
+intelligence = random.randint(1,20)
+endurance = random.randint(1,20)
+wisdom = random.randint(1,20)
+print("Your character's statistics are:")
+print("Strength:", strength)
+print("Intelligence", intelligence)
+print("Endurance", endurance)
+print("Wisdom", wisdom)
+Chapter 3 String Things Along
+
+39
+As you can see, this makes it easier to see what, exactly, that section of code is for. We
+could add another comment at the end of the code snippet to make it even clearer:
+import random
+# This block of code randomly calculates a hero's status.
+strength = random.randint(1,20)
+intelligence = random.randint(1,20)
+endurance = random.randint(1,20)
+wisdom = random.randint(1,20)
+# End random calculation code
+print("Your character's statistics are:")
+print("Strength:", strength)
+print("Intelligence", intelligence)
+print("Endurance", endurance)
+print("Wisdom", wisdom)
+The idea here is to notate the end and start point of each section of code that does
+something different. As you can imagine, it can get easy to get carried away with this sort
+of documentation, but it does have its benefits. How much or how often you comment is
+up to you, but as a rule, it is better to document than not.
+Block Commenting
+In addition to regular commenting, there is also a form of commenting known as block
+commenting. This type of comment is used when you need more than a single line to
+explain a section of code. It can also be used if you need to document things like the date
+you wrote the code, who wrote it, and so forth. Look at the following code demonstrating
+block commenting:
+# Importing the random function
+import random
+# This code was written by James Payne
+# To be published in Python for Teenagers by Apress Books
+# This block of code randomly calculates a hero's status.
+
+Chapter 3 String Things Along
+
+40
+strength = random.randint(1,20)
+intelligence = random.randint(1,20)
+endurance = random.randint(1,20)
+wisdom = random.randint(1,20)
+# End of random number generator code
+#Prints out player statistics
+print("Your character's statistics are:")
+print("Strength:", strength)
+print("Intelligence", intelligence)
+print("Endurance", endurance)
+print("Wisdom", wisdom)
+As you can see, to block comment, all you need to do is add a hash symbol (#) to the
+beginning of each line that you are going to leave a comment on.
+Inline Commenting
+Another way to comment is known as inline commenting. This means that you leave
+a comment on the same line as your code. They are not as common as other forms of
+commenting, but they can be useful if you need to document what a specific line of code
+does. For instance, in our RandomGenerator.py file, we start off by importing random.
+While that line of code should be obvious to a programmer looking at your code, we
+could leave an inline comment to explain it.
+Here is how that would look:
+import random # Importing the random module
+As a rule, try to avoid using inline commenting except in situations where you feel
+you need to explain what a single line of code does.
+Other Uses for Commenting
+One final use for leaving comments in your code: to find errors. While this may sound
+unconventional, it is actually pretty practical. Sometimes your code may be giving you
+errors and you might need to narrow down which portion of the code is the culprit.
+Instead of wholesale deleting sections of Python, you can always just comment out
+Chapter 3 String Things Along
+
+41
+sections. Remember, when Python sees the # symbol, it ignores any characters following
+it on that line.
+If we were to comment out the following code, it would run differently than before:
+import random
+strength = random.randint(1,20)
+intelligence = random.randint(1,20)
+endurance = random.randint(1,20)
+wisdom = random.randint(1,20)
+print("Your character's statistics are:")
+# print("Strength:", strength)
+# print("Intelligence", intelligence)
+print("Endurance", endurance)
+print("Wisdom", wisdom)
+With this code, we would not see the character’s strength or intelligence print to the
+screen, since we commented out that part of the code. Instead, only the endurance and
+wisdom would show.
+To return the program back to its normal state, we would simply remove the #
+symbols. Feel free to add comments to your code and comment out sections of your
+code to see what effect it has on your program.
+
+Texting – Without Your Phone
+Now that we understand the importance of – and how to make – comments to document
+our code, we can move on to working with our next data type, strings.
+The string data type consists of any character you can type, so long as it is contained
+within quotation marks “ ”. In essence, it is any letter, number, or special symbol. It can
+be a single letter, a sentence, or a mixture of letters, numbers, and special symbols.
+Let’s create a new file called LearningText.py. Add the following text to it:
+# This is how you print text
+print("Holy smokes, it's the Grill Master!")
+
+Chapter 3 String Things Along
+
+42
+You could also choose to write the code using single quotes if you prefer:
+# This is how you print text
+print('Holy smokes, it's the Grill Master!')
+If you run the second version of the code, however, you will get an Invalid
+SyntaxError. Can you figure out why this occurs? Let’s examine the code a little more
+closely. We know that the print() function will print anything contained between
+quotation marks. While our sentence ends and begins with a single quote, if you look
+closely, you will see a third quotation mark – in the word “it’s”.
+When we use single quotes in a print function, we have to be careful, because Python
+cannot differentiate between a quote and an apostrophe being used in a contraction.
+When it sees the first quotation before the word Holy, it begins the parameter. Then,
+when it encounters the apostrophe in the word it’s, the interpreter gets confused and
+sees it as the closing quotation. Finally, it encounters a third single quotation and throws
+an error.
+There are several ways to avoid this type of an issue. The first is to, as a rule, always
+use double quotation marks. Second, in cases where you need or want to use single
+quotes, an escape can solve your problem.
+An escape key is essentially a backslash (\) character that tells Python to treat a single
+quote as a regular character. To use it, you simply add it before the character you want
+Python to treat as plain text. Here is how you would code it:
+# This is how you print text
+print('Holy smokes, it\'s the Grill Master!') # Notice the use of the
+escape key
+Now if you run the code, you will get the result shown in Figure 3-1:
+
+For simplicity’s sake, let’s revert back to using double quotation marks in the code for
+now. Go ahead and make that change – I’ll be here waiting.
+Figure 3-1. Using escape keys to format print statements
+Chapter 3 String Things Along
+
+43
+
+Finished? Great. Let’s add a few more lines of text:
+# This is how you print text
+print("Holy smokes, it's the Grill Master!")
+print("His sizzling meats are too good to resist!")
+print("Quick Wonder Boy! Get some Wonder Bread and make me a sandwich!")
+print("To quote a genius: 'Man Cannot Live On Bread and Water Alone!'")
+The purpose of this code is twofold. First, it shows you how to print several lines of
+text. Second, it showcases an instance of when you might interchangeably use double
+quotes and single quotes. When using proper grammar, you must use single quotes
+when using a quote from a person.
+In this instance, the single quote does not need to be escaped. This is because we
+started our print() function with a double quote. It is only when we start it with a single
+quote that we need to worry about escaping another single quote that is not intended to
+end the function.
+Working with Strings and Variables
+Just as we do with numbers, strings can be stored in variables. The method is similar to
+storing a number, only slightly different:
+name = "Grillmaster"
+print(name)
+We first create the variable, which we called, “name,” and then added some text to it.
+Note that, unlike we did with a number, we surrounded our value with quotation marks.
+This signifies that we are adding a string to our variable. Next, we print our variable to
+the user’s screen using the print() function.
+Here is where things get interesting. Create a new file and try out the following code:
+age = "42"
+graduation = 27
+print(age + graduation)
+If you were to try and run this code, you would get an error message. Why? The
+reason is simple: when we declared our variable named “age,” we assigned the value “42”
+to it. However, since we enclosed the value in quotations, Python interpreted that data
+Chapter 3 String Things Along
+
+44
+as a string data type. The “graduation” variable, meanwhile, was assigned a number data
+type. When we tried to perform math on the two variables, it would not work, because
+you cannot perform math on a string.
+Interestingly enough, you can use certain math operators on strings. In Python – and
+other languages – there is a thing known as concatenation. Concatenation occurs when
+you add one string to another, or join them together. We do this using the addition (+)
+operator – or joining operator when using on strings. Here it is in code:
+print("Wonder" + "Boy")
+When you test that bit of code, your result will be:
+WonderBoy
+The same thing happens if you use the + operator on two variables that contain strings:
+firstName = "Wonder"
+lastName = "Boy"
+print(firstName + lastName)
+The result?
+WonderBoy
+An important note: if you want to add two strings together, you may want to consider
+using a space in between. This can be achieved by simply adding a space at the end of
+the first string you are joining:
+print("Wonder " + "Boy")
+or by adding a space before the second string you are joining:
+print("Wonder" + " Boy")
+Of course, there is nothing to stop you from inserting a third string that contains a
+blank space:
+print("Wonder" + " " + "Boy")
+This works because even a blank space is considered a string or character in Python’s
+eyes.
+Chapter 3 String Things Along
+
+45
+Another math operator that you can use on strings is the multiplication (*) operator –
+or, as it is referred to when working with text, the string replication operator. Try typing
+this code into the Python Shell:
+print("WonderBoy" * 20)
+This results in what is shown in Figure 3-2:
+
+You would get a similar result if you created a file with this code,
