@@ -7,7 +7,7 @@ In this article, we will introduce you to JupyterLab, one of the most popular ID
 
 It’s impossible to understand software development without programming languages. True, a software developer with no programming language is like a taxi driver with no car. However, things are more complex. Just as GPS makes taxi drivers’ life easier, so does Integrated Development Environments (also known as IDEs) for programmers. 
 
-Es imposible comprender el desarrollo de software sin lenguajes de programación. Es cierto que un desarrollador de software sin lenguaje de programación es como un taxista sin coche. Sin embargo, la situación es más compleja. Así como el GPS facilita la vida a los taxistas, también lo hacen los Entornos de Desarrollo Integrados (también conocidos como IDE) para los programadores.
+Es imposible comprender el desarrollo de software sin lenguajes de programación. Es cierto que un desarrollador de software sin lenguaje de programación es como un taxista sin coche. Sin embargo, la situación es más compleja. Así como el GPS facilita la vida a los taxistas, también lo hacen los ``Entornos de Desarrollo Integrados`` (también conocidos como ``IDE``) para los programadores.
 
 
 IDEs are designed to enable programmers to write code and develop software applications more efficiently. IDEs increase programmer productivity by putting together multiple utilities into a single interface. Writing, testing, and debugging code, as well as editing functionalities, such as syntax highlighting, bracket-matching, and code autocompletion, are among the most common features of modern IDEs. 
