@@ -29,6 +29,7 @@ Contents
     Python_Data_Analytics_3E_Fabio/index2
     Solved_Problems_Lagrangian_Hamiltonian_Mechanics_Claude/index2
     Introduction_to_Biomedical_Engineering_2E/index2
+    Matplotlib/index2
 
 
 
