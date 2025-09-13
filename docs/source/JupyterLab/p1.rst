@@ -1,0 +1,88 @@
+Getting Started with JupyterLab Tutorial
+========================================
+
+https://www.datacamp.com/tutorial/installing-jupyter-notebook?utm_cid=21057859163&utm_aid=157296744457&utm_campaign=230119_1-ps-other~dsa~tofu_2-b2c_3-latam-en_4-prc_5-na_6-na_7-le_8-pdsh-go_9-nb-e_10-na_11-na&utm_loc=9136264-&utm_mtd=-c&utm_kw=&utm_source=google&utm_medium=paid_search&utm_content=ps-other~latam-en~dsa~tofu~tutorial-other&gad_source=1&gad_campaignid=21057859163&gclid=Cj0KCQjwrJTGBhCbARIsANFBfgu_PhuM93hIilfyqiP63P0YJTbvCTJly6Zidwi-avR_sQFH5-_wQkYaAnb_EALw_wcB
+
+In this article, we will introduce you to JupyterLab, one of the most popular IDE for data science.
+
+It’s impossible to understand software development without programming languages. True, a software developer with no programming language is like a taxi driver with no car. However, things are more complex. Just as GPS makes taxi drivers’ life easier, so does Integrated Development Environments (also known as IDEs) for programmers. 
+
+IDEs are designed to enable programmers to write code and develop software applications more efficiently. IDEs increase programmer productivity by putting together multiple utilities into a single interface. Writing, testing, and debugging code, as well as editing functionalities, such as syntax highlighting, bracket-matching, and code autocompletion, are among the most common features of modern IDEs. 
+
+There are many IDEs particularly well-suited for data science, including DataCamp’s DataLab. In this article, we will introduce you to JupyterLab, the next generation of Jupyter Notebook, probably the most popular IDE for data science. Released in 2018, JupyterLab offers a flexible user interface and more features than the classic Jupyter Notebook, and it’s certainly the present and the future of Project Jupyter. Willing to get started with JupyterLab? Keep reading!
+
+A Brief Introduction to Jupyter Notebook
+-----------------------------------------
+
+When Jupyter Notebook was launched for the first time in 2014, it rapidly revolutionized the IDE landscape. Recently considered one of the most important computing projects, which has changed the process of scientific publishing forever, Jupyter has become the de facto standard in data science.
+
+Jupyter Notebook works as a server-client application, allowing coders to edit and run notebooks via a web browser. The application can be executed on a computer without Internet access, or it can be installed on a remote server, where you can access it through the Internet.
+
+Initially designed to support Julia, Python, and R –three of the most popular programming languages for data science–today, Jupyter supports over 40 programming languages. 
+
+
+Jupyter is made of two main components.
+
+*    Kernel. It is a program that runs and introspects the user’s code. By default, Jupyter has a kernel for Python code, but there are also kernels available for other programming languages.
+*    Dashboard. A notebook is primarily composed of a cell sequence, which can contain elements such as code, text, visualizations, images, and formulas. Besides cells, the dashboard includes various tools to configure the notebook workflow, debug code, export notebooks in different formats, browse documents, and many more. 
+
+As an improved version of Jupyter Notebook, JupyterLab adds new features and capabilities, although the core components remain intact.
+
+Getting Started with JupyterLab
+--------------------------------
+
+In order to use JupyterLab, you first will need to install it on your computer, as with any other program. This can be done in different ways, depending on your preferences: using pip, Anaconda, or Docker.
+
+Installing JupyterLab with pip
+------------------------------
+
+Pip is the standard package manager in Python. To install JupyterLab with pip, you just have to run on the command line:
+
+.. code:: Python
+
+   >>pip install jupyterlab
+
+After running this instruction, pip will install the JupyterLab packages as well as all the dependencies required for JupyterLab to function. If you want to know more about how to manage packages in Python, check out our Pip Python Tutorial for Package Management.
+
+Once you have successfully installed JupyterLab on your computer, you just have to run the following statement to open up JupyterLab:
+
+.. code:: Python
+
+   >>jupyter lab
+
+Then you'll see the application opening in your preferred web browser on the following address: http://localhost:8888/lab 
+
+Installing JupyterLab with Anaconda
+-----------------------------------
+
+Anaconda is a package manager, an environment manager, and a Python distribution that contains a collection of many open-source packages. Anaconda is a great choice if you want to get started in data science. You no longer need to worry about how to install Python or JupyterLab, as they get installed automatically in modern Anaconda distributions.
+
+The easiest way to launch JupyterLab is through the Anaconda Navigator, an application that allows you to make use of Anaconda functionalities in a user-friendly and no-code way. As you can see in the picture below, both Jupyter Notebook and JupyterLab are already installed. You just have to click on the Launch button to open JupyterLab on your web browser. 
+
+However, in certain cases –for example, when you create a new conda environment–, you may need to install JupyterLab on that environment. To do so, the fastest way is by running the following on the conda command line (Anaconda Prompt on Windows and terminal on macOS and Linux):
+
+.. code:: Python
+
+   >>conda install -c conda-forge jupyterlab
+
+Installing JupyterLab with Docker
+
+Docker is an open platform to run software in containers. These containers are self-contained and isolated processes that allow you to separate your applications from your infrastructure so you can deliver software quickly. 
+
+If you have Docker installed, you can install and use JupyterLab by selecting one of the many Docker images supported by the Jupyter Docker Stacks. You can consider these images as pre-packaged bundles of software that can be automatically downloaded from Docker when you run them.
+
+For example, if you want to install Doker’s image jupyter/datascience-notebook, which includes libraries for data analysis from Julia, Python, and R, you just have to run the following on the Docker command:
+
+.. code:: Python
+
+   >>docker run -it -p 10000:8888 -e JUPYTER_ENABLE_LAB=yes jupyter/scipy-notebook
+
+For more details and examples on how to use JupyterLab on Docker, check out the documentation. Also, for a detailed introduction to Docker, we highly recommend this DataCamp tutorial.
+
+JupyterLab Interface
+---------------------
+
+JupyterLab interface is a remastered version of the Jupyter Notebook interface, providing a new set of modular building blocks for interactive and efficient computing. JupyterLab integrates several coding tools into one single interface, thus offering a coding experience that resembles more to traditional IDEs. 
+
+JupyterLab interface screenshot
+

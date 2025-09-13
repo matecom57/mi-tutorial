@@ -30,6 +30,7 @@ Contents
     Solved_Problems_Lagrangian_Hamiltonian_Mechanics_Claude/index2
     Introduction_to_Biomedical_Engineering_2E/index2
     Matplotlib/index2
+    JupyterLab/p1
 
 
 
