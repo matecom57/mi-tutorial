@@ -7,36 +7,68 @@ In this article, we will introduce you to JupyterLab, one of the most popular ID
 
 It’s impossible to understand software development without programming languages. True, a software developer with no programming language is like a taxi driver with no car. However, things are more complex. Just as GPS makes taxi drivers’ life easier, so does Integrated Development Environments (also known as IDEs) for programmers. 
 
+Es imposible comprender el desarrollo de software sin lenguajes de programación. Es cierto que un desarrollador de software sin lenguaje de programación es como un taxista sin coche. Sin embargo, la situación es más compleja. Así como el GPS facilita la vida a los taxistas, también lo hacen los Entornos de Desarrollo Integrados (también conocidos como IDE) para los programadores.
+
+
 IDEs are designed to enable programmers to write code and develop software applications more efficiently. IDEs increase programmer productivity by putting together multiple utilities into a single interface. Writing, testing, and debugging code, as well as editing functionalities, such as syntax highlighting, bracket-matching, and code autocompletion, are among the most common features of modern IDEs. 
 
+Los IDE están diseñados para que los programadores puedan escribir código y desarrollar aplicaciones de software de forma más eficiente. Aumentan la productividad del programador al integrar múltiples utilidades en una única interfaz. Escribir, probar y depurar código, así como editar funcionalidades como el resaltado de sintaxis, la coincidencia de corchetes y el autocompletado de código, se encuentran entre las características más comunes de los IDE modernos.
+
+
 There are many IDEs particularly well-suited for data science, including DataCamp’s DataLab. In this article, we will introduce you to JupyterLab, the next generation of Jupyter Notebook, probably the most popular IDE for data science. Released in 2018, JupyterLab offers a flexible user interface and more features than the classic Jupyter Notebook, and it’s certainly the present and the future of Project Jupyter. Willing to get started with JupyterLab? Keep reading!
+
+Existen muchos IDE especialmente adecuados para la ciencia de datos, incluyendo DataLab de DataCamp. En este artículo, te presentaremos JupyterLab, la nueva generación de Jupyter Notebook, probablemente el IDE más popular para la ciencia de datos. Lanzado en 2018, JupyterLab ofrece una interfaz de usuario flexible y más funciones que el Jupyter Notebook clásico, y sin duda representa el presente y el futuro del Proyecto Jupyter. ¿Te animas a empezar con JupyterLab? ¡Sigue leyendo!
+
 
 A Brief Introduction to Jupyter Notebook
 -----------------------------------------
 
 When Jupyter Notebook was launched for the first time in 2014, it rapidly revolutionized the IDE landscape. Recently considered one of the most important computing projects, which has changed the process of scientific publishing forever, Jupyter has become the de facto standard in data science.
 
+Cuando Jupyter Notebook se lanzó por primera vez en 2014, revolucionó rápidamente el panorama de los IDE. Considerado recientemente uno de los proyectos informáticos más importantes, que ha revolucionado para siempre el proceso de publicación científica, Jupyter se ha convertido en el estándar de facto en ciencia de datos.
+
 Jupyter Notebook works as a server-client application, allowing coders to edit and run notebooks via a web browser. The application can be executed on a computer without Internet access, or it can be installed on a remote server, where you can access it through the Internet.
 
+Jupyter Notebook funciona como una aplicación cliente-servidor, lo que permite a los programadores editar y ejecutar cuadernos mediante un navegador web. La aplicación puede ejecutarse en un ordenador sin acceso a Internet o instalarse en un servidor remoto, accesible a través de Internet.
+
+
 Initially designed to support Julia, Python, and R –three of the most popular programming languages for data science–today, Jupyter supports over 40 programming languages. 
+
+Inicialmente diseñado para soportar Julia, Python y R (tres de los lenguajes de programación más populares para la ciencia de datos), hoy en día Jupyter admite más de 40 lenguajes de programación.
+
 
 
 Jupyter is made of two main components.
 
 *    Kernel. It is a program that runs and introspects the user’s code. By default, Jupyter has a kernel for Python code, but there are also kernels available for other programming languages.
+
+Kernel. Es un programa que ejecuta e introspecciona el código del usuario. Por defecto, Jupyter tiene un kernel para código Python, pero también existen kernels disponibles para otros lenguajes de programación.
+
+
 *    Dashboard. A notebook is primarily composed of a cell sequence, which can contain elements such as code, text, visualizations, images, and formulas. Besides cells, the dashboard includes various tools to configure the notebook workflow, debug code, export notebooks in different formats, browse documents, and many more. 
 
+Panel de control. Un cuaderno se compone principalmente de una secuencia de celdas, que puede contener elementos como código, texto, visualizaciones, imágenes y fórmulas. Además de las celdas, el panel de control incluye diversas herramientas para configurar el flujo de trabajo del cuaderno, depurar código, exportar cuadernos en diferentes formatos, explorar documentos y mucho más.
+
+Como versión mejorada de Jupyter Notebook, JupyterLab agrega nuevas características y capacidades, aunque los componentes principales permanecen intactos.
+
 As an improved version of Jupyter Notebook, JupyterLab adds new features and capabilities, although the core components remain intact.
+
+
 
 Getting Started with JupyterLab
 --------------------------------
 
 In order to use JupyterLab, you first will need to install it on your computer, as with any other program. This can be done in different ways, depending on your preferences: using pip, Anaconda, or Docker.
 
+Para usar JupyterLab, primero deberá instalarlo en su computadora, como cualquier otro programa. Puede hacerlo de diferentes maneras, según sus preferencias: usando pip, Anaconda o Docker.
+
+
 Installing JupyterLab with pip
 ------------------------------
 
 Pip is the standard package manager in Python. To install JupyterLab with pip, you just have to run on the command line:
+
+
 
 .. code:: Python
 
@@ -57,21 +89,40 @@ Installing JupyterLab with Anaconda
 
 Anaconda is a package manager, an environment manager, and a Python distribution that contains a collection of many open-source packages. Anaconda is a great choice if you want to get started in data science. You no longer need to worry about how to install Python or JupyterLab, as they get installed automatically in modern Anaconda distributions.
 
+Anaconda es un gestor de paquetes, un gestor de entornos y una distribución de Python que contiene una colección de numerosos paquetes de código abierto. Anaconda es una excelente opción si quieres iniciarte en la ciencia de datos. Ya no tienes que preocuparte por cómo instalar Python o JupyterLab, ya que se instalan automáticamente en las distribuciones modernas de Anaconda.
+
+
 The easiest way to launch JupyterLab is through the Anaconda Navigator, an application that allows you to make use of Anaconda functionalities in a user-friendly and no-code way. As you can see in the picture below, both Jupyter Notebook and JupyterLab are already installed. You just have to click on the Launch button to open JupyterLab on your web browser. 
 
+La forma más sencilla de iniciar JupyterLab es a través de Anaconda Navigator, una aplicación que permite usar las funcionalidades de Anaconda de forma intuitiva y sin necesidad de programar. Como puede ver en la imagen a continuación, tanto Jupyter Notebook como JupyterLab ya están instalados. Solo tiene que hacer clic en el botón "Iniciar" para abrir JupyterLab en su navegador web.
+
+
 However, in certain cases –for example, when you create a new conda environment–, you may need to install JupyterLab on that environment. To do so, the fastest way is by running the following on the conda command line (Anaconda Prompt on Windows and terminal on macOS and Linux):
+
+Sin embargo, en ciertos casos (por ejemplo, al crear un nuevo entorno de Conda), es posible que necesite instalar JupyterLab en dicho entorno. Para ello, la forma más rápida es ejecutar lo siguiente en la línea de comandos de Conda (símbolo del sistema de Anaconda en Windows y terminal en macOS y Linux):
+
 
 .. code:: Python
 
    >>conda install -c conda-forge jupyterlab
 
 Installing JupyterLab with Docker
+----------------------------------
 
 Docker is an open platform to run software in containers. These containers are self-contained and isolated processes that allow you to separate your applications from your infrastructure so you can deliver software quickly. 
 
+Docker es una plataforma abierta para ejecutar software en contenedores. Estos contenedores son procesos autónomos y aislados que permiten separar las aplicaciones de la infraestructura para entregar software rápidamente.
+
+
 If you have Docker installed, you can install and use JupyterLab by selecting one of the many Docker images supported by the Jupyter Docker Stacks. You can consider these images as pre-packaged bundles of software that can be automatically downloaded from Docker when you run them.
 
+Si tiene Docker instalado, puede instalar y usar JupyterLab seleccionando una de las muchas imágenes de Docker compatibles con Jupyter Docker Stacks. Puede considerar estas imágenes como paquetes de software preempaquetados que se descargan automáticamente de Docker al ejecutarlos.
+
+
 For example, if you want to install Doker’s image jupyter/datascience-notebook, which includes libraries for data analysis from Julia, Python, and R, you just have to run the following on the Docker command:
+
+Por ejemplo, si quieres instalar la imagen jupyter/datascience-notebook de Doker, que incluye bibliotecas para análisis de datos de Julia, Python y R, solo tienes que ejecutar lo siguiente en el comando Docker:
+
 
 .. code:: Python
 
@@ -83,6 +134,9 @@ JupyterLab Interface
 ---------------------
 
 JupyterLab interface is a remastered version of the Jupyter Notebook interface, providing a new set of modular building blocks for interactive and efficient computing. JupyterLab integrates several coding tools into one single interface, thus offering a coding experience that resembles more to traditional IDEs. 
+
+La interfaz de JupyterLab es una versión remasterizada de la interfaz de Jupyter Notebook, que proporciona un nuevo conjunto de bloques de construcción modulares para una computación interactiva y eficiente. JupyterLab integra varias herramientas de programación en una única interfaz, ofreciendo así una experiencia de programación similar a la de los IDE tradicionales.
+
 
 JupyterLab interface screenshot
 
