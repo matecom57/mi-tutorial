@@ -5,6 +5,9 @@ https://www.datacamp.com/tutorial/installing-jupyter-notebook?utm_cid=2105785916
 
 In this article, we will introduce you to JupyterLab, one of the most popular IDE for data science.
 
+En este artículo, le presentaremos JupyterLab, uno de los IDE más populares para la ciencia de datos.
+
+
 It’s impossible to understand software development without programming languages. True, a software developer with no programming language is like a taxi driver with no car. However, things are more complex. Just as GPS makes taxi drivers’ life easier, so does Integrated Development Environments (also known as IDEs) for programmers. 
 
 Es imposible comprender el desarrollo de software sin lenguajes de programación. Es cierto que un desarrollador de software sin lenguaje de programación es como un taxista sin coche. Sin embargo, la situación es más compleja. Así como el GPS facilita la vida a los taxistas, también lo hacen los ``Entornos de Desarrollo Integrados`` (también conocidos como ``IDE``) para los programadores.
@@ -138,5 +141,190 @@ JupyterLab interface is a remastered version of the Jupyter Notebook interface, 
 La interfaz de JupyterLab es una versión remasterizada de la interfaz de Jupyter Notebook, que proporciona un nuevo conjunto de bloques de construcción modulares para una computación interactiva y eficiente. JupyterLab integra varias herramientas de programación en una única interfaz, ofreciendo así una experiencia de programación similar a la de los IDE tradicionales.
 
 
-JupyterLab interface screenshot
+JupyterLab interface comprises the following main elements: 
+
+*    Work area. The main work area comes with a new tab-based layout that allows you to combine different documents (notebooks, data files, HTML, pdfs, images, etc.) and coding tools (terminal, code consoles, text editor, etc.) into panels of tabs that can be resized or subdivided through drag and drop. The tab-based system, absent in Jupyter Notebook, allows for more integrated and efficient programming, as developers are able to do most of their tasks without leaving JupyterLab. 
+
+*    Left sidebar. The collapsible sidebar contains various commonly-used tabs, including:
+
+-        File browser. It allows you to manage files and folders on your computer.
+-        Tab and kernel manager. It provides a list of tabs in the main work area and of running kernels and terminals.
+-        Table of contents. An interactive index based on headings included in markdown cells.
+-        Extension manager. It allows you to install new applications and plugins to improve your JupyterLab experience (see more below). 
+
+*    Right sidebar. A second collapsible sidebar that contains:
+
+-        Property inspector. It allows you to inspect with close detail the information and properties of the cells. 
+-        Debugger (see more below)
+
+*    Menu bar. The menu bar at the top of JupyterLab includes top-level menus with actions available in JupyterLab. The different menus are: 
+
+-        File: actions related to files and directories.
+-        Edit: actions related to editing documents and other activities.
+-        View: actions that change the appearance of JupyterLab.
+-        Run: actions for running code in different activities.
+-        Kernel: actions for managing kernels.
+-        Tabs: a list of the open documents and activities in the work area.
+-        Settings: common settings and an advanced settings editor. One of the coolest features of JupyterLab is the possibility to choose different themes for the interface, including Dark Mode.
+-        Help: a list of JupyterLab and kernel help links.
+
+Debugging in JupyterLab
+-----------------------
+
+The goal behind debugging is to point out the causes of the bugs found in your program during the testing process, and thus adjust your code to output your accurate and desired result. 
+
+Data progressions, and more broadly, software developers, monitor the interactions between and changes in the program's variables in a debugging process. You can investigate the potential causes for the errors in your program by seeing how each different function, method, or even line of code alters the value and functionality of the variables.
+
+Jupyter Notebook and the first versions of JupyterLab incorporated the %debug built-in magic command to conduct debugging tasks. However, the tool is quite rudimentary compared to debuggers in other IDEs. 
+
+Luckily, the latest versions of JupyerLab include a Debugger front-end by default, It includes the traditional debugging capabilities, including setting breakpoints, stepping into functions, and inspecting variables. You can activate it from the right sidebar, as shown in the image below: 
+
+JupyterLab Extensions
+---------------------
+
+
+JupyterLab is already a powerful and well-equipped tool, with new features that will make your coding experience more IDE-like. However, if you feel that some functionalities are missing or you want to enhance JupyterLab capabilities, you should check Jupyter Extensions.
+
+Written in JavaScript, JUpyterLab extensions are pieces of software containing one or more plugins to add new capabilities to JupyterLab, such as new themes, file editor, and new command shortcuts. 
+
+There are two types of JupyterLab extensions: 
+
+*    Prebuilt extension. They don’t require a rebuild of JupyterLab.
+*    Source extension. They require a rebuild of JupyterLab when installed. Rebuilding JupyterLab requires Node.js –an open-source, cross-platform environment for running JavaScript applications– to be installed. 
+
+If you use conda with conda-forge packages, you can get Node.js with:
+
+.. code:: Python
+
+   >>conda install -c conda-forge nodejs
+
+There are several ways to manage JupyterLab extensions, but we highly recommend you use the built-in Extension Manager. Accessed through the puzzle icon on the life sidebar, the Extension manager allows you to install and disable extensions with no coding required.
+
+
+For more information about JupyterLab extensions and how to manage them, check out JupyterLab documentation.
+
+JupyterLab vs Jupyter Notebook
+-------------------------------
+
+​​Below, you can find a table of differences between Jupyter Notebook and JupyterLab:
+  	
+
+		Jupyter Notebook 	JupyterLab
+
+Release date	2014			2018
+
+Open source?	Yes			Yes
+
+Tab system
+	
+
+Single tab
+	
+
+Multiple, modular tabs, everything in one view 
+
+Debugging capabilities
+	
+
+%debug magic command
+	
+
+Debugger
+
+Data file viewer
+	
+
+Data files view as text files
+	
+
+Data can be viewed in table format
+
+Coding experience 
+	
+
+Feels like a standalone tool
+	
+
+Feels like an IDE
+
+Themes by default
+	
+
+White
+	
+
+Light and Dark
+
+Advantages
+	
+
+    Simplicity
+    Steep learning curve
+
+	
+
+    Modular and customizable tabs provide efficiency and flexibility.
+    Provide tools and features that increase productivity.
+
+Disadvantages
+	
+
+    Changing between notebooks and documents can be tedious.
+    Limited tools and features.
+
+	
+
+    May feel over-engineered because of the many features.
+    Shallow learning curve
+
+Future developments
+	
+
+Remains as a legacy old version
+	
+
+The future of the Project Jupyter
+
+DataLab
+-------
+
+If you’re looking for an online, cloud-based IDE that allows you to write code and analyze data collaboratively and share your data insights, DataLab is a great choice. 
+Built by DataCamp, DataLab is a cloud-based data analysis platform that is designed to help you get started quickly and easily. With DataLab, you can skip the time-consuming setup process and start working with data right away. There is no need to install anything, as everything is accessible through the browser. 
+
+When using DataLab, you’ll find built-in datasets that you can use instantly, as well as pre-built templates with pre-written code. DataLab is accessible to all skill levels, with low and no-code tools available to create stunning reports and visualizations. 
+
+It also supports Python and R, both with native SQL integrations and comes pre-configured and pre-installed with the world's most popular data science packages. 
+
+Run and edit the code from this tutorial online
+
+Conclusion
+
+You made it to the end. Congratulations! We hope you enjoyed this tutorial about JupyterLab. Because of its cell-based structure, which focuses on interactive, exploratory computing, Jupyter rapidly became a revolutionary tool, the preferred IDE for data professionals. Compared to Jupyter Notebook, JupyterLab is a more refined tool, bringing together the best of notebooks and traditional IDEs, such as RStudio, and PyCharm. 
+
+So, if you are new to data science and wonder whether you should choose Jupyter Notebook or JUpyterLab, we highly recommend you choose the latter. Willing to know more about Jupyter? Check out the following DataCamp materials:
+
+*    SQL Interface Within JupyterLab tutorial
+*    Jupyter Notebook Tutorial: The Definitive Guide
+*    Markdown in Jupyter Notebook Tutorial
+*    Jupyter Notebook Cheat Sheet
+
+JupyterLab Tutorial FAQs
+------------------------
+
+*    What is an IDE?
+
+    IDEs are programs designed to enable programmers to write code and develop software applications more efficiently. IDEs increase programmer productivity by putting together multiple utilities into a single interface.
+
+*    What is JupyterLab?
+
+    JupyterLab is the latest Jupyter’s web-based IDE for notebooks, code, and data.
+
+    What is a notebook?
+    A notebook is a document that contains elements such as code, equations, visualizations, and text, following a cell-based structure.
+    Can I use Python in JupyterLab?
+    Yes, as well as other programming languages for data science, such as R, and Julia
+    What is JupyterLab Extension Manager?
+    It allows you to install new applications and plugins to improve your JupyterLab experience
+    Should I choose Jupyter Notebook or JupyterLab?
+    Since JupyterLab is the present and the future of the Jupyter Project, we highly recommend you choose JupyterLab.
 
