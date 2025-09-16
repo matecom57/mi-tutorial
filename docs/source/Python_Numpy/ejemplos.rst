@@ -34,9 +34,26 @@ Sacando datos de los arreglos:
 
    y = b[1][2]
 
-   z = cb[1][2][1]
+   z = c[0][1][1]
 
 Aplicando Métodos:
 
+.. code:: Python
+
+   abs(b2)
+
+   b+b2
+
+   np.add(b,b2)
+
+   b.max()
+
+   b.max(1)
+
+   np.append(b,[[7,8,9]],0)
+
+   array([0, 1, 2, 3, 4])
+
+   array([0, 1, 2, 3, 4])
 
 
