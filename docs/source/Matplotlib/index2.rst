@@ -14,5 +14,5 @@ MatplotLib
    Using_Matplotlib-Figures_and_backends
    Using_Matplotlib-Quick_start_guide
    Using_Matplotlib
-   www.txt
+   help_pyplot
 
