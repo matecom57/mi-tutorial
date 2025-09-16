@@ -32,6 +32,7 @@ Contents
     Matplotlib/index2
     JupyterLab/index2
     ten_computer_codes_that_transformed_science
+    Python_Numpy/index2
 
 
 
