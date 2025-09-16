@@ -26,5 +26,17 @@ Aplicando Métodos
    c.shape
    c.size 
 
+Sacando datos de los arreglos:
+
+.. code:: Python
+   
+   x = a[0]
+
+   y = b[1][2]
+
+   z = cb[1][2][1]
+
+Aplicando Métodos:
+
 
 
