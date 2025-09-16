@@ -17,3 +17,5 @@ Contents
     doc07
     doc08
     doc09
+    numpy_help
+

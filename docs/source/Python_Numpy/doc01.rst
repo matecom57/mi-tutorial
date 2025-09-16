@@ -7,6 +7,8 @@ Welcome to the absolute beginner’s guide to NumPy!
 
 NumPy (Numerical Python) is an open source Python library that’s widely used in science and engineering. The NumPy library contains multidimensional array data structures, such as the homogeneous, N-dimensional ndarray, and a large library of functions that operate efficiently on these data structures. Learn more about NumPy at What is NumPy, and if you have comments or suggestions, please reach out!
 
+NumPy (Python numérico) es una biblioteca de Python de código abierto ampliamente utilizada en ciencia e ingeniería. Contiene estructuras de datos de matriz multidimensionales, como el ndarray homogéneo de N dimensiones, y una amplia biblioteca de funciones que operan eficientemente con estas estructuras de datos. Obtenga más información sobre NumPy en ¿Qué es NumPy? Si tiene comentarios o sugerencias, no dude en contactarnos.
+
 How to import NumPy
 -------------------
 
@@ -17,6 +19,9 @@ After installing NumPy, it may be imported into Python code like:
    import numpy as np
 
 This widespread convention allows access to NumPy features with a short, recognizable prefix (np.) while distinguishing NumPy features from others that have the same name.
+
+Esta convención generalizada permite el acceso a las características de NumPy con un prefijo corto y reconocible (np.) al tiempo que distingue las características de NumPy de otras que tienen el mismo nombre.
+
 
 Reading the example code
 ------------------------
@@ -33,25 +38,44 @@ Throughout the NumPy documentation, you will find blocks that look like:
 
 Text preceded by ``>>>`` or ``...`` is input, the code that you would enter in a script or at a Python prompt. Everything else is output, the results of running your code. Note that >>> and ... are not part of the code and may cause an error if entered at a Python prompt.
 
+El texto precedido por >>> o ... es la entrada, el código que se introduciría en un script o en el prompt de Python. Todo lo demás es la salida, el resultado de la ejecución del código. Tenga en cuenta que >>> y ... no forman parte del código y pueden causar un error si se introducen en el prompt de Python.
+
+
 To run the code in the examples, you can copy and paste it into a Python script or REPL, or use the experimental interactive examples in the browser provided in various locations in the documentation.
+
+Para ejecutar el código de los ejemplos, puede copiarlo y pegarlo en un script de Python o REPL, o utilizar los ejemplos interactivos experimentales en el navegador que se proporcionan en varias ubicaciones de la documentación.
 
 Why use NumPy?
 --------------
 
 Python lists are excellent, general-purpose containers. They can be “heterogeneous”, meaning that they can contain elements of a variety of types, and they are quite fast when used to perform individual operations on a handful of elements.
 
+Las listas de Python son excelentes contenedores de propósito general. Pueden ser "heterogéneas", lo que significa que pueden contener elementos de diversos tipos, y son bastante rápidas cuando se utilizan para realizar operaciones individuales con un puñado de elementos.
+
+
 Depending on the characteristics of the data and the types of operations that need to be performed, other containers may be more appropriate; by exploiting these characteristics, we can improve speed, reduce memory consumption, and offer a high-level syntax for performing a variety of common processing tasks. NumPy shines when there are large quantities of “homogeneous” (same-type) data to be processed on the CPU.
+
+Dependiendo de las características de los datos y los tipos de operaciones que se deban realizar, otros contenedores pueden ser más apropiados. Al aprovechar estas características, podemos mejorar la velocidad, reducir el consumo de memoria y ofrecer una sintaxis de alto nivel para realizar diversas tareas de procesamiento comunes. NumPy destaca cuando se procesan grandes cantidades de datos homogéneos (del mismo tipo) en la CPU.
 
 What is an “array”?
 -------------------
 
 In computer programming, an array is a structure for storing and retrieving data. We often talk about an array as if it were a grid in space, with each cell storing one element of the data. For instance, if each element of the data were a number, we might visualize a “one-dimensional” array like a list:
 
+En programación informática, un array es una estructura para almacenar y recuperar datos. A menudo hablamos de un array como si fuera una cuadrícula en el espacio, donde cada celda almacena un elemento de los datos. Por ejemplo, si cada elemento de los datos fuera un número, podríamos visualizar un array unidimensional como una lista:
+
+
 A two-dimensional array would be like a table:
 
 A three-dimensional array would be like a set of tables, perhaps stacked as though they were printed on separate pages. In NumPy, this idea is generalized to an arbitrary number of dimensions, and so the fundamental array class is called ndarray: it represents an “N-dimensional array”.
 
+Un array tridimensional sería como un conjunto de tablas, quizás apiladas como si estuvieran impresas en páginas separadas. En NumPy, esta idea se generaliza a un número arbitrario de dimensiones, por lo que la clase fundamental del array se llama ndarray: representa un "array N-dimensional".
+
+
 Most NumPy arrays have some restrictions. For instance:
+
+La mayoría de los arrays de NumPy tienen algunas restricciones. Por ejemplo:
+
 
 *    All elements of the array must be of the same type of data.
 
@@ -59,7 +83,11 @@ Most NumPy arrays have some restrictions. For instance:
 
 *    The shape must be “rectangular”, not “jagged”; e.g., each row of a two-dimensional array must have the same number of columns.
 
+La forma debe ser “rectangular”, no “dentada”; por ejemplo, cada fila de una matriz bidimensional debe tener el mismo número de columnas.
+
 When these conditions are met, NumPy exploits these characteristics to make the array faster, more memory efficient, and more convenient to use than less restrictive data structures.
+
+Cuando se cumplen estas condiciones, NumPy aprovecha estas características para hacer que la matriz sea más rápida, más eficiente en el uso de la memoria y más cómoda de usar que las estructuras de datos menos restrictivas.
 
 For the remainder of this document, we will use the word “array” to refer to an instance of ndarray.
 
@@ -67,6 +95,8 @@ Array fundamentals
 ------------------
 
 One way to initialize an array is using a Python sequence, such as a list. For example:
+
+Una forma de inicializar un array es usar una secuencia de Python, como una lista. Por ejemplo:
 
 .. code:: Python
 
@@ -76,6 +106,8 @@ One way to initialize an array is using a Python sequence, such as a list. For e
    array([1, 2, 3, 4, 5, 6])
 
 Elements of an array can be accessed in various ways. For instance, we can access an individual element of this array as we would access an element in the original list: using the integer index of the element within square brackets.
+
+Se puede acceder a los elementos de un array de varias maneras. Por ejemplo, podemos acceder a un elemento individual de este array como lo haríamos con un elemento de la lista original: usando el índice entero del elemento entre corchetes.
 
 .. code:: Python
 
@@ -88,6 +120,8 @@ Elements of an array can be accessed in various ways. For instance, we can acces
 
 Like the original list, the array is mutable.
 
+Al igual que la lista original, la matriz es mutable.
+
 .. code:: Python
 
    a[0] = 10
@@ -97,12 +131,17 @@ Like the original list, the array is mutable.
 
 Also like the original list, Python slice notation can be used for indexing.
 
+Además de la lista original, la notación de segmentos de Python se puede utilizar para indexar.
+
 .. code:: Python
 
    a[:3]
    array([10, 2, 3])
 
 One major difference is that slice indexing of a list copies the elements into a new list, but slicing an array returns a view: an object that refers to the data in the original array. The original array can be mutated using the view.
+
+Una diferencia importante es que la indexación de una lista mediante segmentos copia los elementos en una nueva lista, mientras que la segmentación de un array devuelve una vista: un objeto que hace referencia a los datos del array original. El array original se puede modificar mediante la vista.
+
 
 .. code:: Python
 
@@ -118,6 +157,8 @@ One major difference is that slice indexing of a list copies the elements into a
 
 See Copies and views for a more comprehensive explanation of when array operations return views rather than copies.
 
+Consulte Copias y vistas para obtener una explicación más completa de cuándo las operaciones de matriz devuelven vistas en lugar de copias.
+
 Two- and higher-dimensional arrays can be initialized from nested Python sequences:
 
 .. code:: Python
@@ -131,7 +172,13 @@ Two- and higher-dimensional arrays can be initialized from nested Python sequenc
 
 In NumPy, a dimension of an array is sometimes referred to as an “axis”. This terminology may be useful to disambiguate between the dimensionality of an array and the dimensionality of the data represented by the array. For instance, the array a could represent three points, each lying within a four-dimensional space, but a has only two “axes”.
 
+En NumPy, la dimensión de un array se denomina a veces "eje". Esta terminología puede ser útil para distinguir entre la dimensionalidad de un array y la de los datos que este representa. Por ejemplo, el array a podría representar tres puntos, cada uno dentro de un espacio de cuatro dimensiones, pero a solo tiene dos "ejes".
+
+
 Another difference between an array and a list of lists is that an element of the array can be accessed by specifying the index along each axis within a single set of square brackets, separated by commas. For instance, the element 8 is in row 1 and column 3:
+
+Otra diferencia entre un array y una lista de listas es que se puede acceder a un elemento del array especificando el índice en cada eje dentro de un único par de corchetes, separados por comas. Por ejemplo, el elemento 8 está en la fila 1 y la columna 3:
+
 
 .. code:: Python
 
@@ -142,9 +189,14 @@ Another difference between an array and a list of lists is that an element of th
 
    It is familiar practice in mathematics to refer to elements of a matrix by the row index first and the column index second. This happens to be true for two-dimensional arrays, but a better mental model is to think of the column index as coming last and the row index as second to last. This generalizes to arrays with any number of dimensions.
 
+Es una práctica habitual en matemáticas referirse a los elementos de una matriz primero por el índice de fila y después por el de columna. Esto es cierto para matrices bidimensionales, pero un modelo mental más adecuado consiste en pensar en el índice de columna como último y el de fila como penúltimo. Esto se generaliza a matrices con cualquier número de dimensiones.
+
+
 .. Note::
 
    You might hear of a 0-D (zero-dimensional) array referred to as a “scalar”, a 1-D (one-dimensional) array as a “vector”, a 2-D (two-dimensional) array as a “matrix”, or an N-D (N-dimensional, where “N” is typically an integer greater than 2) array as a “tensor”. For clarity, it is best to avoid the mathematical terms when referring to an array because the mathematical objects with these names behave differently than arrays (e.g. “matrix” multiplication is fundamentally different from “array” multiplication), and there are other objects in the scientific Python ecosystem that have these names (e.g. the fundamental data structure of PyTorch is the “tensor”).
+
+Es posible que haya oído hablar de un array 0-D (de dimensión cero) como "escalar", un array 1-D (unidimensional) como "vector", un array 2-D (bidimensional) como "matriz" o un array N-D (N-dimensional, donde "N" suele ser un entero mayor que 2) como "tensor". Para mayor claridad, es mejor evitar los términos matemáticos al referirse a un array, ya que los objetos matemáticos con estos nombres se comportan de forma diferente a los arrays (p. ej., la multiplicación de "matriz" es fundamentalmente distinta de la multiplicación de "array"), y existen otros objetos en el ecosistema científico de Python que tienen estos nombres (p. ej., la estructura de datos fundamental de PyTorch es el "tensor").
 
 Array attributes
 ----------------
@@ -210,6 +262,8 @@ Or an array filled with 1’s:
 
 Or even an empty array! The function empty creates an array whose initial content is random and depends on the state of the memory. The reason to use empty over zeros (or something similar) is speed - just make sure to fill every element afterwards!
 
+¡O incluso un array vacío! La función empty crea un array cuyo contenido inicial es aleatorio y depende del estado de la memoria. La razón para usar empty sobre ceros (o algo similar) es la velocidad; ¡solo asegúrate de llenar cada elemento después!
+
 .. code:: Python
 
    # Create an empty array with 2 elements
@@ -238,9 +292,11 @@ You can also use np.linspace() to create an array with values that are spaced li
    np.linspace(0, 10, num=5)
    array([ 0. ,  2.5,  5. ,  7.5, 10. ])
 
-Specifying your data type
+**Specifying your data type**
 
 While the default data type is floating point (np.float64), you can explicitly specify which data type you want using the dtype keyword.
+
+Si bien el tipo de datos predeterminado es punto flotante (np.float64), puede especificar explícitamente qué tipo de datos desea utilizando la palabra clave dtype.
 
 .. code:: Python
 
