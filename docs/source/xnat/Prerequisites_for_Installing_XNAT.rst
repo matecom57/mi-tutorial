@@ -3,33 +3,35 @@ Prerequisites for Installing XNAT
 
 XNAT 1.8 requires the following services:
 
-    Java 8 JRE  or JDK
-    Apache Tomcat 8.5 or later
-    PostgreSQL 10 or later
+*    Java 8 JRE  or JDK
+*    Apache Tomcat 8.5 or later
+*    PostgreSQL 10 or later
 
 The particular versions required and any custom configuration is detailed in the following sections. You may also want to consider installing a reverse proxy for URL management.
 
 Running XNAT on Windows is no longer supported and recent versions of XNAT have not been tested on Windows. We recommend either using a different operating system or running XNAT in a Vagrant virtual machine.
-Notes on Installing Java 8
+
+**Notes on Installing Java 8**
 
 XNAT 1.8 was developed using Java 8:
 
-    Because the code was compiled to Java 8-compatible byte code and uses features in the Java language and standard libraries that are only available in Java 8 or later, XNAT will not run with Java 7 or earlier
-    XNAT has known issues with versions of Java later than 8 and no Java version after 8 is currently supported
+*    Because the code was compiled to Java 8-compatible byte code and uses features in the Java language and standard libraries that are only available in Java 8 or later, XNAT will not run with Java 7 or earlier
+*    XNAT has known issues with versions of Java later than 8 and no Java version after 8 is currently supported
 
 You can download Java 8 for Windows, OS X, and most Linux platforms from a number of sources:
 
-    Oracle Java SE Development Kit 8 Downloads page (Oracle introduced licensing requirements in April of 2019, which may prevent some organizations from being able to use their Java implementation)
-    AdoptOpenJDK
-    Azul Zulu OpenJDK
-    Most Linux platforms using the appropriate package manager application:
-        apt for Debian-based platforms, including Debian, Ubuntu, Linux Mint
-        yum for Fedora/RHEL-based platforms, including Fedora, Red Hat, and CentOS
-    SDKMAN is a tool for managing a variety of software development tools, including JDKs
+*    Oracle Java SE Development Kit 8 Downloads page (Oracle introduced licensing requirements in April of 2019, which may prevent some organizations from being able to use their Java implementation)
+*    AdoptOpenJDK
+*    Azul Zulu OpenJDK
+*    Most Linux platforms using the appropriate package manager application:
+-        apt for Debian-based platforms, including Debian, Ubuntu, Linux Mint
+-        yum for Fedora/RHEL-based platforms, including Fedora, Red Hat, and CentOS
+*    SDKMAN is a tool for managing a variety of software development tools, including JDKs
 
 The XNAT team runs a number of deployments using OpenJDK 8. Some testing and development work has been done using the Zulu JDK from Azul as well.
 
 Notes on Installing and Configuring Apache Tomcat
+----------------------------------------------------
 
 XNAT was developed and tested exclusively on Tomcat 7 up through the 1.8.1 release. Apache announced the end of life for Tomcat 7 on March 31, 2021. XNAT 1.8.1 and earlier can be easily modified to run on Tomcat 8.5 and later with a simple change in one of the XNAT configuration files. See Running XNAT on Tomcat 8.5 and Later for details.
 
@@ -37,70 +39,81 @@ Beginning with XNAT 1.8.2, Tomcat 9.0 is the default server environment for deve
 
 There are a few configuration changes to prepare Tomcat for XNAT 1.8. We cover the required step of defining xnat.home for Tomcat in the XNAT Installation Guide. These others are optional.
 
-    Set other JVM options
-    Change the Tomcat service user and group
-    Install the Tomcat manager application
+*    Set other JVM options
+*    Change the Tomcat service user and group
+*    Install the Tomcat manager application
 
 This documentation refers to the CATALINA_OPTS variable when configuring Tomcat. You may find that your version of Tomcat doesn't recognize this variable when set in the Tomcat configuration file, e.g. /etc/default/tomcat9. In that case, you have a few options:
 
-    Replace references to CATALINA_OPTS with JAVA_OPTS
-    Export CATALINA_OPTS in the Tomcat configuration file, either by adding export to the first reference or add export CATALINA_OPTS  at the end of the configuration file
-    If your system uses systemd, you can override the default unit configuration for Tomcat to add CATALINA_OPTS to the service environment (see Overriding Tomcat configuration on systemd for more information)
+*    Replace references to CATALINA_OPTS with JAVA_OPTS
+*    Export CATALINA_OPTS in the Tomcat configuration file, either by adding export to the first reference or add export CATALINA_OPTS  at the end of the configuration file
+*    If your system uses systemd, you can override the default unit configuration for Tomcat to add CATALINA_OPTS to the service environment (see Overriding Tomcat configuration on systemd for more information)
 
-Locating the Primary Tomcat Configuration File
+**Locating the Primary Tomcat Configuration File**
 
 Make changes to your Tomcat configuration by modifying the primary Tomcat configuration file:
 
-    For Debian and Ubuntu systems, this is usually located in /etc/default/tomcat9.
-    Fedora, Red Hat, CentOS, and similar systems no longer provide Tomcat through their yum repositories!
-    OS X doesn't have the same standard method of configuring properties for Tomcat as a service. Generally, you can create a file in the bin folder for your Tomcat installation named setenv.sh. You should also make the file executable with the command chmod +x setenv.sh . You can modify this file in the same way as the configuration files for the Linux platforms.
+*    For Debian and Ubuntu systems, this is usually located in /etc/default/tomcat9.
+*    Fedora, Red Hat, CentOS, and similar systems no longer provide Tomcat through their yum repositories!
+*    OS X doesn't have the same standard method of configuring properties for Tomcat as a service. Generally, you can create a file in the bin folder for your Tomcat installation named setenv.sh. You should also make the file executable with the command chmod +x setenv.sh . You can modify this file in the same way as the configuration files for the Linux platforms.
 
-Setting Max Heap Size
+**Setting Max Heap Size**
 
 The XNAT web application may not run on Tomcat without enough memory allocated to it. However, the way in which you set memory limits will differ based on your platform, and what kind of load you expect your XNAT to be under. For example, a typical XNAT 1.8 VM running on Ubuntu 20.04, 1 GB is the very minimum that should be allocated for max heap space.
 
 Additionally, the method in which you allocate this memory may differ depending on your OS. In an XNAT VM running on Ubuntu, for example, we modify CATALINA_OPTS rather than JAVA_OPTS because CATALINA_OPTS is only invoked during start and run operations. Here are the relevant settings in that environment.
+
 CODE
 
-# Set JAVA_OPTS for Java options for ALL commands in Tomcat, including service
-# start, stop, and run commands.
-JAVA_OPTS="-Djava.awt.headless=true"
+.. code:: Bash
 
-# Set CATALINA_OPTS for Tomcat-specific operations, mainly service start and run.
-CATALINA_OPTS="-Xms512m -Xmx1g -XX:+UseConcMarkSweepGC -XX:-OmitStackTraceInFastThrow"
+   # Set JAVA_OPTS for Java options for ALL commands in Tomcat, including service
+   # start, stop, and run commands.
+   JAVA_OPTS="-Djava.awt.headless=true"
+
+   # Set CATALINA_OPTS for Tomcat-specific operations, mainly service start and run.
+   CATALINA_OPTS="-Xms512m -Xmx1g -XX:+UseConcMarkSweepGC -XX:-OmitStackTraceInFastThrow"
 
 Note the -Xmx1g setting, which sets a max heap size of 1 GB.
 
 You should usually allocate at least 4 GB for most production deployments of XNAT, although you can allocate more if you have the available physical memory.
 
 If you have other needs, you may want to see Tomcat configuration documentation relative to your platform, consult with your DevOps team, and/or see the XNAT IT Operations documentation.
-Overriding Tomcat configuration on systemd
+
+**Overriding Tomcat configuration on systemd**
 
 On newer versions of Linux, systemd replaces the older SysV framework for managing and controlling system services. systemd has a number of advantages over SysV, but requires specific configuration options to be set in order to work properly.
 
 You can find the default configuration for Tomcat in the folder /lib/systemd/system or /usr/lib/systemd/system (on Ubuntu 20.04 and Debian 10, /lib is just a symlink to /usr/lib, so you can find it in either folder). You can modify the original service unit file directly, but It's better to override than to overwrite. To override the default configuration, copy the original service unit file to /etc/systemd/system. For example:
 
-Creating Tomcat unit file override
+**Creating Tomcat unit file override**
+
 BASH
 
-cp /usr/lib/systemd/system/tomcat9.service /etc/systemd/system
+.. code:: Bash
+
+   cp /usr/lib/systemd/system/tomcat9.service /etc/systemd/system
 
 Properties you may want or need to add or change include:
 
-    User
-    Group
-    Adding CATALINA_OPTS to the environment
-    Adding ReadWritePaths to the security configuration
+*    User
+*    Group
+*    Adding CATALINA_OPTS to the environment
+*    Adding ReadWritePaths to the security configuration
 
-Configuring other JVM options
+**Configuring other JVM options**
 
 If you plan to debug code in your XNAT service, add the appropriate debug flags to the Java configuration along with the xnat.home setting.
+
 CODE
 
-CATALINA_OPTS="${CATALINA_OPTS} -Dxnat.home=/data/xnat/home -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000"
+.. code:: Bash
+
+   CATALINA_OPTS="${CATALINA_OPTS} -Dxnat.home=/data/xnat/home -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000"
 
 There are many other options you can add to CATALINA_OPTS, including settings for memory allocation, garbage collection, performance profiling, etc., but understanding and tuning these appropriately can be very detailed. These are covered in the Advanced Topics section of this administrator's guide.
-Changing the Tomcat User and Group
+
+**Changing the Tomcat User and Group**
 
 You may want to change the Tomcat service user and group. On Debian and Ubuntu servers that use systemd to control services, you can set the user and group in the service unit file. If you do change the user, you must change the ownership or permissions on all of the folders within the Tomcat installation. Failure to do this will result in permissions issues where the Tomcat service can't access its own configurations or application folders or even be able to write log files describing what went wrong. The general practice with the XNAT development and operations teams is to change the Tomcat user and group to something relevant to the project and application installation, e.g. our development servers are usually set up with the user set to xnat or xnatdev.
 
