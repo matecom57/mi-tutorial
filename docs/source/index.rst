@@ -35,6 +35,6 @@ Contents
     ten_computer_codes_that_transformed_science
     Python_Numpy/index2
     xnat/index2
-
+    Data_and_Process_Visualisation_for_Graphic_Communication_Bianconi/Appendix_B
 
 
