@@ -73,29 +73,23 @@ tween the current, a time interval, and the amount of charge
 that moves through the point in that time interval.
 
 Key Ideas
+---------
 
-* The strength of a particle’s electrical interaction with objects around it depends on its electric charge (usually repre-
-sented as q), which can be either positive or negative.
+* The strength of a particle’s electrical interaction with objects around it depends on its electric charge (usually represented as q), which can be either positive or negative.
 Particles with the same sign of charge repel each other, and
 particles with opposite signs of charge attract each other.
 
-* An object with equal amounts of the two kinds of charge is
-electrically neutral, whereas one with an imbalance is electri-
-cally charged and has an excess charge.
+* An object with equal amounts of the two kinds of charge is electrically neutral, whereas one with an imbalance is electrically charged and has an excess charge.
 
-* Conductors are materials in which a significant number of
-electrons are free to move. The charged particles in noncon-
-ductors (insulators) are not free to move.
+* Conductors are materials in which a significant number of electrons are free to move. The charged particles in nonconductors (insulators) are not free to move.
 
-* Electric current i is the rate dq/dt at which charge passes a
-point:
+* Electric current i is the rate dq/dt at which charge passes a point:
 
 .. math::
 
    i = \frac{dq}{di}
 
-* Coulomb’s law describes the electrostatic force (or electric force) between two charged particles. If the particles have
-charges :math:`q_1` and :math:`q_2`, are separated by distance r, and are at rest
+* Coulomb’s law describes the electrostatic force (or electric force) between two charged particles. If the particles have charges :math:`q_1` and :math:`q_2`, are separated by distance r, and are at rest
 (or moving only slowly) relative to each other, then the magnitude of the force acting on each due to the other is given by
 
 .. math::
@@ -104,27 +98,21 @@ charges :math:`q_1` and :math:`q_2`, are separated by distance r, and are at res
 
 (Coulomb’s law),
 
-where :math:`8.85 \times 10^{-12} c^2/N \cdot m^2` is the permittivity constant. The ratio 1/4p´0 is often replaced with the electrostatic
-constant (or Coulomb constant) :math:`8.99 \times 10^{9} N \cdot m^2/C^2` .
+where :math:`\epsilon_0= 8.85 \times 10^{-12} C^2/N \cdot m^2` is the permittivity constant. The ratio 1/4p´0 is often replaced with the electrostatic
+constant (or Coulomb constant) :math:`k= 8.99 \times 10^{9} N \cdot m^2/C^2` .
 
-* The electrostatic force vector acting on a charged particle
-due to a second charged particle is either directly toward the
-second particle (opposite signs of charge) or directly away
-from it (same sign of charge).
+* The electrostatic force vector acting on a charged particle due to a second charged particle is either directly toward the
+second particle (opposite signs of charge) or directly away from it (same sign of charge).
 
-* If multiple electrostatic forces act on a particle, the net force
-is the vector sum (not scalar sum) of the individual forces.
+* If multiple electrostatic forces act on a particle, the net force is the vector sum (not scalar sum) of the individual forces.
 
-* Shell theorem 1: A charged particle outside a shell with charge
-uniformly distributed on its surface is attracted or repelled as if
+* Shell theorem 1: A charged particle outside a shell with charge uniformly distributed on its surface is attracted or repelled as if
 the shell's charge were concentrated as a particle at its center.
 
-* Shell theorem 2: A charged particle inside a shell with
-charge uniformly distributed on its surface has no net force
+* Shell theorem 2: A charged particle inside a shell with charge uniformly distributed on its surface has no net force
 acting on it due to the shell.
 
-* Charge on a conducting spherical shell spreads uniformly
-over the (external) surface.
+* Charge on a conducting spherical shell spreads uniformly over the (external) surface.
 
 What Is Physics?
 ----------------
@@ -216,7 +204,7 @@ come in two types (and not, say, one type or three types). We just do not know.
 Nevertheless, with lots of experiments similar to our two demonstrations scien-
 tists discovered that
 
-Particles with the same sign of electrical charge repel each other, and particles
+* Particles with the same sign of electrical charge repel each other, and particles
 with opposite signs attract each other.
 
 In a moment we shall put this rule into quantitative form as Coulomb’s law of
@@ -487,14 +475,14 @@ harder than if we simply had scalars, be thankful that Eq. 21-7 works. If two fo
 vectors did not simply add but for some reason amplified each other, the world
 would be very difficult to understand and manage.
 
-Shell Theories. Analogous to the shell theories for the gravitational force
+**Shell Theories**. Analogous to the shell theories for the gravitational force
 (Module 13-1), we have two shell theories for the electrostatic force:
 
-Shell theory 1. A charged particle outside a shell with charge uniformly distrib-
+* Shell theory 1. A charged particle outside a shell with charge uniformly distrib-
 uted on its surface is attracted or repelled as if the shell’s charge were concentrated
 as a particle at its center.
 
-Shell theory 2. A charged particle inside a shell with charge uniformly distributed
+* Shell theory 2. A charged particle inside a shell with charge uniformly distributed
 on its surface has no net force acting on it due to the shell.
 
 (In the first theory, we assume that the charge on the shell is much greater than
@@ -548,8 +536,7 @@ on particle 1 from particle 2?
 KEY IDEAS
 
 Because both particles are positively charged, particle 1 is repelled by particle 2, with a force magnitude given by Eq. 21-4.
-Thus, the direction of force :math:`\overrightarrow{F}_{12}` on particle 1 is away from parti-
-cle 2, in the negative direction of the x axis, as indicated in the
+Thus, the direction of force :math:`\overrightarrow{F}_{12}` on particle 1 is away from particle 2, in the negative direction of the x axis, as indicated in the
 free-body diagram of Fig. 21-7b.
 
 Two particles: Using Eq. 21-4 with separation R substituted
@@ -601,87 +588,62 @@ diagram for particle 1. (e) Particle 4 included. (f ) Free-body diagram for part
 and 3 have charge of opposite signs, particle 1 is attracted
 to particle 3.Thus, force is directed toward particle 3, as indicated in the free-body diagram of Fig. 21-7d.
 
-9999
 
-**Three particles**: To find the magnitude of :math:`  , we can
-rewrite Eq. 21-4 as
-We can also write in unit-vector notation:
-The net force on particle 1 is the vector sum of F
-:
-12F
-:
-1,net
-F
-:
-13 ␄ (2.05 ␈ 10 ␅24 N)iˆ .
-F
-:
-13
-␄ 2.05 ␈ 10 ␅24 N.
-␈ (1.60 ␈ 10 ␅19 C)(3.20 ␈ 10 ␅19 C)
-(3
-4 )2 (0.0200 m) 2
-␄ (8.99 ␈ 10 9 N␚m2 /C2)
-F13 ␄ 1
-4p´0
-␂q1␂␂q3␂
-(3
-4R)2
-F
-:
-13
-F
-:
-13
-and ; that is, from Eq. 21-7, we can write the net force
+**Three particles**: To find the magnitude of :math:`\overrightarrow{F}_{13}`, we can rewrite Eq. 21-4 as
+
+.. math::
+
+   F_{13} = \frac{1}{4\pi \epsilon_0} \frac{|q_1||q_2|}{(\frac{3}{4}R)^2}
+
+   = (8.99 \times 10^9 N \cdot m^2/C^2)
+
+   \times \frac{(1.60 \times 10^{-19} C)(3.20 \times 10^{-18} C)}{(\frac{3}{4})^2 (0.020 m)^2}
+
+   = 2.05 \times 10^{-24} N
+
+We can also write :math:`\overrightarrow{F}_{13}` in unit-vector notation:
+
+.. math::
+
+   \overrightarrow{F}_{13} = (2.05 \times 10^{-24} N) \hat{i}
+
+
+The net force :math:`\overrightarrow{F}_{1,net}` on particle 1 is the vector sum of :math:`\overrightarrow{F}_{12}`
+and :math:`\overrightarrow{F}_{13}`; that is, from Eq. 21-7, we can write the net force :math:`\overrightarrow{F}_{1,net}`
 on particle 1 in unit-vector notation as
 
-hus, has the following magnitude and direction (relative
+.. math::
+
+   \overrightarrow{F}_{1,net} = \overrightarrow{F}_{12} + \overrightarrow{F}_{13}
+
+   = -(1.15 \times 10^{-24} N)\hat{i} + (2.05 \times 10^{-24} N)\hat{i}
+
+   = (9.00 \times 10^{-25} N)\hat{i}
+
+Thus, :math:`\overrightarrow{F}_{1,net}` has the following magnitude and direction (relative
 to the positive direction of the x axis):
-9.00 ␈ 10␅25 N and 0␎. (Answer)
+
+.. math::
+
+   9.00 \times 10^{25} N and 0^o (Answer)
+
 (c) Figure 21-7e is identical to Fig. 21-7a except that particle 4
-is now included. It has charge q4 ␄ ␅3.20 ␈ 10␅19 C, is at a
-distance from particle 1, and lies on a line that makes an3
-4R
-F
-:
-1,net
-␄ (9.00 ␈ 10 ␅25 N)iˆ
-␄ ␅(1.15 ␈ 10 ␅24 N)iˆ ␃ (2.05 ␈ 10 ␅24 N)iˆ
-F
-:
-1,net ␄ F
-:
-12 ␃ F
-:
-13
-F
-:
-1,net
-F
-:
-13
-angle u ␄ 60␎ with the x axis. What is the net electrostatic
-force on particle 1 due to particles 2 and 4?
+is now included. It has charge :math:`q_4 = -3.20 \times 10^{-19} C`, is at a
+distance :math:`\frac{3}{4}R` from particle 1, and lies on a line that makes an
+angle :math:`\tetha= 60^o` with the x axis. What is the net electrostatic
+force :math:`\overrightarrow{F}_{1,net}`  on particle 1 due to particles 2 and 4?
+
 KEY IDEA
-The net force is the vector sum of and a new forceF
-:
-12F
-:
-1,net
-F
-:
-1,net
+--------
+
+The net force :math:`\overrightarrow{F}_{1,net}`  is the vector sum of :math:`\overrightarrow{F}_{1,2}`  and a new force :math:`\overrightarrow{F}_{1,4}`
 acting on particle 1 due to particle 4. Because particles 1
 and 4 have charge of opposite signs, particle 1 is attracted to
-particle 4. Thus, force on particle 1 is directed towardF
-:
-14
-F
-:
-14
-particle 4, at angle 60␎, as indicated in the free-body dia-
-gram of Fig. 21-7f.
+particle 4. Thus, force :math:`\overrightarrow{F}_{1,4}` on particle 1 is directed toward
+particle 4, at angle :math:`\theta = 60`, as indicated in the free-body diagram of Fig. 21-7f.
+
+9999
+
 Four particles: We can rewrite Eq. 21-4 as
 
 Then from Eq. 21-7, we can write the net force on parti-
