@@ -20,6 +20,7 @@ Contents
     :maxdepth: 1
     :caption: todos
 
+    reporte_CUTE
     A_Course_Optimal_Control_Meinsma/index2
     CUTE/index2
     Control_Theory_for_Practical_Applications_Hao/index2
