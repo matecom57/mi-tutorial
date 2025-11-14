@@ -120,7 +120,7 @@ through the File menu. The experimental setup is specified in the main window (F
 Pathfinder can automatically calculate the position and size of the maze and the goal location 
 (provided they are constant across trials), or these parameters can be entered manually.
 
-.. figure:: p1.png
+.. imagen:: a1.png
 
 Figure 1. Graphical user interface and setting parameters. a) Screenshot of the main application 
 window, where maze geometry is defined, and input and output settings are established. On the right 
@@ -144,9 +144,8 @@ categorizing strategies.
 Pathfinder relies on several variables that describe navigation relative to the pool and platform 
 geometry: 1) Ideal Path Error (IPE): the summed error of the search path (Figure 1c). It is 
 conceptually similar to the Cumulative Search Error (CSE) since it also measures proximity to the 
-goal throughout the
-
-trial9 , 27 . An advantage of proximity measures is that they can distinguish two trials that have 
+goal throughout the trial9 , 27 . An advantage of proximity measures is that they can distinguish 
+two trials that have 
 equivalent latencies/path lengths but differ in average distance to the platform. When calculating 
 the IPE, the distance from the goal is measured at each time point in the trial and summed to 
 generate a cumulative distance measure of the actual path (similar to CSE). In contrast to the CSE, 
@@ -155,7 +154,6 @@ path distance. The cumulative ideal path is simply the sum of all of the distanc
 and the position of the animal if it swam along a straight line to escape, using the average 
 velocity from the trial. 2) Heading error: the angular distance between the current path and a 
 straight line to the goal location. The current path direction is defined by a line
-
 connecting two temporally-adjacent xy coordinates. The average heading error is an average of all 
 of the heading error values for the trial and the initial heading error is the average of the 
 heading error values for the first second of the trial.
@@ -193,6 +191,15 @@ given trial fulfills the criteria for direct swim. If so, it moves on to categor
 If not, it determines whether the trial fits the subsequent strategy, and so on. The strategies and 
 their parameters are shown in Figure 2. In the output file (.csv), each trial is categorized and 
 the following additional metrics are provided: latency and distance travelled
+to reach the goal, average distance from the goal, percent of maze traversed, velocity, initial and 
+average heading error and IPE. Pathfinder also has the ability to calculate the entropy for each 
+trial, a measure of disorder in the path, relative to the goal location. The entropy calculation 
+calls the MATLAB engine and requires a MATLAB license. Entropy measures the performance by looking 
+at a shift from more disordered swimming (high entropy) to more spatially strategic paths (low 
+entropy), and has been previously found to be highly sensitive to water maze search performance28 . 
+Due to the manipulation of large matrices, calculating the entropy of trials is very slow.
+
+.. image:: a2.png
 
 Figure 2. Search strategies and associated parameters. Pathfinder categorizes each trial according 
 to 1 of 9 possible strategies. Categorization proceeds sequentially in the order shown (unless some 
@@ -202,14 +209,6 @@ as Random Search, the path must cover a minimum proportion of the maze and not f
 criteria for strategies 1–7. In the examples shown, the blue square indicates the start point and 
 the green circle indicates the middle of the pool. Parameter settings are those used in the present 
 study and should be adjusted depending on changes to testing procedures and maze geometry.
-
-to reach the goal, average distance from the goal, percent of maze traversed, velocity, initial and 
-average heading error and IPE. Pathfinder also has the ability to calculate the entropy for each 
-trial, a measure of disorder in the path, relative to the goal location. The entropy calculation 
-calls the MATLAB engine and requires a MATLAB license. Entropy measures the performance by looking 
-at a shift from more disordered swimming (high entropy) to more spatially strategic paths (low 
-entropy), and has been previously found to be highly sensitive to water maze search performance28 . 
-Due to the manipulation of large matrices, calculating the entropy of trials is very slow.
 
 Occasionally, some trials cannot be categorized. The user therefore has the option to manually 
 categorize uncategorized trials, by selecting this option on the main window. Additionally, there 
@@ -225,7 +224,9 @@ visit each bin in a hexagonal array that is overlaid on the maze (bin size is us
 range of colors (cool to warm) can be automatically set to occupy the full scale. Alternatively, 
 the user can manually set the maximum, above which all bins will read the hottest.
 
-Validation of Pathfinder Animals. A group of 35 C57BL/6J mice (18 male, 17 female) were used in 
+**Validation of Pathfinder**
+
+**Animals.** A group of 35 C57BL/6J mice (18 male, 17 female) were used in 
 this experiment (Jackson Laboratories, Bar Harbor, Maine). Relative to commonly-used samples sizes 
 of 8–10 mice/group, a large cohort was used to maximize reliability and detect potentially 
 infrequent strategies. Mice were housed in same-sex groups (2–4/cage) in polyethylene cages (30 × 
@@ -236,7 +237,8 @@ tested on the water maze for the current experiment. All efforts were made to mi
 suffering, and all procedures adhered to guidelines from the Canadian Council on Animal Care and 
 were approved by the Dalhousie University Committee on Laboratory Animals.
 
-Spatial water maze training. The water maze consisted of a plastic circular pool (110 cm diameter) 
+**Spatial water maze training.** The water maze consisted of a plastic circular pool (110 cm 
+diameter) 
 painted black. The pool was filled with water (21–23°C), which was made opaque with the addition of 
 non-toxic white tempera paint (Schola). A circular escape platform (14 cm height, 9 cm diameter) 
 was positioned 1 cm below the water. The water maze was placed in a diffusely lit room with many 
@@ -264,7 +266,7 @@ platform was moved to a new location and made visible with the addition of a str
 Behavior was recorded with the WaterMaze (Actimetrics) video tracking system (5 samples per 
 second), via a camera placed directly above the pool.
 
-Results
+**Results**
 
 To validate Pathfinder, we trained mice for 8 days on a spatial water maze such that they achieved 
 asymptotic performance according to standard metrics and should therefore have adopted distinct 
@@ -284,11 +286,12 @@ improvements beyond day 5. There were no sex differences in acquisition performa
 
 Reversal learning performance improvements were mostly apparent after the first day of training, 
 likely because mice had learned the procedural aspects of the task and the spatial environment, and 
-only had to learn a new platform location
-
-(Figure 3g–k)30 . Path entropy decreased from days 2–3, indicating continued learning. Females and 
+only had to learn a new platform location (Figure 3g–k)30 . Path entropy decreased from days 2–3, 
+indicating continued learning. Females and 
 males were equivalent in all performance measures except males had a lower initial heading error on 
 day 1 of reversal training (Figure 3h).
+
+.. image:: a3.png
 
 Figure 3. Acquisition and reversal performance as assessed by individual parameters. a) Schematic 
 outline of full behavioral paradigm. Individual performance metrics were analyzed for acquisition 
@@ -313,9 +316,8 @@ comparison. Symbols = mean ± standard error.
 
 Pathfinder revealed clear differences in search strategies over days of training (Figure 4). Over 
 the first two days of acquisition, mice were initially thigmotaxic. After learning that the pool 
-wall did not afford escape, they then transitioned
-
-to chaining, random and scanning search patterns, all of which indicate spatially non-specific 
+wall did not afford escape, they then transitioned to chaining, random and scanning search 
+patterns, all of which indicate spatially non-specific 
 search away from the pool wall. Over days 2–3 mice transitioned to spatially-specific forms of 
 search, with ~30% performing indirect searches to locate the platform. A similar proportion of 
 trials were indirect searches over days 2–8 of training. Mice increasingly displayed directed 
@@ -337,6 +339,8 @@ at the end of the acquisition phase. Using the “add goal” feature, we also a
 strategies with respect to the original goal location (Figure 4b). This revealed a number of direct 
 paths to the goal on the first day that quickly dissipated with additional trials as mice learning 
 the new platform location. This analysis was performed without the semi-focal search strategy.
+
+.. image:: a4.png
 
 Figure 4. Pathfinder search strategy categorization of water maze performance. a) Search strategies 
 for male and female mice. Each set of stacked bars indicates strategies used for the 4 acquisition 
@@ -372,9 +376,8 @@ classification. Rater 2 developed Pathfinder (MBC) and had extensive experience 
 classification. Figure 4d shows the proportion of Pathfindercategorized trials that received the 
 same strategy classification via the manual raters. The greatest correspondence between automatic 
 and manual categorization was seen for direct swims and thigmotaxis (~80% for both). 
-Automatic-manual consistency
-
-was much lower for the other strategies, ranged from 25–75% and differed for the 2 raters. Overall 
+Automatic-manual consistency was much lower for the other strategies, ranged from 25–75% and 
+differed for the 2 raters. Overall 
 consistency between the 2 manual raters was 65%. These data highlight the difficulty of intuitively 
 differentiating complex search paths. Interestingly, when we averaged strategy analyses over all 15 
 days of testing, automatic and manual categorization resulted in similar patterns (Figure 4e–g). 
@@ -394,7 +397,7 @@ can be useful for visualizing within-trial details since it avoids saturation. H
 differentially scaling, it can also obscure or inflate differences across trials. We therefore 
 include a second set of heatmaps that are all scaled equivalently.
 
-Discussion
+**Discussion**
 
 Here we describe Pathfinder, an easy-to-use software package for analyzing patterns of spatial 
 navigation. Pathfinder performs automatic classification of multiple search strategies that have 
@@ -415,9 +418,10 @@ locations, Pathfinder showed that mice redirect their spatial search from the pr
 platform location to the new location. Mice displayed a variety of search strategies on any given 
 day, even after escape latency performance had plateaued. Since manual classification based on 
 static images of swim paths was slow and inconsistent, Pathfinder
-
 may therefore be a useful tool for objectively characterizing swim strategies in the rodent water 
 maze and 2D spatial navigation in other behavioral paradigms.
+
+.. image:: a5.png
 
 Figure 5. Heatmap visualization of spatial occupancy. Examples of heatmaps for various testing days 
 (all trials from both sexes combined). Top rows: heatmaps were automatically scaled by Pathfinder, 
@@ -427,13 +431,11 @@ indicates number of samples within a spatial bin.
 
 The water maze was initially described nearly 40 years ago and quickly became popular due to the 
 ease of training, strong motivation for escape, and consistent reliance on hippocampal
-
 function3 , 32 . While early work performed more comprehensive analyses and validated the water 
 maze, escape latency and path length were quickly adopted as the primary measures of learning and, 
 due to their simplicity and sufficiency for many experimental situations, they remain the most 
 commonly-used metrics. However, they cannot always differentiate between behaviors that vary in the 
 degree of spatial bias. For example, animals that
-
 employ a chaining strategy search nonspecifically in some cases can reach the platform as fast as 
 animals that perform a directed spatial search (Figure 4c). Latency and path length are also less 
 capable of detecting age-related impairments in spatial learning, prompting development of measures 
@@ -472,7 +474,6 @@ Given the apparent utility of strategy classification, the question arises as to
 been used more extensively. One likely explanation is that it is not a standard feature of 
 commercially-available software packages, therefore requiring time and programming experience to 
 execute. Groups that have performed strategy analyses have developed their own
-
 software, using either a predefined parameter-based approach, like ours, or machine learning 
 algorithms that classify based on user input8 , 11 , 12 , 15 – 20 , 25 , 39 . Since most previous 
 approaches have not been developed into freely-available software packages, Pathfinder may enable 
@@ -489,7 +490,10 @@ easily quantified opens the door to future studies of the biology of complex nav
 However, to some extent, strategy definitions are arbitrary, and it is therefore incumbent upon the 
 user to determine which behaviors are relevant for their experimental paradigm.
 
-Future developments and additional uses One area where Pathfinder could be useful is for assessing 
+**Future developments and additional uses**
+
+ One area where Pathfinder could be useful is for 
+assessing 
 spatial bias and choice behavior when there are multiple goal locations. Indeed, the water maze has 
 been effectively used to study visuospatial goal discrimination 40 , 41 and cue vs placerelated 
 choice behavior42 , 43 . We have recently used Pathfinder to show that neurogenesis promotes 
@@ -511,7 +515,6 @@ investigations of how multiple spatial goals interact to guide search.
 
 Spatial navigation and exploration have been studied in many paradigms and so it is worth 
 reiterating that Pathfinder could be applied to study navigation by any species, in any open 2D
-
 environment, and not just the water maze. We have updated Pathfinder to allow users to define their 
 own software inputs, allowing users to analyze data from species or tasks not originally supported. 
 For example, it could be used to measure the spatial precision of homing behavior48 , 49 , spatial 
@@ -527,7 +530,11 @@ and heading angle error60 . As a user-friendly application that can be further d
 accommodate differences between these various paradigms, Pathfinder may be a useful tool for 
 characterizing complex spatial behavior and bridging findings across humans and animal models.
 
-Data availability Underlying data Figshare: Raw data for “Pathfinder: open source software for 
+**Data availability**
+
+**Underlying data**
+
+Figshare: Raw data for “Pathfinder: open source software for 
 analyzing spatial navigation search strategies”, https://doi. org/10.6084/m9.figshare.9686987.v161
 
 This project contains the following underlying data:
@@ -555,9 +562,9 @@ Archived source code at time of publication: https://doi.org/
 
 License: GNU General Public License 3.0.
 
-1.
+**References**
 
-Kjelstrup KG, Tuvnes FA, Steffenach HA, et al.: Reduced fear expression after lesions of the 
+1. Kjelstrup KG, Tuvnes FA, Steffenach HA, et al.: Reduced fear expression after lesions of the 
 ventral hippocampus. Proc Natl Acad Sci U S A. 2002; 99(16): 10825–10830.
 
 PubMed Abstract | Publisher Full Text | Free Full Text
