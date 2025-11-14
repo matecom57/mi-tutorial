@@ -1080,6 +1080,17 @@ the nonpreferred location44 . Neurogenesis-deficient rats often vacillated betwe
 locations, similar to vicarious trial and error behavior that has been described at choice points 
 in dry mazes45 . 
 
+Un área donde Pathfinder podría ser útil es para evaluar el sesgo espacial y el comportamiento de 
+elección cuando existen múltiples ubicaciones objetivo. De hecho, el laberinto acuático se ha 
+utilizado eficazmente para estudiar la discriminación visuoespacial de objetivos<sup>40,41</sup> y 
+el comportamiento de elección relacionado con señales frente a la elección relacionada con el 
+lugar<sup>42,43</sup>. Recientemente, hemos utilizado Pathfinder para demostrar que la neurogénesis 
+promueve la preferencia espacial por la plataforma en un laberinto acuático de alternancia 
+espacial, lo cual se detectó mediante un mayor número de nados directos cuando la plataforma se 
+encontraba en la ubicación preferida de la rata que cuando se encontraba en la ubicación no 
+preferida<sup>44</sup>. Las ratas con deficiencia de neurogénesis a menudo vacilaban entre las dos 
+ubicaciones de la plataforma, de forma similar al comportamiento de ensayo y error vicario que se 
+ha descrito en los puntos de elección en laberintos secos<sup>45</sup>.
 
 Future software developments could possibly incorporate these types of movements 
 between competing goal options to detect indecisiveness as animals refine goal-directed navigation 
@@ -1092,6 +1103,21 @@ can reflect memory for many individual goal locations as well as the overall dis
 at recent and remote post-training intervals, respectively6 . Since Pathfinder can analyze 
 navigation with respect to an unlimited number of goal locations, it may be useful for future 
 investigations of how multiple spatial goals interact to guide search.
+
+Los futuros desarrollos de software podrían incorporar este tipo de movimientos entre opciones de 
+objetivos contrapuestos para detectar la indecisión a medida que los animales perfeccionan su 
+comportamiento de navegación dirigida a un objetivo. Actualmente, la velocidad de nado tampoco se 
+tiene en cuenta en el esquema de clasificación de Pathfinder, pero podría proporcionar información 
+adicional útil para estrategias que incorporan la expectativa del objetivo<sup>46,47</sup> o una 
+transición entre la navegación dirigida por lugar y la dirigida por señales<sup>5</sup>. En el 
+laberinto acuático, las ubicaciones de múltiples plataformas (>2) se suelen utilizar únicamente en 
+variantes de correspondencia con el lugar, donde se espera que los sujetos olviden rápidamente las 
+ubicaciones de objetivos anteriores<sup>30</sup>. Sin embargo, existen indicios de que los patrones 
+de búsqueda pueden reflejar la memoria de muchas ubicaciones de objetivos individuales, así como la 
+distribución general de los objetivos, en intervalos posteriores al entrenamiento recientes y 
+remotos, respectivamente<sup>6</sup>. Dado que Pathfinder puede analizar la navegación con respecto 
+a un número ilimitado de ubicaciones de objetivos, podría ser útil para futuras investigaciones 
+sobre cómo interactúan múltiples objetivos espaciales para guiar la búsqueda.
 
 Spatial navigation and exploration have been studied in many paradigms and so it is worth 
 reiterating that Pathfinder could be applied to study navigation by any species, in any open 2D
@@ -1109,6 +1135,28 @@ and are impaired according to several water mazeinspired metrics such as cumulat
 and heading angle error60 . As a user-friendly application that can be further developed to 
 accommodate differences between these various paradigms, Pathfinder may be a useful tool for 
 characterizing complex spatial behavior and bridging findings across humans and animal models.
+
+La navegación y exploración espacial se han estudiado en numerosos paradigmas, por lo que conviene 
+reiterar que Pathfinder puede aplicarse al estudio de la navegación de cualquier especie, en 
+cualquier entorno 2D abierto, y no solo en el laberinto acuático. Hemos actualizado Pathfinder para 
+que los usuarios puedan definir sus propias entradas de software, lo que les permite analizar datos 
+de especies o tareas no admitidas originalmente. Por ejemplo, podría utilizarse para medir la 
+precisión espacial del comportamiento de orientación<sup>48,49</sup>, las preferencias espaciales 
+de mamíferos o invertebrados en entornos novedosos<sup>50-52</sup>, o la navegación con respecto a 
+otras características ambientales que se sabe que activan poblaciones específicas de neuronas, como 
+señales locales y distales<sup>53</sup>, objetos<sup>54,55</sup> y límites 
+ambientales<sup>56</sup>. Una variedad de entornos virtuales también abre la puerta a análisis 
+similares de la navegación espacial en humanos<sup>36,37,57,58</sup>. Finalmente, los datos de 
+seguimiento ocular, mientras humanos y primates no humanos exploran escenas 2D, proporcionan una 
+medida de navegación análoga a la exploración espacial de los roedores<sup>59</sup>. De hecho, los 
+sujetos con daño hipocampal muestran una búsqueda desorganizada e ineficiente en una tarea de 
+exploración de escenas y presentan deficiencias según varias métricas inspiradas en el laberinto 
+acuático, como el error de búsqueda acumulativo y el error de ángulo de dirección<sup>60</sup>. 
+Como aplicación fácil de usar que puede desarrollarse aún más para adaptarse a las diferencias 
+entre estos diversos paradigmas, Pathfinder puede ser una herramienta útil para caracterizar el 
+comportamiento espacial complejo y conectar los hallazgos entre humanos y modelos animales.
+
+
 
 **Data availability**
 
