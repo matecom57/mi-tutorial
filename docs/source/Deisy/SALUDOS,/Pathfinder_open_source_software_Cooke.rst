@@ -322,8 +322,15 @@ Additional variables are user-defined on the main window:
 3) Angular Corridor Width: the size of the angular navigational corridor (in degrees) that extends 
 from the start location and widens towards the goal, centered on the goal location.
 
+Ancho del corredor angular: el tamaño del corredor de navegación angular (en grados) que se 
+extiende desde la ubicación inicial y se ensancha hacia el objetivo, centrado en la ubicación del 
+objetivo.
+
 4) Chaining Annulus Width: the width of the chaining annulus, a donut-shaped zone that is centered 
 on the goal and spans all areas of the maze at a fixed distance from the maze wall.
+
+Chaining Annulus Width: the width of the chaining annulus, a donut-shaped zone that is centered on 
+the goal and spans all areas of the maze at a fixed distance from the maze wall.
 
 5) Thigmotaxis zone size: the width of a zone that spans the perimeter of the maze and extends 
 inward from the maze wall. Pathfinder also defines a “small” thigmotaxic zone that is half the 
@@ -334,9 +341,25 @@ strategies with respect to multiple goal locations (e.g. during spatial reversal
 Selecting “truncate trials” will artificially end the trials if/when the subject reaches the 
 additional goal locations.
 
+Tamaño de la zona de tigmotaxis: el ancho de una zona que abarca el perímetro del laberinto y se 
+extiende hacia el interior desde la pared del laberinto. Pathfinder también define una zona de 
+tigmotaxis "pequeña" que tiene la mitad del ancho de este valor. 6) Añadir objetivo: Pathfinder 
+realizará todos los cálculos y análisis de estrategias con respecto a un número ilimitado de 
+ubicaciones de objetivo. Todas estas variables se representan gráficamente en nuestro panel de 
+visualización a la derecha de la ventana principal. Esto se puede utilizar para medir el 
+rendimiento y caracterizar las estrategias con respecto a múltiples ubicaciones de objetivo (por 
+ejemplo, durante la inversión espacial o la elección espacial). Seleccionar "truncar ensayos" 
+finalizará artificialmente los ensayos si/cuando el sujeto alcance las ubicaciones de objetivo 
+adicionales.
+
 This is necessary, for example, to measure direct trajectories to a former goal location in a 
 reversal paradigm (since the strategy will no longer meet direct path criteria if the former 
 location in contacted and search continues elsewhere in the maze).
+
+Esto es necesario, por ejemplo, para medir trayectorias directas hacia una ubicación objetivo 
+anterior en un paradigma de inversión (ya que la estrategia ya no cumplirá con los criterios de 
+ruta directa si se contacta con la ubicación anterior y la búsqueda continúa en otra parte del 
+laberinto).
 
 Once the variables are defined, boundaries must be set to establish the criteria for strategy 
 categorization. Clicking “settings” will open up an additional window where strategy options can be 
@@ -345,7 +368,10 @@ categorizes trials into one of eight search strategies that are ordered accordin
 spatial specificity (high to low): 1) direct path, 2) focal search, 3) directed search, 4) indirect 
 search, 5) semifocal search, 6) chaining, 7) scanning, 8) random search, and 9) thigmotaxis. These 
 categories are mutually exclusive and follow a defined order (1 to 9), but the user can opt to 
-exclude strategies from the analysis. Thus, Pathfinder determines, in a stepwise fashion, whether a 
+exclude strategies from the analysis. 
+
+
+Thus, Pathfinder determines, in a stepwise fashion, whether a 
 given trial fulfills the criteria for direct swim. If so, it moves on to categorize the next trial. 
 If not, it determines whether the trial fits the subsequent strategy, and so on. The strategies and 
 their parameters are shown in Figure 2. In the output file (.csv), each trial is categorized and 
