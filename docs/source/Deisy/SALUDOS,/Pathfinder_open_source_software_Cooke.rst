@@ -1,7 +1,9 @@
 Pathfinder: open source software for analyzing spatial navigation search strategies
 =======================================================
 
-Abstract Spatial navigation is a universal behavior that varies depending on goals, experience and 
+**Abstract**
+
+Spatial navigation is a universal behavior that varies depending on goals, experience and 
 available sensory stimuli. Spatial navigational tasks are routinely used to study learning, memory 
 and goal-directed behavior, in both animals and humans. One popular paradigm for testing spatial 
 memory is the Morris water maze, where subjects learn the location of a hidden platform that offers 
@@ -23,7 +25,7 @@ updated to accommodate future developments in spatial behavioral analyses. Given
 Pathfinder may be a useful tool for studying how navigational strategies are regulated by the 
 environment, depend on specific neural circuits, and are altered by pathology.
 
-Updates from Version 1
+**Updates from Version 1**
 
 We have updated Pathfinder in order to be more robust, easy to use, and more versatile. These 
 updates include a new View Pane on the main window which displays the current user-defined 
@@ -39,9 +41,9 @@ This, like all previous parameters, is an optional Search Strategy for Pathfinde
 trials into. Updates to Pathfinder are available on our GitHub https://github.com/MatthewBCooke/ 
 Pathfinder, where you can download the most up-to-date version of the software.
 
-Any further responses from the reviewers can be found at the end of the article
+**Any further responses from the reviewers can be found at the end of the article**
 
-Introduction
+**Introduction**
 
 All living organisms move throughout space to survive. Amongst mammals, there is a diversity of 
 spatial behaviors that depend on numerous factors such as anxiety1 , 2 , learning3 , and the nature 
@@ -67,7 +69,6 @@ Over the years, a number of groups have described manual and automated methods f
 search strategies used by animals and humans in water maze experiments8 , 10 – 19 . By 
 mathematically relating the swim path to features of the maze environment one can identify and 
 quantify the types of search strategies employed. Search strategy analyses have
-
 revealed that the ventral hippocampus is involved in coarse spatial goal-directed search16 , that 
 adult neurogenesis promotes spatially precise search20 , and that spatially accurate search is 
 reduced in humans with, and/or animal models of, Alzheimer’s disease21 , 22 , autism23 , traumatic 
@@ -83,7 +84,12 @@ adjustable parameters for conducting detailed analyses of spatial search pattern
 Pathfinder with a mouse water maze dataset, where we find that male and female mice develop 
 increasingly specific and direct spatial search strategies with additional days of training.
 
-Methods Installation and dependencies Pathfinder is freely available under the GNU General Public 
+**Methods** 
+
+**Installation and dependencies**
+
+ Pathfinder is freely available under the GNU General 
+Public 
 License version 3.0.
 
 Detailed instructions on use and installation of the program can be found on Github at 
@@ -98,7 +104,9 @@ Massachusetts, United States). Once Anaconda is installed, Pathfinder can be dow
 or by typing “pip install jsl-pathfinder” in a shell window (i.e. Mac terminal or Windows command 
 line). Pathfinder is then opened by typing “pathfinder” into the shell window and pressing return.
 
-General usage Pathfinder has a simple, user-friendly interface for extracting information from 
+**General usage**
+
+Pathfinder has a simple, user-friendly interface for extracting information from 
 spatial navigation tracking files that contain xy coordinates over time (Figure 1). While it can be 
 used to analyze multiple types of 2D navigational data, it is optimized for rodent spatial water 
 maze experiments and accepts inputs from commonly-used commercial tracking software, including 
@@ -106,12 +114,13 @@ Ethovison (Noldus), Anymaze (Stoelting) and WaterMaze (Actimetrics). Inputs can 
 using the ‘Define..’ button. This allows the user to input files from other tracking systems or 
 modified versions of supported output files. Pathfinder can also open files exported from the open 
 source tracking software, ezTrack26 , enabling a cost-effective and
-
 fully open source workflow for detailed water maze behavioral analyses. Trial information from 
 these programs are outputted in CSV or Excel format, which can then be inputted into Pathfinder 
 through the File menu. The experimental setup is specified in the main window (Figure 1a). 
 Pathfinder can automatically calculate the position and size of the maze and the goal location 
 (provided they are constant across trials), or these parameters can be entered manually.
+
+.. figure:: p1.png
 
 Figure 1. Graphical user interface and setting parameters. a) Screenshot of the main application 
 window, where maze geometry is defined, and input and output settings are established. On the right 
