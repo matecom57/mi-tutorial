@@ -620,6 +620,18 @@ days (day effect F7,231 =48, P<0.0001; sex effect F1,33 =2.5, P=0.12; interactio
 P=0.8). e) Idea path error decreased over days (day effect F7,231 =79, P<0.0001; sex effect F1,33 
 =0.3, P=0.6; interaction F7,231 =1.0, P=0.4). f) 
 
+Figura 3. Rendimiento en adquisición y reversión evaluado mediante parámetros individuales. a) 
+Esquema del paradigma conductual completo. Se analizaron las métricas de rendimiento individuales 
+para las etapas de adquisición (b–f) y reversión (g–k) de la prueba. b) La latencia para alcanzar 
+la plataforma disminuyó con el paso de los días (efecto del día F7,231 = 75, p < 0,0001; efecto del 
+sexo F1,33 = 0,3, p = 0,6; interacción F7,231 = 0,9, p = 0,5). Los asteriscos indican diferencias 
+estadísticamente significativas con respecto a los días subsiguientes, indicadas por los números. 
+c) El error de dirección inicial disminuyó con el paso de los días (efecto del día F7,231 = 39, p < 
+0,0001; efecto del sexo F1,33 = 0,4, p = 0,6; interacción F7,231 = 0,7, p = 0,6). d) El error 
+promedio de dirección disminuyó con el paso de los días (efecto del día F7,231 = 48, p < 0,0001; 
+efecto del sexo F1,33 = 2,5, p = 0,12; interacción F7,231 = 0,6, p = 0,8). e) El error de ruta de 
+la idea disminuyó con el paso de los días (efecto del día F7,231 = 79, p < 0,0001; efecto del sexo 
+F1,33 = 0,3, p = 0,6; interacción F7,231 = 1,0, p = 0,4). f)
 
 Entropy decreased over days (day effect F7,231 
 =75, P<0.0001; sex effect F1,33 =1.3, P=0.3; interaction F7,231 =0.5, P=0.8). g) Latency decreased 
@@ -634,6 +646,22 @@ days (day effect F2,66 =39, P<0.0001; sex effect F1,33 =0.6, P=0.4; interaction 
 P=0.08). *P<0.05, **P<0.01, ***P<0.001, ****P<0.0001,† P<0.05 within day, male vs female 
 comparison. Symbols = mean ± standard error.
 
+La entropía disminuyó con el paso de los días (efecto del día F7,231 = 75, p < 0,0001; efecto del 
+sexo F1,33 = 1,3, p = 0,3; interacción F7,231 = 0,5, p = 0,8). g) La latencia disminuyó con el paso 
+de los días (efecto del día F2,66 = 69, p < 0,0001; efecto del sexo F1,33 = 0,5, p = 0,5; 
+interacción F2,66 = 0,7, p = 0,5). h) El error de rumbo inicial disminuyó con el paso de los días y 
+fue mayor en las hembras el día 1 (efecto del día F2,66 = 9, p < 0,001; efecto del sexo F1,33 = 
+1,0, p = 0,3; interacción F2,66 = 4,7, p = 0,01). i) El error de rumbo promedio disminuyó con el 
+paso de los días (efecto del día F2,66 = 21, p < 0,0001; efecto del sexo F1,33 = 0,2, p = 0,7; 
+interacción F2,66 = 0,9, p = 0,4). j) El error de trayectoria ideal disminuyó con el paso de los 
+días (efecto del día F2,66 = 98, p < 0,0001; efecto del sexo F1,33 = 0,5, p = 0,5; interacción 
+F2,66 = 0,7, p = 0,5). k) La entropía disminuyó con el paso de los días (efecto del día F2,66 = 39, 
+p < 0,0001; efecto del sexo F1,33 = 0,6, p = 0,4; interacción F2,66 = 2,6, p = 0,08). *p < 0,05, 
+**p < 0,01, ***p < 0,001, ****p < 0,0001, †p < 0,05 dentro del día, comparación entre hombres y 
+mujeres. Símbolos = media ± error estándar.
+
+
+
 Pathfinder revealed clear differences in search strategies over days of training (Figure 4). Over 
 the first two days of acquisition, mice were initially thigmotaxic. After learning that the pool 
 wall did not afford escape, they then transitioned to chaining, random and scanning search 
@@ -646,6 +674,22 @@ specific on over 80% of trials. There were no major sex differences in strategy.
 strategy analyses (at least with default settings) for long probe trials is limited since 
 spatially-specific strategies rely on IPE, which rapidly increases with trial duration. 
 
+Pathfinder reveló claras diferencias en las estrategias de búsqueda a lo largo de los días de 
+entrenamiento (Figura 4). Durante los dos primeros días de adquisición, los ratones mostraron 
+inicialmente tigmotaxia. Tras aprender que la pared de la piscina no ofrecía una vía de escape, 
+pasaron a patrones de búsqueda encadenados, aleatorios y de exploración, todos ellos indicativos de 
+una búsqueda espacialmente inespecífica lejos de la pared de la piscina. Entre los días 2 y 3, los 
+ratones adoptaron formas de búsqueda espacialmente específicas, y aproximadamente el 30 % realizó 
+búsquedas indirectas para localizar la plataforma. Una proporción similar de ensayos consistió en 
+búsquedas indirectas entre los días 2 y 8 de entrenamiento. Los ratones mostraron cada vez más 
+búsquedas dirigidas, búsquedas focales y trayectorias directas, de modo que, al finalizar el 
+entrenamiento, la búsqueda fue espacialmente específica en más del 80 % de los ensayos. No se 
+observaron diferencias significativas entre sexos en cuanto a la estrategia. La utilidad de los 
+análisis de estrategias (al menos con la configuración predeterminada) para ensayos de sonda largos 
+es limitada, ya que las estrategias espacialmente específicas dependen del IPE, que aumenta 
+rápidamente con la duración del ensayo.
+
+
 Additionally, animals will change strategies as they learn that the escape platform is not 
 available in the expected location. Indeed, when the probe trial analysis was restricted to the 
 first 10s, mice displayed focal and directed search strategies, indicating perseveration at the 
@@ -656,6 +700,18 @@ indicating that mice eventually abandoned strategies that were no longer success
 reversal, spatial specificity was initially very poor; mice primarily scanned, indicating preserved 
 knowledge of the procedural requirements but no knowledge of the platform location. 
 
+Además, los animales modifican sus estrategias al descubrir que la plataforma de escape no se 
+encuentra en la ubicación esperada. De hecho, al limitar el análisis de la prueba de sonda a los 
+primeros 10 segundos, los ratones mostraron estrategias de búsqueda focal y dirigida, lo que indica 
+perseverancia en la ubicación anterior de la plataforma. Al analizar segmentos más largos, el 
+encadenamiento fue frecuente, lo que sugiere que los ratones adoptaron una estrategia procedimental 
+de búsqueda en regiones similares de la piscina. Finalmente, al examinar la prueba de sonda 
+completa, predominaron las búsquedas exploratorias y aleatorias, lo que indica que los ratones 
+finalmente abandonaron las estrategias que ya no resultaban efectivas. Durante la reversión, la 
+especificidad espacial fue inicialmente muy baja; los ratones principalmente exploraron, lo que 
+indica que conservaban el conocimiento de los requisitos procedimentales, pero no la ubicación de 
+la plataforma.
+
 By the end of 
 day 2 mice displayed levels of spatially-specific search strategies that were comparable to those 
 at the end of the acquisition phase. Using the “add goal” feature, we also analyzed reversal 
@@ -663,7 +719,15 @@ strategies with respect to the original goal location (Figure 4b). This revealed
 paths to the goal on the first day that quickly dissipated with additional trials as mice learning 
 the new platform location. This analysis was performed without the semi-focal search strategy.
 
-.. image:: a4.png
+Al finalizar el segundo día, los ratones mostraron niveles de estrategias de búsqueda espacialmente 
+específicas comparables a los observados al final de la fase de adquisición. Mediante la función 
+«añadir objetivo», también analizamos las estrategias de reversión con respecto a la ubicación 
+original del objetivo (Figura 4b). Esto reveló varias rutas directas hacia el objetivo durante el 
+primer día, las cuales desaparecieron rápidamente con los ensayos adicionales a medida que los 
+ratones aprendían la nueva ubicación de la plataforma. Este análisis se realizó sin la estrategia 
+de búsqueda semifocal.
+
+ .. image:: a4.png
 
 Figure 4. Pathfinder search strategy categorization of water maze performance. a) Search strategies 
 for male and female mice. Each set of stacked bars indicates strategies used for the 4 acquisition 
@@ -672,6 +736,16 @@ the first 10, 20 and 30s. b) Reversal strategies relative to the original platfo
 (indirect search excluded from analyses, since short swims that bypass the old location but quickly 
 go to the new location become incorrectly classified as indirect searches with current settings). 
 c) Escape latencies for all 1888 trials varied by strategy. 
+
+Figura 4. Categorización de la estrategia de búsqueda Pathfinder en el laberinto acuático. a) 
+Estrategias de búsqueda para ratones machos y hembras. Cada conjunto de barras apiladas indica las 
+estrategias utilizadas en los 4 ensayos de adquisición y reversión de cada día. Se muestran las 
+estrategias de sondeo para todo el ensayo (0-60 s) y para los primeros 10, 20 y 30 s. b) 
+Estrategias de reversión con respecto a la ubicación original de la plataforma (se excluyen las 
+búsquedas indirectas de los análisis, ya que los nados cortos que evitan la ubicación anterior pero 
+se dirigen rápidamente a la nueva se clasifican erróneamente como búsquedas indirectas con la 
+configuración actual). c) Las latencias de escape para los 1888 ensayos variaron según la 
+estrategia.
 
 Symbols indicate individual trials, 
 bars indicate means (Kruskal Wallis test, P<0.0001; Dunn’s tests: direct path vs all others except 
@@ -686,6 +760,22 @@ the same classification by both raters. e) Search strategy classification by rat
 of testing. f) Search strategy classification by rater 2 for each day of testing. g) Search 
 strategy classification by Pathfinder for each day of testing.
 
+Los símbolos indican ensayos individuales y las barras, las medias (prueba de Kruskal-Wallis, p < 
+0,0001; pruebas de Dunn: ruta directa frente a todas las demás excepto búsqueda focal, p < 0,0001; 
+búsqueda focal frente a todas las demás excepto ruta directa, p < 0,0001; búsqueda dirigida frente 
+a todas las demás excepto búsqueda indirecta, p < 0,0001; búsqueda indirecta frente a todas las 
+demás excepto búsqueda dirigida, p < 0,0001; encadenamiento frente a todas las demás excepto 
+exploración y aleatoria, p < 0,01; exploración frente a todas las demás excepto encadenamiento y 
+tigmotaxis, p < 0,01; aleatoria frente a todas las demás excepto encadenamiento, p < 0,05; 
+tigmotaxis frente a todas las demás excepto búsqueda aleatoria, p < 0,05). d) Categorización manual 
+frente a automática. Para cada estrategia asignada por Pathfinder, se muestra la proporción que 
+recibió la misma clasificación (manual) por parte de dos evaluadores. «Evaluadores 1+2» indica el 
+porcentaje de ensayos clasificados por Pathfinder que también recibieron la misma clasificación por 
+parte de ambos evaluadores. e) Clasificación de la estrategia de búsqueda por el evaluador 1 para 
+cada día de prueba. f) Clasificación de la estrategia de búsqueda por el evaluador 2 para cada día 
+de prueba. g) Clasificación de la estrategia de búsqueda por Pathfinder para cada día de prueba.
+
+
 To investigate possible relationships between strategy and conventional measures of water maze 
 performance, we examined escape latencies for each strategy type, over all trials (1888 trials from 
 all 15 days of testing; Figure 4c). Direct swim trials had the lowest latencies (2.9s on average) 
@@ -693,6 +783,16 @@ and was followed by the other spatially-specific strategies (focal search, 3.6s;
 6.7s; indirect search, 5.8s). Non-specific strategies that avoided the pool wall were all 
 significantly worse than the spatially specific strategies (chaining, 29s; scanning, 32s; random, 
 38s), and thigmotaxic trials were significantly worse than all other trial types (58s).
+
+Para investigar posibles relaciones entre la estrategia y las medidas convencionales del desempeño 
+en el laberinto acuático, examinamos las latencias de escape para cada tipo de estrategia en todos 
+los ensayos (1888 ensayos de los 15 días de prueba; Figura 4c). Los ensayos de nado directo 
+presentaron las latencias más bajas (2,9 s en promedio), seguidos por las demás estrategias 
+espacialmente específicas (búsqueda focal, 3,6 s; búsqueda dirigida, 6,7 s; búsqueda indirecta, 5,8 
+s). Las estrategias no específicas que evitaban la pared de la piscina fueron significativamente 
+peores que las estrategias espacialmente específicas (encadenamiento, 29 s; exploración, 32 s; 
+aleatoria, 38 s), y los ensayos tigmotáxicos fueron significativamente peores que todos los demás 
+tipos de ensayos (58 s).
 
 To determine how Pathfinder compared to subjective assessment of strategy, we compared Pathfinder 
 categorization to manual scores generated by 2 independent raters (all trials). Rater 1 had 
@@ -709,6 +809,24 @@ days of testing, automatic and manual categorization resulted in similar pattern
 Thus, manual scoring is unreliable at the level of an individual trial, and human error can be 
 masked when data are averaged.
 
+Para determinar la eficacia de Pathfinder en comparación con la evaluación subjetiva de la 
+estrategia, comparamos la categorización de Pathfinder con las puntuaciones manuales generadas por 
+dos evaluadores independientes (en todos los ensayos). El evaluador 1 tenía experiencia en pruebas 
+de comportamiento de ratones, pero solo una breve formación en la clasificación de estrategias en 
+laberintos acuáticos. El evaluador 2 desarrolló Pathfinder (MBC) y tenía amplia experiencia en la 
+clasificación de estrategias. La figura 4d muestra la proporción de ensayos categorizados con 
+Pathfinder que recibieron la misma clasificación de estrategia por parte de los evaluadores 
+manuales. La mayor correspondencia entre la categorización automática y la manual se observó en la 
+natación directa y la tigmotaxis (aproximadamente el 80 % en ambos casos). La consistencia entre la 
+categorización automática y la manual fue mucho menor para las demás estrategias, oscilando entre 
+el 25 % y el 75 %, y difirió entre los dos evaluadores. La consistencia general entre los dos 
+evaluadores manuales fue del 65 %. Estos datos ponen de manifiesto la dificultad de diferenciar 
+intuitivamente rutas de búsqueda complejas. Curiosamente, al promediar los análisis de estrategias 
+durante los 15 días de pruebas, la categorización automática y la manual arrojaron patrones 
+similares (figuras 4e-g). Por lo tanto, la puntuación manual no es fiable a nivel de un ensayo 
+individual, y el error humano puede quedar enmascarado cuando se promedian los datos.
+
+ 
 To provide an intuitive visual inspection of search performance, we used Pathfinder to generate 
 heatmaps of spatial occupancy at stages of testing that differed in spatial search patterns (Figure 
 5). Averaged over all trials and across sexes, mice swam in close proximity to the pool wall on day 
@@ -722,7 +840,23 @@ can be useful for visualizing within-trial details since it avoids saturation. H
 differentially scaling, it can also obscure or inflate differences across trials. We therefore 
 include a second set of heatmaps that are all scaled equivalently.
 
-**Discussion**
+Para facilitar una inspección visual intuitiva del rendimiento de búsqueda, utilizamos Pathfinder 
+para generar mapas de calor de la ocupación espacial en etapas de prueba que diferían en los 
+patrones de búsqueda espacial (Figura 5). En promedio, considerando todos los ensayos y ambos 
+sexos, los ratones nadaron cerca de la pared de la piscina el primer día de la adquisición inicial. 
+Para los días 3 y 8, la búsqueda se concentró cada vez más cerca del objetivo. La preferencia 
+espacial fue más evidente en el ensayo de prueba, ya que estos ensayos proporcionaron un intervalo 
+de tiempo mayor para acumular muestras de ocupación espacial. El primer día de la prueba de 
+reversión fue similar al ensayo de prueba, dado que los ratones pasaron la mayor parte del tiempo 
+en la ubicación anterior de la plataforma. Para el día 3, y en el ensayo de prueba, su preferencia 
+espacial se había desplazado a la nueva ubicación correcta. Se presenta un conjunto de mapas de 
+calor utilizando la función de autoescala de Pathfinder, que maximiza el rango de color dentro de 
+un ensayo y puede ser útil para visualizar detalles dentro del ensayo, ya que evita la saturación. 
+Sin embargo, al escalar de forma diferencial, también puede ocultar o exagerar las diferencias 
+entre ensayos. Por lo tanto, incluimos un segundo conjunto de mapas de calor que están todos a la 
+misma escala.
+
+ **Discussion**
 
 Here we describe Pathfinder, an easy-to-use software package for analyzing patterns of spatial 
 navigation. Pathfinder performs automatic classification of multiple search strategies that have 
@@ -733,7 +867,10 @@ tracking programs (Ethovision, Anymaze, Watermaze) and also the freely-available
 ezTrack26 . It requires no programming knowledge, but is open source and can be expanded by 
 developers in the future. Using a mouse water maze dataset, we validated Pathfinder’s performance 
 and found that mice progressed through a series of search strategies that had increasing levels of 
-spatial search specificity, consistent with earlier reports16 – 18 , 20 , 21 , 25 , 31 . Mice 
+spatial search specificity, consistent with earlier reports16 – 18 , 20 , 21 , 25 , 31 . 
+
+
+Mice 
 initially displayed thigmotaxic, random and chaining search strategies as they learned the 
 procedural components of the task. Pathfinder effectively demonstrated that mice transitioned to 
 spatially-specific, presumably hippocampal-dependent, strategies during the later stages of 
