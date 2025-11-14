@@ -869,6 +869,18 @@ developers in the future. Using a mouse water maze dataset, we validated Pathfin
 and found that mice progressed through a series of search strategies that had increasing levels of 
 spatial search specificity, consistent with earlier reports16 – 18 , 20 , 21 , 25 , 31 . 
 
+Aquí describimos Pathfinder, un paquete de software fácil de usar para analizar patrones de 
+navegación espacial. Pathfinder realiza la clasificación automática de múltiples estrategias de 
+búsqueda descritas previamente en el laberinto acuático para roedores, pero también puede 
+utilizarse para analizar el comportamiento de navegación en laberintos secos, laberintos virtuales 
+o cualquier otro entorno donde se proporcionen coordenadas xy. Actualmente, Pathfinder acepta datos 
+de entrada de tres programas de seguimiento comerciales de uso común (Ethovision, Anymaze y 
+Watermaze), así como del software de seguimiento gratuito ezTrack26. No requiere conocimientos de 
+programación, es de código abierto y puede ser ampliado por desarrolladores en el futuro. 
+Utilizando un conjunto de datos del laberinto acuático para ratones, validamos el rendimiento de 
+Pathfinder y observamos que los ratones progresaron a través de una serie de estrategias de 
+búsqueda con niveles crecientes de especificidad espacial, en consonancia con informes 
+anteriores16-18, 20, 21, 25, 31.
 
 Mice 
 initially displayed thigmotaxic, random and chaining search strategies as they learned the 
@@ -883,6 +895,20 @@ static images of swim paths was slow and inconsistent, Pathfinder
 may therefore be a useful tool for objectively characterizing swim strategies in the rodent water 
 maze and 2D spatial navigation in other behavioral paradigms.
 
+Inicialmente, los ratones mostraron estrategias de búsqueda tigmotáxicas, aleatorias y encadenadas 
+mientras aprendían los componentes procedimentales de la tarea. Pathfinder demostró eficazmente 
+que, durante las últimas etapas del entrenamiento, los ratones adoptaron estrategias espacialmente 
+específicas, presumiblemente dependientes del hipocampo. Pathfinder también reveló la transición 
+inversa, de estrategias espaciales a procedimentales y, finalmente, a aleatorias, en la prueba de 
+sonda. Al analizar el rendimiento de la reversión con respecto a múltiples ubicaciones objetivo, 
+Pathfinder mostró que los ratones redirigen su búsqueda espacial desde la plataforma previamente 
+reforzada hacia la nueva ubicación. Los ratones mostraron diversas estrategias de búsqueda en un 
+mismo día, incluso después de que el rendimiento en la latencia de escape se estabilizara. Dado que 
+la clasificación manual basada en imágenes estáticas de las trayectorias de nado era lenta e 
+inconsistente, Pathfinder podría ser una herramienta útil para caracterizar objetivamente las 
+estrategias de nado en el laberinto acuático para roedores y la navegación espacial bidimensional 
+en otros paradigmas conductuales.
+
 .. image:: a5.png
 
 Figure 5. Heatmap visualization of spatial occupancy. Examples of heatmaps for various testing days 
@@ -890,6 +916,14 @@ Figure 5. Heatmap visualization of spatial occupancy. Examples of heatmaps for v
 to occupy the full color spectrum and facilitate visualization of spatial occupancy within a given 
 day. Bottom rows: heatmaps were set to a common scale, to facilitate comparison across days. Scale 
 indicates number of samples within a spatial bin.
+
+Figura 5. Visualización mediante mapa de calor de la ocupación espacial. Ejemplos de mapas de calor 
+para distintos días de prueba (todos los ensayos de ambos sexos combinados). Filas superiores: 
+Pathfinder escaló automáticamente los mapas de calor para abarcar todo el espectro de color y 
+facilitar la visualización de la ocupación espacial en un día determinado. Filas inferiores: los 
+mapas de calor se configuraron a una escala común para facilitar la comparación entre días. La 
+escala indica el número de muestras dentro de un intervalo espacial.
+
 
 The water maze was initially described nearly 40 years ago and quickly became popular due to the 
 ease of training, strong motivation for escape, and consistent reliance on hippocampal
@@ -902,7 +936,10 @@ employ a chaining strategy search nonspecifically in some cases can reach the pl
 animals that perform a directed spatial search (Figure 4c). Latency and path length are also less 
 capable of detecting age-related impairments in spatial learning, prompting development of measures 
 of proximity to the goal location, which has proven to be highly sensitive to group differences in 
-both training and probe trial performance9 , 27 , 33 . Our IPE proximity measure is similar to 
+both training and probe trial performance9 , 27 , 33 . 
+
+
+Our IPE proximity measure is similar to 
 previous proximity measures with the exception that the cumulative ideal path distance is 
 subtracted from the cumulative actual path distance to generate a path error measure. Finally, 
 another recent metric that has been reported to be even more sensitive to group differences in 
