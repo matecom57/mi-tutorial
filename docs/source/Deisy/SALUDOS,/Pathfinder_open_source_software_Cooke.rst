@@ -938,6 +938,22 @@ capable of detecting age-related impairments in spatial learning, prompting deve
 of proximity to the goal location, which has proven to be highly sensitive to group differences in 
 both training and probe trial performance9 , 27 , 33 . 
 
+El laberinto acuático se describió inicialmente hace casi 40 años y rápidamente se popularizó 
+debido a la facilidad de entrenamiento, la fuerte motivación para escapar y su dependencia 
+constante de la función del hipocampo<sup>3,32</sup>. Si bien los primeros trabajos realizaron 
+análisis más exhaustivos y validaron el laberinto acuático, la latencia de escape y la longitud del 
+recorrido se adoptaron rápidamente como las principales medidas de aprendizaje y, debido a su 
+simplicidad y suficiencia para muchas situaciones experimentales, siguen siendo las métricas más 
+utilizadas. Sin embargo, no siempre permiten diferenciar entre comportamientos que varían en el 
+grado de sesgo espacial. Por ejemplo, los animales que emplean una estrategia de encadenamiento 
+buscan de forma inespecífica en algunos casos, pueden llegar a la plataforma tan rápido como los 
+animales que realizan una búsqueda espacial dirigida (Figura 4c). La latencia y la longitud del 
+recorrido también son menos capaces de detectar el deterioro del aprendizaje espacial relacionado 
+con la edad, lo que impulsó el desarrollo de medidas de proximidad a la ubicación objetivo, que han 
+demostrado ser muy sensibles a las diferencias grupales tanto en el entrenamiento como en el 
+rendimiento de las pruebas de exploración<sup>9,27,33</sup>.
+
+
 
 Our IPE proximity measure is similar to 
 previous proximity measures with the exception that the cumulative ideal path distance is 
@@ -950,6 +966,18 @@ search on the precise goal location. By default, Pathfinder applies equal weight
 goal components of the entropy measure and, compared to standard metrics, entropy was slightly 
 better at detecting performance changes during the later stages of water maze acquisition.
 
+Nuestra medida de proximidad IPE es similar a medidas de proximidad anteriores, con la excepción de 
+que la distancia acumulada del camino ideal se resta de la distancia acumulada del camino real para 
+generar una medida de error de camino. Finalmente, otra métrica reciente que ha demostrado ser aún 
+más sensible a las diferencias grupales en el rendimiento de las pruebas de exploración espacial es 
+la entropía<sup>28</sup>. La entropía es originalmente una medida del desorden termodinámico en un 
+sistema, pero, al aplicarse a la distribución de sitios muestreados en un laberinto, también puede 
+utilizarse para medir la transición de un alto a un bajo desorden en la navegación, a medida que 
+los animales centran su búsqueda en la ubicación precisa del objetivo. Por defecto, Pathfinder 
+aplica la misma ponderación a los componentes de camino y objetivo de la medida de entropía y, en 
+comparación con las métricas estándar, la entropía resultó ligeramente mejor para detectar cambios 
+en el rendimiento durante las últimas etapas de la adquisición del laberinto acuático.
+
 Despite their convenience, even the most precise individual measures cannot distinguish between 
 multiple possible strategies that an animal might employ to reach a goal location. Thus, strategy 
 analyses may be valuable for identifying the role that different circuits play in guiding behavior. 
@@ -958,7 +986,10 @@ analyses have found that the ventral hippocampus is particularly important for d
 non-specific search patterns in the water maze and that increasingly spatially localized search 
 depends on sequential recruitment of intermediate and then dorsal hippocampus16 . Adult-born 
 neurons are believed to promote memory precision and, indeed, blocking neurogenesis greatly reduced 
-the adoption of spatially-specific search strategies20 . Strategy analyses in animals have revealed 
+the adoption of spatially-specific search strategies20 . 
+
+
+Strategy analyses in animals have revealed 
 spatial precision-related deficits in models of aging25 , stroke35 , traumatic brain injury22 , 24 
 , autism 23 and Alzheimer’s pathology21 , 22 . With the advent of virtual reality, it has also 
 become possible to test whether rodent water maze findings generalize to humans15 . Indeed, 
