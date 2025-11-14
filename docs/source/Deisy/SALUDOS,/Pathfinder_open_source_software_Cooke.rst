@@ -67,6 +67,17 @@ and time. The new features were developed by Ricky Ma, who has therefore been ad
 this updated version of the publication. Finally, we have added a relaxed focal search parameter, 
 semi-focal search.
 
+Hemos actualizado Pathfinder para que sea más robusto, fácil de usar y versátil. Estas 
+actualizaciones incluyen un nuevo panel de visualización en la ventana principal que muestra los 
+parámetros definidos por el usuario. Esto permite a los usuarios ver rápidamente los cambios 
+realizados para establecer con mayor precisión los límites de clasificación deseados. También hemos 
+añadido la función «Definir software», que permite importar datos para los que no hemos 
+implementado compatibilidad explícita. Pathfinder ahora acepta datos de cualquier formato de 
+salida, siempre que el archivo .csv o .xlsx contenga columnas para las coordenadas x e y, y la 
+hora. Las nuevas funciones fueron desarrolladas por Ricky Ma, quien, por lo tanto, se ha añadido 
+como autor en esta versión actualizada de la publicación. Finalmente, hemos añadido un parámetro de 
+búsqueda focal relajada: la búsqueda semifocal.
+
 This, like all previous parameters, is an optional Search Strategy for Pathfinder to classify 
 trials into. Updates to Pathfinder are available on our GitHub https://github.com/MatthewBCooke/ 
 Pathfinder, where you can download the most up-to-date version of the software.
@@ -85,6 +96,18 @@ paradigms offer the convenience of fixed choice points that reduce ambiguity ass
 classifying decisions and navigational responses, they cannot be used to study patterns of 
 exploration in open environments.
 
+Todos los organismos vivos se desplazan por el espacio para sobrevivir. Entre los mamíferos, existe 
+una diversidad de comportamientos espaciales que dependen de numerosos factores, como la 
+ansiedad<sup>1,2</sup>, el aprendizaje<sup>3</sup> y la naturaleza y el patrón de los estímulos que 
+predicen los objetivos<sup>4-6</sup>. Dada la propensión natural de los roedores a explorar 
+estímulos y entornos, se ha desarrollado una variedad de tareas de navegación para investigar cómo 
+interactúan diversas regiones cerebrales para controlar el comportamiento dirigido a 
+objetivos<sup>7</sup>. Esto se ha llevado a cabo habitualmente utilizando laberintos de trayectoria 
+fija, como el laberinto en T o el laberinto radial. Si bien estos paradigmas de laberintos secos 
+ofrecen la conveniencia de puntos de decisión fijos que reducen la ambigüedad asociada con la 
+clasificación de decisiones y respuestas de navegación, no se pueden utilizar para estudiar 
+patrones de exploración en entornos abiertos.
+
 A popular approach for studying free navigation in animals has been the water maze, where rodents 
 learn the location of a hidden escape platform in a pool of water based on distal and/or local cue 
 configurations 3 Early studies validated the usefulness of the water maze for studying spatial 
@@ -94,6 +117,18 @@ latency or path length as primary measures of spatial learning. However, water m
 unconstrained and animals can solve the task using different strategies that may not always differ 
 in terms of the time it takes to reach the platform8 , 9 . Thus, while latency and path length 
 measures are convenient, they discard a rich amount of behavioral data.
+
+Un método popular para estudiar la navegación libre en animales ha sido el laberinto acuático, 
+donde los roedores aprenden la ubicación de una plataforma de escape oculta en un estanque 
+basándose en configuraciones de señales distales y/o locales.<sup>3</sup> Estudios iniciales 
+validaron la utilidad del laberinto acuático para estudiar el procesamiento espacial y describieron 
+etapas progresivas de aprendizaje en las que el roedor busca la plataforma con una especificidad 
+espacial cada vez mayor.<sup>8,9</sup> La gran mayoría de los estudios posteriores han utilizado la 
+latencia de escape o la longitud del recorrido como medidas principales del aprendizaje espacial. 
+Sin embargo, la navegación en el laberinto acuático no está restringida y los animales pueden 
+resolver la tarea utilizando diferentes estrategias que no siempre difieren en el tiempo que tardan 
+en alcanzar la plataforma.<sup>8,9</sup> Por lo tanto, si bien las medidas de latencia y longitud 
+del recorrido son convenientes, descartan una gran cantidad de datos conductuales.
 
 Over the years, a number of groups have described manual and automated methods for classifying 
 search strategies used by animals and humans in water maze experiments8 , 10 – 19 . By 
@@ -106,6 +141,22 @@ brain injury 22 , 24 and aging14 , 25 . Despite the utility of these analyses th
 relatively uncommon to date, likely because commercially-available software packages often do not 
 perform these analyses and the analytic methods used in previous work are not typically available 
 in the form of an easy-to-use software package.
+
+A lo largo de los años, diversos grupos han descrito métodos manuales y automatizados para 
+clasificar las estrategias de búsqueda empleadas por animales y humanos en experimentos con 
+laberintos acuáticos<sup>8, 10-19</sup>. Al relacionar matemáticamente la trayectoria de nado con 
+las características del entorno del laberinto, es posible identificar y cuantificar los tipos de 
+estrategias de búsqueda utilizadas. Los análisis de estrategias de búsqueda han revelado que el 
+hipocampo ventral participa en la búsqueda espacial general dirigida a un objetivo<sup>16</sup>, 
+que la neurogénesis adulta promueve la búsqueda espacialmente precisa<sup>20</sup> y que la 
+búsqueda espacialmente precisa se reduce en humanos con enfermedad de Alzheimer y/o en modelos 
+animales de estas enfermedades<sup>21, 22</sup>, autismo<sup>23</sup>, traumatismo 
+craneoencefálico<sup>22, 24</sup> y envejecimiento<sup>14, 25</sup>. A pesar de la utilidad de 
+estos análisis, hasta la fecha han sido relativamente poco comunes, probablemente porque los 
+paquetes de software disponibles comercialmente a menudo no realizan estos análisis y los métodos 
+analíticos empleados en trabajos anteriores no suelen estar disponibles en forma de un software 
+fácil de usar.
+
 
 To facilitate the study of navigational search strategies, whether in the water maze or other 
 2-dimensional navigational paradigms, we created a new software application called Pathfinder. 
