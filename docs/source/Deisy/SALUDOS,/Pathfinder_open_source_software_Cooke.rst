@@ -12,7 +12,9 @@ escape, though this reveals little about the underlying navigational strategies.
 of studies have begun to classify water maze search strategies in order to clarify the precise 
 spatial and mnemonic functions of different brain regions, and to identify which aspects of spatial 
 memory are disrupted in disease models. However, despite their usefulness, strategy analyses have 
-not been widely adopted due to the lack of software to automate analyses. To address this need we 
+not been widely adopted due to the lack of software to automate analyses. 
+
+To address this need we 
 developed Pathfinder, an open source application for analyzing spatial navigation behaviors. In a 
 representative dataset, we show that Pathfinder effectively characterizes the development of 
 highly-specific spatial search strategies as male and female mice learn a standard spatial water 
@@ -325,6 +327,7 @@ searches, focal searches and direct paths such that, by the end of training, sea
 specific on over 80% of trials. There were no major sex differences in strategy. The usefulness of 
 strategy analyses (at least with default settings) for long probe trials is limited since 
 spatially-specific strategies rely on IPE, which rapidly increases with trial duration. 
+
 Additionally, animals will change strategies as they learn that the escape platform is not 
 available in the expected location. Indeed, when the probe trial analysis was restricted to the 
 first 10s, mice displayed focal and directed search strategies, indicating perseveration at the 
@@ -333,7 +336,9 @@ indicating that mice adopted a procedural strategy of searching in similar regio
 pool. Finally, when examining the entire probe trial, scanning and random searches dominated, 
 indicating that mice eventually abandoned strategies that were no longer successful. During 
 reversal, spatial specificity was initially very poor; mice primarily scanned, indicating preserved 
-knowledge of the procedural requirements but no knowledge of the platform location. By the end of 
+knowledge of the procedural requirements but no knowledge of the platform location. 
+
+By the end of 
 day 2 mice displayed levels of spatially-specific search strategies that were comparable to those 
 at the end of the acquisition phase. Using the “add goal” feature, we also analyzed reversal 
 strategies with respect to the original goal location (Figure 4b). This revealed a number of direct 
@@ -348,7 +353,9 @@ and reversal trials for each day. Probe strategies are shown for the entire tria
 the first 10, 20 and 30s. b) Reversal strategies relative to the original platform location 
 (indirect search excluded from analyses, since short swims that bypass the old location but quickly 
 go to the new location become incorrectly classified as indirect searches with current settings). 
-c) Escape latencies for all 1888 trials varied by strategy. Symbols indicate individual trials, 
+c) Escape latencies for all 1888 trials varied by strategy. 
+
+Symbols indicate individual trials, 
 bars indicate means (Kruskal Wallis test, P<0.0001; Dunn’s tests: direct path vs all others except 
 focal search, P<0.0001; focal search vs all others except direct path, P<0.0001; directed search vs 
 all others except indirect search, P<0.0001; indirect search vs all others except directed search, 
