@@ -477,6 +477,20 @@ tested on the water maze for the current experiment. All efforts were made to mi
 suffering, and all procedures adhered to guidelines from the Canadian Council on Animal Care and 
 were approved by the Dalhousie University Committee on Laboratory Animals.
 
+En este experimento se utilizó un grupo de 35 ratones C57BL/6J (18 machos y 17 hembras) (Jackson 
+Laboratories, Bar Harbor, Maine). En comparación con los tamaños de muestra comúnmente utilizados 
+de 8 a 10 ratones por grupo, se empleó una cohorte grande para maximizar la fiabilidad y detectar 
+estrategias potencialmente infrecuentes. Los ratones se alojaron en grupos del mismo sexo (de 2 a 4 
+por jaula) en jaulas de polietileno (30 × 19 × 13 cm) con lecho de virutas de pino y un pequeño 
+tubo. Se les proporcionó alimento y agua ad libitum. Los ratones se mantuvieron bajo un ciclo de 
+luz-oscuridad invertido (luces apagadas de 8:00 a 20:00) y realizaron la prueba del laberinto 
+acuático durante la fase oscura. Los ratones se probaron por primera vez en el laberinto de 
+Barnes<sup>29</sup> y tenían 18 semanas de edad al momento de la prueba del laberinto acuático para 
+este experimento. Se hicieron todos los esfuerzos posibles para minimizar el sufrimiento animal, y 
+todos los procedimientos se ajustaron a las directrices del Consejo Canadiense de Cuidado de los 
+Animales y fueron aprobados por el Comité de Animales de Laboratorio de la Universidad de 
+Dalhousie.
+
 **Spatial water maze training.** The water maze consisted of a plastic circular pool (110 cm 
 diameter) 
 painted black. The pool was filled with water (21–23°C), which was made opaque with the addition of 
@@ -484,6 +498,14 @@ non-toxic white tempera paint (Schola). A circular escape platform (14 cm height
 was positioned 1 cm below the water. The water maze was placed in a diffusely lit room with many 
 extra-maze visual cues (posters on walls, a desk, the experimenter, geometric layout of testing 
 room etc.).
+
+El laberinto acuático consistía en una piscina circular de plástico (110 cm de diámetro) pintada de 
+negro. La piscina se llenó con agua (21-23 °C), la cual se hizo opaca con pintura témpera blanca no 
+tóxica (Schola). Una plataforma de escape circular (14 cm de altura, 9 cm de diámetro) se colocó 1 
+cm por debajo del nivel del agua. El laberinto acuático se ubicó en una habitación con iluminación 
+difusa y con numerosas referencias visuales externas (pósteres en las paredes, un escritorio, el 
+experimentador, la disposición geométrica de la sala de pruebas, etc.).
+
 
 Animals were tested over a total of 15 days. They first completed 8 days of acquisition training 
 (A1-A8) with a hidden escape platform (4 trials/day). Across trials, mice were released into the 
@@ -497,14 +519,40 @@ escape platform present. Mice then completed a single day of re-training (Retrai
 extinction that may occur during the probe trial. During re-training the escape platform is 
 returned to the same location used in acquisition training.
 
+Los animales fueron evaluados durante un total de 15 días. Primero, completaron 8 días de 
+entrenamiento de adquisición (A1-A8) con una plataforma de escape oculta (4 ensayos/día). En cada 
+ensayo, los ratones fueron liberados en la piscina desde cuatro ubicaciones diferentes, variando el 
+orden entre los ratones. Se les dio un máximo de 60 segundos para localizar la plataforma de 
+escape, tras lo cual el experimentador los guió hasta ella. Los ratones permanecieron en la 
+plataforma entre 15 y 20 segundos antes de ser retirados de la piscina. Durante las sesiones de 
+prueba diarias, los ratones fueron evaluados en grupos de 4 y cada uno se mantuvo en una jaula 
+individual con lecho de papel absorbente. El intervalo entre ensayos osciló entre 2 y 8 minutos. Al 
+día siguiente del entrenamiento de adquisición, se evaluó la memoria con un único ensayo de prueba 
+de 60 segundos sin la plataforma de escape. Posteriormente, los ratones completaron un día de 
+reentrenamiento (Reentrenamiento) para reducir la extinción que pudiera ocurrir durante el ensayo 
+de prueba. Durante el reentrenamiento, la plataforma de escape se colocó en la misma ubicación 
+utilizada en el entrenamiento de adquisición.
+
+
 After acquisition re-training, reversal learning was assessed over 3 days (R1-R3) with the escape 
 platform moved to the opposite side of the maze. A reversal probe trial (R probe) was then 
 completed to assess memory for the location of the new escape platform location. Finally, a single 
 day of visible platform training (Visible platform; 4 trials) was completed, where the escape 
 platform was moved to a new location and made visible with the addition of a striped flag.
 
+Tras el reentrenamiento de adquisición, se evaluó el aprendizaje de reversión durante 3 días 
+(R1-R3) con la plataforma de escape trasladada al lado opuesto del laberinto. A continuación, se 
+realizó una prueba de sonda de reversión (sonda R) para evaluar la memoria de la ubicación de la 
+nueva plataforma de escape. Finalmente, se llevó a cabo un día de entrenamiento con plataforma 
+visible (plataforma visible; 4 ensayos), en el que la plataforma de escape se trasladó a una nueva 
+ubicación y se hizo visible mediante la adición de una bandera a rayas.
+
+
 Behavior was recorded with the WaterMaze (Actimetrics) video tracking system (5 samples per 
 second), via a camera placed directly above the pool.
+
+El comportamiento se registró con el sistema de seguimiento de vídeo WaterMaze (Actimetrics) (5 
+muestras por segundo), mediante una cámara colocada directamente encima de la piscina.
 
 **Results**
 
@@ -515,6 +563,14 @@ acquisition, mice received an unreinforced probe trial, 1 day of retraining, 3 d
 training (platform in opposite side of pool), another probe trial, and one day of visible platform 
 training (outlined in Figure 3a).
 
+Para validar Pathfinder, entrenamos ratones durante 8 días en un laberinto acuático espacial hasta 
+que alcanzaron un rendimiento asintótico según las métricas estándar y, por lo tanto, debieron 
+haber adoptado estrategias de navegación distintas a medida que aprendían las exigencias 
+procedimentales y espaciales de la tarea. Tras la adquisición, los ratones recibieron una prueba de 
+sonda sin refuerzo, 1 día de reentrenamiento, 3 días de entrenamiento de reversión (plataforma en 
+el lado opuesto de la piscina), otra prueba de sonda y un día de entrenamiento con plataforma 
+visible (como se muestra en la Figura 3a).
+
 To confirm that mice learned the task, we first analyzed performance using several metrics that 
 indicate learning but do not reveal details about navigational strategies (Figure 3). We focused on 
 acquisition and reversal phases since they are the main focus of our subsequent strategy analyses. 
@@ -524,12 +580,32 @@ The greatest performance improvements occurred during the first 4 days and, whil
 revealed improvements beyond day 4, only average heading error and entropy analyses revealed 
 improvements beyond day 5. There were no sex differences in acquisition performance.
 
+Para confirmar que los ratones aprendieron la tarea, analizamos su desempeño mediante varias 
+métricas que indican aprendizaje, pero que no revelan detalles sobre las estrategias de navegación 
+(Figura 3). Nos centramos en las fases de adquisición y reversión, ya que constituyen el foco 
+principal de nuestros análisis estratégicos posteriores. Durante los 8 días de adquisición, los 
+ratones alcanzaron la plataforma más rápidamente, nadaron cada vez más en dirección a la plataforma 
+(según la medición del error del ángulo de dirección) y obtuvieron puntuaciones más bajas de IPE y 
+entropía. Las mayores mejoras en el desempeño se observaron durante los primeros 4 días y, si bien 
+todas las medidas mostraron mejoras a partir del cuarto día, solo los análisis del error de 
+dirección promedio y la entropía revelaron mejoras a partir del quinto día. No se observaron 
+diferencias entre sexos en el desempeño durante la adquisición.
+
 Reversal learning performance improvements were mostly apparent after the first day of training, 
 likely because mice had learned the procedural aspects of the task and the spatial environment, and 
 only had to learn a new platform location (Figure 3g–k)30 . Path entropy decreased from days 2–3, 
 indicating continued learning. Females and 
 males were equivalent in all performance measures except males had a lower initial heading error on 
 day 1 of reversal training (Figure 3h).
+
+Las mejoras en el aprendizaje de reversión fueron más evidentes después del primer día de 
+entrenamiento, probablemente porque los ratones habían aprendido los aspectos procedimentales de la 
+tarea y el entorno espacial, y solo tenían que aprender la ubicación de una nueva plataforma 
+(Figura 3g–k)<sup>30</sup>. La entropía de la trayectoria disminuyó entre los días 2 y 3, lo que 
+indica un aprendizaje continuo. Las hembras y los machos fueron equivalentes en todas las medidas 
+de rendimiento, excepto que los machos presentaron un menor error de dirección inicial el primer 
+día del entrenamiento de reversión (Figura 3h).
+
 
 .. image:: a3.png
 
@@ -542,14 +618,18 @@ by the numbers. c) Initial heading error decreased over days (day effect F7,231 
 effect F1,33 =0.4, P=0.6; interaction F7,231 =0.7, P=0.6). d) Average heading error decreased over 
 days (day effect F7,231 =48, P<0.0001; sex effect F1,33 =2.5, P=0.12; interaction F7,231 =0.6, 
 P=0.8). e) Idea path error decreased over days (day effect F7,231 =79, P<0.0001; sex effect F1,33 
-=0.3, P=0.6; interaction F7,231 =1.0, P=0.4). f) Entropy decreased over days (day effect F7,231 
+=0.3, P=0.6; interaction F7,231 =1.0, P=0.4). f) 
+
+
+Entropy decreased over days (day effect F7,231 
 =75, P<0.0001; sex effect F1,33 =1.3, P=0.3; interaction F7,231 =0.5, P=0.8). g) Latency decreased 
 over days (day effect F2,66 =69, P<0.0001; sex effect F1,33 =0.5, P=0.5; interaction F2,66 =0.7, 
 P=0.5). h) Initial heading error decreased over days and was greater in females on day 1 (day 
 effect F2,66 =9, P<0.001; sex effect F1,33 =1.0, P=0.3; interaction F2,66 =4.7, P=0.01). i) Average 
 heading error decreased over days (day effect F2,66 =21, P<0.0001; sex effect F1,33 =0.2, P=0.7; 
 interaction F2,66 =0.9, P=0.4). j) Ideal path error decreased over days (day effect F2,66 =98, 
-P<0.0001; sex effect F1,33 =0.5, P=0.5; interaction F2,66 =0.7, P=0.5). k) Entropy decreased over 
+P<0.0001; sex effect F1,33 =0.5, P=0.5; interaction F2,66 =0.7, P=0.5). k) 
+Entropy decreased over 
 days (day effect F2,66 =39, P<0.0001; sex effect F1,33 =0.6, P=0.4; interaction F2,66 =2.6, 
 P=0.08). *P<0.05, **P<0.01, ***P<0.001, ****P<0.0001,† P<0.05 within day, male vs female 
 comparison. Symbols = mean ± standard error.
