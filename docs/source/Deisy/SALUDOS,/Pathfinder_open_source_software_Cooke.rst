@@ -988,6 +988,18 @@ depends on sequential recruitment of intermediate and then dorsal hippocampus16 
 neurons are believed to promote memory precision and, indeed, blocking neurogenesis greatly reduced 
 the adoption of spatially-specific search strategies20 . 
 
+A pesar de su conveniencia, incluso las mediciones individuales más precisas no permiten distinguir 
+entre las múltiples estrategias que un animal podría emplear para alcanzar un objetivo. Por lo 
+tanto, los análisis de estrategias pueden ser valiosos para identificar el papel que desempeñan los 
+diferentes circuitos en la guía del comportamiento. En consonancia con la menor resolución espacial 
+de las células de lugar del hipocampo ventral<sup>34</sup>, los análisis de estrategias han 
+revelado que el hipocampo ventral es particularmente importante para el desarrollo de patrones de 
+búsqueda generales y no específicos en el laberinto acuático, y que la búsqueda cada vez más 
+localizada espacialmente depende del reclutamiento secuencial del hipocampo intermedio y, 
+posteriormente, del hipocampo dorsal<sup>16</sup>. Se cree que las neuronas generadas en la edad 
+adulta promueven la precisión de la memoria y, de hecho, el bloqueo de la neurogénesis redujo 
+considerablemente la adopción de estrategias de búsqueda espacialmente específicas<sup>20</sup>.
+
 
 Strategy analyses in animals have revealed 
 spatial precision-related deficits in models of aging25 , stroke35 , traumatic brain injury22 , 24 
@@ -1000,6 +1012,19 @@ in males compared to females14 . Here, we did not observe any sex differences, c
 recent meta-analysis that revealed that male and female mice display broadly comparable performance 
 in the spatial water maze38 .
 
+Los análisis de estrategias en animales han revelado déficits relacionados con la precisión 
+espacial en modelos de envejecimiento<sup>25</sup>, ictus<sup>35</sup>, traumatismo 
+craneoencefálico<sup>22,24</sup>, autismo<sup>23</sup> y patología de Alzheimer<sup>21,22</sup>. 
+Con la llegada de la realidad virtual, también se ha hecho posible comprobar si los hallazgos en el 
+laberinto acuático de roedores se generalizan a los humanos<sup>15</sup>. De hecho, el daño 
+hipocampal y las lesiones específicas de CA1 deterioran el rendimiento humano en el laberinto 
+acuático según medidas estándar como la latencia para alcanzar la plataforma<sup>36,37</sup>. Los 
+experimentos con el laberinto acuático en humanos también han revelado una memoria espacial 
+superior y un mayor uso de estrategias espaciales en individuos jóvenes y en hombres en comparación 
+con las mujeres<sup>14</sup>. En este estudio, no observamos diferencias por sexo, lo que concuerda 
+con un metaanálisis reciente que reveló que los ratones machos y hembras muestran un rendimiento 
+ampliamente comparable en el laberinto acuático espacial<sup>38</sup>.
+
 Given the apparent utility of strategy classification, the question arises as to why it has not 
 been used more extensively. One likely explanation is that it is not a standard feature of 
 commercially-available software packages, therefore requiring time and programming experience to 
@@ -1011,6 +1036,19 @@ more widespread adoption of strategy analyses. Moreover, in conjunction with fre
 tracking programs such as ezTrack (which is already supported) or others39 , users should be able 
 to easily perform advanced navigation analyses at little cost.
 
+Dada la evidente utilidad de la clasificación de estrategias, cabe preguntarse por qué no se ha 
+utilizado más ampliamente. Una posible explicación es que no es una función estándar de los 
+paquetes de software comerciales, lo que requiere tiempo y experiencia en programación para su 
+implementación. Los grupos que han realizado análisis de estrategias han desarrollado su propio 
+software, utilizando un enfoque basado en parámetros predefinidos, como el nuestro, o algoritmos de 
+aprendizaje automático que clasifican según la entrada del usuario<sup>8, 11, 12, 15-20, 25, 
+39</sup>. Dado que la mayoría de los enfoques anteriores no se han convertido en paquetes de 
+software de libre acceso, Pathfinder podría facilitar una adopción más generalizada de los análisis 
+de estrategias. Además, en combinación con programas de seguimiento gratuitos como ezTrack (que ya 
+cuenta con soporte) u otros<sup>39</sup>, los usuarios podrán realizar fácilmente análisis de 
+navegación avanzados a bajo costo.
+
+
 It is worth noting that, with respect to water maze analyses, some behaviors (e.g. chaining and 
 thigmotaxis) have been relatively well-described. In contrast, differences between 
 spatially-specific search patterns (direct swim, directed search, focal search, indirect search) 
@@ -1020,18 +1058,30 @@ easily quantified opens the door to future studies of the biology of complex nav
 However, to some extent, strategy definitions are arbitrary, and it is therefore incumbent upon the 
 user to determine which behaviors are relevant for their experimental paradigm.
 
-**Future developments and additional uses**
+Cabe destacar que, en lo que respecta a los análisis de laberintos acuáticos, algunos 
+comportamientos (p. ej., encadenamiento y tigmotaxis) se han descrito con relativa precisión. En 
+cambio, las diferencias entre patrones de búsqueda espacialmente específicos (natación directa, 
+búsqueda dirigida, búsqueda focal, búsqueda indirecta) pueden ser intuitivas y cuantificables, pero 
+su relevancia y el hecho de que se deriven de procesos neuronales distintos no están del todo 
+claros. Sin duda, la facilidad con la que se pueden cuantificar las estrategias de búsqueda abre la 
+puerta a futuros estudios sobre la biología de las estrategias de navegación complejas. Sin 
+embargo, en cierta medida, las definiciones de estrategia son arbitrarias, por lo que recae en el 
+usuario la responsabilidad de determinar qué comportamientos son relevantes para su paradigma 
+experimental.
 
- One area where Pathfinder could be useful is for 
-assessing 
-spatial bias and choice behavior when there are multiple goal locations. Indeed, the water maze has 
+ **Future developments and additional uses**
+
+One area where Pathfinder could be useful is for assessing spatial bias and choice behavior when there are multiple goal locations. Indeed, the water maze has 
 been effectively used to study visuospatial goal discrimination 40 , 41 and cue vs placerelated 
 choice behavior42 , 43 . We have recently used Pathfinder to show that neurogenesis promotes 
 spatial platform preference in a spatial alternation water maze, which was detected by a greater 
 number of direct swims when the platform was in the rat’s preferred location than when it was in 
 the nonpreferred location44 . Neurogenesis-deficient rats often vacillated between the two platform 
 locations, similar to vicarious trial and error behavior that has been described at choice points 
-in dry mazes45 . Future software developments could possibly incorporate these types of movements 
+in dry mazes45 . 
+
+
+Future software developments could possibly incorporate these types of movements 
 between competing goal options to detect indecisiveness as animals refine goal-directed navigation 
 behavior. Swim speeds are also currently not factored into Pathfinder’s classification scheme, but 
 could provide useful additional information for strategies that incorporate goal expectancy 46 , 47 
