@@ -370,6 +370,16 @@ search, 5) semifocal search, 6) chaining, 7) scanning, 8) random search, and 9) 
 categories are mutually exclusive and follow a defined order (1 to 9), but the user can opt to 
 exclude strategies from the analysis. 
 
+Una vez definidas las variables, deben establecerse los límites para determinar los criterios de 
+categorización de las estrategias. Al hacer clic en «Configuración», se abrirá una ventana 
+adicional donde se podrán seleccionar las opciones de estrategia y establecer los límites de los 
+parámetros (Figura 1d). Al hacer clic en «Calcular», Pathfinder clasifica los ensayos en una de las 
+ocho estrategias de búsqueda, ordenadas según su grado de especificidad espacial (de mayor a 
+menor): 1) trayectoria directa, 2) búsqueda focal, 3) búsqueda dirigida, 4) búsqueda indirecta, 5) 
+búsqueda semifocal, 6) encadenamiento, 7) escaneo, 8) búsqueda aleatoria y 9) tigmotaxis. Estas 
+categorías son mutuamente excluyentes y siguen un orden definido (del 1 al 9), pero el usuario 
+puede optar por excluir estrategias del análisis.
+
 
 Thus, Pathfinder determines, in a stepwise fashion, whether a 
 given trial fulfills the criteria for direct swim. If so, it moves on to categorize the next trial. 
@@ -384,6 +394,21 @@ at a shift from more disordered swimming (high entropy) to more spatially strate
 entropy), and has been previously found to be highly sensitive to water maze search performance28 . 
 Due to the manipulation of large matrices, calculating the entropy of trials is very slow.
 
+Así, Pathfinder determina, de forma secuencial, si un intento cumple los criterios para la natación 
+directa. De ser así, procede a categorizar el siguiente intento. De no ser así, determina si el 
+intento se ajusta a la estrategia subsiguiente, y así sucesivamente. Las estrategias y sus 
+parámetros se muestran en la Figura 2. En el archivo de salida (.csv), cada intento se categoriza y 
+se proporcionan las siguientes métricas adicionales: latencia y distancia recorrida para alcanzar 
+la meta, distancia promedio desde la meta, porcentaje del laberinto recorrido, velocidad, error de 
+rumbo inicial y promedio, e IPE (error de rumbo inicial y promedio). Pathfinder también puede 
+calcular la entropía de cada intento, una medida del desorden en la trayectoria con respecto a la 
+ubicación de la meta. El cálculo de la entropía utiliza el motor de MATLAB y requiere una licencia 
+de MATLAB. La entropía mide el rendimiento observando un cambio desde una natación más desordenada 
+(alta entropía) hacia trayectorias más estratégicas espacialmente (baja entropía), y se ha 
+demostrado que es altamente sensible al rendimiento en la búsqueda en laberintos 
+acuáticos<sup>28</sup>. Debido a la manipulación de matrices grandes, el cálculo de la entropía de 
+los ensayos es muy lento.
+
 .. image:: a2.png
 
 Figure 2. Search strategies and associated parameters. Pathfinder categorizes each trial according 
@@ -395,6 +420,17 @@ criteria for strategies 1–7. In the examples shown, the blue square indicates 
 the green circle indicates the middle of the pool. Parameter settings are those used in the present 
 study and should be adjusted depending on changes to testing procedures and maze geometry.
 
+Figura 2. Estrategias de búsqueda y parámetros asociados. Pathfinder clasifica cada ensayo según 
+una de las nueve estrategias posibles. La clasificación se realiza secuencialmente en el orden 
+mostrado (a menos que se excluyan algunas estrategias del análisis). La búsqueda semifocal (no se 
+muestra), una búsqueda focal menos estricta, se clasifica en quinto lugar después de la búsqueda 
+indirecta. Por ejemplo, para que un ensayo se clasifique como Búsqueda Aleatoria, la ruta debe 
+cubrir una proporción mínima del laberinto y no cumplir con ninguno de los criterios de las 
+estrategias 1 a 7. En los ejemplos mostrados, el cuadrado azul indica el punto de inicio y el 
+círculo verde indica el centro del laberinto. Los parámetros utilizados son los del presente 
+estudio y deben ajustarse según los cambios en los procedimientos de prueba y la geometría del 
+laberinto.
+
 Occasionally, some trials cannot be categorized. The user therefore has the option to manually 
 categorize uncategorized trials, by selecting this option on the main window. Additionally, there 
 is an option to manually categorize all trials. Here, Pathfinder provides an image of the trial as 
@@ -403,15 +439,34 @@ strategy it had automatically categorized for the displayed trial. Manual catego
 overwrite the automatic categorization but will be displayed separately in the output file. This 
 allows for comparison between the automatically calculated and user-selected strategy.
 
+En ocasiones, algunos ensayos no se pueden categorizar. Por lo tanto, el usuario tiene la opción de 
+categorizar manualmente los ensayos no categorizados seleccionando esta opción en la ventana 
+principal. Además, existe la opción de categorizar manualmente todos los ensayos. En este caso, 
+Pathfinder muestra una imagen del ensayo y teclas de acceso directo para seleccionar la estrategia 
+adecuada. El software también mostrará la estrategia que categorizó automáticamente para el ensayo 
+en cuestión. La categorización manual no sobrescribe la categorización automática, sino que se 
+muestra por separado en el archivo de salida. Esto permite comparar la estrategia calculada 
+automáticamente con la seleccionada por el usuario.
+
 In addition to strategy categorization, Pathfinder will also create heatmaps as a useful visual 
 representation of groups of trials. This is accomplished by counting the number of times animal(s) 
 visit each bin in a hexagonal array that is overlaid on the maze (bin size is user-defined). The 
 range of colors (cool to warm) can be automatically set to occupy the full scale. Alternatively, 
 the user can manually set the maximum, above which all bins will read the hottest.
 
+Además de la categorización de estrategias, Pathfinder también crea mapas de calor como una útil 
+representación visual de grupos de ensayos. Esto se logra contando el número de veces que el animal 
+(o los animales) visita cada contenedor en una matriz hexagonal superpuesta al laberinto (el tamaño 
+de los contenedores lo define el usuario). La gama de colores (de fríos a cálidos) puede 
+configurarse automáticamente para ocupar toda la escala. Como alternativa, el usuario puede 
+establecer manualmente el máximo, por encima del cual todos los contenedores mostrarán la 
+temperatura más alta.
+
 **Validation of Pathfinder**
 
-**Animals.** A group of 35 C57BL/6J mice (18 male, 17 female) were used in 
+**Animals.** 
+
+A group of 35 C57BL/6J mice (18 male, 17 female) were used in 
 this experiment (Jackson Laboratories, Bar Harbor, Maine). Relative to commonly-used samples sizes 
 of 8–10 mice/group, a large cohort was used to maximize reliability and detect potentially 
 infrequent strategies. Mice were housed in same-sex groups (2–4/cage) in polyethylene cages (30 × 
