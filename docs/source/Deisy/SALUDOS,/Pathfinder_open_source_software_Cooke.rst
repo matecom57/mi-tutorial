@@ -14,6 +14,19 @@ spatial and mnemonic functions of different brain regions, and to identify which
 memory are disrupted in disease models. However, despite their usefulness, strategy analyses have 
 not been widely adopted due to the lack of software to automate analyses. 
 
+La navegación espacial es un comportamiento universal que varía según los objetivos, la experiencia 
+y los estímulos sensoriales disponibles. Las tareas de navegación espacial se utilizan 
+habitualmente para estudiar el aprendizaje, la memoria y el comportamiento dirigido a objetivos, 
+tanto en animales como en humanos. Un paradigma popular para evaluar la memoria espacial es el 
+laberinto acuático de Morris, donde los sujetos aprenden la ubicación de una plataforma oculta que 
+les permite escapar de una piscina. Los investigadores suelen expresar el aprendizaje en función 
+del tiempo de latencia para escapar, aunque esto revela poco sobre las estrategias de navegación 
+subyacentes. Recientemente, varios estudios han comenzado a clasificar las estrategias de búsqueda 
+en el laberinto acuático para esclarecer las funciones espaciales y mnemónicas precisas de 
+diferentes regiones cerebrales e identificar qué aspectos de la memoria espacial se ven afectados 
+en modelos de enfermedades. Sin embargo, a pesar de su utilidad, los análisis de estrategias no se 
+han adoptado ampliamente debido a la falta de software para automatizarlos.
+
 To address this need we 
 developed Pathfinder, an open source application for analyzing spatial navigation behaviors. In a 
 representative dataset, we show that Pathfinder effectively characterizes the development of 
@@ -26,6 +39,21 @@ generates heat maps, analyzes navigation with respect to multiple goal locations
 updated to accommodate future developments in spatial behavioral analyses. Given these features, 
 Pathfinder may be a useful tool for studying how navigational strategies are regulated by the 
 environment, depend on specific neural circuits, and are altered by pathology.
+
+Para abordar esta necesidad, desarrollamos Pathfinder, una aplicación de código abierto para el 
+análisis de comportamientos de navegación espacial. En un conjunto de datos representativo, 
+demostramos que Pathfinder caracteriza eficazmente el desarrollo de estrategias de búsqueda 
+espacial altamente específicas a medida que ratones machos y hembras aprenden un laberinto acuático 
+espacial estándar. Pathfinder puede leer archivos de datos de paquetes de software comerciales y 
+gratuitos, está optimizado para clasificar estrategias de búsqueda en paradigmas de laberinto 
+acuático y también puede utilizarse para analizar la navegación 2D de otras especies y en otras 
+tareas, siempre que se disponga de coordenadas xy con marca de tiempo. Pathfinder es fácil de usar, 
+puede determinar automáticamente la geometría de la piscina y la plataforma, genera mapas de calor, 
+analiza la navegación con respecto a múltiples ubicaciones objetivo y puede actualizarse para 
+incorporar futuros avances en análisis de comportamiento espacial. Gracias a estas características, 
+Pathfinder puede ser una herramienta útil para estudiar cómo las estrategias de navegación están 
+reguladas por el entorno, dependen de circuitos neuronales específicos y se ven alteradas por 
+patologías.
 
 **Updates from Version 1**
 
