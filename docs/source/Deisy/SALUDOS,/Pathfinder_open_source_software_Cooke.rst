@@ -165,6 +165,15 @@ adjustable parameters for conducting detailed analyses of spatial search pattern
 Pathfinder with a mouse water maze dataset, where we find that male and female mice develop 
 increasingly specific and direct spatial search strategies with additional days of training.
 
+Para facilitar el estudio de las estrategias de búsqueda espacial, tanto en el laberinto acuático 
+como en otros paradigmas de navegación bidimensionales, creamos una nueva aplicación de software 
+llamada Pathfinder. Pathfinder es una herramienta de código abierto basada en Python, con una 
+interfaz gráfica de usuario intuitiva y parámetros ajustables para realizar análisis detallados de 
+patrones de búsqueda espacial. Validamos Pathfinder con un conjunto de datos de un laberinto 
+acuático con ratones, donde observamos que tanto los ratones machos como las hembras desarrollan 
+estrategias de búsqueda espacial cada vez más específicas y directas con el aumento de los días de 
+entrenamiento.
+
 **Methods** 
 
 **Installation and dependencies**
@@ -185,6 +194,19 @@ Massachusetts, United States). Once Anaconda is installed, Pathfinder can be dow
 or by typing “pip install jsl-pathfinder” in a shell window (i.e. Mac terminal or Windows command 
 line). Pathfinder is then opened by typing “pathfinder” into the shell window and pressing return.
 
+Encontrará instrucciones detalladas sobre el uso e instalación del programa en GitHub: 
+github.com/MatthewBCooke/Pathfinder. Recomendamos instalar Anaconda para Python 3, ya que incluye 
+todos los paquetes necesarios para ejecutar Pathfinder: PIL 
+(https://pillow.readthedocs.io/en/latest/), xlrd (https://xlrd.readthedocs.io/en/latest/), numpy 
+(https://www.numpy.org), pickle (https://docs.python.org/3/library/pickle.html), scipy 
+(https://www.scipy.org), matplotlib (https://matplotlib.org) y tkinter 
+(https://wiki.python.org/moin/TkInter). El motor de MATLAB es opcional y debe instalarse por 
+separado para los cálculos de entropía (MATLAB y Statistics Toolbox Release 2018b, The MathWorks, 
+Inc., Natick, Massachusetts, Estados Unidos). Una vez instalado Anaconda, Pathfinder se puede 
+descargar desde GitHub o escribiendo «pip install jsl-pathfinder» en una ventana de terminal (por 
+ejemplo, la terminal de Mac o la línea de comandos de Windows). Para abrir Pathfinder, escriba 
+«pathfinder» en la ventana de terminal y pulse Intro.
+
 **General usage**
 
 Pathfinder has a simple, user-friendly interface for extracting information from 
@@ -200,6 +222,23 @@ these programs are outputted in CSV or Excel format, which can then be inputted 
 through the File menu. The experimental setup is specified in the main window (Figure 1a). 
 Pathfinder can automatically calculate the position and size of the maze and the goal location 
 (provided they are constant across trials), or these parameters can be entered manually.
+
+Pathfinder cuenta con una interfaz sencilla e intuitiva para extraer información de archivos de 
+seguimiento de navegación espacial que contienen coordenadas xy a lo largo del tiempo (Figura 1). 
+Si bien puede utilizarse para analizar diversos tipos de datos de navegación 2D, está optimizado 
+para experimentos con laberintos acuáticos espaciales en roedores y acepta entradas de software de 
+seguimiento comercial de uso común, como Ethovison (Noldus), Anymaze (Stoelting) y WaterMaze 
+(Actimetrics). Las entradas también pueden definirse mediante el botón «Definir…». Esto permite al 
+usuario importar archivos de otros sistemas de seguimiento o versiones modificadas de archivos de 
+salida compatibles. Pathfinder también puede abrir archivos exportados desde el software de 
+seguimiento de código abierto ezTrack26, lo que permite un flujo de trabajo rentable y totalmente 
+de código abierto para análisis detallados del comportamiento en laberintos acuáticos. La 
+información de los ensayos de estos programas se exporta en formato CSV o Excel, que luego puede 
+importarse a Pathfinder a través del menú Archivo. La configuración experimental se especifica en 
+la ventana principal (Figura 1a). Pathfinder puede calcular automáticamente la posición y el tamaño 
+del laberinto y la ubicación del objetivo (siempre que sean constantes en todos los ensayos), o 
+estos parámetros pueden introducirse manualmente.
+
 
 .. imagen:: a1.png
 
@@ -222,6 +261,28 @@ subtracted from the actual cumulative distance to generate the IPE. d) Parameter
 in the settings window. e) The manual categorization window, for viewing trial paths and manually 
 categorizing strategies.
 
+Figura 1. Interfaz gráfica de usuario y configuración de parámetros. a) Captura de pantalla de la 
+ventana principal de la aplicación, donde se define la geometría del laberinto y se establecen los 
+parámetros de entrada y salida. A la derecha se muestra una vista en tiempo real de los parámetros 
+definidos. b) Esquema y geometría del laberinto para la definición de variables. El corredor de 
+encadenamiento está centrado en la plataforma objetivo y se extiende por los cuatro cuadrantes; su 
+anchura se especifica en la ventana principal. La zona de tigmotaxis mayor se especifica en la 
+ventana principal; Pathfinder calcula la zona de tigmotaxis menor como la mitad de la anchura. El 
+error de rumbo es la distancia angular entre la dirección real de la trayectoria y una línea recta 
+hasta el objetivo (Pathfinder calcula el error de rumbo promedio en todos los puntos; solo se 
+muestra un ejemplo). El corredor angular se utiliza para definir la estrategia de búsqueda 
+dirigida, que depende de la precisión de la trayectoria del animal al aproximarse a la plataforma. 
+La anchura del corredor (en grados) se especifica en la ventana principal y está centrada en el 
+objetivo. c) Esquema de la métrica de Error de Trayectoria Ideal (ETI). La distancia desde la 
+plataforma se mide en cada punto temporal proporcionado por el software de seguimiento (trayectoria 
+real; solo se muestra una fracción de las distancias para mayor claridad) para obtener una medida 
+de distancia acumulada. Suponiendo la misma velocidad de nado que en la trayectoria real, las 
+distancias se suman de forma similar a la de la trayectoria ideal para obtener una medida de 
+trayectoria ideal acumulada. La distancia acumulada ideal se resta de la distancia acumulada real 
+para generar el IPE. d) Los límites de los parámetros se introducen en la ventana de configuración. 
+e) La ventana de categorización manual permite visualizar las trayectorias de prueba y categorizar 
+manualmente las estrategias.
+
 Pathfinder relies on several variables that describe navigation relative to the pool and platform 
 geometry: 1) Ideal Path Error (IPE): the summed error of the search path (Figure 1c). It is 
 conceptually similar to the Cumulative Search Error (CSE) since it also measures proximity to the 
@@ -238,6 +299,23 @@ straight line to the goal location. The current path direction is defined by a l
 connecting two temporally-adjacent xy coordinates. The average heading error is an average of all 
 of the heading error values for the trial and the initial heading error is the average of the 
 heading error values for the first second of the trial.
+
+Pathfinder se basa en varias variables que describen la navegación en relación con la geometría de 
+la piscina y la plataforma: 1) Error de Trayectoria Ideal (ETI): el error total de la trayectoria 
+de búsqueda (Figura 1c). Es conceptualmente similar al Error de Búsqueda Acumulado (EBA), ya que 
+también mide la proximidad al objetivo durante todo el ensayo<sup>9,27</sup>. Una ventaja de las 
+medidas de proximidad es que permiten distinguir dos ensayos con latencias/longitudes de 
+trayectoria equivalentes, pero con una distancia promedio diferente a la plataforma. Al calcular el 
+ETI, se mide la distancia al objetivo en cada instante del ensayo y se suman los resultados para 
+generar una medida de distancia acumulada de la trayectoria real (similar al EBA). A diferencia del 
+EBA, el ETI se calcula restando la distancia acumulada de la trayectoria ideal de la distancia 
+acumulada de la trayectoria real. La trayectoria ideal acumulada es simplemente la suma de todas 
+las distancias entre el objetivo y la posición del animal si nadara en línea recta para escapar, 
+utilizando la velocidad promedio del ensayo. 2) Error de rumbo: la distancia angular entre la 
+trayectoria actual y una línea recta hacia la ubicación objetivo. La dirección de la trayectoria 
+actual se define mediante una línea que une dos coordenadas xy adyacentes en el tiempo. El error de 
+rumbo promedio es el promedio de todos los valores de error de rumbo del ensayo, y el error de 
+rumbo inicial es el promedio de los valores de error de rumbo durante el primer segundo del ensayo.
 
 Additional variables are user-defined on the main window:
 
