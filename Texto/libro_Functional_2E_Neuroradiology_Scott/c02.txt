@@ -1,0 +1,866 @@
+Physical Principles of Dynamic Contrast-Enhanced and Dynamic Susceptibility Contrast MRI
+
+Introduction
+
+The use of dynamic contrast-agent-enhanced magnetic resonance imaging (MRI) can provide insight into hemodynamic processes not 
+detectable using conventional contrast-enhanced magnetic resonance (MR) techniques. This additional data may allow refinement of 
+differential diagnoses based on microvascular physiology. The dominant dynamic gadolinium-based contrast agent (GBCA) injection MRI 
+techniques currently utilized in brain imaging are: (1) T1-weighted dynamic contrastenhanced (DCE) MRI, and (2) T2/T2*-weighted dynamic 
+susceptibility contrast (DSC) MRI. Of these, DSC-MRI is much more commonly used for clinical perfusion imaging of the brain, especially 
+for the evaluation of stroke and tumor. On the other hand, DCE-MRI is the dominant method of dynamic contrast-enhanced MRI outside of 
+the brain [1]. In both DCEMRI and DSC-MRI, dynamic images are acquired before, during, and after the administration of an exogenous 
+GBCA. As opposed to other techniques, such as contrast-enhanced computed tomography (CT), contrast-enhanced MRI is distinctive because 
+it detects the changes induced in the local relaxation times of water rather than detecting the GBCA itself, where the
+
+passage of a GBCA through tissue decreases the intrinsic T1, T2, and T2* relaxation times [2]. This chapter will provide an overview of 
+the general physical principles of these techniques. An overview of these two methods is provided in Table 2.1 [3].
+
+T1-Weighted Dynamic Contrast-Enhanced MRI
+
+When applied to the brain, DCE-MRI is primarily employed to characterize the functional integrity of the blood–brain barrier (BBB) via 
+estimation of microvascular permeability to GBCAs. The evaluation of cancer is a major application of DCE-MRI where it has potential to 
+provide prognostic, predictive, and physiological response imaging biomarkers. Conventional GBCAs used in clinical MRI are diffusible, 
+low-molecular-weight extracellular agents (~500 to 1000 Da) that remain intravascular when the BBB is intact. Disruption of the BBB 
+secondary to a variety of pathological processes results in the transfer of GBCA moieties across the capillary endothelium from the 
+intravascular space into the extravascular–extracellular space (EES). Leakage of GBCAs into the EES results in T1-shortening and 
+contrast enhancement on T1-weighted imaging.
+
+DCE-MRI Acquisition
+
+There has historically been quite a variation of DCE-MRI acquisition protocols in the literature. DCE-MRI acquisition parameters are 
+generally intended to emphasize R1 contrast and minimize competing T2* effects by employing short echo times (TEs) and repetition times 
+(TRs) [2]. DCE-MRI most often utilizes a fast T1-weighted spoiled gradientrecalled echo sequence with the temporal resolution contingent 
+on the volume coverage, contrast-to-noise ratio (CNR), and spatial resolution for a particular organ system [4, 5]. The temporal 
+resolution demands for DCE-MRI are generally less than that for DSC-MRI unless an arterial input function (AIF) is needed [2]. DCE-MRI 
+scan durations are generally much longer than for DSC-MRI and to estimate microvascular permeability with DCE-MRI, the temporal 
+resolution generally ranges between 5 and 20 s [6–8]. Like with DSC-MRI, consistent technique including the use of a power injector for 
+bolus injection (2–4 cc/s) of GBCA followed by a 20–30 cc saline flush at the same rate into the right arm to decrease possible venous 
+reflux should be performed if possible in all cases.
+
+Recent initiatives such as those by the Radiological Society of North America’s (RSNA’s) Quantitative Imaging Biomarkers Alliance (QIBA) 
+have focused on standardizing acquisition and analysis of various imaging methods including DCEMRI. QIBA recommendations for DCE-MRI 
+acquisition are included in Table 2.2 [5]. (Please see section “Standardization Efforts and Variability of DCE-MRI” below). In addition 
+to conventional DCE-MRI acquisition methods, there have been several recent advances in pulse sequence acceleration methods to obtain 
+high temporal and/or spatial resolution in DCEMRI. These include dynamic compressed sensing combined
+
+with parallel imaging (GRAPPA) along with two-dimensional (2D) or three-dimensional (3D) + simultaneous multislice imaging (SMS) 
+encoding [9], radial k-space encoding with golden angle ordering (GRASP) method [10], high under-sampling factors, [11] and 
+time-resolved MR angiography methods with keyhole view-sharing [12].
+
+DCE-MRI Data Analysis
+
+In DCE-MRI, the concentration of GBCA must be determined in order to perform pharmacokinetic (PK) modeling. This is accomplished by 
+measuring changes in T1-weighted signal intensity and assuming that these changes are proportional to GBCA concentration. This is a 
+commonly used assumption given its simplicity; however, at high tracer concentrations, the relationship between signal intensity and 
+GBCA concentration is non-linear and this can result in systematic error of DCE-MRI parameters.
+
+Some studies have utilized predetermined T1 values, usually from the literature. However, this too can result in bias for several 
+reasons: these are often performed in healthy subjects and there is then no consideration of the effects of aging or pathological 
+conditions nor does it consider individual variability or tissue heterogeneity [1, 13–18]. Therefore, direct measurement of T1 in a 
+given individual is more desirable because of potential T1 variability, particularly from pathological states. The gold standard method 
+of
+
+T1 mapping uses inversion recovery (IR) sequences; however, their long acquisition times preclude routine use [19]. The most commonly 
+employed form of clinical T1 mapping is the variable flip angle (VFA) method using flip angles (FAs) of 2–30° with a gradient echo 
+sequence (Table 2.2) [5]. The accuracy of T1 mapping relies on FA accuracy, which can be compromised due to several factors including 
+the presence of standing waves from dielectric resonance in a subject [20], less uniform FA from smaller transmit coils, and poor slice 
+profiles from 2D multi-slice imaging [21]. B1 mapping can be particularly helpful to correct FA inaccuracies, particularly at 3T and 
+over large anatomic coverage [5, 22]. In addition to the IR and VFA methods, the LookLocker (LL) method is another technique for T1 
+mapping. Like the VFA method, LL methods are faster than IR; however, they may also result in errors with studies suggesting that VFA 
+may result in overestimation while LL may underestimate T1 values due to inaccurate B1 mapping and incomplete spoiling [19].
+
+The determination of the arterial input function (AIF) to obtain more accurate measurement of the concentration of GBCA in blood plasma 
+(Cp (t)) can be another source of error in DCE-MRI. Partial-volume average artifacts due to limitations in spatial resolution can result 
+from the sampling of a small cerebral artery. Sampling from a large vein such as the superior sagittal sinus as a venous outflow 
+function (VOF) can be used to correct partial-volume average artifacts by rescaling the area under the AIF curve [23–25]. The use of 
+three-dimensional (3D) image acquisition, ensuring that the artery of interest is well visualized in the excitation slab, or using 
+non-selective saturation pre-pulse can help alleviate inflow artifacts where the arterial blood appears bright on pre-contrast images 
+[26]. If measurement of an individual AIF is not practical, other alternatives that have been used include population-based AIFs that do 
+not incorporate individual differences. There are also reference tissue models that attempt to estimate the vascular tracer 
+concentration from one or more normal-appearing surrounding tissues [27]. Hematocrit values should theoretically be incorporated into 
+the AIF measurement because the GBCA remains in the blood plasma component and does not pass into red blood cells. However, in practice, 
+a standard, rather than a directly measured, hematocrit value is used and this too can result in errors [4].
+
+There are a variety of methods to analyze DCE-MRI data. At its most basic, non-PK modeling methods use subjective assessment of the 
+signal intensity-time curve. These are simple to perform and interpret, yet will not provide in-depth understanding of the underlying 
+pathophysiology [28]. Other methods involve semi-quantitative analysis of data with metrics such as the initial area under the 
+enhancement curve (IAUC) and other methods of signal intensity-time curve analysis that provide more detailed characterization of the
+
+kinetics of GBCA tissue accumulation [28, 29]. While easier to perform than PK modeling of DCE-MRI data, these semiquantitative methods 
+cannot distinguish between physiologic factors and physical properties of image acquisition including, but not limited to, scanner 
+parameters, method of GBCA administration, and native T1 of the interrogated tissue [30–32].
+
+DCE Pharmacokinetic Modeling
+
+Through more sophisticated PK modeling of DCE-MRI data, various quantitative parameters can be determined: the volume transfer constant 
+between blood plasma and the EES (Ktrans ), the volume of EES per unit volume of tissue (ve ), the rate constant between EES and blood 
+plasma (kep , where kep  = Ktrans /ve ), capillary wall permeability surface area product per unit volume of tissue (PSρ), and capillary 
+blood flow (perfusion) per unit volume of tissue (Fρ) [6]. Most DCEMRI tracer kinetic models divide the tissue of interest into several 
+compartments (Fig. 2.1). These include the blood plasma volume per unit volume of tissue (vp ) and the volume of 
+extravascular–extracellular space per unit volume of tissue (ve ).
+
+Of the various PK models that have been used to analyze DCE-MRI data, the most popular model is commonly referred to as the Tofts model 
+[6, 33] and provides measures of K trans and ve . K trans was originally described by the following equation:
+
+dC e ( t ) v e = K trans ( C p ( t ) − C e ( t ) ) dt
+
+where C p and C e are the blood plasma and EES contrast agent concentrations, respectively (Fig. 2.1). K trans is the most frequently 
+utilized metric in DCE-MRI and describes the rate of contrast agent flux into the EES. Its physiological meaning
+
+Fig. 2.1 Schematic of two-compartment model in DCE-MRI. Keys: vp  = blood plasma volume per unit volume of tissue; v e = volume of 
+extravascular extracellular space per unit volume of tissue; K trans = volume transfer constant between blood plasma and EES; C p = 
+tracer concentration in arterial blood plasma; C e = tracer concentration in EES; and blue circles = intracellular space where contrast 
+agent is excluded
+
+can be complex as it is dependent on vascular permeability, capillary surface area, and the type of contrast agent utilized [34]. When 
+there is very high permeability of the endothelium with respect to blood flow, (F << PS), K trans primarily reflects blood flow—(K trans 
+= F(1 − Hct)—as this is the main limiting factor of the contrast agent flux; in this case, DCEMRI could be seen as “perfusion imaging.” 
+When there is very low permeability as compared to blood flow (F >> PS), K trans mainly reflects permeability (K trans = PS), and in 
+these situations DCE-MRI could be referred to as “permeability imaging” [6, 34, 35].
+
+In the original Tofts model, neglecting the contribution of intravascular tracer to the MRI signal may be appropriate for a diffusible 
+tracer where its distribution volume is large relative to blood volume. However, with an extracellular tracer, this may be problematic 
+as its distribution volume is smaller [6, 36]. This assumption may produce erroneous K trans estimates because intravascular tracer 
+could contribute a significant proportion of the observed tissue signal. Therefore, in the presence of an intravascular–extracellular 
+tracer, the model has been modified and expressed as:
+
+C t ( t ) = v p C p ( t ) + K trans ∫ C p ( τ ) e − K trans ( ) dτ 0
+
+where v p represents the blood plasma volume per unit volume of tissue. This model is often referred to as the “extended Tofts model” 
+[6] (Fig. 2.1). v p may be ignored in situations when the plasma volume or tracer concentration is negligible; e.g., hypovascular 
+low-enhancing tissues or a few minutes after the bolus. However, in diseases that are highly perfused, such as neoplasms, there should 
+be consideration of v p [4] (Fig. 2.2).
+
+There are less commonly utilized PK models besides the Tofts and extended Tofts models. While the Tofts models assume a bi-directional 
+exchange of CA between the vascular space and EES, a simpler assumption of a unidirectional transport of CA from the vascular to the EES 
+compartment can be formulated. The “Patlak model” [37] utilizes this form and can be expressed as:
+
+t C t ( t ) = v p C p ( t ) + K trans ∫ C p ( τ ) dτ
+
+The two-compartment exchange model (2XCM) is a more generalized kinetic model than the Tofts and Patlak models. It can be used in mixed 
+perfusion and permeability conditions that can allow estimation of PS and F to be calculated [1, 38, 39]. This takes the form of:
+
+v p = F ( C a − C p ) − K PS ( C p − C e ) and v e = K PS ( C p − C e ) dt dt
+
+Standardization Efforts and Variability of DCE-MRI
+
+Lately, there has been increasing awareness regarding the need to decrease bias and variability of quantitative imaging biomarkers. 
+Efforts such as the RSNA’s QIBA have focused on various imaging methods including DCE-MRI [42]. The QIBA Perfusion Biomarker Committee 
+Task Force has been continuously working on their DCE-MRI profile [43]. The goal of QIBA profiles such as the one on DCE-MRI is to 
+assist in achieving adequate performance for an imaging biomarker and to provide details about the capabilities and limitations of an 
+imaging marker. It does so by offering guidance regarding imaging acquisition, devices, technologists, radiologists, subject handling, 
+image quality assurance, reconstruction software, imaging analysis tools, and image quality assurance.
+
+Standardization of image acquisition parameters is a major point of emphasis for QIBA. Inter-scanner and intersite variability of T1 
+values in the brain is well known where the Look-Locker IR method can underestimate while the VFA technique can overestimate white 
+matter T1 measurements [19]. Factors such as the particular MR sequence employed, B 1 field inhomogeneity, temperature of the magnet 
+bore, and incomplete spoiling of transverse magnetization can influence the derived T1 values [44]. Before the acquisition of clinical 
+DCE-MRI data, it is important to determine the true scanner variance and bias for T1 values through the use of a T1 phantom. The QIBA 
+DCE-MRI T1 phantom is composed of spheres containing solutions of varying concentrations of nickel chloride [44]. The phantom contains 
+two sets of spheres: one set to simulate the vascular input function and the other set to represent tissue (Fig. 2.3). The T1 values for 
+the vascular input spheres range between
+
+0.75 and 41.6 s − 1 while the tissue spheres range between
+
+0.67 and 7.5 s− 1 . The phantom is filled with 30-mM sodium chloride solution to simulate patient coil loading. To obtain T1 values, an 
+acquisition protocol that encompasses the typical VFAs is used for T1 mapping. This employs a coronal fast spoiled gradient echo 
+sequence with VFAs of 2, 5, 10, 15, 20, 25, and 30°. The use of the QIBA DCE phantom to determine test–retest reliability and T1 
+accuracy is par-
+
+ticularly important in longitudinal DCE-MRI studies. In order to analyze image data from the QIBA DCE-MRI phantom, QIBA also provides 
+automated T1 quantification software [45].
+
+A recent multicenter phantom study of vendor-provided B1 mapping sequences demonstrated the potential for these techniques to provide 
+unbiased and reproducible quantification of B1 field inhomogeneity that could be used to account for spatial variation in the 
+transmitted radio frequency (RF) field [46]. Version 2.0 of the RSNA QIBA DCE-MRI Profile is currently being written and it will address 
+spatially dependent B1 field inhomogeneity effects that may affect VFA T1 measurements. This is particularly problematic at higher 
+fields like 3T and when data are acquired over large anatomic regions and may necessitate B1 mapping and corrections to be incorporated 
+in the measurement of T1 values [5].
+
+While the QIBA T1 phantom is a static phantom, there has been recent work by Kim et al. [47] on a dynamic perfusion phantom focused on 
+DCE-MRI of the abdomen. They used two different 3T MRI scanners and three healthy volunteers. When compared to a static phantom, they 
+found that the perfusion phantom significantly decreased the variability of contrast concentration and K trans measurements measured in 
+four abdominal organs (liver, spleen, pancreas, and paravertebral muscles). One should note that while estimates of DCE-MRI performance 
+can be conducted with phantoms, these experiments likely underestimate the variability produced in clinical populations due to the 
+absence of motion artifacts [5].
+
+Few clinical DCE-MRI studies of variability have been done in the brain and more data are desperately needed. However, practical 
+difficulties centering on the need to do multiple GBCA injections in patients make such studies difficult to conduct. One such study was 
+performed in 2003 by Jackson et al. [48] in 9 glioma patients and found that the within-region of interest (ROI) coefficient of 
+variation for mean K trans was 7.7% with a repeatability coefficient of 21.3%. A more recent publication by Barboriak et al. in 2019 
+[49] found that in a multicenter imaging study of recurrent glioblastoma, less variation in inter-reader tumor segmentation volumes, 
+possibly through the use of automated tools, may decrease variability in DCE-MRI metrics like Ktrans .
+
+T2/T2*-Weighted Dynamic Susceptibility Contrast MRI
+
+Dynamic susceptibility contrast (DSC)-MRI has been applied to many neurological diseases, most prominently brain tumors and stroke. 
+Compared to DCE-MRI, DSC-MRI is much more commonly used in the clinical setting for brain imaging, though the opposite is true outside 
+of the brain.
+
+Also sometimes referred to as bolus tracking MRI, a nondiffusible tracer, typically a GBCA, is administered and rapid images are 
+obtained during the first-pass of the contrast agent. Several parameters are derived from DSC-MRI including relative cerebral blood flow 
+(CBF), mean transit time (MTT), and relative cerebral blood volume (rCBV). rCBV is generally considered the most widely utilized and 
+robust DSC-MRI perfusion metric in brain imaging.
+
+DSC-MRI Acquisition
+
+Like DCE-MRI, DSC-MRI acquisition consists of images acquired before, during, and after administration of an intravascular contrast 
+administration (CA). While DCE-MRI emphasizes T1 contrast and uses short TE and TR to minimize competing T2* effects, DSC-MRI emphasizes 
+T2* and T2 contrast. Accordingly, long TE and TR are used to minimize competing T1 effects [2]. In gradient echo-echo planar imaging 
+(GRE-EPI DSC-MRI), TE is usually in the range of 25–35 ms in order to optimize T2* weighting, signal-to-noise ratio (SNR), and 
+sensitivity to T1 effects [2, 50, 51]. With regard to TR, 1.5 s or less is recommended to optimize temporal resolution given the 
+constraints of desired slices, TE and T1 weighting [2, 50, 51]. Regardless of whether GRE or spin echo (SE) sequences are used, DSC-MRI 
+requires very robust temporal resolution (<2 s/time point) with adequate spatial resolution. Given the need for high temporal 
+resolution, single-shot EPI sequences are typically used. Some newer methods designed to address the image distortion and signal dropout 
+artifacts that degrade traditional EPI acquisitions include single-line acquisitions [27], spiral or radial acquisitions [52, 53], and 
+advanced EPI readouts [54, 55].
+
+A flip angle of 60–70° may in principle provide a compromise between SNR and T1 sensitivity from GBCA leakage effects [2, 50, 51]. 
+Higher flip angles would result in greater SNR, but would be more susceptible to GBCA leakage effects due to increased T1 sensitivity. 
+On the other hand, lower flip angles are less prone to GBCA leakage effects but at the cost of lower SNR. In order to avoid 
+partial-volume average artifacts, adequate spatial resolution of 1–3 mm in plane and 3–5 mm through plane are recommended, though this 
+may depend on desired temporal resolution [2].
+
+Most DSC-MRI data are acquired using GRE-EPI sequences, although some have used SE-EPI. SE methods are most sensitive to smaller vessels 
+(<20 μ[mu]m; i.e., capillaries) [56], and also are less prone to artifacts at bonebrain–air interfaces or at the skull base compared to 
+GRE methods [57, 58]. GRE-EPI methods result in greater signal loss [2], and are sensitive to vessels of all sizes [56] with excellent 
+signal-to-noise ratios. GRE methods also allow higher temporal resolution due to shorter TEs and this improves AIF quantification [2]. 
+Given its sensitivity to vessels of all sizes, perfusion metrics derived from GRE could suffer from large vessel blooming artifact 
+because of a tendency of the signal from capillaries to be dominated by macrovascular signal [59, 60]. Thus, GRE-based acquisition could 
+provide overestimates of perfusion metrics, while SE techniques likely provide truer estimates of capillary-level perfusion compared to 
+positron emission tomography (PET).
+
+Newer multi-echo DSC-MRI acquisitions such as spin and gradient echo (SAGE) [61–65] allow simultaneous
+
+acquisition of GRE and SE data without adding additional scan time or GBCA injections. These methods may provide important additional 
+complementary information given their different sensitivities to vessel size, and enable vessel size imaging (VSI) to be performed and 
+also provide simultaneous DCE-MRI metrics with only a single dose of contrast agent. Other techniques such as spiral perfusion imaging 
+with consecutive echoes (SPICE) methods [53] can also provide both DSC-MRI and DCE-MRI metrics in a single acquisition and without the 
+need of a preload dose of GBCA.
+
+The scan duration of DSC-MRI is much shorter than DCE-MRI and is shortest for indications like brain tumor evaluation (at least 2 min 
+recommended). For other indications where there will be bolus dispersion and delay, like stroke evaluation, longer scan duration is 
+needed [66]. DSCMRI acquisitions are limited by compromises in spatiotemporal resolution, volume coverage, and SNR. Recent advances to 
+accelerate DSC-MRI acquisition and achieve optimal spatiotemporal resolution include the use of parallel imaging methods [55, 67] to 
+decrease the EPI readouts, reduce EPI-related artifacts, and decrease partial-volume effects. Other methods such as simultaneous 
+multi-slice acquisitions [68] can accelerate DSC-MRI acquisitions by applying simultaneously exciting multiple slice planes with 
+radiofrequency pulses without significant loss of SNR while achieving high spatiotemporal resolution.
+
+Compared to DCE-MRI, GBCA injection rates should be relatively higher (at least 4 cc/s) for DSC-MRI in order to avoid underestimation of 
+DSC-MRI metrics from slower rates [69]. Similar to DCE-MRI, injection should ideally be given via the right arm in order to avoid venous 
+reflux. Approximately 60 s of baseline data should be acquired prior to the injection of a GBCA in order to provide good CBV map CNR 
+[51]. An overview of DSC-MRI recommended acquisition parameters is given in Table 2.3 [51, 70, 71].
+
+DSC-MRI Data Analysis
+
+Based on the indicator dilution methods for non-diffusible tracers, CBV is proportional to the area under the contrast agent 
+concentration (Δ[Delta]R2 * [or Δ{Delta}R2 ])-time curve, assuming that there is no contrast agent leakage or recirculation [72]. While 
+in DCE-MRI, dipole–dipole interactions are primarily responsible for GBCA-based T1 relaxation enhancement, the main contrast mechanism 
+in DSC-MRI is susceptibility effects induced by GBCAs [73]. When a GBCA is given as a bolus, a transient drop in signal intensity is 
+seen on the signal intensity-time curve, known as “negative enhancement,” as opposed to the “positive enhancement” due to enhanced T1 
+relaxation in DCE-MRI or conventional contrast-enhanced T1-weighted imaging.
+
+Like in DCE-MRI, changes in DSC-MRI signal intensity are converted to the tissue concentration of GBCA at time t (C(t)). For DSC-MRI, 
+this relation is noted on a voxel-wise basis as:
+
+C ( t ) ∝ k ⋅ ∆R 2 ∗ ( t ) = −
+
+k
+
+ S ( t ) 
+
+ 
+
+where k represents a proportionality constant (often set to unity as it is not known a priori) that is dependent on tissue type, field 
+strength, contrast agent, and pulse sequence; ΔR2 ∗ (t) represents the change in the T2* relaxation rate at time t; TE is the echo 
+time; S(t) represents the signal intensity at time t; and S 0 represents the baseline signal intensity before arrival of the GBCA. It is 
+assumed that T1 effects due to an intact BBB are not significant during DSC-MRI acquisition and that there is a linear relationship 
+between ΔR2 ∗ (t) and C(t) [74]. However, in lesions such as brain tumors, disruption of the BBB is common and necessitates changes in 
+acquisition and post-processing methods in order to compensate for GBCA leakage effects (discussed below). Furthermore, the assumed 
+linear relationship
+
+between ΔR2 ∗ (t) and C(t) may not hold true [75] and assumption of a quadratic relationship could be assumed to mitigate CBF errors, 
+particularly when estimating the AIF [76].
+
+The area beneath the concentration-time curve is calculated to derive the CBV map. By applying tracer kinetic modeling for intravascular 
+tracer agents [77–80], CBV can be obtained by integrating C(t) using the following relationship:
+
+H f ∫ t 0 C t ( t ) dt CBV = ρ ∫ t 0 C a ( t ) dt
+
+where H f represents the difference in hematocrit between the AIF and capillaries, Ct (t) represents the concentration of GBCA in the 
+tissues, ρ represents the brain tissue density, and Ca (t) represents the AIF. The AIF can be ignored because of constraints in 
+quantification due to limited temporal and spatial resolution and so “relative” CBV is commonly reported.
+
+Indicator dilution theory can be used to model Ct (t) using the following equation:
+
+t C t ( t ) = CBF ⋅ C a ( t ) ⊗ R ( t ) = CBF ⋅ ∫ C a ( t ) R ( t − τ ) dτ 0
+
+where ⊗ represents convolution of Ca (t) and the tissue residue function R(t), which represents the amount of contrast agent that 
+remains in the tissue at time t.
+
+The deconvolution of the Ca (t) and Ct (t) is needed to quantify CBF. Of the various methods available, the most commonly used 
+model-independent method is singular value decomposition (SVD) [81] that is expressed as:
+
+t
+
+j
+
+C t ( t ) = CBF ⋅ ∫ C a ( t ) R ( t − τ ) dτ ≈ ∆t
+
+C a ( t i ) R ( t j − ti 
+
+∑
+
+i =0
+
+)
+
+where it is assumed that R(t) and Ca (t) remain constant over small time intervals and that cerebral and arterial concentrations are 
+measured at equally spaced time points. In order for SVD to determine R(t), methods have been devised to decrease errors from the 
+potential delay between the AIF and tissue concentration curves [82] and to avoid physiologically unreasonable results due to noise that 
+lead to unstable solutions. The most common ways to address these two issues are to implement a block-circulant AIF discretization 
+matrix with a truncated SVD regularization approach, respectively [2].
+
+Application of the central volume theorem allows calculation of the mean transit time (MTT):
+
+MTT =
+
+CBV
+
+CBF
+
+Aside from CBV, CBF, and MTT, there are several other emerging DSC-MRI parameters on the horizon. Newer kinetic models can provide 
+estimates of oxygen extraction fraction (OEF) and capillary transit time heterogeneity (CTH) that may better relate to the oxygen 
+delivery that could be attained for a given CBF [83]. Traditional determination of oxygen availability in the brain is determined using 
+CBF and arterial oxygen concentration, but these newer methods have the potential to highlight perfusion derangements in brain tissue 
+that may not be detected with conventional DSC-MRI analysis. As was mentioned previously, the use of gradient-echo and spin-echo 
+sequences to provide simultaneous estimations of Δ(Delta)R 2 and Δ(Delta)R2 * can provide other parameters including measures of vessel 
+size imaging (VSI), microvascular density, mean vessel diameter [84], and vessel architectural imaging (VAI) (Fig. 2.4) [85]. In current 
+practice, these measures are obtained with tissue sampling and defined by the pathologist. However, validation of these techniques could 
+overcome the limitations of sampling error and inability to perform longitudinal analysis, and may become important with the continued 
+development of anti-vascular and anti-angiogenic therapies [86].
+
+Arterial Input Function
+
+Determination of the AIF is one of the leading sources of error in the quantification of DSC-MRI. Various manual and automatic 
+approaches [87–94] have been proposed to measure the AIF, but the most commonly used approach is to use a global, as opposed to local, 
+measurement using voxels either in or adjacent to the middle cerebral artery (MCA). While straightforward to do, assuming a global AIF 
+will not likely be the true arterial input to the region of interest and may introduce errors in quantification due to AIF delay and 
+dispersion [66, 95]. Delay effects can be compensated for by using AIF discretization techniques that are resistant to delay in SVD for 
+example, while dispersion effects are difficult to adjust for when using a global AIF [2]. In stroke cases, multiple regional AIFs may 
+diminish some of the dispersion errors [96] from vascular disease and using these along with newer models based on vascular morphology 
+and fluid dynamics [97, 98] holds promise to combat dispersion effects.
+
+Absolute Quantification
+
+Absolute quantification of DSC-MRI is difficult due to several factors such as uncertainties relating to hematocrit, brain proton 
+density constants, contrast agent relaxivity, contrast
+
+agent leakage correction, and AIF considerations [2, 50, 51]. As a result, most DSC-MRI studies rely on qualitative or semi-quantitative 
+measures. Most often, a summary statistic in the form of “relative” CBV (rCBV) or CBF (rCBF) is often used without definition of the AIF 
+[50]. It should be noted that in addition to “relative” CBV (or CBF), “rCBV” can also refer to “regional” CBV [99]. It is also common 
+for relative CBV to refer to a value that is normalized to “normal” tissue, typically contralateral white matter [100], while “regional” 
+CBV often refers to absolute quantification of CBV.
+
+Scaling metrics such as normalization or standardization are commonly applied to non-quantitative rCBV values in order to compare 
+between subjects and imaging sessions. However, the amount of variability intrinsic to these techniques is unclear [101]. With 
+normalization, the mean value of the voxels within a tumoral ROI is divided by those in a reference ROI, usually that in 
+normal-appearing white matter. Normalization is quite commonly used; however, it can be time consuming and lead to user-dependent 
+subjectivity [102]. On the other hand, when standardization is used, there is no need to use a reference ROI because rCBV maps are 
+transformed to a standardized intensity scale. In this way, it can function as an objective technique of converting rCBV values to a 
+consistent scale and it appears to improve rCBV measurement consistency across patients and time [102].
+
+Leakage Effects of GBCAs
+
+GBCA leakage can diminish the accuracy and precision of rCBV derived from DSC-MRI. With an intact BBB, compartmentalization of GBCA 
+within the vasculature mainly impacts T2 or T2* with minimal impact on T1, and diminutive Δ(Delta)R 1 is a major assumption in DSC-MRI 
+[56]. In theory, the equation for Δ(Delta)R2 * is valid only if the changes in T1 associated with GBCA leakage do not significantly 
+affect signal intensity. However, this assumption often does not hold true as a disrupted blood–brain barrier leading to 
+contrast-enhancement is commonly seen in clinical practice, particularly with many brain tumors. In cases of contrast agent leakage, 
+underestimation of rCBV may occur because GBCA leakage can diminish the magnitude of the susceptibility contrast signal intensity loss 
+in regions where T1 effects are prominent (Fig. 2.5). At the same time, it is possible to overestimate rCBV in the face of prominent 
+T2/T2* effects because this will result in greater signal decrease and undershooting of the baseline signal intensity. The amount of 
+under- or overestimation of rCBV is contingent upon contrast agent kinetics, brain tissue microstructure, pulse sequence parameters, and 
+preload GBCA dose [2].
+
+The decreased susceptibility differences between the intra- and extravascular compartments due to GBCA leakage result in temporally 
+variant decreases in GBCA T2* relaxivity [25, 103]. More T2* signal decrease can result from mesoscopic magnetic field gradients induced 
+by compartmentalization of GBCA around cells (Fig. 2.6). These changes may be influenced by cellular features such as shape, size, 
+density, polydispersity, and atypia [104]. The potential interaction between T1 and T2/T2* effects in the same lesion further 
+complicates interpretation of rCBV values [105].
+
+There has historically been various methodologies employed to address leakage effects including low flip angle and dual TE acquisitions, 
+preload GBCA dosing, and mathematical post-processing models [105–108]. Current recommendations (see section “Standardization Efforts 
+and Variability of DSC-MRI” below) to correct for leakage effects in single-echo GRE-EPI sequences are to use 60° FA acquisition with 
+full-dose preload or 30° FA without preload, both with full-dose bolus GBCA administration and application of the 
+Boxerman-Schmainda-Weisskoff (BSW) modelbased leakage correction method [51, 70, 109–111]. The BSW model generates rCBV corrected for T1 
+and T2* leakage effects by using linear fitting to calculate voxel-wise differences in ΔR 2 ∗ curves from non-enhancing regions and 
+assumes unidirectional GBCA extravasation [105, 112]. Recent work in a rat glioma model suggests that dual-echo DSC-MRI acquisitions 
+along with a combined biophysical and pharmacokinetic method can potentially eliminate the need for preload GBCA dosing [113].
+
+Superparamagnetic contrast agents such as iron oxide nanoparticles are a newer type of contrast agent that may be advantageous compared 
+to GBCAs given their lack of extravasation, more prominent T2 and T2* relaxivity, and recent concerns about potential long-term effects 
+of gadolinium tissue deposition [114]. Though there are no current such blood pool agents approved for DSC-MRI, ferumoxytol can be used 
+off-label for DSC-MRI [115]. Ferumoxytol is a macromolecular, carbohydrate-coated iron oxide particle that has been sold under the name 
+Feraheme as an iron replacement for adult renal failure patients [116, 117], and several studies have shown promise of DSC-MRI using 
+this agent to distinguish pseudoprogression from tumor progression in brain tumor patients [118, 119].
+
+Standardization Efforts and Variability of DSC-MRI
+
+As with DCE-MRI, there has been a lack of standardized methodology for DSC-MRI [120]. Significant variation in rCBV values can result 
+from differences in image acquisition and post-processing methods, particularly with regard to dealing with leakage effects [121]. This 
+lack of standardization has made inclusion of DSC-MRI into clinical trials and routine practice rather difficult, and to help address 
+this, the American Society of Functional Neuroradiology (ASFNR) published its recommended DSC-MRI protocol in 2015 centered around 
+1/4–full-dose preload GBCA administration, an intermediate (60°) flip angle, field strength-dependent TE,
+
+and model-based leakage correction (Table 2.3). The Brain Tumor Imaging Protocol (BTIP) consensus recommendations [122], also published 
+in 2015, stipulate that conventional contrast-enhanced T1-weighted imaging be acquired following single-dose GBCA administration, 
+thereby impacting the design of a protocol that incorporates DSCMRI. To maintain BTIP compatibility, either single-dose GBCA must be 
+split between preload and DSC-MRI bolus before conventional post-contrast imaging, or a full-dose preload must precede post-contrast 
+imaging, followed by variable-dose DSC-MRI bolus. In 2018, Schmainda et al. [123] performed a multicenter DSC-MRI study composed of 
+low-grade and high-grade gliomas. These scans were obtained with a GRE-EPI sequence with preload at a single institution and then seven 
+sites used a variety of model-based post-processing leakage correction, including no correction at all, to compute DSC-MRI metrics. 
+These multicenter results confirmed other prior studies showing the advantages of using preload and model-based leakage correction to 
+obtain consistent results across institutions and distinguish low- from high-grade tumors using a common threshold [65, 106, 107, 112, 
+121].
+
+Recent work by Semmineh et al. [70] found that by using a population-based digital reference object (DRO) simulating a glioblastoma and 
+the ASFNR recommendations of TE = 30 ms and 60° FA at 1.5 T and 3 T resulted in outstanding precision and accuracy for single-dose 
+preload and single-
+
+dose DSC bolus (“1+1” dosing scheme). However, notably worse results were found using fractional GBCA doses, particularly those without 
+preload dosing and at 1.5 T. They also found that a protocol using no-preload dose, a low (30°) FA, and TE = 30 ms at 3 T performed 
+essentially as well as the 1+1 dosing scheme, and in 2019, Schmainda et al. published clinical validation of those DRO results in a 
+four-institution study (Fig. 2.7) [71]. This low-FA, no-preload methodology could be a preferred standardized DSC-MRI methodology 
+because it is a simpler technique with fewer injections and less volume of GBCA. Further multicenter validation, particularly at 1.5 T, 
+is needed.
+
+Again, as with DCE-MRI, there is little data regarding the repeatability of DSC-MRI. Recently, Prah et al. compared repeatability of six 
+common post-processing methods to estimate normalized rCBV (nrCBV) and standardized rCBV (srCBV) [101]. They performed double-baseline 
+examinations in 33 patients with newly diagnosed untreated glioblastoma. Repeat MRI examinations were obtained within eight days. Those 
+methods that used post-processing leakage correction of ∆(Delta)R2 *(t) resulted in superior repeatability and compared to nrCBV, srCBV 
+had less variability and needed fewer participants to detect a 10% or 20% change (Fig. 2.8).
+
+To address the lack of standardization of DSC-MRI, QIBA has recently initiated the DSC-MRI Biomarker Committee whose goal is to 
+standardize DSC-MRI methods [124].
+
+Conclusion
+
+In summary, both DCE-MRI and DSC-MRI approaches offer overlapping and complementary insights into the microvasculature and hemodynamics 
+of the brain in health and disease. While both have existed for several decades, routine, standardized clinical implementation remains 
+elusive. A recent 2017 systematic review and meta-analysis by Patel et al. [120] found that while individual studies of DCE-
+
+MRI and DSC-MRI appear to have good accuracy for differentiating viable glioma from post-treatment changes, the reported thresholds have 
+significant variability. This highlights the great promise of these techniques beyond conventional MRI for important clinical 
+applications, but emphasizes the need to standardize technique and demonstrate acceptable variability of these methods. A table of key 
+literature of DCE-MRI and DSC-MRI covered in this chapter is listed in Table 2.4.
+
+References
+
+18. Kim KA, Park M-S, Kim I-S, Kiefer B, Chung W-S, Kim M-J, et al. Quantitative evaluation of liver cirrhosis using T1 relaxation time 
+with 3 tesla MRI before and after oxygen inhalation. J Magn Reson Imaging. 2012;36(2):405–10.
+
+1. Sourbron SP, Buckley DL. Classic models for dynamic contrastenhanced MRI. NMR Biomed. 2013;26(8):1004–27.
+
+2. Quarles CC, Bell LC, Stokes AM. Imaging vascular and hemodynamic features of the brain using dynamic susceptibility contrast and 
+dynamic contrast enhanced MRI. NeuroImage. 2019;187:32–55.
+
+3. Jahng G-H, Li K-L, Ostergaard L, Calamante F. Perfusion magnetic resonance imaging: a comprehensive update on principles and 
+techniques. Korean J Radiol. 2014;15(5):554–77.
+
+4. Georgiou L, Buckley DL. T1-weighted DCE MRI. In: Cercignani M, Dowell NG, Tofts P, editors. Quantitative MRI of the brain: principles 
+of physical measurement. 2nd ed. Boca Raton: CRC Press; 2018. p. 251–68.
+
+5. Shukla-Dave A, Obuchowski NA, Chenevert TL, Jambawalikar S, Schwartz LH, Malyarenko D, et al. Quantitative imaging biomarkers 
+alliance (QIBA) recommendations for improved precision of DWI and DCE-MRI derived biomarkers in multicenter oncology trials. J Magn 
+Reson Imaging. 2018;49(7):101–21.
+
+6. Tofts PS, Brix G, Buckley DL, Evelhoch JL, Henderson E, Knopp MV, et al. Estimating kinetic parameters from dynamic contrast-enhanced 
+t1-weighted MRI of a diffusable tracer: standardized quantities and symbols. J Magn Reson Imaging. 1999;10(3):223–32.
+
+7. O’Connor JP, Aboagye EO, Adams JE, et al. Imaging biomarker road-map for cancer studies. Nat Rev Clin Oncol. 2017;14(3):169–86.
+
+8. Tofts PS. Modeling tracer kinetics in dynamic Gd-DTPA MR imaging. J Magn Reson Imaging. 1997;7(1):91–101.
+
+9. Yoon H, Park S-H, Ye JC. Improved volumetric imaging for DCEMRI using parallel imaging and dynamic compressed sensing. IEEE Glob 
+Conf. 2014;2014:483–6.
+
+10. Espagnet MR, Bangiyev L, Haber M, Block K, Babb J, Ruggiero V, et al. High-resolution DCE-MRI of the pituitary gland using radial 
+k-space acquisition with compressed sensing reconstruction. Am J Neuroradiol. 2015;36(8):1444–9.
+
+11. Guo Y, Lebel RM, Zhu Y, Lingala SG, Shiroishi MS, Law M, et al. High-resolution whole-brain DCE-MRI using constrained 
+reconstruction: prospective clinical evaluation in brain tumor patients. Med Phys. 2016;43(5):2013–23.
+
+12. Zhao J, Yang Z-Y, Luo B-N, Yang J-Y, Chu J-P. Quantitative evaluation of diffusion and dynamic contrast-enhanced MR in tumor 
+parenchyma and peritumoral area for distinction of brain tumors. PLoS One. 2015;10(9):e0138573.
+
+13. Abe T, Mizobuchi Y, Nakajima K, Otomi Y, Irahara S, Obama Y, et al. Diagnosis of brain tumors using dynamic contrast-enhanced 
+perfusion imaging with a short acquisition time. Springerplus. 2015;4(1):88.
+
+14. Haacke EM, Filleti CL, Gattu R, Ciulla C, Al-Bashir A, Suryanarayanan K, et al. New algorithm for quantifying vascular changes in 
+dynamic contrast-enhanced MRI independent of absoluteT1 values. Magn Reson Med. 2007;58(3):463–72.
+
+15. Tietze A, Mouridsen K, Mikkelsen IK. The impact of reliable prebolus T 1 measurements or a fixed T1 value in the assessment of 
+glioma patients with dynamic contrast enhancing MRI. Neuroradiology. 2015;57(6):561–72.
+
+16. Fennessy FM, Fedorov A, Gupta SN, Schmidt EJ, Tempany CM, Mulkern RV. Practical considerations in T1 mapping of prostate for dynamic 
+contrast enhancement pharmacokinetic analyses. Magn Reson Imaging. 2012;30(9):1224–33.
+
+17. Besa C, Bane O, Jajamovich G, Marchione J, Taouli B. 3D T1 relaxometry pre and post gadoxetic acid injection for the assessment of 
+liver cirrhosis and liver function. Magn Reson Imaging. 2015;33(9):1075–82.
+
+19. Stikov N, Boudreau M, Levesque IR, Tardif CL, Barral JK, Pike GB. On the accuracy of T1mapping: Searching for common ground. Magn 
+Reson Med. 2015;73(3):514–22.
+
+20. Barker GJ, Simmons A, Arridge SR, Tofts PS. A simple method for investigating the effects of non-uniformity of radiofrequency 
+transmission and radiofrequency reception in MRI. Br J Radiol. 1998;71(841):59–67.
+
+21. Parker GJ, Barker GJ, Tofts PS. Accurate multislice gradient echoT1 measurement in the presence of non-ideal RF pulse shape and RF 
+field nonuniformity. Magn Reson Med. 2001;45(5):838–45.
+
+22. Dowell NG, Tofts PS. Fast, accurate, and precise mapping of the RF field in vivo using the 180° signal null. Magn Reson Med. 
+2007;58(3):622–30.
+
+23. Larsson HBW, Courivaud F, Rostrup E, Hansen AE. Measurement of brain perfusion, blood volume, and blood-brain barrier permeability, 
+using dynamic contrast-enhancedT1-weighted MRI at 3 tesla. Magn Reson Med. 2009;62(5):1270–81.
+
+24. Hansen AE, Pedersen H, Rostrup E, Larsson HB. Partial volume effect (PVE) on the arterial input function (AIF) inT1-weighted 
+perfusion imaging and limitations of the multiplicative rescaling approach. Magn Reson Med. 2009;62(4):1055–9.
+
+25. Sourbron S, Ingrisch M, Siefert A, Resier M, Herrmann
+
+K. Quantification of cerebral blood flow, cerebral blood volume, and blood-brain-barrier leakage with DCE-MRI. Magn Reson Med. 
+2009;62(1):205–17.
+
+26. Buckley DL, Roberts C, Parker GJM, Logue JP, Hutchinson CE. Prostate cancer: evaluation of vascular characteristics with dynamic 
+contrast-enhanced T1-weighted MR imaging—initial experience. Radiology. 2004;233(3):709–15.
+
+27. Quarles CC, Gore JC, Xu L, Yankeelov TE. Comparison of dualecho DSC-MRI- and DCE-MRI-derived contrast agent kinetic parameters. Magn 
+Reson Imaging. 2012;30(7):944–53.
+
+28. Narang J, Jain R, Arbab AS, Mikkelsen T, Scarpace L, Rosenblum ML, et al. Differentiating treatment-induced necrosis from 
+recurrent/progressive brain tumor using nonmodel-based semiquantitative indices derived from dynamic contrast-enhanced T1-weighted MR 
+perfusion. Neuro-Oncology. 2011;13(9):1037–46.
+
+29. Parker GJM, Buckley DL. Tracer kinetic modeling for T1-weighted DCE-MRI. In: Jackson A, Buckley DL, Parker GJM, editors. Dynamic 
+contrast-enhanced MRI in oncology. Berlin: Springer; 2005. p. 81–92.
+
+30. Paldino MJ, Barboriak DP. Fundamentals of quantitative dynamic contrast-enhanced MR imaging. Magn Reson Imaging Clin N Am. 
+2009;17(2):277–89.
+
+31. Gribbestad IS, Gjesdal KI, Nilsen G, Lundgren S, Hjelstuen MHB, Jackson A. An introduction to dynamic contrast-enhanced MRI in 
+oncology. In: Jackson A, Buckley DL, Parker GJM, editors. Dynamic contrast-enhanced magnetic resonance imaging in oncology. Berlin: 
+Springer; 2005. p. 81–92.
+
+32. Padhani AR. Dynamic contrast-enhanced MRI in clinical oncology: current status and future directions. J Magn Reson Imaging. 
+2002;16(4):407–22.
+
+33. Tofts PS, Kermode AG. Measurement of the blood-brain barrier permeability and leakage space using dynamic MR imaging. 1. Fundamental 
+concepts. Magn Reson Med. 1991;17(2):357–67.
+
+34. Gerstner ER, Sorensen AG, Jain RK, Batchelor TT. Advances in neuroimaging techniques for the evaluation of tumor growth, vascular 
+permeability, and angiogenesis in gliomas. Curr Opin Neurol. 2008;21(6):728–35.
+
+35. Zaharchuk G. Theoretical basis of hemodynamic MR imaging techniques to measure cerebral blood volume, cerebral blood flow, and 
+permeability. AJNR Am J Neuroradiol. 2007;28(10):1850–8.
+
+36. Brix G, Bahner ML, Hoffmann U, Horvath A, Schreiber
+
+W. Regional blood flow, capillary permeability, and compartmental volumes: measurement with dynamic CT–initial experience. Radiology. 
+1999;210(1):269–76.
+
+37. Patlak CS, Blasberg RG, Fenstermacher JD. Graphical evaluation of blood-to-brain transfer constants from multiple-time uptake data. 
+J Cereb Blood Flow Metab. 1983;3(1):1–7.
+
+38. Brix G, Kiessling F, Lucht R, Darai S, Wasser K, Delorme S, Griebel J. Microcirculation and microvasculature in breast tumors: 
+pharmacokinetic analysis of dynamic MR image series. Magn Reson Med. 2004;52(2):420–9.
+
+39. Sourbron SP, Buckley DL. Tracer kinetic modeling in MRI:
+
+estimating perfusion and capillary permeability. Phys Med Biol. 2012;57(2):R1–R33.
+
+40. Naish JH, Kershaw LE, Buckley DL, et al. Modeling of contrast agent kinetics in the lung using T1-weighted dynamic contrastenhanced 
+MRI. Magn Reson Med. 2009;61(6):1507–14.
+
+41. Brix G, Zwick S, Kiessling F, Griebel J. Pharmacokinetic analysis of tissue microcirculation using nested models: multimodel 
+interference and parameter identifiability. Med Phys. 2009;36(7):2923–33.
+
+42. Quantitative Imaging Biomarkers Alliance. Rsna.org.
+
+2019. Available from: https://www.rsna.org/en/research/ quantitative-imaging-biomarkers-alliance.
+
+43. Profiles. Profiles - QIBA Wiki. 2019. Available from https:// qibawiki.rsna.org/index.php/Profiles.
+
+44. Bane O, Hectors SJ, Wagner M, Arlinghaus LL, Aryal MP, Cao Y, et al. Accuracy, repeatability, and interplatform reproducibility of 
+T1 quantification methods used for DCE-MRI: Results from a multicenter phantom study. Magn Reson Med. 2018;79(5):2564–75.
+
+45. Quantitative Imaging Data Warehouse (QIDW). 2019. Available from: https://www.rsna.org/en/ research/quantitative- imaging- 
+biomarkers- alliance/ quantitative-imaging-data-warehouse.
+
+46. Bliesener Y, Zhong X, Guo Y, Boss M, Bosca R, Laue H, et al. Radiofrequency transmit calibration: a multi-center evaluation of 
+vendor-provided radiofrequency transmit mapping methods. Med Phys. 2019;46(6):2629–37.
+
+47. Kim H, Mousa M, Schexnailder P, Hergenrother R, Bolding M, Ntsikoussalabongui B, et al. Portable perfusion phantom for quantitative 
+DCE-MRI of the abdomen. Med Phys. 2017;44(10):5198–209.
+
+48. Jackson A, Jayson GC, Li KL, Zhu XP, Checkley DR, Tessier JJL, et al. Reproducibility of quantitative dynamic contrastenhanced MRI 
+in newly presenting glioma. Br J Radiol. 2003;76(903):153–62.
+
+49. Barboriak DP, Zhang Z, Desai P, Snyder BS, Safriel Y, Mckinstry RC, et al. Interreader variability of dynamic contrast-enhanced MRI 
+of recurrent glioblastoma: the multicenter ACRIN 6677/ RTOG 0625 study. Radiology. 2019;290(2):467–76.
+
+50. Shiroishi MS, Castellazzi G, Boxerman JL, Damore F, Essig M, Nguyen TB, et al. Principles of T2*-weighted dynamic susceptibility 
+contrast MRI technique in brain tumor imaging. J Magn Reson Imaging. 2014;41(2):296–313.
+
+51. Welker K, Boxerman J, Kalnin A, Kaufmann T, Shiroishi M, Wintermark M. ASFNR recommendations for clinical performance of MR dynamic 
+susceptibility contrast perfusion imaging of the brain. Am J Neuroradiol. 2015;36(6):E41–51.
+
+52. Jonathan SV, Vakil P, Jeong Y, Ansari S, Hurley M, Bendok B, Carroll TJ. A radial 3D GRE-EPI pulse sequence with kz blip encoding 
+for whole-brain isotropic 3D perfusion using DSC-MRI bolus tracking with sliding window reconstruction (3D RAZIR).
+
+In: Proceedings of the 21st annual meeting of ISMRM. Salt Lake City, UT, USA. 2013, p 582.
+
+53. Paulson ES, Prah DE, Schmainda KM. Spiral perfusion imaging with consecutive echoes (SPICE) for the simultaneous mapping of DSC- and 
+DCE-MRI parameters in brain tumor patients: theory and initial feasibility. Tomography. 2016;2(4):295–307.
+
+54. Gelderen P, van Grandin C, Petrella JR, Moonen CTW. Rapid three-dimensional MR imaging method for tracking a bolus of contrast agent 
+through the brain. Radiology. 2000;216(2):603–8.
+
+55. Newbould RD, Skare ST, Jochimsen TH, Alley MT, Moseley ME, Albers GW, Bammer R. Perfusion mapping with multiecho multishot parallel 
+imaging EPI. Magn Reson Med. 2007;58(1):70–81.
+
+56. Boxerman JL, Hamberg LM, Rosen BR, Weisskoff RM. MR contrast due to intravascular magnetic susceptibility perturbations. Magn Reson 
+Med. 1995;34(4):555–66.
+
+57. Aronen HJ, Gazit IE, Louis DN, Buchbinder BR, Pardo FS, Weisskoff RM, et al. Cerebral blood volume maps of gliomas: comparison with 
+tumor grade and histologic findings. Radiology. 1994;191(1):41–51.
+
+58. Aronen HJ, Perkio J. Dynamic susceptibility contrast MRI of gliomas. Neuroimaging Clin N Am. 2002;12(4):501–23.
+
+59. Østergaard L, Johannsen P, Høst-Poulsen P, Vestergaard-Poulsen P, Asboe H, Gee AD, Hansen SB, Cold GE, Gjedde A, Gyldensted
+
+C. Cerebral blood flow measurements by magnetic resonance imaging bolus tracking: comparison with [15O]H2O positron emission tomography 
+in humans. J Cereb Blood Flow Metab. 1998;18(9):935–40.
+
+60. Østergaard L, Smith DF, Vestergaard-Poulsen P, Hansen S, Gee AD, Gjedde A, Gyldensted C. Absolute cerebral blood flow and blood 
+volume measured by magnetic resonance imaging bolus tracking: comparison with positron emission tomography values. J Cereb Blood Flow 
+Metab. 1998;18(4):425–32.
+
+61. Schmiedeskamp H, Andre JB, Straka M, Christen T, Nagpal S, Recht L, Thomas RP, Zaharchuk G, Bammer R. Simultaneous perfusion and 
+permeability measurements using combined spin- and gradient-echo MRI. J Cereb Blood Flow Metab. 2013;33(5):732–43.
+
+62. Schmiedeskamp H, Straka M, Newbould RD, Zaharchuk G, Andre JB, Olivot JM, Moseley ME, Albers GW, Bammer R. Combined spin- and 
+gradient-echo perfusion-weighted imaging. Magn Reson Med. 2012;68(1):30–40.
+
+63. Skinner JT, Robison RK, Elder CP, Newton AT, Damon BM, Quarles CC. Evaluation of a multiple spin- and gradient-echo (SAGE) EPI 
+acquisition with SENSE acceleration: applications for perfusion imaging in and outside the brain. Magn Reson Imaging. 
+2014;32(10):1171–80.
+
+64. Stokes AM, Skinner JT, Yankeelov TE, Quarles CC. Assessment of a simplified spin and gradient echo (sSAGE) approach for human brain 
+tumor perfusion imaging. Magn Reson Imaging. 2016;34(9):1248–55.
+
+65. Donahue KM, Krouwer HG, Rand SD, Pathak AP, Marszalkowski CS, Censky SC, et al. Utility of simultaneously acquired gradientecho and 
+spin-echo cerebral blood volume and morphology maps in brain tumor patients. Magn Reson Med. 2000;43(6):845–53.
+
+66. Calamante F, Willats L, Gadian DG, Connelly A. Bolus delay and dispersion in perfusion MRI: implications for tissue predictor models 
+in stroke. Magn Reson Med. 2006;55(5):1180–5.
+
+67. Jochimsen TH, Newbould RD, Skare ST, Clayton DB, Albers GW, Moseley ME, Bammer R. Identifying systematic errors in quantitative 
+dynamic susceptibility contrast perfusion imaging by high-resolution multi-echo parallel EPI. NMR Biomed. 2007;20(4):429–38.
+
+68. Chakhoyan A, Leu K, Pope W, Cloughesy T, Ellingson
+
+B. Improved spatiotemporal resolution of dynamic susceptibility contrast perfusion MRI in brain tumors using simultaneous multislice 
+echo-planar imaging. Am J Neuroradiol. 2017;39(1):43–5.
+
+69. Osch MJV, Vonken E-JP, Wu O, Viergever MA, Grond JVD, Bakker CJ. Model of the human vasculature for studying the influence of 
+contrast injection speed on cerebral perfusion MRI. Magn Reson Med. 2003;50(3):614–22.
+
+70. Semmineh N, Bell L, Stokes A, Hu L, Boxerman J, Quarles
+
+C. Optimization of acquisition and analysis methods for clinical dynamic susceptibility contrast MRI Using a population-based digital 
+reference object. Am J Neuroradiol. 2018;39(11):1981–8.
+
+71. Schmainda K, Prah M, Hu L, Quarles C, Semmineh N, Rand S, et al. Moving toward a consensus DSC-MRI protocol: validation of a 
+low–flip angle single-dose option as a reference standard for brain tumors. Am J Neuroradiol. 2019;40(4):626–33.
+
+72. Zierler KL. Circulation times and the theory of indicatordilution methods for determining blood flow and volume. In: Handbook of 
+physiology. Baltimore: Williams & Wilkins; 1962.
+
+with dynamic susceptibility contrast-enhanced MR imaging. Radiology. 1994;193(3):637–41.
+
+88. Calamante F, Morup M, Hansen LK. Defining a local arterial input function for perfusion MRI using independent component analysis. 
+Magn Reson Med. 2004;52(4):789–97.
+
+89. Carroll TJ, Rowley HA, Haughton VM. Automatic calculation of the arterial input function for cerebral perfusion imaging with MR 
+imaging. Radiology. 2003;227(2):593–600.
+
+90. Rausch M, Scheffler K, Rudin M, Radu EW. Analysis of input functions from different arterial branches with gamma variate functions 
+and cluster analysis for quantitative blood volume measurements. Magn Reson Imaging. 2000;18(10):1235–43.
+
+p. 585–615.
+
+91. Yang C, Karczmar GS, Medved M, Stadler WM. Estimating the arterial input function using two reference tissues in dynamic 
+contrast-enhanced MRI studies: fundamental concepts and simulations. Magn Reson Med. 2004;52(5):1110–7.
+
+73. Rosen BR, Belliveau JW, Vevea JM, Brady TJ. Perfusion imaging with NMR contrast agents. Magn Reson Med. 1990;14(2):249–65.
+
+74. Simonsen CZ, Ostergaard L, Vestergaard-Poulsen P, Rohl L, Bjornerud A, Gyldensted C. CBF and CBV measurements by USPIO bolus 
+tracking: reproducibility and comparison with Gdbased values. J Magn Reson Imaging. 1999;9(2):342–7.
+
+75. Kiselev VG. On the theoretical basis of perfusion measurements by dynamic susceptibility contrast MRI. Magn Reson Med. 
+2001;46(6):1113–22.
+
+76. Calamante F, Connelly A, Van Osch MJP. Nonlinear ΔR2* effects in perfusion quantification using bolus-tracking MRI. Magn Reson Med. 
+2009;61(2):486–92.
+
+77. Meier P, Zierler KL. On the theory of the indicator-dilution method for measurement of blood flow and volume. J Appl Physiol. 
+1954;6(12):731–44.
+
+78. Lassen NA. Tracer kinetic methods in medical physiology.
+
+92. Gruner R, Bjornara BT, Moen G, Taxt T. Magnetic resonance brain perfusion imaging with voxel-specific arterial input functions. J 
+Magn Reson Imaging. 2006;23(3):273–84.
+
+93. Bjornerud A, Emblem KE. A fully automated method for quantitative cerebral hemodynamic analysis using DSC-MRI. J Cereb Blood Flow 
+Metab. 2010;30(5):1066–78.
+
+94. Huang W, Chen Y, Fedorov A, Li X, Jajamovich GH, Malyarenko DI, Aryal MP, LaViolette PS, Oborski MJ, O’Sullivan F, Abramson RG, 
+Jafari-Khouzani K, Afzal A, Tudorica A, Moloney B, Gupta SN, Besa C, Kalpathy-Cramer J, Mountz JM, Laymon CM, Muzi M, Schmainda K, Cao 
+Y, Chenevert TL, Taouli B, Yankeelov TE, Fennessy F, Li X. The impact of arterial input function determination variations on prostate 
+dynamic contrast-enhanced magnetic resonance imaging pharmacokinetic modeling: a multicenter data analysis challenge. Tomography. 
+2016;2(1):56–66.
+
+New York: Raven Press; 1979.
+
+95. Calamante F. Arterial input function in perfusion MRI: a comprehensive review. Prog Nucl Magn Reson Spectrosc. 2013;74:1–32.
+
+79. Todd-Pokropek A. Estimating blood flow by deconvolution of the injection of radioisotope tracers. In: Rescigno A, Boicelli A, 
+editors. Cerebral blood flow: mathematical models, instrumentation, and imaging techniques. New York: Plenum Press; 1988.
+
+96. Willats L, Christensen S, Ma HK, Donnan GA, Connelly A, Calamante F. Validating a local arterial input function method for improved 
+perfusion quantification in stroke. J Cereb Blood Flow Metab. 2011;31(11):2189–98.
+
+p. 107–19.
+
+80. Rosen BR, Belliveau JW, Chien D. Perfusion imaging by nuclear magnetic resonance. Magn Reson Q. 1989;5(4):263–81.
+
+81. Ostergaard L, Sorensen AG, Kwong KK, Weisskoff RM, Gyldensted C, Rosen BR. High resolution measurement of cerebral blood flow using 
+intravascular tracer bolus passages. Part II: experimental comparison and preliminary results. Magn Reson Med. 1996;36(5):726–36.
+
+82. Wu O, Østergaard L, Weisskoff RM, Benner T, Rosen BR, Sorensen AG. Tracer arrival timing-insensitive technique for estimating flow 
+in MR perfusion- weighted imaging using singular value decomposition with a block-circulant deconvolution matrix. Magn Reson Med. 
+2003;50(1):164–74.
+
+83. Mouridsen K, Hansen MB, Ostergaard L, Jespersen SN. Reliable estimation of capillary transit time distributions using DSCMRI. J 
+Cereb Blood Flow Metab. 2014;34(9):1511–21.
+
+84. Troprès I, Grimault S, Vaeth A, Grillon E, Julien C, Payen JF, Lamalle L, Decorps M. Vessel size imaging. Magn Reson Med. 
+2001;45(3):397–408.
+
+85. Digernes I, Bjørnerud A, Vatnehol SAS, Løvland G, Courivaud F, Vik-Mo E, et al. A theoretical framework for determining cerebral 
+vascular function and heterogeneity from dynamic susceptibility contrast MRI. J Cereb Blood Flow Metab. 2017;37(6):2237–48.
+
+86. Troprès I, Pannetier N, Grand S, Lemasson B, Moisan A, Péoch M, et al. Imaging the microvessel caliber and density: principles and 
+applications of microvascular MRI. Magn Reson Med. 2014;73(1):325–41.
+
+87. Rempp KA, Brix G, Wenz F, Becker CR, Guckel F, Lorenz WJ. Quantification of regional cerebral blood flow and volume
+
+97. Nejad-Davarani SP, Bagher-Ebadian H, Ewing JR, Noll DC, Mikkelsen T, Chopp M, Jiang Q. An extended vascular model for less biased 
+estimation of permeability parameters in DCE-T1 images. NMR Biomed. 2017;30:6.
+
+98. Nejad-Davarani SP, Bagher-Ebadian H, Ewing JR, Noll DC, Mikkelsen T, Chopp M, Jiang Q. A parametric model of the brain vascular 
+system for estimation of the arterial input function (AIF) at the tissue level. NMR Biomed. 2017;30:5.
+
+99. Jackson A, O’Connor J, Thompson G, Mills S. Magnetic resonance perfusion imaging in neuro-oncology. Cancer Imaging. 2008;8:186–99.
+
+100. Wetzel SG, Cha S, Johnson G, et al. Relative cerebral blood volume measurements in intracranial mass lesions: interobserver and 
+intraobserver reproducibility study. Radiology. 2002;224(3):797–803.
+
+101. Prah M, Stufflebeam S, Paulson E, Kalpathy-Cramer J, Gerstner E, Batchelor T, et al. Repeatability of standardized and normalized 
+relative CBV in patients with newly diagnosed glioblastoma. Am J Neuroradiol. 2015;36(9):1654–61.
+
+102. Bedekar D, Jensen T, Schmainda KM. Standardization of relative cerebral blood volume (rCBV) image maps for ease of both inter- and 
+intrapatient comparisons. Magn Reson Med. 2010;64(3):907–13.
+
+103. Quarles CC, Gochberg DF, Gore JC, Yankeelov TE. A theoretical framework to model DSC-MRI data acquired in the presence of contrast 
+agent extravasation. Phys Med Biol. 2009;54(19):5749–66.
+
+104. Semmineh NB, Xu J, Skinner JT, Xie J, Li H, Ayers G, et al.
+
+Assessing tumor cytoarchitecture using multiecho DSC-MRI
+
+derived measures of the transverse relaxivity at tracer equilibrium (TRATE). Magn Reson Med. 2015;74(3):772–84.
+
+105. Paulson ES, Schmainda KM. Comparison of dynamic susceptibility-weighted contrast-enhanced MR methods: recommendations for measuring 
+relative cerebral blood volume in brain tumors. Radiology. 2008;249(2):601–13.
+
+106. Boxerman JL, Schmainda KM, Weisskoff RM. Relative cerebral blood volume maps corrected for contrast agent extravasation 
+significantly correlate with glioma tumor grade, whereas uncorrected maps do not. AJNR Am J Neuroradiol. 2006;27(4):859–67.
+
+107. Hu L, Baxter L, Pinnaduwage D, Paine T, Karis J, Feuerstein B, et al. Optimized preload leakage-correction methods to improve the 
+diagnostic accuracy of dynamic susceptibility-weighted contrast-enhanced perfusion MR imaging in posttreatment gliomas. Am J 
+Neuroradiol. 2009;31(1):40–8.
+
+108. Hu L, Baxter L, Smith K, Feuerstein B, Karis J, Eschbacher J, Coons S, Nakaji P, Yeh R, Debbins J, Heiserman J. Relative cerebral 
+blood volume values to differentiate high-grade glioma recurrence from posttreatment radiation effect: direct correlation between 
+image-guided tissue histopathology and localized dynamic susceptibility-weighted contrast-enhanced perfusion MR imaging measurements. Am 
+J Neuroradiol. 2008;30(3):552–8.
+
+109. Leu K, Boxerman JL, Cloughesy TF, Lai A, Nghiemphu PL, Liau LM, Pope WB, Ellingson BM. Improved leakage correction for single-echo 
+dynamic susceptibility contrast perfusion MRI estimates of relative cerebral blood volume in high-grade gliomas by accounting for 
+bidirectional contrast agent exchange. Am J Neuroradiol. 2016;37(8):1440–6.
+
+110. Semmineh NB, Stokes AM, Bell LC, Boxerman JL, Quarles
+
+CC. A population-based digital reference object (DRO) for optimizing dynamic susceptibility contrast (DSC)-MRI methods for clinical 
+trials. Tomography. 2017;3(1):41–9.
+
+111. Leu K, Boxerman J, Ellingson B. Effects of MRI protocol parameters, preload injection dose, fractionation strategies, and leakage 
+correction algorithms on the fidelity of dynamic-susceptibility contrast MRI estimates of relative cerebral blood volume in gliomas. Am 
+J Neuroradiol. 2016;38(3):478–84.
+
+112. Schmainda KM, Rand SD, Joseph AM, et al. Characterization of a first-pass gradient- echo spin-echo method to predict brain tumor 
+grade and angiogenesis. AJNR Am J Neuroradiol. 2004;25(9):1524–32.
+
+113. Stokes AM, Semmineh N, Quarles CC. Validation of a T1 and T2* leakage correction method based on multiecho dynamic susceptibility 
+contrast MRI using MION as a reference standard. Magn Reson Med. 2016;76(2):613–25.
+
+114. Varallyay CG, Nesbit E, Horvath A, Varallyay P, Fu R, Gahramanov S, et al. Cerebral blood volume mapping with ferumoxytol in
+
+dynamic susceptibility contrast perfusion MRI: comparison to standard of care. J Magn Reson Imaging. 2018;48(2):441–8.
+
+115. Vasanawala SS, Nguyen K-L, Hope MD, Bridges MD, Hope TA, Reeder SB, et al. Safety and technique of ferumoxytol administration for 
+MRI. Magn Reson Med. 2016;75(5):2107–11.
+
+116. Neuwelt EA, et al. The potential of ferumoxytol nanoparticle magnetic resonance imaging, perfusion, and angiography in central 
+nervous system malignancy: a pilot study. Neurosurgery. 2007;60(4):601–11.
+
+117. Varallyay CG, Nesbit E, Fu R, Gahramanov S, Moloney B, Earl E, Muldoon LL, Li X, Rooney WD, Neuwelt EA. High-resolution 
+steady-state cerebral blood volume maps in patients with central nervous system neoplasms using ferumoxytol, a superparamagnetic iron 
+oxide nanoparticle. J Cereb Blood Flow Metab. 2013;33(5):780–6.
+
+118. Gahramanov S, Muldoon LL, Varallyay CG, Li X, Kraemer DF, Fu R, Hamilton BE, Rooney WD, Neuwelt EA. Pseudoprogression of 
+glioblastoma after chemo- and radiation therapy: diagnosis by using dynamic susceptibility-weighted contrast-enhanced perfusion MR 
+imaging with ferumoxytol versus gadoteridol and correlation with survival. Radiology. 2013;266(3):842–52.
+
+119. Gahramanov S, Raslan A, Muldoon L, Hamilton B, Rooney W, Varallyay C, et al. Potential for differentiation of pseudoprogression 
+from true tumor progression with dynamic susceptibilityweighted contrast-enhanced magnetic resonance imaging using ferumoxytol vs. 
+gadoteridol: a pilot study. Int J Radiat. 2011;79(2):514–23.
+
+120. Patel P, Baradaran H, Delgado D, Askin G, Christos P, Tsiouris AJ, et al. MR perfusion-weighted imaging in the evaluation of 
+high-grade gliomas after treatment: a systematic review and metaanalysis. Neuro-Oncology. 2017;19(1):118–27.
+
+121. Boxerman JL, Prah D, Paulson E, Machan J, Bedekar D, Schmainda K. The role of preload and leakage correction in gadolinium-based 
+cerebral blood volume estimation determined by comparison with MION as a criterion standard. Am J Neuroradiol. 2012;33(6):1081–7.
+
+122. Ellingson BM, Bendszus M, Boxerman J, Barboriak D, Erickson BJ, Smits M, et al. Consensus recommendations for a standardized brain 
+tumor imaging protocol in clinical trials. Neuro-Oncology. 2015;17(9):1188–98.
+
+123. Schmainda K, Prah M, Rand S, Liu Y, Logan B, Muzi M, et al. Multisite concordance of DSC-MRI analysis for brain tumors: results of 
+a national cancer institute quantitative imaging network collaborative project. Am J Neuroradiol. 2018;39(6):1008–16.
+
+124. DSC MRI Biomarker Ctte. DSC MRI Biomarker Ctte - QIBA Wiki. 2019. Available from https://qibawiki.rsna.org/index.php/ 
+DSC_MRI_Biomarker_Ctte
+
+

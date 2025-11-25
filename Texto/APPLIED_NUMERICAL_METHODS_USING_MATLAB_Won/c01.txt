@@ -1,0 +1,1927 @@
+PREFACE
+
+This book introduces applied numerical methods for engineering and science students in sophomore to senior levels; it targets the 
+students of today who do not like or do not have time to derive and prove mathematical results. It can also serve as a reference to 
+MATLAB applications for professional engineers and scientists, since many of the MATLAB codes presented after introducing each 
+algorithm’s basic ideas can easily be modiﬁed to solve similar problems even by those who do not know what is going on inside the 
+MATLAB routines and the algorithms they use. Just as most drivers only have to know where to go and how to drive a car to get to their 
+destinations, most users only have to know how to deﬁne the problems they want to solve using MATLAB and how to use the corresponding 
+routines to solve their problems. We never deny that detailed knowledge about the algorithm (engine) of the program (car) is helpful for 
+getting safely to the solution (destination); we only imply that one-time users of any MATLAB program or routine may use this book as 
+well as the students who want to understand the underlying principle of each algorithm.
+
+In this book, we focus on understanding the fundamental mathematical concepts and mastering problem-solving skills using numerical 
+methods with the help of MATLAB and skip some tedious derivations. Obviously, basic concepts must be taught so that students can 
+properly formulate the mathematics problems. Afterwards, students can directly use the MATLAB codes to solve practical problems. Almost 
+every algorithm introduced in this book is followed by example MATLAB code with a friendly interface so that students can easily modify 
+the code to solve real life problems. The selection of exercises follows the some philosophy of making the learning easy and practical. 
+Students should be able to solve similar problems immediately after taking the class using the MATLAB codes we provide. For most 
+students—and particularly nonmath majors—understanding how to use numerical tools correctly in solving their problems of interest is 
+more important than studying lengthy proofs and derivations.
+
+MATLAB is one of the most developed software packages available today. It provides many numerical methods and it is very easy to use, 
+even for people without prior programming experience. We have supplemented MATLAB’s built-in functions with more than 100 small MATLAB 
+routines. Readers should ﬁnd
+
+these routines handy and useful. Some of these routines give better results for some problems than the built-in functions. Students are 
+encouraged to develop their own routines following the examples.
+
+The knowledge in this book is derived from the work of many eminent scientists, scholars, researchers, and MATLAB developers, all of 
+whom we thank. We thank our colleagues, students, relatives, and friends for their support and encouragement. We thank the reviewers, 
+whose comments were so helpful in tuning this book. We especially thank Senior Researcher Yong-Suk Park for his invaluable help in 
+correction. We thank the editorial and production staff of John Wiley & Sons, Inc. including Editor Val Moliere and Production Editor 
+Lisa VanHorn for their kind, efﬁcient, and encouraging guide.
+
+1
+
+MATLAB USAGE AND COMPUTATIONAL ERRORS
+
+1.1 BASIC OPERATIONS OF MATLAB
+
+MATLAB is a high-level software package with many built-in functions that make the learning of numerical methods much easier and more 
+interesting. In this section we will introduce some basic operations that will enable you to learn the software and build your own 
+programs for problem solving. In the workstation environment, you type “matlab” to start the program, while in the PC environment, you 
+simply double-click the MATLAB icon.
+
+Once you start the MATLAB program, a Command window will open with the MATLAB prompt >>. On the command line, you can type MATLAB 
+commands, functions together with their input/output arguments, and the names of script ﬁles containing a block of statements to be 
+executed at a time or functions deﬁned by users. The MATLAB program ﬁles must have the extension name ***.m to be executed in the 
+MATLAB environment. If you want to create a new M-ﬁle or edit an existing ﬁle, you click File/New/M-ﬁle or File/Open in the top left 
+corner of the main menu, ﬁnd/select/load the ﬁle by double-clicking it, and then begin editing it in the Editor window. If the path of 
+the ﬁle you want to run is not listed in the MATLAB search path, the ﬁle name will not be recognized by MATLAB. In such cases, you 
+need to add the path to the MATLAB-path list by clicking the menu ‘File/Set Path’ in the Command window, clicking the ‘Add Folder’ 
+button, browsing/clicking the folder name, and ﬁnally clicking the SAVE button and the Close button. The lookfor command is available 
+to help you ﬁnd the MATLAB commands/functions which are related with a job you
+
+want to be done. The help command helps you know the usage of a particular command/function. You may type directly in the Command window
+
+>>lookfor repeat
+
+or
+
+>>help for
+
+to ﬁnd the MATLAB commands in connection with ‘repeat’ or to obtain information about the “for loop”.
+
+1.1.1 Input/Output of Data from MATLAB Command Window
+
+MATLAB remembers all input data in a session (anything entered through direct keyboard input or running a script ﬁle) until the command 
+‘clear()’ is given or you exit MATLAB.
+
+One of the many features of MATLAB is that it enables us to deal with the vectors/matrices in the same way as scalars. For instance, to 
+input the matrices/vectors,
+
+1 2 3 A= , [ 4 5 6 ]
+
+3 B    1 
+
+=
+
+−2
+
+,
+
+C = [ 1 −2 3 −4 ]
+
+type in the MATLAB Command window as below:
+
+>>A = [1 2 3;4 5 6]
+
+2 3 4 5 6 >>B = [3;-2;1]; %put the semicolon at the end of the statement to suppress the result printout onto the screen
+
+A = 1
+
+>>C = [1 -2 3 -4]
+
+At the end of the statement, press <Enter> if you want to check the result of executing the statement immediately. Otherwise, type a 
+semicolon “;” before pressing <Enter> so that your window will not be overloaded by a long display of results.
+
+1.1.2 Input/Output of Data Through Files
+
+MATLAB can handle two types of data ﬁles. One is the binary format matﬁles named ***.mat. This kind of ﬁle can preserve the values of 
+more than one variable, but will be handled only in the MATLAB environment and cannot be shared with other programming environments. The 
+other is the ASCII dat-ﬁles named ***.dat, which can be shared with other programming environments, but preserve the values of only one 
+variable.
+
+Below are a few sample statements for storing some data into a mat-ﬁle in the current directory and reading the data back from the 
+mat-ﬁle:
+
+>>save ABC A B C %store the values of A,B,C into the file ’ABC.mat’
+
+>>clear A C %clear the memory of MATLAB about A,C
+
+>>A %what is the value of A?
+
+??? Undefined function or variable ’A’
+
+>>load ABC A C %read the values of A,C from the file ’ABC.mat’
+
+>>A %the value of A 2 3 4 5 6
+
+A = 1
+
+If you want to store the data into an ASCII dat-ﬁle (in the current directory), make the ﬁlename the same as the name of the data and 
+type ‘/ascii’ at the end of the save statement.
+
+>>save B.dat B /ascii
+
+However, with the save/load commands into/from a dat-ﬁle, the value of only one variable having the lowercase name can be saved/loaded, 
+a scalar or a vector/matrix. Besides, non-numeric data cannot be handled by using a dat-ﬁle. If you save a string data into a dat-ﬁle, 
+its ASCII code will be saved. If a dat-ﬁle is constructed to have a data matrix in other environments than MATLAB, every line (row) of 
+the ﬁle must have the same number of columns. If you want to read the data from the dat-ﬁle in MATLAB, just type the (lowercase) 
+ﬁlename ***.dat after ‘load’, which will also be recognized as the name of the data contained in the dat-ﬁle.
+
+>>load b.dat %read the value of variable b from the ascii file ’b.dat’
+
+On the MATLAB command line, you can type ‘nm112’ to run the following M-ﬁle ‘nm112.m’ consisting of several ﬁle 
+input(save)/output(load) statements. Then you will see the effects of the individual statements from the running results appearing on 
+the screen.
+
+%nm112.m clear
+
+A = [1 2 3;4 5 6]
+
+B = [3;-2;1];
+
+C(2) = 2; C(4) = 4
+
+disp(’Press any key to see the input/output through Files’) save ABC A B C %save A,B & C as a MAT-file named ’ABC.mat’ clear(’A’,’C’) 
+%remove the memory about A and C load ABC A C %read MAT-file to recollect the memory about A and C save B.dat B /ascii %save B as an 
+ASCII-file named ’b.dat’ clear B load b.dat %read ASCII-file to recollect the memory about b b x = input(’Enter x:’)
+
+format short e x format rat, x format long, x format short, x
+
+1.1.3 Input/Output of Data Using Keyboard The command ‘input’ enables the user to input some data via the keyboard. For example,
+
+>>x = input(’Enter x: ’) Enter x: 1/3
+
+x = 0.3333
+
+Note that the fraction 1/3 is a nonterminating decimal number, but only four digits after the decimal point are displayed as the result 
+of executing the above command. This is a choice of formatting in MATLAB. One may choose to display more decimal places by using the 
+command ‘format’, which can make a fraction show up as a fraction, as a decimal number with more digits, or even in an exponential form 
+of a normalized number times 10 to the power of some integer. For instance:
+
+>>format rat %as a rational number
+
+>>x
+
+x = 1/3
+
+>>format long %as a decimal number with 14 digits
+
+>>x
+
+x = 0.33333333333333
+
+>>format long e %as a long exponential form
+
+>>x
+
+x = 3.333333333333333e-001
+
+>>format hex %as a hexadecimal form as represented/stored in memory
+
+>>x x = 3fd5555555555555
+
+>>format short e %as a short exponential form
+
+>>x
+
+x = 3.3333e-001
+
+>>format short %back to a short form (default)
+
+>>x
+
+x = 0.3333
+
+Note that the number of displayed digits is not the actual number of signiﬁcant digits of the value stored in computer memory. This 
+point will be made clear in Section 1.2.1.
+
+There are other ways of displaying the value of a variable and a string on the screen than typing the name of the variable. Two useful 
+commands are ‘disp()’ and ‘fprintf()’. The former displays the value of a variable or a string without ‘x = ’ or ‘ans = ’; the latter 
+displays the values of several variables in a speciﬁed format and with explanatory/cosmetic strings. For example:
+
+>>disp(’The value of x = ’),disp(x) %disp(’string_to_display’ or variable_name) The value of x = 0.3333
+
+Table 1.1 summarizes the type speciﬁers and special characters that are used in ‘fprintf()’ statements.
+
+Below is a program that uses the command ‘input’ so that the user could input some data via the keyboard. If we run the program, it gets 
+a value of the
+
+
+temperature in Fahrenheit [◦ F] via the keyboard from the user, converts it into the temperature in Centigrade [◦ C] and then prints 
+the results with some remarks both onto the screen and into a data ﬁle named ‘nm113.dat’.
+
+In case you want the keyboard input to be recognized as a string, you should add the character ’s’ as the second input argument.
+
+>>ans = input(’Answer <yes> or <no>: ’,’s’)
+
+1.1.4 2-D Graphic Input/Output
+
+How do we plot the value(s) of a vector or an array? Suppose that data reﬂecting the highest/lowest temperatures for 5 days are stored 
+as a 5 × 2 array in an ASCII ﬁle named ‘temp.dat’.
+
+The job of the MATLAB program “nm114_1.m” is to plot these data. Running the program yields the graph shown in Fig. 1.1a. Note that the 
+ﬁrst line is a comment about the name and the functional objective of the program(ﬁle), and the fourth and ﬁfth lines are auxiliary 
+statements that designate the graph title and units of the vertical/horizontal axis; only the second & third lines are indispensable in 
+drawing the colored graph. We need only a few MATLAB statements for this artwork, which shows the power of MATLAB.
+
+Here are several things to keep in mind.
+
+1
+
+11
+
+17
+
+ž
+
+ž
+
+ž
+
+The command plot() reads along the columns of the 5 × 2 array data given as its input argument and recognizes each column as the value 
+of a vector. MATLAB assumes the domain of the horizontal variable to be [1 2 .. 5] by default, where 5 equals the length of the vector 
+to be plotted (see Fig. 1.1a). The graph is constructed by connecting the data points with the straight lines and is piecewise-linear, 
+while it looks like a curve as the data points are densely collected. Note that the graph can be plotted as points in various forms 
+according to the optional input argument described in Table 1.2.
+
+(Q1) Suppose the data in the array named ‘temp’ are the highest/lowest temperatures measured on the 11th,12th,14th,16th, and 17th days, 
+respectively. How should we modify the above program to have the actual days shown on the horizontal axis? (A1) Just make the day vector 
+[11 12 14 16 17] and use it as the ﬁrst input argument of the plot() command.
+
+>>days = [11 12 14 16 17]
+
+>>plot(days,temp)
+
+Executing these statements, we obtain the graph in Fig. 1.1b. (Q2) What statements should be added to change the ranges of the 
+horizontal/vertical axes into 10–20 and 0–30, respectively, and draw the grid on the graph?
+
+(A2) >>axis([10 20 0 30]), grid on >>plot(days,temp)
+
+(Q3) How do we make the scales of the horizontal/vertical axes equal so that a circle appears round, not like an ellipse?
+
+(A3) >>axis(’equal’) (Q4) How do we have another graph overlapped onto an existing graph?
+
+(A4) If you use the ‘hold on’ command after plotting the ﬁrst graph, any following
+
+graphs in the same section will be overlapped onto the existing one(s) rather
+
+than plotted newly. For example:
+
+>>hold on, plot(days,temp(:,1),’b*’, days,temp(:,2),’ro’)
+
+This will be good until you issue the command ‘hold off’ or clear all the graphs in the graphic window by using the ‘clf’ command.
+
+Sometimes we need to see the interrelationship between two variables. Suppose we want to plot the lowest/highest temperature, 
+respectively, along the horizontal/vertical axis in order to grasp the relationship between them. Let us try using the following 
+command:
+
+>>plot(temp(:,1),temp(:,2),’kx’) % temp(:,2) vs. temp(:,1) in black ’x’
+
+This will produce a pointwise graph, which is ﬁne. But, if you replace the third input argument by ‘b:’ or just omit it to draw a 
+piecewise-linear graph connecting the data points as Fig. 1.2a, the graphic result looks clumsy, because the data on the horizontal axis 
+are not arranged in ascending or descending order. The graph will look better if you sort the data on the horizontal axis and also the 
+data on the vertical axis accordingly and then plot the relationship in the piecewise-linear style by typing the MATLAB commands as 
+follows:
+
+>>[temp1,I] = sort(temp(:,1)); temp2 = temp(I,2);
+
+>>plot(temp1,temp2)
+
+The graph obtained by using these commands is shown in Fig.1.2b, which looks more informative than Fig.1.2a.
+
+We can also use the plot() command to draw a circle.
+
+>>r = 1; th = [0:0.01:2]*pi; % [0:0.01:2] makes [0 0.01 0.02 .. 2]
+
+>>plot(r*cos(th),r*sin(th))
+
+>>plot(r*exp(j*th)) %alternatively,
+
+Note that the plot() command with a sequence of complex numbers as its ﬁrst input argument plots the real/imaginary parts along the 
+horizontal/vertical axis.
+
+The polar() command plots the phase (in radians)/magnitude given as its ﬁrst/second input argument, respectively (see Fig.1.3a).
+
+>>polar(th,exp(-th)) %polar plot of a spiral
+
+Several other plotting commands, such as semilogx(), semilogy(), loglog(),
+
+stairs(), stem(), bar()/barh(), and hist(), may be used to draw various
+
+graphs (shown in Figs.1.3 and 1.4). Readers may use the ‘help’ command to get the detailed usage of each one and try running the 
+following MATLAB program ‘nm114 2.m’.
+
+Moreover, the commands sprintf(), text(), and gtext() are used for combining supplementary statements with the value(s) of one or more 
+variables to construct a string and printing it at a certain location on the existing graph. For instance, let us try the following 
+statements in the MATLAB Command window:
+
+>>f = 1./[1:10]; plot(f)
+
+>>n = 3; [s,errmsg] = sprintf(’f(%1d) = %5.2f’,n,f(n))
+
+>>text(3,f(3),s) %writes the text string at the point (3,f(3))
+
+>>gtext(’f(x) = 1/x’) %writes the input string at point clicked by mouse
+
+The command ginput() allows you to obtain the coordinates of a point by clicking the mouse button on the existent graph. Let us try the 
+following
+
+commands:
+
+>>[x,y,butkey] = ginput %get the x,y coordinates & # of the mouse button or ascii code of the key pressed till pressing the ENTER key
+
+>>[x,y,butkey] = ginput(n) %repeat the same job for up to n points clicked
+
+1.1.5 3-D Graphic Output
+
+MATLAB has several 3-D graphic plotting commands such as plot3(), mesh(), and contour(). plot3() plots a 2-D valued-function of a 
+scalar-valued variable; mesh()/contour() plots a scalar valued-function of a 2-D variable in a mesh/contour-like style, respectively.
+
+Readers are recommended to use the help command for detailed usage of each command. Try running the MATLAB program ‘nm115.m’ to see what 
+ﬁgures will appear (Figs.1.5 and 1.6).
+
+1.1.6 Mathematical Functions
+
+Mathematical functions and special reserved constants/variables deﬁned in MATLAB are listed in Table 1.3.
+
+MATLAB also allows us to deﬁne our own function and store it in a ﬁle named after the function name so that it can be used as if it 
+were a built-in function. For instance, we can deﬁne a scalar-valued function:
+
+f 1 (x) = 1/(1 + 8x 2 )
+
+and a vector-valued function
+
+f 1 (x 1 , x 2 ) x 1 2 + 4x 2 2 − 5 f 49 (x) = = [ f 2 (x 1 , x 2 ) ] [ 2x 1 2 − 2x 1 − 3x 2 − 2.5 ]
+
+Once we store these functions into the ﬁles named ‘f1.m’ and ‘f49.m’ after the function names, respectively, we can call and use them 
+as needed inside another M-ﬁle or in the MATLAB Command window.
+
+>>f1([0 1]) %several values of a scalar function of a scalar variable
+
+ans = 1.0000 0.1111
+
+>>f49([0 1]) %a value of a 2-D vector function of a vector variable
+
+ans = -1.0000 -5.5000
+
+>>feval(’f1’,[0 1]), feval(’f49’,[0 1]) %equivalently, yields the same
+
+ans = 1.0000 0.1111
+
+ans = -1.0000 -5.5000
+
+(Q5) With the function f1(x) deﬁned as a scalar function of a scalar variable, we enter a vector as its input argument to obtain a 
+seemingly vector-valued output. What’s going on?
+
+(A5) It is just a set of function values [f1(x1) f1(x2) . . .] obtained at a time for several values [x1 x2. . .] of x. In expectation 
+of one-shot multi-operation, it is a good practice to put a dot(.) just before the arithmetic operators *(multiplication), /(division), 
+and ^ (power) in the function deﬁnition so that the term-by-term (termwise) operation can be done any time.
+
+Note that we can deﬁne a simple function not only in an independent M-ﬁle, but also inside a program by using the inline() command or 
+just in a form of literal expression that can be evaluated by the command eval().
+
+>>f1 = inline(’1./(1+8*x.^2)’,’x’);
+
+>>f1([0 1]), feval(f1,[0 1])
+
+ans = 1.0000 0.1111
+
+ans = 1.0000 0.1111
+
+>>f1 = ’1./(1+8*x.^2)’; x = [0 1]; eval(f1)
+
+ans = 1.0000 0.1111
+
+As far as a polynomial function is concerned, it can simply be deﬁned as its coefﬁcient vector arranged in descending order. It may be 
+called to yield its value for certain value(s) of its independent variable by using the command polyval().
+
+>>p = [1 0 -3 2]; %polynomial function p(x) = x 3 − 3x + 2
+
+>>polyval(p,[0 1])
+
+ans = 2.0000 0.0000
+
+The multiplication of two polynomials can be performed by taking the convolution of their coefﬁcient vectors representing the 
+polynomials in MATLAB, since
+
+(a N x N + · · · + a 1 x + a 0 )(b N x N + · · · + b 1 x + b 0 ) = c 2N x 2N + · · · + c 1 x + c0 
+
+where
+
+min(k,N) ck = ∑ ak−m bm  m=max(0,k−N)
+
+for k = 2N, 2N − 1, . . . , 1, 0
+
+This operation can be done by using the MATLAB built-in command conv() as illustrated below.
+
+>>a = [1 -1]; b=[1 1 1]; c = conv(a,b)
+
+c = 1 0 0 -1 %meaning that (x − 1)(x 2 + x + 1) = x 3 + 0 · x 2 + 0 · x − 1
+
+But, in case you want to multiply a polynomial by only x n , you can simply append n zeros to the right end of the polynomial 
+coefﬁcient vector to extend its dimension.
+
+c = 1 2 3 0 0 %meaning that (x 2 + 2x + 3)x 2 = x 4 + 2x 3 + 3x 2 + 0 · x + 0
+
+1.1.7 Operations on Vectors and Matrices We can deﬁne a new scalar/vector/matrix or redeﬁne any existing ones in terms of the existent 
+ones or irrespective of them. In the MATLAB Command window, let us deﬁneA and B as
+
+1 2 3 A= , [ 4 5 6 ]
+
+3 B    1 
+
+=
+
+−2
+
+by typing
+
+>>A = [1 2 3;4 5 6], B = [3;-2;1]
+
+We can modify them or take a portion of them. For example:
+
+>>A = [A;7 8 9]
+
+A = 1
+
+4
+
+7
+
+2
+
+5
+
+8
+
+3
+
+6
+
+9
+
+>>B = [B [1 0 -1]’]
+
+B = 3
+
+-2 1
+
+1 0 -1
+
+Here, the apostrophe (prime) operator (’) takes the complex conjugate transpose and functions virtually as a transpose operator for 
+real-valued matrices. If you want to take just the transpose of a complex-valued matrix, you should put a dot(.) before ’, that is, 
+‘.’’.
+
+When extending an existing matrix or deﬁning another one based on it, the compatibility of dimensions should be observed. For instance, 
+if you try to annex a 4 × 1 matrix into the 3 × 1 matrix B, MATLAB will reject it squarely, giving you an error message.
+
+>>B = [B ones(4,1)] ???All matrices on a row in the bracketed expression must have the same number of rows
+
+We can modify or refer to a portion of a given matrix.
+
+>>A(3,3) = 0
+
+A = 1
+
+4
+
+7
+
+2
+
+5
+
+8
+
+3
+
+6
+
+0
+
+>>A(2:3,1:2) %from 2 nd row to 3 rd row, from 1 st column to 2 nd column 5 7 8
+
+ans = 4
+
+>>A(2,:) %2 nd row, all columns
+
+ans = 4 5 6
+
+The colon (:) is used for deﬁning an arithmetic (equal difference) sequence without the bracket [] as
+
+>>t = 0:0.1:2
+
+which makes
+
+t = [0.0 0.1 0.2 ... 1.9 2.0]
+
+(Q6) What if we omit the increment between the left/right boundary numbers? (A6) By default, the increment is 1.
+
+>>t = 0:2
+
+t = 0 1 2
+
+(Q7) What if the right boundary number is smaller/greater than the left boundary number with a positive/negative increment?
+
+(A7) It yields an empty matrix, which is useless.
+
+>>t = 0:-2
+
+t = Empty matrix: 1-by-0
+
+(Q8) If we deﬁne just some elements of a vector not fully, but sporadically, will we have a row vector or a column vector and how will 
+it be ﬁlled in between? (A8) We will have a row vector ﬁlled with zeros between the deﬁned elements.
+
+>>D(2) = 2; D(4) = 3
+
+D = 0 2 0 3
+
+(Q9) How do we make a column vector in the same style?
+
+(A9) We must initialize it as a (zero-ﬁlled) row vector, prior to giving it a value.
+
+>>D = zeros(4,1); D(2) = 2; D(4) = 3
+
+D = 0
+
+2
+
+0
+
+3
+
+(Q10) What happens if the speciﬁed element index of an array exceeds the deﬁned range?
+
+(A10) It is rejected. MATLAB does not accept nonpositive or noninteger indices.
+
+>>D(5) ??? Index exceeds matrix dimensions.
+
+>>D(0) = 1;
+
+??? Index into matrix is negative or zero. >>D(1.2) ??? Subscript indices must either be real positive integers ..
+
+(Q11) How do we know the size (the numbers of rows/columns) of an alreadydeﬁned array?
+
+(A11) Use the length() and size() commands as indicated below.
+
+>>length(D)
+
+ans = 4
+
+>>[M,N] = size(A)
+
+M = 3
+
+N = 3
+
+MATLAB enables us to handle vector/matrix operations in almost the same way as scalar operations. However, we must make sure of the 
+dimensional compatibility between vectors/matrices, and we must put a dot (.) in front of the operator for termwise (element-by-element) 
+operations. The addition of a matrix and a scalar adds the scalar to every element of the matrix. The multiplication of a matrix by a 
+scalar multiplies every element of the matrix by the scalar.
+
+There are several things to know about the matrix division and inversion.
+
+Remark 1.1. Rules of Vector/Matrix Operation
+
+1. For a matrix to be invertible, it must be square and nonsingular; that is, the numbers of its rows and columns must be equal and its 
+determinant must not be zero.
+
+2. The MATLAB command pinv(A) provides us with a matrix X of the same dimension as A T such that AXA = A and XAX = X. We can use this 
+command to get the right/left pseudo- (generalized) inverse A T [AA T ] −1 / [A T A] −1 A T for a matrix A given as its input 
+argument, depending on whether the number (M) of rows is smaller or greater than the number
+
+(N) of columns, so long as the matrix is of full rank; that is, rank(A) = min(M, N)[K-1, Section 6.4]. Note that A T [AA T ] −1 /[A T 
+A] −1 A T is called the right/left inverse because it is multiplied onto the right/left side of A to yield an identity matrix.
+
+3. You should be careful when using the pinv(A) command for a rankdeﬁcient matrix, because its output is no longer the right/left 
+inverse, which does not even exist for rank-deﬁcient matrices.
+
+4. The value of a scalar function having an array value as its argument is also an array with the same dimension.
+
+Supposewehavedeﬁnedvectorsa 1 , a 2 , b 1 , b 2 andmatricesA 1 , A 2 , B asfollows:
+
+>>a1 = [-1 2 3]; a2 = [4 5 2]; b1 = [1 -3]’; b2 = [-2 0];
+
+1 a 1 = [ −1 2 3 ], a 2 = [ 4 5 2 ], b 1 = = [ −1 2 3 ] , b2  [ −3 ]
+
+>>A1 = [a1;a2], A2 = [a1;[b2 1]], B = [b1 b2’]
+
+−1 2 3 A1 = , [ 4 5 2 ]
+
+−1 2 3 A2 = , [ −2 0 1 ]
+
+−2 = 0
+
+1 B [ −3
+
+]
+
+The results of various operations on these vectors/matrices are as follows (pay attention to the error message):
+
+>>A3 = A1 + A2, A4 = A1 - A2, 1 + A1 %matrix/scalar addition/subtraction
+
+A3 = -2 4 6 A4 = 0 0 0
+
+2
+
+5
+
+3
+
+6
+
+5
+
+1
+
+ans = 0 3 4
+
+5
+
+6
+
+3
+
+>>AB = A1*B % AB(m, n) = ∑ A 1 (m, k)B(k, n) matrix multiplication?
+
+k
+
+??? Error using ==> * Inner matrix dimensions must agree.
+
+>>BA1 = B*A1 % regular matrix multiplication
+
+BA1 = -9 -8 -1
+
+3
+
+-6 -9
+
+>>AA = A1.*A2 %termwise multiplication
+
+AA = 1 4 9
+
+-8 0
+
+2
+
+>>AB=A1.*B % AB(m, n) = A 1 (m, n)B(m, n) termwise multiplication ??? Error using ==> .* Matrix dimensions must agree.
+
+>>A1 1 = pinv(A1),A1’*(A1*A1’)^-1,eye(size(A1,2))/A1 % A 1 T [A 1 A 1 T ]−1  A1 1 = -0.1914 0.1399 %right inverse of a 2 x 3 matrix A1
+
+0.0617 0.0947
+
+0.2284 -0.0165
+
+>>A1*A1 1 %A1/A1 = I implies the validity of A1 1 as the right inverse ans = 1.0000 0.0000 0.0000 1.0000
+
+>>A5 = A1’; % a 3 x 2 matrix
+
+>>A5 1 = pinv(A5),(A5’*A5)^-1*A5’,A5 \ eye(size(A5,1)) % [A 5 T A 5 ] −1 A5 T  A5 1 = -0.1914 0.0617 0.2284 %left inverse of a 3x2 
+matrix A5 0.1399 0.0947 -0.0165
+
+>>A5 1*A5 % = I implies the validity of A5 1 as the left inverse ans = 1.0000 -0.0000 -0.0000 1.0000
+
+>>A1 li = (A1’*A1)^-1*A1’ %the left inverse of matrix A1 with M < N?
+
+Warning: Matrix is close to singular or badly scaled.
+
+Results may be inaccurate. RCOND = 9.804831e-018.
+
+A1 li = -0.2500
+
+0.2500
+
+0.2500 0
+
+0.5000 0.5000
+
+(Q12) Does the left inverse of a matrix having rows fewer than columns exist? (A12) No. There is no N × M matrix that is premultiplied 
+on the left of an M × N matrix with M < N to yield a nonsingular matrix, far from an identity matrix. In this context, MATLAB should 
+have rejected the above case on the ground that [A 1 T A 1 ] is singular and so its inverse does not exist. But, because the round-off 
+errors make a very small number appear to be a zero or make a real zero appear to be a very small number (as will be mentioned in Remark 
+2.3), it is not easy for MATLAB to tell a near-singularity from a real singularity. That is why MATLAB dares not to declare the 
+singularity case and instead issues just a warning message to remind you to check the validity of the result so that it will not be 
+blamed for a delusion. Therefore, you must be alert for the condition
+
+mentioned in item 2 of Remark 1.1, which says that, in order for the left inverse to exist, the number of rows must not be less than the 
+number of columns.
+
+>>A1_li*A1 %No identity matrix, since A1_li isn’t the left inverse
+
+ans = 1.2500
+
+0.7500 -0.2500
+
+-0.2500 0.5000 0.7500
+
+1.5000 3.5000 2.5000
+
+>>det(A1’*A1) %A1 is not left-invertible for A1’*A1 is singular
+
+ans = 0
+
+(cf) Let us be nice to MATLAB as it is to us. From the standpoint of promoting mutual understanding between us and MATLAB, we 
+acknowledge that MATLAB tries to show us apparently good results to please us like always, sometimes even pretending not to be obsessed 
+by the demon of ‘ill-condition’ in order not to make us feel uneasy. How kind MATLAB is! But, we should be always careful not to be 
+spoiled by its benevolence and not to accept the computing results every inch as it is. In this case, even though the matrix [A1’*A1] is 
+singular and so not invertible, MATLAB tried to invert it and that’s all. MATLAB must have felt something abnormal as can be seen from 
+the ominous warning message prior to the computing result. Who would blame MATLAB for being so thoughtful and loyal to us? We might well 
+be rather touched by its sincerity and smartness.
+
+In the above statements, we see the slash(/)/backslash( \ ) operators. These operators are used for right/left division, respectively; 
+B/A is the same as B*inv(A) and A \ B is the same as inv(A)*B when A is invertible and the dimensions of A and B are compatible. Noting 
+that B/A is equivalent to (A’ \ B’)’, let us take a close look at the function of the backslash( \ ) operator.
+
+>>X = A1 \ A1 % an identity matrix? 0 -0.8462 0 1.0000 1.0769 0 0 0
+
+X = 1.0000
+
+(Q13) It seems that A1 \ A1 should have been an identity matrix, but it is not, contrary to our expectation. Why?
+
+(A13) We should know more about the various functions of the backslash( \ ), which can be seen by typing ‘help slash’ into the MATLAB 
+Command window. Let Remark 1.2 answer this question in cooperation with the next case.
+
+>>A1*X - A1 %zero if X is the solution to A1*X = A1?
+
+ans = 1.0e-015 * 0
+
+0
+
+0
+
+0
+
+0 -0.4441
+
+Remark 1.2. The Function of Backslash ( \ ) Operator. Overall, for the command ‘A \ B’, MATLAB ﬁnds a solution to the equation A*X = B. 
+Let us denote the row/column dimension of the matrix A by M and N.
+
+1. If matrix A is square and upper/lower-triangular in the sense that all of its elements below/above the diagonal are zero, then MATLAB 
+ﬁnds the solution by applying backward/forward substitution method (Section 2.2.1).
+
+2. If matrix A is square, symmetric (Hermitian), and positive deﬁnite, then MATLAB ﬁnds the solution by using Cholesky factorization 
+(Section 2.4.2).
+
+3. If matrix A is square and has no special feature, then MATLAB ﬁnds the solution by using LU decomposition (Section 2.4.1).
+
+4. If matrix A is rectangular, then MATLAB ﬁnds a solution by using QR factorization (Section 2.4.2). In case A is rectangular and of 
+full rank with rank(A) = min(M,N), it will be the LS (least-squares) solution [Eq. (2.1.10)] for M > N (overdetermined case) and one of 
+the many solutions that is not always the same as the minimum-norm solution [Eq. (2.1.7)] for M < N (underdetermined case). But for the 
+case when A is rectangular and has rank deﬁciency, what MATLAB gives us may be useless. Therefore, you must pay attention to the 
+warning message about rank deﬁciency, which might tell you not to count on the dead-end solution made by the backslash ( \ ) operator. 
+To ﬁnd an alternative in the case of rank deﬁciency, you had better resort to singular value decomposition (SVD). See Problem 2.8 for 
+details.
+
+For the moment, let us continue to try more operations on matrices.
+
+>>A1./A2 %termwise right division 1 1
+
+ans = 1
+
+-2 Inf 2
+
+>>A1. \ A2 %termwise left division 1 1
+
+ans = 1
+
+-0.5 0 0.5
+
+>>format rat, B^-1 %represent the numbers (of B −1 ) in fractional form
+
+ans = 0
+
+-1/3
+
+-1/2 -1/6
+
+>>inv(B) %inverse matrix, equivalently
+
+ans = 0
+
+-1/3
+
+-1/2 -1/6
+
+>>B.^-1 %termwise inversion(reciprocal of each element)
+
+ans = 1
+
+-1/2
+
+-1/3 Inf
+
+>>B^2 %square of B, i.e., B 2 = B ∗ B
+
+ans = 7
+
+-2
+
+-3 6
+
+>>B.^2 %termwise square(square of each element)
+
+ans = 1(b 11 2 ) 4(b 12 2 )
+
+9(b 21 2 ) 0(b 22 2 )
+
+>>2.^B %2 to the power of each number in B
+
+ans = 2 (2 b 11 ) 1/4(2 b 12 )
+
+1/8(2 b 21 ) 1 (2 b 22 )
+
+>>A1.^A2 %element of A1 to the power of each element in A2
+
+ans = -1 (A 1 (1, 1) A 2 (1,1) ) 4(A 1 (1, 2) A 2 (1,2) ) 27(A 1 (1, 3) A 2 (1,3) ) 1/16(A 1 (2, 1) A 2 (2,1) ) 1(A 1 (2, 2) A 2 (2,2) ) 
+2(A 1 (2, 3) A 2 (2,3) )
+
+>>format short, exp(B) %elements of eB 
+
+ans = 2.7183(e b 11 ) 0.1353(e b 12 )
+
+0.0498(e b 21 ) 1.0000(e b 22 )
+
+with 4 digits below the dp
+
+There are more useful MATLAB commands worthwhile to learn by heart.
+
+Remark 1.3. More Useful Commands for Vector/Matrix Operations
+
+1. We can use the commands zeros(), ones(), and eye() to construct a
+
+matrix of speciﬁed size or the same size as an existing matrix which has only zeros, only ones, or only ones/zeros on/off its diagonal.
+
+>>Z = zeros(2,3) %or zeros(size(A1)) yielding a 2 x 3 zero matrix 0 0 0 0 0
+
+Z = 0
+
+>>E = ones(size(B)) %or ones(3,2) yielding a 3 x 2 one matrix 1 1 1 1 1
+
+E = 1
+
+>>I = eye(2) %yielding a 2 x 2 identity matrix
+
+I = 1
+
+0
+
+0
+
+1
+
+2. We can use the diag() command to make a column vector composed of the diagonal elements of a matrix or to make a diagonal matrix with 
+on-diagonal elements taken from a vector given as the input argument.
+
+>>A1, diag(A1) %column vector consisting of diagonal elements 2 3 4 5 2
+
+A1 = -1
+
+ans = -1
+
+5
+
+3. We can use the commands sum()/prod() to get the sum/product of elements in a vector or a matrix, columnwisely ﬁrst (along the ﬁrst 
+nonsingleton dimension).
+
+>>sa1 = sum(a1) %sum of all the elements in vector a1  sa1 = 4 % ∑ a 1 (n) = − 1 + 2 + 3 = 4
+
+>>sA1 = sum(A1) %sum of all the elements in each column of matrix A1  sA1 = 3 7 5 %sA1(n) = ∑ m = 1 M A 1 (m, n) = [− 1 + 4 2 + 5 3 + 
+2]
+
+>>SA1 = sum(sum(A1)) %sum of all elements in matrix A1  SA1 = 15 %SA1 = ∑ n = 1 N ∑ m = 1 M A 1 (m, n) = 3 + 7 + 5 = 15
+
+>>pa1 = prod(a1) %product of all the elements in vector a1  pa1 = 4 % ∏ a 1 (n) = ( − 1) × 2 × 3 = − 6
+
+>>pA1=product(A1) %product of all the elements in each column of matrix A1  pA1 = -4 10 6 %pA1(n) = ∏ m = 1 M A 1 (m, n) = [−1 × 4 2 × 
+5 3 × 2]
+
+>>PA1 = product(product(A1)) %product of all the elements of matrix A1  PA1 = -240 %PA1 = ∏ n = 1 N ∏ m = 1 M A 1 (m, n) = ( − 4) × 
+10 × 6 = − 240
+
+4. We can use the commands max()/min() to ﬁnd the ﬁrst maximum/minimum number and its index in a vector or in a matrix given as the 
+input argument.
+
+>>[aM,iM] = max(a2)
+
+aM = 5, iM = 2 %means that the max. element of vector a2 is a2(2) = 5
+
+>>[AM,IM] = max(A1)
+
+AM = 4 5 3
+
+IM = 2 2 1
+
+%means that the max. elements of each column of A1 are A1(2,1) = 4, A1(2,2) = 5, A1(1,3) = 3
+
+>>[AMx,J] = max(AM)
+
+AMx = 5, J = 2
+
+%implies that the max. element of A1 is A1(IM(J),J) = A1(2,2) = 5
+
+5. We can use the commands rot90()/fliplr()/flipud() to rotate a matrix
+
+by an integer multiple of 90 ◦ and to ﬂip it left-right/up-down.
+
+>>A1, A3 = rot90(A1), A4 = rot90(A1,-2) 2 3 4 5 2 2 %90 ◦ rotation 2 5 -1 4 5 4 %90 ◦ x(-2) rotation 3 2 -1
+
+A1 = -1
+
+A3 = 3
+
+A4 = 2
+
+>>A5 = fliplr(A1) %flip left-right 2 -1 2 5 4
+
+A5 = 3
+
+>>A6 = flipud(A1) %flip up-down
+
+A6 = 4
+
+-1
+
+5
+
+2
+
+2
+
+3
+
+6. We can use the reshape() command to change the row-column size of a matrix with its elements preserved (columnwisely ﬁrst).
+
+>>A7 = reshape(A1,3,2)
+
+A7 = -1
+
+4
+
+2
+
+5
+
+3
+
+2
+
+>>A8 = reshape(A1,6,1), A8 = A1(:) %makes supercolumn vector
+
+A8 = -1
+
+4
+
+2
+
+5
+
+3
+
+2
+
+1.1.8 Random Number Generators
+
+MATLAB has the built-in functions, rand()/randn(), to generate random numbers having uniform/normal (Gaussian) distributions, 
+respectively ([K-1], Chapter 22).
+
+1. Random Number Having Uniform Distribution The numbers in a matrix generated by the MATLAB function rand(M,N) have uniform probability 
+distribution over the interval [0,1], as described by U(0,1). The random number x generated by rand() has the probability density 
+function
+
+1 ∀x ≥ 0 f X (x) = u s (x) − u s (x − 1) (u s (x) = : the unit step function) { 0 ∀x < 0
+
+(1.1.1) whose value is 1 over [0,1] and 0 elsewhere. The average of this standard uniform number x is
+
+∞ 1  1 x2  1 m X = xf X (x)dx = x dx =   = ∫ −∞ ∫ 0 2  0 2
+
+(1.1.2)
+
+and its variance or deviation is
+
+∞ 1 1   1 1 1 1 σ X 2 = (x − m X ) 2 f X (x)dx = (x − dx =  = )2  (x )3  ∫ −∞ ∫ 0 2 3 2  0 12 (1.1.3)
+
+If you want another random number y with uniform distribution U(a, b), transform the standard uniform number x as follows:
+
+y = (b − a)x + a
+
+(1.1.4)
+
+For practice, we make a vector consisting of 1000 standard uniform numbers, transform it to make a vector of numbers with uniform 
+distribution U(−1, + 1), and then draw the histograms showing the shape of the distribution for the two uniform number vectors (Fig. 
+1.7a,b).
+
+>>u_noise = rand(1000,1) %a 1000x1 noise vector with U(0,1)
+
+>>subplot(221), hist(u_noise,20) %histogram having 20 divisions
+
+>>u_noise1 = 2*u_noise-1 %a 1000x1 noise vector with U(-1,1)
+
+>>subplot(222), hist(u_noise1,20) %histogram
+
+2. Random Number with Normal (Gaussian) Distribution The numbers in a matrix generated by the MATLAB function randn(M,N) have normal 
+(Gaussian) distribution with average m = 0 and variance σ 2 = 1, as described by N(0,1). The random number x generated by rand() has the 
+probability density function
+
+1 f X (x) = e−x 2 /2  √ 2π
+
+(1.1.5)
+
+If you want another Gaussian number y with a general normal distribution N(m, σ 2 ), transform the standard Gaussian number x as 
+follows:
+
+y =σ x + m
+
+(1.1.6)
+
+The probability density function of the new Gaussian number generated by this transformation is obtained by substituting x = (y − m)/σ 
+into Eq. (1.1.5) and dividing the result by the scale factor σ (which can be seen in dx = dy/σ) so that the integral of the density 
+function over the whole interval (−∞, + ∞) amounts to 1.
+
+1 f Y (y) = e−(y−m) 2 /2σ 2  √ 2πσ
+
+(1.1.7)
+
+For practice, we make a vector consisting of 1000 standard Gaussian numbers, transform it to make a vector of numbers having normal 
+distribution N(1,1/4), with mean m = 1 and variance σ 2 = 1/4, and then draw the histograms for the two Gaussian number vectors (Fig. 
+1.7c,d).
+
+>>g_noise = randn(1000,1) %a 1000x1 noise vector with N(0,1)
+
+>>subplot(223), hist(g_noise,20) %histogram having 20 divisions
+
+>>g_noise1 = g_noise/2+1 %a 1000x1 noise vector with N(1,1/4)
+
+>>subplot(224), hist(g_noise1,20) %histogram
+
+1.1.9 Flow Control
+
+1. if-end and switch-case-end Statements An if-end block basically consists of an if statement, a sequel part, and an end statement 
+categorizing the block. An if statement, having a condition usually based on the relational/logical operator (Table 1.4), is used to 
+control the program ﬂow—that is, to adjust the order in which statements are executed according to whether or not the condition is met, 
+mostly depending on unpredictable situations. The sequel part consisting of one or more statements may contain else or elseif 
+statements, possibly in a nested structure containing another if statement inside it.
+
+The switch-case-end block might replace a multiple if-elseif-..-end statement in a neat manner.
+
+2. for index = i 0:increment:i last-end Loop A for loop makes a block of statements executed repeatedly for a speciﬁed number of times, 
+with its loop index increasing from i_0 to a number not greater than i_last by a speciﬁed step (increment) or by 1 if not speciﬁed. 
+The loop iteration normally ends when the loop index reaches i_last, but it can be stopped by a break statement inside the for loop. The 
+for loop with a positive/negative increment will never be iterated if the last value (i_last) of the index is smaller/greater than the 
+starting value (i_0).
+
+3. while Loop A while loop will be iterated as long as its predeﬁned condition is satisﬁed and a break statement is not encountered 
+inside the loop.
+
+Example 7. A while Loop
+
+Example 8. while Loops to Find the Minimum/Maximum Positive Numbers
+
+The following program “nm119 8.m” contains three while loops. In the ﬁrst one, x = 1 continues to be divided by 2 until just before 
+reaching zero, and it will hopefully end up with the smallest positive number that can be represented in MATLAB. In the second one, x = 
+1 continues to be multiplied by 2 until just before reaching inf (the inﬁnity deﬁned in MATLAB), and seemingly it will get the largest 
+positive number (x_max0) that can be represented in MATLAB. But, while this number reaches or may exceed inf if multiplied by 2 once 
+more, it still is not the largest number in MATLAB (slightly less than inf) that we want to ﬁnd. How about multiplying x_max0 by (2 − 
+1/2 n )? In the third while loop, the temporary variable tmp starting with the initial value of 1 continues to be divided by 2 until 
+just before x_max0*(2-tmp) reaches inf, and apparently it will end up with the largest positive number (x_max) that can be represented 
+in MATLAB.
+
+1.2 COMPUTER ERRORS VERSUS HUMAN MISTAKES
+
+Digital systems like calculators and computers hardly make a mistake, since they follow the programmed order faithfully. Nonetheless, we 
+often encounter some numerical errors in the computing results made by digital systems, mostly coming from representing the numbers in 
+ﬁnite bits, which is an intrinsic limitation of digital world. If you let the computer compute something without considering what is 
+called the ﬁnite-word-length effect, you might come across a weird answer. In
+
+that case, it is not the computer, but yourself as the user or the programmer, who is to blame for the wrong result. In this context, we 
+should always be careful not to let the computer produce a farfetched output. In this section we will see how the computer represents 
+and stores the numbers. Then we think about the cause and the propagation effect of computational error in order not to be deceived by 
+unintentional mistakes of the computer and, it is hoped, to be able to take some measures against them.
+
+1.2.1 IEEE 64-bit Floating-Point Number Representation
+
+MATLAB uses the IEEE 64-bit ﬂoating-point number system to represent all numbers. It has a word structure consisting of the sign bit, 
+the exponent ﬁeld, and the mantissa ﬁeld as follows:
+
+Each of these ﬁelds expresses S, E, and M of a number f in the way described below.
+
+ž
+
+ž
+
+ž
+
+Sign bit
+
+S=b63 =
+
+{
+
+0
+
+1
+
+for positive numbers for negative numbers
+
+Exponent ﬁeld (b 62 b 61 b 60 · · · b 52 ): adopting the excess 1023 code
+
+E = Exp − 1023 = { 0, 1, . . . , 2 11 − 1 = 2047 } − 1023
+
+= { −1023, −1022, . . . , + 1023, + 1024 }
+
+ −1023 + 1 for | f | < 2 −1022 (Exp = 00000000000) = −1022 ∼ + 1023 for 2 −1022 ≤ | f | < 2 1024 (normalized ranges)   + 
+1024 for ± ∞
+
+Mantissa ﬁeld (b 51 b 50 . . . b 1 b 0 ):
+
+In the un-normalized range where the numbers are so small that they can be represented only with the value of hidden bit 0, the number 
+represented by the mantissa is (1.2.1)
+
+M = 0.b 51 b 50 · · · b 1 b 0 = [b 51 b 50 · · · b 1 b 0 ] × 2−52 
+
+You might think that the value of the hidden bit is added to the exponent, instead of to the mantissa.
+
+In the normalized range, the number represented by the mantissa together with the value of hidden bit b h = 1 is
+
+M = 1.b 51 b 50 · · · b 1 b 0 = 1 + [b 51 b 50 · · · b 1 b 0 ] × 2−52 
+
+= 1 + b 51× 2 −1+ b 50× 2 −2+ ··· + b 1× 2 −51+ b 0× 2−52
+
+= { 1, 1 + 2 −52 , 1 + 2 × 2 −52 , . . . , 1 + (2 52 − 1) × 2 −52 }
+
+= { 1, 1 + 2 −52 , 1 + 2 × 2 −52 , . . . , (2 − 2 −52 ) }
+
+= { 1, 1 + , 1 + 2, . . . , 1 + (2 52 − 1) = 2 −  } ( = 2 −52 ) (1.2.2)
+
+The set of numbers S, E, and M, each represented by the sign bit S, the exponent ﬁeld Exp and the mantissa ﬁeld M, represents a number 
+as a whole
+
+f = ±M · 2E 
+
+(1.2.3)
+
+We classify the range of numbers depending on the value (E) of the exponent and denote it as
+
+R E = [2 E , 2 E + 1 )
+
+(1.2.4)
+
+with − 1022 ≤ E ≤ + 1023
+
+In each range, the least unit—that is, the value of LSB (least signiﬁcant bit) or the difference between two consecutive numbers 
+represented by the mantissa of 52 bits—is (1.2.5)
+
+ E =  × 2 E = 2 −52 × 2 E = 2E−52 
+
+Let us take a closer look at the bitwise representation of numbers belonging to each range.
+
+0. 0(zero)
+
+63
+
+S
+
+62
+
+000 . .
+
+52
+
+0000
+
+51
+
+0000 0000 . . .
+
+0
+
+0000 0000
+
+1. Un-normalized Range (with the value of hidden bit b h = 0)
+
+R −1023 = [2 −1074 , 2 −1022 ) with Exp = 0, E = Exp − 1023 + 1 = −1022
+
+(
+
+)
+
+(
+
+)
+
+(
+
+(
+
+)
+
+)
+
+(
+
+)
+
+Value of LSB:  −1023 =  −1022 = 2 −1022−52 = 2−1074 
+
+2. The Smallest Normalized Range (with the value of hidden bit b h = 1)
+
+R −1022 = [2 −1022 , 2 −1021 ) with Exp = 1, E = Exp − 1023 = −1022
+
+S 000 . . . 0001 0000 0000 . . . . 0000 0000 (1 + 0) × 2 E = (1 + 0) × 2 −1022
+
+S 000 . . . 0001 0000 0000 . . . . 0000 0001 (1 + 2 −52 ) × 2 −1022
+
+..........................................
+
+S 000 . . . 0001 1111 1111 . . . . 1111 1111 {(1 + (2 52 − 1) 2 −52 ) = (2 − 2 −52 )} × 2 −1022
+
+Value of LSB:  −1022 = 2 −1022−52 = 2−1074 
+
+3. Basic Normalized Range (with the value of hidden bit b h = 1)
+
+R 0 = [2 0 , 2 1 ) with Exp = 2 10 − 1 = 1023, E = Exp − 1023 = 0
+
+S 011 . . . 1111 0000 0000 . . . . 0000 0000 (1 + 0) × 2 E = (1 + 0) × 2 0 = 1
+
+S 011 . . . 1111 0000 0000 . . . . 0000 0001 (1 + 2 −52 ) × 2
+
+0
+
+..........................................
+
+S 011 . . . 1111 1111 1111 . . . . 1111 1111 {(1 + (2
+
+52 − −52 −52 0
+
+1)
+
+2
+
+)
+
+=
+
+(2
+
+−
+
+2
+
+)}
+
+×
+
+2
+
+Value of LSB:  0 = 2−52  4. The Largest Normalized Range (with the value of hidden bit b h = 1)
+
+R 1024 = [2 1023 , 2 1024 ) with Exp = 2 11 −2 = 2046, E = Exp−1023 = 1023
+
+S 111 . . . 1110 0000 0000 . . . . 0000 0000 (1 + 0) × 2 E = (1 + 0) × 2
+
+1023
+
+S 111 . . . 1110 0000 0000 . . . . 0000 0001 (1 + 2 −52 ) × 2
+
+1023
+
+..........................................
+
+52 − −52 −52 1023
+
+1)
+
+2
+
+)
+
+=
+
+(2
+
+−
+
+2
+
+)}
+
+×
+
+2
+
+S 111 . . . 1110 1111 1111 . . . . 1111 1111 {(1 + (2
+
+Value of LSB:  −1022 = 2 −1022−52 = 2−1074 
+
+5. ±∞(inf) Exp = 2 11 − 1 = 2047, E = Exp − 1023 = 1024 (meaningless)
+
+0 111 . . . 1111 0000 0000 . . . . 0000 0000 +∞ ≠ (1 + 0) × 2 E = (1 + 0) × 2
+
+1024
+
+1 111 . . . 1111 0000 0000 . . . . 0000 0000 −∞ ≠ −(1 + 0) × 2 E = −(1 + 0) × 2
+
+1024
+
+S 111 . . . 1111 0000 0000 . . . . 0000 0001 invalid (not used)
+
+..........................................
+
+S 111 . . . 111 1111 1111 . . . . 1111 1111 invalid (not used)
+
+From what has been mentioned earlier, we know that the minimum and maximum positive numbers are, respectively,
+
+f min = (0 + 2 −52 ) × 2 −1022 = 2 −1074 = 4.9406564584124654 × 10−324 
+
+f max = (2 − 2 −52 ) × 2 1023 = 1.7976931348623157 × 10308 
+
+This can be checked by running the program “nm119_8.m” in Section 1.1.9.
+
+Now, in order to gain some idea about the arithmetic computational mechanism, let’s see how the addition of two numbers, 3 and 14, 
+represented in the IEEE 64-bit ﬂoating number system, is performed.
+
+In the process of adding the two numbers, an alignment is made so that the two exponents in their 64-bit representations equal each 
+other; and it will kick out the part smaller by more than 52 bits, causing some numerical error. For example, adding 2 −23 to 2 30 does 
+not make any difference, while adding 2 −22 to 2 30 does, as we can see by typing the following statements into the MATLAB Command 
+window.
+
+>>x = 2^30; x + 2^-22 == x, x + 2^-23 == x
+
+ans = 0(false)
+
+ans = 1(true)
+
+(cf) Each range has a different minimum unit (LSB value) described by Eq. (1.2.5). It implies that the numbers are uniformly distributed 
+within each range. The closer the range is to 0, the denser the numbers in the range are. Such a number representation makes the 
+absolute quantization error large/small for large/small numbers, decreasing the possibility of large relative quantization error.
+
+1.2.2 Various Kinds of Computing Errors
+
+There are various kinds of errors that we encounter when using a computer for computation.
+
+ž
+
+ž ž
+
+ž
+
+ž
+
+ž
+
+ž
+
+Truncation Error: Caused by adding up to a ﬁnite number of terms, while we should add inﬁnitely many terms to get the exact answer in 
+theory. Round-off Error: Caused by representing/storing numeric data in ﬁnite bits. Overﬂow/Underﬂow: Caused by too large or too 
+small numbers to be represented/stored properly in ﬁnite bits—more speciﬁcally, the numbers having absolute values larger/smaller than 
+the maximum (f max )/minimum(f min ) number that can be represented in MATLAB.
+
+Negligible Addition: Caused by adding two numbers of magnitudes differing by over 52 bits, as can be seen in the last section.
+
+Loss of Signiﬁcance: Caused by a “bad subtraction,” which means a subtraction of a number from another one that is almost equal in 
+value.
+
+Error Magniﬁcation: Caused and magniﬁed/propagated by multiplying/dividing a number containing a small error by a large/small number.
+
+Errors depending on the numerical algorithms, step size, and so on.
+
+Although we cannot be free from these kinds of inevitable errors in some degree, it is not computers, but instead human beings, who must 
+be responsible for the computing errors. While our computer may insist on its innocence for an unintended lie, we programmers and users 
+cannot escape from the responsibility of taking measures against the errors and would have to pay for being careless enough to be 
+deceived by a machine. We should, therefore, try to decrease the magnitudes of errors and to minimize their impact on the ﬁnal results. 
+In order to do so, we must know the sources of computing errors and also grasp the computational properties of numerical algorithms.
+
+For instance, consider the following two formulas:
+
+f 1 (x) = √ x( √ x + 1 − √ x),
+
+x f 2 √ √ x + 1 + √ x
+
+(x)
+
+=
+
+(1.2.6)
+
+These are theoretically equivalent, hence we expect them to give exactly the same value. However, running the MATLAB program “nm122.m” 
+to compute the values of the two formulas, we see a surprising result that, as x increases, the step of f 1 (x) incoherently moves 
+hither and thither, while f 2 (x) approaches 1/2 at a steady pace. We might feel betrayed by the computer and have a doubt about its 
+reliability. Why does such a ﬂustering thing happen with f 1 (x)? It is because the number of signiﬁcant bits abruptly decreases when 
+the subtraction ( √ x + 1 − √ x) is performed for large values of x, which is called ‘loss of signiﬁcance’. In order to take a close 
+look at this phenomenon, let x = 10 15 . Then we have
+
+√ x + 1 = 3.162277660168381 × 10 7 = 31622776.60168381
+
+√ x = 3.162277660168379 × 10 7 = 31622776.60168379
+
+These two numbers have 52 signiﬁcant bits, or equivalently 16 signiﬁcant digits (2 52 ≈ 10 52×3/10 ≈ 10 15 ) so that their 
+signiﬁcant digits range from 10 8 to 10 −8 . Accordingly, the least signiﬁcant digit of their sum and difference is also the eighth 
+digit after the decimal point (10 −8 ).
+
+√ x + 1 + √ x = 63245553.20336761
+
+√ x + 1 − √ x = 0.00000001862645149230957 ≈ 0.00000002
+
+Note that the number of signiﬁcant digits of the difference decreased to 1 from 16. Could you imagine that a single subtraction may 
+kill most of the signiﬁcant digits? This is the very ‘loss of signiﬁcance’, which is often called ‘catastrophic cancellation’.
+
+1.2.3 Absolute/Relative Computing Errors
+
+The absolute/relative error of an approximate value x to the true value X of a real-valued variable is deﬁned as follows:
+
+ε x = X(true value) − x(approximate value)
+
+εx  X−x ρx = = X X
+
+(1.2.7)
+
+(1.2.8)
+
+If the least signiﬁcant digit (LSD) is the dth digit after the decimal point, then the magnitude of the absolute error is not greater 
+than half the value of LSD.
+
+| ε x | = | X − x | ≤ 1 2 10−d 
+
+(1.2.9)
+
+If the number of signiﬁcant digits is s, then the magnitude of the relative error is not greater than half the relative value of LSD 
+over MSD (most signiﬁcant digit).
+
+| | X − x | 1 | εx  | ρ x | = ≤ = 10−s  | X | | X | 2
+
+(1.2.10)
+
+1.2.4 Error Propagation
+
+In this section we will see how the errors of two numbers, x and y, are propagated with the four arithmetic operations. Error 
+propagation means that the errors in the input numbers of a process or an operation cause the errors in the output numbers.
+
+Let their absolute errors be ε x and ε y , respectively. Then the magnitudes of the absolute/relative errors in the sum and difference 
+are
+
+ε x±y = (X ± Y) − (x ± y) = (X − x) ± (Y − y) = ε x ± εy 
+
+(1.2.11)
+
+| ε x±y | ≤ | ε x | + | ε y |
+
+εx±y  | | | ρ x±y | = ≤ | X ± Y |
+
+|
+
+X || ε x /X | + | Y || ε y /Y |
+
+| X ± Y |
+
+| + | Y || ρy  | X || ρx  = | X ± Y |
+
+|
+
+(1.2.12)
+
+From this, we can see why the relative error is magniﬁed to cause the “loss of signiﬁcance” in the case of subtraction when the two 
+numbers X and Y are almost equal so that | X − Y | ≈ 0. The magnitudes of the absolute and relative errors in the 
+multiplication/division are
+
+| ε xy | = | XY − xy | = | XY − (X + ε x )(Y + ε y ) | ≈ | Xε y ± Yε x |
+
+(1.2.13)
+
+| ε xy | ≤ | X || ε y | + | Y || ε x |
+
+εxy  | | ε y | | ε x | | | ρ xy | = | + | ρ y | = + ≤ | ρx  | XY | | Y | | X |
+
+(1.2.14)
+
+ X x   X X + ε x  − Yε x | | Xεy  | ε x/y | =   −   =   −   ≈  Y y   Y Y + ε y  Y2 
+
+X || ε y | + | Y || ε x | | εx/y  | | ≤ Y2 
+
+(1.2.15)
+
+εx/y  | | ε x | | ε y | | | ρ x/y | = | + | ρ y | = + ≤ | ρx  | X/Y | | X | | Y |
+
+(1.2.16)
+
+This implies that, in the worst case, the relative error in multiplication/division may be as large as the sum of the relative errors of 
+the two numbers.
+
+1.2.5 Tips for Avoiding Large Errors
+
+In this section we will look over several tips to reduce the chance of large errors occurring in calculations.
+
+First, in order to decrease the magnitude of round-off errors and to lower the possibility of overﬂow/underﬂow errors, make the 
+intermediate result as close to 1 as possible in consecutive multiplication/division processes. According to this rule, when computing 
+xy/z, we program the formula as
+
+ž ž ž
+
+(xy)/z when x and y in the multiplication are very different in magnitude, x(y/z) when y and z in the division are close in magnitude, 
+and (x/z)y when x and z in the division are close in magnitude.
+
+For instance, when computing y n /e nx with x ≻ 1 and y ≻ 1, we would program it as (y/e x ) n rather than as y n /e nx , so that 
+overﬂow/underﬂow can be avoided. You may verify this by running the following MATLAB program “nm125_1.m”.
+
+>>nm125_1
+
+y^-20/e^-20x = 0.000000000000000e+000
+
+(y/e^x)^-20 = 4.920700930263814e-008
+
+y^-19/e^-19x = 1.141367814854768e-007
+
+(y/e^x)^-19 = 1.141367814854769e-007
+
+y^19/e^19x = 8.761417546430845e+006
+
+(y/e^x)^19 = 8.761417546430843e+006
+
+y^20/e^20x =
+
+NaN
+
+(y/e^x)^20 = 2.032230802424294e+007
+
+Second, in order to prevent ‘loss of signiﬁcance’, it is important to avoid a ‘bad subtraction’ (Section 1.2.2)—that is, a subtraction 
+of a number from another number having almost equal value. Let us consider a simple problem of ﬁnding the roots of a second-order 
+equation ax 2 + bx + c = 0 by using the quadratic formula
+
+−b b2  − 4ac + √ x1 = , 2a
+
+(1.2.17)
+
+−b b2  − 4ac √ x2 = 2a
+
+Let | 4ac | ≺ b 2 . Then, depending on the sign of b, a “bad subtraction” may be encountered when we try to ﬁnd x 1 or x 2 , which is 
+the smaller one of the two roots. This implies that it is safe from the “loss of signiﬁcance” to compute the root having the larger 
+absolute value ﬁrst and then obtain the other root by using the relation (between the roots and the coefﬁcients) x 1 x 2 = c/a.
+
+For another instance, we consider the following two formulas, which are analytically the same, but numerically different:
+
+1 − cos x f 1 (x) = , x2 
+
+(1.2.18)
+
+sin 2 x f 2 (x) = x 2 (1 + cos x)
+
+It is safe to use f 1 (x) for x ≈ π since the term (1 + cos x) in f 2 (x) is a ‘bad subtraction’, while it is safe to use f 2 (x) for x 
+≈ 0 since the term (1 − cos x) in f 1 (x) is a ‘bad subtraction’. Let’s run the following MATLAB program “nm125_2.m” to conﬁrm this. 
+Below is the running result. This implies that we might use some formulas to avoid a ‘bad subtraction’.
+
+It may be helpful for avoiding a ‘bad subtraction’ to use the Taylor series expansion ([W-1]) rather than using the exponential function 
+directly for the computation of e x . For example, suppose we want to ﬁnd
+
+ex  −1 f 3 (x) = x
+
+at x = 0
+
+(1.2.19) We can use the Taylor series expansion up to just the fourth-order of e x about x = 0
+
+′′ g (0) (0) (0) g(3)  g(4)  g(x) = e x ≈ g(0) + g ′ (0)x + + x 3 + x4  x2  2! 3! 4!
+
+1 1 1 =1 + x + + + x2  x3  x4  2! 3! 4!
+
+to approximate the above function (1.2.19) as
+
+ex  −1 1 1 1 f 3 (x) = ≈ 1 + + = f 4 (x) x x2  x3  + x 2! 3! 4!
+
+(1.2.20) Noting that the true value of (1.2.9) is computed to be 1 by using the L’Hˆopital’s rule ([W-1]), we run the MATLAB program 
+“nm125_3.m” to ﬁnd which one of the two formulas f 3 (x) and f 4 (x) is better for ﬁnding the value of the expression (1.2.9) at x = 
+0. Would you compare them based on the running result shown below? How can the approximate formula f 4 (x) outrun the true one f 3 (x) 
+for the numerical purpose, though not usual? It is because the zero factors in the numerator/denominator of f 3 (x) are canceled to set 
+f 4 (x) free from the terror of a “bad subtraction.”
+
+1.3 TOWARD GOOD PROGRAM
+
+Among the various criteria about the quality of a general program, the most important one is how robust its performance is against the 
+change of the problem properties and the initial values. A good program guides the program users who don’t know much about the program 
+and at least give them a warning message without runtime error for their minor mistake. There are many other features that need to be 
+considered, such as user friendliness, compactness and elegance, readability, and so on. But, as far as the numerical methods are 
+concerned, the accuracy of solution, execution speed (time efﬁciency), and memory utilization (space efﬁciency) are of utmost concern. 
+Since some tips to achieve the accuracy or at least to avoid large errors (including overﬂow/underﬂow) are given in the previous 
+section, we will look over the issues of execution speed and memory utilization.
+
+1.3.1 Nested Computing for Computational Efﬁciency
+
+The execution speed of a program for a numerical solution depends mostly on the number of function (subroutine) calls and arithmetic 
+operations performed in the program. Therefore, we like the algorithm requiring fewer function calls and arithmetic operations. For 
+instance, suppose we want to evaluate the value of a
+
+polynomial
+
+p 4 (x) = a 1 x 4 + a 2 x 3 + a 3 x 2 + a 4 x + a5 
+
+(1.3.1)
+
+It is better to use the nested structure (as below) than to use the above form as it is.
+
+p 4n (x) = (((a 1 x + a 2 )x + a 3 )x + a 4 )x + a5 
+
+(1.3.2)
+
+Note that the numbers of multiplications needed in Eqs. (1.3.2) and (1.3.1) are 4 and (4 + 3 + 2 + 1 = 9), respectively. This point is 
+illustrated by the program “nm131_1.m”, where a polynomial ∑ i=0 N−1 a i x i of degree N = 10 6 for a certain value of x is computed 
+by using the three methods—that is, Eq. (1.3.1), Eq. (1.3.2), and the MATLAB built-in function ‘polyval()’. Interested readers could run 
+this program to see that Eq. (1.3.2)—that is, the nested multiplication—is the fastest, while ‘polyval()’ is the slowest because of some 
+overhead time for being called, though it is also fabricated in a nested structure.
+
+%nm131_1: nested multiplication vs. plain multiple multiplication tic % initialize the timer p, toc % measure the time passed from the 
+time of executing ’tic’ for i = 2:N %nested multiplication end pn, toc tic, polyval(a,x), toc
+
+N = 1000000+1; a = [1:N]; x = 1;
+
+p = sum(a.*x.^[N-1:-1:0]); %plain multiplication
+
+tic, pn=a(1);
+
+pn = pn*x + a(i);
+
+Programming in a nested structure is not only recommended for time-efﬁcient computation, but also may be critical to the solution. For 
+instance, consider a problem of ﬁnding the value
+
+K λk  = S(K) ∑ k! e−λ  k=0
+
+(1.3.3)
+
+for λ = 100 and K = 155
+
+%nm131_2_1: nested structure p = exp(-lam); for k = 1:K end S
+
+lam = 100; K = 155;
+
+S = 0;
+
+p=p*lam/k; S=S+p;
+
+%nm131_2_2: not nested structure
+
+lam = 100; K = 155;
+
+S
+
+=
+
+0;
+
+for k = 1:K p = lam^k/factorial(k); end S*exp(-lam)
+
+S = S + p;
+
+The above two programs are made for this computational purpose. Noting that this sum of Poisson probability distribution is close to 1 
+for such a large K, we
+
+can run them to ﬁnd that one works ﬁne, while the other gives a quite wrong result. Could you tell which one is better?
+
+1.3.2 Vector Operation Versus Loop Iteration
+
+It is time-efﬁcient to use vector operations rather than loop iterations to perform a repetitive job for an array of data. The 
+following program “nm132_1.m” compares a vector operation versus a loop iteration in terms of the execution speed. Could you tell which 
+one is faster?
+
+%nm132_1: vector operation vs. loop iteration
+
+N = 100000; th = [0:N-1]/50000*pi;
+
+tic ss=sin(th(1)); for i = 2:N, ss = ss + sin(th(i)); end toc, ss tic ss = sum(sin(th)); % vector operation toc, ss
+
+% loop iteration
+
+As a more practical example, let us consider a problem of ﬁnding the DtFT (discrete-time Fourier transform) ([W-3]) of a given sequence 
+x[n].
+
+N−1 X() = ∑ x[n]e−jn  n=0
+
+(1.3.4)
+
+for  = [−100 : 100]π/100
+
+The following program “nm132_2.m” compares a vector operation versus a loop iteration for computing the DtFT in terms of the execution 
+speed. Could you tell which one is faster?
+
+%nm132_2: nested structure N = 1000; x = rand(1,N); % a random sequence x[n] for n = 0:N-1
+
+W = [-100:100]*pi/100; % frequency range
+
+tic for k = 1:length(W)
+
+X1(k) = 0; %for for loop
+
+for n = 1:N, X1(k) = X1(k) + x(n)*exp(-j*W(k)*(n-1)); end end toc tic
+
+X2 = 0;
+
+for n = 1:N
+
+%for vector loop
+
+X2 = X2 +x(n)*exp(-j*W*(n-1));
+
+end toc discrepancy = norm(X1-X2) %transpose for dimension compatibility
+
+1.3.3 Iterative Routine Versus Nested Routine
+
+In this section we compare an iterative routine and a nested routine performing the same job. Consider the following two programs 
+fctrl1(n)/fctrl2(n), whose common objectives is to get the factorial of a given nonnegative integer k.
+
+k! = k(k − 1) · · · 2 · 1
+
+(1.3.5)
+
+They differ in their structure. While fctrl1() uses a for loop structure, fctrl2() uses the nested (recursive) calling structure that a 
+program uses itself as a subroutine to perform a sub-job. Compared with fctrl1(), fctrl2() is easier to program as well as to read, but 
+is subject to runtime error that is caused by the excessive use of stack memory as the number of recursive calls increases with large n. 
+Another disadvantage of fctrl2() is that it is time-inefﬁcient for the number of function calls, which increases with the input 
+argument (n). In this case, a professional programmer would consider the standpoint of users to determine the programming style. Some 
+algorithms like the adaptive integration (Section 5.8), however, may ﬁt the nested structure perfectly.
+
+function m = fctrl1(n)
+
+m = 1;
+
+for k = 2:n, m = m*k; end
+
+function m = fctrl2(n)
+
+if n <= 1, m = 1;
+
+else
+
+m
+
+=
+
+n*fctrl2(n-1);
+
+end
+
+1.3.4 To Avoid Runtime Error
+
+A good program guides the program users who don’t know much about the program and at least gives them a warning message without runtime 
+error for their minor mistake. If you don’t know what runtime error is, you can experience one by taking the following steps:
+
+1. Make and save the above routine fctrl1() in an M-ﬁle named ‘fctrl.m’ in a directory listed in the MATLAB search path.
+
+2. Type fctrl(-1) into the MATLAB Command window. Then you will see
+
+>>fctrl(-1)
+
+ans = 1
+
+This seems to imply that (−1)! = 1, which is not true. It is caused by the mistake of the user who tries to ﬁnd (−1)! without knowing 
+that it is not deﬁned. This kind of runtime error seems to be minor because it does not halt the process. But it needs special 
+attention because it may not be easy to detect. If you are a good programmer, you will insert some error handling statements in the 
+program fctrl() as below. Then, when someone happens to execute fctrl(-1) in the Command window or through an M-ﬁle, the execution 
+stops and he will see the error message in the Command window as
+
+This shows the error message (given as the input argument of the error() routine) together with the name of the routine in which the 
+accidental “error” happens, which is helpful for the user to avoid the error.
+
+Most common runtime errors are caused by an “out of domain” index of array and the violation of matrix dimension compatibility, as 
+illustrated in Section 1.1.7. For example, consider the gauss(A,B) routine in Section 2.2.2, whose job is to solve a system of linear 
+equations Ax = b for x. To appreciate the role of the ﬁfth line handling the dimension compatibility error in the routine, remove the 
+line (by putting the comment mark % before the line in the M-ﬁle deﬁning gauss()) and type the following statements in the Command 
+window:
+
+>>A = rand(3,3); B = rand(2,1); x = gauss(A,B)
+
+?? Index exceeds matrix dimensions. Error in ==> C: \ MATLAB6p5 \ nma \ gauss.m
+
+On line 10 ==> AB = [A(1:NA,1:NA) B(1:NA,1:NB)];
+
+Then MATLAB gives you an error message together with the suspicious statement line and the routine name. But it is hard to ﬁgure out 
+what causes the runtime error, and you may get nervous lest the routine should have some bug. Now, restore the ﬁfth line in the routine 
+and type the same statements in the Command window:
+
+>>x = gauss(A,B) ?? Error using ==> gauss A and B must have compatible dimension
+
+This error message (provided by the programmer of the routine) helps you to realize that the source of the runtime error is the 
+incompatible matrices/vectors A and B given as the input arguments to the gauss() routine. Very like this, a good program has a scenario 
+for possible user mistakes and ﬁres the error routine for each abnormal condition to show the user the corresponding error message.
+
+Many users often give more/fewer input arguments than supposed to be given to the MATLAB functions/routines and sometimes give wrong 
+types/formats of data to them. To experience this type of error, let us try using the MATLAB function sinc1(t,D) (Section 1.3.5) to plot 
+the graph of a sinc function
+
+sin(πt/D) sin c(t/D) = with D = 0.5 and t = [ −2, 2 ] πt/D
+
+(1.3.6)
+
+With this purpose, type the following statements in the Command window.
+
+>>D = 0.5; b1 = -2; b2 = 2; t = b1+[0:200]/200*(b2 - b1);
+
+>>plot(t,sinc1(t,D)), axis([b1 b2 -0.4 1.2])
+
+>>hold on, plot(t,sinc1(t),’k:’)
+
+The two plotting commands coupled with sinc1(t,D) and sinc1(t) yield the two beautiful graphs, respectively, as depicted in Fig. 1.8a. 
+It is important to note that sinc1() doesn’t bother us and works ﬁne without the second input argument D. We owe the second line in the 
+function sinc1() for the nice errorhandling service:
+
+if nargin < 2, D = 1; end
+
+This line takes care of the case where the number of input arguments (nargin) is less than 2, by assuming that the second input argument 
+is D = 1 by default. This programming technique is the key to making the MATLAB functions adaptive to different number/type of input 
+arguments, which is very useful for breathing the user-convenience into the MATLAB functions. To appreciate its role, we remove the 
+second line from the M-ﬁle deﬁning sinc1() and then type the same statement in the Command window, trying to use sinc1() without the 
+second input argument.
+
+>>plot(t,sinc1(t),’k:’)
+
+??? Input argument ’D’ is undefined. Error in ==> C: \ MATLAB6p5 \ nma \ sinc1.m On line 4 ==> x = sin(pi*t/D)./(pi*t/D);
+
+This time we get a serious (red) error message with no graphic result. It is implied that the MATLAB function without the appropriate 
+error-handling parts no longer allows the user’s default or carelessness.
+
+Now, consider the third line in sinc1(), which is another error-handling statement.
+
+t(find(t==0))=eps;
+
+or, equivalently
+
+for i = 1:length(t), if t(i) == 0, t(i) = eps; end, end
+
+This statement changes every zero element in the t vector into eps (2.2204e016). What is the real purpose of this statement? It is 
+actually to remove the possibility of division-by-zero in the next statement, which is a mathematical expression having t in the 
+denominator.
+
+x = sin(pi*t/D)./(pi*t/D);
+
+To appreciate the role of the third line in sinc1(), we remove it from the M-ﬁle deﬁning sinc1(), and type the following statement in 
+the Command window.
+
+>>plot(t,sinc1(t,D),’r’) Warning: Divide by zero.
+
+(Type "warning off MATLAB:divideByZero" to suppress this warning.) In C: \ MATLAB6p5 \ nma \ sinc1.m at line 4)
+
+This time we get just a warning (black) error message with a similar graphic result as depicted in Fig. 1.8b. Does it imply that the 
+third line is dispensable? No, because the graph has a (weird) hole at t = 0, about which most engineers/mathematicians would feel 
+uncomfortable. That’s why authors strongly recommend you not to omit such an error-handling part as the third line as well as the second 
+line in the MATLAB function sinc1().
+
+(cf) What is the value of sinc1(t,D) for t = 0 in this case? Aren’t you curious? If so, let’s go for it.
+
+>>sinc1(0,D), sin(pi*0/D)/(pi*0/D), 0/0 ans = NaN (Not-a-Number: undetermined)
+
+Last, consider of the fourth line in sinc1(), which is only one essential statement performing the main job.
+
+x = sin(pi*t/D)./(pi*t/D);
+
+What is the .(dot) before /(division operator) for? In reference to this, authors gave you a piece of advice that you had better put a 
+.(dot) just before the arithmetic operators *(multiplication), /(division), and ^(power) in the function deﬁnition so that the 
+term-by-term (termwise) operation can be done any time (Section 1.1.6, (A5)). To appreciate the existence of the .(dot), we remove it 
+from the M-ﬁle deﬁning sinc1(), and type the following statements in the Command window.
+
+>>clf, plot(t,sinc1(t,D)), sinc1(t,D), sin(pi*t/D)/(pi*t/D)
+
+ans = -0.0187
+
+What do you see in the graphic window on the screen? Surprise, a (horizontal) straight line running parallel with the t-axis far from 
+any sinc function graph! What is more surprising, the value of sinc1(t,D) or sin(pi*t/D)/(pi*t/D) shows up as a scalar. Authors hope 
+that this accident will help you realize how important it is for right term-by-term operations to put .(dot) before the arithmetic 
+operators *, / and ^ . By the way, aren’t you curious about how MATLAB deals with a vector division without .(dot)? If so, let’s try 
+with the following statements:
+
+>>A = [1:10]; B = 2*A; A/B, A*B’*(B*B’)^-1, A*pinv(B)
+
+ans = 0.5
+
+To understand this response of MATLAB, you can see Section 1.1.7 or Section 2.1.2.
+
+In this section we looked at several sources of runtime error, hoping that it aroused the reader’s attention to the danger of runtime 
+error.
+
+1.3.5 Parameter Sharing via Global Variables
+
+When we discuss the runtime error that may be caused by user’s default in passing some parameter as input argument to the corresponding 
+function, you might feel that the parameter passing job is troublesome. Okay, it is understandable as a beginner in MATLAB. How about 
+declaring the parameters as global so that they can be accessed/shared from anywhere in the MATLAB world as far as the declaration is 
+valid? If you want to, you can declare any varable(s) by inserting the following statement in both the main program and all the 
+functions using the variables.
+
+global Gravity_Constant Dielectric_Constant
+
+%plot_sinc clear, clf global D
+
+D = 1; b1 = -2; b2 = 2;
+
+t = b1 +[0:100]/100*(b2 - b1);
+
+%passing the parameter(s) through arguments of the function subplot(221), plot(t, sinc1(t,D)) axis([b1 b2 -0.4 1.2]) %passing the 
+parameter(s) through global variables subplot(222), plot(t, sinc2(t)) axis([b1 b2 -0.4 1.2])
+
+function x = sinc1(t,D)
+
+if nargin<2, D = 1; end
+
+t(find(t == 0)) = eps; x = sin(pi*t/D)./(pi*t/D);
+
+function x = sinc2(t) global D t(find(t == 0)) = eps; x = sin(pi*t/D)./(pi*t/D);
+
+Then, how convenient it would be, since you don’t have to bother about passing the parameters. But, as you get proﬁcient in programming 
+and handle many
+
+

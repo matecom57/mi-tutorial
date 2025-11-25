@@ -1,0 +1,528 @@
+Physical Principles of Diffusion Imaging
+
+Thinesh Sivapatham and Elias R. Melhem
+
+Introduction
+------------
+
+While a still body of water may appear static to the eye, water molecules are in constant random motion at a microscopic level. This is 
+termed Brownian motion, and is a result of the thermal agitation of the water molecules. While Brownian motion is a microscopic 
+phenomenon, it results in a macroscopically observable phenomenon known as diffusion. The diffusion of water molecules in the brain 
+provides us with a sensitive window to its underlying physiology and structure. Diffusion-weighted imaging (DWI) of the brain was 
+introduced into clinical use in the early 1990s, primarily in the detection of acute ischemic stroke [1–4]. Since that time, advances in 
+technology have resulted in significant improvements in image quality, allowing the application of DWI to the evaluation of a variety of 
+intracranial disease processes, such as infections, neoplasms, demyelinating processes, and trauma. The development of diffusion tensor 
+imaging (DTI) has allowed mapping of white matter tracts in the brain, and is discussed elsewhere in this book. In this chapter, we 
+review the physical principles of DWI, while the clinical applications of DWI are discussed in following chapters.
+
+Brownian Motion and Molecular Diffusion
+----------------------------------------
+
+In 1827, Robert Brown, a Scottish botanist, discovered the random and constant motion of pollen grains suspended in water while studying 
+them under a light microscope [5]. Brown initially believed this motion to be related to the male
+sexual cells of plants, but after further investigation of both organic and inorganic materials, he found this motion to be a general 
+property of small particles suspended in solution. We currently know that this motion is attributed to the constant motion of the water 
+molecules that the particles are suspended in. This motion is known as Brownian motion, or diffusion, and is a result of constant random 
+microscopic molecular motion due to thermal agitation. The molecular motion is related to the thermal kinetic energy (Ekin ), of the 
+molecules, which is proportional to the temperature, T: Ekin = (3/2)kB T; where k B = 1.38 × 10 − 23 J/K is the Boltzmann constant. 
+This Brownian motion also depends upon the size of the particles, density, and viscosity of the medium.
+
+Diffusion is a naturally occurring transport process at the molecular level that describes the spread of particles through random 
+motion. This mixing or mass transport occurs as a result of collisions between molecules in liquids and gases rather than by bulk motion 
+as is necessary for other transport mechanisms such as convection or dispersion. When there is a concentration gradient, particles 
+spread from areas of higher concentration to areas of lower concentration until their distribution becomes equilibrate. This results in 
+a net flux of particles with a magnitude that is proportional to the concentration gradient and to the diffusion coefficient, as 
+described by Fick’s First Law and represented by the following equation:
+
+J = D∗ ∇ C
+
+(1.1)
+
+where J is the flux density, D is diffusion coefficient, and ∇C is change in concentration. The diffusion coefficient is a constant for 
+a given substance in a given medium of known viscosity at a given temperature. Diffusion can also occur in the absence of a 
+concentration gradient, but in this scenario the diffusive fluxes cancel each other out, resulting in no net flux.
+
+The concept of molecular diffusion was first formally described by Einstein in 1905 [6]. In a contained volume of water, each water 
+molecule undergoes random motion as part of the diffusion process. This phenomenon of thermal
+
+motion of water molecules in a medium that itself consists primarily of water is termed self-diffusion. The path of any single water 
+molecule is completely random and would be impossible to predict, limited only by the boundaries of the container. Einstein was able to 
+prove that the squared displacement of molecules from their starting point could be described by the equation:
+
+r 2 = 6 Dt
+
+(1.2)
+
+where <r2 > refers to the mean squared displacement of the molecules from their original location, t is the diffusion time, and D is the 
+diffusion coefficient for the particular substance being studied. The diffusion coefficient is typically expressed in units of mm2 /s 
+and relates the average displacement of a molecule over an area to the observation time; higher diffusion constants infer increased 
+mobility of water molecules. The diffusion coefficient of water at body temperature (37 °C) is 3 × 10 − 3 mm2 /s. The distribution of 
+squared displacements of free water molecules is typically a Gaussian (bellshaped) function with peak at zero displacement, indicating 
+that most molecules have the same position at the starting point and at time t [7, 8]. The probability of molecular displacement by a 
+given distance from the starting position is the same regardless of the direction of measurement, with standard deviation proportional 
+to the diffusion coefficient and time measured.
+
+Diffusion-weighted (DW) magnetic resonance imaging (MRI) utilizes Brownian motion to study the movement of water in vivo, thereby 
+garnering information about the underlying tissue structure of the brain. DW MRI does not measure the diffusion coefficient directly, 
+but rather the effect of the mean displacement of water molecules within each three-dimensional (3-D) volume element, or voxel, on the 
+nuclear magnetic resonance (NMR) signal. One might ask: If the diffusion coefficient of water at body temperature is a constant, then 
+how can we use this information to evaluate tissue structure? We must remember that in vivo, water molecules do not freely diffuse as 
+they would in a medium of water alone. In tissues, the movement of water occurs largely in the extracellular space, and their movement 
+is modified by interactions with cell membranes and macromolecules, i.e., the underlying tissue structure of the brain. Additionally, 
+the movement of water molecules in vivo due to diffusion cannot be distinguished from the movement of water molecules from other sources 
+such as active transport, pressure gradients, ionic interactions, and changes in membrane permeability. As a result, the overall 
+movement of water molecules in the brain is reduced as compared to their movement in free
+
+water, and only the “apparent diffusion coefficient” (ADC) can be calculated [7–9]. The average ADC in the brain is approximately 0.7 × 
+10 -3 mm2 /s [10], about four times smaller than the diffusion coefficient in free water.
+
+Diffusion Encoding and the Stejskal-Tanner Equation
+
+Shortly after Bloch and Purcell discovered the NMR phenomenon [11–13], Hahn reported his findings that the NMR spin-echo was sensitive 
+to the effects of diffusion [14]. He noted that the random thermal motion of the spins would reduce the amplitude of the observed 
+spin-echo signal as a result of the dephasing that occurs in the presence of magnetic field inhomogeneity, which results in local 
+magnetic field gradients. Building on these observations, Carr and Purcell proposed NMR sequences using constant gradients to sensitize 
+the NMR spin-echo to the effects of diffusion, and developed a mathematical framework to measure the diffusion coefficient from these 
+sequences [15]. In 1956, Torrey modified Bloch’s magnetization equations to include the effects of molecular diffusion [16]; the 
+Bloch-Torrey equations describe how net magnetization depends on several factors, including longitudinal and transverse magnetization, 
+as well as diffusion.
+
+In their seminal paper on the spin-diffusion experiment in 1965, Stejskal and Tanner described the theory of the pulsed gradient 
+spin-echo (PGSE), which replaced the steady-state gradients used by Carr and Purcell with short-duration gradient pulses [17]. This 
+resulted in much improved sensitivity to diffusion by distinguishing the encoding time (pulse duration) and the diffusion time. This 
+also allowed the direct measurement of the diffusion function and paved the way for quantitative measurements of the diffusion 
+coefficient. In the presence of a magnetic field, static spins accumulate phase shifts according to the equation:
+
+Φ ( t ) = γ B0t + ∫ G ( t ) . X ( t ) dt
+
+(1.3)
+
+The first term (γB0t) in the equation represents the phase accumulation owing to the static magnetic field, while the second term 
+(∫G(t).X(t)dt) reflects the effect of a magnetic field gradient. The phase accumulation owing to the gradient is proportional to the 
+strength of the field gradient, spatial location of the spin, and the duration of the gradient pulse.
+
+In their experiment, Stejskal and Tanner sensitized a standard spin-echo T2-weighted pulse sequence to diffusion by adding a pair of 
+diffusion gradients along the same
+
+axis both before and after the 180° refocusing pulse [17]. The basic idea is to excite the spins with a 90° radiofrequency (RF) pulse, 
+encode the spin position with a time-constant magnetic field gradient of duration δ, invert the spin phase with a 180° refocusing pulse, 
+apply a second magnetic field gradient equal in intensity and duration to the first gradient at a time Δ after the first gradient, and 
+then acquire the echo at time TE—echo time. The application of a linear gradient to a homogeneous magnetic field results in phase shifts 
+of the spins along that axis, which is position dependent; this phase dispersion leads to signal loss. However, the application of a 
+second gradient equal to the first in magnitude and duration but opposite in direction can refocus the phase changes. The first gradient 
+is called the dephasing gradient, while the second is called the rephasing gradient [18].
+
+If a spin is stationary between the applications of the two gradient pulses, the net effect of the gradients is zero and the spin 
+maintains its signal intensity. This explains the relatively high signal intensity on DWI seen in the setting of cytotoxic edema, where 
+there is a relative increase in intracellular water content and water molecules are “trapped” inside the cells (i.e., unable to diffuse 
+freely) and relative decrease in the size of the extracellular compartment [1925]. For a spin that moves along the axis of the diffusion 
+gradient, phase accumulation due to the two gradients is no longer equal so the rephasing is incomplete. As a result, intravoxel 
+dephasing occurs and there is a loss of signal intensity; the greater the distance the spin moves along the axis of the gradient, the 
+greater the signal loss [8, 14, 16, 17]. This explains the relatively low signal intensity seen on DWI in the normal brain parenchyma, 
+and even lower signal intensity in the cerebrospinal fluid (CSF) spaces, where water can diffuse the most freely.
+
+The effects of signal loss due to diffusion can be explained by the Stejskal-Tanner equation:
+
+S = S 0 exp ( −bD )
+
+(1.4)
+
+where S is the signal intensity observed in a given voxel with a diffusion gradient applied, S 0 is the signal intensity of the same 
+voxel in the absence of a diffusion gradient, b is the diffusion sensitivity factor, and D is the diffusion coefficient. The diffusion 
+sensitivity factor (b) is a function of the strength, duration, and temporal spacing of the diffusionsensitizing gradients, and can be 
+expressed by the following equation:
+
+b = γ 2 G2 δ 2 ( ∆ − δ / 3 )
+
+(1.5)
+
+In this equation, γ is the gyromagnetic ratio (the ratio of magnetic moment to angular moment of a nuclear spin, a constant), G is the 
+amplitude of the diffusion gradient (usually measured in milliteslas per meter), δ is the duration of the diffusion gradient pulse 
+(measured in milliseconds), and Δ the time interval between the dephasing and rephasing gradient pulses (also measured in milliseconds). 
+The diffusion sensitivity factor (b) is measured in units of seconds/mm2 . Raising the b-value increases the degree of diffusion 
+weighting (i.e., increases the signal loss caused by the diffusion of water molecules along the direction that the gradient was applied; 
+Fig. 1.1). The most effective ways to increase diffusion sensitivity, as seen in Eq. (1.3), are to increase gradient amplitude (G) and 
+gradient duration (δ), as these parameters have a quadratic effect on b. Typical b-values in clinical DWI range from 0 to 1500 s/mm2 . 
+However, it should be emphasized that higher diffusion weightings increase exponentially the contrast between tissues with different 
+diffusion coefficients, but at the same time they decrease the overall signal intensity and signal-to-noise ratio (SNR) [26, 27].
+
+Diffusion Anisotropy
+
+Isotropic diffusion refers to a condition where molecular motion is the same in all directions. Since the diffusivity is independent of 
+direction in this scenario, the displacement distribution is Gaussian and can be conceptualized as a sphere (i.e., if the center of the 
+sphere is the starting point of a water molecule, the probability of diffusing any given distance from the center is equal in all 
+directions) [7, 8, 28].
+
+Biological tissues are heterogeneous in their structure and consist of various compartments and barriers of various permeability. 
+Neuronal tissue, in particular, is highly fibrillar, with tightly packed and coherently aligned axons surrounded by a network of glial 
+cells that are often themselves organized in bundles. The movement of water molecules in these tissues is not isotropic, but rather has 
+a propensity to be greater in a direction parallel to the fiber tracts than perpendicular to it. Diffusion in this scenario varies with 
+direction,
+
+and is described as anisotropic [29–33]. The associated displacement distribution of anisotropic diffusion is not Gaussian or spherical, 
+but rather ellipsoid (or even more complex if the underlying tissues contain fibers with various orientations). This anisotropy can be 
+explained by the diffusion tensor model, and is discussed further in the chapter on diffusion tensor imaging (DTI).
+
+While isotropic diffusion can be seen in the cerebrospinal fluid (CSF) spaces and in the gray matter of the adult cerebral cortex, 
+diffusion in the white matter is primarily anisotropic. Multiple explanations have been suggested for the mechanisms underlying 
+diffusion anisotropy of white matter, including the myelin sheath, axonal direction, axonal transport, and local susceptibility 
+gradients [34–36]. Myelin itself does not appear to be necessary for diffusion anisotropy, as experiments have shown anisotropic 
+diffusion in the absence of myelin [37, 38]. A series of experiments in the 1990s excluded the effects of susceptibility-induced 
+gradients, axonal cytoskeleton, and fast-axonal transport as the etiology of anisotropy in white matter [39–41]. Current evidence 
+suggests that the presence of intact cell membranes is the tissue component predominantly responsible for the anisotropy of molecular 
+diffusion in white matter, while the degree of myelination and cellular density serve to modulate anisotropy [42].
+
+Calculating the ADC
+
+Since diffusion in the brain is approximated by the ADC rather than by direct measurement of the diffusion coefficient, Eq. (1.2) might 
+be better represented as:
+
+S i = S 0 exp ( −bADC i )
+
+(1.6)
+
+where S i is the signal intensity in a given voxel with the diffusion-sensitization gradient applied along direction i, and ADC i is the 
+ADC in the i direction. In an isotropic environment, the direction of the gradient pulse is irrelevant, since the ADC i would be 
+identical for all directions i, and a single (scalar) diffusion gradient application is sufficient to calculate the ADC. Higher ADC 
+values result in lower signal intensity S i in the DWI, while reduced ADC values result in higher signal intensity. In addition to 
+contrast due to differences in ADC, the long TE of a DWI pulse sequence makes it inherently sensitive to T2-contrast as well. 
+T2-prolongation in pathologic tissues can elevate the DWI signal intensity in the absence of reduced ADC values [43]. This 
+“T2-shinethrough” effect results in the DWI hyperintensity being less specific than reduced ADC values on ADC maps in the measurement of 
+true restricted diffusion in tissues (Fig. 1.2).
+
+In order to remove the T2-effects, the diffusion experiment is repeated for each gradient direction with a low
+
+b-value and high b-value (commonly 0 s/mm 2 and 1000 s/ mm 2 in clinical practice). The low b-value sequence essentially yields a 
+T2-weighted image. The DW image S i (with b = 1000 s/mm2 ) can then be divided by the T2-weighted image S 0 (with b = 0 s/mm2 ) to 
+remove the T2-weighting effects and produce an exponential image, also known as an attenuation coefficient map, exponential 
+diffusion-weighted image, or the attenuation factor map (shown in Fig. 1.3). Areas of restricted diffusion on these maps will 
+demonstrate increased signal intensity, similar to DWI.
+
+ADC values can also be calculated by solving for ADC in Eq. (1.7):
+
+ADC i = −ln ( S i / S 0 ) / b
+
+(1.7)
+
+where ln is the natural logarithm. Instead of deriving the ADC value mathematically, however, the ADC is typically determined 
+graphically by obtaining two image sets (again, low b-value and high b-value image sets) and plotting the natural logarithm of S i 
+versus b for the two b-values; the ADC is then determined from the slope of that line.
+
+Biological tissue can be considered a combination of intra- and extracellular compartments in which the water molecule is in a state of 
+continuous exchange between these two compartments. The observed signal attenuation in the diffusion experiment therefore depends on the 
+rate of exchange and the diffusion time. In the limit of slow exchange, water spins remain within their respective compartments during 
+the diffusion time and signal attenuation follows a bi-exponential behavior. This bi-exponential behavior is given by the equation:
+
+S = S 0   f 1 exp ( −b1 ADC 1 ) + f 2 exp ( −b 2 ADC 2 )  
+
+(1.8)
+
+where f 1 and f 2 are the volume fractions of water spins within each of the two compartments and f 1 + f 2 = 1; ADC 1 and ADC 2 are the 
+apparent diffusion coefficients in the two compartments.
+
+On the other hand, in the limit of fast exchange with complete redistribution of water between the two compartments during the diffusion 
+time, the signal attenuation follows a single exponential behavior given by the equation:
+
+S / S 0 = exp ( −b ∗ ADC )
+
+(1.9)
+
+The observed apparent diffusion coefficient for a twocompartment system includes contributions from both the intracellular and 
+extracellular environments and is approximated by the equation:
+
+ADC = f1 ADC 1 + f 2 ADC2 
+
+(1.10)
+
+In most practical situations, the bi-exponential behavior of signal attenuation is not observed. Therefore, it is a common practice to 
+fit the DWI data to the single exponential decay model.
+
+Isotropic DWI and Trace ADC
+
+Diffusion gradient pulses are applied in one direction at a time, with the resulting DW image giving both directional and magnitude 
+information about the ADC. This would be sufficient if imaging an isotropic tissue, since the ADC would be the same regardless of the 
+direction of the diffusion gradient. When imaging an anisotropic tissue like the white matter of the brain, however, interpretation of 
+the DWI would be challenging if only a single gradient direction were probed, due to the variable signal intensity of white matter 
+tracts depending on their orientation relative to the direction of the diffusion gradient. While the diffusion anisotropy discussed in 
+the previous section can be exploited to image fiber tracts in DTI, the directional effects of anisotropy are undesirable in routine 
+clinical DWI.
+
+In order to overcome the directional influences of the diffusion gradient in anisotropic tissues, four separate scalar image 
+acquisitions are required: one without a diffusionsensitizing gradient (S0 , where b = 0 s/mm2 ), and three with the diffusion gradients 
+applied in three orthogonal directions x, y, and z (which will be called Sx , Sy , and Sz ). To create an image related only to the 
+magnitude of the ADC, the DW images acquired with the gradient pulses applied in three orthogonal planes can be multiplied, and the cube 
+root of that product yields a DW image weighted with diffusion magnitude information alone and directional information removed, called 
+the “isotropic DWI” (SDWI ):
+
+S DWI = ( Sx Sy S z )1 / 3 
+
+(1.11)
+
+The ADC derived from application of the gradients in three orthogonal planes, called the “trace ADC” (simply called ADC below), is the 
+average of the ADCs from each of the planes (Fig. 1.3):
+
+ADC = ( ADC x + ADC y + ADC z ) / 3
+
+(1.12)
+
+The images submitted to the radiologist for interpretation in the clinical setting are typically the isotropic DWI and trace ADC images.
+
+DWI of the Normal Brain
+
+As mentioned previously, the average ADC in the brain is approximately 0.7 × 10 − 3 mm2 /s; more specifically, mean diffusivities in 
+the adult brain range from 0.67 to 0.83 × 10− 3  mm2 /s in gray matter, and 0.64 to 0.71 × 10 − 3 mm2 /s in white matter [10]. Because 
+the ADC values for gray and white matter are so similar, there is essentially no contrast between gray and white matter on the ADC map 
+or exponential image. The subtle gray–white matter contrast that can be seen on the DWI can be attributed to T2-effects, which makes it 
+impor-
+
+tant to concomitantly view the ADC map or exponential image to evaluate for true restricted diffusion.
+
+In neonates and young children, the ADC is initially much higher in rapidly developing gray matter structures like the thalamus and 
+basal ganglia, and can be more than twice as high in the slowly developing white matter regions [44, 45]. This can be attributed to the 
+relatively high water content in the immature brain, with relative paucity of myelinated neurons. ADC values decrease rapidly over the 
+first 2 years of brain development, and continue to decrease gradually through childhood, adolescence, and into young adulthood [46–52]. 
+Due to the higher ADC values in neonates and infants compared to adults [45–48], it is common to reduce the diffusion sensitivity factor 
+(b) in this age group to 600 or 700 s/mm2 , compared to the 1000 s/mm2  typically used in adults. In the aging but otherwise healthy 
+brain, mild increases can be seen in the ADC, particularly in white matter [53–58]. Engelter et al. found a significant correlation 
+between the average ADC of white matter and age, with patients 60 years of age or older having increased ADC compared to those under the 
+age of 60; a similar trend was seen in the average ADC of the thalamus [55]. Chen et al. found that the average ADC increases by 3% per 
+decade after the age of 40 [56]. This has been attributed to loss of myelinated neurons and structural changes seen with aging.
+
+Current DWI Techniques
+
+The movement of water molecules detected by DWI occurs on a length scale of micrometers that is significantly larger than intracellular 
+distances, but much smaller than the millimeter scale of voxel size in typical magnetic resonance (MR) images. The original PGSE 
+T2-weighted sequence described by Stejskal and Tanner was sensitive to even minimal bulk patient motion, which was enough to obscure the 
+much more miniscule molecular motion of diffusion. As MRI technology has improved and high-performance gradients have been developed, 
+DWI is now typically performed using spin-echo single-shot echo-planar imaging (SS-EPI) techniques. With this type of pulse sequence, an 
+entire two-dimensional (2-D) image can be formed from a single RF excitation pulse (hence the term “single-shot”). Images can be 
+acquired in a fraction of a second, minimizing artifacts related to patient motion. Additionally, the SS-EPI technique has a relatively 
+high signal-to-noise ratio (SNR); this is an important advantage in DWI, as high b-value diffusion gradients cause a significant loss of 
+signal intensity (see Eq. (1.4)). Using the SS-EPI technique, DW imaging of the brain can typically be completed in 1–2 min, beneficial 
+in clinical settings where acutely ill and often uncooperative patients (i.e., hyperacute stroke patients) are being imaged.
+
+Limitations of the SS-EPI technique include low spatial resolution, blurring effects of T2*- and T2-decay, and sensitivity to artifacts. 
+Matrix size using the single-shot technique is limited to 128 × 128 for a typical DWI using current MRI hardware and software, compared 
+to matrix sizes of 256 × 192 or larger for standard T1- and T2-weighted sequences. Blurring of T2*- and T2-weighted contrast occurs 
+during image readout due to the extended echo-train length. SS-EPI is also sensitive to artifacts due to Nyquist ghosting, chemical 
+shift, and particularly magnetic field inhomogeneities caused by local susceptibility differences between adjacent structures. As 
+stronger and faster gradients are developed to improve DWI, problems such as eddy currents and mechanical vibration may be exacerbated, 
+resulting in additional artifacts. These artifacts are explained in detail in reviews by Le Bihan et al. [59], and by Mukherjee et al. 
+[60].
+
+The development of multichannel coils and parallel imaging has also led to improvements in DWI. Compared to standard head RF coils, 
+which have a uniform sensitivity throughout their imaging volume, the newer multichannel phased-array RF coils have increased 
+sensitivity around their periphery than at their center, resulting in improved SNR in the cerebral cortex and, therefore, improved DW 
+images. These coils also allow parallel imaging on modern MR scanners due to their multiple independent receiver channels. Parallel 
+imaging techniques can be used to shorten the echotrain length of EPI, thereby reducing the susceptibilityinduced and blurring artifacts 
+that typically occur with extended echo trains. The shorter readout may also increase SNR by decreasing the TE.
+
+Alternatives to SS-EPI DWI include variations of fast spin-echo (FSE) or turbo spin-echo (TSE) imaging, multishot EPI, spiral imaging, 
+and line-scan imaging techniques [60, 61]. SS-FSE and half-Fourier acquired single-shot turbo spin-echo (HASTE) are ultrafast sequences 
+that limit artifacts related to bulk patient motion similar to SS-EPI, but with reduced susceptibility and chemical shift artifacts 
+compared to SS-EPI. However, they require longer scan times due to their low SNR compared with SS-EPI, and therefore have not become 
+popular techniques for brain DWI imaging. Multishot techniques also confer a reduction in susceptibility artifacts compared with SS-EPI, 
+but scan times are longer, which makes these methods more sensitive to bulk patient motion. One multishot FSE technique reduces motion 
+artifacts by continually oversampling the center of k-space, and is called periodically rotated overlapping parallel lines with enhanced 
+reconstruction (PROPELLER). This technique improves detection of small acute infarcts, particularly at the skull base and in the 
+posterior fossa, where SS-EPI techniques have significant susceptibility-induced distortion. Due to much longer scanning times, however, 
+the technique has not surpassed SS-EPI for routine clinical DWI.
+
+Conclusion
+
+From the observation of Brownian motion in 1827 to the description of molecular diffusion by Einstein in 1905, and the application of 
+these principles to DW MRI, a great deal has been learned about the movement of water molecules in the brain (Table 1.1). DWI is a 
+powerful tool that provides a great deal of information about the underlying structure and physiology of the brain that is not provided 
+with standard T1- and T2-weighted imaging techniques. DWI was first
+
+routinely used in brain imaging for the detection of acute ischemia, and is now an essential part of the imaging evaluation of patients 
+with acute stroke. The applications of DWI in neuroimaging are extensive, and include the evaluation of intracranial infections, 
+neoplasms, demyelinating processes, and trauma. These will be discussed in the following chapter. DWI techniques can also be used to 
+evaluate the fiber tracts of the brain, and these techniques and applications are discussed elsewhere in this book. As MRI technology 
+advances and improvements are made in imaging hardware and software, newer techniques and sequences may provide more sensitive DW images 
+with reduction in the artifacts inherent in current DWI techniques.
+
+References
+
+1. Moseley ME, Cohen Y, Mintorovitch J, Chileuitt L, Shimizu H, Kucharczyk J, et al. Early detection of regional cerebral ischemia in 
+cats: comparison of diffusion- and T2-weighted MRI and spectroscopy. Magn Reson Med. 1990;14:330–46.
+
+2. Chien D, Kwong KK, Gress DR, Buonanno FS, Buxton RB, Rosen BR. MR diffusion imaging of cerebral infarction in humans. AJNR Am J 
+Neuroradiol. 1992;13:1097–102.
+
+3. Warach S, Chien D, Li W, Ronthal M, Edelman RR. Fast magnetic resonance diffusion-weighted imaging of acute human stroke. Neurology. 
+1992;42:1717–23.
+
+4. van Everdingen KJ, van der Grong J, Kappelle LJ, Ramos LM, Mali WP. Diffusion-weighted magnetic resonance imaging in acute stroke. 
+Stroke. 1998;29(9):1783–90.
+
+5. Brown R. A brief account of microscopical observations made in the months of June, July and August 1827 on the particles contained in 
+the pollen of plants, and on the general existence of active molecules in organic and inorganic bodies. Philos Mag. 1828;4:161.
+
+6. Einstein A. Investigations on the theory of Brownian motion.
+
+19. Sevick RJ, Kanda F, Mintorovitch J, Arieff AI, Kucharczyk J, Tsuruda JS, et al. Cytotoxic brain edema: assessment with 
+diffusion-weighted MR imaging. Radiology. 1992;185(3):687–90.
+
+20. Ebisu T, Naruse S, Horikawa Y, Ueda S, Tanaka C, Uto M, Umeda M, Higuchi T. Discrimination between different types of white matter 
+edema with diffusion-weighted MR imaging. J Magn Reson Imaging. 1993;3(6):863–8.
+
+21. Schaefer PW, Buonanno FS, Gonzalez RG, Schwamm LH. Diffusion-weighted imaging discriminates between cytotoxic and vasogenic edema in 
+a patient with eclampsia. Stroke. 1997;28:1082–5.
+
+22. Schwartz R, Mulkern R, Gudbjartsson H, Jolesz F. Diffusionweighted MR imaging in hypertensive encephalopathy: clues to pathogenesis. 
+AJNR Am J Neuroradiol. 1998;19:859–62.
+
+23. Ay H, Buonanno FS, Schaefer PW, Le DA, Wang B, Gonzalez RG, Koroshetz WJ. Posterior leukoencephalopathy without severe hypertension: 
+utility of diffusion-weighted MRI. Neurology. 1998;51:1369–76.
+
+24. Mukherjee P, McKinstry RC. Reversible posterior leukoencephalopathy syndrome: evaluation with diffusion-tensor MR imaging. 
+Radiology. 2001;219:756–65.
+
+25. Provenzale JM, Petrella JR, Cruz LC Jr, Wong JC, Engelter S, Barboriak DP. Quantitative assessment of diffusion abnormalities in 
+posterior reversible encephalopathy syndrome. AJNR Am J Neuroradiol. 2001;22:1455–61.
+
+26. Chen PE, Simon JE, Hill MD, Sohn CH, Dickhoff P, Morrish WF, et al. Acute ischemic stroke: accuracy of diffusion-weighted MR 
+imaging–effects of b value and cerebrospinal fluid suppression. Radiology. 2006;238(1):232–9.
+
+27. Kim HJ, Choi CG, Lee DH, Lee JH, Kim SJ, Suh DC. High-b-value diffusion-weighted MR imaging of hyperacute ischemic stroke at
+
+1.5T. AJNR Am J Neuroradiol. 2005;26(2):208–15.
+
+28. Le Bihan D. Looking into the functional architecture of the brain with diffusion MRI. Nat Rev Neurosci. 2003;4(6):469–80.
+
+29. Cleveland GG, Chang DC, Hazlewood CF, Rorschach HE. Nuclear magnetic resonance measurement of skeletal muscle: anisotropy of the 
+diffusion coefficient of the intracellular water. Biophys J. 1976;16(9):1043–53.
+
+New York: Dover; 1956.
+
+7. Jones DK. Studying connections in the living human brain with diffusion MRI. Cortex. 2008;44(8):936–52.
+
+8. Hagmann P, Jonasson L, Maeder P, Thiran JP, Wedeen VJ, Meuli
+
+R. Understanding diffusion MR imaging techniques: from scalar diffusion-weighted imaging to diffusion tensor imaging and beyond. 
+Radiographics. 2006;26(Suppl 1):205–23.
+
+9. Schaefer PW, Grant PE, Gonzalez RG. Diffusion-weighted MR imaging of the brain. Radiology. 2000;217(2):331–45.
+
+10. Pierpaoli C, Jezzard P, Basser PJ, Barnett A, Di Chiro
+
+G. Diffusion tensor MR imaging of the human brain. Radiology. 1996;201:637–48.
+
+11. Bloch F. Nuclear induction. Phys Rev. 1946;70:460–74.
+
+12. Bloch F, Hansen WW, Packard M. Nuclear induction. Phys Rev.
+
+30. Moseley ME, Cohen Y, Kucharczyk J, Mintorovitch J, Asgari HS, Wendland MF, Tsuruda J, Norman D. Diffusion-weighted MR imaging of 
+anisotropic water diffusion in cat central nervous system. Radiology. 1990;176(2):439–45.
+
+31. Moseley ME, Kucharczyk J, Asgari HS, Norman D. Anisotropy in diffusion-weighted MRI. Magn Reson Med. 1991;19(2):321–6.
+
+32. Doran M, Hajnal JV, Van Bruggen N, King MD, Young IR, Bydder GM. Normal and abnormal white matter tracts shown by MR imaging using 
+directional diffusion weighted sequences. J Comput Assist Tomogr. 1990;14(6):865–73.
+
+33. Chenevert TL, Brunberg JA, Pipe JG. Anisotropic diffusion in human white matter: demonstration with MR techniques in vivo. 
+Radiology. 1990;177(2):401–5.
+
+1946;69:127.
+
+34. Thomsen C, Henriksen O, Ring P. In vivo measurement of water self-diffusion in the human brain by magnetic resonance imaging. Acta 
+Radiol. 1987;28(3):353–61.
+
+13. Purcell EM, Torrey HC, Pound RV. Resonance absorption by nuclear magnetic moments in a solid. Phys Rev. 1946;69:37.
+
+14. Hahn EL. Spin echoes. Phys Rev. 1950;80:580–94.
+
+15. Carr HY, Purcell EM. Effects of diffusion on free precession in nuclear magnetic resonance experiments. Phys Rev. 1954;94:630–8.
+
+16. Torrey HC. Bloch equations with diffusion terms. Phys Rev.
+
+35. Hong X, Dixon WT. Measuring diffusion in inhomogeneous systems in imaging mode using antisymmetric sensitizing gradients. J Magn 
+Reson. 1992;99:561–70.
+
+1956;104:563–35.
+
+36. Lian J, Williams DS, Lowe IJ. Magnetic resonance imaging in the presence of background gradients and imaging of background 
+gradients. J Magn Reson Ser. 1994;106:65–74.
+
+17. Stejskal EO, Tanner JE. Spin diffusion measurements: spin echoes in the presence of a time-dependent field gradient. J Chem Phys. 
+1965;42:288–92.
+
+18. Mori S, Barker PB. Diffusion magnetic resonance imaging: its principle and applications. Anat Rec. 1999;257(3):102–9.
+
+37. Wimberger DM, Roberts TP, Barkovich AJ, Prayer LM, Moseley ME, Kucharczyk J. Identification of “premyelination” by diffusionweighted 
+MRI. J Comput Assist Tomogr. 1995;19(1):28–33.
+
+38. Prayer D, Roberts T, Barkovich AJ, Prayer L, Kucharczyk J, Moseley M, Arieff A. Diffusion-weighted MRI of myelina-
+
+tion in the rat brain following treatment with gonadal hormones. Neuroradiology. 1997;39(5):320–5.
+
+39. Beaulieu C, Allen PS. Determinants of anisotropic water diffusion in nerves. Magn Reson Med. 1994;31(4):394–400.
+
+40. Beaulieu C, Allen PS. Water diffusion in the giant axon of the squid: implications for diffusion-weighted MRI of the nervous system. 
+Magn Reson Med. 1994;32(5):579–83.
+
+41. Beaulieu C, Allen PS. An in vitro evaluation of the effects of local magnetic-susceptibility-induced gradients on anisotropic water 
+diffusion in nerve. Magn Reson Med. 1996;36(1):39–44.
+
+42. Beaulieu C. The basis of anisotropic water diffusion in the nervous system - a technical review. NMR Biomed. 2002;15(7):435–55.
+
+43. Burdette JH, Elster AD, Ricci PE. Acute cerebral infarction: quantification of spin-density and T2 shine-through phenomena on 
+diffusion-weighted MR images. Radiology. 1999;212(2):333–9.
+
+44. Hüppi PS, Maier SE, Peled S, Zientara GP, Barnes PD, Jolesz FA, Volpe JJ. Microstructural development of human newborn cerebral 
+white matter assessed in vivo by diffusion tensor magnetic resonance imaging. Pediatr Res. 1998;44(4):584–90.
+
+45. Neil JJ, Shiran SI, McKinstry RC, Schefft GL, Snyder AZ, Almli CR, Akbudak E, Aronovitz JA, Miller JP, Lee BC, Conturo TE. Normal 
+brain in human newborns: apparent diffusion coefficient and diffusion anisotropy measured by using diffusion tensor MR imaging. 
+Radiology. 1998;209(1):57–66.
+
+46. Mukherjee P, Miller JH, Shimony JS, Conturo TE, Lee BC, Almli CR, McKinstry RC. Normal brain maturation during childhood: 
+developmental trends characterized with diffusion-tensor MR imaging. Radiology. 2001;221(2):349–58.
+
+47. Mukherjee P, McKinstry RC. Diffusion tensor imaging and tractography of human brain development. Neuroimaging Clin N Am. 
+2006;16(1):19–43.
+
+48. Mukherjee P, Miller JH, Shimony JS, Philip JV, Nehra D, Snyder AZ, Conturo TE, Neil JJ, McKinstry RC. Diffusion-tensor MR imaging of 
+gray and white matter development during normal human brain maturation. AJNR Am J Neuroradiol. 2002;23(9):1445–56.
+
+49. McGraw P, Liang L, Provenzale JM. Evaluation of normal agerelated changes in anisotropy during infancy and childhood as shown by 
+diffusion tensor imaging. AJR Am J Roentgenol. 2002;179(6):1515–22.
+
+50. Schneider JF, Il’yasov KA, Hennig J, Martin E. Fast quantitative diffusion-tensor imaging of cerebral white matter from the neonatal 
+period to adolescence. Neuroradiology. 2004;46(4):258–66.
+
+51. Snook L, Paulson LA, Roy D, Phillips L, Beaulieu C. Diffusion tensor imaging of neurodevelopment in children and young adults. 
+NeuroImage. 2005;26(4):1164–73.
+
+52. Hermoye L, Saint-Martin C, Cosnard G, Lee SK, Kim J, Nassogne MC, Menten R, Clapuyt P, Donohue PK, Hua K, Wakana S, Jiang H, van 
+Zijl PC, Mori S. Pediatric diffusion tensor imaging: normal database and observation of the white matter maturation in early childhood. 
+NeuroImage. 2006;29(2):493–504.
+
+53. Gideon P, Thomsen C, Henriksen O. Increased self-diffusion of brain water in normal aging. J Magn Reson Imaging. 1994;4(2):185–8.
+
+54. Chun T, Filippi CG, Zimmerman RD, Uluğ AM. Diffusion changes in the aging human brain. AJNR Am J Neuroradiol. 2000;21(6):1078–83.
+
+55. Engelter ST, Provenzale JM, Petrella JR, DeLong DM, MacFall JR. The effect of aging on the apparent diffusion coefficient of normal 
+appearing white matter. AJR Am J Roentgenol. 2000;175:425–30.
+
+56. Chen ZG, Li TQ, Hindmarsh T. Diffusion tensor trace mapping in normal adult brain using single-shot EPI technique. A methodological 
+study of the aging brain. Acta Radiol. 2001;42(5):447–58.
+
+57. Nusbaum AO, Tang CY, Buchsbaum MS, Wei TC, Atlas SW. Regional and global changes in cerebral diffusion with normal aging. AJNR Am J 
+Neuroradiol. 2001;22(1):136–42.
+
+58. Moseley M. Diffusion tensor imaging and aging - a review. NMR Biomed. 2002;15(7-8):553–60.
+
+59. Le Bihan D, Poupon C, Amadon A, Lethimonnier F. Artifacts and pitfalls in diffusion MRI. J Magn Reson Imaging. 2006;24(3):478–88.
+
+60. Mukherjee P, Chung SW, Berman JI, Hess CP, Henry RG. Diffusion tensor MR imaging and fiber tractography: technical considerations. 
+AJNR Am J Neuroradiol. 2008;29(5):843–52.
+
+61. Bammer R. Basic principles of diffusion-weighted imaging. Eur J Radiol. 2003;45(3):169–84.
+
+62. Mukherjee P, Berman JI, Chung SW, Hess CP, Henry RG. Diffusion tensor MR imaging and fiber tractography: theoretic underpinnings. 
+AJNR Am J Neuroradiol. 2008;29(4):632–41.
+
+
+

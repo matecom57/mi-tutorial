@@ -1,0 +1,597 @@
+Preface
+
+Every modern operating system has at least one shell, and some have many. Some shells are command line–oriented, such as the shell 
+discussed in this book. Others are graphical, like Windows Explorer or the Macintosh Finder. Some users will interact with the shell 
+only long enough to launch their favorite application, and then never emerge from that until they log off. But most users spend a 
+significant amount of time using the shell. The more you know about your shell, the faster and more productive you can be.
+
+Whether you are a system administrator, a programmer, or an end user, there are certainly occasions where a simple (or perhaps not so 
+simple) shell script can save you time and effort, or facilitate consistency and repeatability for some important task. Even using an 
+alias to change or shorten the name of a command you use often can have a significant effect. We’ll cover this and much more.
+
+As with any general programming language, there is more than one way to do a given task in the shell. In some cases, there is only one 
+best way, but in most cases there are at least two or three equally effective and efficient ways to write a solution. Which way you 
+choose depends on your personal style, creativity, and familiarity with different commands and techniques. This is as true for us as 
+authors as it is for you as the reader. In most cases we will choose a single method and implement it. In a few cases we may choose a 
+particular method and explain why we think it’s the best. We may also occasionally show more than one equivalent solution so you can 
+choose the one that best fits your needs and environment.
+
+There is also sometimes a choice between a clever way to write some code, and a readable way. We will choose the readable way every time 
+because experience has taught us that no matter how transparent you think your clever code is now, 6 or 18 months and 10 projects from 
+now, you will be scratching your head asking yourself what you were thinking. Trust us: write clear code, and document it—you’ll thank 
+yourself (and us) later.
+
+Who Should Read This Book
+
+This book is for anyone who uses a Unix or Linux system, as well as system administrators who may use several systems on any given day. 
+With it, you will be able to create scripts that allow you to accomplish more, in less time, more easily, consistently, and repeatably 
+than ever before.
+
+Anyone? Yes. New users will appreciate the sections on automating repetitive tasks, making simple substitutions, and customizing their 
+environment to be more friendly and perhaps behave in more familiar ways. Power users and administrators will find new and different 
+solutions to common tasks and challenges. Advanced users will have a collection of techniques they can use at a moment’s notice to put 
+out the latest fire, without having to remember every little detail of syntax.
+
+Ideal readers include:
+
+New Unix or Linux users who don’t know much about the shell, but want to do more than point and click
+
+Experienced Unix or Linux users and system administrators looking for quick answers to shell scripting questions
+
+Programmers who work in a Unix or Linux (or even Windows) environment and want to be more productive
+
+New Unix or Linux sysadmins, or those coming from a Windows environment who need to come up to speed quickly
+
+Experienced Windows users and sysadmins who want a more powerful scripting environment
+
+This book will only briefly cover basic and intermediate shell scripting—see Learning the bash Shell, 3rd Edition, by Cameron Newham 
+(O’Reilly) and Classic Shell Scripting by Nelson H. F. Beebe and Arnold Robbins (O’Reilly) for more in-depth coverage. Instead, our goal 
+is to provide solutions to common problems, with a strong focus on the “how to” rather than the theory. We hope this book will save you 
+time when figuring out solutions or trying to remember syntax. In fact, that’s why we wrote this book: it’s what we wanted, one we could 
+read through to get ideas, then refer
+
+to for practical working examples when needed. That way we wouldn’t have to remember the subtle differences between the shell, Perl, C, 
+and so forth.
+
+This book assumes you have access to a Unix or Linux system (or see Recipes 1.14 through 1.18, or Recipe 15.4) and are familiar with 
+logging in, typing basic commands, and using a text editor. You do not have to be root to use the vast majority of the recipes, though 
+there are a few, particularly dealing with installing bash, where root access will be needed.
+
+About This Book
+
+This book covers bash, the GNU Bourne Again Shell, which is a member of the family of shells that includes the original Bourne shell, 
+sh, the Korn shell, ksh, and the public domain Korn shell, pdksh. While these and other shells such as dash and zsh are not specifically 
+covered, odds are that most of the scripts will work pretty well with them.
+
+You should be able to read this book cover to cover, and also just pick it up and read anything that catches your eye. But perhaps most 
+importantly, we hope that when you have a question about how to do something or you need a hint, you will be able to easily find the 
+right answer—or something close enough—and save time and effort.
+
+A great part of the Unix philosophy is to build simple tools that do one thing well, then combine them as needed. This combination of 
+tools is often accomplished via a shell script because these commands, called pipelines, can be long or difficult to remember and type. 
+Where appropriate, we’ll cover the use of many of these tools in the context of the shell script as the glue that holds the pieces 
+together to achieve the goal.
+
+The first edition of this book was written using OpenOffice.org Writer running on whatever Linux or Windows machine happened to be 
+handy, and kept in Subversion (see Appendix D). The nature of the Open Document Format facilitated many critical aspects of writing this 
+book, including cross-references and extracting code (see Recipe 13.18). That source was later converted to DocBook for production.
+
+For the second edition, we’ve switched to Asciidoc and Git on O’Reilly’s Atlas system, which worked very well. We’re grateful to 
+O’Reilly’s production and tools departments for their help.
+
+GNU Software
+
+bash and many of the other tools we discuss in this book are part of the GNU Project. GNU (pronounced guh-noo, like canoe) is a 
+recursive acronym for “GNU’s Not Unix,” and the project dates back to 1984. Its goal is to develop a free (as in freedom) Unix-like 
+operating system.
+
+Without getting into too much detail, what is commonly referred to as Linux is, in fact, a kernel with various supporting software as a 
+core. The GNU tools are wrapped around it and it has a vast array of other software that may be included, depending on your 
+distribution. However, the Linux kernel itself is not GNU software.
+
+The GNU Project argues that Linux should in fact be called “GNU/Linux,” and it has a good point, so some distributions (notably Debian) 
+do this. Therefore, GNU’s goal has arguably been achieved, though the result is not exclusively GNU.
+
+The GNU Project has contributed a vast amount of superior software, notably including bash. There are GNU versions of practically every 
+tool we discuss in this book, and while the GNU tools are more rich in terms of features and (usually) friendliness, they are also 
+sometimes a little different. We discuss this in Recipe 15.3, though the commercial Unix vendors in the 1980s and 1990s are also largely 
+to blame for these differences.
+
+Enough (several books this size worth) has already been said about all of these aspects of GNU, Unix, and Linux, but we felt that this 
+brief note was appropriate. See http://www.gnu.org for much more on the topic.
+
+A Note About Code Examples
+
+When we show an executable piece of shell scripting in this book, we typically show it in an offset area like this:
+
+$ ls a.out $
+
+cong.txt
+
+def.conf
+
+file.txt
+
+more.txt
+
+zebra.list
+
+The first character is often a dollar sign ($) to indicate that this command has been typed at the bash shell prompt. (Remember that you 
+can change the prompt, as described in Recipe 16.2, so your prompt may look very different.) The prompt is printed by the shell; you 
+type the remainder of the line. Similarly, the last line in such an example is often a prompt (the $ again), to show that the command 
+has ended execution and control has returned to the shell.
+
+The pound or hash sign (#) is a little trickier. In many Unix or Linux files, including bash shell scripts, a leading # denotes a 
+comment, and we have used it that way in some of our code examples. But as the trailing symbol in a bash command prompt (instead of $), 
+# means you are logged in as root. We only have one example that is running anything as root, so that shouldn’t be confusing, but it’s 
+important to understand.
+
+When you see an example without the prompt string, we are showing the contents of a shell script. For several large examples we will 
+number the lines of the script, though the numbers are not part of the script.
+
+We may also occasionally show an example as a session log or a series of commands. In some cases, we may cat one or more files so you 
+can see the script and/or datafiles we’ll be using in the example or in the results of our operation, like this:
+
+$ cat data_file static header line1 static header line2 1 foo 2 bar 3 baz
+
+Many of the longer scripts and functions are available to download as well. See “Using Code Examples” for details. We have chosen to use
+
+!/usr/bin/env bash for these examples, where applicable, as that is more portable than the !/bin/bash you will see on Linux or a Mac. 
+See Recipe 15.1 for more details.
+
+Also, you may notice something like the following in many code examples:
+
+# cookbook filename: snippet_name
+
+That means that the code you are reading is available for download in our GitHub repository. You’ll find the code in something like 
+./chXX/snippet_name, where chXX is the chapter and snippet_name is the name of the file.
+
+Useless Use of cat
+
+Certain Unix users take a positively giddy delight in pointing out inefficiencies in other people’s code. Most of the time this is 
+constructive criticism gently given and gratefully received.
+
+Probably the most common case is the so-called “useless use of cat award” bestowed when someone does something like cat file | grep foo 
+instead of simply grep foo file. In this case, cat is unnecessary and incurs some system overhead since it runs in a subprocess. Another 
+common case would be cat file | tr '[A-Z]' '[a-z]' instead of tr '[A-Z]' '[a-z]' < file. Sometimes using cat can even cause your script 
+to fail (see Recipe 19.8).
+
+But…(you knew that was coming, didn’t you?) sometimes unnecessarily using cat actually does serve a purpose. It might be a placeholder 
+to demonstrate a fragment of a pipeline, with other commands later replacing it (perhaps even cat -n). Or it might be that placing the 
+file near the left side of the code draws the eye to it more clearly than if it were hidden behind a < on the far-right side of the 
+page.
+
+While we applaud efficiency and agree it is a goal to strive for, it isn’t as critical as it once was. We are not advocating 
+carelessness and code bloat, we’re just saying that processors aren’t getting any slower anytime soon. So
+
+if you like cat, use it.
+
+A Note About Perl
+
+We made a conscious decision to avoid using Perl in our solutions as much as possible, though there are still a few cases where it makes 
+sense. Perl is already covered elsewhere in far greater depth and breadth than we could ever manage here. And Perl solutions are 
+generally much larger, with significantly more overhead, than ours. There is also a fine line between shell scripting and Perl 
+scripting, and this is a book about shell scripting.
+
+Shell scripting is basically glue for sticking Unix programs together, whereas Perl incorporates much of the functionality of the 
+external Unix programs into the language itself. This makes it more efficient and in some ways more portable, at the expense of being 
+different and making it harder to efficiently run any external programs you still need.
+
+The choice of which tool to use often has more to do with familiarity than with any other reason. The bottom line is always getting the 
+work done; the choice of tools is secondary. We’ll show you many ways to do things using bash and related tools. When you need to get 
+your work done, you get to choose what tools you use.
+
+More Resources
+
+Perl Cookbook, 2nd Edition, by Nathan Torkington and Tom Christiansen (O’Reilly)
+
+Programming Perl, 4th Edition, by Larry Wall et al. (O’Reilly) Perl Best Practices, by Damian Conway (O’Reilly)
+
+Mastering Regular Expressions, 3rd Edition, Jeffrey E. F. Friedl (O’Reilly)
+
+Learning the bash Shell, 3rd Edition, by Cameron Newham (O’Reilly) Classic Shell Scripting, Nelson H. F. Beebe and Arnold Robbins 
+(O’Reilly)
+
+Using Code Examples
+
+Supplemental material (code examples, exercises, etc.) is available for download at https://github.com/vossenjp/bashcookbook-examples.
+
+This book is here to help you get your job done. In general, if example code is offered with this book, you may use it in your programs 
+and documentation. You do not need to contact us for permission unless you’re reproducing a significant portion of the code. For 
+example, writing a program that uses several chunks of code from this book does not require permission. Selling or distributing a CD-ROM 
+of examples from O’Reilly books does require permission. Answering a question by citing this book and quoting example code does not 
+require permission. Incorporating a significant amount of example code from this book into your product’s documentation does require 
+permission.
+
+We appreciate, but do not require, attribution. An attribution usually includes the title, author, publisher, and ISBN. For example: 
+“bash Cookbook, 2nd Edition, by Carl Albing and JP Vossen. Copyright 2018 Carl Albing and JP Vossen, 978-1-491-97533-6.”
+
+If you feel your use of code examples falls outside fair use or the permission given above, feel free to contact us at 
+permissions@oreilly.com.
+
+O’Reilly Safari
+
+NOTE
+
+Safari (formerly Safari Books Online) is a membership-based training and reference platform for enterprise, government, educators, and 
+individuals.
+
+Members have access to thousands of books, training videos, Learning Paths, interactive tutorials, and curated playlists from over 250 
+publishers, including O’Reilly Media, Harvard Business Review, Prentice Hall Professional,
+
+Chapter 1. Beginning bash
+
+What’s a shell, and why should you care about it?
+
+Any recent computer operating system (by recent, we mean since about 1970) has some sort of user interface—some way of specifying 
+commands for the operating system to execute. But in lots of operating systems, that command interface was really built in and there was 
+only one way to talk to the computer. Furthermore, an operating system’s command interface would let you execute commands, but that was 
+about all. After all, what else was there to do?
+
+The Unix operating system popularized the notion of separating the shell (the part of the system that lets you type commands) from 
+everything else: the input/output system, the scheduler, memory management, and all of the other things the operating system takes care 
+of for you (and that most users don’t want to care about). The shell was just one more program; it was a program whose job was executing 
+other programs on behalf of users.
+
+But that was the beginning of a revolution. The shell was just another program that ran on Unix; if you didn’t like the standard one, 
+you could create your own. So by the end of Unix’s first decade, there were at least two competing shells: the Bourne shell, sh (which 
+was a descendant of the original Thompson shell), plus the C shell, csh. By the end of Unix’s second decade, there were a few more 
+alternatives: the Korn shell, ksh, and the first versions of the bash shell. By the end of Unix’s third decade, there were probably a 
+dozen different shells.
+
+You probably don’t sit around saying, “Should I use csh or bash or ksh today?” You’re probably happy with the standard shell that came 
+with your Linux (or BSD or macOS or Solaris or HP/UX) system. But disentangling the shell from the operating system itself made it much 
+easier for software developers (such as Brian Fox, the creator of bash, and Chet Ramey, the current developer and maintainer) to write 
+better shells—you could create a
+
+new shell without modifying the operating system itself. It was much easier to get a new shell accepted, since you didn’t have to talk 
+some operating system vendor into building the shell into their system; all you had to do was package the shell so that it could be 
+installed just like any other program.
+
+Still, you might be thinking that sounds like a lot of fuss for something that just takes commands and executes them. And you would be 
+right—a shell that just let you type commands wouldn’t be very interesting. However, two factors drove the evolution of the Unix shell: 
+user convenience and programming. And the result is a modern shell that does much more than just accept commands.
+
+Modern shells are very convenient. For example, they remember commands that you’ve typed, and let you reuse those commands. Modern 
+shells also let you edit those commands, so they don’t have to be the same each time. And modern shells let you define your own command 
+abbreviations, shortcuts, and other features. For an experienced user, typing commands (e.g., with shorthand, shortcuts, and command 
+completion) is a lot more efficient and effective than dragging things around in a fancy windowed interface.
+
+But beyond simple convenience, shells are programmable. There are many sequences of commands that you type again and again. Whenever you 
+do anything a second time, you should ask, “Can’t I write a program to do this for me?” You can. A shell is also a programming language 
+that’s specially designed to work with your computer system’s commands. So, if you want to generate a thousand MP3 files from WAV files, 
+you can write a shell program (or shell script). If you want to compress all of your system’s logfiles, you can write a shell script to 
+do it. Whenever you find yourself doing a task repeatedly, you should try to automate it by writing a shell script. There are more 
+powerful scripting languages, like Perl, Python, and Ruby, but the Unix shell (whatever flavor of shell you’re using) is a great place 
+to start. After all, you already know how to type commands; why make things more complex?
+
+1.1 Why bash?
+
+Why is this book about bash, and not some other shell? Because bash is everywhere. It may not be the newest, and it’s arguably not the 
+fanciest or the most powerful (though if not, it comes close), nor is it the only shell that’s distributed as open source software—but 
+it is ubiquitous.
+
+The reason has to do with history. The first shells were fairly good programming tools, but not very convenient for users. The C shell 
+added a lot of user conveniences (like the ability to repeat a command you’d just typed), but as a programming language it was quirky. 
+The Korn shell, which came along next (in the early ’80s), added a lot of user conveniences, improved the programming language, and 
+looked like it was on the path to widespread adoption. But ksh wasn’t open source software at first; it was a proprietary software 
+product, and was therefore difficult to ship with a free operating system like Linux. (The Korn shell’s license was changed in 2000, and 
+again in 2005.)
+
+In the late 1980s, the Unix community decided standardization was a good thing, and the POSIX working groups (organized by the IEEE) 
+were formed. POSIX standardized the Unix libraries and utilities, including the shell. The standard shell was primarily based on the 
+1988 version of the Korn shell, with some C shell features and a bit of invention to fill in the gaps. bash was begun as part of the GNU 
+Project’s effort to produce a complete POSIX system, which naturally needed a POSIX shell.
+
+bash provided the programming features that shell programmers needed, plus the conveniences that command-line users liked. It was 
+originally conceived as an alternative to the Korn shell, but as the free software movement became more important, and as Linux became 
+more popular, bash quickly overshadowed ksh.
+
+As a result, bash is the default user shell on every Linux distribution we know about (there are a few hundred Linux distros, so there 
+are probably a few with some oddball default shell), as well as macOS (and the earlier OS X versions). It’s also available for just 
+about every other Unix operating system, including BSD Unix and Solaris. In the rare cases where bash doesn’t ship with the operating 
+system, it’s easy to install. It’s even available for Windows, via Cygwin and also the new Linux Subsystem (Ubuntu). bash is
+
+both a powerful programming language and a good user interface, and you won’t find yourself sacrificing keyboard shortcuts to get 
+elaborate programming features.
+
+You can’t possibly go wrong by learning bash. The most common default shells are the old Bourne shell and bash, which is mostly Bourne 
+shellcompatible. One of these shells is certainly present on any modern, major Unix or Unix-like operating system. And as noted, if bash 
+isn’t present you can always install it. But there are other shells. In the spirit of free software, the authors and maintainers of all 
+of these shells share ideas. If you read the bash change logs, you’ll see many places where a feature was introduced or tweaked to match 
+behavior on another shell. But most people won’t care. They’ll use whatever is already there and be happy with it. So if you are 
+interested, by all means investigate other shells. There are many good alternatives, and you may find one you like better—though it 
+probably won’t be as ubiquitous as bash.
+
+1.2 The bash Shell
+
+bash is a shell: a command interpreter. The main purpose of bash (or of any shell) is to allow you to interact with the computer’s 
+operating system so that you can accomplish whatever you need to do. Usually that involves launching programs, so the shell takes the 
+commands you type, determines from that input what programs need to be run, and launches them for you. You will also encounter tasks 
+that involve a sequence of actions to perform that are recurring, or very complicated, or both. Shell programming, usually referred to 
+as shell scripting, allows you to automate these tasks for ease of use, reliability, and reproducibility.
+
+In case you’re new to bash, we’ll start with some basics. If you’ve used Unix or Linux at all, you probably aren’t new to bash—but you 
+may not have known you were using it. bash is really just a language for executing commands—so the commands you’ve been typing all along 
+(e.g., ls, cd, grep, cat) are, in a sense, bash commands. Some of these commands are built into bash itself; others are separate 
+programs. For now, it doesn’t make a
+
+difference which are which.
+
+We’ll end this chapter with a few recipes for getting bash. Most systems come with bash preinstalled, but a few don’t. Even if your 
+system comes with bash, it’s always a good idea to know how to get and install it—new versions, with new features, are released from 
+time to time.
+
+If you’re already running bash, and are somewhat familiar with it, you may want to go straight to Chapter 2. You are not likely to read 
+this book in order, and if you dip into the middle, you should find some recipes that demonstrate what bash is really capable of. But 
+first, the basics.
+
+1.3 Decoding the Prompt Problem
+
+You’d like to know what all the punctuation on your screen means.
+
+Solution
+
+All command-line shells have some kind of prompt to alert you that the shell is ready to accept your input. What the prompt looks like 
+depends on many factors including your operating system type and version, shell type and version, distribution, and how someone else may 
+have configured it. In the Bourne family of shells, a trailing $ in the prompt generally means you are logged in as a regular user, 
+while a trailing # means you are root. The root account is the administrator of the system, equivalent to the System account on Windows 
+(which is even more powerful than the Administrator account). root is all-powerful and can do anything on a typical Unix or Linux 
+system.
+
+Default prompts also often display the path to the directory that you are currently in; however, they usually abbreviate it, so a ~ 
+means you are in your home directory. Some default prompts may also display your username and the name of the machine you are logged 
+into. If that seems silly now, it won’t when you’re logged into five machines at once, possibly under different usernames.
+
+Here is a typical Linux prompt for a user named jp on a machine called adams, sitting in the home directory. The trailing $ indicates 
+this is a regular user, not root:
+
+jp@adams:~$
+
+Here’s the prompt after changing to the /tmp directory. Notice how ~, which really meant /home/jp, has changed to /tmp:
+
+jp@adams:/tmp$
+
+Discussion
+
+The shell’s prompt is the thing you will see most often when you work at the command line, and there are many ways to customize it more 
+to your liking. But for now, it’s enough to know how to interpret it. Of course, your default prompt may be different, but you should be 
+able to figure out enough to get by for now.
+
+There are some Unix or Linux systems where the power of root may be shared, using commands like su and sudo. Or root may not even be 
+all-powerful, if the system is running some kind of mandatory access control (MAC) system such as the NSA’s SELinux.
+
+See Also
+
+Recipe 1.4, “Showing Where You Are”
+
+Recipe 14.19, “Using sudo More Securely”
+
+Recipe 16.2, “Customizing Your Prompt”
+
+Recipe 17.15, “Using sudo on a Group of Commands”
+
+1.4 Showing Where You Are
+
+Problem
+
+You are not sure what directory you are in, and the default prompt is not helpful.
+
+Solution
+
+Use the pwd builtin command, or set a more useful prompt (as described in Recipe 16.2). For example:
+
+bash-4.3$ pwd /tmp
+
+bash-4.3$ export PS1='[\u@\h \w]$ '
+
+[jp@solaris8 /tmp]$
+
+Discussion
+
+pwd stands for print working directory and takes two options. -L displays your logical path and is the default. -P displays your 
+physical location, which may differ from your logical path if you have followed a symbolic link. Similarly, the cd command also provides 
+-P and -L switches:
+
+bash-4.3$ pwd /tmp/dir2
+
+bash-4.3$ pwd -L /tmp/dir2
+
+bash-4.3$ pwd -P /tmp/dir1
+
+See Also
+
+Recipe 16.2, “Customizing Your Prompt”
+
+1.5 Finding and Running Commands
+
+Problem
+
+You need to find and run a particular command under bash.
+
+Solution
+
+Try the type, which, apropos, locate, slocate, find, and ls commands.
+
+Discussion
+
+bash keeps a list of directories in which it should look for commands in an environment variable called PATH. The bash builtin type 
+command searches your environment (including aliases, keywords, functions, builtins, directories in $PATH, and the command hash table) 
+for executable commands matching its arguments and displays the type and location of any matches. It has several options, notably the -a 
+flag, which causes it to print all matches instead of stopping at the first one. The which command is similar but only searches your 
+$PATH (and csh aliases). It may vary from system to system (it’s usually a csh shell script on BSD, but a binary on Linux), and usually 
+has a -a flag like type. Use these commands when you know the name of a command and need to know exactly where it’s located, or to see 
+if it’s on this computer. For example:
+
+$ type which which is hashed (/usr/bin/which)
+
+$ type ls ls is aliased to `ls -F -h'
+
+$ type -a ls ls is aliased to `ls -F -h' ls is /bin/ls
+
+$ which which /usr/bin/which
+
+Almost all commands come with some form of help on how to use them.
+
+Usually there is online documentation called manpages, where “man” is short for manual. These are accessed using the man command, so man 
+ls will give you documentation about the ls command. Many programs also have a built-in help facility, accessed by providing a “help me” 
+argument such as -h or -help. Some programs, especially on other operating systems, will give you help if you don’t give them arguments. 
+Some Unix commands will also do that, but a great many of them will not. This is due to the way that Unix commands fit together into 
+something called pipelines, which we’ll cover later. But what if you don’t know or can’t remember the name of the command you need? 
+apropos searches manpage names and descriptions for regular expressions supplied as arguments. This is incredibly useful when you don’t 
+remember the name of the command you need. This is the same as man -k:
+
+$ apropos music cms (4) - Creative Music System device driver
+
+$ man -k music cms (4) - Creative Music System device driver
+
+locate and slocate consult database files about the system (usually compiled and updated by a job run from the scheduler system cron) to 
+find files or commands almost instantly. The location of the actual database files, what is indexed therein, and how often it is checked 
+may vary from system to system. Consult your system’s manpages for details. slocate (secure locate) stores permission information (in 
+addition to filenames and paths) so that it will not list programs to which the user does not have access. On most Linux systems, locate 
+is a symbolic link to slocate; other systems may have separate programs, or may not have slocate at all. Here’s an example:
+
+$ locate apropos /usr/bin/apropos /usr/share/man/de/man1/apropos.1.gz /usr/share/man/es/man1/apropos.1.gz 
+/usr/share/man/it/man1/apropos.1.gz /usr/share/man/ja/man1/apropos.1.gz
+
+For details on the find command, see Chapter 9.
+
+Last but not least, try using ls. Remember, if the command you wish to run is in your current directory, you must prefix it with a ./ 
+since the current working directory is usually not in your $PATH for security reasons (see Recipes 14.3 and 14.10).
+
+See Also
+
+help type man which man apropos man locate man slocate man find man ls Chapter 9 Recipe 4.1, “Running Any Executable” Recipe 14.3, 
+“Setting a Secure $PATH” Recipe 14.10, “Adding the Current Directory to the $PATH”
+
+1.6 Getting Information About Files Problem
+
+You need more information about a file, such as what it is, who owns it, if it’s executable, how many hard links it has, or when it was 
+last accessed or changed.
+
+Solution
+
+Use the ls, stat, file, or find commands:
+
+$ touch /tmp/sample_file $ ls /tmp/sample_file /tmp/sample_file $ ls -l /tmp/sample_file -rw-r--r-- 1 jp $ stat /tmp/sample_file File: 
+"/tmp/sample_file" Size: 0 Blocks: 0 Device: 303h/771d Inode: 2310201 Access: (0644/-rw-r--r--) Uid: ( jp) Access: Sun Dec 18 15:03:35 
+2005 Modify: Sun Dec 18 15:03:35 2005 Change: Sun Dec 18 15:03:42 2005
+
+jp
+
+0 Dec 18 15:03 /tmp/sample_file
+
+IO Block: 4096 Links: 1 501/ jp)
+
+Regular File
+
+Gid: ( 501/
+
+$ file /tmp/sample_file /tmp/sample_file: empty
+
+$ file -b /tmp/sample_file empty $ echo '#!/bin/bash -' > /tmp/sample_file $ file /tmp/sample_file /tmp/sample_file: Bourne-Again shell 
+script text executable
+
+$ file -b /tmp/sample_file Bourne-Again shell script text executable
+
+For much more on the find command, see Chapter 9.
+
+Discussion
+
+The command ls shows only filenames, while -l provides more details
+
+about each file. ls has many options; consult the manpage on your system for the ones it supports. Useful options include:
+
+-a
+
+Do not hide files starting with . (dot).
+
+-A
+
+Like -a, but skips the two common directories . (dot) and .. (dot dot), since they are present in virtually every directory.
+
+-F
+
+Show the type of file with one of several trailing type designators.
+
+A slash (/) indicates that the file is a directory, an asterisk (*) means the file is executable, an at sign (@) indicates a symbolic 
+link, an equals sign (=) is a socket, and a pipe or vertical bar (|) is a FIFO (first in, first out) buffer.
+
+-l
+
+Use the long listing format.
+
+-L
+
+Show information about the linked file, rather than the symbolic link itself.
+
+-Q
+
+Quote names (GNU extension, not supported on all systems).
+
+-r
+
+Reverse the sort order.
+
+-R
+
+Recurse through subdirectories.
+
+-S
+
+Sort by file size.
+
+-1
+
+Use the short format, but with only one file per line.
+
+stat, file, and find all have many options that control the output format; see the manpages on your system for supported options. For 
+example, these options produce output that is similar to ls -l:
+
+$ ls -l /tmp/sample_file -rw-r--r-- 1 jp /tmp/sample_file
+
+jp
+
+14 Dec 18 15:04
+
+$ stat -c'%A %h %U %G %s %y %n' /tmp/sample_file -rw-r--r-- 1 jp jp 14 Sun Dec 18 15:04:12 2005 /tmp/sample_file
+
+$ find /tmp/ -name sample_file -printf '%m %n %u %g %t %p' 644 1 jp jp Sun Dec 18 15:04:12 2005 /tmp/sample_file
+
+Not all operating systems and versions have all of these tools. For example, Solaris does not include stat by default.
+
+It is also worth pointing out that directories are nothing more than files that the operating system knows to treat specially, so the 
+commands shown here will work just fine on directories, though sometimes you may need to modify a command to get the behavior you want. 
+For example, use ls -d to list information about the directory itself, rather than just ls (which lists the contents of the directory).
+
+See Also
+
+man ls man stat man file man find Chapter 9
+
+1.7 Showing All Hidden (Dot Files in the Current Directory
+
+Problem
+
+You want to see only hidden (dot) files in a directory to edit a file you’ve forgotten the name of or remove obsolete files. ls -a shows 
+all files, including normally hidden ones, but that is often too noisy, and ls -a .* does more than you think it will, or more than you 
+want.
+
+Solution
+
+Use ls -d along with whatever other criteria you have. For example:
+
+ls -d .* ls -d .b* ls -d .[!.]* ls -d .*/
+
+Since every normal directory contains a . and .., you don’t need to see those. You can use ls -A to list all the files in a directory 
+except those two. For other commands where you list files with a wildcard (i.e., pattern), you can construct your wildcard in such a way 
+that . and .. don’t match:
+
+$ grep -l 'PATH' ~/.[!.]* /home/jp/.bash_history /home/jp/.bash_profile $
+
+Discussion
+
+Due to the way the shell handles file wildcards, the sequence .* does not behave as you might expect or desire. The way filename 
+expansion or globbing works is that any string containing the characters *, ?, or [ is treated as a pattern, and replaced by an 
+alphabetically sorted list of filenames
+
+
