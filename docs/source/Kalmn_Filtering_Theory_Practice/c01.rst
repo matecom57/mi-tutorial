@@ -1,0 +1,1165 @@
+c01
+===
+
+Preface
+---------
+
+The ®rst edition of this book was p ublished b y Prentice-Hall in 1993. With this second edition, as with the ®rst, our p rimar y ob j ective is 
+to p rovide our readers a workin g familiarit y with both the theoretical and p ractical as p ects of Kalman ®lterin g b y includin g 
+``real-world'' p roblems in p ractice as illustrative exam p les. We are p leased to have this o pp ortunit y to incor p orate the man y hel p 
+ful corrections and su gg estions from our collea g ues and students over the last several y ears for the overall im p rovement of the textbook. 
+The book covers the historical back g round of Kalman ®lterin g and the more p ractical as p ects of im p lementation: how to re p resent the p 
+roblem in a mathematical model, anal y ze the p erformance of the estimator as a function of model p arameters, im p lement the mechanization e q 
+uations in numericall y stable al g orithms, assess its com p utational re q uirements, test the validit y of results, and monitor the ®lter p 
+erformance in o p eration. These are im p ortant attributes of the sub j ect that are often overlooked in theoretical treatments but are necessar 
+y for a pp lication of the theor y to real-world p roblems.
+
+We have converted all al g orithm listin g s and all software to MATLAB1 1 , so that users can take advanta g e of its excellent g ra p hin g ca 
+p abilities and a p ro g rammin g interface that is ver y close to the mathematical e q uations used for de®nin g Kalman ®lterin g and its a pp 
+lications. See A pp endix A, Section A.2, for more information on MATLAB.
+
+The inclusion of the software is p racticall y a matter of necessit y , because Kalman ®lterin g would not be ver y useful without com p uters to 
+im p lement it. It is a better learnin g ex p erience for the student to discover how the Kalman ®lter works b y observin g it in action.
+
+The im p lementation of Kalman ®lterin g on com p uters also illuminates some of the p ractical considerations of ®nite-wordlen g th arithmetic 
+and the need for alter-
+
+native al g orithms to p reserve the accurac y of the results. If the student wishes to a pp l y what she or he learns, then it is essential that 
+she or he ex p erience its workin g s and failin g sÐand learn to reco g nize the difference.
+
+The book is or g anized for use as a text for an introductor y course in stochastic p rocesses at the senior level and as a ®rst- y ear g 
+raduate-level course in Kalman ®lterin g theor y and a pp lication. It could also be used for self-instruction or for p ur p oses of review b y p 
+racticin g en g ineers and scientists who are not intimatel y familiar with the sub j ect. The or g anization of the material is illustrated b y 
+the followin g cha p ter-level de p endenc y g ra p h, which shows how the sub j ect of each cha p ter de p ends u p on material in other cha p 
+ters. The arrows in the ® g ure indicate the recommended order of stud y . Boxes above another box and connected b y arrows indicate that the 
+material re p resented b y the u pp er boxes is back g round material for the sub j ect in the lower box.
+
+Cha p ter 1 p rovides an informal introduction to the g eneral sub j ect matter b y wa y of its histor y of develo p ment and a pp lication. Cha 
+p ters 2 and 3 and A pp endix B cover the essential back g round material on linear s y stems, p robabilit y , stochastic p rocesses, and modelin 
+g . These cha p ters could be covered in a senior-level course in electrical, com p uter, and s y stems en g ineerin g .
+
+Cha p ter 4 covers linear o p timal ®lters and p redictors, with detailed exam p les of a pp lications. Cha p ter 5 is devoted to nonlinear 
+estimation b y ``extended'' Kalman
+
+®lters. A pp lications of these techni q ues to the identi®cation of unknown p arameters of s y stems are g 
+iven as exam p les. Cha p ter 6 covers the more modern im p lementation techni q ues, with al g orithms p 
+rovided for com p uter im p lementation.
+
+Cha p ter 7 deals with more p ractical matters of im p lementation and use be y ond the numerical methods of 
+Cha p ter 6. These matters include memor y and throu g h p ut re q uirements ( and methods to reduce them ) 
+, diver g ence p roblems ( and effective remedies ) , and p ractical a pp roaches to subo p timal ®lterin g 
+and measurement selection.
+
+Cha p ters 4±7 cover the essential material for a ®rst- y ear g raduate class in Kalman ®lterin g theor y 
+and a pp lication or as a basic course in di g ital estimation theor y and a pp lication. A solutions manual 
+for each cha p ter's p roblems is available.
+
+1
+
+General In f ormation
+
+. . . the thin g s o f this world cannot be made known without mathematics.
+
+ÐRo g er Bacon ( 1220±1292 ) , O p us Ma j us, transl. R. Burke, 1928
+
+1.1 ON KALMAN FILTERING
+
+1.1.1 First of All: What Is a Kalman Filter?
+
+Theoreticall y the Kalman Filter is an estimator for what is called the linear- q uadratic p roblem, which 
+is the p roblem of estimatin g the instantaneous ``state'' ( a conce p t that will be made more p recise in 
+the next cha p ter ) of a linear d y namic s y stem p erturbed b y white noiseÐb y usin g measurements 
+linearl y related to the state but corru p ted b y white noise. The resultin g estimator is statisticall y o 
+p timal with res p ect to an y q uadratic function of estimation error.
+
+Practicall y , it is certainl y one of the g reater discoveries in the histor y of statistical estimation 
+theor y and p ossibl y the g reatest discover y in the twentieth centur y . It has enabled humankind to do 
+man y thin g s that could not have been done without it, and it has become as indis p ensable as silicon in 
+the makeu p of man y electronic s y stems. Its most immediate a pp lications have been for the control of 
+com p lex d y namic s y stems such as continuous manufacturin g p rocesses, aircraft, shi p s, or s p 
+acecraft. To control a d y namic s y stem, y ou must ®rst know what it is doin g . For these a pp lications, 
+it is not alwa y s p ossible or desirable to measure ever y variable that y ou want to control, and the 
+Kalman ®lter p rovides a means for inferrin g the missin g information from indirect ( and nois y) 
+measurements. The Kalman ®lter is also used for p redictin g the likel y future courses of d y namic s y 
+stems that p eo p le are not likel y to control, such as the ¯ow of rivers durin g ¯ood, the tra j ectories 
+of celestial bodies, or the p rices of traded commodities.
+
+From a p ractical stand p oint, these are the p ers p ectives that this book will p resent:
+
+• It is onl y a tool. It does not solve an y p roblem all b y itself, althou g h it can make it easier for y 
+ou to do it. It is not a p h y sical tool, but a mathematical one. It is made from mathematical models, 
+which are essentiall y tools for the mind. The y make mental work more ef®cient, j ust as mechanical tools 
+make p h y sical work more ef®cient. As with an y tool, it is im p ortant to understand its use and function 
+before y ou can a pp l y it effectivel y . The p ur p ose of this book is to make y ou suf®cientl y familiar 
+with and p ro®cient in the use of the Kalman ®lter that y ou can a pp l y it correctl y and ef®cientl y .
+
+• It is a com p uter p ro g ram. It has been called ``ideall y suited to di g ital com p uter im p 
+lementation'' [ 21 ] , in p art because it uses a ® nite re p resentation of the estimation p roblemÐb y a ® 
+nite number of variables. It does, however, assume that these variables are real numbersÐwith in ® nite p 
+recision. Some of the p roblems encountered in its use arise from the distinction between ®nite dimension 
+and ®nite information, and the distinction between ``®nite'' and ``mana g eable'' p roblem sizes. These are 
+all issues on the p ractical side of Kalman ®lterin g that must be considered alon g with the theor y .
+
+• It is a com p lete statistical characterization o f an estimation p roblem. It is much more than an 
+estimator, because it p ro p a g ates the entire p robabilit y distribution of the variables it is tasked to 
+estimate. This is a com p lete characterization of the current state o f knowled g e of the d y namic s y 
+stem, includin g the in¯uence of all p ast measurements. These p robabilit y distributions are also useful 
+for statistical anal y sis and the p redictive desi g n of sensor s y stems.
+
+• In a limited context, it is a learnin g method. It uses a model of the estimation p roblem that distin g 
+uishes between p henomena ( what one is able to observe ) , noumena ( what is reall y g oin g on ) , and the 
+state of knowled g e about the noumena that one can deduce from the p henomena. That state of knowled g e is 
+re p resented b y p robabilit y distributions. To the extent that those p robabilit y distributions re p 
+resent knowled g e of the real world and the cumulative p rocessin g of knowled g e is learnin g , this is a 
+learnin g p rocess. It is a fairl y sim p le one, but q uite effective in man y a pp lications.
+
+If these answers p rovide the level of understandin g that y ou were seekin g , then there is no need for y 
+ou to read the rest of the book. If y ou need to understand Kalman ®lters well enou g h to use them, then 
+read on!
+
+1.1.2 How It Came to Be Called a Filter
+
+It mi g ht seem stran g e that the term ``®lter'' would a pp l y to an estimator. More commonl y , a ®lter 
+is a p h y sical device for removin g unwanted fractions of mixtures. ( The word f elt comes from the same 
+medieval Latin stem, for the material was used as a ®lter for li q uids. ) Ori g inall y , a ®lter solved 
+the p roblem of se p aratin g unwanted com p onents of g as±li q uid±solid mixtures. In the era of cr y stal 
+radios and vacuum tubes, the term was a pp lied to analo g circuits that ``®lter'' electronic si g nals. 
+These
+
+si g nals are mixtures of different fre q uenc y com p onents, and these p h y sical devices p referentiall 
+y attenuate unwanted fre q uencies.
+
+This conce p t was extended in the 1930s and 1940s to the se p aration of ``si g nals'' from ``noise,'' both 
+of which were characterized b y their p ower s p ectral densities. Kolmo g orov and Wiener used this 
+statistical characterization of their p robabilit y distributions in formin g an o p timal estimate of the 
+si g nal, g iven the sum of the si g nal and noise.
+
+With Kalman ®lterin g the term assumed a meanin g that is well be y ond the ori g inal idea of se p aration 
+of the com p onents of a mixture. It has also come to include the solution of an inversion p roblem, in 
+which one knows how to re p resent the measurable variables as functions of the variables of p rinci p al 
+interest. In essence, it inverts this functional relationshi p and estimates the inde p endent variables as 
+inverted functions of the de p endent ( measurable ) variables. These variables of interest are also allowed 
+to be d y namic, with d y namics that are onl y p artiall y p redictable.
+
+1.1.3 Its Mathematical Foundations
+
+Fi g ure 1.1 de p icts the essential sub j ects formin g the foundations for Kalman ®lterin g theor y . 
+Althou g h this shows Kalman ®lterin g as the a p ex of a py ramid, it is itself but p art of the 
+foundations of another disci p lineÐ``modern'' control theor y Ðand a p ro p er subset of statistical 
+decision theor y . We will examine onl y the to p three la y ers of the py ramid in this book, and a little 
+of the underl y in g mathematics 1 ( matrix theor y) in A pp endix B.
+
+1.1.4 What It Is Used For
+
+The a pp lications of Kalman ®lterin g encom p ass man y ®elds, but its use as a tool is almost exclusivel y 
+for two p ur p oses: estimation and p er f ormance anal y sis of estimators.
+
+Role 1: Estimatin g the State o f D y namic S y stems What is a d y namic s y stem?
+
+Almost ever y thin g , if y ou are p ick y about it. Exce p t for a few fundamental p h y sical constants, 
+there is hardl y an y thin g in the universe that is trul y constant. The orbital p arameters of the 
+asteroid Ceres are not constant, and even the ``®xed'' stars and continents are movin g . Nearl y all p h y 
+sical s y stems are d y namic to some de g ree. If one wants ver y p recise estimates of their 
+characteristics over time, then one has to take their d y namics into consideration.
+
+The p roblem is that one does not alwa y s know their d y namics ver y p recisel y either. Given this state 
+of p artial i g norance, the best one can do is ex p ress our i g norance more p recisel y Ðusin g p 
+robabilities. The Kalman ®lter allows us to estimate the state of d y namic s y stems with certain t yp es 
+of random behavior b y usin g such statistical information. A few exam p les of such s y stems are listed in 
+the second column of Table 1.1.
+
+Role 2: The Anal y sis o f Estimation S y stems. The third column of Table 1.1 lists some p ossible sensor t 
+yp es that mi g ht be used in estimatin g the state of the corres p ondin g d y namic s y stems. The ob j 
+ective of desi g n anal y sis is to determine how best to use these sensor t yp es for a g iven set of desi 
+g n criteria. These criteria are t yp icall y related to estimation accurac y and s y stem cost.
+
+The Kalman ®lter uses a com p lete descri p tion of the p robabilit y distribution of its estimation errors 
+in determinin g the o p timal ®lterin g g ains, and this p robabilit y distribution ma y be used in assessin 
+g its p erformance as a function of the ``desi g n p arameters'' of an estimation s y stem, such as
+
+• the t yp es of sensors to be used,
+
+• the locations and orientations of the various sensor t yp es with res p ect to the s y stem to be 
+estimated,
+
+• the allowable noise characteristics of the sensors,
+
+• the p re®lterin g methods for smoothin g sensor noise,
+
+• the data sam p lin g rates for the various sensor t yp es, and
+
+• the level of model sim p li®cation to reduce im p lementation re q uirements.
+
+The anal y tical ca p abilit y of the Kalman ®lter formalism also allows a s y stem desi g ner to assi g n 
+an ``error bud g et'' to subs y stems of an estimation s y stem and to trade off the bud g et allocations to 
+o p timize cost or other measures of p erformance while achievin g a re q uired level of estimation accurac 
+y .
+
+1.2 ON ESTIMATION METHODS
+
+We consider here j ust a few of the sources of intellectual material p resented in the remainin g cha p ters 
+and p rinci p all y those contributors 2 whose lifelines are shown in Fi g ure 1.2. These cover onl y 500 y 
+ears, and the stud y and develo p ment of mathematical conce p ts g oes back be y ond histor y . Readers 
+interested in more detailed histories of the sub j ect are referred to the surve y articles b y Kailath [ 
+25, 176 ] , Lainiotis [ 192 ] , Mendel and Geisekin g [ 203 ] , and Sorenson [ 47, 224 ] and the p ersonal 
+accounts of Battin [ 135 ] and Schmidt [ 216 ] .
+
+1.2.1 Beginnings of Estimation Theory
+
+The ®rst method for formin g an o p timal estimate from nois y data is the method o f least s q uares. Its 
+discover y is g enerall y attributed to Carl Friedrich Gauss ( 1777±1855 ) in 1795. The inevitabilit y of 
+measurement errors had been reco g nized since the time of Galileo Galilei ( 1564±1642 ) , but this was the 
+®rst formal method for dealin g with them. Althou g h it is more commonl y used for linear estimation p 
+roblems, Gauss ®rst used it for a nonlinear estimation p roblem in mathematical astronom y , which was p art 
+of a dramatic moment in the histor y of astronom y . The followin g narrative was g leaned from man y 
+sources, with the ma j orit y of the material from the account b y Baker and Makemson [ 97 ] :
+
+On Januar y 1, 1801, the ®rst da y of the nineteenth centur y , the Italian astronomer Giuse pp e Piazzi was 
+checkin g an entr y in a star catalo g . Unbeknown to Piazzi, the entr y had been added erroneousl y b y the 
+p rinter. While searchin g for the ``missin g '' star, Piazzi discovered, instead, a new p lanet. It was 
+CeresÐthe lar g est of the minor p lanets and the ®rst to be discoveredÐbut Piazzi did not know that y et. 
+He was able to track and measure its a pp arent motion a g ainst the ``®xed'' star back g round durin g 41 
+ni g hts of viewin g from Palermo before his work was interru p ted. When he returned to his work, however, 
+he was unable to ®nd Ceres a g ain.
+
+On Januar y 24, Piazzi had written of his discover y to Johann Bode. Bode is best known for Bode's law, 
+which states that the distances of the p lanets from the sun, in astronomical units, are g iven b y the se q 
+uence
+
+d n  10 1 4  3 Â 2 n  for n  À1; 0; 1; 2; ?; 4; 5; . . . :
+
+1:1
+
+Actuall y , it was not Bode, but Johann Tietz who ®rst p ro p osed this formula, in 1772. At that time there 
+were onl y six known p lanets. In 1781, Friedrich Herschel discovered Uranus, which ®t nicel y into this 
+formula for n  6. No p lanet had been discovered for n  3. S p urred on b y Bode, an association of Euro p 
+ean astronomers had been searchin g for the ``missin g '' ei g hth p lanet for nearl y 30 y ears. Piazzi was 
+not p art of this association, but he did inform Bode of his unintended discover y .
+
+Piazzi's letter did not reach Bode until March 20. ( Electronic mail was discovered much later. ) Bode sus p 
+ected that Piazzi's discover y mi g ht be the missin g p lanet, but there was insuf®cient data for 
+determinin g its orbital elements b y the methods then available. It is a p roblem in nonlinear e q uations 
+that Newton, himself, had declared as bein g amon g the most dif®cult in mathematical astronom y . Nobod y 
+had solved it and, as a result, Ceres was lost in s p ace a g ain.
+
+Piazzi's discoveries were not p ublished until the autumn of 1801. The p ossible discover y Ðand subse q 
+uent lossÐof a new p lanet, coincidin g with the be g innin g of a new centur y , was excitin g news. It 
+contradicted a p hiloso p hical j usti®cation for there bein g onl y seven p lanetsÐthe number known before 
+Ceres and a number defended b y the res p ected p hiloso p her Geor g He g el, amon g others. He g el had 
+recentl y p ublished a book in which he chastised the astronomers for wastin g their time in searchin g for 
+an ei g hth p lanet when there was a sound p hiloso p hical j usti®cation for there bein g onl y seven. The 
+new p lanet became a sub j ect of conversation in intellectual circles nearl y ever y where. Fortunatel y , 
+the p roblem cau g ht the attention of a 24- y ear-old mathematician at Go È ttin g en named Carl Friedrich 
+Gauss.
+
+Gauss had to y ed with the orbit determination p roblem a few weeks earlier but had set it aside for other 
+interests. He now devoted most of his time to the p roblem, p roduced an estimate of the orbit of Ceres in 
+December, and sent his results to Piazzi. The new p lanet, which had been si g hted on the ®rst da y of the 
+y ear, was found a g ainÐ b y its discovererÐon the last da y of the y ear.
+
+Gauss did not p ublish his orbit determination methods until 1809. 3 In this p ublication, he also described 
+the method of least s q uares that he had discovered in 1795, at the a g e of 18, and had used it in re®nin 
+g his estimates of the orbit of Ceres.
+
+Althou g h Ceres p la y ed a si g ni®cant role in the histor y of discover y and it still rea pp ears re g 
+ularl y in the ni g httime sk y , it has faded into obscurit y as an ob j ect of intellectual interest. The 
+method of least s q uares, on the other hand, has been an ob j ect of continuin g interest and bene®t to g 
+enerations of scientists and technolo g ists ever since its introduction. It has had a p rofound effect on 
+the histor y of science. It was the ®rst o p timal estimation method, and it p rovided an im p ortant
+
+connection between the ex p erimental and theoretical sciences: It g ave ex p erimentalists a p ractical 
+method for estimatin g the unknown p arameters of theoretical models.
+
+1.2.2 Method of Least Squares
+
+The followin g exam p le of a least-s q uares p roblem is the one most often seen, althou g h the method of 
+least s q uares ma y be a pp lied to a much g reater ran g e of p roblems.
+
+EXAMPLE 1.1: Least-S q uares Solution for Overdetermined Linear S y stems Gauss discovered that if he wrote 
+a s y stem of e q uations in matrix form, as
+
+2 32 3 2 3 h 11 h 12 h 13 Á Á Á h 1n x 1 z 1 6 h 21 h 22 h 23 Á Á Á h 2n 76 x 2 7 6 z 2 7 6 76 7 6 7 6 h 31 
+h 32 h 33 Á Á Á h 3n 76 x 3 7 6 z 3 7 6 76 7  6 7 6 . . . . . . . . . . 76 . . 7 6 . . 7 4 . . . . . 54 . 5 
+4 . 5
+
+ÁÁÁ
+
+h l1
+
+h l2
+
+h l3
+
+h ln
+
+x n
+
+z m
+
+Hx  z;
+
+1:2
+
+or
+
+1:3
+
+3
+
+In the meantime, the method of least s q uares had been discovered inde p endentl y and p ublished b y 
+Andrien-Marie Le g endre ( 1752±1833 ) in France and Robert Adrian ( 1775±1855 ) in the United States [ 176 
+] . [ It had also been discovered and used before Gauss was born b y the German-Swiss p h y sicist Johann 
+Heinrich Lambert ( 1728±1777 ) . ] Such Jun g ian s y nchronicit y ( i.e., the p henomenon of multi p le, 
+nearsimultaneous discover y) was to be re p eated for other breakthrou g hs in estimation theor y , as 
+wellÐfor the Wiener ®lter and the Kalman ®lter.
+
+then he could consider the p roblem of solvin g for that value of an estimate x ^ (p ronounced ``x-hat'' ) 
+that minimizes the ``estimated measurement error'' H x À z. He could characterize that estimation error in 
+terms of its Euclidean vector norm jH^ À zj, or, e q uivalentl y , its s q uare: x
+
+^ e 2 ^ x   jH x À zj2  " m P n
+
+1:4
+
+# 2
+
+P ^  h i j x j À zi 
+
+;
+
+1:5
+
+i1
+
+j
+
+1
+
+^ which is a continuousl y differentiable function of the n unknowns x ^ 1 ; x ^ 2 ; x ^ 3 ; . . . ; x n . ^ 
+This function e 2 ^ x  ! 1 as an y com p onent x k ! Æ1. Conse q uentl y , it will ^ achieve its minimum 
+value where all its derivatives with res p ect to the x k are zero. There are n such e q uations of the form
+
+@e2  0  @^ xk  " # m P n P ^  2 h ik h i j x j À zi  i1 j 1
+
+1:6
+
+1:7
+
+for k  1; 2; 3; . . . ; n. Note that in this last e q uation the ex p ression
+
+n P ^ ^ h i j x j À z i  fH x À zg i ; j 1
+
+1:8
+
+^ the ith row of H x À z, and the outermost summation is e q uivalent to the dot p roduct ^ of the kth 
+column of H with H x À z. Therefore E q uation 1.7 can be written as
+
+^ 0  2H T H x À z ^  2H T H x À 2H T z
+
+^ H T H x  H T z;
+
+1:9 1:10
+
+or
+
+where the matrix trans p ose H T is de®ned as
+
+2
+
+6 6 6 h 13 6 6 . .
+
+4
+
+h 11 h 12
+
+3
+
+H T 
+
+.
+
+h 21 h 22
+
+h 23
+
+. . .
+
+h 2n
+
+h 31 h 32
+
+h 33
+
+. . .
+
+h 3n
+
+ÁÁÁ ÁÁÁ ÁÁÁ . .
+
+. ÁÁÁ
+
+h m1 h
+
+7 7 h m3 m2 7 7 . . 7 . 5
+
+The normal e q uation o f the linear least s q uares p roblem. The e q uation
+
+^ HT H x  H T z
+
+1:12
+
+is called the normal e q uation or the normal f orm of the e q uation for the linear leasts q uares p 
+roblem. It has p recisel y as man y e q uivalent scalar e q uations as unknowns.
+
+The Gramian o f the linear least s q uares p roblem. The normal e q uation has the solution
+
+^ x  H T H À1 H T z;
+
+p
+
+rovided that the matrix
+
+g  H T H
+
+1:13
+
+is nonsin g ular ( i.e., invertible ) . The matrix p roduct g  H T H in this e q uation is called the 
+Gramian matrix. 4 The determinant of the Gramian matrix characterizes whether or not the column vectors of H 
+are linearl y inde p endent. If its determinant is ^ zero, the column vectors of H are linearl y de p 
+endent, and x cannot be determined ^ uni q uel y . If its determinant is nonzero, then the solution x is uni 
+q uel y determined.
+
+Least-s q uares solution. In the case that the Gramian matrix is invertible ( i.e., ^ nonsin g ular ) , the 
+solution x is called the least-s q uares solution of the overdetermined linear inversion p roblem. It is an 
+estimate that makes no assum p tions about the nature of the unknown measurement errors, althou g h Gauss 
+alluded to that p ossibilit y in his descri p tion of the method. The formal treatment of uncertaint y in 
+estimation would come later.
+
+This form of the Gramian matrix will be used in Cha p ter 2 to de®ne the observabilit y matrix of a linear d 
+y namic s y stem model in discrete time.
+
+Least Squares in Continuous Time. The followin g exam p le illustrates how the p rinci p le of least s q 
+uares can be a pp lied to ®ttin g a vector-valued p arametric model to data in continuous time. It also 
+illustrates how the issue of determinac y ( i.e., whether there is a uni q ue solution to the p roblem ) is 
+characterized b y the Gramian matrix in this context.
+
+4
+
+Named for the Danish mathematician Jor g en Pedersen Gram ( 1850±1916 ) . This matrix is also related to 
+what is called the unscaled Fisher in f ormation matrix, named after the En g lish statistician Ronald A y 
+lmer Fisher ( 1890±1962 ) . Althou g h information matrices and Gramian matrices have different de®nitions 
+and uses, the y can amount to almost the same thin g in this p articular instance. The formal statistical 
+de®nition of the term in f ormation matrix re p resents the information obtained from a sam p le of values 
+from a known p robabilit y distribution. It corres p onds to a scaled version of the Gramian matrix when the 
+measurement errors in z have a j oint Gaussian distribution, with the scalin g related to the uncertaint y 
+of the measured data. The information matrix is a q uantitative statistical characterization of the 
+``information'' ( in some sense ) that is in the data z used for estimatin g x. The Gramian, on the other 
+hand, is used as an q ualitative al g ebraic characterization of the uni q ueness of the solution.
+
+EXAMPLE 1.2: Least-S q uares Fittin g of Vector-Valued Data in Continuous Time Su pp ose that, for each 
+value of time t on an interval t 0 t t f , zt is an `dimensional si g nal vector that is modeled as a 
+function of an unknown n-vector x b y the e q uation
+
+zt  Htx;
+
+where Ht is a known ` Â n matrix. The s q uared error in this relation at each time t will be
+
+e 2 t  jzt À Htxj2   x T H T tHtx À 2x T H T tzt  jztj 2 :
+
+The s q uared inte g rated error over the interval will then be the inte g ral
+
+
+ t
+
+f
+
+kek 2 
+
+e 2 t dt
+
+t0 
+
+"
+
+
+ t
+
+#
+
+"
+
+
+ t
+
+#
+
+f
+
+f
+
+
+ t
+
+f
+
+ x T
+
+H T tHt dt x À 2xT 
+
+H T tzt dt
+
+
+
+jztj 2 dt;
+
+t 0
+
+t 0
+
+t 0
+
+which has exactl y the same arra y structure with res p ect to x as the al g ebraic leasts q uares p roblem. 
+The least-s q uares solution for x can be found, as before, b y takin g the derivatives of kek 2 with res p 
+ect to the com p onents of x and e q uatin g them to zero. The resultin g e q uations have the solution
+
+"
+
+
+ t
+
+# À1 "
+
+
+ t
+
+#
+
+f
+
+f
+
+^ x 
+
+H T tHt dt
+
+H T tzt dt ;
+
+t 0
+
+t 0
+
+p
+
+rovided that the corres p ondin g Gramian matrix
+
+
+ t
+
+f
+
+g
+
+H T tHt dt
+
+t 0
+
+is nonsin g ular.
+
+This form of the Gramian matrix will be used in Cha p ter 2 to de®ne the observabilit y matrix of a linear d 
+y namic s y stem model in continuous time.
+
+1.2.3 Gramian Matrix and Observability
+
+For the exam p les considered above, observabilit y does not de p end u p on the measurable data ( z ) . It 
+de p ends onl y on the nonsin g ularit y of the Gramian matrix ( g ) , which de p ends onl y on the linear 
+constraint matrix ( H ) between the unknowns and knowns.
+
+Observabilit y of a set of unknown variables is the issue of whether or not their values are uni q uel y 
+determinable from a g iven set of constraints, ex p ressed as e q uations involvin g functions of the 
+unknown variables. The unknown variables are said to be observable if their values are uni q uel y 
+determinable from the g iven constraints, and the y are said to be unobservable if the y are not uni q uel y 
+determinable from the g iven constraints.
+
+The condition of nonsin g ularit y ( or `` f ull rank'' ) of the Gramian matrix is an al g ebraic 
+characterization of observabilit y when the constrainin g e q uations are linear in the unknown variables. 
+It also a pp lies to the case that the constrainin g e q uations are not exact, due to errors in the values 
+of the alle g edl y known p arameters of the e q uations.
+
+The Gramian matrix will be used in Cha p ter 2 to de®ne observabilit y of the states of d y namic s y stems 
+in continuous time and discrete time.
+
+1.2.4 Introduction of Probability Theory
+
+Beginnings of Probability Theory. Probabilities re p resent the state of knowled g e about p h y sical p 
+henomena b y p rovidin g somethin g more useful than ``I don't know'' to q uestions involvin g uncertaint y 
+. One of the m y steries in the histor y of science is wh y it took so lon g for mathematicians to formalize 
+a sub j ect of such p ractical im p ortance. The Romans were sellin g insurance and annuities lon g before 
+ex p ectanc y and risk were conce p ts of serious mathematical interest. Much later, the Italians were 
+issuin g insurance p olicies a g ainst business risks in the earl y Renaissance, and the ®rst known attem p 
+ts at a theor y of p robabilitiesÐfor g ames of chanceÐoccurred in that p eriod. The Italian Girolamo 
+Cardano 5 ( 1501±1576 ) p erformed an accurate anal y sis of p robabilities for g ames involvin g dice. He 
+assumed that successive tosses of the dice were statisticall y inde p endent events. He and the contem p 
+orar y Indian writer Brahma g u p ta stated without p roof that the accuracies of em p irical statistics 
+tend to im p rove with the number of trials. This would later be formalized as a law o f lar g e numbers.
+
+More g eneral treatments of p robabilities were develo p ed b y Blaise Pascal ( 1623± 1662 ) , Pierre de 
+Fermat ( 1601±1655 ) , and Christiaan Hu yg ens ( 1629±1695 ) . Fermat's work on combinations was taken u p 
+b y Jakob ( or James ) Bernoulli ( 1654±1705 ) , who is considered b y some historians to be the founder of 
+p robabilit y theor y . He g ave the ®rst ri g orous p roof of the law of lar g e numbers for re p eated 
+inde p endent trials ( now called Bernoulli trials ) . Thomas Ba y es ( 1702±1761 ) derived his famous rule 
+for statistical inference sometime after Bernoulli. Abraham de Moivre ( 1667±1754 ) , Pierre Simon Mar q uis 
+de La p lace ( 1749±1827 ) , Adrien Marie Le g endre ( 1752±1833 ) , and Carl Friedrich Gauss ( 1777±1855 ) 
+continued this develo p ment into the nineteenth centur y .
+
+5
+
+Cardano was a p racticin g p h y sician in Milan who also wrote books on mathematics. His book De Ludo 
+Hleae, on the mathematical anal y sis of g ames of chance (p rinci p all y dice g ames ) , was p ublished 
+nearl y a centur y after his death. Cardano was also the inventor of the most common t yp e of universal j 
+oint found in automobiles, sometimes called the Cardan j oint or Cardan sha f t.
+
+Between the earl y nineteenth centur y and the mid-twentieth centur y , the p robabilities themselves be g 
+an to take on more meanin g as p h y sicall y si g ni®cant attributes. The idea that the laws of nature 
+embrace random p henomena, and that these are treatable b y p robabilistic models be g an to emer g e in the 
+nineteenth centur y . The develo p ment and a pp lication of p robabilistic models for the p h y sical world 
+ex p anded ra p idl y in that p eriod. It even became an im p ortant p art of sociolo gy . The work of James 
+Clerk Maxwell ( 1831±1879 ) in statistical mechanics established the p robabilistic treatment of natural p 
+henomena as a scienti®c ( and successful ) disci p line.
+
+An im p ortant ® g ure in p robabilit y theor y and the theor y of random p rocesses in the twentieth centur 
+y was the Russian academician Andrei Nikolaeovich Kolmog orov ( 1903±1987 ) . Startin g around 1925, workin 
+g with H. Ya. Khinchin and others, he reestablished the foundations of p robabilit y theor y on measurement 
+theor y , which became the acce p ted mathematical basis of p robabilit y and random p rocesses. Alon g with 
+Norbert Wiener ( 1894±1964 ) , he is credited with foundin g much of the theor y of p rediction, smoothin g 
+and ®lterin g of Markov p rocesses, and the g eneral theor y of er g odic p rocesses. His was the ®rst 
+formal theor y of o p timal estimation for s y stems involvin g random p rocesses.
+
+1.2.5 Wiener Filter
+
+Norbert Wiener ( 1894±1964 ) is one of the more famous p rodi g ies of the earl y twentieth centur y . He 
+was tau g ht b y his father until the a g e of 9, when he entered hi g h school. He ®nished hi g h school at 
+the a g e of 11 and com p leted his underg raduate de g ree in mathematics in three y ears at Tufts 
+Universit y . He then entered g raduate school at Harvard Universit y at the a g e of 14 and com p leted his 
+doctorate de g ree in the p hiloso p h y of mathematics when he was 18. He studied abroad and tried his hand 
+at several j obs for six more y ears. Then, in 1919, he obtained a teachin g a pp ointment at the 
+Massachusetts Institute of Technolo gy ( MIT ) . He remained on the facult y at MIT for the rest of his 
+life.
+
+In the p o p ular scienti®c p ress, Wiener is p robabl y more famous for namin g and p romotin g c y 
+bernetics than for develo p in g the Wiener ®lter. Some of his g reatest mathematical achievements were in g 
+eneralized harmonic anal y sis, in which he extended the Fourier transform to functions of ®nite p ower. 
+Previous results were restricted to functions of ®nite ener gy , which is an unreasonable constraint for si 
+g nals on the real line. Another of his man y achievements involvin g the g eneralized Fourier transform was 
+p rovin g that the transform of white noise is also white noise. 6
+
+Wiener Filter Development. In the earl y y ears of the World War II, Wiener was involved in a militar y p ro 
+j ect to desi g n an automatic controller for directin g antiaircraft ®re with radar information. Because 
+the s p eed of the air p lane is a
+
+6
+
+He is also credited with the discover y that the p ower s p ectral densit y of a si g nal e q uals the 
+Fourier transform of its autocorrelation function, althou g h it was later discovered that Einstein had 
+known it before him.
+
+nonne g li g ible fraction of the s p eed of bullets, this s y stem was re q uired to ``shoot into the 
+future.'' That is, the controller had to p redict the future course of its tar g et usin g nois y radar 
+trackin g data.
+
+Wiener derived the solution for the least-mean-s q uared p rediction error in terms of the autocorrelation 
+functions of the si g nal and the noise. The solution is in the form of an inte g ral o p erator that can be 
+s y nthesized with analo g circuits, g iven certain constraints on the re g ularit y of the autocorrelation 
+functions or, e q uivalentl y , their Fourier transforms. His a pp roach re p resents the p robabilistic 
+nature of random p henomena in terms of p ower s p ectral densities.
+
+An analo g ous derivation of the o p timal linear p redictor for discrete-time s y stems was p ublished b y 
+A. N. Kolmo g orov in 1941, when Wiener was j ust com p letin g his work on the continuous-time p redictor.
+
+Wiener's work was not declassi®ed until the late 1940s, in a re p ort titled ``Extra p olation, inter p 
+olation, and smoothin g of stationar y time series.'' The title was subse q uentl y shortened to ``Time 
+series.'' An earl y edition of the re p ort had a y ellow cover, and it came to be called ``the y ellow p 
+eril.'' It was loaded with mathematical details be y ond the g ras p of most en g ineerin g under g 
+raduates, but it was absorbed and used b y a g eneration of dedicated g raduate students in electrical en g 
+ineerin g .
+
+1.2.6 Kalman Filter
+
+Rudolf Emil Kalman was born on Ma y 19, 1930, in Buda p est, the son of Otto and Ursula Kalman. The famil y 
+emi g rated from Hun g ar y to the United States durin g World War II. In 1943, when the war in the 
+Mediterranean was essentiall y over, the y traveled throu g h Turke y and Africa on an exodus that eventuall 
+y brou g ht them to Youn g stown, Ohio, in 1944. Rudolf attended Youn g stown Colle g e there for three y 
+ears before enterin g MIT.
+
+Kalman received his bachelor's and master's de g rees in electrical en g ineerin g at MIT in 1953 and 1954, 
+res p ectivel y . His g raduate advisor was Ernst Adol p h Guillemin, and his thesis to p ic was the 
+behavior of solutions of second-order difference e q uations [ 114 ] . When he undertook the investi g 
+ation, it was sus p ected that second-order difference e q uations mi g ht be modeled b y somethin g analo g 
+ous to the describin g functions used for second-order differential e q uations. Kalman discovered that 
+their solutions were not at all like the solutions of differential e q uations. In fact, the y were found to 
+exhibit chaotic behavior.
+
+In the fall of 1955, after a y ear buildin g a lar g e analo g control s y stem for the E. I. DuPont Com p 
+an y , Kalman obtained an a pp ointment as lecturer and g raduate student at Columbia Universit y . At that 
+time, Columbia was well known for the work in control theor y b y John R. Ra g azzini, Lot® A. Zadeh, 7 and 
+others. Kalman tau g ht at Columbia until he com p leted the Doctor of Science de g ree there in 1957.
+
+For the next y ear, Kalman worked at the research laborator y of the International Business Machines Cor p 
+oration in Pou g hkee p sie and for six y ears after that at the
+
+7
+
+Zadeh is p erha p s more famous as the ``father'' of fuzz y s y stems theor y and inter p olative reasonin g 
+.
+
+research center of the Glenn L. Martin com p an y in Baltimore, the Research Institute for Advanced Studies 
+( RIAS ) .
+
+Early Research Interests. The al g ebraic nature of s y stems theor y ®rst became of interest to Kalman in 
+1953, when he read a p a p er b y Ra g azzini p ublished the p revious y ear. It was on the sub j ect of sam 
+p led-data s y stems, for which the time variable is discrete valued. When Kalman realized that linear 
+discrete-time s y stems could be solved b y transform methods, j ust like linear continuous-time s y stems, 
+the idea occurred to him that there is no fundamental difference between continuous and discrete linear s y 
+stems. The two must be e q uivalent in some sense, even thou g h the solutions of linear differential e q 
+uations cannot g o to zero ( and sta y there ) in ®nite time and those of discrete-time s y stems can. That 
+started his interest in the connections between s y stems theor y and al g ebra.
+
+In 1954 Kalman be g an stud y in g the issue of controllabilit y , which is the q uestion of whether there 
+exists an in p ut ( control ) function to a d y namic s y stem that will drive the state of that s y stem to 
+zero. He was encoura g ed and aided b y the work of Robert W. Bass durin g this p eriod. The issue of 
+eventual interest to Kalman was whether there is an al g ebraic condition for controllabilit y . That 
+condition was eventuall y found as the rank of a matrix. 8 This im p lied a connection between al g ebra and 
+s y stems theor y .
+
+Discovery of the Kalman Filter. In late November of 1958, not lon g after comin g to RIAS, Kalman was 
+returnin g b y train to Baltimore from a visit to Princeton. At around 11 PM, the train was halted for about 
+an hour j ust outside Baltimore. It was late, he was tired, and he had a headache. While he was tra pp ed 
+there on the train for that hour, an idea occurred to him: Wh y not a pp l y the notion o f state variables 
+9 to the Wiener ® lterin g p roblem? He was too tired to think much more about it that evenin g , but it 
+marked the be g innin g of a g reat exercise to do j ust that. He read throu g h Loe Á ve's book on p 
+robabilit y theor y [ 68 ] and e q uated ex p ectation with p ro j ection. That p roved to be p ivotal in 
+the derivation of the Kalman ®lter. With the additional assum p tion of ®nite dimensionalit y , he was able 
+to derive the Wiener ®lter as what we now call the Kalman ®lter. With the chan g e to state-s p ace form, 
+the mathematical back g round needed for the derivation became much sim p ler, and the p roofs were within 
+the mathematical reach of man y underg raduates.
+
+Introduction of the Kalman Filter. Kalman p resented his new results in talks at several universities and 
+research laboratories before it a pp eared in p rint. 10 His ideas were met with some ske p ticism amon g 
+his p eers, and he chose a mechanical
+
+8
+
+The controllabilit y matrix, a conce p t de®ned in Cha p ter 2.
+
+9 Althou g h function-s p ace methods were then the p referred a pp roach to the ®lterin g p roblem, the use 
+of state-s p ace models for time-var y in g s y stems had alread y been introduced ( e. g ., b y Lanin g and 
+Battin [ 67 ] in 1956 ) .
+
+10 In the meantime, some of the seminal ideas in the Kalman ®lter had been p ublished b y Swerlin g [ 227 ] 
+in 1959 and Stratonovich [ 25, 226 ] in 1960.
+
+en g ineerin g j ournal ( rather than an electrical en g ineerin g j ournal ) for p ublication, because 
+``When y ou fear ste pp in g on hallowed g round with entrenched interests, it is best to g o sidewa y s.'' 
+11 His second p a p er, on the continuous-time case, was once re j ected becauseÐas one referee p ut itÐone 
+ste p in the p roof ``cannot p ossibl y be true.'' ( It was true. ) He p ersisted in p resentin g his ®lter, 
+and there was more immediate acce p tance elsewhere. It soon became the basis for research to p ics at man y 
+universities and the sub j ect of dozens of doctoral theses in electrical en g ineerin g over the next 
+several y ears.
+
+Early Applications. Kalman found a rece p tive audience for his ®lter in the fall of 1960 in a visit to 
+Stanle y F. Schmidt at the Ames Research Center of NASA in Mountain View, California [ 118 ] . Kalman 
+described his recent result and Schmidt reco g nized its p otential a pp licabilit y to a p roblem then bein 
+g studied at AmesÐthe tra j ector y estimation and control p roblem for the A p ollo p ro j ect, a p lanned 
+manned mission to the moon and back. Schmidt be g an work immediatel y on what was p robabl y the ®rst full 
+im p lementation of the Kalman ®lter. He soon discovered what is now called ``extended Kalman ®lterin g ,'' 
+which has been used ever since for most real-time nonlinear a pp lications of Kalman ®lterin g . Enthused 
+over his own success with the Kalman ®lter, he set about p rosel y tizin g others involved in similar work. 
+In the earl y p art of 1961, Schmidt described his results to Richard H. Battin from the MIT Instrumentation 
+Laborator y ( later renamed the Charles Stark Dra p er Laborator y) . Battin was alread y usin g state s p 
+ace methods for the desi g n and im p lementation of astronautical g uidance s y stems, and he made the 
+Kalman ®lter p art of the A p ollo onboard g uidance, 12 which was desi g ned and develo p ed at the 
+Instrumentation Laborator y . In the mid-1960s, throu g h the in¯uence of Schmidt, the Kalman ®lter became p 
+art of the Northru p -built navi g ation s y stem for the C5A air trans p ort, then bein g desi g ned b y 
+Lockheed Aircraft Com p an y . The Kalman ®lter solved the data f usion p roblem associated with combinin g 
+radar data with inertial sensor data to arrive at an overall estimate of the aircraft tra j ector y and the 
+data re j ection p roblem associated with detectin g exo g enous errors in measurement data. It has been an 
+inte g ral p art of nearl y ever y onboard tra j ector y estimation and control s y stem desi g ned since 
+that time.
+
+Other Research Interests. Around 1960, Kalman showed that the related notion of observabilit y for d y namic 
+s y stems had an al g ebraic dual relationshi p with controllabilit y . That is, b y the p ro p er exchan g 
+e of s y stem p arameters, one p roblem could be transformed into the other, and vice versa.
+
+Richard S. Buc y was also at RIAS in that p eriod, and it was he who su gg ested to Kalman that the 
+Wiener±Ho p f e q uation is e q uivalent to the matrix Riccati e q ua-
+
+11
+
+The two q uoted se g ments in this p ara g ra p h are from a talk on S y stem Theor y : Past and Present g 
+iven b y Kalman at the Universit y of California at Los An g eles ( UCLA ) on A p ril 17, 1991, in a s y m p 
+osium or g anized and hosted b y A. V. Balakrishnan at UCLA and s p onsored j ointl y b y UCLA and the 
+National Aeronautics and S p ace Administration ( NASA ) Dr y den Laborator y .
+
+12 Another fundamental im p rovement in Kalman ®lter im p lementation methods was made soon after b y James 
+E. Potter at the MIT Instrumentation Laborator y . This will be discussed in the next subsection.
+
+tionÐif one assumes a ®nite-dimensional state-s p ace model. The g eneral nature of this relationshi p 
+between inte g ral e q uations and differential e q uations ®rst became a pp arent around that time. One of 
+the more remarkable achievements of Kalman and Buc y in that p eriod was p rovin g that the Riccati e q 
+uation can have a stable ( stead y state ) solution even if the d y namic s y stem is unstableÐ p rovided 
+that the s y stem is observable and controllable.
+
+Kalman also p la y ed a leadin g role in the develo p ment of realization theor y , which also be g an to 
+take sha p e around 1962. This theor y addresses the p roblem of ®ndin g a s y stem model to ex p lain the 
+observed in p ut±out p ut behavior of a s y stem. This line of investi g ation led to a uni q ueness p rinci 
+p le for the ma pp in g of exact ( i.e., noiseless ) data to linear s y stem models.
+
+In 1985, Kalman was awarded the K y oto Prize, considered b y some to be the Ja p anese e q uivalent of the 
+Nobel Prize. On his visit to Ja p an to acce p t the K y oto Prize, he related to the p ress an e p i g ram 
+that he had ®rst seen in a p ub in Colorado S p rin g s in 1962, and it had made an im p ression on him. It 
+said:
+
+Little p eo p le discuss other p eo p le. Avera g e p eo p le discuss events. Bi g p eo p le discuss ideas.
+
+His own work, he felt, had been concerned with ideas.
+
+In 1990, on the occasion of Kalman's sixtieth birthda y , a s p ecial international s y m p osium was 
+convened for the p ur p ose of honorin g his p ioneerin g achievements in what has come to be called 
+mathematical s y stem theor y , and a Festschri f t with that title was p ublished soon after [ 3 ] .
+
+Impact of Kalman Filtering on Technology. From the stand p oint of those involved in estimation and control 
+p roblems, at least, this has to be considered the g reatest achievement in estimation theor y of the 
+twentieth centur y . Man y of the achievements since its introduction would not have been p ossible without 
+it. It was one of the enablin g technolo g ies for the S p ace A g e, in p articular. The p recise and 
+ef®cient navi g ation of s p acecraft throu g h the solar s y stem could not have been done without it.
+
+The p rinci p al uses of Kalman ®lterin g have been in ``modern'' control s y stems, in the trackin g and 
+navi g ation of all sorts of vehicles, and in p redictive desi g n of estimation and control s y stems. 
+These technical activities were made p ossible b y the introduction of the Kalman ®lter. ( If y ou need a 
+demonstration of its im p act on technolo gy , enter the ke y word ``Kalman ®lter'' in a technical 
+literature search. You will be overwhelmed b y the sheer number of references it will g enerate. )
+
+Relative Advantages of Kalman and Wiener Filtering
+
+1. The Wiener ®lter im p lementation in analo g electronics can o p erate at much hi g her effective throu g 
+h p ut than the ( di g ital ) Kalman ®lter.
+
+2. The Kalman ®lter is im p lementable in the form of an al g orithm for a di g ital com p uter, which was 
+re p lacin g analo g circuitr y for estimation and control at
+
+the time that the Kalman ®lter was introduced. This im p lementation ma y be slower, but it is ca p able of 
+much g reater accurac y than had been achievable with analo g ®lters.
+
+3. The Wiener ®lter does not re q uire ®nite-dimensional stochastic p rocess models for the si g nal and 
+noise.
+
+4. The Kalman ®lter does not re q uire that the deterministic d y namics or the random p rocesses have 
+stationar y p ro p erties, and man y a pp lications of im p ortance include nonstationar y stochastic p 
+rocesses.
+
+5. The Kalman ®lter is com p atible with the state-s p ace formulation of o p timal controllers for d y 
+namic s y stems, and Kalman was able to p rove useful dual p ro p erties of estimation and control for these 
+s y stems.
+
+6. For the modern controls en g ineerin g student, the Kalman ®lter re q uires less additional mathematical 
+p re p aration to learn and use than the Wiener ®lter. As a result, the Kalman ®lter can be tau g ht at the 
+under g raduate level in en g ineerin g curricula.
+
+7. The Kalman ®lter p rovides the necessar y information for mathematicall y sound, statisticall y -based 
+decision methods for detectin g and re j ectin g anomalous measurements.
+
+1.2.7 Square-Root Methods and All That
+
+Numerical Stability Problems. The g reat success of Kalman ®lterin g was not without its p roblems, not the 
+least of which was mar g inal stabilit y of the numerical solution of the associated Riccati e q uation. In 
+some a pp lications, small roundoff errors tended to accumulate and eventuall y de g rade the p erformance 
+of the ®lter. In the decades immediatel y followin g the introduction of the Kalman ®lter, there a pp eared 
+several better numerical im p lementations of the ori g inal formulas. Man y of these were ada p tations of 
+methods p reviousl y derived for the least s q uares p roblem.
+
+Early ad hoc Fixes. It was discovered earl y on 13 that forcin g s y mmetr y on the solution of the matrix 
+Riccati e q uation im p roved its a pp arent numerical stabilit y Ða p henomenon that was later g iven a 
+more theoretical basis b y Verhae g en and Van Dooren [ 232 ] . It was also found that the in¯uence of 
+roundoff errors could be ameliorated b y arti®ciall y increasin g the covariance of p rocess noise in the 
+Riccati e q uation. A s y mmetrized form of the discrete-time Riccati e q uation was develo p ed b y Jose p 
+h [ 15 ] and used b y R. C. K. Lee at Hone y well in 1964. This ``structural'' reformulation of the Kalman 
+®lter e q uations im p roved robustness a g ainst roundoff errors in some a pp lications, althou g h later 
+methods have p erformed better on some p roblems [ 125 ] .
+
+13
+
+These ®xes were a pp arentl y discovered inde p endentl y b y several p eo p le. Schmidt [ 118 ] and his 
+collea g ues at NASA had discovered the use of forced s y mmetr y and `` p seudonoise'' to counter roundoff 
+effects and cite R. C. K. Lee at Hone y well with the inde p endent discover y of the s y mmetr y effect.
+
+Square-Root Filtering. These methods can also be considered as ``structural'' reformulations of the Riccati 
+e q uation, and the y p redate the Buc y ±Jose p h form. The ®rst of these was the ``s q uare-root'' im p 
+lementation b y Potter and Stern [ 208 ] , ®rst p ublished in 1963 and successfull y im p lemented for s p 
+ace navi g ation on the A p ollo manned lunar ex p loration p ro g ram. Potter and Stern introduced the idea 
+of factorin g the covariance matrix into Cholesk y f actors, 14 in the format
+
+P  CC T ;
+
+1:14
+
+and ex p ressin g the observational u p date e q uations in terms of the Cholesk y factor C, rather than P. 
+The result was better numerical stabilit y of the ®lter im p lementation at the ex p ense of added com p 
+utational com p lexit y . A g eneralization of the Potter and Stern method to handle vector-valued 
+measurements was p ublished b y one of the authors [ 130 ] in 1968, but a more ef®cient im p lementationÐin 
+terms of trian g ular Cholesk y factorsÐwas p ublished b y Bennet in 1967 [ 138 ] .
+
+Square-Root and UD Filters. There was a rather ra p id develo p ment of faster al g orithmic methods for s q 
+uare-root ®lterin g in the 1970s, followin g the work at NASA=JPL ( then called the Jet Pro p ulsion 
+Laborator y , at the California Institute of Technolo gy) in the late 1960s b y D y er and McRe y nolds [ 
+156 ] on tem p oral u p date methods for Cholesk y factors. Extensions of s q uare-root covariance and 
+information ®lters were introduced in Kaminski's 1971 thesis [ 115 ] at Stanford Universit y . The ®rst of 
+the trian g ular factorin g al g orithms for the observational u p date was due to A g ee and Turner [ 106 ] 
+, in a 1972 re p ort of rather limited circulation. These al g orithms have rou g hl y the same com p 
+utational com p lexit y as the conventional Kalman ®lter, but with better numerical stabilit y . The ``fast 
+trian g ular'' al g orithm of Carlson was p ublished in 1973 [ 149 ] , followed b y the ``s q 
+uare-root-free'' al g orithm of Bierman in 1974 [ 7 ] and the associated tem p oral u p date method 
+introduced b y Thornton [ 124 ] . The com p utational com p lexit y of the s q uare-root ®lter for 
+timeinvariant s y stems was g reatl y sim p li®ed b y Morf and Kailath [ 204 ] soon after that. S p 
+ecialized p arallel p rocessin g architectures for fast solution of the s q uare-root ®lter e q uations were 
+develo p ed b y Jover and Kailath [ 175 ] and others over the next decade, and much sim p ler derivations of 
+these and earlier s q uare-root im p lementations were discovered b y Kailath [ 26 ] .
+
+Factorization Methods. The s q uare-root methods make use of matrix decom15 p osition methods that were ori 
+g inall y derived for the least-s q uares p roblem. These
+
+A s q uare root S of a matrix P satis®es the e q uation P  SS ( i.e., without the trans p ose on the second 
+factor ) . Potter and Stern's derivation used a s p ecial t yp e of s y mmetric matrix called an elementar y 
+matrix. The y factored an elementar y matrix as a s q uare of another elementar y matrix. In this case, the 
+factors were trul y s q uare roots of the factored matrix. This s q uare-root a pp ellation has stuck with 
+extensions of Potter and Stern's a pp roach, even thou g h the factors involved are Cholesk y factors, not 
+matrix s q uare roots. 15 The term ``decom p osition'' refers to the re p resentation of a matrix ( in this 
+case, a covariance matrix ) as a p roduct of matrices havin g more useful com p utational p ro p erties, 
+such as s p arseness ( for trian g ular factors ) or g ood numerical stabilit y ( for ortho g onal factors ) 
+. The term ``factorization'' was used b y Bierman [ 7 ] for such re p resentations.
+
+include the so-called Q R decom p osition of a matrix as the p roduct of an ortho g onal matrix (Q) and a 
+``trian g ular'' 16 matrix ( R ) . The matrix R results from the a pp lication of ortho g onal 
+transformations of the ori g inal matrix. These ortho g onal transformations tend to be well conditioned 
+numericall y . The o p eration of a pp l y in g these transformations is called the ``trian g ularization'' 
+of the ori g inal matrix, and triang ularization methods derived b y Givens [ 164 ] , Householder [ 172 ] , 
+and Gentleman [ 163 ] are used to make Kalman ®lterin g more robust a g ainst roundoff errors.
+
+1.2.8 Beyond Kalman Filtering
+
+Extended Kalman Filtering and the Kalman±Schmidt Filter. Althou g h it was ori g inall y derived for a 
+linear p roblem, the Kalman ®lter is habituall y a pp lied with im p unit y Ðand considerable successÐto man 
+y nonlinear p roblems. These extensions g enerall y use p artial derivatives as linear a pp roximations of 
+nonlinear relations. Schmidt [ 118 ] introduced the idea of evaluatin g these p artial derivatives at the 
+estimated value of the state variables. This a pp roach is g enerall y called the
+
+extended Kalman ® lter, but it was called the Kalman±Schmidt ® lter in some earl y p ublications. This and 
+other methods for a pp roximate linear solutions to nonlinear p roblems are discussed in Cha p ter 5, where 
+it is noted that these will not be ade q uate for all nonlinear p roblems. Mentioned here are some investi g 
+ations that have addressed estimation p roblems from a more g eneral p ers p ective, althou g h the y are 
+not covered in the rest of the book.
+
+Nonlinear Filtering Using Higher Order Approximations. A pp roaches usin g hi g her order ex p ansions of 
+the ®lter e q uations ( i.e., be y ond the linear terms ) have been derived b y Stratonovich [ 78 ] , 
+Kushner [ 191 ] , Buc y [ 147 ] , Bass et al. [ 134 ] , and others for q uadratic nonlinearities and b y 
+Wiber g and Cam p bell [ 235 ] for terms throu g h third order.
+
+Nonlinear Stochastic Differential Equations. Problems involvin g nonlinear and random d y namic s y stems 
+have been studied for some time in statistical mechanics. The p ro p a g ation over time of the p robabilit 
+y distribution of the state of a nonlinear d y namic s y stem is described b y a nonlinear p artial 
+differential e q uation called the Fokker±Planck e q uation. It has been studied b y Einstein [ 157 ] , 
+Fokker [ 160 ] , Planck [ 207 ] , Kolmo g orov [ 187 ] , Stratonovich [ 78 ] , Baras and Mirelli [ 52 ] , 
+and others. Stratonovich modeled the effect on the p robabilit y distribution of information obtained throu 
+g h nois y measurements of the d y namic s y stem, an effect called conditionin g . The p artial 
+differential e q uation that includes these effects is called the conditioned Fokker±Planck e q uation. It 
+has also been studied b y Kushner [ 191 ] , Buc y [ 147 ] , and others usin g the stochastic calculus of Ki 
+y osi Ito Ã Ðalso called the ``Ito Ã calculus.'' It is a non-Riemannian calculus develo p ed s p eci®call y 
+for stochastic differential s y stems with noise of in®nite bandwidth. This g eneral a pp roach results in a 
+stochastic p artial differential e q uation describin g
+
+16
+
+See Cha p ter 6 and A pp endix B for discussions of trian g ular forms.
+
+the evolution over time of the p robabilit y distribution over a ``state s p ace'' of the d y namic s y stem 
+under stud y . The resultin g model does not en j o y the ®nite re p resentational characteristics of the 
+Kalman ®lter, however. The com p utational com p lexit y of obtainin g a solution far exceeds the alread y 
+considerable burden of the conventional Kalman ®lter. These methods are of si g ni®cant interest and utilit 
+y but are be y ond the sco p e of this book.
+
+Point Processes and the Detection Problem. A p oint p rocess is a t yp e of random p rocess for modelin g 
+events or ob j ects that are distributed over time or s p ace, such as the arrivals of messa g es at a 
+communications switchin g center or the locations of stars in the sk y . It is also a model for the initial 
+states of s y stems in man y estimation p roblems, such as the locations of aircraft or s p acecraft under 
+surveillance b y a radar installation or the locations of submarines in the ocean. The detection p roblem 
+for these surveillance a pp lications must usuall y be solved before the estimation p roblem ( i.e., trackin 
+g of the ob j ects with a Kalman ®lter ) can be g in. The Kalman ®lter re q uires an initial state for each 
+ob j ect, and that initial state estimate must be obtained b y detectin g it. Those initial states are 
+distributed accordin g to some p oint p rocess, but there are no technicall y mature methods ( com p arable 
+to the Kalman ®lter ) for estimatin g the state of a p oint p rocess. A uni®ed a pp roach combinin g 
+detection and trackin g into one o p timal estimation method was derived b y Richardson [ 214 ] and s p 
+ecialized to several a pp lications. The detection and trackin g p roblem for a sin g le ob j ect is re p 
+resented b y the conditioned Fokker±Planck e q uation. Richardson derived from this one-ob j ect model an 
+in®nite hierarch y of p artial differential e q uations re p resentin g ob j ect densities and truncated 
+this hierarch y with a sim p le closure assum p tion about the relationshi p s between orders of densities. 
+The result is a sin g le p artial differential e q uation a pp roximatin g the evolution of the densit y of 
+ob j ects. It can be solved numericall y . It p rovides a solution to the dif®cult p roblem of detectin g d 
+y namic ob j ects whose initial states are re p resented b y a p oint p rocess.
+
+1.3 ON THE NOTATION USED IN THIS BOOK
+
+1.3.1 Symbolic Notation
+
+The fundamental p roblem of s y mbolic notation, in almost an y context, is that there are never enou g h s 
+y mbols to g o around. There are not enou g h letters in the Roman al p habet to re p resent the sounds of 
+standard En g lish, let alone all the variables in Kalman ®lterin g and its a pp lications. As a result, 
+some s y mbols must p la y multi p le roles. In such cases, their roles will be de®ned as the y are 
+introduced. It is sometimes confusin g , but unavoidable.
+
+f _
+
+f 
+
+``Dot'' Notation for Derivatives. Newton's notation usin g t; t for the ®rst two derivatives of f with res 
+p ect to t is used where convenient to save ink.
+
+Standard Symbols for Kalman Filter Variables. There a pp ear to be two ``standard'' conventions in technical 
+p ublications for the s y mbols used in Kalman ®lterin g . The one used in this book is similar to the ori g 
+inal notation of Kalman [ 179 ] . The other standard notation is sometimes associated with a pp lications of 
+Kalman ®lterin g in control theor y . It uses the ®rst few letters of the al p habet in p lace of the Kalman 
+notation. Both sets of s y mbol usa g es are p resented in Table 1.2, alon g with the ori g inal ( Kalman ) 
+notation.
+
+State Vector Notation for Kalman Filtering. The state vector x has been adorned with all sorts of other a pp 
+enda g es in the usa g e of Kalman ®lterin g . Table 1.3 lists the notation used in this book ( left column 
+) alon g with notations found in some other sources ( second column ) . The state vector wears a ``hat'' as 
+the estimated ^ value, x , and subscri p tin g to denote the se q uence of values that the estimate assumes 
+over time. The p roblem is that it has two values at the same time: the a p riori 17 value ( before the 
+measurement at the current time has been used in re®nin g the estimate ) and the a p osteriori value ( after 
+the current measurement has been used in re®nin g the estimate ) . These distinctions are indicated b y the 
+si g num. The ne g ative si g n À indicates the a p riori value, and the p ositive si g n  indicates the a 
+p osteriori value.
+
+17
+
+This use of the full Latin p hrases as ad j ectives for the p rior and p osterior statistics is an 
+unfortunate choice of standard notation, because there is no eas y wa y to shorten it. ( Even their initial 
+abbreviations are the same. ) If those who initiated this notation had known how common p lace it would 
+become, the y mi g ht have named them otherwise.
+
+Common Notation for Array Dimensions. S y mbols used for the dimensions of the ``standard'' arra y s in 
+Kalman ®lterin g will also be standardized, usin g the notation of Gelb et al. [ 21 ] shown in Table 1.4. 
+These s y mbols are not used exclusivel y for these p ur p oses. ( Otherwise, one would soon run out of al p 
+habet. ) However, whenever one of these arra y s is used in the discussion, these s y mbols will be used for 
+their dimensions.
+
+1.4 SUMMARY
+
+The Kalman ® lter is an estimator used to estimate the state of a linear d y namic s y stem p erturbed b y 
+Gaussian white noise usin g measurements that are linear functions of the s y stem state but corru p ted b y 
+additive Gaussian white noise. The mathematical model used in the derivation of the Kalman ®lter is a 
+reasonable re p resentation for man y p roblems of p ractical interest, includin g control p roblems as
+
+well as estimation p roblems. The Kalman ®lter model is also used for the anal y sis of measurement and 
+estimation p roblems.
+
+The method o f least s q uares was the ®rst ``o p timal'' estimation method. It was discovered b y Gauss ( 
+and others ) around the end of the ei g hteenth centur y , and it is still much in use toda y . If the 
+associated Gramian matrix is nonsin g ular, the method of least s q uares determines the uni q ue values of 
+a set of unknown variables such that the s q uared deviation from a set of constrainin g e q uations is 
+minimized.
+
+Observabilit y of a set of unknown variables is the issue of whether or not the y are uni q uel y 
+determinable from a g iven set of constrainin g e q uations. If the constraints are linear functions of the 
+unknown variables, then those variables are observable i f and onl y i f the associated Gramian matrix is 
+nonsin g ular. If the Gramian matrix is sin g ular, then the unknown variables are unobservable.
+
+The Wiener±Kolmo g orov ® lter was derived in the 1940s b y Norbert Wiener ( usin g a model in continuous 
+time ) and Andrei Kolmo g orov ( usin g a model in discrete time ) workin g inde p endentl y . It is a 
+statistical estimation method. It estimates the state of a d y namic p rocess so as to minimize the mean-s q 
+uared estimation error. It can take advanta g e of statistical knowled g e about random p rocesses in terms 
+of their p ower s p ectral densities in the f re q uenc y domain.
+
+The ``state-s p ace'' model of a d y namic p rocess uses differential e q uations ( or difference e q 
+uations ) to re p resent both deterministic and random p henomena. The state variables of this model are the 
+variables of interest and their derivatives of interest. Random p rocesses are characterized in terms of 
+their statistical p ro p erties in the time domain, rather than the fre q uenc y domain. The Kalman ®lter 
+was derived as the solution to the Wiener ®lterin g p roblem usin g the state-s p ace model for d y namic 
+and random p rocesses. The result is easier to derive ( and to use ) than the Wiener± Kolmo g orov ®lter.
+
+S q uare-root ® lterin g is a reformulation of the Kalman ®lter for better numerical stabilit y in ®nite- p 
+recision arithmetic. It is based on the same mathematical model, but it uses an e q uivalent statistical p 
+arameter that is less sensitive to roundoff errors in the com p utation of o p timal ®lter g ains. It incor 
+p orates man y of the more numericall y stable com p utation methods that were ori g inall y derived for 
+solvin g the least-s q uares p roblem.
+
+PROBLEMS
+
+1.1 Jean Ba p tiste Fourier ( 1768±1830 ) was stud y in g the p roblem of a pp roximatin g a function f y 
+on the circle 0 y < 2p b y a linear combination of tri g onometric functions:
+
+f
+
+P y % a 0  a j cos j y  b j sin j y:
+
+n
+
+1:15
+
+See if y ou can hel p him on this p roblem. Use the method of least s q uares to demonstrate that the values
+
+
+ 2p 1 ^ a 0  2p 0 
+ 2p
+
+1  p 0 
+ 2p 1  p 0 of the coef®cients a j and b j for 1 a pp roximation error
+
+^ a j ^ b
+
+f f
+
+j
+
+f y dy; y cos j y dy; y sin j y dy j n g ive the least inte g rated s q uared
+
+e 2 a; b  k 2p f À f a; bkl 2 2  • h i2   f y À f y 0 
+ 2p ( n P  a 0  a j cos j y  b j sin j y 0 
+ 2p ( n P À 2 a 0 j 1  ta j cos j y  b j sin j y 0 j 1 
+ 2p  f 2 y dy:
+
+dy
+
+)2 
+
+dy )
+
+f
+
+y dy
+
+0 You ma y assume the e q ualities 
+ 2p dy  2p
+
+0 
+ 2p  0; cos j y cosky dy 
+
+p; 0 
+ 2p  0; sin j y sinky dy 
+
+p; 0 
+ 2p cos j y sinky dy  0;
+
+j 6 k j  k; j 6 k j  k 0 j
+
+n;
+
+1
+
+k
+
+n
+
+0
+
+as g iven.
+
+
