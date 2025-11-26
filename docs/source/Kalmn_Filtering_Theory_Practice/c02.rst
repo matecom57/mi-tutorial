@@ -1,50 +1,53 @@
-c02. 2 Linear D y namic S y stems
+c02. 2 Linear Dynamic Systems
 =================================
 
-What we ex p erience o f nature is in models, and all o f nature's models are so beauti f ul. 1 R. 
-Buckminster Fuller ( 1895±1983 )
+What we experience of nature is in models, and all of nature's models are so beautiful. 1 
+
+R. Buckminster Fuller ( 1895±1983 )
 
 2.1 CHAPTER FOCUS
+-----------------
 
-Models for Dynamic Systems. Since their introduction b y Isaac Newton in the seventeenth centur y , 
-differential e q uations have p rovided concise mathematical models for man y d y namic s y stems of im p 
-ortance to humans. B y this device, Newton was able to model the motions of the p lanets in our solar s y 
-stem with a small number of variables and p arameters. Given a ®nite number of initial conditions ( the 
-initial p ositions and velocities of the sun and p lanets will do ) and these e q uations, one can uni q uel 
-y determine the p ositions and velocities of the p lanets for all time. The ®nite-dimensional re p 
-resentation of a p roblem ( in this exam p le, the p roblem of p redictin g the future course of the p 
-lanets ) is the basis for the so-called state-s p ace a pp roach to the re p resentation of differential e q 
-uations and their solutions, which is the focus of this cha p ter. The de p endent variables of the 
-differential e q uations become state variables of the d y namic s y stem. The y ex p licitl y re p resent 
-all the im p ortant characteristics of the d y namic s y stem at an y time.
+**Models for Dynamic Systems**. Since their introduction by Isaac Newton in the seventeenth century, 
+differential equations have provided concise mathematical models for many dynamic systems of 
+importance to humans. By this device, Newton was able to model the motions of the planets in our 
+solars y 
+stem with a small number of variables and parameters. Given a finite number of initial conditions 
+(the 
+initial positions and velocities of the sun and planets will do ) and these equations, one can 
+uniquely determine the positions and velocities of the planets for all time. The 
+finite-dimensional re presentation of a problem ( in this example, the problem of predicting 
+the future course of the planets ) is the basis for the so-called state-space approach to the 
+representation of differential 
+equations and their solutions, which is the focus of this chapter. The de pendent variables of the 
+differential equations become state variables of the dynamic system. They explicitly represent 
+all the important characteristics of the dynamic system at any time.
 
-The whole of d y namic s y stem theor y is a sub j ect of considerabl y more sco p e than one needs for the 
-p resent undertakin g ( Kalman ®lterin g) . This cha p ter will stick to j ust those conce p ts that are 
-essential for that p ur p ose, which is the develo p ment of the states p ace re p resentation for d y namic 
-s y stems described b y s y stems of linear differential e q uations. These are g iven a somewhat heuristic 
-treatment, without the mathematical
+The whole of dynamic system theory is a subject of considerably more scope than one needs for the 
+present undertaking ( Kalman filtering). This chapter will stick to just those concepts that are 
+essential for that purpose, which is the development of the state-space representation for dynamics 
+y stems described by systems of linear differential equations. These are given a somewhat heuristic 
+treatment, without the mathematical rigor often accorded the subject, omitting the development and 
+use of the transform methods of 
+functional analysis for solving differential equations when they serve no purpose in the derivation 
+of the Kalman filter. The interested reader will find a more formal and thorough presentation in most 
+upper-level and graduate-level textbooks on
+ordinary differential equations. The objective of the more engineering-oriented treatments of 
+dynamic systems is usually to solve the controls problem, which is the problem of defining 
+the in puts ( 
+i.e., control settings ) that will bring the state of the dynamics y stem to a desirable condition. 
+That is not the obj ective here, however.
 
-ri g or often accorded the sub j ect, omittin g the develo p ment and use of the transform methods of 
-functional anal y sis for solvin g differential e q uations when the y serve no p ur p ose in the derivation 
-of the Kalman ®lter. The interested reader will ®nd a more formal and thorou g h p resentation in most u pp 
-er-level and g raduate-level textbooks on
+2.1.1 Main Points to Be Covered 
+-------------------------------
 
-1
-
-From an interview q uoted b y Calvin Tomkins in ``From in the outlaw area,'' The New Yorker, Januar y 8, 
-1966. 25
-
-ordinar y differential e q uations. The ob j ective of the more en g ineerin g -oriented treatments of d y 
-namic s y stems is usuall y to solve the controls p roblem, which is the p roblem of de®nin g the in p uts ( 
-i.e., control settin g s ) that will brin g the state of the d y namic s y stem to a desirable condition. 
-That is not the ob j ective here, however.
-
-2.1.1 Main Points to Be Covered The ob j ective in this cha p ter is to characterize the measurable out p 
-uts of d y namic s y stems as functions of the internal states and in p uts of the s y stem. ( The 
-italicized terms will be de®ned more p recisel y further alon g . ) The treatment here is deterministic, in 
-order to de®ne functional relationshi p s between in p uts and out p uts. In the next cha p ter, the in p 
-uts are allowed to be nondeterministic ( i.e., random ) , and the ob j ective of the followin g cha p ter 
-will be to estimate the states of the d y namic s y stem in this context.
+The objective in this chapter is to characterize the measurable 
+outputs of dynamics y stems as functions of the internal states and inputs of the system. 
+( The italicized terms will be defined more precisel y further along.) The treatment here is 
+deterministic, in 
+order to define functional relationships between inputs and outputs. In the next chapter, the 
+inputs are allowed to be nondeterministic ( i.e., random ) , and the objective of the following chapter 
+will be to estimate the states of the dynamic system in this context.
 
 Dynamic Systems and Differential Equations. In the context of Kalman ®lterin g , a d y namic s y stem has 
 come to be s y non y mous with a s y stem of ordinar y differential e q uations describin g the evolution 
