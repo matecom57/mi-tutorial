@@ -4,39 +4,55 @@ c01
 Preface
 ---------
 
-The ®rst edition of this book was p ublished b y Prentice-Hall in 1993. With this second edition, as with the ®rst, our p rimar y ob j ective is 
-to p rovide our readers a workin g familiarit y with both the theoretical and p ractical as p ects of Kalman ®lterin g b y includin g 
-``real-world'' p roblems in p ractice as illustrative exam p les. We are p leased to have this o pp ortunit y to incor p orate the man y hel p 
-ful corrections and su gg estions from our collea g ues and students over the last several y ears for the overall im p rovement of the textbook. 
-The book covers the historical back g round of Kalman ®lterin g and the more p ractical as p ects of im p lementation: how to re p resent the p 
-roblem in a mathematical model, anal y ze the p erformance of the estimator as a function of model p arameters, im p lement the mechanization e q 
-uations in numericall y stable al g orithms, assess its com p utational re q uirements, test the validit y of results, and monitor the ®lter p 
-erformance in o p eration. These are im p ortant attributes of the sub j ect that are often overlooked in theoretical treatments but are necessar 
-y for a pp lication of the theor y to real-world p roblems.
+The first edition of this book was published by Prentice-Hall in 1993. With this second edition, as with 
+the first, our primary objective is 
+to provide our readers a working familiarity with both the theoretical and practical aspects of Kalman 
+filtering by including 
+"real-world" problems in practice as illustrative examples. We are pleased to have this opportunity 
+to incorporate the man y help 
+ful corrections and suggestions from our colleagues and students over the last several years for 
+the overall improvement of the textbook. 
+The book covers the historical back ground of Kalman filtering and the more practical aspects of 
+implementation: how to represent the 
+problem in a mathematical model, analyze the performance of the estimator as a function of model 
+parameters, implement the mechanization equations in numericall y stable algorithms, 
+assess its computational requirements, test the validity of results, and monitor the fillter 
+performance in operation. These are important attributes of the subject that are often overlooked in 
+theoretical treatments but are necessary for application of the theory to real-world problems.
 
-We have converted all al g orithm listin g s and all software to MATLAB1 1 , so that users can take advanta g e of its excellent g ra p hin g ca 
-p abilities and a p ro g rammin g interface that is ver y close to the mathematical e q uations used for de®nin g Kalman ®lterin g and its a pp 
-lications. See A pp endix A, Section A.2, for more information on MATLAB.
+We have converted all algorithm listings and all software to MATLAB, so that users can take 
+advantage of its excellent graphing capabilities and a programming interface that is ver y close 
+to the mathematical equations used for defining Kalman filtering and its applications. 
+See Appendix A, Section A.2, for more information on MATLAB.
 
-The inclusion of the software is p racticall y a matter of necessit y , because Kalman ®lterin g would not be ver y useful without com p uters to 
-im p lement it. It is a better learnin g ex p erience for the student to discover how the Kalman ®lter works b y observin g it in action.
+The inclusion of the software is practically a matter of necessity, because Kalman filtering would 
+not be 
+very useful without computers to 
+implement it. It is a better learning experience for the student to discover how the Kalman filter works 
+by 
+observing it in action.
 
-The im p lementation of Kalman ®lterin g on com p uters also illuminates some of the p ractical considerations of ®nite-wordlen g th arithmetic 
-and the need for alter-
+The implementation of Kalman filtering on computers also illuminates some of the practical 
+considerations of finite-wordlength arithmetic 
+and the need for alternative algorithms to preserve the accuracy of the results. 
+If the student wishes to apply what she or he learns, then it is essential that 
+she or he experience its workings and failing--and learn to recognize the difference.
 
-native al g orithms to p reserve the accurac y of the results. If the student wishes to a pp l y what she or he learns, then it is essential that 
-she or he ex p erience its workin g s and failin g sÐand learn to reco g nize the difference.
+The book is organized for use as a text for an introductor y course in stochastic processes 
+at the senior level and as a first-year graduate-level course in Kalman filtering theory and 
+application. It could also be used for self-instruction or for purposes of review by 
+practicing engineers and scientists who are not intimately familiar with the subject. The organization 
+of the material is illustrated by 
+the following chapter-level dependency graph, which shows how the subject of each chapter depends 
+up on material in other chapters. The arrows in the figure indicate the recommended order of study. 
+Boxes above another box and connected by arrows indicate that the 
+material represented by the upper boxes is back ground material for the subject in the lower box.
 
-The book is or g anized for use as a text for an introductor y course in stochastic p rocesses at the senior level and as a ®rst- y ear g 
-raduate-level course in Kalman ®lterin g theor y and a pp lication. It could also be used for self-instruction or for p ur p oses of review b y p 
-racticin g en g ineers and scientists who are not intimatel y familiar with the sub j ect. The or g anization of the material is illustrated b y 
-the followin g cha p ter-level de p endenc y g ra p h, which shows how the sub j ect of each cha p ter de p ends u p on material in other cha p 
-ters. The arrows in the ® g ure indicate the recommended order of stud y . Boxes above another box and connected b y arrows indicate that the 
-material re p resented b y the u pp er boxes is back g round material for the sub j ect in the lower box.
-
-Cha p ter 1 p rovides an informal introduction to the g eneral sub j ect matter b y wa y of its histor y of develo p ment and a pp lication. Cha 
-p ters 2 and 3 and A pp endix B cover the essential back g round material on linear s y stems, p robabilit y , stochastic p rocesses, and modelin 
-g . These cha p ters could be covered in a senior-level course in electrical, com p uter, and s y stems en g ineerin g .
+Chapter 1 provides an informal introduction to the general subject matter by way of its history 
+of development and application. Chapters 2 and 3 and Appendix B cover the essential back ground 
+material on linear systems, probability, stochastic processes, and modeling. 
+These chapters could be covered in a senior-level course in electrical, computer, and 
+systems engineerin g .
 
 Cha p ter 4 covers linear o p timal ®lters and p redictors, with detailed exam p les of a pp lications. Cha p ter 5 is devoted to nonlinear 
 estimation b y ``extended'' Kalman

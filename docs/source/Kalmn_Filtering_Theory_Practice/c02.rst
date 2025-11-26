@@ -1,0 +1,2417 @@
+c02. 2 Linear D y namic S y stems
+=================================
+
+What we ex p erience o f nature is in models, and all o f nature's models are so beauti f ul. 1 R. 
+Buckminster Fuller ( 1895±1983 )
+
+2.1 CHAPTER FOCUS
+
+Models for Dynamic Systems. Since their introduction b y Isaac Newton in the seventeenth centur y , 
+differential e q uations have p rovided concise mathematical models for man y d y namic s y stems of im p 
+ortance to humans. B y this device, Newton was able to model the motions of the p lanets in our solar s y 
+stem with a small number of variables and p arameters. Given a ®nite number of initial conditions ( the 
+initial p ositions and velocities of the sun and p lanets will do ) and these e q uations, one can uni q uel 
+y determine the p ositions and velocities of the p lanets for all time. The ®nite-dimensional re p 
+resentation of a p roblem ( in this exam p le, the p roblem of p redictin g the future course of the p 
+lanets ) is the basis for the so-called state-s p ace a pp roach to the re p resentation of differential e q 
+uations and their solutions, which is the focus of this cha p ter. The de p endent variables of the 
+differential e q uations become state variables of the d y namic s y stem. The y ex p licitl y re p resent 
+all the im p ortant characteristics of the d y namic s y stem at an y time.
+
+The whole of d y namic s y stem theor y is a sub j ect of considerabl y more sco p e than one needs for the 
+p resent undertakin g ( Kalman ®lterin g) . This cha p ter will stick to j ust those conce p ts that are 
+essential for that p ur p ose, which is the develo p ment of the states p ace re p resentation for d y namic 
+s y stems described b y s y stems of linear differential e q uations. These are g iven a somewhat heuristic 
+treatment, without the mathematical
+
+ri g or often accorded the sub j ect, omittin g the develo p ment and use of the transform methods of 
+functional anal y sis for solvin g differential e q uations when the y serve no p ur p ose in the derivation 
+of the Kalman ®lter. The interested reader will ®nd a more formal and thorou g h p resentation in most u pp 
+er-level and g raduate-level textbooks on
+
+1
+
+From an interview q uoted b y Calvin Tomkins in ``From in the outlaw area,'' The New Yorker, Januar y 8, 
+1966. 25
+
+ordinar y differential e q uations. The ob j ective of the more en g ineerin g -oriented treatments of d y 
+namic s y stems is usuall y to solve the controls p roblem, which is the p roblem of de®nin g the in p uts ( 
+i.e., control settin g s ) that will brin g the state of the d y namic s y stem to a desirable condition. 
+That is not the ob j ective here, however.
+
+2.1.1 Main Points to Be Covered The ob j ective in this cha p ter is to characterize the measurable out p 
+uts of d y namic s y stems as functions of the internal states and in p uts of the s y stem. ( The 
+italicized terms will be de®ned more p recisel y further alon g . ) The treatment here is deterministic, in 
+order to de®ne functional relationshi p s between in p uts and out p uts. In the next cha p ter, the in p 
+uts are allowed to be nondeterministic ( i.e., random ) , and the ob j ective of the followin g cha p ter 
+will be to estimate the states of the d y namic s y stem in this context.
+
+Dynamic Systems and Differential Equations. In the context of Kalman ®lterin g , a d y namic s y stem has 
+come to be s y non y mous with a s y stem of ordinar y differential e q uations describin g the evolution 
+over time of the state of a p h y sical s y stem. This mathematical model is used to derive its solution, 
+which s p eci®es the functional de p endence of the state variables on their initial values and the s y stem 
+in p uts. This solution de®nes the functional de p endence of the measurable out p uts on the in p uts and 
+the coef®cients of the model.
+
+Mathematical Models for Continuous and Discrete Time. The p rinci p al d y namic s y stem models are 
+summarized in Table 2.1. 2 For im p lementation in di g ital com p uters, the p roblem re p resentation is 
+transformed from an analo g model ( functions of continuous time ) to a di g ital model ( functions de®ned 
+at discrete times ) .
+
+Observabilit y characterizes the f easibilit y of uni q uel y determinin g the state of a g iven d y namic s 
+y stem if its out p uts are known. This characteristic of a d y namic s y stem is determinable from the p 
+arameters of its mathematical model.
+
+2.2 DYNAMIC SYSTEMS
+
+2.2.1 Dynamic Systems Represented by Differential Equations
+
+A s y stem is an assembla g e of interrelated entities that can be considered as a whole. If the attributes 
+of interest of a s y stem are chan g in g with time, then it is called a d y namic s y stem. A p rocess is 
+the evolution over time of a d y namic s y stem.
+
+Our solar s y stem, consistin g of the sun and its p lanets, is a p h y sical exam p le of a d y namic s y 
+stem. The motions of these bodies are g overned b y laws of motion that de p end onl y u p on their current 
+relative p ositions and velocities. Sir Isaac Newton ( 1642±1727 ) discoveredthese laws and ex p ressed them 
+as a s y stemof differential e q uationsÐanother of his discoveries. From the time of Newton, en g ineers 
+and scientists have learned to de®ne d y namic s y stems in terms of the differential e q uations that g 
+overn their behavior. The y have also learned how to solve man y of these differential e q uations to obtain 
+formulas for p redictin g the future behavior of d y namic s y stems.
+
+2
+
+These include nonlinear models, which are discussed in Cha p ter 5. The p rimar y interest in this cha p ter 
+will be in linear models.
+
+EXAMPLE 2.1 ( below, left ) : Newton's Model for a D y namic S y stem of n Massive Bodies For a p lanetar y 
+s y stem with n bodies ( idealized as p oint masses ) , the acceleration of the ith bod y in an y inertial ( 
+i.e., non-rotatin g and non-acceleratin g) Cartesian coordinate s y stem is g iven b y Newton's third law as 
+the second-order differential e q uation
+
+d 2 r i P n m j r j À r3 i   C g j ; 1 i n; dt 2 1 jr j À r i j j 6 i
+
+where r j is the p osition coordinate vector of the j th bod y , m j is the mass of the j th bod y , and C g 
+is the g ravitational constant. This set of n differential e q uations, p lus the associated initial 
+conditions of the bodies ( i.e., their initial p ositions and velocities ) theoreticall y determines the 
+future histor y of the p lanetar y s y stem.
+
+m2 
+
+m1 
+
+m3 
+
+r2 
+
+r1 
+
+r3 
+
+m4 
+
+0
+
+r4 
+
+Exam p le 2.1
+
+EXAMPLE 2.2 ( above, ri g ht ) : The Harmonic Resonator with Linear Dam p in g Consider the accom p an y in 
+g dia g ram of an idealized a pp aratus with a mass m attached throu g h a s p rin g to an immovable base 
+and its frictional contact to its su pp ort base re p resented b y a dash p ot. Let d be the dis p lacement 
+of the mass from its p osition at rest, dd=dt be the velocit y of the mass, and at  d 2 d=dt 2 its 
+acceleration. The force F actin g on the mass can be re p resented b y Newton's second law as
+
+Exam p le 2.2
+
+Ft  mat  2 d d  m 2 t dt  Àk s dt À kd 
+
+
+
+dd
+
+t; dt
+
+where k s is the s p rin g constant and k d is the dra g coef®cient of the dash p ot. This relationshi p can 
+be written as a differential e q uation
+
+d d2  m  Àk s d À kd  dt2 
+
+dd
+
+dt
+
+in which time ( t ) is the differential variable and dis p lacement ( d ) is the de p endent variable. This 
+e q uation constrains the d y namical behavior of the dam p ed harmonic resonator. The order of a 
+differential e q uation is the order of the hi g hest derivative, which is 2 in this exam p le. This one is 
+called a linear differential e q uation, because both sides of the e q uation are linear combinations of d 
+and its derivatives. ( That of Exam p le 2.1 is a nonlinear differential e q uation. )
+
+Not All Dynamic Systems Can Be Modeled by Differential Equations. There are other t yp es of d y namic s y 
+stems, such as those modeled b y Petri nets or inference nets. However, the onl y t yp es of d y namic s y 
+stems considered in this book will be modeled b y differential e q uations or b y discrete-time linear state 
+d y namic e q uations derived from linear differential or difference e q uations.
+
+2.2.2 State Variables and State Equations
+
+The second-order differential e q uation of the p revious exam p le can be transformed to a s y stem of two 
+®rst-order differential e q uations in the two de p endent variables x 1  d and x 2  dd=dt. In this wa y , 
+one can reduce the form of an y s y stem of hi g her order differential e q uations to an e q uivalent s y 
+stem of ®rst-order differential e q uations. These s y stems are g enerall y classi®ed into the t yp es 
+shown in Table 2.1, with the most g eneral t yp e bein g a time-var y in g differential e q uation for re p 
+resentin g a d y namic s y stem with time-var y in g d y namic characteristics. This is re p resented in 
+vector form as
+
+_ x t  f t; xt; ut;
+
+2:1
+
+where Newton's ``dot'' notation is used as a shorthand for the derivative with res p ect to time, and a 
+vector-valued function f to re p resent a s y stem of n e q uations
+
+x _ 1  f 1 t; x 1 ; x 2 ; x 3 ; . . . ; x n ; u 1 ; u 2 ; u 3 ; . . . ; u r ; t;
+
+x _ 2  f 2 t; x 1 ; x 2 ; x 3 ; . . . ; x n ; u 1 ; u 2 ; u 3 ; . . . ; u r ; t;
+
+x _ 3  f 3 t; x 1 ; x 2 ; x 3 ; . . . ; x n ; u 1 ; u 2 ; u 3 ; . . . ; u r ; t;
+
+. . .
+
+2:2
+
+x _ n  f n t; x 1 ; x 2 ; x 3 ; . . . ; x n ; u 1 ; u 2 ; u 3 ; . . . ; u r ; t
+
+in the inde p endent variable t ( time ) , n de p endent variables fx i j1 i ng, and r known in p uts fu i 
+j1 i rg. These are called the state e q uations of the d y namic s y stem.
+
+State Variables Represent the Degrees of Freedom of Dynamic Systems. The variables x 1 ; . . . ; x n are 
+called the state variables of the d y namic s y stem de®ned b y E q uation 2.2. The y are collected into a 
+sin g le n-vector
+
+xt  x 1 t
+
+x 2 t
+
+x 3 t
+
+ÁÁÁ
+
+x n tT 
+
+2:3
+
+called the state vector of the d y namic s y stem. The n-dimensional domain of the state vector is called 
+the state s p ace of the d y namic s y stem. Sub j ect to certain continuit y conditions on the functions f 
+i and u i ; the values x i t 0  at some initial time t 0 will uni q uel y determine the values of the 
+solutions x i t on some closed time interval t 2 t 0 ; t f  with initial time t 0 and ®nal time t f [ 57 ] 
+. In that sense, the initial value of each state variable re p resents an inde p endent de g ree of freedom 
+of the d y namic s y stem. The n values x 1 t 0 ; x 2 t 0 ; x 3 t 0 ; . . . ; x n t 0  can be varied 
+inde p endentl y , and the y uni q uel y determine the state of the d y namic s y stem over the time 
+interval
+
+t 2 t 0 ; t f .
+
+EXAMPLE 2.3: State S p ace Model of the Harmonic Resonator For the second-order differential e q uation 
+introduced in Exam p le 2.2, let the state variables _ x 1  d and x 2  d. The ®rst state variable re p 
+resents the dis p lacement of the mass from static e q uilibrium, and the second state variable re p resents 
+the instantaneous velocit y of the mass. The s y stem of ®rst-order differential e q uations for this d y 
+namic s y stem can be ex p ressed in matrix form as     d x 1 t x 1 2 t  F c ; dt x 2 t x t " # 0 1 k k 
+F c  ; À s À d m m
+
+where F c is called the coe f® cient matrix of the s y stem of ®rst-order linear differential e q uations. 
+This is an exam p le of what is called the com p anion f orm for hi g her order linear differential e q 
+uations ex p ressed as a s y stem of ®rst-order differential e q uations.
+
+2.2.3 Continuous Time and Discrete Time
+
+The d y namic s y stem de®ned b y E q uation 2.2 is an exam p le of a continuous s y stem, so called because 
+it is de®ned with res p ect to an inde p endent variable t that varies continuousl y over some real interval 
+t 2 t 0 ; t f . For man y p ractical p roblems, however, one is onl y interested in knowin g the state of a 
+s y stem at a discrete set of times t 2 ft 1 ; t 2 ; t 3 ; . . .g. These discrete times ma y , for exam p 
+le, corres p ond to the times at which the out p uts of a s y stem are sam p led ( such as the times at 
+which Piazzi recorded the direction to Ceres ) . For p roblems of this t yp e, it is convenient to order the 
+times t k accordin g to their inte g er subscri p ts:
+
+t 0 < t 1 < t 2 < Á Á Á t kÀ1 < t k < t k1 < Á Á Á :
+
+That is, the time se q uence is ordered accordin g to the subscri p ts, and the subscri p ts take on all 
+successive values in some ran g e of inte g ers. For p roblems of this t yp e, it suf®ces to de®ne the state 
+of the d y namic s y stem as a recursive relation,
+
+xt k1   f xt k ; t k ; t k1 ;
+
+2:4
+
+b y means of which the state is re p resented as a function of its p revious state. This is a de®nition of a 
+discrete d y namic s y stem. For s y stems with uni f orm time intervals Dt
+
+t k  kDt:
+
+Shorthand Notation for Discrete-Time Systems. It uses u p a lot of ink if one writes xt k  when all one 
+cares about is the se q uence of values of the state variable x. It is more ef®cient to shorten this to x k 
+, so lon g as it is understood that it stands for xt k , and not the kth com p onent of x. If one must talk 
+about a p articular com p onent at a p articular time, one can alwa y s resort to writin g x i t k  to 
+remove an y ambi g uit y . Otherwise, let us dro p t as a s y mbol whenever it is clear from the context 
+that we are talkin g about discrete-time s y stems.
+
+2.2.4 Time-Varying Systems and Time-Invariant Systems The term `` p h y sical p lant'' or `` p lant'' is 
+sometimes used in p lace of ``d y namic s y stem,'' es p eciall y for a pp lications in manufacturin g . In 
+man y such a pp lications, the d y namic s y stem under consideration is literall y a p h y sical p lantÐa 
+®xed facilit y used in the manufacture of materials. Althou g h the in p ut ut ma y be a function of time, 
+the functional de p endence of the state d y namics on u and x does not de p end u p on time. Such s y stems 
+are called time invariant or autonomous. Their solutions are g enerall y easier to obtain than those of 
+time-var y in g s y stems.
+
+2.3 CONTINUOUS LINEAR SYSTEMS AND THEIR SOLUTIONS
+
+2.3.1 Input±Output Models of Linear Dynamic Systems
+
+The block dia g ram in Fi g ure 2.1 re p resents a linear continuous s y stem with three t yp es of 
+variables:
+
+• In p uts, which are under our control, and therefore known to us, or at least measurable b y us. ( In the 
+next cha p ter, however, the y will be assumed to be known onl y statisticall y . That is, individual sam p 
+les of u are random but with known statistical p ro p erties. )
+
+• State variables, which were described in the p revious section. In most a pp lications, these are ``hidden 
+variables,'' in the sense that the y cannot g enerall y be measured directl y but must be somehow inferred 
+from what can be measured.
+
+• Out p uts, which are those thin g s that can be known throu g h measurements.
+
+These conce p ts are discussed in g reater detail in the followin g subsections.
+
+2.3.2 Dynamic Coef®cient Matrices and Input Coupling Matrices
+
+The d y namics of linear s y stems are re p resented b y a set of n ®rst-order linear differential e q 
+uations ex p ressible in vector form as
+
+d _ x t 
+
+xt dt  Ftxt  Ctut;
+
+2:5
+
+where the elements and com p onents of the matrices and vectors can be functions of time:
+
+2
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6
+
+4
+
+2
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6 4
+
+3
+
+Ft 
+
+Ct 
+
+f 11 t f 21 t f 31 t
+
+. .
+
+.
+
+f n1 t c 11 t c 21 t c 31 t
+
+. . .
+
+c n1 t
+
+f 12 t f 22 t f 32 t . . .
+
+f n2 t c 12 t c 22 t c 32 t
+
+. .
+
+.
+
+c n2 t
+
+f 13 t f 23 t f 33 t . . .
+
+f n3 t c 13 t c 23 t c 33 t
+
+ÁÁÁ ÁÁÁ ÁÁÁ . .
+
+.
+
+ÁÁÁ
+
+f 1n t f 2n t
+
+f 3n t
+
+. . .
+
+f nn t
+
+7
+
+7
+
+7
+
+7
+
+7
+
+;
+
+7
+
+7
+
+5
+
+3
+
+. .
+
+.
+
+c n3 t
+
+ÁÁÁ ÁÁÁ ÁÁÁ . .
+
+.
+
+ÁÁÁ
+
+c 1r t c 2r t c 3r t
+
+. . .
+
+c nr t
+
+7
+
+7
+
+7
+
+7
+
+7
+
+;
+
+7
+
+7 5
+
+ut  u 1 t
+
+u 2 t
+
+u 3 t
+
+ÁÁÁ
+
+u r t T :
+
+The matrix Ft is called the d y namic coe f® cient matrix, or sim p l y the d y namic matrix. Its elements 
+are called the d y namic coe f® cients. The matrix Ct is called the in p ut cou p lin g matrix, and its 
+elements are called in p ut cou p lin g coe f® cients. The r-vector u is called the in p ut vector.
+
+EXAMPLE 2.4: D y namic E q uation for a Heatin g /Coolin g S y stem Consider the tem p erature T in a heated 
+enclosed room or buildin g as the state variable of a d y namic s y stem. A sim p li®ed p lant model for 
+this d y namic s y stem is the linear e q uation
+
+_ Tt  Àkc 
+
+Tt À T o t  k h ut;
+
+where the constant ``coolin g coef®cient'' k c de p ends on the q ualit y of thermal insulation from the 
+outside, T o is the tem p erature outside, k h is the heatin g =coolin g rate coef®cient of the heater or 
+cooler, and u is an in p ut function that is either u  0 ( off ) or u  1 ( on ) and can be de®ned as a 
+function of an y measurable q uantities. The outside tem p erature T o , on the other hand, is an exam p le 
+of an in p ut function which ma y be directl y measurable at an y time but is not p redictable in the 
+future. It is effectivel y a random p rocess.
+
+2.3.3 Companion Form for Higher Order Derivatives
+
+In g eneral, the nth-order linear differential e q uation
+
+d n y t
+
+dt
+
+n
+
+t dnÀ1   f 1 t y dtnÀ1 
+
+d t  Á Á Á  f nÀ1 t y  dt fn 
+
+t y t  ut
+
+2:6
+
+can be rewritten as a s y stem of n ®rst-order differential e q uations. Althou g h the state variable re p 
+resentation as a ®rst-order s y stem is not uni q ue [ 56 ] , there is a uni q ue wa y of re p resentin g it 
+called the com p anion f orm.
+
+Companion Form of the State Vector. For the nth-order linear d y namic s y stem shown above, the com p anion 
+form of the state vector is
+
+
+
+d 2
+
+dt2 
+
+dnÀ1 
+
+dtnÀ1 
+
+ T
+
+d
+
+xt 
+
+y t;
+
+t; dt y
+
+y
+
+t;
+
+...;
+
+y
+
+t
+
+:
+
+2:7
+
+Companion Form of the Differential Equation. The nth-order linear differential e q uation can be rewritten 
+in terms of the above state vector xt as the vector differential e q uation
+
+2
+
+6 d 6 6 6 dt 6 4
+
+3
+
+7
+
+7
+
+7
+
+7
+
+7
+
+5
+
+2
+
+6
+
+6
+
+6
+
+6
+
+4
+
+3
+
+7
+
+7
+
+7
+
+7
+
+5
+
+2
+
+6
+
+6
+
+6
+
+6
+
+6
+
+4
+
+3
+
+7
+
+7
+
+7
+
+7
+
+7
+
+5
+
+x 1 t x 2 t . . .
+
+x nÀ1 t x n t
+
+ÁÁÁ ÁÁÁ . . .
+
+ÁÁÁ ÁÁÁ
+
+x 1 t x 2 t x 3 t . . .
+
+x n t
+
+2
+
+
+
+0 0 . . .
+
+0 À f n t
+
+1 0 . . .
+
+0 À f nÀ1 t
+
+0 1 . . .
+
+0 À f nÀ2 t
+
+0 0 . . .
+
+1 À f 1 t
+
+
+
+3 0 6 0 7 6 7 6 . . . 7 6 7 4 0 5
+
+1
+
+ut:
+
+2:8
+
+When E q uation 2.8 is com p ared with E q uation 2.5, the matrices Ft and Ct are easil y identi®ed.
+
+The Companion Form is Ill-conditioned. Althou g h it sim p li®es the relationshi p between hi g her order 
+linear differential e q uations and ®rst-order s y stems of differential e q uations, the com p anion matrix 
+is not recommended for im p lementation. Studies b y Kenne y and Lie p nik [ 185 ] have shown that it is p 
+oorl y conditioned for solvin g differential e q uations.
+
+2.3.4 Outputs and Measurement Sensitivity Matrices
+
+Measurable Outputs and Measurement Sensitivities. Onl y the in p uts and out p uts of the s y stem can be 
+measured, and it is usual p ractice to consider the variables z i as the measured values. For linear p 
+roblems, the y are related to the state variables and the in p uts b y a s y stem of linear e q uations that 
+can be re p resented in vector form as
+
+zt  Htxt  Dtut;
+
+2:9
+
+where
+
+zt  z 1 t
+
+z 2 t
+
+z 3 t
+
+ÁÁÁ
+
+z ` t T ;
+
+2
+
+6
+
+6 6
+
+6
+
+6
+
+6
+
+6
+
+4
+
+3
+
+h 11 t h 21 t
+
+h 31 t . . .
+
+h `1 t
+
+d 11 t d 21 t
+
+d 31 t . . .
+
+d `1 t
+
+Ht 
+
+Dt 
+
+h 12 t h 22 t h 32 t . . .
+
+h `2 t
+
+d 12 t d 22 t d 32 t . . .
+
+d `2 t
+
+h 13 t h 23 t h 33 t . . .
+
+h `3 t
+
+d 13 t d 23 t d 33 t . . .
+
+d `3 t
+
+ÁÁÁ ÁÁÁ ÁÁÁ . .
+
+.
+
+ÁÁÁ
+
+h 1n t h 2n t h 3n t
+
+. . .
+
+h `n t
+
+d 1r t d 2r t
+
+d 3r t . . .
+
+d `r t
+
+7
+
+7 7
+
+7
+
+7
+
+;
+
+7
+
+7
+
+5
+
+2
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6
+
+4
+
+3
+
+ÁÁÁ ÁÁÁ ÁÁÁ . .
+
+.
+
+ÁÁÁ
+
+7
+
+7
+
+7
+
+7
+
+7
+
+7
+
+7
+
+5
+
+:
+
+The `-vector zt is called the measurement vector, or the out p ut vector of the s y stem. The coef®cient h 
+i j t re p resents the sensitivit y ( measurement sensor scale factor ) of the ith measured out p ut to the 
+j th internal state. The matrix Ht of these values is called the measurement sensitivit y matrix, and Dt 
+is called the in p ut± out p ut cou p lin g matrix. The measurement sensitivities h i j t and in p ut=out p 
+ut
+
+cou p lin g coef®cients d i j t; 1 i `; 1 j r, are known functions of time. The state e q uation 2.5 and 
+the out p ut e q uation 2.9 to g ether form the d y namic e q uations of the s y stem shown in Fi g ure 2.1.
+
+2.3.5 Difference Equations and State Transition Matrices (STMs)
+
+Di ff erence e q uations are the discrete-time versions of differential e q uations. The y are usuall y 
+written in terms of f orward di ff erences xt k1  À xt k  of the state variable ( the de p endent variable 
+) , ex p ressed as a function c of all inde p endent variables or of the forward value xt k1  as a function 
+f of all inde p endent variables ( includin g the p revious value as an inde p endent variable ) :
+
+xt k1  À xt k   ct k ; xt k ; ut k ;
+
+or
+
+xt k1   ft k ; xt k ; ut k ;
+
+ft k ; xt k ; ut k   xt k   ct k ; xt k ; ut k :
+
+2:10
+
+The second of these ( E q uation 2.10 ) has the same g eneral form of the recursive relation shown in E q 
+uation 2.4, which is the one that is usuall y im p lemented for discrete-time s y stems.
+
+For linear d y namic s y stems, the functional de p endence of xt k1  on xt k  and ut k  can be re p 
+resented b y matrices:
+
+xt k1  À xt k   Ct k xt k   Ct k ut k ; F k  I  Ct k ; where the matrices C and F re p lace the 
+functions c and f, res p ectivel y . The matrix F is called the state transition matrix ( STM ) . The matrix 
+c is called the discrete-time in p ut cou p lin g matrix, or sim p l y the in p ut cou p lin g matrixÐif the 
+discrete-time context is alread y established.
+
+x k1  F k x k  C k u k ;
+
+2:11
+
+2.3.6 Solving Differential Equations for STMs
+
+A state transition matrix is a solution of what is called the ``homo g eneous'' 3 matrix e q uation 
+associated with a g iven linear d y namic s y stem. Let us de®ne ®rst what homo g eneous e q uations are, 
+and then show how their solutions are related to the solutions of a g iven linear d y namic s y stem.
+
+_ Homogeneous Systems. The e q uation x t  Ftxt is called the homo g e_ neous p art of the linear 
+differential e q uation x t  Ftxt  Ctut. The solution of the homo g eneous p art can be obtained more 
+easil y than that of the full e q uation, and its solution is used to de®ne the solution to the g eneral ( 
+nonhomo g eneous ) linear e q uation.
+
+3
+
+This terminolo gy comes from the notion that ever y term in the ex p ression so labeled contains the de p 
+endent variable. That is, the ex p ression is homo g eneous with res p ect to the de p endent variable.
+
+Fundamental Solutions of Homogeneous Equations. An n Â n matrixvalued function Ft is called a f undamental 
+solution of the homo g eneous e q uation _ _ x t  Ftxt on the interval t 2 0; T if Ft  FtFt and F0  I 
+n , the n Â n identit y matrix. Note that, for an y p ossible initial vector x0, the vector xt  Ftx0 
+satis®es the e q uation
+
+d _ Ftx0 x t  dt   d • x0 Ft dt
+
+ FtFtx0  FtFtx0  Ftxt:
+
+2:12 2:13 2:14 2:15 2:16
+
+_ That is, xt  Ftx0 is the solution of the homo g eneous e q uation x  Fx with initial value x0.
+
+EXAMPLE 2.5
+
+The unit u pp er trian g ular Toe p litz matrix
+
+2
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6 6
+
+6
+
+6
+
+6
+
+6
+
+4
+
+1
+
+1
+
+1
+
+3
+
+Ft 
+
+ÁÁÁ t n À 1! 1 t 0 1 t 2 ÁÁÁ n À 2! 1 t 0 0 1 t ÁÁÁ n À 3! 1 t 0 0 0 1 ÁÁÁ n À 4! . . . . . . . . . . . 
+.
+
+2
+
+3
+
+1
+
+nÀ1
+
+t
+
+t 2
+
+t 1Á2Á 3 1 t 2
+
+7 7 7 7 7 7 nÀ3 7
+
+nÀ2
+
+7 7 7 nÀ4 7
+
+7
+
+7
+
+7
+
+. . . . . .
+
+5
+
+0 0 0 0 ÁÁÁ 1 _ is the fundamental solution of x  Fx for the strictl y u pp er trian g ular Toe p litz d y 
+namic coef®cient matrix
+
+2
+
+0 6 0 6 6 . . . 6 4 0
+
+F
+
+1 0 . . .
+
+0 1 . . .
+
+3 ÁÁÁ 0 ÁÁÁ 0 7 7 . . . . . . 7
+
+7 ; 0 0 ÁÁÁ 1 5 0 0 0 ÁÁÁ 0 _ which can be veri®ed b y showin g that F0  I and F  FF. This d y namic 
+coef®cient matrix, in turn, is the com p anion matrix for the nth-order linear homo g eneous differential e 
+q uation  d=dt  n y t  0.
+
+Existence and Nonsingularity of Fundamental Solutions. If the elements of the matrix Ft are continuous 
+functions on some interval 0 t T, then the fundamental solution matrix Ft is g uaranteed to exist and to be 
+nonsin g ular on an interval 0 t 4 t for some t > 0. These conditions also g uarantee that Ft will be 
+nonsin g ular on some interval of nonzero len g th, as a conse q uence of the continuous de p endence of the 
+solution Ft of the matrix e q uation on its ( nonsin g ular ) initial conditions [ F0  I ] [ 57 ] .
+
+State Transition Matrices. Note that the fundamental solution matrix Ft transforms an y initial state x0 
+of the d y namic s y stem to the corres p ondin g state xt at time t. If Ft is nonsin g ular, then the p 
+roducts F À1 txt  x0 and FtF À1 txt  xt. That is, the matrix p roduct
+
+Ft; t  FtF À1 t
+
+2:17
+
+transforms a solution from time t to the corres p ondin g solution at time t, as dia g rammed in Fi g ure 
+2.2. Such a matrix is called the state transition matrix 4 for the associated linear homo g eneous 
+differential e q uation. The state transition matrix Ft; t re p resents the transition to the state at time 
+t from the state at time t.
+
+Properties of STMs and Fundamental Solution Matrices. The same s y mbol ( F ) has been used for f undamental 
+solution matrices and for state transition matrices, the distinction bein g made b y the number of ar g 
+uments. B y convention, then,
+
+Ft; 0  Ft:
+
+Other useful p ro p erties of F include the followin g :
+
+1. Ft; t  F0  I,
+
+2. F À1 t; t  Ft; t,
+
+3. Ft; sFs; t  Ft; t,
+
+4. @=@tFt; t  FtFt; t,
+
+Formall y , an o p erator Ft; t 0 ; xt 0  such that xt  Ft; t 0 ; xt 0  is called an evolution o p 
+erator for a d y namic s y stem with state x. A state transition matrix is a linear evolution o p erator.
+
+and
+
+5. @=@tFt; t  ÀFt; tFt.
+
+EXAMPLE 2.6: Fundamental Solution Matrix for the Underdam p ed Harmonic Resonator The g eneral solution o f 
+the di ff erential e q uation. In Exam p les 2.2 and 2.3, the dis p lacement d of the dam p ed harmonic 
+resonator was modeled b y the state e q uation
+
+"
+
+#
+
+d
+
+x 
+
+_ x  Fx;
+
+_ d
+
+;
+
+2
+
+4
+
+F
+
+0
+
+k À s
+
+m
+
+1
+
+3 5 :
+
+kd  À m
+
+The characteristic values of the d y namic coef®cient matrix F are the roots of its characteristic p ol y 
+nomial
+
+k k s l  ; detlI À F  l 2  d m m
+
+which is a q uadratic p ol y nomial with roots
+
+r !
+
+1 l1  2
+
+1 l2  2
+
+k d
+
+À  m
+
+k d
+
+À
+
+À m
+
+k 2 d 4k À s ; m 2 m r !
+
+k 2 d 4k À s : m 2 m
+
+The g eneral solution for the dis p lacement d can then be written in the form
+
+dt  ae l 1 t  be l 2 t ;
+
+where a and b are (p ossibl y com p lex ) free variables.
+
+The underdam p ed solution. The resonator is considered underdam p ed if the
+
+discriminant
+
+4k k 2 d À s < 0; m 2 m
+
+in which case the roots are a con j u g ate p air of nonreal com p lex numbers and the g eneral solution can 
+be rewritten in ``real form'' as
+
+dt  ae Àt=t cosot  be Àt=t sinot;
+
+2m t ;
+
+k d
+
+o
+
+r k s k 2 d À m 4m 2
+
+;
+
+where a and b are now real variables, t is the deca y time constant, and o is the resonator resonant fre q 
+uenc y . This solution can be ex p ressed in state-s p ace form in terms of the real variables a and b:
+
+
+
+
+
+2
+
+4
+
+3
+
+5
+
+cosot
+
+cosot À À o sinot t
+
+sinot
+
+sinot o cosot À t
+
+"
+
+#
+
+dt
+
+_ dt
+
+ eÀt=t 
+
+a
+
+:
+
+b
+
+Initial value constraints. The initial values
+
+d0  a;
+
+_ a d0  À
+
+ ob t
+
+can be solved for a and b as
+
+
+
+a
+
+b
+
+
+
+2 1 • 4 1
+
+0
+
+1
+
+o
+
+3  5 d0 _ d0
+
+
+
+:
+
+ot
+
+This can then be combined with the solution for xt in terms of a and b to y ield the fundamental solution
+
+xt
+
+ Ftx0;
+
+"
+
+#
+
+eÀt=t  Ft  ot2 
+
+tot cosot  sinot
+
+À1  o 2 t sinot
+
+t 2 sinot
+
+Àot cosot  sinot
+
+in terms of the dam p in g time constant and the resonant fre q uenc y .
+
+2.3.7 Solution of Nonhomogeneous Equations
+
+The solution of the nonhomo g eneous state e q uation 2.5 is g iven b y
+
+ t
+
+xt  Ft; t 0 xt 0   Ft; tCtut dt
+
+t 0  t  FtF À1 t 0 xt 0   Ft F À1 tCtut dt;
+
+2:18 2:19
+
+t 0
+
+where xt 0 • is the initial value and Ft; t 0  is the state transition matrix of the d y namic s y stem 
+de®ned b y Ft. ( This can be veri®ed b y takin g derivatives and usin g the p ro p erties of STMs g iven 
+above. )
+
+2.3.8 Closed-Form Solutions of Time-Invariant Systems
+
+In this case, the coef®cient matrix F is a constant function of time. The solution will still be a function 
+of time, but the associated state transition matrices Ft; t will onl y de p end on the differences t À t. 
+In fact, one can show that
+
+Ft; t  e FtÀt
+
+1 t À ti  P  Fi ; i0 i!
+
+2:20 2:21
+
+where F 0  I, b y de®nition. The solution of the nonhomo g eneous e q uation in this case will be
+
+ t
+
+xt  e FtÀt xt 
+
+e FtÀs Cus ds  t
+
+t  e FtÀt xt  eFt 
+
+e ÀFs Cus ds:
+
+2:22 2:23
+
+t
+
+The followin g methods have been used for com p utin g matrix ex p onentials:
+
+1. The a pp roximation of e Ft b y a truncated p ower series ex p ansion is not a recommended g eneral- p ur 
+p ose method, but it is useful if the characteristic values of Ft are well inside the unit circle in the com 
+p lex p lane.
+
+2. Ft  e Ft  l À1 sI À F À1 ; t ! 0, where I is an n Â n identit y matrix, lÀ1  is the inverse La p lacian 
+o p erator, and s is the La p lace transform variable.
+
+3. The ``scalin g and s q uarin g '' method combined with a Pade Â a pp roximation is the recommended g 
+eneral- p ur p ose method. This method is discussed in g reater detail in Section 2.6.
+
+4. Numerical inte g ration of the homo g eneous p art of the differential e q uation,
+
+d
+
+Ft  FFt; dt
+
+2:24
+
+with initial value F0  I. ( This method also works for time-var y in g s y stems. )
+
+There are man y other methods, 5 but these are the most im p ortant.
+
+EXAMPLE 2.7: Solution of the Dam p ed Harmonic Resonator Problem with Constant Drivin g Function Consider a 
+g ain the dam p ed resonator model of Exam p les 2.2, 2.3, and 2.6. The model can be written in the form of 
+a secondorder differential e q uation
+
+ dt  2zw n dt  wn 2 
+
+_
+
+dt  ut;
+
+where
+
+d  d2  dt  dt2 
+
+r k s
+
+_ dd dt  ; dt
+
+;
+
+k d z  p ; 2 mk s
+
+on 
+
+:
+
+m
+
+The p arameter z is a unitless dam p in g coef®cient and w n the ``natural'' ( i.e., undam p ed ) fre q uenc 
+y of the resonator. This second-order linear differential e q uation can be rewritten in a state-s p ace _ _ 
+form, with states x 1  d and x 2  d  x 1 and p arameters z and o n ; as
+
+
+
+x 1 t x 2 t
+
+
+
+
+
+0
+
+1
+
+
+
+x 1 t x 2 t
+
+
+
+
+
+
+
+d
+
+dt
+
+
+
+Àwn 2 
+
+À2zw n
+
+
+
+x 1 2 t  x t 0 0 
+
+
+
+0 ut 1
+
+with initial conditions
+
+
+
+:
+
+As a numerical exam p le, let
+
+ut  1;
+
+w
+
+n
+
+
+
+1;
+
+
+
+z  0:5;
+
+so that the coef®cient matrix
+
+
+
+F
+
+0 À1
+
+1 À1
+
+:
+
+5
+
+See, for exam p le, Brockett [ 56 ] , DeRusso et al. [ 59 ] , or Kreindler and Sarachik [ 189 ] .
+
+Therefore,
+
+"
+
+s 2  s 1
+
+À1
+
+s
+
+#
+
+sI À F 
+
+sI À F À1 
+
+;
+
+1
+
+s 1 " 1
+
+#
+
+s 1
+
+À1
+
+1
+
+s
+
+Ft  e Ft
+
+ l À1 sI À FÀ1  2 s 1 6 s 2  s  1  l À1 6 4 À1
+
+1
+
+s 2  s 1 s
+
+3
+
+7
+
+7
+
+5
+
+Àt=2
+
+2
+
+6
+
+6
+
+6
+
+4
+
+1
+
+2
+
+s 2  s 1 s 2  s 1     p p 1 p 1 1 3 cos 3t  3t sin 2 2 2
+
+
+
+p
+
+
+
+3
+
+1 sin 2
+
+3t
+
+2e  p 3
+
+
+
+p
+
+
+
+1
+
+2
+
+p
+
+
+
+p
+
+
+
+
+
+p
+
+7 7 :  7 5
+
+1 À sin 2
+
+3t
+
+1 3 cos 2
+
+3t
+
+1 1 À sin 2 2
+
+3t
+
+2.3.9 Time-Varying Systems If Ft is not constant, the d y namic s y stem is called time-var y in g . If Ft 
+is a
+
+p
+
+iecewise smooth function of t, the n Â n homo g eneous matrix differential e q uation
+
+2.24 can be solved numericall y b y the fourth-order Run g e±Kutta method. 6
+
+2.4 DISCRETE LINEAR SYSTEMS AND THEIR SOLUTIONS
+
+2.4.1 Discretized Linear Systems
+
+If one is onl y interested in the s y stem state at discrete times, then one can use the
+
+formula
+
+ t
+
+k
+
+xt k   Ft k ; t kÀ1 xt kÀ1  
+
+Ft k ; sCsus ds
+
+2:25
+
+t kÀ1
+
+to p ro p a g ate the state vector between the times of interest.
+
+6
+
+Named after the German mathematicians Karl David Tolme Run g e ( 1856±1927 ) and Wilhelm Martin Kutta ( 
+1867±1944 ) .
+
+Simpli®cation for Constant u. If u is constant over the interval t kÀ1 ; t k , then the above inte g ral can 
+be sim p li®ed to the form
+
+xt k   Ft k ; t kÀ1 xt kÀ1   Gt kÀ1 ut kÀ1   t k Gt kÀ1  
+
+Ftk 
+
+;
+
+sCs
+
+ds:
+
+2:26 2:27
+
+t kÀ1
+
+Shorthand Discrete-Time Notation. For discrete-time s y stems, the indices k in the time se q uence ft k g 
+characterize the times of interest. One can save some ink b y usin g the shorthand notation:
+
+def x k  xt k ;
+
+def z k  zt k ;
+
+def u k  ut k ;
+
+def H k  Ht k ;
+
+def G k  Gt k  for discrete-time s y stems, eliminatin g t entirel y . Usin g this notation, one can re p 
+resent the discrete-time state e q uations in the more com p act form
+
+def D k  Dt k ;
+
+def F kÀ1  Ft k ; t kÀ1 ;
+
+x k  F kÀ1 x kÀ1  G kÀ1 u kÀ1 ;
+
+z k  H k x k  D k uk 
+
+2:28 2:29
+
+2.4.2 Time-Invariant Systems
+
+For continuous time-invariant s y stems that have been discretized usin g ®xed time intervals, the matrices 
+F, G, H, and D are inde p endent of the discrete-time index as well. In that case, the solution can be 
+written in closed form as
+
+P x k  F k x 0  k À1 F kÀiÀ1 Gu i ;
+
+i0
+
+2:30
+
+where F k is the kth p ower of F. The matrix F k can also be com p uted as
+
+F k  z À1 zI À F À1 z; where z is the z-transform variable and z À1 is the inverse z-transform.
+
+2.5 OBSERVABILITY OF LINEAR DYNAMIC SYSTEM MODELS
+
+2:31
+
+Observabilit y is the issue of whether the state of a d y namic s y stem is uni q uel y determinable from 
+its in p uts and out p uts, g iven a model for the d y namic s y stem. It is essentiall y a p ro p ert y of 
+the g iven s y stem model. A g iven linear d y namic s y stem
+
+model with a g iven linear in p ut=out p ut model is considered observable if and onl y if its state is uni 
+q uel y determinable from the model de®nition, its in p uts, and its out p uts. If the s y stem state is not 
+uni q uel y determinable from the s y stem in p uts and out p uts, then the s y stem model is considered 
+unobservable.
+
+How to Determine Whether a Given Dynamic System Model Is Observable. If the measurement sensitivit y matrix 
+is invertible at an y ( continuous or discrete ) time, then the s y stem state can be uni q uel y determined 
+( b y invertin g it ) as x  H À1 z. In this case, the s y stem model is considered to be com p letel y 
+observable at that time. However, the s y stem can still be observable over a time interval even if H is not 
+invertible at an y time. In the latter case, the uni q ue solution for the s y stem state can be de®ned b y 
+usin g the least-s q uares methods of Cha p ter 1, includin g those of Sections 1.2.2 and 1.2.3. These use 
+the so-called Gramian matrix to characterize whether or not a vector variable is determinable from a g iven 
+linear model. When a pp lied to the p roblem of the determinac y of the state of a linear d y namic s y 
+stem, the Gramian matrix is called the observabilit y matrix of the g iven s y stem model.
+
+The observabilit y matrix for d y namic s y stem models in continuous time has the form
+
+ t
+
+f
+
+oH; F; t 0 ; t f  
+
+F T tH T tHtFt dt
+
+2:32
+
+t 0
+
+for a linear d y namic s y stem with fundamental solution matrix Ft and measurement sensitivit y matrix H
+t, de®ned over the continuous-time interval t 0 t t f . Note that this de p ends on the interval over which 
+the in p uts and out p uts are observed but not on the in p uts and out p uts p er se. In fact, the 
+observabilit y matrix of a d y namic s y stem model does not de p end on the in p uts u, the in p ut cou p 
+lin g matrix C, or the in p ut±out p ut cou p lin g matrix DÐeven thou g h the out p uts and the state 
+vector de p end on them. Because the fundamental solution matrix F de p ends onl y on the d y namic 
+coef®cient matrix F, the observabilit y matrix de p ends onl y on H and F.
+
+The observabilit y matrix of a linear d y namic s y stem model over a discrete-time interval t 0 t t k f has 
+the g eneral form
+
+(   T   ) P k f kÀ1 kÀ1 Q Q oH k ; F k ; 1 k k f   F kÀi H k T H k F kÀi ;
+
+2:33
+
+k1
+
+i0
+
+i0
+
+where H k is the observabilit y matrix at time t k and F k is the state transition matrix from time t k to 
+time t k1 for 0 k k f . Therefore, the observabilit y of discrete-time s y stem models de p ends onl y on 
+the values of H k and F k over this interval. As in the continuous-time case, observabilit y does not de p 
+end on the s y stem in p uts.
+
+The derivations of these formulas are left as exercises for the reader.
+
+2.5.1 Observability of Time-Invariant Systems
+
+The formulas de®nin g observabilit y are sim p ler when the d y namic coef®cient matrices or state 
+transition matrices of the d y namic s y stem model are time invariant. In that case, observabilit y can be 
+characterized b y the rank of the matrices
+
+M  HT 
+
+FT HT 
+
+F T  2 HT 
+
+F T  2 HT 
+
+ÁÁÁ
+
+ÁÁÁ
+
+F T  nÀ1 H T 
+
+F T  nÀ1 H T 
+
+2:34
+
+for discrete-time s y stems and
+
+M  HT 
+
+F T H T
+
+2:35
+
+for continuous-time s y stems. The s y stems are observable if these have rank n, the dimension of the s y 
+stem state vector. The ®rst of these matrices can be obtained b y re p resentin g the initial state of the 
+linear d y namic s y stem as a function of the s y stem in p uts and out p uts. The initial state can then 
+be shown to be uni q uel y determinable if and onl y if the rank condition is met. The derivation of the 
+latter matrix is not as strai g htforward. O g ata [ 38 ] p resents a derivation obtained b y usin g p ro p 
+erties of the characteristic p ol y nomial of F.
+
+Practicality of the Formal De®nition of Observability. Sin g ularit y of the observabilit y matrix is a 
+concise mathematical characterization of observabilit y . This can be too ®ne a distinction for p ractical a 
+pp licationÐes p eciall y in ®nite- p recision arithmeticÐbecause arbitraril y small chan g es in the 
+elements of a sin g ular matrix can render it nonsin g ular. The followin g p ractical considerations should 
+be ke p t in mind when a pp l y in g the formal de®nition of observabilit y :
+
+• It is im p ortant to remember that the model is onl y an a pp roximation to a real s y stem, and we are p 
+rimaril y interested in the p ro p erties of the real s y stem, not the model. Differences between the real 
+s y stem and the model are called model truncation errors. The art of s y stem modelin g de p ends on knowin 
+g where to truncate, but there will almost surel y be some truncation error in an y model.
+
+• Com p utation of the observabilit y matrix is sub j ect to model truncation errors and roundo ff errors, 
+which could make the difference between sin g ularit y and nonsin g ularit y of the result. Even if the com 
+p uted observabilit y matrix is close to bein g sin g ular, it is cause for concern. One should consider a s 
+y stem as p oorl y observable if its observabilit y matrix is close to bein g sin g ular. For that p ur p 
+ose, one can use the sin g ular-value decom p osition or the condition number of the observabilit y matrix 
+to de®ne a more q uantitative measure of unobservabilit y . The reci p rocal of its condition number 
+measures how close the s y stem is to bein g unobservable.
+
+• Real s y stems tend to have some amount of un p redictabilit y in their behavior, due to unknown or ne g 
+lected exo g enous in p uts. Althou g h such effects cannot be modeled deterministicall y , the y are not 
+alwa y s ne g li g ible. Furthermore, the p rocess of measurin g the out p uts with p h y sical sensors 
+introduces some
+
+amount of sensor noise, which will cause errors in the estimated state. It would be better to have a q 
+uantitative characterization of observabilit y that takes these t yp es of uncertainties into account. An a 
+pp roach to these issues (p ursued in Cha p ter 4 ) uses a statistical characterization of observabilit y , 
+based on a statistical model of the uncertainties in the measured s y stem out p uts and the s y stem d y 
+namics. The de g ree of uncertaint y in the estimated values of the s y stem states can be characterized b y 
+an in f ormation matrix, which is a statistical g eneralization of the observabilit y matrix.
+
+EXAMPLE 2.8
+
+Consider the followin g continuous s y stem:
+
+"
+
+#
+
+"
+
+The observabilit y matrix, usin g E q uation 2.35, is
+
+#
+
+0
+
+_ x t  0 zt   1
+
+
+
+1
+
+0
+
+xt  0 0 xt:
+
+
+
+ut;
+
+1
+
+M
+
+1
+
+0
+
+0 ; 1
+
+rank of M  2:
+
+Here, M has rank e q ual to the dimension of xt. Therefore, the s y stem is observable.
+
+EXAMPLE 2.9
+
+Consider the followin g continuous s y stem:
+
+"
+
+#
+
+"
+
+The observabilit y matrix, usin g E q uation 2.35, is
+
+#
+
+0
+
+0
+
+1
+
+0
+
+_ x t  zt  0
+
+xt  0 1xt:
+
+ut;
+
+1
+
+
+
+
+
+M
+
+0
+
+1
+
+0 ; 1
+
+rank of M  1:
+
+Here, M has rank less than the dimension of xt. Therefore, the s y stem is not observable.
+
+EXAMPLE 2.10
+
+Consider the followin g discrete s y stem:
+
+6 7 6 7 x k  4 6 0 0 0 5 7 x kÀ1  4 6 1 5 7 u kÀ1 ;
+
+2
+
+3
+
+2
+
+3
+
+0
+
+1
+
+0
+
+1
+
+0
+
+0
+
+1
+
+0
+
+z k  0
+
+0
+
+1x k :
+
+The observabilit y matrix, usin g E q uation 2.34, is
+
+2
+
+4
+
+M
+
+0
+
+0
+
+1
+
+1
+
+1
+
+0
+
+0
+
+0
+
+0
+
+3 5 ;
+
+rank of M  2:
+
+The rank is less than the dimension of x k . Therefore, the s y stem is not observable.
+
+EXAMPLE 2.11
+
+Consider the followin g discrete s y stem:
+
+" # " # 1 À1 2 x k  x kÀ1  u kÀ1 ; 1 1 1
+
+"
+
+#
+
+1
+
+À1
+
+0
+
+z k 
+
+x k :
+
+1
+
+The observabilit y matrix, usin g E q uation 2.34, is
+
+
+
+
+
+M
+
+1
+
+0
+
+À1 ; 1
+
+rank of M  2
+
+The s y stem is observable.
+
+2.5.2 Controllability of Time-Invariant Linear Systems
+
+Controllability in Continuous Time. The conce p t of observabilit y in estimation theor y has al g ebraic 
+relationshi p s to the conce p t of controllabilit y in control theor y . These conce p ts and their 
+relationshi p s were discovered b y R. E. Kalman as what he called the dualit y and se p arabilit y of the 
+estimation and control p roblems for linear d y namic s y stems. Kalman's 7 dual conce p ts are p resented 
+here and in the next subsection, althou g h the y are not issues for the estimation p roblem.
+
+7
+
+The dual relationshi p s between estimation and control g iven here are those ori g inall y de®ned b y 
+Kalman. These conce p ts have been re®ned and extended b y later investi g ators to include conce p ts of 
+reachabilit y and reconstructibilit y as well. The interested reader is referred to the more recent 
+textbooks on ``modern'' control theor y for further ex p osition of these other ``-ilities.''
+
+A d y namic s y stem de®ned on the ®nite interval t 0
+
+t
+
+t f b y the linear model
+
+_ x t  Fxt  Cut;
+
+zt  Hxt  Dut
+
+2:36
+
+and with initial state vector xt 0  is said to be controllable at time t  t 0 if, for an y desired ®nal 
+state xt f , there exists a p iecewise continuous in p ut function ut that drives to state xt f . If ever 
+y initial state of the s y stem is controllable in some ®nite time interval, then the s y stem is said to be 
+controllable.
+
+The s y stem g iven in E q uation 2.36 is controllable if and onl y if matrix S has n linearl y inde p 
+endent columns,
+
+S
+
+ C
+
+FC
+
+F 2
+
+C
+
+ÁÁÁ
+
+F nÀ1
+
+C:
+
+2:37
+
+Controllability in Discrete Time. Consider the time-invariant s y stem model g iven b y the e q uations
+
+x k  Fx kÀ1  Gu kÀ1 ;
+
+z k  Hx k  Du k :
+
+2:38 2:39
+
+This s y stem model is considered controllable 8 if there exists a set of control si g nals u k de®ned over 
+the discrete interval 0 k N that brin g the s y stem from an initial state x 0 to a g iven ®nal state x N in 
+N sam p lin g instants, where N is a ®nite p ositive inte g er. This condition can be shown to be e q 
+uivalent to the matrix
+
+S  G
+
+FG
+
+F2 G
+
+ÁÁÁ
+
+F NÀ1 G
+
+2:40
+
+havin g rank n:
+
+EXAMPLE 2.12 Determine the controllabilit y of Exam p le 2.8. The controllabilit y matrix, usin g E q uation 
+2.37, is
+
+  1 0 S  ; rank of S  2:
+
+1 0
+
+Here, S has rank e q ual to the dimension of xt. Therefore, the s y stem is controllable.
+
+EXAMPLE 2.13 Determine the controllabilit y of Exam p le 2.10. The controllabilit y matrix, usin g E q 
+uation 2.40, is 2 3 1 0 0 S • 4 1 0 0 5 ; rank of S  2: 0 2 0
+
+The s y stem is not controllable.
+
+8
+
+This condition is also called reachabilit y , with controllabilit y restricted to x N  0.
+
+2.6 PROCEDURES FOR COMPUTING MATRIX EXPONENTIALS
+
+In a 1978 j ournal article titled ``Nineteen dubious wa y s to com p ute the ex p onential of a matrix'' [ 
+205 ] , Moler and Van Loan re p orted their evaluations of methods for com p utin g matrix ex p onentials. 
+Man y of the methods tested had serious shortcomin g s, and no method was considered universall y su p 
+erior. The one p resented here was recommended as bein g more reliable than most. It combines several ideas 
+due to Ward [ 233 ] , includin g settin g the al g orithm p arameters to meet a p res p eci®ed error bound. 
+It combines Pade Â a pp roximation with a techni q ue called ``scalin g and s q uarin g '' to maintain a pp 
+roximation errors within p res p eci®ed bounds.
+
+2.6.1 Pade Â Approximation of the Matrix Exponential
+
+Pade Â approximations. These a pp roximations of functions b y rational functions 9 ( ratios of p ol y 
+nomials ) date from a 1892 p ublication [ 206 ] b y H. Pade Â . The y have been used in derivin g solutions 
+of differential e q uations, includin g Riccati e q uations 10 [ 69 ] . The y can also be a pp lied to 
+functions of matrices, includin g the matrix ex p onential. In the matrix case, the p ower series is a pp 
+roximated as a ``matrix fraction'' of the form d À1 n, with the numerator matrix ( n ) and denominator 
+matrix ( d ) re p resented as p ol y nomials with matrix ar g uments. The ``order'' of the Pade Â a pp 
+roximation is two dimensional. It de p ends on the orders of the p ol y nomials in the numerator and 
+denominator of the rational function. The Ta y lor series is the s p ecial case in which the order of the 
+denominator p ol y nomial of the Pade Â a pp roximation is zero. Like the Ta y lor series a pp roximation, 
+the Pade Â a pp roximation tends to work best for small values of its ar g ument. For matrix ar g uments, it 
+will be some matrix norm of the ar g ument that will be re q uired to be small.
+
+Pade Â approximation of exponential function. The ex p onential function with ar g ument z has the p ower 
+series ex p ansion
+
+1 P e z  k0
+
+1
+
+zk  k!
+
+:
+
+The p ol y nomials n z and d q z such that p
+
+p P n z  a k z k ; p
+
+k0
+
+q P d q z  b k z k ;
+
+k0
+
+1 P
+
+e z d q z À n z  p
+
+c k z k
+
+k p  q 1
+
+9
+
+Pronounced p ah-DAY..
+
+10 The order of the numerator and denominator of the matrix fraction are reversed here from the order used
+
+in linearizin g the Riccati e q uation in Cha p ter 4.
+
+are the numerator and denominator p ol y nomials, res p ectivel y , of the Pade Â a pp roximation of e z . 
+The ke y feature of the last e q uation is that there are no terms of order p  q on the ri g ht-hand side. 
+This constraint is suf®cient to determine the coef®cients a k and b k of the p ol y nomial a pp roximants, 
+exce p t for a common constant factor. The solution ( within a common constant factor ) will be [ 69 ]
+
+!  À k! a k  p p q ; k! p À k!
+
+À1k  ! p  q À k! b k  q k! q À k!
+
+:
+
+Application to Matrix Exponential. The above formulas ma y be a pp lied to p ol y nomials with scalar 
+coef®cients and s q uare matrix ar g uments. For an y n Â n matrix X,
+
+
+
+q P q ! i0
+
+ p  q À i!
+
+ À1 
+
+
+
+fpq 
+
+X 
+
+ÀXi  i! q À i!
+
+p P p ! i0
+
+ p  q À i!
+
+X i! p À i!
+
+i
+
+% e X
+
+is the Pade Â a pp roximation of e X of order  p ; q .
+
+Bounding Relative Approximation Error. The bound g iven here is from Moler and Van Loan [ 205 ] . It uses 
+the 1-norm of a matrix, which can be com p uted 11 as
+
+!
+
+kXk 1  max
+
+1 i n
+
+n P j 1
+
+jx i j j
+
+for an y n Â n matrix X with elements x i j . The relative a pp roximation error is de®ned as the ratio of 
+the matrix 1-norm of the a pp roximation error to the matrix 1-norm of the ri g ht answer. The relative Pade 
+Â a pp roximation error is derived as an anal y tical function of X in Moler and Van Loan [ 205 ] . It is 
+shown in Golub and Van Loan [ 89 ] that it satis®es the ine q ualit y bound
+
+k f pq X À e X k1  e p ; q ; Xe e p ; q ;X ; ke X k1 
+
+p
+
+! q !2 3À p À q
+
+e p ; q ; X 
+
+kXk1   p  q ! p  q  1!
+
+:
+
+Note that this bound de p ends onl y on the sum p  q . In that case, the com p utational com p lexit y of 
+the Pade Â a pp roximation for a g iven error tolerance is minimized when p  q , that is, if the numerator 
+and denominator p ol y nomials have the same order.
+
+11 This formula is not the de®nition of the 1-norm of a matrix, which is de®ned in A pp endix B. However, it 
+is a conse q uence of the de®nition, and it can be used for com p utin g it.
+
+Bounding the Argument. The p roblem with the Pade Â a pp roximation is that the error bound g rows ex p 
+onentiall y with the norm kXk 1 . Ward [ 233 ] combined scalin g ( to reduce kXk 1 and the Pade Â a pp 
+roximation error ) with s q uarin g ( to rescale the answer ) to obtain an a pp roximation with a p 
+redetermined error bound. In essence, one chooses the p ol y nomial order to achieve the g iven bound.
+
+2.6.2 Scaling and Squaring
+
+Note that, for an y nonne g ative inte g er N,
+
+e X  e 2 ÀN X 2 N 
+
+ fÁ Á Á e 2 ÀN X Á Á Á 2  2 g 2 : |{z}
+
+N s q uarin g s
+
+Conse q uentl y , X can be ``downscaled'' b y 2 ÀN to obtain a g ood Pade Â a pp roximation of e 2 ÀN X , 
+then ``u p scaled'' a g ain ( b y N s q uarin g s ) to obtain a g ood a pp roximation to e X .
+
+2.6.3 MATLAB Implementations
+
+The built-in MATLAB function ex p m ( M ) is essentiall y the one recommended b y Moler and Van Loan [ 205 ] 
+, as im p lemented b y Golub and Van Loan [ 89, Al g orithm 11.3.1, p a g e 558 ] . It combines scalin g and 
+s q uarin g with a Pade Â a pp roximation for the ex p onential of the scaled matrix, and it is desi g ned 
+to achieve a s p eci®ed tolerance of the a pp roximation error. The MATLAB m-®le ex p m1.m ( Section A.4 ) 
+is a scri p t im p lementation of ex p m.
+
+MATLAB also includes the functions ex p m2 ( Ta y lor series a pp roximation ) and ex p m3 ( alternative im 
+p lementation usin g ei g envalue±ei g envector decom p ositions ) , which can be used to test the relative 
+accuracies and s p eeds relative to ex p m of these alternative im p lementations of the matrix ex p 
+onential function.
+
+2.7 SUMMARY
+
+Systems and Processes. A s y stem is a collection of interrelated ob j ects treated as a whole for the p ur 
+p ose of modelin g its behavior. It is called d y namic if attributes of interest are chan g in g with time. 
+A p rocess is the evolution over time of a s y stem.
+
+Continuous and Discrete Time. Althou g h it is sometimes convenient to model time as a continuum, it is 
+often more p ractical to consider it as takin g on discrete values. ( Most clocks, for exam p le, advance in 
+discrete time ste p s. )
+
+State Variables and Vectors. The state of a d y namic s y stem at a g iven instant of time is characterized 
+b y the instantaneous values of its attributes of interest. For
+
+the p roblems of interest in this book, the attributes of interest can be characterized b y real numbers, 
+such as the electric p otentials, tem p eratures, or p ositions of its com p onent p artsÐin a pp ro p riate 
+units. A state variable of a s y stem is the associated real number. The state vector of a s y stem has 
+state variables as its com p onent elements. The s y stem is considered closed if the future state of the s 
+y stem for all time is uni q uel y determined b y its current state. For exam p le, ne g lectin g the g 
+ravit y ®elds from other massive bodies in the universe, the solar s y stem could be considered as a closed 
+s y stem. If a d y namic s y stem is not closed, then the exo g enous causes are called ``in p uts'' to the 
+s y stem. This state vector of a s y stem must be com p lete in the sense that the future state of the s y 
+stem is uni q uel y determined b y its current state and its f uture in p uts. 12 In order to obtain a com p 
+lete state vector for a s y stem, one can extend the state variable com p onents to include derivatives of 
+other state variables. This allows one to use velocit y ( the derivative of p osition ) or acceleration ( 
+the derivative of velocit y) as state variables, for exam p le.
+
+State-Space Models for Dynamic Systems. In order that the future state of a s y stem ma y be determinable 
+from its current state and future in p uts, the d y namical behavior of each state variable of the s y stem 
+must be a known function of the instantaneous values of other state variables and the s y stem in p uts. In 
+the canonical exam p le of our solar s y stem, for instance, the acceleration of each bod y is a known 
+function of the relative p ositions of the other bodies. The state-s p ace model for a d y namic s y stem re 
+p resents these functional de p endencies in terms of ®rst-order di ff erential e q uations ( in continuous 
+time ) or di ff erence e q uations ( in discrete time ) . The differential or difference e q uations re p 
+resentin g the behavior of a d y namic s y stem are called its state e q uations. If these can be re p 
+resented b y linear functions, then it is called a linear d y namic s y stem.
+
+Linear Dynamic System Models. The model for a linear d y namic s y stem in continuous time can be ex p 
+ressed in g eneral form as a ®rst-order vector differential e q uation
+
+d
+
+xt  Ftxt  Ctut; dt
+
+where xt is the n-dimensional s y stem state vector at time t, Ft is its n Â n d y namic coe f® cient 
+matrix, ut is the r-dimensional s y stem in p ut vector, and Ct is
+
+the n Â r in p ut cou p lin g matrix. The corres p ondin g model for a linear d y namic s y stem in discrete 
+time can be ex p ressed in the g eneral form
+
+x k  F kÀ1 x kÀ1  G kÀ1 u kÀ1 ;
+
+12
+
+This conce p t in the state-s p ace a pp roach will be g eneralized in the next cha p ter to the ``state of 
+knowled g e'' about a s y stem, characterized b y the p robabilit y distribution of its state variables. 
+That is, the f uture p robabilit y distribution of the s y stem state variables will be uni q uel y 
+determined b y their p resent p robabilit y distribution and the p robabilit y distributions of f uture in p 
+uts.
+
+where x kÀ1 is the n-dimensional s y stem state vector at time t kÀ1 , x k is its value a time t k > t kÀ1 , 
+F kÀ1 is the n Â n state transition matrix for the s y stem at time t k , u k is the in p ut vector to the s 
+y stem a time t k , and G k is the corres p ondin g in p ut cou p lin g matrix.
+
+Time-Varying and Time-Invariant Dynamic Systems. If F and C ( or F and C ) do not de p end u p on t ( or k ) 
+, then the continuous ( or discrete ) model is called time invariant. Otherwise, the model is time-var y in 
+g .
+
+Homogeneous Systems and Fundamental Solution Matrices. The e q uation
+
+d
+
+xt  Ftxt dt
+
+is called the homo g eneous p art of the model e q uation
+
+d
+
+xt  Ftxt  Ctut: dt
+
+A solution Ft to the corres p ondin g n Â n matrix e q uation
+
+d
+
+Ft  FtFt dt
+
+on an interval startin g at time t  t 0 and with initial condition
+
+Ft 0   I
+
+(
+
+the identit y matrix )
+
+is called a f undamental solution matrix to the homo g eneous e q uation on that interval. It has the p ro p 
+ert y that, if the elements of Ft are bounded, then Ft cannot become sin g ular on a ®nite interval. 
+Furthermore, for an y initial value xt 0 ;
+
+xt  Ftxt 0 
+
+is the solution to the corres p ondin g homo g eneous e q uation.
+
+Fundamental Solution Matrices and State Transition Matrices. For a homo g enous s y stem, the state 
+transition matrix F kÀ1 from time t kÀ1 to time t k can be ex p ressed in terms of the fundamental solution 
+Ft as
+
+F kÀ1  Ft k F À1 t kÀ1 
+
+for times t k > t kÀ1 > t 0 .
+
+Transforming Continuous-Time Models to Discrete Time. The model for a d y namic s y stem in continuous time 
+can be transformed into a model in discrete time usin g the above formula for the state transition matrix 
+and the followin g formula for the e q uivalent discrete-time in p uts:
+
+ t
+
+k
+
+u kÀ1  ft k 
+
+F À1 tCtut dt:
+
+t kÀ1
+
+Linear System Output Models and Observability. An out p ut of a d y namic s y stem is somethin g we can 
+measure directl y , such as directions of the lines of si g ht to the p lanets ( viewin g conditions p 
+ermittin g) or the tem p erature at thermocou p le. A d y namic s y stem model is said to be observable from 
+a g iven set of out p uts if it is feasible to determine the state of the s y stem from those out p uts. If 
+the de p endence of an out p ut z on the s y stem state x is linear, it can be ex p ressed in the form
+
+z  Hx; where H is called the measurement sensitivit y matrix. It can be a function of continuous time [ Ht 
+] or discrete time ( H k ) . Observabilit y can be characterized b y the rank of an observabilit y matrix 
+associated with a g iven s y stem model. The observabilit y matrix is de®ned as
+
+8  t > > FT tH T tHtFt dt > > < t 0 " # o > > P m  i Q   i Q  T > > À1 F T H i T H i À1 F T : k k i0 k0 
+k0
+
+for continuous-time models,
+
+for discrete-time models.
+
+The s y stem is observable if and onl y if its observabilit y matrix has full rank ( n ) for some inte g er 
+m ! 0 or time t > t 0 . ( The test for observabilit y can be sim p li®ed for time-invariant s y stems. ) 
+Note that the determination of observabilit y de p ends on the ( continuous or discrete ) interval over 
+which the observabilit y matrix is determined.
+
+Reliable Numerical Approximation of Matrix Exponential. The closedform solution of a s y stem of ®rst-order 
+differential e q uations with constant coef®cients can be ex p ressed s y mbolicall y in terms of the ex p 
+onential function of a matrix, but the p roblem of numerical a pp roximation of the ex p onential function 
+of a matrix is notoriousl y ill-conditioned.
+
+PROBLEMS
+
+d t 2.1 What is a state vector model for the linear d y namic s y stem y  ut, dt ex p ressed in terms of y 
+? ( Assume the com p anion form of the d y namic coef®cient matrix. )
+
+2.2 What is the com p anion matrix for the nth-order differential e q uation d=dt n y t  0? What are its 
+dimensions?
+
+2.3 What is the com p anion matrix of the above p roblem when n  1? For n  2?
+
+2.4 What is the fundamental solution matrix of Exercise 2.2 when n  1? When n  2?
+
+2.5 What is the state transition matrix of the above p roblem when n  1? For n  2?
+
+2.6 Find the fundamental solution matrix Ft for the s y stem        1 d x 1 t 0 0 x 1 t   dt x 2 t À1 À2 
+x 2 t 1
+
+and also the solution xt for the initial conditions
+
+x1 
+
+0  1 and x 2 0  2:
+
+2.7 Find the total solution and state transition matrix for the s y stem        À1 5 d x 1 t 0 x 1 t •  dt 
+x 2 t 0 À1 x 2 t 1
+
+with initial conditions x 1 0  1 and x 2 0  2. 2.8 The reverse p roblem: f rom a discrete-time model to a 
+continuous-time model. For the discrete-time d y namic s y stem model     0 1 0 x k  x kÀ1  ; À1 2 1
+
+®nd the state transition matrix for continuous time and the solution for the continuous-time s y stem with 
+initial conditions   1 x0 • : 2 2.9 Find conditions on c 1 ; c 2 ; h 1 ; h 2 such that the followin g s y 
+stem is com p letel y
+
+observable and controllable:
+
+       1 c1 2  d x 1 t 1 x t •  ut; dt x 2 t 0 1 x t c   1 2 1 2 t
+
+2.10 Determine the controllabilit y and observabilit y of the d y namic s y stem model g iven below:         
+1 1 d x 1 t 0 x 1 2 t 0 u 1 •  ; dt x 2 t 1 0 x t 0 À1 u 2   t x1 2  zt  0 1 : x t
+
+2.11 Derive the state transition matrix of the time-var y in g s y stem
+
+
+
+
+
+_ x t 
+
+t 0
+
+0 t
+
+xt:
+
+2.12 Find the state transition matrix for
+
+
+
+
+
+F
+
+0
+
+1
+
+1 : 0
+
+2.13 For the s y stem of three ®rst-order differential e q uations
+
+_ x 1  x 2 ;
+
+_ x 2  x 3 ;
+
+_ x 3  0
+
+( a ) What is the com p anion matrix F? ( b ) What is the fundamental solution matrix Ft such that d=dtFt  
+FFt and F0  I?
+
+2.14 Show that the matrix ex p onential of an antis y mmetric matrix is an ortho g onal matrix.
+
+2.15 Derive the formula of E q uation 2.32 for the observabilit y matrix of a linear d y namic s y stem 
+model in continuous time. ( Hint: Use the a pp roach of Exam p le 1.2 for estimatin g the initial state of a 
+s y stem and E q uation 2.19 for the state of a s y stem as a linear function of its initial state and its 
+in p uts. )
+
+2.16 Derive the formula of E q uation 2.33 for the observabilit y matrix of a d y namic s y stem in discrete 
+time. ( Hint: Use the method of least s q uares of Exam p le
+
+1.1 for estimatin g the initial state of a s y stem, and com p are the resultin g Gramian matrix to the 
+observabilit y matrix of E q uation 2.33. )
+
+
